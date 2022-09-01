@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import ProductsRelated from './products-related';
+import ProductsRelatedCard from './products-related-card';
+
+<Meta
+  title="Sections / ProductsRelated"
+  component={ProductsRelated}
+  subcomponents={{ ProductsRelatedCard }}
+/>
+
+# ProductsRelated
+
+A component to display a `ProductsRelated`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/sections/products-related)
+
+## Imports
+
+```js
+import { ProductsRelated } from '@design-system';
+```
+
+## Example
+
+A basic example of `ProductsRelated`.
+
+<Canvas>
+  <Story name="ProductsRelated">
+    <ProductsRelated />
+  </Story>
+  <Story name="ProductsRelatedCard">
+    <ProductsRelatedCard maxWidth="540px" margin="3rem" />
+  </Story>
+</Canvas>

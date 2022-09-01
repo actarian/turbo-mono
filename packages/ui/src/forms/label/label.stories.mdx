@@ -1,0 +1,46 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as Label, LabelProps } from './label';
+import Link from 'next/link';
+
+<Meta
+  title="Forms / Label"
+  component={Label}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%', display: 'flex', justifyContent: 'center' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Label
+
+A component to display a `Label`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/forms/label)
+
+## Imports
+
+```js
+import { Label } from '@design-system';
+```
+
+<!--
+## Props
+
+<ArgsTable of={LabelProps} />
+-->
+
+## Example
+
+A basic example of `Label`.
+
+<Canvas>
+  <Story name="default">
+    <div style={{ padding: '4rem', fontSize: '2rem', width: '100%', maxWidth: '500px' }}>
+      <Field>
+        <Label>First name</Label>
+      </Field>
+    </div>
+  </Story>
+</Canvas>

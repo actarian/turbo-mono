@@ -1,0 +1,90 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as Modal, ModalProps } from './modal';
+import { useState } from 'react';
+import { ChevronDown } from '@ui-icons';
+import { Text, Button } from '@ui-components';
+import { useModal } from '@ui-hooks';
+import Link from 'next/link';
+
+<Meta
+  title="Components / Modal"
+  component={Modal}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Modal
+
+A component to display a `Modal`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/modal)
+
+## Imports
+
+```js
+import { Modal } from '@design-system';
+```
+
+<!--
+## Props
+
+<ArgsTable of={ModalProps} />
+-->
+
+## Example
+
+A basic example of `Modal`.
+
+export const Basic = ({ data, ...args }) => {
+  const [modal, onOpenModal, onCloseModal] = useModal();
+  return (<>
+    <div style={{ margin: '0 1em' }}>
+      <Button variant="default" marginBottom="1rem" onClick={() => onOpenModal('modal')}>Open Modal</Button>
+      <Modal width="30rem" visible={modal == 'modal'} onClose={onCloseModal}>
+        <Modal.Title>
+          <Text size="8" fontWeight="700">Modal Title</Text>
+        </Modal.Title>
+        <Modal.Subtitle>Modal Subtitle</Modal.Subtitle>
+        <Modal.Content>
+          <p>Modal content lorem ispum.</p>
+        </Modal.Content>
+        <Modal.Button passive onClick={onCloseModal}>Cancel</Modal.Button>
+        <Modal.Button>Confirm</Modal.Button>
+      </Modal>
+    </div>
+  </>);
+}
+
+<Canvas>
+  <Story name="basic" args={{ type: 'default' }} parameters={{
+    docs: {
+      source: {
+        code: `
+  const [modal, onOpenModal, onCloseModal] = useModal();
+  return (<>
+      <Button variant="default" marginBottom="1rem" onClick={() => onOpenModal('modal')}>Open Modal</Button>
+      <Modal width="30rem" visible={modal == 'modal'} onClose={onCloseModal}>
+        <Modal.Title>
+          <Text size="8" fontWeight="700">Modal Title</Text>
+        </Modal.Title>
+        <Modal.Subtitle>Modal Subtitle</Modal.Subtitle>
+        <Modal.Content>
+          <p>Modal content lorem ispum.</p>
+        </Modal.Content>
+        <Modal.Button passive onClick={onCloseModal}>Cancel</Modal.Button>
+        <Modal.Button>Confirm</Modal.Button>
+      </Modal>
+  </>);
+        `,
+        language: "tsx",
+        type: "auto",
+      }
+    },
+  }}>
+    {Basic.bind({})}
+  </Story>
+</Canvas>

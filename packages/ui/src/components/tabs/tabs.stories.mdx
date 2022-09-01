@@ -1,0 +1,49 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as Tabs, TabsProps } from './tabs';
+import Link from 'next/link';
+
+<Meta
+  title="Components / Tabs"
+  component={Tabs}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%', display: 'flex', justifyContent: 'center' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Tabs
+
+A component to display a `Tabs`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/tabs)
+
+## Imports
+
+```js
+import { Tabs } from '@design-system';
+```
+
+<!--
+## Props
+
+<ArgsTable of={TabsProps} />
+-->
+
+## Example
+
+A basic example of `Tabs`.
+
+<Canvas>
+  <Story name="default">
+    <Tabs initialValue="1">
+      <Tabs.Item label="Marketing" value="1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non mi luctus, consequat nulla non, sodales nunc. Nam ornare laoreet imperdiet. Donec a feugiat velit. In mollis tempus nisl, vel condimentum nisi euismod non. Ut efficitur aliquet blandit. Etiam quis ante laoreet nulla cursus malesuada. Nam risus neque, hendrerit sed volutpat ac, tempus vitae augue. Aenean scelerisque, justo nec tincidunt elementum, libero ligula iaculis nunc, sit amet vehicula nisl lectus nec sem. Curabitur nec sagittis arcu.
+      </Tabs.Item>
+      <Tabs.Item label="Ecommerce" value="2">
+        Donec accumsan nulla eget fringilla rutrum. Pellentesque pulvinar nulla et turpis rutrum, eu sollicitudin diam interdum. Nulla facilisi. Vestibulum vestibulum ultricies sem eu dictum. Fusce sed ullamcorper turpis. Donec at velit a odio gravida vehicula quis ut metus. Donec gravida elit in nisi sodales molestie.
+      </Tabs.Item>
+    </Tabs>
+  </Story>
+</Canvas>

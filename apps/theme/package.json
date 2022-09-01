@@ -1,0 +1,31 @@
+{
+  "name": "theme",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.5",
+    "ui": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@svgr/webpack": "^6.3.1",
+    "@types/node": "^17.0.12",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "@websolute/tsconfig": "*",
+    "eslint": "^8.23.0",
+    "eslint-config-websolute": "*",
+    "next-transpile-modules": "9.0.0",
+    "raw-loader": "^4.0.2",
+    "typescript": "^4.8.2"
+  }
+}

@@ -1,0 +1,22 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Typography } from '@ui-sections';
+
+<Meta
+  title="Typography"
+  decorators={[(story) => (
+    <div style={ { padding: '0' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{
+    backgrounds: { disable: true, grid: { disable: true } },
+  }}
+/>
+
+# Typography
+
+<Canvas>
+  <Story name="Typography">
+    <Typography />
+  </Story>
+</Canvas>

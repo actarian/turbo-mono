@@ -1,0 +1,48 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as TextArea, TextAreaProps } from './textarea';
+import { Field, Label } from '@ui-forms';
+import Link from 'next/link';
+
+<Meta
+  title="Forms / TextArea"
+  component={TextArea}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%', display: 'flex', justifyContent: 'center' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# TextArea
+
+A component to display a `TextArea`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/forms/textarea)
+
+## Imports
+
+```js
+import { TextArea } from '@design-system';
+```
+
+<!--
+## Props
+
+<ArgsTable of={TextAreaProps} />
+-->
+
+## Example
+
+A basic example of `TextArea`.
+
+<Canvas>
+  <Story name="default">
+    <div style={{ padding: '4rem', fontSize: '2rem', width: '100%', maxWidth: '500px' }}>
+      <Field>
+        <Label>Message</Label>
+        <TextArea placeholder="Message" />
+      </Field>
+    </div>
+  </Story>
+</Canvas>

@@ -1,0 +1,27 @@
+export { BlogMoreDefaults, default as BlogMore } from './blog-more/blog-more';
+export { default as BlogProposition } from './blog-proposition/blog-proposition';
+export { default as CartMini } from './cart-mini/cart-mini';
+export { CategoriesPropositionDefaults, default as CategoriesProposition } from './categories-proposition/categories-proposition';
+export { default as CategoryHero } from './category-hero/category-hero';
+export { default as CategoryProposition } from './category-proposition/category-proposition';
+export { default as Colors } from './colors/colors';
+export { default as ContactCard } from './contact-card/contact-card';
+export type { ContactCardItem } from './contact-card/contact-card';
+export { default as ContactForm } from './contact-form/contact-form';
+export { default as ContactHero } from './contact-hero/contact-hero';
+export { default as Footer } from './footer/footer';
+export { default as Header } from './header/header';
+export { default as SectionIcons } from './icons/icons';
+export { default as ProductOverview } from './product-overview/product-overview';
+export { default as ProductOverviewGallery } from './product-overview/product-overview-gallery';
+export { default as ProductsHero } from './products-hero/products-hero';
+export { default as ProductsIncentive } from './products-incentive/products-incentive';
+export { default as ProductsProposition, ProductsPropositionDefaults } from './products-proposition/products-proposition';
+export { default as ProductsRelated } from './products-related/products-related';
+export { default as ProductsSearch } from './products-search/products-search';
+export { default as Proposition } from './proposition/proposition';
+export { default as Split, SplitDefaults } from './split/split';
+export { default as StoreLocatorSearch } from './store-locator/store-locator-search';
+export { default as SwiperHero, SwiperHeroDefaults } from './swiper-hero/swiper-hero';
+export { default as Typography } from './typography/typography';
+

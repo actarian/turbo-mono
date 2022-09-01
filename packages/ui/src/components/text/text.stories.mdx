@@ -1,0 +1,126 @@
+<!--- text.stories.mdx --->
+
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Text, TextProps, TextVariant, Container } from '@ui-components';
+
+<Meta
+  title="Components / Text"
+  component={Text}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
+      { story() }
+    </div>
+  )]}
+  argTypes={{
+    label: {
+      name: 'label',
+      type: { name: 'string', required: false },
+      defaultValue: 'Button',
+      description: 'overwritten description',
+      table: {
+        // disable: true, // to disable row
+        type: {
+          summary: 'something short',
+          detail: 'something really really long'
+        },
+        defaultValue: { summary: 'Hello' },
+      },
+      // control: false, // to disable control
+      control: {
+        type: 'text'
+      }
+    },
+    type: {
+      name: 'type',
+      type: { name: 'ButtonType', required: false },
+      defaultValue: 'default',
+      description: 'overwritten description',
+      options: ['default', 'primary', 'secondary'],
+      control: { type: 'select' },
+      table: {
+        type: {
+          summary: 'something short',
+          detail: 'something really really long'
+        },
+        defaultValue: { summary: 'default' },
+      },
+      // if: { arg: 'label', truthy: false },
+    }
+  }}
+/>
+
+# Text
+
+This is the doc of the different Text components.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/text)
+
+## Imports
+
+```js
+import { Text } from '@strapi/design-system/Text';
+```
+
+<!--
+## Props
+
+<ArgsTable of={TextProps} />
+-->
+
+## Usage of the different variants
+
+The main way to display text content on the screen
+
+<Canvas>
+  <Story name="Text 1">
+    <Container.Fluid>
+      <Text size="1" as="h1">Header H1</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 2">
+    <Container.Fluid>
+      <Text size="2" as="h2">Header H2</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 3">
+    <Container.Fluid>
+      <Text size="3" as="h3">Header H3</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 4">
+    <Container.Fluid>
+      <Text size="4" as="h4">Header H4</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 5">
+    <Container.Fluid>
+      <Text size="5" as="h5">Header H5</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 6">
+    <Container.Fluid>
+      <Text size="6" as="h6">Header H6</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 7">
+    <Container.Fluid>
+      <Text size="7">Default text</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 8">
+    <Container.Fluid>
+      <Text size="8">Small text</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 9">
+    <Container.Fluid>
+      <Text size="9">Smaller text</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 10">
+    <Container.Fluid>
+      <Text size="10">Smallest text</Text>
+    </Container.Fluid>
+  </Story>
+</Canvas>

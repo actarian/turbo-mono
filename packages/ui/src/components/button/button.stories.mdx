@@ -1,0 +1,193 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ShoppingCart, ArrowRight } from '@ui-icons';
+import { Flex } from '@ui-components';
+import { Label } from '@ui-forms';
+import { default as Button, ButtonProps } from './button';
+
+<Meta
+  title="Components / Button"
+  component={Button}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
+      { story() }
+    </div>
+  )]}
+  argTypes={{
+    label: {
+      name: 'label',
+      description: 'overwritten description',
+      type: { name: 'string', required: false },
+      defaultValue: 'Button',
+      table: {
+        // disable: true, // to disable row
+        type: {
+          summary: 'something short',
+          detail: 'something really really long'
+        },
+        defaultValue: { summary: 'Hello' },
+      },
+      // control: false, // to disable control
+      control: {
+        type: 'text'
+      }
+    },
+    type: {
+      name: 'type',
+      description: 'overwritten description',
+      type: { name: 'Variant', required: false },
+      defaultValue: null,
+      options: [null, 'default', 'alfa', 'beta', 'gamma', 'delta'],
+      control: { type: 'select' },
+      table: {
+        type: {
+          summary: 'something short',
+          detail: 'something really really long'
+        },
+        defaultValue: { summary: 'alfa' },
+      },
+      // if: { arg: 'label', truthy: false },
+    }
+  }}
+  parameters={{
+    backgrounds: { disable: true, grid: { disable: true } },
+  }}
+/>
+
+# Button
+
+Used to trigger an operation.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/button)
+
+## Imports
+
+```js
+import { Button } from '@design-system';
+```
+
+<!--
+## Props
+
+<ArgsTable of={ButtonProps} />
+-->
+
+## Basic
+
+A basic example of `Button`.
+
+export const Basic = ({ data, ...args }) => (<>
+  <Button {...args} onClick={() => alert('click')}>Action</Button>
+</>);
+
+<Canvas>
+  <Story name="basic" parameters={{
+    docs: {
+      source: {
+        code: '<Button onClick={() => {}}>Button</Button>',
+        language: "tsx",
+        type: "auto",
+      }
+    },
+  }}>
+    {Basic.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="default">
+    <Label>Default</Label>
+    <Flex.Col flexDirectionSm="row" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button variant="default" size="xs" as="button">Size Xs</Button>
+      <Button variant="default" size="sm" as="button">Size Sm</Button>
+      <Button variant="default" size="md" as="button">Size Md</Button>
+      <Button variant="default" size="lg" as="button">Size Lg</Button>
+      <Button variant="default" size="xl" as="button">Size Xl</Button>
+    </Flex.Col>
+  </Story>
+  <Story name="primary">
+    <Label>Primary</Label>
+    <Flex.Col flexDirectionSm="row" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button variant="primary" size="xs" as="button">Size Xs</Button>
+      <Button variant="primary" size="sm" as="button">Size Sm</Button>
+      <Button variant="primary" size="md" as="button">Size Md</Button>
+      <Button variant="primary" size="lg" as="button">Size Lg</Button>
+      <Button variant="primary" size="xl" as="button">Size Xl</Button>
+    </Flex.Col>
+  </Story>
+  <Story name="secondary">
+    <Label>Secondary</Label>
+    <Flex.Col flexDirectionSm="row" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button variant="secondary" size="xs" as="button">Size Xs</Button>
+      <Button variant="secondary" size="sm" as="button">Size Sm</Button>
+      <Button variant="secondary" size="md" as="button">Size Md</Button>
+      <Button variant="secondary" size="lg" as="button">Size Lg</Button>
+      <Button variant="secondary" size="xl" as="button">Size Xl</Button>
+    </Flex.Col>
+  </Story>
+  <Story name="outline">
+    <Label>Outline</Label>
+    <Flex.Col flexDirectionSm="row" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button variant="outline" size="xs" as="button">Size Xs</Button>
+      <Button variant="outline" size="sm" as="button">Size Sm</Button>
+      <Button variant="outline" size="md" as="button">Size Md</Button>
+      <Button variant="outline" size="lg" as="button">Size Lg</Button>
+      <Button variant="outline" size="xl" as="button">Size Xl</Button>
+    </Flex.Col>
+  </Story>
+  <Story name="ghost">
+    <Label>Ghost</Label>
+    <Flex.Col flexDirectionSm="row" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button variant="ghost" size="xs" as="button">Size Xs</Button>
+      <Button variant="ghost" size="sm" as="button">Size Sm</Button>
+      <Button variant="ghost" size="md" as="button">Size Md</Button>
+      <Button variant="ghost" size="lg" as="button">Size Lg</Button>
+      <Button variant="ghost" size="xl" as="button">Size Xl</Button>
+    </Flex.Col>
+  </Story>
+  <Story name="link">
+    <Label>Link</Label>
+    <Flex.Col flexDirectionSm="row" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button variant="link" size="xs" as="button">Size Xs</Button>
+      <Button variant="link" size="sm" as="button">Size Sm</Button>
+      <Button variant="link" size="md" as="button">Size Md</Button>
+      <Button variant="link" size="lg" as="button">Size Lg</Button>
+      <Button variant="link" size="xl" as="button">Size Xl</Button>
+    </Flex.Col>
+  </Story>
+  <Story name="underline">
+    <Label>Underline</Label>
+    <Flex.Col flexDirectionSm="row" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button variant="underline" size="xs" as="button">Size Xs</Button>
+      <Button variant="underline" size="sm" as="button">Size Sm</Button>
+      <Button variant="underline" size="md" as="button">Size Md</Button>
+      <Button variant="underline" size="lg" as="button">Size Lg</Button>
+      <Button variant="underline" size="xl" as="button">Size Xl</Button>
+    </Flex.Col>
+  </Story>
+  <Story name="nav">
+    <Label>Nav</Label>
+    <Flex.Col flexDirectionSm="row" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button variant="nav" size="xs" as="button">Size Xs</Button>
+      <Button variant="nav" size="sm" as="button">Size Sm</Button>
+      <Button variant="nav" size="md" as="button">Size Md</Button>
+      <Button variant="nav" size="lg" as="button">Size Lg</Button>
+      <Button variant="nav" size="xl" as="button">Size Xl</Button>
+    </Flex.Col>
+  </Story>
+  <Story name="circle">
+    <Label>Circle</Label>
+    <Flex.Col flexDirectionSm="row" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button variant="circle" size="xs" as="button"><ArrowRight /></Button>
+      <Button variant="circle" size="sm" as="button"><ArrowRight /></Button>
+      <Button variant="circle" size="md" as="button"><ArrowRight /></Button>
+      <Button variant="circle" size="lg" as="button"><ArrowRight /></Button>
+      <Button variant="circle" size="xl" as="button"><ArrowRight /></Button>
+    </Flex.Col>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="with icon">
+    <Button variant="primary"><span>Buy</span> <ShoppingCart /></Button>
+  </Story>
+</Canvas>

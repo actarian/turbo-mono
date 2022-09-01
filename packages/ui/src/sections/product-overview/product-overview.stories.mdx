@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import ProductOverview from './product-overview';
+import ProductOverviewGallery from './product-overview-gallery';
+
+<Meta
+  title="Sections / ProductOverview"
+  component={ProductOverview}
+  subcomponents={{ ProductOverviewGallery }}
+/>
+
+# ProductOverview
+
+A component to display a `ProductOverview`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/sections/product-overview)
+
+## Imports
+
+```js
+import { ProductOverview } from '@design-system';
+```
+
+## Example
+
+A basic example of `ProductOverview`.
+
+<Canvas>
+  <Story name="ProductOverview">
+    <ProductOverview />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="ProductOverviewGallery">
+    <ProductOverview.Gallery />
+  </Story>
+</Canvas>

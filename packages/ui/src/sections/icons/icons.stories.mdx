@@ -1,0 +1,65 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Activity, Airplay, AlertCircle, AlertOctagon, AlertTriangle, AlignCenter, AlignJustify, ShoppingCart } from '@ui-icons';
+import { Icons } from '@ui-sections';
+
+<Meta
+  title="Icons"
+  component={ShoppingCart}
+  argTypes={{ }}
+  parameters={{
+    backgrounds: { disable: true, grid: { disable: true } },
+    docs: {
+      page: null,
+    },
+  }}
+/>
+
+# Icons
+
+Used to trigger an operation.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/icons/icons)
+
+## Imports
+
+```js
+import { ShoppingCart } from '@design-system';
+```
+
+## Icons List
+
+The list of `Icons` available.
+
+<Canvas>
+  <Story name="Icons" parameters={{
+    docs: {
+      source: {
+        code: `import { ShoppingCart } from '@design-system';
+        <ShoppingCart />
+        `,
+        language: "tsx",
+        type: "auto",
+      }
+    },
+  }}>
+    <Icons />
+  </Story>
+</Canvas>
+
+<!--
+<Canvas>
+  <Story name="example">
+    <Container>
+      <Flex.Row gap="1rem" padding="1rem">
+        <Flex><Activity /></Flex>
+        <Flex><Airplay /></Flex>
+        <Flex><AlertCircle /></Flex>
+        <Flex><AlertOctagon /></Flex>
+        <Flex><AlertTriangle /></Flex>
+        <Flex><AlignCenter /></Flex>
+        <Flex><AlignJustify /></Flex>
+      </Flex.Row>
+    </Container>
+  </Story>
+</Canvas>
+-->

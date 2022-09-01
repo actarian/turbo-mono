@@ -1,0 +1,36 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as ContactHero, ContactHeroProps } from './contact-hero';
+
+<Meta
+  title="Sections / ContactHero"
+  component={ContactHero}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# ContactHero
+
+A component to display a `ContactHero`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/sections/contact-hero)
+
+## Imports
+
+```js
+import { ContactHero } from '@design-system';
+```
+
+<!--
+## Props
+
+<ArgsTable of={ContactHeroProps} />
+-->
+
+## Example
+
+A basic example of `ContactHero`.
+
+<Canvas>
+  <Story name="ContactHero">
+    <ContactHero />
+  </Story>
+</Canvas>

@@ -1,0 +1,203 @@
+{
+  "base": {
+    "fontSize": {
+      "xs": "14px",
+      "sm": "15px",
+      "md": "15px",
+      "lg": "16px",
+      "xl": "16px"
+    }
+  },
+  "font": {
+    "primary": {
+      "family": "-apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "size": [
+        "Min(6.25rem, 16vw)",
+        "Min(4.5rem, 11.5vw)",
+        "Min(2.75rem, 7vw)",
+        "Min(2.5rem, 6.4vw)",
+        "2.25rem",
+        "1.875rem",
+        "1.5rem",
+        "1.125rem",
+        "1rem",
+        "0.9rem",
+        "0.8rem",
+        "0.7rem"
+      ],
+      "lineHeight": [
+        "0.9",
+        "1.0",
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.625",
+        "1.5",
+        "1.6",
+        "1.7",
+        "1.8"
+      ]
+    },
+    "secondary": {
+      "family": "'Petrona', serif",
+      "size": [
+        "7.5rem",
+        "5.4rem",
+        "3.3rem",
+        "3rem",
+        "2.7rem",
+        "2.25rem",
+        "1.8rem",
+        "1.35rem",
+        "1.2rem",
+        "1.08rem",
+        "0.96rem",
+        "0.84rem"
+      ],
+      "lineHeight": [
+        "0.9",
+        "1.0",
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.625",
+        "1.5",
+        "1.6",
+        "1.7",
+        "1.8"
+      ]
+    }
+  },
+  "grid": {
+    "columns": 12,
+    "size": "1fr",
+    "columnGap": "Max(4vw, Min(96px, 5vw))",
+    "rowGap": "0"
+  },
+  "mediaQuery": {
+    "xs": 0,
+    "sm": 768,
+    "md": 1024,
+    "lg": 1440,
+    "xl": 1600
+  },
+  "container": {
+    "maxWidth": {
+      "xs": "calc(100% - var(--grid-column-gap) * 2)",
+      "sm": "calc(100% - var(--grid-column-gap) * 2)",
+      "md": "calc(1024px - var(--grid-column-gap) * 2)",
+      "lg": "calc(1440px - var(--grid-column-gap) * 2)",
+      "xl": "calc(1600px - var(--grid-column-gap) * 2)"
+    }
+  },
+  "maxWidth": {
+    "xs": "calc(100% - var(--grid-column-gap) * 2)",
+    "sm": "calc(100% - var(--grid-column-gap) * 2)",
+    "md": "Min(928px, calc(100% - var(--grid-column-gap) * 2))",
+    "lg": "Min(1344px, calc(100% - var(--grid-column-gap) * 4))",
+    "xl": "Min(1204px, calc(100% - var(--grid-column-gap) * 6))"
+  },
+  "button": {
+    "size": {
+      "xs": "0.7rem",
+      "sm": "0.8rem",
+      "md": "1rem",
+      "lg": "1.25rem",
+      "xl": "1.45rem"
+    },
+    "borderRadius": "0.2em"
+  },
+  "form": {
+    "fontSize": "1.125rem",
+    "lineHeight": "1.6",
+    "padding": "0.8em"
+  },
+  "card": {
+    "shadow": "0 20px 20px -10px rgba(0,0,0,0.2)"
+  },
+  "backdrop": {
+    "opacity": 0.5
+  },
+  "border": {
+    "radius": "0.5em"
+  },
+  "shadow": {
+    "xs": "0 0.1rem 0.4rem -0.1rem rgba(0, 0, 0, 0.2)",
+    "sm": "0 0.3rem 0.8rem -0.2rem rgba(0, 0, 0, 0.3)",
+    "md": "0 0.6rem 1.6rem -0.3rem rgba(0, 0, 0, 0.4)",
+    "lg": "0 0.9rem 3.2rem -0.4rem rgba(0, 0, 0, 0.5)",
+    "xl": "0 1.2rem 6.4rem -0.5rem rgba(0, 0, 0, 0.6)"
+  },
+  "color": {
+    "neutral": {
+      "100": "#FFFFFF",
+      "200": "#EFEFF2",
+      "300": "#DBDBD7",
+      "400": "#B1B1B1",
+      "500": "#7E7E8B",
+      "600": "#61616B",
+      "700": "#44444B",
+      "800": "#27272B",
+      "900": "#09090A"
+    },
+    "primary": {
+      "100": "#F4F5FB",
+      "200": "#C4D2F9",
+      "300": "#9EAEF5",
+      "400": "#727CEF",
+      "500": "#4F46E5",
+      "600": "#3A33C4",
+      "700": "#2923A4",
+      "800": "#1A1684",
+      "900": "#100D6D"
+    },
+    "secondary": {
+      "100": "#FFCDD8",
+      "200": "#FF9BBC",
+      "300": "#FF69AA",
+      "400": "#FF43A7",
+      "500": "#ff05a3",
+      "600": "#DB03A1",
+      "700": "#B70298",
+      "800": "#930189",
+      "900": "#76007A"
+    },
+    "success": {
+      "100": "#CFFDD5",
+      "200": "#A1FCB5",
+      "300": "#70F69B",
+      "400": "#4CED90",
+      "500": "#16e280",
+      "600": "#10C27E",
+      "700": "#0BA278",
+      "800": "#07836C",
+      "900": "#046C64"
+    },
+    "warning": {
+      "100": "#FEF9CB",
+      "200": "#FEF198",
+      "300": "#FEE765",
+      "400": "#FDDE3F",
+      "500": "#fdce00",
+      "600": "#D9AC00",
+      "700": "#B68D00",
+      "800": "#926E00",
+      "900": "#795900"
+    },
+    "danger": {
+      "100": "#FEE9CD",
+      "200": "#FECC9C",
+      "300": "#FCA86A",
+      "400": "#FA8645",
+      "500": "#f74e09",
+      "600": "#D43406",
+      "700": "#B11F04",
+      "800": "#8F0F02",
+      "900": "#760301"
+    }
+  }
+}

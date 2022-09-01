@@ -1,0 +1,41 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as Header, HeaderProps } from './header';
+
+<Meta
+  title="Sections / Header"
+  component={Header}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Header
+
+A component to display a `Header`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/sections/header)
+
+## Imports
+
+```js
+import { Header } from '@design-system';
+```
+
+<!--
+## Props
+
+<ArgsTable of={HeaderProps} />
+-->
+
+## Example
+
+A basic example of `Header`.
+
+<Canvas>
+  <Story name="default">
+    <div style={{ backgroundColor: 'var(--color-neutral-900)' }}>
+      <Header />
+    </div>
+  </Story>
+  <Story name="sticky">
+    <Header sticky />
+  </Story>
+</Canvas>

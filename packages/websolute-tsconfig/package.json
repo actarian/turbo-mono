@@ -1,0 +1,11 @@
+{
+  "name": "@websolute/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "files": [
+    "tsbase.json",
+    "tsnext.json",
+    "tsreact.json"
+  ]
+}

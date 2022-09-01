@@ -10,9 +10,9 @@ This turborepo uses [npm](https://www.npmjs.com/) as a package manager. It inclu
 
 - `theme`: a [Next.js](https://nextjs.org) app
 - `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `theme` applications
+- `ui`: a stub React component library shared by both `theme` and `web` applications
 - `eslint-config-websolute`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `@websolute/tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 

@@ -1,10 +1,24 @@
-import { Button } from "ui";
+import Head from 'next/head';
+import { Button, Container, Layout, Page, Proposition } from 'ui';
 
-export default function Web() {
+export default function Index() {
   return (
-    <div>
-      <h1>Web</h1>
-      <Button />
-    </div>
-  );
+    <>
+      <Head>
+        <title>Homepage</title>
+        <meta name="description" content="Homepage description" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Layout>
+        <Page>
+          <Container>
+            <Button variant='primary'>Button</Button>
+          </Container>
+
+          <Proposition />
+
+        </Page>
+      </Layout>
+    </>
+  )
 }

@@ -17,10 +17,10 @@
     "prettier": "latest",
     "turbo": "latest"
   },
-  "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=14.0.0"
-  },
   "dependencies": {},
+  "engines": {
+    "npm": ">=8.5.5",
+    "node": ">=16.15.0"
+  },
   "packageManager": "npm@8.5.5"
 }
