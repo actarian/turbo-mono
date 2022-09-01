@@ -1,9 +1,9 @@
-import { Loading } from '@ui-components';
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { getCssResponsive } from '@ui-components/utils';
-import { useClasses, useEventListener, useIsomorphicLayoutEffect } from '@ui-hooks';
 import React, { ReactNode, useRef } from 'react';
 import styled from 'styled-components';
+import { Loading } from '../../components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { getCssResponsive } from '../../components/utils';
+import { useClasses, useEventListener, useIsomorphicLayoutEffect } from '../../hooks';
 
 type Props = {
   onMore: () => void;

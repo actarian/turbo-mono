@@ -1,8 +1,8 @@
-import Background from '@ui-components/background/background';
-import { ComponentCssResponsiveProps, Variant, Variants } from '@ui-components/types';
-import { getAspectResponsive, getCssResponsive, getVariant, hasChildOfType } from '@ui-components/utils';
 import React from 'react';
 import styled, { css } from 'styled-components';
+import Background from '../../components/background/background';
+import { ComponentCssResponsiveProps, Variant, Variants } from '../../components/types';
+import { getAspectResponsive, getCssResponsive, getVariant, hasChildOfType } from '../../components/utils';
 import { CardContent } from './card-content';
 import { CardFooter } from './card-footer';
 

@@ -1,7 +1,7 @@
-import { Button, Container, Flex, Grid, Media, Section, Text } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
-import { ArrowRight } from '@ui-icons';
 import Link from 'next/link';
+import { Button, Container, Flex, Grid, Media, Section, Text } from '../../components';
+import { ComponentProps } from '../../components/types';
+import { ArrowRight } from '../../icons';
 
 type Props = {
 }

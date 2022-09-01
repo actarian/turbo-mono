@@ -1,6 +1,6 @@
-import { useClasses, usePrevious } from '@ui-hooks';
 import React, { useMemo, useRef } from 'react';
 import styled, { css } from 'styled-components';
+import { useClasses, usePrevious } from '../../hooks';
 import { isUnplacedRect, ReactiveDomReact } from '../dropdown/dropdown-layout';
 
 type Props = {

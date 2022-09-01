@@ -1,7 +1,7 @@
-import { Button, className, Flex } from '@ui-components';
-import { useSwiperIndex } from '@ui-hooks';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import { Button, className, Flex } from '../../components';
+import { useSwiperIndex } from '../../hooks';
 
 const Bullet = styled.div`
   position: relative;

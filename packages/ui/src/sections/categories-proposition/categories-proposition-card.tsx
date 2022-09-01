@@ -1,6 +1,6 @@
-import { Card, Media, MediaType, Text } from '@ui-components';
-import { ComponentCssResponsiveProps } from '@ui-components/types';
 import Link from 'next/link';
+import { Card, Media, MediaType, Text } from '../../components';
+import { ComponentCssResponsiveProps } from '../../components/types';
 
 type Props = {
   item: CategoriesPropositionItem

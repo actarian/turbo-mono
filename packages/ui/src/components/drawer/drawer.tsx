@@ -1,8 +1,8 @@
-import Backdrop from '@ui-components/backdrop/backdrop';
-import { ComponentProps } from '@ui-components/types';
-import { KeyCode, useBodyScroll, useKeyboard, usePortal } from '@ui-hooks';
 import React, { MouseEvent, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import Backdrop from '../../components/backdrop/backdrop';
+import { ComponentProps } from '../../components/types';
+import { KeyCode, useBodyScroll, useKeyboard, usePortal } from '../../hooks';
 import ModalContent from '../modal/modal-content';
 import ModalSubtitle from '../modal/modal-subtitle';
 import ModalTitle from '../modal/modal-title';

@@ -1,6 +1,6 @@
-import { Button, Divider, Flex, Text } from '@ui-components';
-import { Checkbox, Field, Input, Label } from '@ui-forms';
 import { ReactNode } from 'react';
+import { Button, Divider, Flex, Text } from '../../components';
+import { Checkbox, Field, Input, Label } from '../../forms';
 
 export interface AuthSignInProps {
   children?: ReactNode;

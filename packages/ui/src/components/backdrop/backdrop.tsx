@@ -1,7 +1,7 @@
-import { ComponentProps } from '@ui-components/types';
-import { useClasses, useCurrentState } from '@ui-hooks';
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
+import { ComponentProps } from '../../components/types';
+import { useClasses, useCurrentState } from '../../hooks';
 import Transition from '../transition/transition';
 
 interface Props {

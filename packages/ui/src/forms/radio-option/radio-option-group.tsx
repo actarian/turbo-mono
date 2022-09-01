@@ -1,7 +1,7 @@
 
-import { Grid } from '@ui-components';
-import { ComponentCssResponsiveProps, SizeVariant } from '@ui-components/types';
 import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useState } from 'react';
+import { Grid } from '../../components';
+import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
 import RadioOption, { RadioOptionProps } from './radio-option';
 
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {

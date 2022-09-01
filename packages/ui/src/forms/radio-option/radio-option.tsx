@@ -1,10 +1,10 @@
 
-import { CssDefault } from '@ui-components/button/button.css';
-import { ComponentCssResponsiveProps, SizeVariant } from '@ui-components/types';
-import { getCssResponsive } from '@ui-components/utils';
-import { useClasses } from '@ui-hooks';
 import { ComponentPropsWithRef, forwardRef, ReactNode, SVGProps } from 'react';
 import styled, { css } from 'styled-components';
+import { CssDefault } from '../../components/button/button.css';
+import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
+import { getCssResponsive } from '../../components/utils';
+import { useClasses } from '../../hooks';
 import RadioOptionGroup from './radio-option-group';
 
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {

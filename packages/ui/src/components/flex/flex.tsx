@@ -1,6 +1,6 @@
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { getCssResponsive } from '@ui-components/utils';
 import styled from 'styled-components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { getCssResponsive } from '../../components/utils';
 import { FlexCol } from './flex-col';
 import { FlexResponsive } from './flex-responsive';
 import { FlexRow } from './flex-row';

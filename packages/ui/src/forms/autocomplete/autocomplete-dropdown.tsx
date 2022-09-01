@@ -1,7 +1,7 @@
-import { Dropdown } from '@ui-components';
-import { useClasses } from '@ui-hooks';
 import React, { CSSProperties, useImperativeHandle, useRef } from 'react';
 import styled from 'styled-components';
+import { Dropdown } from '../../components';
+import { useClasses } from '../../hooks';
 import { useAutocompleteContext } from './autocomplete-context';
 
 interface Props {

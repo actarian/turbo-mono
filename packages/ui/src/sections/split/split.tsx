@@ -1,7 +1,7 @@
-import { Button, Card, Container, Grid, Media, MediaType, Section, Text } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
-import { PhoneCall } from '@ui-icons';
 import Link from 'next/link';
+import { Button, Card, Container, Grid, Media, MediaType, Section, Text } from '../../components';
+import { ComponentProps } from '../../components/types';
+import { PhoneCall } from '../../icons';
 
 type Props = {
   item: SplitItem,

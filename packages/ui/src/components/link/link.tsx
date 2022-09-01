@@ -1,6 +1,6 @@
-import { useClasses } from '@ui-hooks';
 import React from 'react';
 import styled from 'styled-components';
+import { useClasses } from '../../hooks';
 import LinkIcon from './link-icon';
 
 export interface Props {

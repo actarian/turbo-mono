@@ -1,7 +1,7 @@
-import { Button, Container, Flex, Grid, MediaType, Nav, Pagination, Popover, Section, Text } from '@ui-components';
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { useDrawer } from '@ui-hooks';
-import { ChevronDown, ChevronLeft, ChevronRight, Filter } from '@ui-icons';
+import { Button, Container, Flex, Grid, MediaType, Nav, Pagination, Popover, Section, Text } from '../../components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { useDrawer } from '../../hooks';
+import { ChevronDown, ChevronLeft, ChevronRight, IconFilter } from '../../icons';
 import ProductsSearchCard, { ProductSearchItem } from './products-search-card';
 import ProductsSearchFilters from './products-search-filters';
 import ProductsSearchFiltersModal from './products-search-filters-modal';
@@ -33,7 +33,7 @@ const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, ...props }: Prod
             <Popover content={SortMenu}>
               <Button variant="nav"><span>Sort</span> <ChevronDown /></Button>
             </Popover>
-            <Button variant="nav" display="block" displaySm="none" onClick={() => onOpenDrawer('filters')}><Filter /></Button>
+            <Button variant="nav" display="block" displaySm="none" onClick={() => onOpenDrawer('filters')}><IconFilter /></Button>
             <ProductsSearchFiltersModal visible={drawer == 'filters'} onClose={onCloseDrawer} />
           </Flex.Row>
         </Flex.Row>

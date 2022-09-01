@@ -1,4 +1,4 @@
-import { IEquatable } from '@ui-core';
+import { IEquatable } from '../../core';
 
 export type FilterParams = { [key: string]: IEquatable[] | null };
 export type FilterValues = IEquatable[][];

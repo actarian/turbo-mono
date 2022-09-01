@@ -1,7 +1,7 @@
-import { Ellipsis, Flex, getChildsByType } from '@ui-components';
-import { useClasses, useCurrentState } from '@ui-hooks';
 import React, { CSSProperties, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { Ellipsis, Flex, getChildsByType } from '../../components';
+import { useClasses, useCurrentState } from '../../hooks';
 import { SelectConfig, SelectContext } from './select-context';
 import StyledSelectDivider from './select-divider';
 import SelectDropdown from './select-dropdown';

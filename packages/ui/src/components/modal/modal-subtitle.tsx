@@ -1,6 +1,6 @@
-import { ComponentProps } from '@ui-components/types';
 import React from 'react';
 import styled from 'styled-components';
+import { ComponentProps } from '../../components/types';
 
 const defaultProps = {
   className: '',

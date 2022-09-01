@@ -1,7 +1,7 @@
-import { Button, Card, Flex, Media, MediaType, Text } from '@ui-components';
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { useCart, useCurrency, useDrawer } from '@ui-hooks';
 import Link from 'next/link';
+import { Button, Card, Flex, Media, MediaType, Text } from '../../components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { useCart, useCurrency, useDrawer } from '../../hooks';
 
 type Props = {
   item: ProductsRelatedItem

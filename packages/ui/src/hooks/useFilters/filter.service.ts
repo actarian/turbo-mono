@@ -1,4 +1,4 @@
-import { IEquatable } from '@ui-core';
+import { IEquatable } from '../../core';
 import type { FilterParams } from './filter';
 import { Filter, FilterMode, IFeatureType } from './filter';
 

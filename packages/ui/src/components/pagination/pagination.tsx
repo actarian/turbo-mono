@@ -1,8 +1,8 @@
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { getCssResponsive } from '@ui-components/utils';
-import { useCurrentState } from '@ui-hooks';
 import React, { useEffect, useMemo } from 'react';
 import styled from 'styled-components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { getCssResponsive } from '../../components/utils';
+import { useCurrentState } from '../../hooks';
 import { pickChild } from '../popover/popover-collections';
 import { PaginationConfig, PaginationContext, PaginationUpdateType } from './pagination-context';
 import PaginationNext from './pagination-next';

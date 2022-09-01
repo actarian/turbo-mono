@@ -1,7 +1,7 @@
 
-import { Svg, SvgProps } from '@ui-components';
 import { SVGProps } from 'react';
 import styled from 'styled-components';
+import { Svg, SvgProps } from '../../components';
 
 const StyledCheckboxChecked = styled(Svg)`
   width: 24px;

@@ -1,7 +1,7 @@
-import Background from '@ui-components/background/background';
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { getAspectResponsive, getCssResponsive, hasChildOfType } from '@ui-components/utils';
 import styled, { css } from 'styled-components';
+import Background from '../../components/background/background';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { getAspectResponsive, getCssResponsive, hasChildOfType } from '../../components/utils';
 
 type Props = {
 };

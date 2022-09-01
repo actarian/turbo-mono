@@ -1,5 +1,5 @@
-import { Container, Flex, Grid, MediaType, Section, Text } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
+import { Container, Flex, Grid, MediaType, Section, Text } from '../../components';
+import { ComponentProps } from '../../components/types';
 import ProductsRelatedCard, { ProductsRelatedItem } from './products-related-card';
 
 type Props = {

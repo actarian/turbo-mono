@@ -26,6 +26,8 @@
     "zustand": "^4.1.1"
   },
   "devDependencies": {
+    "@types/google.maps": "^3.50.0",
+    "@types/lodash": "^4.14.184",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.26",

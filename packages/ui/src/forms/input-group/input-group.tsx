@@ -1,9 +1,9 @@
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { getCssResponsive } from '@ui-components/utils';
-import Input from '@ui-forms/input/input';
-import { useClasses } from '@ui-hooks';
 import { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import styled from 'styled-components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { getCssResponsive } from '../../components/utils';
+import Input from '../../forms/input/input';
+import { useClasses } from '../../hooks';
 
 interface Props extends ComponentPropsWithRef<'input'> {
   children?: ReactNode;

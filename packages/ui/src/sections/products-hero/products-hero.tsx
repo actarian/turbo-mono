@@ -1,6 +1,6 @@
-import { Button, Card, Container, Flex, Grid, Media, MediaType, Section, Text } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
 import Link from 'next/link';
+import { Button, Card, Container, Flex, Grid, Media, MediaType, Section, Text } from '../../components';
+import { ComponentProps } from '../../components/types';
 import ProductsHeroCard from './products-hero-card';
 
 type Props = {

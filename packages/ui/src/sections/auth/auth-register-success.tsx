@@ -1,5 +1,5 @@
-import { Button, Flex, Text } from '@ui-components';
 import { ReactNode } from 'react';
+import { Button, Flex, Text } from '../../components';
 
 export interface AuthRegisterSuccessProps {
   children?: ReactNode;

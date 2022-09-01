@@ -1,6 +1,6 @@
-import { useClasses } from '@ui-hooks';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useClasses } from '../../hooks';
 import PaginationItem from './pagination-item';
 
 interface Props {

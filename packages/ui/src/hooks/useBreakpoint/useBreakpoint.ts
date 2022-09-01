@@ -1,6 +1,6 @@
-import { useWindowSize } from '@ui-hooks/useWindowSize/useWindowSize';
 import { useContext, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
+import { useWindowSize } from '../useWindowSize/useWindowSize';
 
 type BreakpointType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 

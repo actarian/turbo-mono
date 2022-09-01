@@ -1,5 +1,5 @@
-import { Card, Container, Grid, Media, Section, Text } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
+import { Card, Container, Grid, Media, Section, Text } from '../../components';
+import { ComponentProps } from '../../components/types';
 
 type Props = {
 }

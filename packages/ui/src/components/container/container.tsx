@@ -1,7 +1,7 @@
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { getContainer, getCssResponsive } from '@ui-components/utils';
 import React from 'react';
 import styled from 'styled-components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { getContainer, getCssResponsive } from '../../components/utils';
 
 type Props = {
   fluid?: boolean;

@@ -1,8 +1,8 @@
-import { Button, Card, Container, Flex, Grid, MediaType, NavLink, Section, Text, Tooltip } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
-import { useScrollTo } from '@ui-hooks';
-import { Search, Send } from '@ui-icons';
 import Link from 'next/link';
+import { Button, Card, Container, Flex, Grid, MediaType, NavLink, Section, Text, Tooltip } from '../../components';
+import { ComponentProps } from '../../components/types';
+import { useScrollTo } from '../../hooks';
+import { Search, Send } from '../../icons';
 
 type Props = {
   item: ContactHeroItem,

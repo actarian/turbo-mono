@@ -1,6 +1,6 @@
-import { Box, ComponentCssResponsiveProps } from '@ui-components';
 import { forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { Box, ComponentCssResponsiveProps } from '../../components';
 import { GoogleMapContext, IGoogleMapContext } from './google-map-context';
 import { GoogleMapStyle } from './google-map.style';
 

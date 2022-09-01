@@ -1,7 +1,7 @@
-import { ComponentCssResponsiveProps, Variant, Variants } from '@ui-components/types';
-import { getCssResponsive, getVariant } from '@ui-components/utils';
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { ComponentCssResponsiveProps, Variant, Variants } from '../../components/types';
+import { getCssResponsive, getVariant } from '../../components/utils';
 
 const variants: Variants = {
   default: css`

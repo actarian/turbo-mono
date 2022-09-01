@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Button, Container, Layout, Page, Proposition } from 'ui';
+import { Button, Container, Header, Layout, Page, Proposition } from 'ui';
 
 export default function Index() {
   return (
@@ -11,6 +11,9 @@ export default function Index() {
       </Head>
       <Layout>
         <Page>
+
+          <Header fixed />
+
           <Container>
             <Button variant='primary'>Button</Button>
           </Container>

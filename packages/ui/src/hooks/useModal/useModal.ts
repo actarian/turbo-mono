@@ -1,4 +1,4 @@
-import { IUIStateValue, useUI } from '@ui-hooks/useUI/useUI';
+import { IUIStateValue, useUI } from '../useUI/useUI';
 
 export function useModal(): [modal: IUIStateValue, open: (value?: string) => void, close: () => void] {
   const [modal, reduceUI] = useUI(state => [state.modal, state.reduce]);

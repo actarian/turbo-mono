@@ -1,5 +1,5 @@
-import { Drawer, Text } from '@ui-components';
 import { ReactNode } from 'react';
+import { Drawer, Text } from '../../components';
 import ProductsSearchFilters from './products-search-filters';
 
 export interface ProductsSearchFiltersModalProps {

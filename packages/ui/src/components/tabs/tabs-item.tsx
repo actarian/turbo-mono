@@ -1,6 +1,6 @@
-import { useClasses } from '@ui-hooks';
 import React, { useEffect, useMemo, useRef } from 'react';
 import styled from 'styled-components';
+import { useClasses } from '../../hooks';
 import { TabsInternalCellProps, useTabsContext } from './tabs-context';
 
 interface Props {

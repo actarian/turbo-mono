@@ -1,5 +1,5 @@
-import { ModalProps } from '@ui-components/modal/modal';
 import { Dispatch, MutableRefObject, SetStateAction } from 'react';
+import { ModalProps } from '../../components/modal/modal';
 import { useCurrentState } from '../useCurrentState/useCurrentState';
 
 export type ModalHooksBindings = Pick<ModalProps, 'visible' | 'onClose'>;

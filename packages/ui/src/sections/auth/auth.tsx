@@ -1,5 +1,5 @@
-import { useDrawer } from '@ui-hooks';
 import { ReactNode, useState } from 'react';
+import { useDrawer } from '../../hooks';
 import AuthForgot from './auth-forgot';
 import AuthForgotSuccess from './auth-forgot-success';
 import AuthLogin from './auth-login';

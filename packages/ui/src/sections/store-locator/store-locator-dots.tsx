@@ -1,5 +1,5 @@
-import { Svg, SvgProps } from '@ui-components';
 import styled from 'styled-components';
+import { Svg, SvgProps } from '../../components';
 
 const StyledDots = styled(Svg)`
   position: absolute;

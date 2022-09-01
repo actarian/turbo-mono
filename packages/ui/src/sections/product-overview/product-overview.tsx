@@ -1,7 +1,7 @@
-import { Button, Container, Flex, Grid, MediaType, Section, Text } from '@ui-components';
-import { RadioColor, RadioOption, Rating } from '@ui-forms';
-import { useCart, useCurrency, useDrawer } from '@ui-hooks';
 import { useState } from 'react';
+import { Button, Container, Flex, Grid, MediaType, Section, Text } from '../../components';
+import { RadioColor, RadioOption, Rating } from '../../forms';
+import { useCart, useCurrency, useDrawer } from '../../hooks';
 import ProductOverviewGallery from './product-overview-gallery';
 
 export type ProductItem = {

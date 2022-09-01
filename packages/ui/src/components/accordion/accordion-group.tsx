@@ -1,6 +1,6 @@
-import { useClasses, useCurrentState } from '@ui-hooks';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
+import { useClasses, useCurrentState } from '../../hooks';
 import { setChildrenIndex } from '../popover/popover-collections';
 import Accordion from './accordion';
 import { AccordionConfig, AccordionContext } from './accordion-context';

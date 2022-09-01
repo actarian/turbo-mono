@@ -1,6 +1,6 @@
-import { Box, Container, Flex, Grid, Section, Text } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
-import { Calendar, RefreshCcw, Truck } from '@ui-icons';
+import { Box, Container, Flex, Grid, Section, Text } from '../../components';
+import { ComponentProps } from '../../components/types';
+import { Calendar, RefreshCcw, Truck } from '../../icons';
 
 type Props = {
 }

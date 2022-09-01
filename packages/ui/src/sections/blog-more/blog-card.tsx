@@ -1,7 +1,7 @@
-import { Button, Card, Flex, Media, MediaType, Text } from '@ui-components';
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { ArrowRight } from '@ui-icons';
 import Link from 'next/link';
+import { Button, Card, Flex, Media, MediaType, Text } from '../../components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { ArrowRight } from '../../icons';
 
 type Props = {
   item: BlogItem

@@ -1,6 +1,6 @@
-import { useClasses } from '@ui-hooks';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
+import { useClasses } from '../../hooks';
 import Tooltip, { TooltipOnVisibleChange, TooltipProps } from '../tooltip/tooltip';
 import { Placement, TriggerTypes } from '../tooltip/tooltip-props';
 import { getReactNode } from './popover-collections';

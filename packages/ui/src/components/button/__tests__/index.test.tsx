@@ -1,7 +1,7 @@
-import { sleep } from '@tests/utils';
-import { Button } from '@ui-components';
 import { mount } from 'enzyme';
 import React from 'react';
+import { Button } from '../../components';
+import { sleep } from '../../utils';
 
 describe('Button', () => {
   it('should render correctly', () => {

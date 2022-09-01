@@ -1,8 +1,8 @@
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { getCssResponsive } from '@ui-components/utils';
-import { useClasses } from '@ui-hooks';
 import React from 'react';
 import styled from 'styled-components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { getCssResponsive } from '../../components/utils';
+import { useClasses } from '../../hooks';
 
 interface Props {
   className?: string;

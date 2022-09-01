@@ -7,20 +7,6 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@ui-components*": ["src/components*"],
-      "@ui-components": ["src/components/index"],
-      "@ui-core*": ["src/core*"],
-      "@ui-core": ["src/core/index"],
-      "@ui-forms*": ["src/forms*"],
-      "@ui-forms": ["src/forms/index"],
-      "@ui-hooks*": ["src/hooks*"],
-      "@ui-hooks": ["src/hooks/index"],
-      "@ui-icons*": ["src/icons*"],
-      "@ui-icons": ["src/icons/index"],
-      "@ui-sections*": ["src/sections*"],
-      "@ui-sections": ["src/sections/index"],
-      "@ui-styles*": ["src/styles*"],
-      "@ui-styles": ["src/styles/index"]
     },
     "resolveJsonModule": true,
   }

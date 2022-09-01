@@ -1,7 +1,7 @@
 
-import { Flex } from '@ui-components';
-import { ComponentCssResponsiveProps, SizeVariant } from '@ui-components/types';
 import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useState } from 'react';
+import { Flex } from '../../components';
+import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
 import RadioColor, { RadioColorProps } from './radio-color';
 
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {

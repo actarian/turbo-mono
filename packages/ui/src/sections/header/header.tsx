@@ -1,9 +1,9 @@
-import { Button, Container, Flex, Modal, Nav, NavLink, Popover, Text } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
-import { useDrawer, useModal, useScroll } from '@ui-hooks';
-import { ArrowRight, Hexagon, Menu, ShoppingCart, User } from '@ui-icons';
-import { CartMini } from '@ui-sections';
-import AuthDrawer from '@ui-sections/auth/auth-drawer';
+import { Button, Container, Flex, Modal, Nav, NavLink, Popover, Text } from '../../components';
+import { ComponentProps } from '../../components/types';
+import { useDrawer, useModal, useScroll } from '../../hooks';
+import { ArrowRight, Hexagon, Menu, ShoppingCart, User } from '../../icons';
+import { CartMini } from '../../sections';
+import AuthDrawer from '../../sections/auth/auth-drawer';
 
 import styled, { css } from 'styled-components';
 

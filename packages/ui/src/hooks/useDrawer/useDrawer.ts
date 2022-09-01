@@ -1,4 +1,4 @@
-import { IUIStateValue, useUI } from '@ui-hooks/useUI/useUI';
+import { IUIStateValue, useUI } from '../useUI/useUI';
 
 export function useDrawer(): [drawer: IUIStateValue, open: (value?: string) => void, close: () => void] {
   const [drawer, reduceUI] = useUI(state => [state.drawer, state.reduce]);

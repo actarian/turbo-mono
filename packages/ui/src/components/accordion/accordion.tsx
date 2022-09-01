@@ -1,7 +1,7 @@
-import { Expand } from '@ui-components';
-import { consoleWarn, useClasses, useCurrentState } from '@ui-hooks';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { Expand } from '../../components';
+import { consoleWarn, useClasses, useCurrentState } from '../../hooks';
 import { useAccordionContext } from './accordion-context';
 import AccordionIcon from './accordion-icon';
 

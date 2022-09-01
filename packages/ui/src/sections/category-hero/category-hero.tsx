@@ -1,8 +1,8 @@
-import { Breadcrumb, Button, Container, Grid, Media, NavLink, Section, Text } from '@ui-components';
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { useScrollTo } from '@ui-hooks';
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
+import { Breadcrumb, Button, Container, Grid, Media, NavLink, Section, Text } from '../../components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { useScrollTo } from '../../hooks';
 
 const ADiv = ({ children }: { children?: ReactNode }) => (<motion.div
   initial={{ position: 'absolute', width: '100%', height: '100vh', top: '-50vh', y: 0 }}

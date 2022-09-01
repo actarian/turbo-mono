@@ -1,5 +1,5 @@
-import { eachMedia } from '@ui-components/utils';
 import { css } from 'styled-components';
+import { eachMedia } from '../components/utils';
 
 export const CssTypography = css`
 html,

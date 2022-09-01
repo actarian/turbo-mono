@@ -1,7 +1,7 @@
-import { Highlight } from '@ui-components';
-import { useClasses } from '@ui-hooks';
 import React, { CSSProperties, MouseEvent, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { Highlight } from '../../components';
+import { useClasses } from '../../hooks';
 import { useRect } from '../dropdown/dropdown-layout';
 import { isGeistElement } from '../popover/popover-collections';
 import { TabsConfig, TabsContext, TabsHeaderItem } from './tabs-context';

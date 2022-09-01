@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Transition } from '@ui-components';
-import { consoleWarn, useClasses, useClickAnyWhere, useDomObserver, usePortal, useResize } from '@ui-hooks';
 import React, { MutableRefObject, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
+import { Transition } from '../../components';
+import { consoleWarn, useClasses, useClickAnyWhere, useDomObserver, usePortal, useResize } from '../../hooks';
 import { getRefRect } from './dropdown-layout';
 
 interface Props {

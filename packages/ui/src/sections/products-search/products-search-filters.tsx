@@ -1,6 +1,6 @@
-import { Accordion, Box, Button, Nav } from '@ui-components';
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { Checkbox, Label } from '@ui-forms';
+import { Accordion, Box, Button, Nav } from '../../components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { Checkbox, Label } from '../../forms';
 
 type Props = {
 }

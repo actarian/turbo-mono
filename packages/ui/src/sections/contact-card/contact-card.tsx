@@ -1,8 +1,8 @@
-import { Box, Button, Card, Nav, Text } from '@ui-components';
-import { CardProps } from '@ui-components/card/card';
-import { ComponentProps } from '@ui-components/types';
-import { Phone } from '@ui-icons';
 import Link from 'next/link';
+import { Box, Button, Card, Nav, Text } from '../../components';
+import { CardProps } from '../../components/card/card';
+import { ComponentProps } from '../../components/types';
+import { Phone } from '../../icons';
 
 type Props = {
   item: ContactCardItem,

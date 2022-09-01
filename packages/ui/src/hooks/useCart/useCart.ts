@@ -1,6 +1,6 @@
-import { IEquatable, ISchema } from '@ui-core';
 import create, { StateCreator } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { IEquatable, ISchema } from '../../core';
 
 const PERSIST = true;
 

@@ -1,7 +1,7 @@
-import { Code, Flex, Section, Text } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { Code, Flex, Section, Text } from '../../components';
+import { ComponentProps } from '../../components/types';
 
 type Props = {
 }

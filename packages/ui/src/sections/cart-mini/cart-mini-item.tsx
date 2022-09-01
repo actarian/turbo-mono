@@ -1,9 +1,9 @@
-import { Button, Card, Flex, Media, Text } from '@ui-components';
-import { Input } from '@ui-forms';
-import { useCart, useCurrency, useMounted, useUI } from '@ui-hooks';
-import { ICartItem } from '@ui-hooks/useCart/useCart';
-import { Minus, Plus, Trash } from '@ui-icons';
 import NextLink from 'next/link';
+import { Button, Card, Flex, Media, Text } from '../../components';
+import { Input } from '../../forms';
+import { useCart, useCurrency, useMounted, useUI } from '../../hooks';
+import { ICartItem } from '../../hooks/useCart/useCart';
+import { Minus, Plus, Trash } from '../../icons';
 
 const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem }) => {
 

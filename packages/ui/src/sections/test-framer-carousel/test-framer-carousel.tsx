@@ -1,5 +1,5 @@
-import { Carousel } from '@ui-components/carousel/carousel';
 import { useMemo } from 'react';
+import { Carousel } from '../../components/carousel/carousel';
 
 const TestFramerCarousel: React.FC<null> = () => {
 

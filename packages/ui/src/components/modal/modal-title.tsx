@@ -1,8 +1,8 @@
-import { Button } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
-import { X } from '@ui-icons';
 import React from 'react';
 import styled from 'styled-components';
+import { Button } from '../../components';
+import { ComponentProps } from '../../components/types';
+import { X } from '../../icons';
 
 interface Props {
   className?: string;

@@ -1,7 +1,7 @@
-import { Button, Container, Flex, Section, Text } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
-import { useDrawer, useModal } from '@ui-hooks';
 import Link from 'next/link';
+import { Button, Container, Flex, Section, Text } from '../../components';
+import { ComponentProps } from '../../components/types';
+import { useDrawer, useModal } from '../../hooks';
 
 type Props = {
 }

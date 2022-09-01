@@ -1,6 +1,6 @@
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { getAspectResponsive, getCssResponsive } from '@ui-components/utils';
 import styled, { css } from 'styled-components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { getAspectResponsive, getCssResponsive } from '../../components/utils';
 
 export enum MediaType {
   Image = 'image',

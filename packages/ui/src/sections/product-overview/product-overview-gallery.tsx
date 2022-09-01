@@ -1,5 +1,5 @@
-import { Card, Container, Flex, Grid, Media, MediaType, Section } from '@ui-components';
-import { ComponentCssResponsiveProps } from '@ui-components/types';
+import { Card, Container, Flex, Grid, Media, MediaType, Section } from '../../components';
+import { ComponentCssResponsiveProps } from '../../components/types';
 
 type Props = {
   media: {

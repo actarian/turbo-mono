@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import { Container, Flex, Layout, Media, Page, Section, Text } from 'ui/components';
-import { BlogMore, BlogMoreDefaults, BlogProposition, CategoriesProposition, CategoriesPropositionDefaults, Footer, Header, ProductsProposition, ProductsPropositionDefaults, Proposition, Split, SplitDefaults, SwiperHero, SwiperHeroDefaults } from 'ui/sections';
+import { BlogMore, BlogMoreDefaults, BlogProposition, CategoriesProposition, CategoriesPropositionDefaults, Container, Flex, Footer, Header, Layout, Media, Page, ProductsProposition, ProductsPropositionDefaults, Proposition, Section, Split, SplitDefaults, SwiperHero, SwiperHeroDefaults, Text } from 'ui';
 
 export default function Index() {
   return (

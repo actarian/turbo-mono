@@ -1,5 +1,5 @@
-import { Drawer } from '@ui-components';
 import { ReactNode } from 'react';
+import { Drawer } from '../../components';
 import Auth from './auth';
 
 export interface AuthDrawerProps {

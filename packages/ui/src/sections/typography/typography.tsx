@@ -1,8 +1,8 @@
-import { Box, Code, Flex, List, Section, Text } from '@ui-components';
-import { FontSize } from '@ui-components/text/text';
-import { ComponentProps } from '@ui-components/types';
 import React, { ComponentPropsWithRef, useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
+import { Box, Code, Flex, List, Section, Text } from '../../components';
+import { FontSize } from '../../components/text/text';
+import { ComponentProps } from '../../components/types';
 
 type Props = {
 }

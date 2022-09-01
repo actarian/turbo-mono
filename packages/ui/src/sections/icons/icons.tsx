@@ -1,8 +1,8 @@
-import { Card, Code, Container, Flex, Media, Modal, Text } from '@ui-components';
-import { ComponentProps } from '@ui-components/types';
-import { Input } from '@ui-forms';
-import { Icons as IconList } from '@ui-icons/icons';
 import { createElement, FunctionComponent, Suspense, useMemo, useState } from 'react';
+import { Card, Code, Container, Flex, Media, Modal, Text } from '../../components';
+import { ComponentProps } from '../../components/types';
+import { Input } from '../../forms';
+import { Icons as IconList } from '../../icons/icons';
 
 type Props = {
 }
@@ -65,7 +65,7 @@ const SectionIcons: React.FC<IconsProps> = (props: IconsProps) => {
               <Suspense fallback={<div>Loading...</div>}>{createElement(icon.component, {})}</Suspense>
             </Media>
           }
-          <Code>{`import { ${icon && icon.key} } from '@ui-icons';`}</Code>
+          <Code>{`import { ${icon && icon.key} } from 'ui/icons';`}</Code>
         </Modal.Content>
         <Modal.Button variant="default" passive onClick={() => onSetIcon(null)}>Close</Modal.Button>
       </Modal>

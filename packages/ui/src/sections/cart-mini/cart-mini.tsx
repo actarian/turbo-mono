@@ -1,7 +1,7 @@
-import { Button, Divider, Drawer, Flex, Text } from '@ui-components';
-import { useCart, useCurrency, useUI } from '@ui-hooks';
-import { ArrowRight, ShoppingCart } from '@ui-icons';
 import { ReactNode } from 'react';
+import { Button, Divider, Drawer, Flex, Text } from '../../components';
+import { useCart, useCurrency, useUI } from '../../hooks';
+import { ArrowRight, ShoppingCart } from '../../icons';
 import CartMiniItem from './cart-mini-item';
 
 export interface CartMiniProps {

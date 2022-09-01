@@ -1,9 +1,9 @@
-import { Loading } from '@ui-components';
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { getCssResponsive } from '@ui-components/utils';
-import { useClasses } from '@ui-hooks';
 import React, { useRef } from 'react';
 import styled from 'styled-components';
+import { Loading } from '../../components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { getCssResponsive } from '../../components/utils';
+import { useClasses } from '../../hooks';
 
 type Props = {
   loading?: boolean;

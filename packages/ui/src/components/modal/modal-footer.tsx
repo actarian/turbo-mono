@@ -1,6 +1,6 @@
-import ButtonGroup from '@ui-components/button-group/button-group';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import ButtonGroup from '../../components/button-group/button-group';
 
 const StyledFooter = styled(ButtonGroup)`
   overflow: hidden;

@@ -1,7 +1,7 @@
-import { ComponentCssResponsiveProps } from '@ui-components/types';
-import { getCssResponsive } from '@ui-components/utils';
-import { sizes } from '@ui-styles';
 import styled, { css } from 'styled-components';
+import { ComponentCssResponsiveProps } from '../../components/types';
+import { getCssResponsive } from '../../components/utils';
+import { sizes } from '../../styles';
 import { GridRow } from './grid-row';
 
 type Props = {
