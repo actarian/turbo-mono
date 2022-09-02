@@ -1,0 +1,41 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { InputGroup, InputGroupProps, Field, Label } from '@websolute/ui';
+import Link from 'next/link';
+
+<Meta
+  title="Forms / InputGroup"
+  component={InputGroup}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%', display: 'flex', justifyContent: 'center' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# InputGroup
+
+A component to display a `InputGroup`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/forms/input-group)
+
+## Imports
+
+```js
+import { InputGroup } from '@design-system';
+```
+
+## Example
+
+A basic example of `InputGroup`.
+
+<Canvas>
+  <Story name="default">
+    <div style={{ padding: '4rem', fontSize: '2rem', width: '100%', maxWidth: '500px' }}>
+      <Field>
+        <Label>First name</Label>
+        <InputGroup placeholder="First name" />
+      </Field>
+    </div>
+  </Story>
+</Canvas>

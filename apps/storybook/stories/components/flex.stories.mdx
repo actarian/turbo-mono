@@ -1,0 +1,39 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Flex, FlexProps } from '@websolute/ui';
+
+<Meta
+  title="Components / Flex"
+  component={Flex}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Flex
+
+A component to display a `Flex`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/flex)
+
+## Imports
+
+```js
+import { Flex } from '@design-system';
+```
+
+## Example
+
+A basic example of `Flex`.
+
+<Canvas>
+  <Story name="Flex">
+    <Flex.Row justifyContent="space-between">
+      <Flex>Left</Flex>
+      <Flex>Center</Flex>
+      <Flex>Right</Flex>
+    </Flex.Row>
+  </Story>
+</Canvas>

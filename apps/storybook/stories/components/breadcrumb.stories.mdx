@@ -1,0 +1,41 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ChevronDown } from '@websolute/icons';
+import { Breadcrumb, BreadcrumbProps, Button } from '@websolute/ui';
+import Link from 'next/link';
+
+<Meta
+  title="Components / Breadcrumb"
+  component={Breadcrumb}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Breadcrumb
+
+A component to display a `Breadcrumb`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/breadcrumb)
+
+## Imports
+
+```js
+import { Breadcrumb } from '@design-system';
+```
+
+## Example
+
+A basic example of `Breadcrumb`.
+
+<Canvas>
+  <Story name="default">
+    <Breadcrumb marginBottom="1rem">
+      <Breadcrumb.Item href="/products">Shop</Breadcrumb.Item>
+      <Breadcrumb.Item href="/category">Men</Breadcrumb.Item>
+      <Breadcrumb.Item>Basic Tee 6-Pack</Breadcrumb.Item>
+    </Breadcrumb>
+  </Story>
+</Canvas>

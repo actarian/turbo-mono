@@ -1,0 +1,30 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Hero, HeroProps } from '@websolute/ui';
+
+<Meta
+  title="Sections / Hero"
+  component={Hero}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Hero
+
+A component to display a `Hero`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/sections/hero)
+
+## Imports
+
+```js
+import { Hero } from '@design-system';
+```
+
+## Example
+
+A basic example of `Hero`.
+
+<Canvas>
+  <Story name="Hero">
+    <Hero></Hero>
+  </Story>
+</Canvas>

@@ -1,0 +1,43 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Card, CardProps, Media, Text } from '@websolute/ui';
+
+<Meta
+  title="Components / Card"
+  component={Card}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Card
+
+A component to display a `Card`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/card)
+
+## Imports
+
+```js
+import { Card } from '@design-system';
+```
+
+## Example
+
+A basic example of `Card`.
+
+<Canvas>
+  <Story name="Card">
+    <Card type="beta" width="320px">
+      <Media aspect={2 / 1}>
+        <img src={'https://picsum.photos/640/320'} />
+      </Media>
+      <Card.Content>
+        <Text size="6">Title</Text>
+        <Text size="default">Abstract</Text>
+      </Card.Content>
+    </Card>
+  </Story>
+</Canvas>

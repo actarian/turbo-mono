@@ -1,0 +1,87 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { useState } from 'react';
+import { ChevronDown } from '@websolute/icons';
+import { Drawer, DrawerProps, Text, Button } from '@websolute/ui';
+import Link from 'next/link';
+
+<Meta
+  title="Components / Drawer"
+  component={Drawer}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Drawer
+
+A component to display a `Drawer`.
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/drawer)
+
+## Imports
+
+```js
+import { Drawer } from '@design-system';
+```
+
+## Example
+
+A basic example of `Drawer`.
+
+export const Basic = ({ data, ...args }) => {
+  const [showDrawer, setShowDrawer] = useState(false);
+  const onOpenDrawer = () => setShowDrawer(true);
+  const onCloseDrawer = () => {
+    setShowDrawer(false);
+  }
+  return (<>
+    <div style={{ margin: '0 1em' }}>
+      <Button variant="default" marginBottom="1rem" onClick={onOpenDrawer}>Open Drawer</Button>
+      <Drawer visible={showDrawer} onClose={() => onCloseDrawer()} placement="right">
+        <Drawer.Title>
+          <Text size="8" fontWeight="700">Drawer</Text>
+        </Drawer.Title>
+        <Drawer.Subtitle>This is a drawer</Drawer.Subtitle>
+        <Drawer.Content>
+          <p>Some content contained within the drawer.</p>
+        </Drawer.Content>
+      </Drawer>
+    </div>
+  </>);
+}
+
+<Canvas>
+  <Story name="basic" args={{ type: 'default' }} parameters={{
+    docs: {
+      source: {
+        code: `
+  const [showDrawer, setShowDrawer] = useState(false);
+  const onOpenDrawer = () => setShowDrawer(true);
+  const onCloseDrawer = (_: any) => {
+    setShowDrawer(false);
+  }
+  return (<>
+      <Button variant="default" marginBottom="1rem" onClick={onOpenDrawer}>Open Drawer</Button>
+      <Drawer width="30rem" visible={showDrawer} onClose={onCloseDrawer}>
+        <Drawer.Title>
+          <Text size="8" fontWeight="700">Drawer</Text>
+        </Drawer.Title>
+        <Drawer.Subtitle>Drawer Subtitle</Drawer.Subtitle>
+        <Drawer.Content>
+          <p>Drawer content lorem ispum.</p>
+        </Drawer.Content>
+        <Drawer.Button passive onClick={onCloseDrawer}>Cancel</Drawer.Button>
+        <Drawer.Button>Confirm</Drawer.Button>
+      </Drawer>
+  </>);
+        `,
+        language: "tsx",
+        type: "auto",
+      }
+    },
+  }}>
+    {Basic.bind({})}
+  </Story>
+</Canvas>

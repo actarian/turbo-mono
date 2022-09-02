@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Section, Container } from '@websolute/ui';
+import { Auth, AuthDrawer } from '@websolute/ui';
+
+<Meta
+  title="Sections / Auth"
+  component={Auth}
+  subcomponents={{ AuthDrawer }}
+/>
+
+# Auth
+
+A component to display a `Auth`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/sections/auth)
+
+## Imports
+
+```js
+import { Auth } from '@design-system';
+```
+
+## Example
+
+A basic example of `Auth`.
+
+<Canvas>
+  <Story name="Auth">
+    <Section>
+      <Container>
+        <Auth />
+      </Container>
+    </Section>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="AuthDrawer">
+    <AuthDrawer visible={true} onClose={() => alert} />
+  </Story>
+</Canvas>

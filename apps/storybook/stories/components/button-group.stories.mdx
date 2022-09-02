@@ -1,0 +1,51 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ChevronDown } from '@websolute/icons';
+import { ButtonGroup, ButtonGroupProps, Button } from '@websolute/ui';
+import Link from 'next/link';
+
+<Meta
+  title="Components / ButtonGroup"
+  component={ButtonGroup}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# ButtonGroup
+
+A component to display a `ButtonGroup`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/button-group)
+
+## Imports
+
+```js
+import { ButtonGroup } from '@design-system';
+```
+
+## Example
+
+A basic example of `ButtonGroup`.
+
+<Canvas>
+  <Story name="default">
+    <ButtonGroup>
+      <Button variant="default">Read documentation</Button>
+      <Button variant="default">View on Github</Button>
+      <Button variant="default"><span>Open</span> <ChevronDown /></Button>
+    </ButtonGroup>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="vertical">
+    <ButtonGroup vertical>
+      <Button variant="default">Read documentation</Button>
+      <Button variant="default">View on Github</Button>
+      <Button variant="default"><span>Open</span> <ChevronDown /></Button>
+    </ButtonGroup>
+  </Story>
+</Canvas>

@@ -7,19 +7,22 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build --filter=!theme",
+    "dev": "turbo run dev --parallel --filter=!storybook",
+    "build": "turbo run build --filter=!storybook --filter=!theme",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "start": "turbo run start --scope=web",
-    "icons": "turbo run dev --filter=icons"
+    "storybook": "turbo run dev --parallel --filter=storybook"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "eslint-config-websolute": "*",
     "prettier": "latest",
     "turbo": "latest"
   },
-  "dependencies": {},
   "engines": {
     "npm": ">=8.5.5",
     "node": ">=16.15.0"

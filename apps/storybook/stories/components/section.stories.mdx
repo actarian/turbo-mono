@@ -1,0 +1,35 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Section, SectionProps } from '@websolute/ui';
+
+<Meta
+  title="Components / Section"
+  component={Section}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Section
+
+A component to display a `Section`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/section)
+
+## Imports
+
+```js
+import { Section } from '@design-system';
+```
+
+## Example
+
+A basic example of `Section`.
+
+<Canvas>
+  <Story name="Section">
+    <Section></Section>
+  </Story>
+</Canvas>

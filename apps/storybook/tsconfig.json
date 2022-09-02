@@ -1,0 +1,11 @@
+{
+  "extends": "@websolute/tsconfig/tsnext.json",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "ui/*": ["../../packages/ui/src/*"]
+    },
+  },
+}

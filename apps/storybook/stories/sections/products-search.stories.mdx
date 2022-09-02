@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ProductsSearch, ProductsSearchCard, ProductsSearchFilters, ProductsSearchFiltersModal } from '@websolute/ui';
+
+<Meta
+  title="Sections / ProductsSearch"
+  component={ProductsSearch}
+  subcomponents={{ ProductsSearchCard, ProductsSearchFilters, ProductsSearchFiltersModal }}
+/>
+
+# ProductsSearch
+
+A component to display a `ProductsSearch`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/sections/products-search)
+
+## Imports
+
+```js
+import { ProductsSearch } from '@design-system';
+```
+
+## Example
+
+A basic example of `ProductsSearch`.
+
+<Canvas>
+  <Story name="ProductsSearch">
+    <ProductsSearch />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="ProductsSearchCard">
+    <ProductsSearchCard maxWidth="540px" margin="3rem" />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="ProductsSearchFilters">
+    <ProductsSearchFilters maxWidth="540px" margin="3rem" />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="ProductsSearchFiltersModal">
+    <ProductsSearchFiltersModal visible={true} onClose={() => alert} />
+  </Story>
+</Canvas>

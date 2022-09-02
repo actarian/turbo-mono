@@ -1,0 +1,48 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ChevronDown } from '@websolute/icons';
+import { Popover, PopoverProps, Button, Nav, NavLink } from '@websolute/ui';
+import Link from 'next/link';
+
+<Meta
+  title="Components / Popover"
+  component={Popover}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%', display: 'flex', justifyContent: 'center' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Popover
+
+A component to display a `Popover`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/popover)
+
+## Imports
+
+```js
+import { Popover } from '@design-system';
+```
+
+## Example
+
+A basic example of `Popover`.
+
+<Canvas>
+  <Story name="default">
+    <Popover content={() => (
+      <Nav.Col>
+        <NavLink href="#link-1">
+          <Button variant="nav" as="a">Link 1</Button>
+        </NavLink>
+        <NavLink href="#link-2">
+          <Button variant="nav" as="a">Link 2</Button>
+        </NavLink>
+      </Nav.Col>
+    )}>
+      Menu
+    </Popover>
+  </Story>
+</Canvas>

@@ -1,0 +1,96 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Grid, GridProps } from '@websolute/ui';
+
+<Meta
+  title="Components / Grid"
+  component={Grid}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Grid
+
+A component to display a `Grid`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/grid)
+
+## Imports
+
+```js
+import { Grid } from '@design-system';
+```
+
+## Example
+
+A basic example of `Grid`.
+
+<Canvas>
+  <Story name="Grid">
+    <Grid.Row>
+      <Grid className="debug" xs={2} padding="1rem">2</Grid>
+      <Grid className="debug" xs={2} padding="1rem">2</Grid>
+      <Grid className="debug" xs={2} padding="1rem">2</Grid>
+      <Grid className="debug" xs={2} padding="1rem">2</Grid>
+      <Grid className="debug" xs={2} padding="1rem">2</Grid>
+      <Grid className="debug" xs={2} padding="1rem">2</Grid>
+      <Grid className="debug" xs={3} padding="1rem">3</Grid>
+      <Grid className="debug" xs={3} padding="1rem">3</Grid>
+      <Grid className="debug" xs={3} padding="1rem">3</Grid>
+      <Grid className="debug" xs={3} padding="1rem">3</Grid>
+      <Grid className="debug" xs={4} padding="1rem">4</Grid>
+      <Grid className="debug" xs={4} padding="1rem">4</Grid>
+      <Grid className="debug" xs={4} padding="1rem">4</Grid>
+      <Grid className="debug" xs={6} padding="1rem">6</Grid>
+      <Grid className="debug" xs={6} padding="1rem">6</Grid>
+      <Grid className="debug" xs={12} padding="1rem">12</Grid>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+    </Grid.Row>
+  </Story>
+</Canvas>
+
+## Responsive
+
+A basic example of `Grid`.
+
+<Canvas>
+  <Story name="Responsive">
+    <Grid.Row>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+      <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1rem">col</Grid>
+    </Grid.Row>
+  </Story>
+</Canvas>
+
+## Custom
+
+A basic example of `Grid`.
+
+<Canvas>
+  <Story name="Custom">
+    <Grid.Row columns={5} columnGap='10px' rowGap='10px'>
+      <Grid className="debug" xs={1} padding="1rem">1</Grid>
+      <Grid className="debug" xs={1} padding="1rem">1</Grid>
+      <Grid className="debug" xs={1} padding="1rem">1</Grid>
+      <Grid className="debug" xs={1} padding="1rem">1</Grid>
+      <Grid className="debug" xs={1} padding="1rem">1</Grid>
+      <Grid className="debug" xs={1} padding="1rem">1</Grid>
+      <Grid className="debug" xs={1} padding="1rem">1</Grid>
+      <Grid className="debug" xs={1} padding="1rem">1</Grid>
+      <Grid className="debug" xs={1} padding="1rem">1</Grid>
+      <Grid className="debug" xs={1} padding="1rem">1</Grid>
+    </Grid.Row>
+  </Story>
+</Canvas>

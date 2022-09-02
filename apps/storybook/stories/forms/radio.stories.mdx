@@ -1,0 +1,42 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Radio, RadioProps, Field, Label } from '@websolute/ui';
+import Link from 'next/link';
+
+<Meta
+  title="Forms / Radio"
+  component={Radio}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%', display: 'flex', justifyContent: 'center' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Radio
+
+A component to display a `Radio`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/forms/radio)
+
+## Imports
+
+```js
+import { Radio } from '@design-system';
+```
+
+## Example
+
+A basic example of `Radio`.
+
+<Canvas>
+  <Story name="default">
+    <div style={{ padding: '4rem', fontSize: '2rem' }}>
+      <Field>
+        <Label><Radio name='color' id='red' value='red' /> Red</Label>
+        <Label><Radio name='color' id='green' value='green' /> Green</Label>
+        <Label><Radio name='color' id='blue' value='blue' /> Blue</Label>
+      </Field>
+    </div>
+  </Story>
+</Canvas>

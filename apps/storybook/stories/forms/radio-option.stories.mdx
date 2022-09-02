@@ -1,0 +1,47 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { RadioOption, RadioOptionProps, Grid, Field, Label } from '@websolute/ui';
+import Link from 'next/link';
+
+<Meta
+  title="Forms / RadioOption"
+  component={RadioOption}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%', display: 'flex', justifyContent: 'center' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# RadioOption
+
+A component to display a `RadioOption`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/forms/radio-option)
+
+## Imports
+
+```js
+import { RadioOption } from '@design-system';
+```
+
+## Example
+
+A basic example of `RadioOption`.
+
+<Canvas>
+  <Story name="default">
+    <div style={{ padding: '4rem', fontSize: '2rem' }}>
+      <Grid.Row columns="4" columnGap="0.5rem" rowGap="0.5rem" marginBottom="3rem">
+        <Grid xs={1}><RadioOption name='size' disabled>XXS</RadioOption></Grid>
+        <Grid xs={1}><RadioOption name='size'>XS</RadioOption></Grid>
+        <Grid xs={1}><RadioOption name='size'>S</RadioOption></Grid>
+        <Grid xs={1}><RadioOption name='size'>M</RadioOption></Grid>
+        <Grid xs={1}><RadioOption name='size'>L</RadioOption></Grid>
+        <Grid xs={1}><RadioOption name='size'>XL</RadioOption></Grid>
+        <Grid xs={1}><RadioOption name='size'>2XL</RadioOption></Grid>
+        <Grid xs={1}><RadioOption name='size'>3XL</RadioOption></Grid>
+      </Grid.Row>
+    </div>
+  </Story>
+</Canvas>

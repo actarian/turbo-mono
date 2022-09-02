@@ -1,5 +1,5 @@
 import { useDrawer } from '@websolute/hooks';
-import { ChevronDown, ChevronLeft, ChevronRight } from '@websolute/icons';
+import { ChevronDown, ChevronLeft, ChevronRight, Filter } from '@websolute/icons';
 import { Button, Container, Flex, Grid, MediaType, Nav, Pagination, Popover, Section, Text } from '../../components';
 import { ComponentCssResponsiveProps } from '../../components/types';
 import ProductsSearchCard, { ProductSearchItem } from './products-search-card';
@@ -33,7 +33,7 @@ const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, ...props }: Prod
             <Popover content={SortMenu}>
               <Button variant="nav"><span>Sort</span> <ChevronDown /></Button>
             </Popover>
-            <Button variant="nav" display="block" displaySm="none" onClick={() => onOpenDrawer('filters')}><IconFilter /></Button>
+            <Button variant="nav" display="block" displaySm="none" onClick={() => onOpenDrawer('filters')}><Filter /></Button>
             <ProductsSearchFiltersModal visible={drawer == 'filters'} onClose={onCloseDrawer} />
           </Flex.Row>
         </Flex.Row>

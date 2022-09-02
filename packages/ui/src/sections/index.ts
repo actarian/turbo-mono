@@ -11,7 +11,7 @@ export { default as ContactForm } from './contact-form/contact-form';
 export { default as ContactHero } from './contact-hero/contact-hero';
 export { default as Footer } from './footer/footer';
 export { default as Header } from './header/header';
-export { default as SectionIcons } from './icons/icons';
+export { default as Icons } from './icons/icons';
 export { default as ProductOverview } from './product-overview/product-overview';
 export { default as ProductOverviewGallery } from './product-overview/product-overview-gallery';
 export { default as ProductsHero } from './products-hero/products-hero';
@@ -19,6 +19,9 @@ export { default as ProductsIncentive } from './products-incentive/products-ince
 export { default as ProductsProposition, ProductsPropositionDefaults } from './products-proposition/products-proposition';
 export { default as ProductsRelated } from './products-related/products-related';
 export { default as ProductsSearch } from './products-search/products-search';
+export { default as ProductsSearchCard } from './products-search/products-search-card';
+export { default as ProductsSearchFilters } from './products-search/products-search-filters';
+export { default as ProductsSearchFiltersModal } from './products-search/products-search-filters-modal';
 export { default as Proposition } from './proposition/proposition';
 export { default as Split, SplitDefaults } from './split/split';
 export { default as StoreLocatorSearch } from './store-locator/store-locator-search';

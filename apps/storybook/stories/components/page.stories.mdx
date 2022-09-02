@@ -1,0 +1,35 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Page, PageProps } from '@websolute/ui';
+
+<Meta
+  title="Components / Page"
+  component={Page}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Page
+
+A component to display a `Page`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/ui/components/page)
+
+## Imports
+
+```js
+import { Page } from '@design-system';
+```
+
+## Example
+
+A basic example of `Page`.
+
+<Canvas>
+  <Story name="Page">
+    <Page></Page>
+  </Story>
+</Canvas>
