@@ -22,7 +22,7 @@ A component to display a `Tooltip`.
 ## Imports
 
 ```js
-import { Tooltip } from '@design-system';
+import { Tooltip } from '@websolute/ui';
 ```
 
 ## Example
@@ -32,14 +32,11 @@ A basic example of `Tooltip`.
 <Canvas>
   <Story name="default">
     <div style={{ padding: '4rem', fontSize: '2rem' }}>
-    <span>Functional, contemporary products with an atypical and </span>
-    <Tooltip text={<>Perfect for working with a CMS.</>}>
-      <u>unmistakable</u>
-    </Tooltip> <span>style, able to combine the highest cabinet-making
-      tradition with the use of </span>
-    <Tooltip text={<>Perfect for working with a CMS.</>} placement="bottom">
-      <u>sophisticated</u>
-    </Tooltip> <span>production technologies.</span>
+      <span>Functional, contemporary products with an atypical and </span>
+      <Tooltip text={<>Perfect for working with a CMS.</>}><u>unmistakable</u></Tooltip>
+      <span>style, able to combine the highest cabinet-making tradition with the use of </span>
+      <Tooltip text={<>Perfect for working with a CMS.</>} placement="bottom"><u>sophisticated</u></Tooltip>
+      <span>production technologies.</span>
     </div>
   </Story>
 </Canvas>
