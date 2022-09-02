@@ -1,5 +1,5 @@
+import { useClasses } from '@websolute/hooks';
 import React, { ReactNode, useMemo } from 'react';
-import { useClasses } from '../../hooks';
 import Link, { Props as LinkBasicProps } from '../link/link';
 import { pickChild } from '../popover/popover-collections';
 import BreadcrumbSeparator from './breadcrumb-separator';

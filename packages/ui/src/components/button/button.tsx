@@ -1,8 +1,8 @@
+import { useClasses } from '@websolute/hooks';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { ComponentCssResponsiveProps, SizeVariant, VariantOf } from '../../components/types';
 import { getCssResponsive, getVariant } from '../../components/utils';
-import { useClasses } from '../../hooks';
 import { CssButtonCircle, CssButtonDefault, CssButtonGhost, CssButtonLink, CssButtonNav, CssButtonOutline, CssButtonPrimary, CssButtonSecondary, CssButtonUnderline, CssDefault } from './button.css';
 
 export type ButtonVariant = 'default' | 'primary' | 'secondary' | 'outline' | 'ghost' | 'link' | 'underline' | 'nav' | 'circle';

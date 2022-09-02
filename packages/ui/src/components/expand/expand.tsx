@@ -1,6 +1,6 @@
+import { useClasses, useRealSize } from '@websolute/hooks';
 import React, { CSSProperties, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { useClasses, useRealSize } from '../../hooks';
 
 export type ExpandProps = {
   isExpanded?: boolean;

@@ -1,6 +1,6 @@
+import { ArrowLeft, ArrowRight } from '@websolute/icons';
 import styled from 'styled-components';
 import { useSwiper } from 'swiper/react';
-import { ArrowLeft, ArrowRight } from '../../icons';
 
 const SwiperButton = styled.button`
   border: none;

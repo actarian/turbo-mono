@@ -1,7 +1,7 @@
+import { useClasses } from '@websolute/hooks';
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { isChildElement } from '../../components/utils';
-import { useClasses } from '../../hooks';
 import Transition from '../transition/transition';
 
 interface Props {

@@ -1,7 +1,7 @@
+import { useDrawer, useModal, useScroll } from '@websolute/hooks';
+import { ArrowRight, Hexagon, Menu, ShoppingCart, User } from '@websolute/icons';
 import { Button, Container, Flex, Modal, Nav, NavLink, Popover, Text } from '../../components';
 import { ComponentProps } from '../../components/types';
-import { useDrawer, useModal, useScroll } from '../../hooks';
-import { ArrowRight, Hexagon, Menu, ShoppingCart, User } from '../../icons';
 import { CartMini } from '../../sections';
 import AuthDrawer from '../../sections/auth/auth-drawer';
 

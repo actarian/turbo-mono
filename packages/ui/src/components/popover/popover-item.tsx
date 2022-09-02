@@ -1,6 +1,6 @@
+import { useClasses } from '@websolute/hooks';
 import React from 'react';
 import styled from 'styled-components';
-import { useClasses } from '../../hooks';
 import { usePopoverContext } from './popover-context';
 
 interface Props {

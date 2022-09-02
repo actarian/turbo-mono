@@ -1,5 +1,9 @@
+import {
+  BlogMore, BlogMoreDefaults, BlogProposition, CategoriesProposition, CategoriesPropositionDefaults,
+  Container, Flex, Footer, Header, Layout, Media, Page, ProductsProposition, ProductsPropositionDefaults,
+  Proposition, Section, Split, SplitDefaults, SwiperHero, SwiperHeroDefaults, Text
+} from '@websolute/ui';
 import Head from 'next/head';
-import { BlogMore, BlogMoreDefaults, BlogProposition, CategoriesProposition, CategoriesPropositionDefaults, Container, Flex, Footer, Header, Layout, Media, Page, ProductsProposition, ProductsPropositionDefaults, Proposition, Section, Split, SplitDefaults, SwiperHero, SwiperHeroDefaults, Text } from 'ui';
 
 export default function Index() {
   return (

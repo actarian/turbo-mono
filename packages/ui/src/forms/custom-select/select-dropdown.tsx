@@ -1,7 +1,7 @@
+import { useClasses } from '@websolute/hooks';
 import React, { CSSProperties, useImperativeHandle, useRef } from 'react';
 import styled from 'styled-components';
 import { Dropdown } from '../../components';
-import { useClasses } from '../../hooks';
 import { useSelectContext } from './select-context';
 
 interface Props {

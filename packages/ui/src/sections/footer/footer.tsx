@@ -1,7 +1,7 @@
+import { Facebook, Github, Hexagon, Instagram, Linkedin, Twitter, Websolute } from '@websolute/icons';
 import Link from 'next/link';
 import { Button, Container, Flex, Grid, Nav, Text } from '../../components';
 import { ComponentProps } from '../../components/types';
-import { Facebook, Github, Hexagon, Instagram, Linkedin, Twitter, Websolute } from '../../icons';
 
 import styled from 'styled-components';
 

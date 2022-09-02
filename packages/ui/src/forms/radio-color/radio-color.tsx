@@ -1,11 +1,11 @@
 
+import { useClasses } from '@websolute/hooks';
 import { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { Text } from '../../components';
 import { CssDefault } from '../../components/button/button.css';
 import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import { useClasses } from '../../hooks';
 import RadioColorGroup from './radio-color-group';
 
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {

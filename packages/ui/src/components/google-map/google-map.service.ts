@@ -1,5 +1,5 @@
+import { getCurrentPosition } from '@websolute/hooks';
 import { IAutocompleteItem } from '../../forms/autocomplete/autocomplete-context';
-import { getCurrentPosition } from '../../hooks/useGeolocation/geolocation.service';
 
 export type IGeoPosition = { lat: number, lng: number };
 

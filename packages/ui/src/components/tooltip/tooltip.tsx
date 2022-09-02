@@ -1,6 +1,6 @@
+import { useClasses, useClickOut } from '@websolute/hooks';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { useClasses, useClickOut } from '../../hooks';
 import TooltipContent, { TooltipIconOffset } from './tooltip-content';
 import { getRect } from './tooltip-helper';
 import { Placement, SnippetTypes, TriggerTypes } from './tooltip-props';

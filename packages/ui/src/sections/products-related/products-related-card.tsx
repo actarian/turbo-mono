@@ -1,7 +1,8 @@
+import { useCurrency, useDrawer } from '@websolute/hooks';
 import Link from 'next/link';
 import { Button, Card, Flex, Media, MediaType, Text } from '../../components';
 import { ComponentCssResponsiveProps } from '../../components/types';
-import { useCart, useCurrency, useDrawer } from '../../hooks';
+import { useCart } from '../../hooks';
 
 type Props = {
   item: ProductsRelatedItem

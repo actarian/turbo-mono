@@ -1,4 +1,4 @@
-import { Breakpoint, GlobalStyle, theme } from 'ui';
+import { Breakpoint, GlobalStyle, theme } from '@websolute/ui';
 // import '@styles/globals.scss';
 import { NextPage } from 'next';
 import { AppProps } from 'next/app';

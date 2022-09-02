@@ -1,6 +1,6 @@
+import { useClasses } from '@websolute/hooks';
 import React, { SVGProps } from 'react';
 import styled from 'styled-components';
-import { useClasses } from '../../hooks';
 
 interface Props {
   active?: boolean;

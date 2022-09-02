@@ -1,8 +1,8 @@
+import { useClasses } from '@websolute/hooks';
 import React, { useEffect, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import Transition from '../../components/transition/transition';
 import { isChildElement } from '../../components/utils';
-import { useClasses } from '../../hooks';
 import { DrawerPlacement, getDrawerTransform } from './helper';
 
 interface Props {

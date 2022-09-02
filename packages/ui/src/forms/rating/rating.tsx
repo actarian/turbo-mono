@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import { useClasses } from '@websolute/hooks';
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { tupleNumber } from '../../components/tooltip/tooltip-props';
 import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import { useClasses } from '../../hooks';
 import RatingIcon from './rating-icon';
 
 const ratingCountTuple = tupleNumber(2, 3, 4, 5, 6, 7, 8, 9, 10);

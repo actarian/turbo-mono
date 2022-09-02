@@ -1,7 +1,7 @@
+import { consoleWarn, useClasses } from '@websolute/hooks';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { Ellipsis } from '../../components';
-import { consoleWarn, useClasses } from '../../hooks';
 import { useSelectContext } from './select-context';
 
 interface Props {

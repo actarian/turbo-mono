@@ -1,8 +1,8 @@
+import { X } from '@websolute/icons';
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../../components';
 import { ComponentProps } from '../../components/types';
-import { X } from '../../icons';
 
 interface Props {
   className?: string;

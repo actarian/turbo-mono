@@ -7,10 +7,12 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build --filter=!theme",
     "dev": "turbo run dev --parallel",
+    "build": "turbo run build --filter=!theme",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "start": "turbo run start --scope=web",
+    "icons": "turbo run dev --filter=icons"
   },
   "devDependencies": {
     "eslint-config-websolute": "*",

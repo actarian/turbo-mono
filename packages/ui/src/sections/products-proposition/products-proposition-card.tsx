@@ -1,7 +1,7 @@
+import { useCurrency } from '@websolute/hooks';
 import Link from 'next/link';
 import { Card, Flex, Media, MediaType, Text } from '../../components';
 import { ComponentCssResponsiveProps } from '../../components/types';
-import { useCurrency } from '../../hooks';
 
 type Props = {
   item: ProductsPropositionItem

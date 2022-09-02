@@ -1,8 +1,8 @@
+import { useClasses } from '@websolute/hooks';
 import { ComponentPropsWithRef, forwardRef, SVGProps } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import { useClasses } from '../../hooks';
 
 interface Props extends ComponentPropsWithRef<'select'> {
 }

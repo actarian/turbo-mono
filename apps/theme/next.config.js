@@ -1,7 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const nextTranspileModules = require('next-transpile-modules');
 
-const transpiledModules = nextTranspileModules(['ui'], { resolveSymlinks: false });
+const transpiledModules = nextTranspileModules([
+  '@websolute/core',
+  '@websolute/hooks',
+  '@websolute/icons',
+  '@websolute/ui'
+], { resolveSymlinks: false });
 
 module.exports = transpiledModules({
   reactStrictMode: true,

@@ -1,9 +1,9 @@
 
+import { useClasses } from '@websolute/hooks';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import { useClasses } from '../../hooks';
 import { CheckboxIcon } from './checkbox-icon';
 
 interface Props extends ComponentPropsWithRef<'input'> {

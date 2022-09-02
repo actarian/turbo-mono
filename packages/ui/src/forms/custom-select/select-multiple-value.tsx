@@ -1,7 +1,7 @@
+import { useClasses } from '@websolute/hooks';
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../../components';
-import { useClasses } from '../../hooks';
 import SelectIconClear from './select-icon-clear';
 
 interface Props {

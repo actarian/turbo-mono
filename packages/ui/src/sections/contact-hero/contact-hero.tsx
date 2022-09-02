@@ -1,8 +1,8 @@
+import { useScrollTo } from '@websolute/hooks';
+import { Search, Send } from '@websolute/icons';
 import Link from 'next/link';
 import { Button, Card, Container, Flex, Grid, MediaType, NavLink, Section, Text, Tooltip } from '../../components';
 import { ComponentProps } from '../../components/types';
-import { useScrollTo } from '../../hooks';
-import { Search, Send } from '../../icons';
 
 type Props = {
   item: ContactHeroItem,

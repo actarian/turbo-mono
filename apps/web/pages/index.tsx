@@ -1,5 +1,5 @@
+import { Button, Container, Header, Layout, Page, Proposition } from '@websolute/ui';
 import Head from 'next/head';
-import { Button, Container, Header, Layout, Page, Proposition } from 'ui';
 
 export default function Index() {
   return (

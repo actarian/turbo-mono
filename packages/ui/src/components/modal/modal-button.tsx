@@ -1,7 +1,7 @@
+import { useClasses } from '@websolute/hooks';
 import React, { MouseEvent, useImperativeHandle, useRef } from 'react';
 import styled from 'styled-components';
 import Button, { ButtonProps } from '../../components/button/button';
-import { useClasses } from '../../hooks';
 import { useModalContext } from './modal-context';
 
 interface Props {

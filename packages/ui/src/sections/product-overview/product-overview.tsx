@@ -1,7 +1,8 @@
+import { useCurrency, useDrawer } from '@websolute/hooks';
 import { useState } from 'react';
 import { Button, Container, Flex, Grid, MediaType, Section, Text } from '../../components';
 import { RadioColor, RadioOption, Rating } from '../../forms';
-import { useCart, useCurrency, useDrawer } from '../../hooks';
+import { useCart } from '../../hooks';
 import ProductOverviewGallery from './product-overview-gallery';
 
 export type ProductItem = {

@@ -1,7 +1,7 @@
+import { useDrawer, useModal } from '@websolute/hooks';
 import Link from 'next/link';
 import { Button, Container, Flex, Section, Text } from '../../components';
 import { ComponentProps } from '../../components/types';
-import { useDrawer, useModal } from '../../hooks';
 
 type Props = {
 }

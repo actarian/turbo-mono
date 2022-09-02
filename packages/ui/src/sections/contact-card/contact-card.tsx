@@ -1,8 +1,8 @@
+import { Phone } from '@websolute/icons';
 import Link from 'next/link';
 import { Box, Button, Card, Nav, Text } from '../../components';
 import { CardProps } from '../../components/card/card';
 import { ComponentProps } from '../../components/types';
-import { Phone } from '../../icons';
 
 type Props = {
   item: ContactCardItem,

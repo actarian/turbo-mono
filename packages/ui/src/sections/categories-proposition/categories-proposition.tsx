@@ -1,7 +1,7 @@
+import { ArrowRight } from '@websolute/icons';
 import Link from 'next/link';
 import { Button, Container, Flex, Grid, MediaType, Section, Text } from '../../components';
 import { ComponentProps } from '../../components/types';
-import { ArrowRight } from '../../icons';
 import CategoriesPropositionCard, { CategoriesPropositionItem } from './categories-proposition-card';
 
 type Props = {

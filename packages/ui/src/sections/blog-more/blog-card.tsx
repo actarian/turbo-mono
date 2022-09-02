@@ -1,7 +1,7 @@
+import { ArrowRight } from '@websolute/icons';
 import Link from 'next/link';
 import { Button, Card, Flex, Media, MediaType, Text } from '../../components';
 import { ComponentCssResponsiveProps } from '../../components/types';
-import { ArrowRight } from '../../icons';
 
 type Props = {
   item: BlogItem

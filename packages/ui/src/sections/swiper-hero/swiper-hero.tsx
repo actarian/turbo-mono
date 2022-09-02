@@ -1,8 +1,8 @@
+import { ArrowRight } from '@websolute/icons';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { SwiperProps } from 'swiper/react';
 import { Button, Card, Container, Grid, Media, MediaType, Swiper, Text } from '../../components';
-import { ArrowRight } from '../../icons';
 
 const CardHero = styled(Card)`
   .media {

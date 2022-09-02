@@ -1,8 +1,8 @@
+import { KeyCode, useBodyScroll, useKeyboard, usePortal } from '@websolute/hooks';
 import React, { MouseEvent, useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ComponentProps } from '../../components/types';
 import { getChildsByType } from '../../components/utils';
-import { KeyCode, useBodyScroll, useKeyboard, usePortal } from '../../hooks';
 import Backdrop from '../backdrop/backdrop';
 import ModalButton from './modal-button';
 import ModalContent from './modal-content';

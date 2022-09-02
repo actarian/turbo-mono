@@ -1,8 +1,8 @@
+import { useClasses } from '@websolute/hooks';
 import { ComponentPropsWithRef, forwardRef, ReactNode, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import { useClasses } from '../../hooks';
 import { AutocompleteContext, IAutocomplete, IAutocompleteItem } from './autocomplete-context';
 import AutocompleteDropdown from './autocomplete-dropdown';
 import { autocompleteHighligth } from './autocomplete-highlight';

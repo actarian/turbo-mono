@@ -1,7 +1,8 @@
+import { useCurrency, useUI } from '@websolute/hooks';
+import { ArrowRight, ShoppingCart } from '@websolute/icons';
 import { ReactNode } from 'react';
 import { Button, Divider, Drawer, Flex, Text } from '../../components';
-import { useCart, useCurrency, useUI } from '../../hooks';
-import { ArrowRight, ShoppingCart } from '../../icons';
+import { useCart } from '../../hooks';
 import CartMiniItem from './cart-mini-item';
 
 export interface CartMiniProps {

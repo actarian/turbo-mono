@@ -1,8 +1,8 @@
+import { Send } from '@websolute/icons';
 import React from 'react';
 import { Box, Button, Flex, Grid } from '../../components';
 import { ComponentProps } from '../../components/types';
 import { Checkbox, CustomSelect, Field, Form, Input, Label, Radio, Select, TextArea } from '../../forms';
-import { Send } from '../../icons';
 
 
 type Props = {

@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import { useClasses, useClickAnyWhere, usePortal, useResize } from '@websolute/hooks';
 import React, { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import { Transition } from '../../components';
-import { useClasses, useClickAnyWhere, usePortal, useResize } from '../../hooks';
 import { getRect } from './tooltip-helper';
 import TooltipIcon from './tooltip-icon';
 import { defaultTooltipPosition, getPosition, TooltipPosition } from './tooltip-placement';

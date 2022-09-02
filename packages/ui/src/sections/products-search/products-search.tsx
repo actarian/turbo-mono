@@ -1,7 +1,7 @@
+import { useDrawer } from '@websolute/hooks';
+import { ChevronDown, ChevronLeft, ChevronRight } from '@websolute/icons';
 import { Button, Container, Flex, Grid, MediaType, Nav, Pagination, Popover, Section, Text } from '../../components';
 import { ComponentCssResponsiveProps } from '../../components/types';
-import { useDrawer } from '../../hooks';
-import { ChevronDown, ChevronLeft, ChevronRight, IconFilter } from '../../icons';
 import ProductsSearchCard, { ProductSearchItem } from './products-search-card';
 import ProductsSearchFilters from './products-search-filters';
 import ProductsSearchFiltersModal from './products-search-filters-modal';

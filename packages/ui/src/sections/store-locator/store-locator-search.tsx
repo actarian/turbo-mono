@@ -1,4 +1,8 @@
 // import GoogleMap from '../../components/google-map/google-map';
+import { IEquatable } from '@websolute/core';
+import { Filter, filtersToParams, useDebounce, useFilters, useInfiniteLoader, useSearchParams } from '@websolute/hooks';
+import { IFeatureType } from '@websolute/hooks/useFilters/filter';
+import { MapPin } from '@websolute/icons';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Button, Container, Flex, Grid, InfiniteLoader, Section, Text } from '../../components';
 import GoogleMap from '../../components/google-map/google-map';
@@ -10,13 +14,9 @@ import GoogleMapMarkerClustererPlus from '../../components/google-map/google-map
 import GoogleMapSkeleton from '../../components/google-map/google-map-skeleton';
 import { autocompleteSource, calculateDistances, findMe, geocode, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '../../components/google-map/google-map.service';
 import { ComponentProps } from '../../components/types';
-import { IEquatable } from '../../core';
 import { RadioOption } from '../../forms';
 import Autocomplete from '../../forms/autocomplete/autocomplete';
 import { IAutocompleteItem } from '../../forms/autocomplete/autocomplete-context';
-import { Filter, filtersToParams, useDebounce, useFilters, useInfiniteLoader, useSearchParams } from '../../hooks';
-import { IFeatureType } from '../../hooks/useFilters/filter';
-import { MapPin } from '../../icons';
 import ContactCard from '../../sections/contact-card/contact-card';
 import Dots from './store-locator-dots';
 
