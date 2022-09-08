@@ -13,6 +13,13 @@
       "ui/icons": ["../../packages/ui/src/icons/index"],
       "ui/sections": ["../../packages/ui/src/sections/index"],
       "ui/styles": ["../../packages/ui/src/styles/index"],
+
+      "@config*": ["src/@config*"],
+      "@config": ["src/@config/index"],
+      "@core*": ["src/@core*"],
+      "@core": ["src/@core/index"],
+      "@models*": ["src/@models*"],
+      "@models": ["src/@models/index"],
     },
   },
 }

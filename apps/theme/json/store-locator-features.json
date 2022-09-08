@@ -1,0 +1,26 @@
+[
+  {
+    "id": "category",
+    "schema": "featureType",
+    "title": "Tipology",
+    "mode": "select",
+    "features": [
+      {
+        "id": 8,
+        "title": "Hexagon Store"
+      },
+      {
+        "id": 9,
+        "title": "Hexagon Atelier"
+      },
+      {
+        "id": 10,
+        "title": "Dealers"
+      },
+      {
+        "id": 11,
+        "title": "Retailers"
+      }
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "slug": {
+      "en": "who-we-are",
+      "it": "chi-siamo",
+      "fr": "qui-nous-sommes"
+    },
+    "title": {
+      "en": "Who we are",
+      "it": "Chi Siamo",
+      "fr": "Qui nous sommes"
+    },
+    "abstract": {
+      "en": "The Nouvelle Vague line is a springboard towards a future capable of exploring new spaces and frontiers without ever forgetting the roots that anchor it to a tradition made of genius and respect, imagination and deep knowledge of natural materials, including captivating shapes, lace, lace and undisputed technical capacity.",
+      "it": "La linea Nouvelle Vague è un trampolino verso un futuro capace di esplorare nuovi spazi e frontiere senza mai dimenticare le radici che la ancora ad una tradizione fatta di genialità e rispetto, fantasia e profonda conoscenza di materiali naturali, tra forme accattivanti, pizzi, merletti e indiscussa capacità tecnica.",
+      "fr": "La ligne Nouvelle Vague est un tremplin vers un futur capable d'explorer de nouveaux espaces et frontières sans jamais oublier les racines qui l'ancrent dans une tradition faite de génie et de respect, d'imagination et de connaissance approfondie des matériaux naturels, y compris les formes captivantes, la dentelle, la dentelle et capacité technique incontestée."
+    },
+    "description": {
+      "en": "Born from the genius of those who have been able to look beyond the rigid rules imposed by a past that was close to a world in continuous evolution, Nouvelle Vague thus manages to combine the attention to the undisputed quality of materials, all strictly Italian, the continuous scientific updating and technological, and the unstoppable desire to make lenses and eyewear engines of emotion and color.",
+      "it": "Nata dal genio di chi ha saputo guardare oltre le rigide regole imposte da un passato che stava stretto ad un mondo in continua evoluzione, Nouvelle Vague riesce così a coniugare l’attenzione per la qualità indiscussa di materiali, tutti rigorosamente italiani, il continuo aggiornamento scientifico e tecnologico, e l’inarrestabile voglia di fare di lenti e occhiali motori di emozione e colore.",
+      "fr": "Née du génie de ceux qui ont su regarder au-delà des règles rigides imposées par un passé proche d'un monde en constante évolution, Nouvelle Vague parvient ainsi à allier l'attention à la qualité incontestée des matériaux, tous strictement italiens, la une mise à jour scientifique et technologique continue, et le désir irrésistible de faire des verres et des lunettes des moteurs d'émotion et de couleur."
+    },
+    "categoryId": 2,
+    "meta": {
+      "title": {
+        "en": "Who we are",
+        "it": "Chi Siamo",
+        "fr": "Qui nous sommes"
+      },
+      "description": {
+        "en": "The Nouvelle Vague line is a springboard towards future.",
+        "it": "La linea Nouvelle Vague è un trampolino verso il futuro.",
+        "fr": "La ligne Nouvelle Vague est un tremplin vers le futur."
+      },
+      "keywords": "about keywords",
+      "robots": "all"
+    }
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "navigation.back",
+    "text": {
+      "en": "Back",
+      "it": "Indietro",
+      "fr": "Retour"
+    }
+  },
+  {
+    "id": "product.note",
+    "text": {
+      "en": "This note details something important.",
+      "it": "Questa nota descrive qualcosa di importante.",
+      "fr": "Cette note détaille quelque chose d'important."
+    }
+  },
+  {
+    "id": "product_search.items",
+    "text": {
+      "en": "@total items found",
+      "it": "trovati @total articoli",
+      "fr": "@total articles trouvés"
+    }
+  },
+  {
+    "id": "pagination.prev",
+    "text": {
+      "en": "Prev",
+      "it": "Indietro",
+      "fr": "Précédent"
+    }
+  },
+  {
+    "id": "pagination.next",
+    "text": {
+      "en": "Next",
+      "it": "Avanti",
+      "fr": "Prochain"
+    }
+  },
+  {
+    "id": "notfound.title",
+    "text": {
+      "en": "Page not found",
+      "it": "Pagina non trovata",
+      "fr": "Page non trouvée"
+    }
+  },
+  {
+    "id": "notfound.abstract",
+    "text": {
+      "en": "The page you are looking for does not exist.",
+      "it": "La pagina che stai cercando non esiste.",
+      "fr": "La page que vous recherchez n'existe pas."
+    }
+  },
+  {
+    "id": "field.magazine",
+    "text": {
+      "en": "Magazine",
+      "it": "Magazine",
+      "fr": "Revue"
+    }
+  },
+  {
+    "id": "field.firstName",
+    "text": {
+      "en": "Name",
+      "it": "Nome",
+      "fr": "Nom"
+    }
+  },
+  {
+    "id": "field.lastName",
+    "text": {
+      "en": "Surname",
+      "it": "Cognome",
+      "fr": "Nom de famille"
+    }
+  },
+  {
+    "id": "field.email",
+    "text": {
+      "en": "Email",
+      "it": "Email",
+      "fr": "E-mail"
+    }
+  },
+  {
+    "id": "field.telephone",
+    "text": {
+      "en": "Phone",
+      "it": "Telefono",
+      "fr": "Téléphone"
+    }
+  },
+  {
+    "id": "field.occupation",
+    "text": {
+      "en": "Occupation",
+      "it": "Occupazione",
+      "fr": "Profession"
+    }
+  },
+  {
+    "id": "field.country",
+    "text": {
+      "en": "Country",
+      "it": "Nazione",
+      "fr": "Pays"
+    }
+  },
+  {
+    "id": "field.region",
+    "text": {
+      "en": "Region",
+      "it": "Regione",
+      "fr": "Région"
+    }
+  },
+  {
+    "id": "field.printedCopy",
+    "text": {
+      "en": "Would you also like to receive the printed version of the Magazine?",
+      "it": "Vorresti ricevere anche la versione cartacea del Magazine?",
+      "fr": "Souhaitez-vous également recevoir la version papier du Magazine ?"
+    }
+  },
+  {
+    "id": "field.shippingInfo",
+    "text": {
+      "en": "Shipping Info",
+      "it": "Informazioni di spedizione",
+      "fr": "Informations d'expédition"
+    }
+  },
+  {
+    "id": "field.city",
+    "text": {
+      "en": "Town",
+      "it": "Città",
+      "fr": "Ville"
+    }
+  },
+  {
+    "id": "field.province",
+    "text": {
+      "en": "Province",
+      "it": "Provincia",
+      "fr": "Province"
+    }
+  },
+  {
+    "id": "field.zipCode",
+    "text": {
+      "en": "Postcode",
+      "it": "Codice postale",
+      "fr": "Code postal"
+    }
+  },
+  {
+    "id": "field.address",
+    "text": {
+      "en": "Street address",
+      "it": "Indirizzo",
+      "fr": "Adresse"
+    }
+  },
+  {
+    "id": "field.streetNumber",
+    "text": {
+      "en": "Street number",
+      "it": "Numero civico",
+      "fr": "Numéro de la rue"
+    }
+  },
+  {
+    "id": "field.phoneNumber",
+    "text": {
+      "en": "Phone Number",
+      "it": "Telefono",
+      "fr": "Téléphone"
+    }
+  },
+  {
+    "id": "field.privacy",
+    "text": {
+      "en": "I have read the privacy policy and I consent to the processing of data *",
+      "it": "Ho letto l'informativa sulla privacy e acconsento al trattamento dei dati *",
+      "fr": "J'ai lu la politique de confidentialité et je consens au traitement des données *"
+    }
+  },
+  {
+    "id": "field.newsletter",
+    "text": {
+      "en": "To the processing of my personal data for direct marketing activities by subscribing to the newsletter. *",
+      "it": "Al trattamento dei miei dati personali per attività di marketing diretto mediante l'iscrizione alla newsletter. *",
+      "fr": "Au traitement de mes données personnelles pour des activités de marketing direct en m'inscrivant à la newsletter. *"
+    }
+  },
+  {
+    "id": "field.commercial",
+    "text": {
+      "en": "To the processing of my personal data for profiling activities, in order to receive commercial communications that are closer to my interests. *",
+      "it": "Al trattamento dei miei dati personali per attività di profilazione, al fine di ricevere comunicazioni commerciali più vicine ai miei interessi. *",
+      "fr": "Au traitement de mes données personnelles pour les activités de profilage, afin de recevoir des communications commerciales plus proches de mes intérêts. *"
+    }
+  },
+  {
+    "id": "field.promotion",
+    "text": {
+      "en": "To the transfer of my personal data for promotional activities by third parties. The data will be transferred exclusively to companies that are part of the Group. *",
+      "it": "Al trasferimento dei miei dati personali per attività promozionali da parte di terzi. I dati verranno ceduti esclusivamente a società facenti parte del Gruppo. *",
+      "fr": "Au transfert de mes données personnelles pour des activités promotionnelles par des tiers. Les données seront transférées exclusivement aux sociétés qui font partie du Groupe. *"
+    }
+  },
+  {
+    "id": "form.accept.true",
+    "text": {
+      "en": "I agree",
+      "it": "Acconsento",
+      "fr": "Je suis d'accord"
+    }
+  },
+  {
+    "id": "form.accept.false",
+    "text": {
+      "en": "I do not agree",
+      "it": "Non acconsento",
+      "fr": "Je ne suis pas d'accord"
+    }
+  },
+  {
+    "id": "form.submit",
+    "text": {
+      "en": "Submit",
+      "it": "Invia",
+      "fr": "Soumettre"
+    }
+  },
+  {
+    "id": "form.reset",
+    "text": {
+      "en": "Reset",
+      "it": "Cancella",
+      "fr": "Réinitialiser"
+    }
+  },
+  {
+    "id": "form.test",
+    "text": {
+      "en": "Test",
+      "it": "Test",
+      "fr": "Test"
+    }
+  },
+  {
+    "id": "error.required",
+    "text": {
+      "en": "Required field",
+      "it": "Campo obbligatorio",
+      "fr": "Champ obligatoire"
+    }
+  },
+  {
+    "id": "error.email",
+    "text": {
+      "en": "Invalid email",
+      "it": "EMail non valida",
+      "fr": "E-mail invalide"
+    }
+  },
+  {
+    "id": "error.exhist",
+    "text": {
+      "en": "This value is already in use",
+      "it": "Questo valore è già in uso",
+      "fr": "Cette valeur est déjà utilisée"
+    }
+  }
+]

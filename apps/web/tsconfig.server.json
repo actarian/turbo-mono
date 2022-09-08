@@ -1,0 +1,37 @@
+{
+  "extends": "@websolute/tsconfig/tsnode.json",
+  "exclude": [
+    "node_modules",
+    ".mock/**/*.ts"
+  ],
+  "files": [
+    "src/@core/mock/mock.build.ts",
+  ],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "outDir": ".build",
+    "baseUrl": ".",
+    "paths": {
+      "@config*": ["src/@config*"],
+      "@config": ["src/@config/index"],
+      "@core*": ["src/@core*"],
+      "@core": ["src/@core/index"],
+      "@models*": ["src/@models*"],
+      "@models": ["src/@models/index"],
+    },
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+  }
+}

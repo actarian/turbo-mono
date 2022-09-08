@@ -1,0 +1,1 @@
+{"version":3,"file":"market.d.ts","sourceRoot":"","sources":["../../../src/@models/market/market.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,OAAO,CAAC;AAEhC,MAAM,WAAW,OAAQ,SAAQ,OAAO;IACtC,EAAE,EAAE,MAAM,CAAC;IAEX,KAAK,CAAC,EAAE,MAAM,CAAC;IACf,SAAS,CAAC,EAAE,OAAO,CAAC;IACpB,SAAS,CAAC,EAAE,MAAM,EAAE,CAAC;IACrB,SAAS,CAAC,EAAE,MAAM,EAAE,CAAC;CACtB"}

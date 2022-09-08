@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "slug": "",
+    "title": {
+      "en": "New Wave",
+      "it": "Bossa nova",
+      "fr": "Nouvelle vague"
+    },
+    "abstract": {
+      "en": "The charm of yesterday, the elegance of today",
+      "it": "Il fascino di ieri, l'eleganza di oggi",
+      "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+    },
+    "description": {
+      "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
+      "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali",
+      "fr": "Tradition et passion entièrement italiennes : plus de 30 ans d'histoire dans l'art ancien de la fabrication de lunettes"
+    },
+    "image": "/assets/homepage/banner.png",
+    "categoryId": 1,
+    "meta": {
+      "title": {
+        "en": "New Wave",
+        "it": "Bossa nova",
+        "fr": "Nouvelle vague"
+      },
+      "description": {
+        "en": "The charm of yesterday, the elegance of today",
+        "it": "Il fascino di ieri, l'eleganza di oggi",
+        "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+      },
+      "keywords": "homepage keywords",
+      "robots": "all"
+    }
+  }
+]

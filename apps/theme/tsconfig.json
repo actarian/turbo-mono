@@ -1,6 +1,6 @@
 {
   "extends": "@websolute/tsconfig/tsnext.json",
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "json/**/*.json"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "baseUrl": ".",

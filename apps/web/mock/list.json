@@ -1,0 +1,84 @@
+[
+  {
+    "id": 100,
+    "name": "Magazine",
+    "key": "magazines",
+    "listId": null
+  },
+  {
+    "id": 101,
+    "name": "GM#02",
+    "listId": 100
+  },
+  {
+    "id": 102,
+    "name": "GM#01",
+    "listId": 100
+  },
+  {
+    "id": 200,
+    "name": "Occupation",
+    "key": "occupations",
+    "listId": null
+  },
+  {
+    "id": 201,
+    "name": "architetto / interior designer",
+    "listId": 200
+  },
+  {
+    "id": 202,
+    "name": "rivenditore",
+    "listId": 200
+  },
+  {
+    "id": 203,
+    "name": "imprenditore",
+    "listId": 200
+  },
+  {
+    "id": 204,
+    "name": "giornalista",
+    "listId": 200
+  },
+  {
+    "id": 205,
+    "name": "studente",
+    "listId": 200
+  },
+  {
+    "id": 206,
+    "name": "utente privato",
+    "listId": 200
+  },
+  {
+    "id": 207,
+    "name": "altro",
+    "listId": 200
+  },
+  {
+    "id": 208,
+    "name": "rivenditore cucine",
+    "listId": 200
+  },
+  {
+    "id": 209,
+    "name": "Agente",
+    "listId": 200
+  },
+  {
+    "id": 210,
+    "name": "Filiali",
+    "listId": 200
+  },
+  {
+    "id": 211,
+    "name": "Privato",
+    "listId": 200
+  },
+  {
+    "id": 212,
+    "name": "Fornitore",
+    "listId": 200
+  }
+]

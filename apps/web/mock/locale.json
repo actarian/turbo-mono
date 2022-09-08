@@ -1,0 +1,15 @@
+[
+  {
+    "id": "en",
+    "title": "English",
+    "isDefault": true
+  },
+  {
+    "id": "it",
+    "title": "Italiano"
+  },
+  {
+    "id": "fr",
+    "title": "Français"
+  }
+]

@@ -1,0 +1,442 @@
+[
+  {
+    "id": 108,
+    "name": "Agrigento"
+  },
+  {
+    "id": 109,
+    "name": "Alessandria"
+  },
+  {
+    "id": 110,
+    "name": "Ancona"
+  },
+  {
+    "id": 206,
+    "name": "Aosta"
+  },
+  {
+    "id": 111,
+    "name": "Arezzo"
+  },
+  {
+    "id": 112,
+    "name": "Ascoli Piceno"
+  },
+  {
+    "id": 113,
+    "name": "Asti"
+  },
+  {
+    "id": 114,
+    "name": "Avellino"
+  },
+  {
+    "id": 115,
+    "name": "Bari"
+  },
+  {
+    "id": 217,
+    "name": "Barletta-Andria-Trani"
+  },
+  {
+    "id": 116,
+    "name": "Belluno"
+  },
+  {
+    "id": 117,
+    "name": "Benevento"
+  },
+  {
+    "id": 118,
+    "name": "Bergamo"
+  },
+  {
+    "id": 119,
+    "name": "Biella"
+  },
+  {
+    "id": 120,
+    "name": "Bologna"
+  },
+  {
+    "id": 121,
+    "name": "Bolzano/Bozen"
+  },
+  {
+    "id": 122,
+    "name": "Brescia"
+  },
+  {
+    "id": 123,
+    "name": "Brindisi"
+  },
+  {
+    "id": 124,
+    "name": "Cagliari"
+  },
+  {
+    "id": 125,
+    "name": "Caltanissetta"
+  },
+  {
+    "id": 126,
+    "name": "Campobasso"
+  },
+  {
+    "id": 127,
+    "name": "Carbonia-Iglesias"
+  },
+  {
+    "id": 128,
+    "name": "Caserta"
+  },
+  {
+    "id": 129,
+    "name": "Catania"
+  },
+  {
+    "id": 130,
+    "name": "Catanzaro"
+  },
+  {
+    "id": 131,
+    "name": "Chieti"
+  },
+  {
+    "id": 132,
+    "name": "Como"
+  },
+  {
+    "id": 133,
+    "name": "Cosenza"
+  },
+  {
+    "id": 134,
+    "name": "Cremona"
+  },
+  {
+    "id": 135,
+    "name": "Crotone"
+  },
+  {
+    "id": 136,
+    "name": "Cuneo"
+  },
+  {
+    "id": 137,
+    "name": "Enna"
+  },
+  {
+    "id": 216,
+    "name": "Fermo"
+  },
+  {
+    "id": 138,
+    "name": "Ferrara"
+  },
+  {
+    "id": 139,
+    "name": "Firenze"
+  },
+  {
+    "id": 140,
+    "name": "Foggia"
+  },
+  {
+    "id": 141,
+    "name": "Forlì-Cesena"
+  },
+  {
+    "id": 142,
+    "name": "Frosinone"
+  },
+  {
+    "id": 143,
+    "name": "Genova"
+  },
+  {
+    "id": 144,
+    "name": "Gorizia"
+  },
+  {
+    "id": 145,
+    "name": "Grosseto"
+  },
+  {
+    "id": 146,
+    "name": "Imperia"
+  },
+  {
+    "id": 147,
+    "name": "Isernia"
+  },
+  {
+    "id": 148,
+    "name": "La Spezia"
+  },
+  {
+    "id": 149,
+    "name": "L'Aquila"
+  },
+  {
+    "id": 150,
+    "name": "Latina"
+  },
+  {
+    "id": 151,
+    "name": "Lecce"
+  },
+  {
+    "id": 152,
+    "name": "Lecco"
+  },
+  {
+    "id": 153,
+    "name": "Livorno"
+  },
+  {
+    "id": 154,
+    "name": "Lodi"
+  },
+  {
+    "id": 155,
+    "name": "Lucca"
+  },
+  {
+    "id": 156,
+    "name": "Macerata"
+  },
+  {
+    "id": 157,
+    "name": "Mantova"
+  },
+  {
+    "id": 158,
+    "name": "Massa-Carrara"
+  },
+  {
+    "id": 159,
+    "name": "Matera"
+  },
+  {
+    "id": 160,
+    "name": "Medio Campidano"
+  },
+  {
+    "id": 161,
+    "name": "Messina"
+  },
+  {
+    "id": 162,
+    "name": "Milano"
+  },
+  {
+    "id": 163,
+    "name": "Modena"
+  },
+  {
+    "id": 215,
+    "name": "Monza - Brianza"
+  },
+  {
+    "id": 164,
+    "name": "Napoli"
+  },
+  {
+    "id": 165,
+    "name": "Novara"
+  },
+  {
+    "id": 166,
+    "name": "Nuoro"
+  },
+  {
+    "id": 167,
+    "name": "Ogliastra"
+  },
+  {
+    "id": 168,
+    "name": "Olbia-Tempio"
+  },
+  {
+    "id": 169,
+    "name": "Oristano"
+  },
+  {
+    "id": 170,
+    "name": "Padova"
+  },
+  {
+    "id": 171,
+    "name": "Palermo"
+  },
+  {
+    "id": 172,
+    "name": "Parma"
+  },
+  {
+    "id": 173,
+    "name": "Pavia"
+  },
+  {
+    "id": 174,
+    "name": "Perugia"
+  },
+  {
+    "id": 175,
+    "name": "Pesaro Urbino"
+  },
+  {
+    "id": 176,
+    "name": "Pescara"
+  },
+  {
+    "id": 177,
+    "name": "Piacenza"
+  },
+  {
+    "id": 178,
+    "name": "Pisa"
+  },
+  {
+    "id": 179,
+    "name": "Pistoia"
+  },
+  {
+    "id": 180,
+    "name": "Pordenone"
+  },
+  {
+    "id": 181,
+    "name": "Potenza"
+  },
+  {
+    "id": 182,
+    "name": "Prato"
+  },
+  {
+    "id": 183,
+    "name": "Ragusa"
+  },
+  {
+    "id": 184,
+    "name": "Ravenna"
+  },
+  {
+    "id": 185,
+    "name": "Reggio Calabria"
+  },
+  {
+    "id": 186,
+    "name": "Reggio Emilia"
+  },
+  {
+    "id": 187,
+    "name": "Rieti"
+  },
+  {
+    "id": 188,
+    "name": "Rimini"
+  },
+  {
+    "id": 189,
+    "name": "Roma"
+  },
+  {
+    "id": 190,
+    "name": "Rovigo"
+  },
+  {
+    "id": 191,
+    "name": "Salerno"
+  },
+  {
+    "id": 192,
+    "name": "Sassari"
+  },
+  {
+    "id": 193,
+    "name": "Savona"
+  },
+  {
+    "id": 194,
+    "name": "Siena"
+  },
+  {
+    "id": 195,
+    "name": "Siracusa"
+  },
+  {
+    "id": 196,
+    "name": "Sondrio"
+  },
+  {
+    "id": 197,
+    "name": "Taranto"
+  },
+  {
+    "id": 198,
+    "name": "Teramo"
+  },
+  {
+    "id": 199,
+    "name": "Terni"
+  },
+  {
+    "id": 200,
+    "name": "Torino"
+  },
+  {
+    "id": 201,
+    "name": "Trapani"
+  },
+  {
+    "id": 202,
+    "name": "Trento"
+  },
+  {
+    "id": 203,
+    "name": "Treviso"
+  },
+  {
+    "id": 204,
+    "name": "Trieste"
+  },
+  {
+    "id": 205,
+    "name": "Udine"
+  },
+  {
+    "id": 207,
+    "name": "Varese"
+  },
+  {
+    "id": 208,
+    "name": "Venezia"
+  },
+  {
+    "id": 209,
+    "name": "Verbano-Cusio-Ossola"
+  },
+  {
+    "id": 210,
+    "name": "Vercelli"
+  },
+  {
+    "id": 211,
+    "name": "Verona"
+  },
+  {
+    "id": 212,
+    "name": "Vibo Valentia"
+  },
+  {
+    "id": 213,
+    "name": "Vicenza"
+  },
+  {
+    "id": 214,
+    "name": "Viterbo"
+  }
+]

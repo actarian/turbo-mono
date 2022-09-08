@@ -1,0 +1,150 @@
+[
+  {
+    "id": 1,
+    "slug": "t-shirt",
+    "title": "T-Shirt",
+    "abstract": {
+      "en": "Your perfect item for everyday use and walks in the forest.",
+      "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
+      "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+    },
+    "description": {
+      "en": "<p>This t-shirt is a must-have in your wardrobe, combining the timeless fit of a classic tee with an intricate embroidered detail that brings the shirt to a whole new level. It's soft and durable, so be prepared to have a new favorite t-shirt!</p>",
+      "it": "<p>Questa t-shirt è un must nel tuo guardaroba, combina la vestibilità senza tempo di una t-shirt classica con un intricato dettaglio ricamato che porta la maglia a un livello completamente nuovo. È morbido e resistente, quindi preparati ad avere una nuova maglietta preferita!</p>",
+      "fr": "<p>Ce t-shirt est un incontournable de votre garde-robe, combinant la coupe intemporelle d'un t-shirt classique avec un détail brodé complexe qui amène la chemise à un tout autre niveau. Il est doux et résistant, alors préparez-vous à avoir un nouveau t-shirt préféré !</p>"
+    },
+    "image": "/assets/products/t-shirt.webp",
+    "price": 160.12,
+    "categoryId": 6,
+    "meta": {
+      "title": "T-Shirt",
+      "description": {
+        "en": "Your perfect item for everyday use and walks in the forest.",
+        "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
+        "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+      },
+      "keywords": "t-shirt keywords",
+      "robots": "all"
+    }
+  },
+  {
+    "id": 2,
+    "slug": {
+      "en": "unisex-skinny-joggers",
+      "it": "pantaloni-skinny-da-jogging-unisex",
+      "fr": "jogging-skinny-unisexe"
+    },
+    "title": {
+      "en": "Unisex Skinny Joggers",
+      "it": "Pantaloni skinny da jogging unisex",
+      "fr": "Jogging skinny unisexe"
+    },
+    "abstract": {
+      "en": "Your perfect item for everyday use and walks in the forest.",
+      "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
+      "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+    },
+    "description": {
+      "en": "<p>It looks like you found your next favorite workout sweatpants—the slim fit joggers are light and breathable, making them perfect for sports. Or if you feel like lounging on the couch, these soft joggers are just what you need. • 65% polyester, 35% cotton • Fabric weight: 250 g/m² (10.5 oz/y²) • Elastic waistband with a self-colored flat cord • Brushed metal eyelets for the cord • Double layer ribbed ankle cuffs • Side pockets with double layered ribbed hem • Back patch pocket • Slim fit (women may want to order a size down)</p>",
+      "it": "<p>Sembra che tu abbia trovato i tuoi prossimi pantaloni della tuta da allenamento preferiti: i jogger slim fit sono leggeri e traspiranti, il che li rende perfetti per lo sport. O se hai voglia di sdraiarti sul divano, questi morbidi jogger sono proprio quello di cui hai bisogno. • 65% poliestere, 35% cotone • Peso del tessuto: 250 g/m² (10.5 oz/y²) • Cintura elastica con cordino piatto in tinta • Occhielli in metallo spazzolato per il cordino • Polsini alla caviglia a costine doppio strato • Tasche laterali con doppio orlo a costine a strati • Tasca applicata sul retro • Vestibilità slim (le donne potrebbero voler ordinare una taglia in meno)</p>",
+      "fr": "<p>Il semble que vous ayez trouvé votre prochain pantalon de survêtement d'entraînement préféré : les pantalons de jogging slim sont légers et respirants, ce qui les rend parfaits pour le sport. Ou si vous avez envie de vous prélasser sur le canapé, ces pantalons de jogging doux sont exactement ce dont vous avez besoin. • 65 % polyester, 35 % coton • Poids du tissu : 250 g/m² (10,5 oz/y²) • Taille élastique avec un cordon plat de même couleur • Œillets en métal brossé pour le cordon • Chevilles côtelées à double épaisseur • Poches latérales avec double ourlet côtelé superposé • Poche arrière plaquée • Coupe ajustée (les femmes peuvent vouloir commander une taille en dessous)</p>"
+    },
+    "image": "/assets/products/trouser.webp",
+    "price": 160.12,
+    "categoryId": 7,
+    "meta": {
+      "title": {
+        "en": "Unisex Skinny Joggers",
+        "it": "Pantaloni skinny da jogging unisex",
+        "fr": "Jogging skinny unisexe"
+      },
+      "description": {
+        "en": "Your perfect item for everyday use and walks in the forest.",
+        "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
+        "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+      },
+      "keywords": "unisex skinny joggers keywords",
+      "robots": "all"
+    }
+  },
+  {
+    "id": 3,
+    "slug": {
+      "en": "lightweight-jacket",
+      "it": "giacca-leggera",
+      "fr": "veste-legere"
+    },
+    "title": {
+      "en": "Lightweight Jacket",
+      "it": "Giacca Leggera",
+      "fr": "Veste légère"
+    },
+    "abstract": {
+      "en": "Your perfect item for everyday use and walks in the forest.",
+      "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
+      "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+    },
+    "description": {
+      "en": "<p>Add a little zing to your winter wardrobe with this vibrant Winter-breaker Jacket. With a brushed fleece inside, and a relaxed unisex fit, this jacket is just the stuff of the dreams, so be quick to grab yourself one!     Long sleeve ripstop jacket colorblocked in black. Rough pattern in obsidian black and brown printed throughout. Printed graphic in white throughout. Logo-woven webbing trim in white and black throughout. Bungee-style drawstring at hood featuring rubberized logo hardware. Zip closure at front. Rubberized logo appliqué at chest. Welt pockets and textile logo patch in orange at waist. Elasticized cuffs. Partially lined. Black hardware.</p>",
+      "it": "<p>Aggiungi un po' di brio al tuo guardaroba invernale con questa vivace giacca invernale. Con un pile spazzolato all'interno e una vestibilità unisex rilassata, questa giacca è solo la roba dei sogni, quindi affrettati a prenderne una! Giacca in ripstop a maniche lunghe colorblock in nero. Motivo grezzo in ossidiana nero e marrone stampato ovunque. Grafica stampata in bianco dappertutto. Finiture in tessuto con logo in bianco e nero. Coulisse in stile bungee sul cappuccio con logo in gomma. Chiusura con zip sul davanti. Logo gommato applicato sul petto. Tasche a filetto e patch logo in tessuto in arancione in vita. Polsini elasticizzati. Parzialmente foderato. Hardware nero.</p>",
+      "fr": "<p>Ajoutez un peu de piquant à votre garde-robe d'hiver avec cette éclatante veste Winter-breaker. Avec un intérieur en polaire brossée et une coupe unisexe décontractée, cette veste est tout ce dont vous rêvez, alors n'hésitez pas à vous en procurer une ! Blouson à manches longues anti-déchirures contrasté noir. Motif rugueux en noir obsidienne et marron imprimé sur l'ensemble. Image blanche imprimée sur l'ensemble. Garniture nattée à logo tissée blanche et noire sur l'ensemble. Cordon coulissant de style élastique à la capuche à ferrure à logo caoutchoutée. Fermeture zippée à l'avant. Appliqué à logo caoutchouté à la poitrine. Poches passepoilées et écusson à logo en tissu orange à la taille. Poignets élastiqués. Partiellement doublé. Quincaillerie noire.</p>"
+    },
+    "image": "/assets/products/jacket.webp",
+    "price": 249.99,
+    "categoryId": 8,
+    "meta": {
+      "title": {
+        "en": "Lightweight Jacket",
+        "it": "Giacca Leggera",
+        "fr": "Veste légère"
+      },
+      "description": {
+        "en": "Your perfect item for everyday use and walks in the forest.",
+        "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
+        "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+      },
+      "keywords": "lightweight jacket keywords",
+      "robots": "all"
+    }
+  },
+  {
+    "id": 4,
+    "slug": {
+      "en": "black-beanie",
+      "it": "berretto-nero",
+      "fr": "bonnet-noir"
+    },
+    "title": {
+      "en": "Black Beanie",
+      "it": "Berretto Nero",
+      "fr": "Bonnet Noir"
+    },
+    "abstract": {
+      "en": "Your perfect item for everyday use and walks in the forest.",
+      "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
+      "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+    },
+    "description": {
+      "en": "<p>The Next.js beanie has arrived! This embroidered beauty has a snug fit that ensures you're going to feel cozy and warm whatever you're doing.</p><ol><li>60% cotton, 40% acrylic</li><li>Breathable cotton blend</li><li>Form-fitting shape</li><li>One size fits most</li></ol>",
+      "it": "<p>Il berretto Next.js è arrivato! Questa bellezza ricamata ha una vestibilità aderente che ti assicura di sentirti comodo e caldo qualunque cosa tu stia facendo.</p><ol><li>60% cotone, 40% acrilico</li><li>Cotone traspirante misto</li><li>Forma aderente</li><li>Taglia unica</li></ol>",
+      "fr": "<p>Le bonnet Next.js est arrivé ! Cette beauté brodée a une coupe ajustée qui garantit que vous vous sentirez confortable et au chaud quoi que vous fassiez.</p> <ol> <li>60 % coton, 40 % acrylique</li> <li>Coton respirant blend</li><li>Forme ajustée</li><li>Taille unique</li></ol>"
+    },
+    "image": "/assets/products/hat.webp",
+    "price": 160.12,
+    "categoryId": 9,
+    "meta": {
+      "title": {
+        "en": "Black Beanie",
+        "it": "Berretto Nero",
+        "fr": "Bonnet Noir"
+      },
+      "description": {
+        "en": "Your perfect item for everyday use and walks in the forest.",
+        "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
+        "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+      },
+      "keywords": "black beanie keywords",
+      "robots": "all"
+    }
+  }
+]

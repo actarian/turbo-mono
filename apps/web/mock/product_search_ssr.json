@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "slug": {
+      "en": "product-search-ssr",
+      "it": "ricerca-prodotti-ssr",
+      "fr": "recherche-produit-ssr"
+    },
+    "title": {
+      "en": "Product search SSR",
+      "it": "Ricerca prodotti SSR",
+      "fr": "Recherche produit SSR"
+    },
+    "abstract": {
+      "en": "Easily find the porcelain stoneware tiles and wall tiles that meet your needs.",
+      "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni.",
+      "fr": "Trouvez facilement les carreaux et revêtements muraux en grès cérame qui répondent à vos besoins."
+    },
+    "description": {
+      "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
+      "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali",
+      "fr": "Tradition et passion entièrement italiennes : plus de 30 ans d'histoire dans l'art ancien de la fabrication de lunettes"
+    },
+    "categoryId": 11,
+    "meta": {
+      "title": {
+        "en": "Product search",
+        "it": "Ricerca prodotti",
+        "fr": "Recherche produit"
+      },
+      "description": {
+        "en": "Easily find the porcelain stoneware tiles and wall tiles that meet your needs.",
+        "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni.",
+        "fr": "Trouvez facilement les carreaux et revêtements muraux en grès cérame qui répondent à vos besoins."
+      },
+      "keywords": "product search keywords",
+      "robots": "all"
+    }
+  }
+]

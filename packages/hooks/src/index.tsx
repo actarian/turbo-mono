@@ -13,7 +13,7 @@ export { useDrawer } from './useDrawer/useDrawer';
 export { useElementSize } from './useElementSize/useElementSize';
 export { useEventListener } from './useEventListener/useEventListener';
 export { Filter, FilterMode } from './useFilters/filter';
-export type { FilterParams, FilterValues, IFilter, IFilterOption } from './useFilters/filter';
+export type { FilterParams, FilterValues, IFeatureType, IFilter, IFilterOption } from './useFilters/filter';
 export { filtersToParams, getFilteredItems, getFilters, setFilters } from './useFilters/filter.service';
 export { useFilters } from './useFilters/useFilters';
 export * from './useGeolocation/geolocation.service';

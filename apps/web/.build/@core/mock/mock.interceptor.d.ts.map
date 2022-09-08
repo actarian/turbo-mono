@@ -1,0 +1,1 @@
+{"version":3,"file":"mock.interceptor.d.ts","sourceRoot":"","sources":["../../../src/@core/mock/mock.interceptor.ts"],"names":[],"mappings":"AAEA,OAAO,KAAK,EAAE,cAAc,EAAE,WAAW,EAAE,MAAM,aAAa,CAAC;AAC/D,OAAO,EAAE,YAAY,EAAE,MAAM,aAAa,CAAC;AAE3C,wBAAsB,eAAe,CAAC,OAAO,EAAE,WAAW,EAAE,IAAI,EAAE,cAAc,qCAW/E"}

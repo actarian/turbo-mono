@@ -1,0 +1,35 @@
+[
+  {
+    "id": "header",
+    "items": [
+      {
+        "name": "home",
+        "href": "/ww/en"
+      },
+      {
+        "name": "About",
+        "href": "/ww/en/about"
+      },
+      {
+        "name": "Products",
+        "href": "/ww/en/products"
+      },
+      {
+        "name": "T-Shirt",
+        "href": "/ww/en/products/apparel/menswear/t-shirts/t-shirt"
+      },
+      {
+        "name": "Unisex Skinny Joggers",
+        "href": "/ww/en/products/apparel/menswear/trousers/unisex-skinny-joggers"
+      },
+      {
+        "name": "Lightweight Jacket",
+        "href": "/ww/en/products/apparel/menswear/jackets/lightweight-jacket"
+      },
+      {
+        "name": "Black Beanie",
+        "href": "/ww/en/products/apparel/menswear/hats/black-beanie"
+      }
+    ]
+  }
+]
