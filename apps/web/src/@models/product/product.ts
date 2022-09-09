@@ -1,4 +1,4 @@
-import type { IEntity, IEquatable } from '@core';
+import type { IEntity, IEquatable } from '@websolute/core';
 
 export interface IProduct extends IEntity {
   // id: IEquatable;

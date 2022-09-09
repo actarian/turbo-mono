@@ -1,5 +1,5 @@
 
-import { IEquatable, ILocalizedString } from '@core';
+import { IEquatable, ILocalizedString } from '@websolute/core';
 
 export type IProduct_search_ssr = {
   id: IEquatable;

@@ -1,7 +1,5 @@
-import type { FindParams, IEquatable } from '@core';
-import { getStore } from '@core/store/store.service';
-import { awaitAll } from '@core/utils';
-import { decorateHref } from '@models/route/route.service';
+import type { FindParams, IEquatable } from '@websolute/core';
+import { awaitAll, decorateHref, getStore } from '@websolute/core';
 import type { IProduct } from './product';
 
 export async function getProducts(params: FindParams = {}): Promise<IProduct[]> {

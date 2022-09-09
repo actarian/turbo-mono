@@ -1,5 +1,5 @@
-import type { FindParams } from '@core';
-import { getStore } from '@core/store/store.service';
+import type { FindParams } from '@websolute/core';
+import { getStore } from '@websolute/core';
 // import { awaitAll } from '@core/utils';
 // import { decorateHref } from '@models/route/route.service';
 import type { ITile } from './tile';
@@ -8,7 +8,7 @@ export async function getTiles(params: FindParams = {}): Promise<ITile[]> {
   const store = await getStore();
   const items = await store.tile.findMany(params);
   // console.log('getTiles', items.length);
-  return items;
+  return items as ITile[];
   // return await awaitAll(items, async (p) => await decorateHref(p, params.market, params.locale));
 }
 

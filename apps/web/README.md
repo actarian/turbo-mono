@@ -28,3 +28,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=turborepo-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+<!--
+"scripts": {
+    "mock:build": "tsc --project ./tsconfig.server.json",
+    "mock:run": "node .build/@core/mock/mock.build.js mock",
+    "dev:mock": "run-s mock:*",
+    "dev:next": "next dev",
+    "dev": "run-p dev:*",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
+-->

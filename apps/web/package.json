@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "mock:build": "tsc --project ./tsconfig.server.json",
-    "mock:run": "node .build/@core/mock/mock.build.js mock",
+    "mock:run": "node .build/.scripts/mock.js mock",
     "dev:mock": "run-s mock:*",
     "dev:next": "next dev",
     "dev": "run-p dev:*",

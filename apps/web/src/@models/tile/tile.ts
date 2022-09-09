@@ -1,4 +1,4 @@
-import type { IEquatable } from '@core';
+import type { IEquatable } from '@websolute/core';
 
 export type ITile = {
   id: IEquatable;

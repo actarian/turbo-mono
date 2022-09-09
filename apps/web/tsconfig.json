@@ -1,23 +1,17 @@
 {
   "extends": "@websolute/tsconfig/tsnext.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", ".scripts/mock.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "ui/components": ["../../packages/ui/src/components/index"],
-      "ui/core": ["../../packages/ui/src/core/index"],
-      "ui/forms": ["../../packages/ui/src/forms/index"],
-      "ui/hooks": ["../../packages/ui/src/hooks/index"],
-      "ui/icons": ["../../packages/ui/src/icons/index"],
-      "ui/sections": ["../../packages/ui/src/sections/index"],
-      "ui/styles": ["../../packages/ui/src/styles/index"],
-
+      "@components*": ["src/@components*"],
+      "@components": ["src/@components/index"],
       "@config*": ["src/@config*"],
       "@config": ["src/@config/index"],
-      "@core*": ["src/@core*"],
-      "@core": ["src/@core/index"],
+      "@hooks*": ["src/@hooks*"],
+      "@hooks": ["src/@hooks/index"],
       "@models*": ["src/@models*"],
       "@models": ["src/@models/index"],
     },

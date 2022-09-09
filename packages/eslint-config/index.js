@@ -7,6 +7,7 @@ module.exports = {
     "prettier", // Add "prettier" last. This will turn off eslint rules conflicting with prettier. This is not what will format our code.
   ],
   rules: {
+    "@next/next/no-img-element": "off",
     "@next/next/no-html-link-for-pages": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-inferrable-types": "off",

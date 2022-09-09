@@ -1,5 +1,5 @@
 
-import { IEquatable, ILocalizedString } from '@core';
+import { IEquatable, ILocalizedString } from '@websolute/core';
 
 export type ITile = {
   id: IEquatable;

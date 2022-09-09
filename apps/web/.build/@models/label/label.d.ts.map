@@ -1,1 +1,0 @@
-{"version":3,"file":"label.d.ts","sourceRoot":"","sources":["../../../src/@models/label/label.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,UAAU,EAAE,gBAAgB,EAAE,MAAM,OAAO,CAAC;AAEnE,MAAM,WAAW,MAAO,SAAQ,OAAO;IACrC,EAAE,EAAE,UAAU,CAAC;IAEf,IAAI,CAAC,EAAE,MAAM,GAAG,gBAAgB,CAAC;CAClC"}

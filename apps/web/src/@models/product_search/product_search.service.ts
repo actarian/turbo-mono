@@ -1,5 +1,5 @@
-import type { IEquatable } from '@core';
 import type { ITile } from '@models';
+import type { IEquatable } from '@websolute/core';
 
 export function filterProductItem(key: string, item: ITile, value: IEquatable) {
   switch (key) {

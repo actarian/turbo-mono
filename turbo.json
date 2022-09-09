@@ -27,6 +27,14 @@
     }
   },
   "globalDependencies": [
+    "$NODE_ENV",
+    "$STORE_STRATEGY",
+    "$STORE_URL",
+    "$STORE_API",
+    "$STORE_BEARER",
+    "$HOOKS_SECRET",
+    "$NEXT_PUBLIC_URL",
+    "$NEXT_PUBLIC_API",
     "$NEXT_PUBLIC_GOOGLE_MAP_API_KEY"
   ]
 }

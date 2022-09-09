@@ -6,6 +6,7 @@
   "files": [
     "tsbase.json",
     "tsnext.json",
+    "tsnode.json",
     "tsreact.json"
   ]
 }

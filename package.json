@@ -14,13 +14,6 @@
     "start": "turbo run start --scope=web",
     "storybook": "turbo run dev --parallel --filter=storybook"
   },
-  "_moduleAliases": {
-    "@root": "apps/web/.build",
-    "@config": "apps/web/.build/@config",
-    "@core": "apps/web/.build/@core",
-    "@models": "apps/web/.build/@models",
-    "src": "apps/web/.build"
-  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

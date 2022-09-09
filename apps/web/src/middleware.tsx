@@ -1,6 +1,6 @@
 
-import { isApiRequest, isStaticRequest, mockInterceptor } from '@core';
-import { routeInterceptor } from '@models';
+import { PAGES } from '@config';
+import { isApiRequest, isStaticRequest, mockInterceptor, routeInterceptor } from '@websolute/core';
 import type { NextFetchEvent, NextRequest } from 'next/server';
 
 export async function middleware(request: NextRequest, next: NextFetchEvent) {
@@ -22,5 +22,5 @@ export async function middleware(request: NextRequest, next: NextFetchEvent) {
   /*
     * Resolving CMS routes
   */
-  return await routeInterceptor(request, next);
+  return await routeInterceptor(request, next, PAGES);
 }
