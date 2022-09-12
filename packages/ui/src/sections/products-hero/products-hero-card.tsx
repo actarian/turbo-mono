@@ -36,18 +36,4 @@ const ProductsHeroCard: React.FC<ProductsHeroCardProps> = ({ item, ...props }: P
   )
 }
 
-export const ProductsHeroCardDefaults = {
-  item: {
-    id: 1,
-    href: '/category',
-    title: 'New Arrivals',
-    media: {
-      type: MediaType.Image,
-      src: 'https://picsum.photos/960/960?u=31',
-    },
-  }
-};
-
-ProductsHeroCard.defaultProps = ProductsHeroCardDefaults;
-
 export default ProductsHeroCard;

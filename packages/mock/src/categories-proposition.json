@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "href": "/category",
+      "title": "New Arrivals",
+      "media": {
+        "type": "image",
+        "src": "https://unsplash.com/photos/pONwcn4IcVU/download?force=true&w=960"
+      }
+    },
+    {
+      "id": 2,
+      "href": "/category",
+      "title": "Accessories",
+      "media": {
+        "type": "image",
+        "src": "https://unsplash.com/photos/1Pgq9ZpIatI/download?force=true&w=960"
+      }
+    },
+    {
+      "id": 3,
+      "href": "/category",
+      "title": "Workspace",
+      "media": {
+        "type": "image",
+        "src": "https://unsplash.com/photos/RvPDe41lYBA/download?force=true&w=960"
+      }
+    }
+  ]
+}

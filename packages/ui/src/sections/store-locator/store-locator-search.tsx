@@ -380,22 +380,6 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   );
 }
 
-export const StoreLocatorMapDefaults = {
-  locale: 'it',
-  country: {
-    id: 'it',
-    name: 'Italy',
-  },
-  item: {
-    category: 'Stores',
-    title: 'Search for dealers',
-    abstract: `<p>Hexagon is present through a network of authorised points of sale and distributors.</p>
-    <p>We therefore advise consumers to purchase only from these points of sale, which will be able to guarantee the originality and quality of the products as well as excellent design, sales and after-sales service.</p>`,
-  },
-};
-
-StoreLocatorSearch.defaultProps = StoreLocatorMapDefaults;
-
 export default StoreLocatorSearch;
 
 export interface StoreLocatorItem extends IGeoLocalized {

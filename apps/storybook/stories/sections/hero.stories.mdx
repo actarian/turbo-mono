@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Hero, HeroProps } from '@websolute/ui';
+import { HeroDefaults } from '@websolute/mock';
 
 <Meta
   title="Sections / Hero"
@@ -25,6 +26,6 @@ A basic example of `Hero`.
 
 <Canvas>
   <Story name="Hero">
-    <Hero></Hero>
+    <Hero item={HeroDefaults.item} />
   </Story>
 </Canvas>

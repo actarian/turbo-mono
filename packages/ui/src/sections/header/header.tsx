@@ -1,11 +1,13 @@
-import { useDrawer, useModal, useScroll } from '@websolute/hooks';
+import { useDrawer, useLayout, useModal, useScroll } from '@websolute/hooks';
 import { ArrowRight, Hexagon, Menu, ShoppingCart, User } from '@websolute/icons';
-import { Button, Container, Flex, Modal, Nav, NavLink, Popover, Text } from '../../components';
+import { Button, Container, Flex, Modal, Nav, NavLink, Text } from '../../components';
 import { ComponentProps } from '../../components/types';
 import { CartMini } from '../../sections';
 import AuthDrawer from '../../sections/auth/auth-drawer';
 
+import { IRouteLink } from '@websolute/core';
 import styled, { css } from 'styled-components';
+import MarketsAndLanguagesDrawer from '../markets-and-languages/markets-and-languages-drawer';
 
 type ContainerProps = {
   fixed?: boolean;
@@ -49,6 +51,7 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
 type Props = {
   fixed?: boolean;
   sticky?: boolean;
+  menu?: IRouteLink[];
 }
 
 export type HeaderProps = ComponentProps<Props, HTMLDivElement>;
@@ -65,10 +68,12 @@ const SubMenu = () => (
 )
 
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
+  const layout = useLayout();
   const scroll = useScroll();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   const [modal, onOpenModal, onCloseModal] = useModal();
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
+  // console.log('layout', layout);
   return (
     <>
       <HeaderContainer {...containerProps}>
@@ -83,24 +88,24 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
               </NavLink>
             </Flex>
             <Flex flex="1" justifyContent="center">
-              <Nav.Row gap="3rem" display="none" displaySm="flex">
-                <NavLink href="/products">
-                  <Button variant="nav" as="a">Products</Button>
-                </NavLink>
-                <Popover content={SubMenu}>
-                  <Button variant="nav" as="a">Magazine</Button>
-                </Popover>
-                <NavLink href="/store-locator">
-                  <Button variant="nav" as="a">Stores</Button>
-                </NavLink>
-                <NavLink href="/contacts">
-                  <Button variant="nav" as="a">Contacts</Button>
-                </NavLink>
-              </Nav.Row>
+              {props.menu && <Nav.Row gap="3rem" display="none" displaySm="flex">
+                {props.menu.map((x, i) => (
+                  <NavLink key={i} href={x.href || ''}>
+                    <Button variant="nav" as="a">{x.title}</Button>
+                  </NavLink>
+                ))}
+              </Nav.Row>}
             </Flex>
             <Flex gap="1rem">
-              <Button display='none' displaySm='block' onClick={() => onOpenDrawer('auth')}><User width="2rem" height="2rem" /></Button>
-              <Button onClick={() => onOpenDrawer('cart')}><ShoppingCart width="2rem" height="2rem" /></Button>
+              <Button display='none' displaySm='block' onClick={() => onOpenDrawer('auth')}>
+                <User width="2rem" height="2rem" />
+              </Button>
+              <Button onClick={() => onOpenDrawer('cart')}>
+                <ShoppingCart width="2rem" height="2rem" />
+              </Button>
+              <Button display='none' displaySm='flex' onClick={() => onOpenDrawer('markets-and-languages')}>
+                <Text marginRight="0.5rem">{layout.locale.toUpperCase()}</Text> <Menu />
+              </Button>
               <NavLink href="#menu">
                 <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" />
                 </Button>
@@ -125,6 +130,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
 
       <AuthDrawer visible={drawer == 'auth'} onClose={onCloseDrawer} />
       <CartMini visible={drawer == 'cart'} onClose={onCloseDrawer} />
+      <MarketsAndLanguagesDrawer visible={drawer == 'markets-and-languages'} onClose={onCloseDrawer} />
     </>
   );
 }

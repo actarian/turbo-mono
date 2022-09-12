@@ -1,6 +1,6 @@
 import { ArrowRight } from '@websolute/icons';
 import Link from 'next/link';
-import { Button, Container, Flex, Grid, MediaType, Section, Text } from '../../components';
+import { Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { ComponentProps } from '../../components/types';
 import CategoriesPropositionCard, { CategoriesPropositionItem } from './categories-proposition-card';
 
@@ -35,35 +35,5 @@ const CategoriesProposition: React.FC<CategoriesPropositionProps> = ({ items }: 
     </Section>
   )
 }
-
-export const CategoriesPropositionDefaults = {
-  items: [{
-    id: 1,
-    href: '/category',
-    title: 'New Arrivals',
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/pONwcn4IcVU/download?force=true&w=960',
-    },
-  }, {
-    id: 2,
-    href: '/category',
-    title: 'Accessories',
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/1Pgq9ZpIatI/download?force=true&w=960',
-    },
-  }, {
-    id: 3,
-    href: '/category',
-    title: 'Workspace',
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/RvPDe41lYBA/download?force=true&w=960',
-    },
-  }]
-};
-
-CategoriesProposition.defaultProps = CategoriesPropositionDefaults;
 
 export default CategoriesProposition;

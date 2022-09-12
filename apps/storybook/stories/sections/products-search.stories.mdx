@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ProductsSearch, ProductsSearchCard, ProductsSearchFilters, ProductsSearchFiltersModal } from '@websolute/ui';
+import { ProductsSearchDefaults, ProductsSearchCardDefaults } from '@websolute/mock';
 
 <Meta
   title="Sections / ProductsSearch"
@@ -25,13 +26,13 @@ A basic example of `ProductsSearch`.
 
 <Canvas>
   <Story name="ProductsSearch">
-    <ProductsSearch />
+    <ProductsSearch items={ProductsSearchDefaults.items} />
   </Story>
 </Canvas>
 
 <Canvas>
   <Story name="ProductsSearchCard">
-    <ProductsSearchCard maxWidth="540px" margin="3rem" />
+    <ProductsSearchCard item={ProductsSearchCardDefaults.item} maxWidth="540px" margin="3rem" />
   </Story>
 </Canvas>
 

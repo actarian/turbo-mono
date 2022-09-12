@@ -9,6 +9,8 @@ const path = require('path');
 const pluralize = require('pluralize');
 const fs = require('fs');
 
+const EXPORT_TYPES = false;
+
 if (process.env && process.env.NODE_ENV) {
   dotenv.config({ path: '.env.' + process.env.NODE_ENV });
 } else {
@@ -167,7 +169,10 @@ async function buildStore(jsons: { name: string, data: IEntity[] }[], PAGES: { [
   store['route'] = routeService;
   // Object.keys(store).forEach(key => console.log((store[key] as MockService<any>).collection));
   collections = Object.keys(store).map(key => store[key]);
-  await awaitAll(collections, async (c) => await addType(c.items, c, collections));
+  if (EXPORT_TYPES) {
+    // types generator disabled !!!
+    await awaitAll(collections, async (c) => await addType(c.items, c, collections));
+  }
   return store;
 }
 

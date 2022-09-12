@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ProductsProposition, ProductsPropositionCard } from '@websolute/ui';
+import { ProductsPropositionDefaults, ProductsPropositionCardDefaults } from '@websolute/mock';
 
 <Meta
   title="Sections / ProductsProposition"
@@ -25,9 +26,9 @@ A basic example of `ProductsProposition`.
 
 <Canvas>
   <Story name="ProductsProposition">
-    <ProductsProposition />
+    <ProductsProposition items={ProductsPropositionDefaults.items} />
   </Story>
   <Story name="ProductPropositionCard">
-    <ProductsPropositionCard maxWidth="540px" margin="3rem" />
+    <ProductsPropositionCard item={ProductsPropositionCardDefaults.item} maxWidth="540px" margin="3rem" />
   </Story>
 </Canvas>

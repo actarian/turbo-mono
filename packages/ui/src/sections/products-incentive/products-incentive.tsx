@@ -45,9 +45,4 @@ const ProductsIncentive: React.FC<ProductsIncentiveProps> = ({ }: ProductsIncent
   )
 }
 
-export const ProductsIncentiveDefaults = {
-};
-
-ProductsIncentive.defaultProps = ProductsIncentiveDefaults;
-
 export default ProductsIncentive;

@@ -36,18 +36,4 @@ const CategoriesPropositionCard: React.FC<CategoriesPropositionCardProps> = ({ i
   )
 }
 
-export const CategoriesPropositionCardDefaults = {
-  item: {
-    id: 1,
-    href: '/category',
-    title: 'New Arrivals',
-    media: {
-      type: MediaType.Image,
-      src: 'https://picsum.photos/960/960?u=31',
-    },
-  }
-};
-
-CategoriesPropositionCard.defaultProps = CategoriesPropositionCardDefaults;
-
 export default CategoriesPropositionCard;

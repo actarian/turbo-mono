@@ -63,24 +63,4 @@ const Split: React.FC<SplitProps> = ({ item }: SplitProps) => {
   )
 }
 
-export const SplitDefaults = {
-  item: {
-    id: 1,
-    href: '#support',
-    caption: 'Award winning support',
-    title: 'We\'re here to help',
-    abstract: 'And even if he\'s a lazy man, and the Dude was certainly that quite possibly the laziest in Los Angeles County.',
-    link: {
-      href: '#support',
-      label: 'Visit the help center'
-    },
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/ePpaQC2c1xA/download?force=true&w=1920',
-    }
-  }
-};
-
-Split.defaultProps = SplitDefaults;
-
 export default Split;

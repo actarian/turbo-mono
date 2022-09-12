@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { BlogProposition } from '@websolute/ui';
+import { BlogPropositionDefaults } from '@websolute/mock';
 
 <Meta
   title="Sections / BlogProposition"
@@ -24,6 +25,6 @@ A basic example of `BlogProposition`.
 
 <Canvas>
   <Story name="BlogProposition">
-    <BlogProposition />
+    <BlogProposition item={BlogPropositionDefaults.item} />
   </Story>
 </Canvas>

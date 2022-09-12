@@ -1,15 +1,15 @@
 
 import { Breadcrumbs } from '@components';
 import { asStaticProps, getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/core';
+import { BlogMoreDefaults, BlogPropositionDefaults, CategoriesPropositionDefaults, ProductsPropositionDefaults, SplitDefaults, SwiperHeroDefaults } from '@websolute/mock';
 import {
-  BlogMore, BlogMoreDefaults, BlogProposition, CategoriesProposition, CategoriesPropositionDefaults,
-  Container, Flex, Footer, Header, Layout, Media, Meta, Page, ProductsProposition, ProductsPropositionDefaults,
-  Proposition, Section, Split, SplitDefaults, SwiperHero, SwiperHeroDefaults, Text
+  BlogMore, BlogProposition, CategoriesProposition, Container, Flex, Footer, Header, Layout,
+  Media, Meta, Page, ProductsProposition, Proposition, Section, Split, SwiperHero, Text
 } from '@websolute/ui';
 import { GetStaticPropsContext } from 'next/types';
 
 export default function Homepage({ layout, page, params }: PageProps) {
-  // console.log('Homepage.params', params);
+  console.log('Homepage.layout', layout);
   // console.log('Homepage.page', page);
 
   /*
@@ -25,7 +25,7 @@ export default function Homepage({ layout, page, params }: PageProps) {
         <Meta />
         <Page>
 
-          <Header fixed />
+          <Header fixed menu={layout.tree ? layout.tree.items : []} />
 
           <SwiperHero items={SwiperHeroDefaults.items} />
 
@@ -33,7 +33,7 @@ export default function Homepage({ layout, page, params }: PageProps) {
 
           <Text size="1">{page.title}</Text>
 
-          <BlogProposition />
+          <BlogProposition item={BlogPropositionDefaults.item} />
 
           <BlogMore items={BlogMoreDefaults.items} />
 

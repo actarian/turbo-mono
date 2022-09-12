@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo } from 'react';
+import React, { forwardRef, ReactElement, useMemo } from 'react';
 import styled, { css } from 'styled-components';
 import { ComponentCssResponsiveProps, Variant, Variants } from '../../components/types';
 import { getCssResponsive, getVariant } from '../../components/utils';
@@ -90,12 +90,10 @@ const StyledButtonGroup = styled.div<ButtonGroupProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const ButtonGroup = React.forwardRef<Element, ButtonGroupProps>(({ children, ...props }: ButtonGroupProps, ref?: React.Ref<Element>) => {
-
+const ButtonGroup = forwardRef<Element, ButtonGroupProps>(({ children, ...props }: ButtonGroupProps, ref?: React.Ref<Element>) => {
   const mappedChildren = useMemo(() => React.Children.map(children as any, (child: ReactElement) =>
     React.cloneElement(child, child.props ? { ...child.props, className: `${child.props.className} btn` } : null)
   ), [children]);
-
   return (<StyledButtonGroup {...props} ref={ref}>{mappedChildren}</StyledButtonGroup>);
 });
 

@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { CategoriesProposition, CategoriesPropositionCard } from '@websolute/ui';
+import { CategoriesPropositionDefaults, CategoriesPropositionCardDefaults } from '@websolute/mock';
 
 <Meta
   title="Sections / CategoriesProposition"
@@ -25,12 +26,12 @@ A basic example of `CategoriesProposition`.
 
 <Canvas>
   <Story name="CategoriesProposition">
-    <CategoriesProposition />
+    <CategoriesProposition items={CategoriesPropositionDefaults.items} />
   </Story>
 </Canvas>
 
 <Canvas>
   <Story name="CategoriesPropositionCard">
-    <CategoriesPropositionCard maxWidth="540px" margin="3rem" />
+    <CategoriesPropositionCard item={CategoriesPropositionCardDefaults.item} maxWidth="540px" margin="3rem" />
   </Story>
 </Canvas>

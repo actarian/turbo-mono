@@ -46,10 +46,3 @@ export type ApplicationProps = {
     [key: string]: any
   };
 }
-
-// export default Application;
-
-/*
-  <StyleSheetManager disableVendorPrefixes>
-  </StyleSheetManager>
-*/

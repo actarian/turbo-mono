@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Split } from '@websolute/ui';
+import { SplitDefaults } from '@websolute/mock';
 
 <Meta
   title="Sections / Split"
@@ -24,6 +25,6 @@ A basic example of `Split`.
 
 <Canvas>
   <Story name="Split">
-    <Split />
+    <Split item={SplitDefaults.item} />
   </Story>
 </Canvas>

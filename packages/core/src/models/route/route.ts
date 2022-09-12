@@ -13,7 +13,7 @@ export interface IRouteLink {
   href?: string;
   title?: string;
   categoryId?: IEquatable;
-  items: IRouteLink[];
+  items?: IRouteLink[];
 }
 
 export interface IRouteParams {

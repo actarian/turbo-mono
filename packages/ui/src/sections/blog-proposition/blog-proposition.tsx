@@ -1,33 +1,60 @@
 import { ArrowRight } from '@websolute/icons';
 import Link from 'next/link';
-import { Button, Container, Flex, Grid, Media, Section, Text } from '../../components';
+import { Button, Container, Flex, Grid, Media, MediaType, Section, Text } from '../../components';
 import { ComponentProps } from '../../components/types';
 
 type Props = {
+  item: BlogPropositionItem
+}
+
+export type BlogPropositionItem = {
+  id: number;
+  href: string;
+  title: string;
+  abstract: string;
+  date: string | Date;
+  author: {
+    fullName: string;
+    media: {
+      type: MediaType;
+      src: string;
+    };
+  };
 }
 
 export type BlogPropositionProps = ComponentProps<Props, HTMLDivElement>;
 
-const BlogProposition: React.FC<BlogPropositionProps> = (props: BlogPropositionProps) => {
+const BlogProposition: React.FC<BlogPropositionProps> = ({ item, ...props }: BlogPropositionProps) => {
+  const getDate = (value: Date | string): string => {
+    const date = value instanceof Date ? value : new Date(value);
+    const options: Intl.DateTimeFormatOptions = {
+      // weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    };
+    const formattedValue = new Intl.DateTimeFormat('en-US', options).format(date);
+    return formattedValue;
+  };
   return (
     <Section padding="3rem 0">
       <Container>
         <Grid.Row>
           <Grid md={6}>
-            <Text size="4" marginBottom="1rem">There is no strife, no prejudice, no national conflict in outer space as yet.</Text>
-            <Text size="8" marginBottom="1rem">March 8, 2020</Text>
+            <Text size="4" marginBottom="1rem">{item.title}</Text>
+            <Text size="8" marginBottom="1rem">{getDate(item.date)}</Text>
           </Grid>
           <Grid md={6}>
-            <Text size="8" maxWidth="60ch">Its hazards are hostile to us all. Its conquest deserves the best of all mankind, and its opportunity for peaceful cooperation many never come again. But why, some say, the moon? Why choose this as our goal? And they may well ask why climb the highest mountain?</Text>
+            <Text size="8" maxWidth="60ch">{item.abstract}</Text>
             <Flex.Row justifyContent="space-between" marginTop="1rem">
               <Flex>
                 <Media width="3rem" height="3rem" marginRight="0.75rem" circle>
-                  <img src="https://i.pravatar.cc/128?u=1" />
+                  <img src={item.author.media.src} />
                 </Media>
-                <Text size="8" fontWeight="700">Tim Neutkens</Text>
+                <Text size="8" fontWeight="700">{item.author.fullName}</Text>
               </Flex>
               {false &&
-                <Link href="#blog">
+                <Link href={item.href}>
                   <Button variant="link" as="a"><Text>Read more</Text> <ArrowRight /></Button>
                 </Link>
               }

@@ -1,0 +1,11 @@
+{
+  "item": {
+    "id": 1,
+    "href": "/category",
+    "title": "New Arrivals",
+    "media": {
+      "type": "image",
+      "src": "https://unsplash.com/photos/RvPDe41lYBA/download?force=true&w=1600"
+    }
+  }
+}

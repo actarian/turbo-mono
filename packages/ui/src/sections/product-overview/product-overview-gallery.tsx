@@ -57,22 +57,4 @@ const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, ...prop
   )
 }
 
-export const ProductOverviewGalleryDefaults = {
-  media: [{
-    type: MediaType.Image,
-    src: '/product-04.jpg',
-  }, {
-    type: MediaType.Image,
-    src: '/product-01.jpg',
-  }, {
-    type: MediaType.Image,
-    src: '/product-02.jpg',
-  }, {
-    type: MediaType.Image,
-    src: '/product-03.jpg',
-  }]
-};
-
-ProductOverviewGallery.defaultProps = ProductOverviewGalleryDefaults;
-
 export default ProductOverviewGallery;

@@ -58,21 +58,4 @@ const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...prop
   )
 }
 
-export const ProductsRelatedCardDefaults = {
-  item: {
-    id: 1,
-    schema: 'product',
-    href: '/product',
-    title: 'Earthen Bottle',
-    abstract: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-    price: 48,
-    media: {
-      type: MediaType.Image,
-      src: '/product-list-01.jpg',
-    },
-  }
-};
-
-ProductsRelatedCard.defaultProps = ProductsRelatedCardDefaults;
-
 export default ProductsRelatedCard;

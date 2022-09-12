@@ -1,6 +1,7 @@
+import { CategoryPropositionDefaults, HeaderDefaults, ProductDefaults, ProductsRelatedDefaults } from '@websolute/mock';
 import {
-  Breadcrumb, CategoryProposition, CategoryPropositionDefaults, Container, Footer, Header, Layout, MediaType, Page,
-  ProductOverview, ProductsIncentive, ProductsRelated, ProductsRelatedDefaults, Section
+  Breadcrumb, CategoryProposition, Container, Footer, Header, Layout, MediaType, Page,
+  ProductOverview, ProductsIncentive, ProductsRelated, Section
 } from '@websolute/ui';
 import Head from 'next/head';
 
@@ -23,7 +24,6 @@ type Props = {
 }
 
 export default function Product({ item, ...props }: Props) {
-
   return (
     <>
       <Head>
@@ -35,7 +35,7 @@ export default function Product({ item, ...props }: Props) {
       <Layout>
         <Page>
 
-          <Header sticky />
+          <Header sticky menu={HeaderDefaults.menu} />
 
           <Section paddingBottom="0">
             <Container>
@@ -65,25 +65,4 @@ export default function Product({ item, ...props }: Props) {
   )
 }
 
-Product.defaultProps = {
-  item: {
-    id: 1,
-    href: '/product',
-    title: 'Basic Tee 6-Pack',
-    abstract: 'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
-    price: 36,
-    media: [{
-      type: MediaType.Image,
-      src: '/product-04.jpg',
-    }, {
-      type: MediaType.Image,
-      src: '/product-01.jpg',
-    }, {
-      type: MediaType.Image,
-      src: '/product-02.jpg',
-    }, {
-      type: MediaType.Image,
-      src: '/product-03.jpg',
-    }],
-  }
-};
+Product.defaultProps = ProductDefaults;

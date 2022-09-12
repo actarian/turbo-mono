@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ProductOverview, ProductOverviewGallery } from '@websolute/ui';
+import { ProductOverviewDefaults, ProductOverviewGalleryDefaults } from '@websolute/mock';
 
 <Meta
   title="Sections / ProductOverview"
@@ -25,12 +26,12 @@ A basic example of `ProductOverview`.
 
 <Canvas>
   <Story name="ProductOverview">
-    <ProductOverview />
+    <ProductOverview item={ProductOverviewDefaults.item} />
   </Story>
 </Canvas>
 
 <Canvas>
   <Story name="ProductOverviewGallery">
-    <ProductOverview.Gallery />
+    <ProductOverview.Gallery media={ProductOverviewGalleryDefaults.media} />
   </Story>
 </Canvas>

@@ -1,0 +1,20 @@
+{
+  "menu": [
+    {
+      "title": "Products",
+      "href": "/products"
+    },
+    {
+      "title": "Magazine",
+      "href": "/magazine"
+    },
+    {
+      "title": "Stores",
+      "href": "/store-locator"
+    },
+    {
+      "title": "Contacts",
+      "href": "/contacts"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { BlogCard, BlogMore } from '@websolute/ui';
+import { BlogMoreDefaults, BlogCardDefaults } from '@websolute/mock';
 
 <Meta
   title="Sections / BlogMore"
@@ -25,12 +26,12 @@ A basic example of `BlogMore`.
 
 <Canvas>
   <Story name="BlogMore">
-    <BlogMore />
+    <BlogMore items={BlogMoreDefaults.items} />
   </Story>
 </Canvas>
 
 <Canvas>
   <Story name="BlogCard">
-    <BlogCard maxWidth="540px" margin="3rem" />
+    <BlogCard item={BlogCardDefaults.item} maxWidth="540px" margin="3rem" />
   </Story>
 </Canvas>

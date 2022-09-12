@@ -103,20 +103,4 @@ const ContactCard: React.FC<ContactCardProps> = ({ item, ...props }: ContactCard
   )
 }
 
-export const ContactCardDefaults = {
-  item: {
-    id: 1,
-    name: 'Hexagon Headquarters',
-    address: 'Via Manzoni 20, 20821 Meda (MB) Italy',
-    phoneNumber: '+39.0362.75275',
-    faxNumber: '+39.0362.75575',
-    contactEmail: 'info@hexagon.eu',
-    pressEmail: 'marketing@hexagon.eu',
-    note: 'Only by appointment',
-    evidence: false,
-  }
-};
-
-ContactCard.defaultProps = ContactCardDefaults;
-
 export default ContactCard;

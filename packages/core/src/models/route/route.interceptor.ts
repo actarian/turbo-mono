@@ -9,11 +9,10 @@ export async function routeInterceptor(request: NextRequest, next: NextFetchEven
   let route: IRoute;
   // const pathname = url.pathname;
   // const { market, language, pathname } = decompose(url.pathname);
-  console.log('url', url.pathname);
+  // console.log('url', url.pathname);
   try {
-    console.log('apiPost');
     route = await apiPost(`/route`, { pathname: url.pathname });
-    console.log('route', route);
+    // console.log('route', route);
     if (!route) {
       console.log('routeInterceptor.route.notfound', url.pathname);
       return;
@@ -22,7 +21,7 @@ export async function routeInterceptor(request: NextRequest, next: NextFetchEven
     console.log('routeInterceptor.error', url.pathname, error, error.url, error.status, error.statusText);
     return;
   }
-  console.log('routeInterceptor.route.found', url.pathname, '->', route);
+  // console.log('routeInterceptor.route.found', url.pathname, '->', route);
   url = request.nextUrl.clone();
   const resolvedPathname = resolveRoute(route, PAGES);
   // console.log('resolvedPathname', resolvedPathname);

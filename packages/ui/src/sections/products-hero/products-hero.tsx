@@ -51,34 +51,4 @@ export type ProductHeroItem = {
   };
 }
 
-export const ProductsHeroDefaults = {
-  items: [{
-    id: 1,
-    href: '/category',
-    title: 'Women\'s',
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/OVS3rqXq9gg/download?force=true&w=720',
-    },
-  }, {
-    id: 2,
-    href: '/category',
-    title: 'Men\'s',
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/-au3XMzfhro/download?force=true&w=720',
-    },
-  }, {
-    id: 3,
-    href: '/category',
-    title: 'Desk accessories',
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/RvPDe41lYBA/download?force=true&w=720',
-    },
-  }]
-};
-
-ProductsHero.defaultProps = ProductsHeroDefaults;
-
 export default ProductsHero;

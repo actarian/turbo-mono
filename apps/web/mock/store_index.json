@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "slug": "stores",
+    "title": "Stores",
+    "abstract": "Stores",
+    "description": "Stores",
+    "categoryId": 4,
+    "meta": {
+      "title": "Stores",
+      "description": "Stores",
+      "keywords": "stores",
+      "robots": "all"
+    }
+  }
+]

@@ -1,28 +1,40 @@
-import { Card, Container, Grid, Media, Section, Text } from '../../components';
+import { Card, Container, Grid, Media, MediaType, Section, Text } from '../../components';
 import { ComponentProps } from '../../components/types';
 
 type Props = {
+  item: HeroItem,
+}
+
+export type HeroItem = {
+  id: number;
+  href: string;
+  title: string;
+  abstract: string;
+  media: {
+    type: MediaType;
+    src: string;
+  };
 }
 
 export type HeroProps = ComponentProps<Props, HTMLDivElement>;
 
-const Hero: React.FC<HeroProps> = (props: HeroProps) => {
+const Hero: React.FC<HeroProps> = ({ item, ...props }: HeroProps) => {
   return (
     <Section padding="0">
       <Card justifyContent="flex-end" height="100vh">
         <Card.Background>
           <Media overlay>
-            <img draggable={false} alt="Trusted Group" src="https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600" />
+            <img draggable={false} alt={item.title} src={item.media.src} />
           </Media>
         </Card.Background>
         <Card.Content>
           <Container.Fluid>
             <Grid.Row>
               <Grid md={6} padding="3rem 0">
-                <Text size="2" fontWeight="700">Sustainable agriculture</Text>
+                <Text size="2" fontWeight="700">{item.title}</Text>
               </Grid>
               <Grid md={6} padding="3rem 0">
-                <Text size="6">We combine technology and creativity for the farmers of today and tomorrow.</Text>
+                <Text size="6">{item.abstract}</Text>
               </Grid>
             </Grid.Row>
           </Container.Fluid>

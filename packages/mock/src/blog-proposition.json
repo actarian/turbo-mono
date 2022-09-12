@@ -1,0 +1,20 @@
+{
+  "item": {
+    "id": 1,
+    "href": "#blog",
+    "title": "There is no strife, no prejudice, no national conflict in outer space as yet.",
+    "abstract": "Its hazards are hostile to us all. Its conquest deserves the best of all mankind, and its opportunity for peaceful cooperation many never come again. But why, some say, the moon? Why choose this as our goal? And they may well ask why climb the highest mountain?",
+    "date": "2022-03-08T07:44:24.402Z",
+    "media": {
+      "type": "image",
+      "src": "https://picsum.photos/640/480?u=2"
+    },
+    "author": {
+      "fullName": "Tim Neutkens",
+      "media": {
+        "type": "image",
+        "src": "https://i.pravatar.cc/128?u=1"
+      }
+    }
+  }
+}

@@ -42,18 +42,4 @@ const CategoryProposition: React.FC<CategoryPropositionProps> = ({ item }) => {
   )
 }
 
-export const CategoryPropositionDefaults = {
-  item: {
-    id: 1,
-    href: '/category',
-    title: 'New Arrivals',
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/RvPDe41lYBA/download?force=true&w=1600',
-    },
-  }
-};
-
-CategoryProposition.defaultProps = CategoryPropositionDefaults;
-
 export default CategoryProposition;

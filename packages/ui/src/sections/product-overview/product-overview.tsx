@@ -109,32 +109,6 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ item, ...props }: Pro
   );
 }
 
-export const ProductOverviewDefaults = {
-  item: {
-    id: 1,
-    schema: 'product',
-    href: '/product',
-    title: 'Basic Tee 6-Pack',
-    abstract: 'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
-    price: 36,
-    media: [{
-      type: MediaType.Image,
-      src: '/product-04.jpg',
-    }, {
-      type: MediaType.Image,
-      src: '/product-01.jpg',
-    }, {
-      type: MediaType.Image,
-      src: '/product-02.jpg',
-    }, {
-      type: MediaType.Image,
-      src: '/product-03.jpg',
-    }],
-  }
-};
-
-ProductOverview.defaultProps = ProductOverviewDefaults;
-
 (ProductOverview as IProductOverview).Gallery = ProductOverviewGallery;
 
 export default ProductOverview as IProductOverview;

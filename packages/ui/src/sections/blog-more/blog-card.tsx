@@ -71,27 +71,4 @@ const BlogCard: React.FC<BlogCardProps> = ({ item, ...props }: BlogCardProps) =>
   )
 }
 
-export const BlogCardDefaults = {
-  item: {
-    id: 1,
-    href: '#we-choose-to-go-to-the-moon',
-    title: 'We choose to go to the moon.',
-    abstract: 'We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.',
-    date: '2022-06-08T07:44:24.402Z',
-    media: {
-      type: MediaType.Image,
-      src: 'https://picsum.photos/640/480?u=2',
-    },
-    author: {
-      fullName: 'Joe Haddad',
-      media: {
-        type: MediaType.Image,
-        src: 'https://i.pravatar.cc/128?u=4',
-      }
-    }
-  }
-};
-
-BlogCard.defaultProps = BlogCardDefaults;
-
 export default BlogCard;

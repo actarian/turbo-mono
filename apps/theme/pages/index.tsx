@@ -1,7 +1,8 @@
+import { BlogMoreDefaults, BlogPropositionDefaults, CategoriesPropositionDefaults, HeaderDefaults, ProductsPropositionDefaults, SplitDefaults, SwiperHeroDefaults } from '@websolute/mock';
 import {
-  BlogMore, BlogMoreDefaults, BlogProposition, CategoriesProposition, CategoriesPropositionDefaults,
-  Container, Flex, Footer, Header, Layout, Media, Page, ProductsProposition, ProductsPropositionDefaults,
-  Proposition, Section, Split, SplitDefaults, SwiperHero, SwiperHeroDefaults, Text
+  BlogMore, BlogProposition, CategoriesProposition,
+  Container, Flex, Footer, Header, Layout, Media, Page, ProductsProposition,
+  Proposition, Section, Split, SwiperHero, Text
 } from '@websolute/ui';
 import Head from 'next/head';
 
@@ -16,11 +17,11 @@ export default function Index() {
       <Layout>
         <Page>
 
-          <Header fixed />
+          <Header fixed menu={HeaderDefaults.menu} />
 
           <SwiperHero items={SwiperHeroDefaults.items} />
 
-          <BlogProposition />
+          <BlogProposition item={BlogPropositionDefaults.item} />
 
           <BlogMore items={BlogMoreDefaults.items} />
 

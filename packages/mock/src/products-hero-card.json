@@ -1,0 +1,11 @@
+{
+  "item": {
+    "id": 1,
+    "href": "/category",
+    "title": "New Arrivals",
+    "media": {
+      "type": "image",
+      "src": "https://picsum.photos/960/960?u=31"
+    }
+  }
+}

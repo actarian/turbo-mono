@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ProductsRelated, ProductsRelatedCard } from '@websolute/ui';
+import { ProductsRelatedDefaults, ProductsRelatedCardDefaults } from '@websolute/mock';
 
 <Meta
   title="Sections / ProductsRelated"
@@ -25,9 +26,9 @@ A basic example of `ProductsRelated`.
 
 <Canvas>
   <Story name="ProductsRelated">
-    <ProductsRelated />
+    <ProductsRelated items={ProductsRelatedDefaults.items} />
   </Story>
   <Story name="ProductsRelatedCard">
-    <ProductsRelatedCard maxWidth="540px" margin="3rem" />
+    <ProductsRelatedCard item={ProductsRelatedCardDefaults.item} maxWidth="540px" margin="3rem" />
   </Story>
 </Canvas>

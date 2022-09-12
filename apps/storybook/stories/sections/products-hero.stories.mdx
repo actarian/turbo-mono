@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ProductsHero, ProductsHeroCard } from '@websolute/ui';
+import { ProductsHeroDefaults, ProductsHeroCardDefaults } from '@websolute/mock';
 
 <Meta
   title="Sections / ProductsHero"
@@ -25,9 +26,9 @@ A basic example of `ProductsHero`.
 
 <Canvas>
   <Story name="ProductsHero">
-    <ProductsHero />
+    <ProductsHero items={ProductsHeroDefaults.items} />
   </Story>
   <Story name="ProductsHeroCard">
-    <ProductsHeroCard maxWidth="540px" margin="3rem" />
+    <ProductsHeroCard item={ProductsHeroCardDefaults.item} maxWidth="540px" margin="3rem" />
   </Story>
 </Canvas>

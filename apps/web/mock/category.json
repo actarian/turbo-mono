@@ -9,30 +9,6 @@
   },
   {
     "id": 2,
-    "name": "about",
-    "title": {
-      "en": "Who we are",
-      "it": "Chi Siamo",
-      "fr": "Qui nous sommes"
-    },
-    "categoryId": 1,
-    "pageSchema": "about",
-    "pageId": 1
-  },
-  {
-    "id": 12,
-    "name": "contact",
-    "title": {
-      "en": "Contact us",
-      "it": "Contattaci",
-      "fr": "Contactez-nous"
-    },
-    "categoryId": 1,
-    "pageSchema": "contact",
-    "pageId": 1
-  },
-  {
-    "id": 3,
     "name": "product_index",
     "title": {
       "en": "Products",
@@ -44,109 +20,31 @@
     "pageId": 1
   },
   {
-    "id": 4,
-    "name": "apparel",
-    "title": {
-      "en": "Apparel",
-      "it": "Abbigliamento",
-      "fr": "Vêtements"
-    },
-    "slug": {
-      "en": "apparel",
-      "it": "abbigliamento",
-      "fr": "vetements"
-    },
-    "categoryId": 3
-  },
-  {
-    "id": 5,
-    "name": "menswear",
-    "title": {
-      "en": "Menswear",
-      "it": "Uomo",
-      "fr": "Homme"
-    },
-    "slug": {
-      "en": "menswear",
-      "it": "uomo",
-      "fr": "homme"
-    },
-    "categoryId": 4
-  },
-  {
-    "id": 6,
-    "name": "t-shirts",
-    "title": "T-Shirts",
-    "slug": "t-shirts",
-    "categoryId": 5
-  },
-  {
-    "id": 7,
-    "name": "trousers",
-    "title": {
-      "en": "Trousers",
-      "it": "Pantaloni",
-      "fr": "Pantalons"
-    },
-    "slug": {
-      "en": "trousers",
-      "it": "pantaloni",
-      "fr": "pantalons"
-    },
-    "categoryId": 5
-  },
-  {
-    "id": 8,
-    "name": "jackets",
-    "title": {
-      "en": "Jackets",
-      "it": "Giacche",
-      "fr": "Vestes"
-    },
-    "slug": {
-      "en": "jackets",
-      "it": "giacche",
-      "fr": "vestes"
-    },
-    "categoryId": 5
-  },
-  {
-    "id": 9,
-    "name": "hats",
-    "title": {
-      "en": "Hats",
-      "it": "Cappelli",
-      "fr": "Chapeaux"
-    },
-    "slug": {
-      "en": "hats",
-      "it": "cappelli",
-      "fr": "chapeaux"
-    },
-    "categoryId": 5
-  },
-  {
-    "id": 10,
-    "name": "product_search_csr",
-    "title": {
-      "en": "Product search CSR",
-      "it": "Ricerca prodotti CSR",
-      "fr": "Recherche produit CSR"
-    },
+    "id": 3,
+    "name": "magazine_index",
+    "title": "Magazine",
     "categoryId": 1,
-    "pageSchema": "product_search_csr",
+    "pageSchema": "magazine_index",
     "pageId": 1
   },
   {
-    "id": 11,
-    "name": "product_search_ssr",
+    "id": 4,
+    "name": "store_index",
+    "title": "Stores",
+    "categoryId": 1,
+    "pageSchema": "store_index",
+    "pageId": 1
+  },
+  {
+    "id": 5,
+    "name": "contact",
     "title": {
-      "en": "Product search SSR",
-      "it": "Ricerca prodotti SSR",
-      "fr": "Recherche produit SSR"
+      "en": "Contact us",
+      "it": "Contattaci",
+      "fr": "Contactez-nous"
     },
     "categoryId": 1,
-    "pageSchema": "product_search_ssr",
+    "pageSchema": "contact",
     "pageId": 1
   }
 ]

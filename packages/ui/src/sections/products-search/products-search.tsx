@@ -1,6 +1,6 @@
 import { useDrawer } from '@websolute/hooks';
 import { ChevronDown, ChevronLeft, ChevronRight, Filter } from '@websolute/icons';
-import { Button, Container, Flex, Grid, MediaType, Nav, Pagination, Popover, Section, Text } from '../../components';
+import { Button, Container, Flex, Grid, Nav, Pagination, Popover, Section, Text } from '../../components';
 import { ComponentCssResponsiveProps } from '../../components/types';
 import ProductsSearchCard, { ProductSearchItem } from './products-search-card';
 import ProductsSearchFilters from './products-search-filters';
@@ -59,99 +59,5 @@ const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, ...props }: Prod
     </Section>
   )
 }
-
-export const ProductsSearchDefaults = {
-  items: [{
-    id: 1,
-    schema: 'product',
-    href: '/product',
-    title: 'Earthen Bottle',
-    abstract: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-    price: 48,
-    media: {
-      type: MediaType.Image,
-      src: '/product-list-01.jpg',
-    },
-  }, {
-    id: 2,
-    schema: 'product',
-    href: '/product',
-    title: 'Nomad Tumbler',
-    abstract: 'Olive drab green insulated bottle with flared screw lid and flat top.',
-    price: 35,
-    media: {
-      type: MediaType.Image,
-      src: '/product-list-02.jpg',
-    },
-  }, {
-    id: 3,
-    schema: 'product',
-    href: '/product',
-    title: 'Focus Paper Refill',
-    abstract: 'Person using a pen to cross a task off a productivity paper card.',
-    price: 89,
-    media: {
-      type: MediaType.Image,
-      src: '/product-list-03.jpg',
-    },
-  }, {
-    id: 4,
-    schema: 'product',
-    href: '/product',
-    title: 'Machined Mechanical Pencil',
-    abstract: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-    price: 35,
-    media: {
-      type: MediaType.Image,
-      src: '/product-list-04.jpg',
-    }
-  }, {
-    id: 5,
-    schema: 'product',
-    href: '/product',
-    title: 'Focus Card Tray',
-    abstract: 'Paper card sitting upright in walnut card holder on desk.',
-    price: 64,
-    media: {
-      type: MediaType.Image,
-      src: '/product-list-05.jpg',
-    }
-  }, {
-    id: 6,
-    schema: 'product',
-    href: '/product',
-    title: 'Focus Multi-Pack',
-    abstract: 'Stack of 3 small drab green cardboard paper card refill boxes with white text.',
-    price: 39,
-    media: {
-      type: MediaType.Image,
-      src: '/product-list-06.jpg',
-    }
-  }, {
-    id: 7,
-    schema: 'product',
-    href: '/product',
-    title: 'Brass Scissors',
-    abstract: 'Brass scissors with geometric design, black steel finger holes, and included upright brass stand.',
-    price: 50,
-    media: {
-      type: MediaType.Image,
-      src: '/product-list-07.jpg',
-    }
-  }, {
-    id: 8,
-    schema: 'product',
-    href: '/product',
-    title: 'Focus Carry Pouch',
-    abstract: 'Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop.',
-    price: 32,
-    media: {
-      type: MediaType.Image,
-      src: '/product-list-08.jpg',
-    }
-  }]
-};
-
-ProductsSearch.defaultProps = ProductsSearchDefaults;
 
 export default ProductsSearch;

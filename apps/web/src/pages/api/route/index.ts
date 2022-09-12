@@ -13,9 +13,9 @@ export default apiHandler({
   },
   post: async (request: NextApiRequest, response: NextApiResponse) => {
     const { pathname } = request.body;
-    console.log('route.apiHandler', pathname);
+    // console.log('route.apiHandler', pathname);
     const data = await getRoute(pathname);
-    console.log('route.apiHandler', pathname, '->', data);
+    // console.log('route.apiHandler', pathname, '->', data);
     return response.status(200).json(data);
     // !!! throwing error not working check
     if (data) {

@@ -1,0 +1,13 @@
+{
+  "extends": "@websolute/tsconfig/tsreact.json",
+  "include": ["."],
+  "exclude": ["node_modules", "dist", "build"],
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+    },
+    "resolveJsonModule": true,
+  }
+}

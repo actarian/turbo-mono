@@ -1,64 +1,14 @@
+import { BlogMoreDefaults, BlogPropositionDefaults, ContactDefaults, ContactHeroDefaults, HeaderDefaults, SplitDefaults } from '@websolute/mock';
 import {
-  Accordion, BlogMore, BlogMoreDefaults, BlogProposition, ContactCard, ContactCardItem, ContactForm, ContactHero,
-  ContactHeroDefaults, Container, Divider, Flex, Footer, Grid, Header, Layout, Media, Page, Section, Split, SplitDefaults,
+  Accordion, BlogMore, BlogProposition, ContactCard, ContactCardItem, ContactForm, ContactHero,
+  Container, Divider, Flex, Footer, Grid, Header, Layout, Media, Page, Section, Split,
   Tabs, Text
 } from '@websolute/ui';
 import Head from 'next/head';
 
 export default function Contact() {
 
-  const items: ContactCardItem[] = [{
-    id: 1,
-    name: 'Hexagon Headquarters',
-    address: 'Via Manzoni 20<br>20821 Meda (MB)<br>Italy',
-    phoneNumber: '+39.0362.75275',
-    faxNumber: '+39.0362.75575',
-    contactEmail: 'info@hexagon.eu',
-    pressEmail: 'marketing@hexagon.eu',
-    evidence: true,
-  }, {
-    id: 2,
-    name: 'Hexagon Showroom',
-    address: 'Viale Brianza 54<br>20823 Lentate Sul Seveso (MB)<br>Italy',
-    phoneNumber: '+39.0362.563001',
-    note: 'Only by appointment',
-  }, {
-    id: 3,
-    name: 'Hexagon S.r.l.',
-    address: 'via Turati 16<br>20826 Misinto (MB)<br>Italy',
-    phoneNumber: '+39.02.96328971',
-    faxNumber: '+39.02.96328544',
-    contactEmail: 'hexagon.pec@legalmail.it',
-  }, {
-    id: 4,
-    name: 'Hexagon United Kingdom Limited',
-    address: 'Fulham Road 54-58<br>London<br>SW3 6HH England',
-    phoneNumber: '+44.20.7581.0022',
-    faxNumber: '+44.7714.675590',
-    contactEmail: 'info@hexagonuk.com',
-  }, {
-    id: 5,
-    name: 'Hexagon GmbH Deutschland',
-    address: 'Köln Kaiser-Wilhelm-Ring 30-32<br>50672 Germany',
-    phoneNumber: '+49.0.22112071851',
-    faxNumber: '+49.0.22112071852',
-    contactEmail: 'info@hexagon.de',
-  }, {
-    id: 6,
-    name: 'Hexagon Asia PTE LTD',
-    address: '7 Temasek Boulevard<br>Level 32 Suntec Tower One<br>038987 Singapore',
-    phoneNumber: '+65.6678.6567',
-  }, {
-    id: 7,
-    name: 'Hexagon Middle East I FZ-LLC',
-    address: 'D3 Building 3 Floor 3<br>Dubai Design District',
-  }, {
-    id: 8,
-    name: 'Hexagon USA INC The Centrale',
-    address: 'Madison Avenue Unit 1030<br>I 261 New York<br>USA',
-    phoneNumber: '+1.212.889.3261',
-    contactEmail: 'info@hexagonusa.com',
-  }];
+  const items: ContactCardItem[] = ContactDefaults;
 
   return (
     <>
@@ -71,7 +21,7 @@ export default function Contact() {
       <Layout>
         <Page>
 
-          <Header sticky />
+          <Header sticky menu={HeaderDefaults.menu} />
 
           <ContactHero item={ContactHeroDefaults.item} />
 
@@ -158,7 +108,7 @@ export default function Contact() {
 
           <Split item={SplitDefaults.item} />
 
-          <BlogProposition />
+          <BlogProposition item={BlogPropositionDefaults.item} />
 
           <BlogMore items={BlogMoreDefaults.items} />
 

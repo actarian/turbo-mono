@@ -8,9 +8,11 @@ exports.PAGES = {
     homepage: 'homepage',
     about: 'about',
     contact: 'contact',
+    magazine_index: 'magazine_index',
     product_index: 'product_index',
     product_search_csr: 'product_search_csr',
     product_search_ssr: 'product_search_ssr',
     product: 'product',
+    store_index: 'store_index',
     notfound: 'notfound',
 };

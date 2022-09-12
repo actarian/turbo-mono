@@ -1,10 +1,7 @@
 import { IFeatureType } from '@websolute/hooks';
-import {
-  Footer, Header, Layout, Page, Split, SplitDefaults, StoreLocatorItem, StoreLocatorMapDefaults, StoreLocatorSearch
-} from '@websolute/ui';
+import { HeaderDefaults, SplitDefaults, StoreLocatorDefaults, StoreLocatorFeaturesDefaults, StoreLocatorSearchDefaults } from '@websolute/mock';
+import { Footer, Header, Layout, Page, Split, StoreLocatorItem, StoreLocatorSearch } from '@websolute/ui';
 import Head from 'next/head';
-import STORES from '../json/store-locator-all.json';
-import STORES_FEATURES from '../json/store-locator-features.json';
 
 const StoreLocator: React.FC<StoreLocatorProps> = ({ locale, country, items = [], featureTypes = [] }) => {
   return (
@@ -18,9 +15,9 @@ const StoreLocator: React.FC<StoreLocatorProps> = ({ locale, country, items = []
       <Layout>
         <Page>
 
-          <Header sticky />
+          <Header sticky menu={HeaderDefaults.menu} />
 
-          <StoreLocatorSearch locale={locale} country={country} item={StoreLocatorMapDefaults.item} items={items} featureTypes={featureTypes} />
+          <StoreLocatorSearch locale={locale} country={country} item={StoreLocatorSearchDefaults.item} items={items} featureTypes={featureTypes} />
 
           <Split item={SplitDefaults.item} />
 
@@ -48,10 +45,10 @@ export async function getStaticProps(): Promise<{ props: StoreLocatorProps }> {
       id: 'it',
       name: 'Italy',
     },
-    items: STORES.sort((a, b) => {
+    items: StoreLocatorDefaults.sort((a, b) => {
       return a.rank - b.rank;
     }),
-    featureTypes: STORES_FEATURES
+    featureTypes: StoreLocatorFeaturesDefaults
   };
   return {
     props,

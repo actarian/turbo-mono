@@ -2,10 +2,7 @@ import styled, { css } from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
 import { getAspectResponsive, getCssResponsive } from '../../components/utils';
 
-export enum MediaType {
-  Image = 'image',
-  Video = 'video',
-}
+export type MediaType = 'image' | 'video' | string;
 
 type Props = {
   circle?: boolean;

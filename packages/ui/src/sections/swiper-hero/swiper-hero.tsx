@@ -2,7 +2,7 @@ import { ArrowRight } from '@websolute/icons';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { SwiperProps } from 'swiper/react';
-import { Button, Card, Container, Grid, Media, MediaType, Swiper, Text } from '../../components';
+import { Button, Card, Container, Grid, Media, Swiper, Text } from '../../components';
 
 const CardHero = styled(Card)`
   .media {
@@ -89,49 +89,5 @@ const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) => {
     </Swiper>
   )
 }
-
-export const SwiperHeroDefaults = {
-  items: [
-    {
-      id: 1,
-      title: 'Trusted Group',
-      abstract: 'We are the only private and independent Italian multinational in the agrotechnology sector.',
-      link: {
-        href: '#',
-        label: 'Do you want to know more?',
-      },
-      media: {
-        type: MediaType.Image,
-        src: 'https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600',
-      }
-    }, {
-      id: 2,
-      title: 'Expertise and tailor-made services',
-      abstract: 'We support our clients to develop both new and existing chemical solutions.',
-      link: {
-        href: '#',
-        label: 'Do you want to know more?',
-      },
-      media: {
-        type: MediaType.Image,
-        src: 'https://unsplash.com/photos/9wg5jCEPBsw/download?force=true&w=1600',
-      }
-    }, {
-      id: 3,
-      title: 'Sustainable agriculture',
-      abstract: 'We combine technology and creativity for the farmers of today and tomorrow.',
-      link: {
-        href: '#',
-        label: 'Do you want to know more?',
-      },
-      media: {
-        type: MediaType.Video,
-        src: '/video.mp4', // https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4',
-      }
-    }
-  ]
-};
-
-SwiperHero.defaultProps = SwiperHeroDefaults;
 
 export default SwiperHero;

@@ -57,18 +57,4 @@ const ContactHero: React.FC<ContactHeroProps> = ({ item }: ContactHeroProps) => 
   )
 }
 
-export const ContactHeroDefaults = {
-  item: {
-    id: 1,
-    href: '#new-arrivals',
-    title: 'New Arrivals',
-    media: {
-      type: MediaType.Image,
-      src: 'https://picsum.photos/960/960?u=31',
-    },
-  }
-};
-
-ContactHero.defaultProps = ContactHeroDefaults;
-
 export default ContactHero;

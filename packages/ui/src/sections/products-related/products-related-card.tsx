@@ -58,21 +58,4 @@ const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...prop
   )
 }
 
-export const ProductsRelatedCardDefaults = {
-  item: {
-    id: 1,
-    schema: 'product',
-    href: '/product',
-    title: 'Focus Paper Refill',
-    abstract: '3 sizes available',
-    price: 13,
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/q10VITrVYUM/download?force=true&w=960',
-    },
-  }
-};
-
-ProductsRelatedCard.defaultProps = ProductsRelatedCardDefaults;
-
 export default ProductsRelatedCard;

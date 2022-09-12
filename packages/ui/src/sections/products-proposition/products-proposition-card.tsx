@@ -41,20 +41,4 @@ const ProductsPropositionCard: React.FC<ProductsPropositionCardProps> = ({ item,
   )
 }
 
-export const ProductsPropositionCardDefaults = {
-  item: {
-    id: 1,
-    href: '/product',
-    title: 'Focus Paper Refill',
-    abstract: '3 sizes available',
-    price: 13,
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/q10VITrVYUM/download?force=true&w=960',
-    },
-  }
-};
-
-ProductsPropositionCard.defaultProps = ProductsPropositionCardDefaults;
-
 export default ProductsPropositionCard;
