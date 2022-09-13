@@ -11,7 +11,14 @@ export default function FieldError({ state, ...props }: FieldErrorProps) {
   return (
     <>
       {state.flags.touched && state.errors.map(error => (
-        <Text key={error.key}>{label(`error.${error.key}`)}</Text>
+        <Text
+          key={error.key}
+          size="10"
+          margin="0.5em 0"
+          padding="0.2em 0.5em"
+          background="var(--color-primary-100)"
+          color="var(--color-primary-500)"
+        >{label(`error.${error.key}`)}</Text>
       ))}
     </>
   );
