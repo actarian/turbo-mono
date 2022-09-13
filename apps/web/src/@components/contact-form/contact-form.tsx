@@ -42,14 +42,13 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
   const hiddenIfNotPrintedCopy = (value: any, rootValue: any) => !(rootValue?.printedCopy === true);
 
   const [form, setValue, setTouched, reset, group] = useFormBuilder<any, FormGroup>({
-    magazine: { schema: 'select', label: 'field.magazine', options: data.magazines, validators: required },
-    //
-    country: { schema: 'autocomplete', label: 'field.country', options: data.countries },
     firstName: { schema: 'text', label: 'field.firstName', validators: required },
     lastName: { schema: 'text', label: 'field.lastName', validators: required },
     email: { schema: 'text', label: 'field.email', validators: [required, email, exhist] },
     telephone: { schema: 'text', label: 'field.telephone', validators: required },
     occupation: { schema: 'select', label: 'field.occupation', options: data.occupations, validators: required },
+    //
+    magazine: { schema: 'select', label: 'field.magazine', options: data.magazines, validators: required },
     //
     printedCopy: { schema: 'checkbox', label: 'field.printedCopy' },
     //

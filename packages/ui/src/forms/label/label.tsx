@@ -15,6 +15,7 @@ const StyledLabel = styled.div`
   width: 100%;
   margin-bottom: 0.5rem;
   font-size: var(--form-font-size);
+  cursor: pointer;
 
   ${props => getCssResponsive(props)}
 `;
