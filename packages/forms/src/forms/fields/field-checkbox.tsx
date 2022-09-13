@@ -1,9 +1,10 @@
 
 import { useLabel } from '@websolute/hooks';
-import { Checkbox, Field, Label, Text } from '@websolute/ui';
+import { Checkbox, Field, Label } from '@websolute/ui';
 import { ChangeEvent, FocusEvent, useState } from 'react';
 import { useControl } from '../../hooks';
 import { FormControl } from '../form-control';
+import FieldError from './field-error';
 
 type FieldCheckboxProps = {
   control: FormControl;
@@ -58,9 +59,7 @@ export default function FieldCheckbox(props: FieldCheckboxProps) {
           {props.control.label && label(props.control.label)}
         </Label>
 
-        {state.flags.touched && state.errors.map(error => (
-          <Text key={error.key}>{label(`error.${error.key}`)}</Text>
-        ))}
+        <FieldError state={state} />
       </Field>
     )
   );

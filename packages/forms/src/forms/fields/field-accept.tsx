@@ -4,6 +4,7 @@ import { Field, Label, Radio, Text } from '@websolute/ui';
 import { ChangeEvent, FocusEvent, useState } from 'react';
 import { useControl } from '../../hooks';
 import { FormControl } from '../form-control';
+import FieldError from './field-error';
 
 type FieldAcceptProps = {
   control: FormControl;
@@ -58,9 +59,7 @@ export default function FieldAccept(props: FieldAcceptProps) {
           </Text>
         }
 
-        {state.flags.touched && state.errors.map(error => (
-          <Text key={error.key}>{label(`error.${error.key}`)}</Text>
-        ))}
+        <FieldError state={state} />
       </Field>
     )
   );

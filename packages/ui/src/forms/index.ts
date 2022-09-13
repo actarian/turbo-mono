@@ -1,3 +1,5 @@
+export { default as Autocomplete } from './autocomplete/autocomplete';
+export type { IAutocompleteItem } from './autocomplete/autocomplete-context';
 export { default as Checkbox } from './checkbox/checkbox';
 export { default as CustomSelect } from './custom-select/select';
 export { default as Field } from './field/field';

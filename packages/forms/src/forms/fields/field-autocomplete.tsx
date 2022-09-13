@@ -1,10 +1,11 @@
 
 import type { IEquatable } from '@websolute/core';
 import { useLabel } from '@websolute/hooks';
-import { CustomSelect, Field, Label, Text } from '@websolute/ui';
-import { FocusEvent, useState } from 'react';
+import { Autocomplete, Field, IAutocompleteItem, Label } from '@websolute/ui';
+import { FocusEvent, useMemo, useState } from 'react';
 import { useControl } from '../../hooks';
 import { FormControl } from '../form-control';
+import FieldError from './field-error';
 
 type FieldAutocompleteProps = {
   control: FormControl;
@@ -36,42 +37,57 @@ export default function FieldAutocomplete(props: FieldAutocompleteProps) {
 
   const [focus, setFocus] = useState(false);
 
-  const onDidBlur = (_: FocusEvent<HTMLInputElement>) => {
+  const onBlur = (_: FocusEvent<HTMLInputElement>) => {
     setTouched();
     setFocus(false);
   }
 
-  const onDidFocus = (_: FocusEvent<HTMLInputElement>) => {
+  const onFocus = (_: FocusEvent<HTMLInputElement>) => {
     setFocus(true);
   }
 
-  const [options, setOptions] = useState<any[]>();
-
-  const onSearch = (query: string) => {
-    const options = props.control.options;
-    if (!query || !options) {
-      return setOptions([]);
+  // fires when user select a google autocomplete result
+  async function onAutocomplete(item: IAutocompleteItem) {
+    console.log('onAutocomplete', item);
+    if (!item) {
+      return;
     }
-    query = query.toLowerCase();
-    const results = options.filter(x => x.name.toString().toLowerCase().includes(query)).map(x => ({
-      value: x.name,
-      label: x.name,
-    }));
-    setOptions(results)
-  }
-
-  const onSelect = (value: string) => {
-    const option = props.control.options?.find(x => x.name === value);
-    const id = option ? option.id.toString() : null;
+    const id = item.id.toString();
     if (id) {
       onDidChange(id);
     }
   }
 
-  const option = state.value && options ? options.find(x => x.id === state.value) : undefined;
-  const value = option ? option.name.toString() : undefined;
+  function source(query: string): Promise<IAutocompleteItem[]> {
+    return new Promise((resolve, reject) => {
+      const options = (props.control.options || []).filter(x => {
+        const name = x.name.toString().toLowerCase();
+        return name.indexOf(query.toLowerCase()) !== -1;
+      }).map(x => {
+        return {
+          id: x.id,
+          name: x.name.toString(),
+        }
+      });
+      resolve(options);
+    });
+  }
 
-  // const initialValue = state.value ? state.value.toString() : undefined;
+  const initialValue = useMemo(() => {
+    const options = props.control.options || [];
+    if (!state.value) {
+      return undefined;
+    }
+    const option = options.find(x => x.id === state.value);
+    if (option) {
+      return {
+        id: option.id,
+        name: option.name.toString(),
+      }
+    } else {
+      return undefined;
+    }
+  }, []);
 
   return (
     state.flags.hidden ? (
@@ -82,28 +98,20 @@ export default function FieldAutocomplete(props: FieldAutocompleteProps) {
           <Label>{label(props.control.label)}</Label>
         }
 
-        {/* type={(state.flags.invalid && state.flags.touched) ? 'error' : 'default'} */}
-        <CustomSelect
+        <Autocomplete
+          background="var(--color-neutral-100)"
           id={uniqueName}
+          name={uniqueName}
           placeholder={label(props.control.placeholder || props.control.label || '')}
-          value={state.value ? state.value.toString() : undefined}
-          onChange={onDidChange}
-          onBlur={onDidBlur}
-          onFocus={onDidFocus}
-          disabled={state.flags.disabled || state.flags.readonly}
-          width="100%"
-        >
-          {props.control.options && props.control.options.map((option, i) => (
-            <CustomSelect.Option key={i} value={option.id.toString()}>{option.name as string}</CustomSelect.Option>
-          ))}
-        </CustomSelect>
+          initialValue={initialValue}
+          source={source}
+          onAutocomplete={onAutocomplete}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        />
 
-        {state.flags.touched && state.errors.map(error => (
-          <Text key={error.key}>{label(`error.${error.key}`)}</Text>
-        ))}
+        <FieldError state={state} />
       </Field>
     )
   );
 }
-
-// {JSON.stringify(props.control.errors[key])}

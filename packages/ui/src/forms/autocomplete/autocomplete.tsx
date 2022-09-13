@@ -1,5 +1,5 @@
 import { useClasses } from '@websolute/hooks';
-import { ComponentPropsWithRef, forwardRef, ReactNode, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import { ComponentPropsWithRef, forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
@@ -8,6 +8,7 @@ import AutocompleteDropdown from './autocomplete-dropdown';
 import { autocompleteHighligth } from './autocomplete-highlight';
 
 interface Props extends ComponentPropsWithRef<'input'> {
+  initialValue?: IAutocompleteItem;
   before?: ReactNode;
   after?: ReactNode;
   source: (query: string) => Promise<IAutocompleteItem[]>;
@@ -156,6 +157,7 @@ const StyledAutocomplete = styled.div<AutocompleteProps>`
 
 const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(({
   className,
+  initialValue,
   before,
   after,
   source,
@@ -176,7 +178,7 @@ const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(({
 
   const [visible, setVisible] = useState<boolean>(false);
 
-  const [value, setValue] = useState<IAutocompleteItem | null>(null);
+  const [value, setValue] = useState<IAutocompleteItem | null>(initialValue ? initialValue.id : null);
 
   const [focus, setFocus] = useState<boolean>(false);
 
@@ -238,6 +240,12 @@ const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(({
       updateVisible,
     };
   }, [visible, value, updateVisible, onAutocomplete]);
+
+  useEffect(() => {
+    if (initialValue) {
+      setInnerValue(initialValue.name);
+    }
+  }, [initialValue]);
 
   const classNames = useClasses('autocomplete', {
     focus,

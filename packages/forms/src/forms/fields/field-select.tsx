@@ -1,10 +1,11 @@
 
 import type { IEquatable } from '@websolute/core';
 import { useLabel } from '@websolute/hooks';
-import { CustomSelect, Field, Label, Text } from '@websolute/ui';
+import { CustomSelect, Field, Label } from '@websolute/ui';
 import { FocusEvent, useState } from 'react';
 import { useControl } from '../../hooks';
 import { FormControl } from '../form-control';
+import FieldError from './field-error';
 
 type FieldSelectProps = {
   control: FormControl;
@@ -72,10 +73,7 @@ export default function FieldSelect(props: FieldSelectProps) {
           ))}
         </CustomSelect>
 
-        {state.flags.touched && state.errors.map(error => (
-          <Text key={error.key}>{label(`error.${error.key}`)}</Text>
-        ))}
-
+        <FieldError state={state} />
       </Field>
     )
   );

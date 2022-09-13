@@ -1,8 +1,9 @@
 import { useLabel } from '@websolute/hooks';
-import { Field, Input, Label, Text } from '@websolute/ui';
+import { Field, Input, Label } from '@websolute/ui';
 import { ChangeEvent, FocusEvent, useState } from 'react';
 import { useControl } from '../../hooks';
 import { FormControl } from '../form-control';
+import FieldError from './field-error';
 
 type FieldTextProps = {
   control: FormControl;
@@ -55,9 +56,7 @@ export default function FieldText(props: FieldTextProps) {
           readOnly={state.flags.readonly}
           width="100%" />
 
-        {state.flags.touched && state.errors.map(error => (
-          <Text key={error.key}>{label(`error.${error.key}`)}</Text>
-        ))}
+        <FieldError state={state} />
       </Field>
     )
   );

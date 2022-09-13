@@ -44,6 +44,7 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
   const [form, setValue, setTouched, reset, group] = useFormBuilder<any, FormGroup>({
     magazine: { schema: 'select', label: 'field.magazine', options: data.magazines, validators: required },
     //
+    country: { schema: 'autocomplete', label: 'field.country', options: data.countries },
     firstName: { schema: 'text', label: 'field.firstName', validators: required },
     lastName: { schema: 'text', label: 'field.lastName', validators: required },
     email: { schema: 'text', label: 'field.email', validators: [required, email, exhist] },
@@ -100,11 +101,12 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
 
   const onValidate = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('ContactForm.onSubmit', form.value);
     if (form.flags.valid) {
       // form.value
+      console.log('ContactForm.onSubmit.valid', form.value);
       onSubmit(form.value);
     } else {
+      console.log('ContactForm.onSubmit.invalid');
       setTouched();
     }
   }
