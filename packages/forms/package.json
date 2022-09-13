@@ -1,0 +1,31 @@
+{
+  "name": "@websolute/forms",
+  "version": "0.0.0",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint *.ts*"
+  },
+  "dependencies": {
+    "@websolute/core": "*",
+    "@websolute/hooks": "*",
+    "@websolute/icons": "*",
+    "@websolute/ui": "*",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "@websolute/tsconfig": "*",
+    "eslint": "^8.23.0",
+    "eslint-config-websolute": "*",
+    "raw-loader": "^4.0.2",
+    "react": "^18.2.0",
+    "typescript": "^4.8.2"
+  }
+}

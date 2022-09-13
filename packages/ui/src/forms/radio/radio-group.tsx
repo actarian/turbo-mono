@@ -2,7 +2,7 @@
 import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useState } from 'react';
 import { Flex } from '../../components';
 import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
-import Radio, { RadioProps } from './radio';
+import Radio from './radio';
 
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
   initialValue?: string;
@@ -31,16 +31,13 @@ const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(({
     }
   };
 
-  const mappedChildren = React.Children.map(children || [], (child) => {
-    if (!React.isValidElement<RadioProps>(child)) {
-      return child;
-    }
-    const item: ReactElement<RadioProps> = child;
-    if (item.type === Radio) {
-      return React.cloneElement(item, {
-        ...item.props,
-        size: item.props.size || size,
-        checked: item.props.value === value,
+  const mappedChildren = recursiveMap(children, (child: ReactElement) => {
+    if (child.type === Radio) {
+      const props = child.props;
+      return React.cloneElement(child, {
+        ...props,
+        size: props.size || size,
+        checked: props.value === value,
         onChange: onChange_,
       });
     }
@@ -57,3 +54,18 @@ const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(({
 RadioGroup.displayName = 'RadioGroup';
 
 export default RadioGroup;
+
+function recursiveMap(children: React.ReactNode, fn: (child: ReactElement) => ReactElement): ReactElement[] {
+  return React.Children.map(children as ReactElement[], child => {
+    if (!React.isValidElement(child)) {
+      return child;
+    }
+    if ((child as ReactElement).props.children) {
+      const props = {
+        children: recursiveMap((child as ReactElement).props.children, fn)
+      }
+      child = React.cloneElement(child, props);
+    }
+    return fn(child);
+  });
+}

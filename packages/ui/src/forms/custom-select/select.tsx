@@ -1,7 +1,8 @@
 import { useClasses, useCurrentState } from '@websolute/hooks';
 import React, { CSSProperties, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { Ellipsis, Flex, getChildsByType } from '../../components';
+import { ComponentCssResponsiveProps, Ellipsis, Flex, getChildsByType } from '../../components';
+import { getCssResponsive } from '../../components/utils';
 import { SelectConfig, SelectContext } from './select-context';
 import StyledSelectDivider from './select-divider';
 import SelectDropdown from './select-dropdown';
@@ -36,9 +37,7 @@ interface Props {
   getPopupContainer?: () => HTMLElement | null;
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
-
-export type SelectProps = Props & NativeAttrs;
+export type SelectProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const StyledSelect = styled.div<SelectProps & { visible?: boolean }>`
   position: relative;
@@ -119,6 +118,8 @@ const StyledSelect = styled.div<SelectProps & { visible?: boolean }>`
       color: var(--color-primary-400);
     }
   }
+
+  ${props => getCssResponsive(props)}
 `;
 
 const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>(({

@@ -1,4 +1,4 @@
-import { IRouteLink } from '@models';
+import { IRouteLink } from '@websolute/core';
 import { Breadcrumb } from '@websolute/ui';
 import NextLink from 'next/link';
 

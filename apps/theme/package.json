@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@websolute/core": "*",
+    "@websolute/forms": "*",
     "@websolute/hooks": "*",
     "@websolute/icons": "*",
     "@websolute/mock": "*",

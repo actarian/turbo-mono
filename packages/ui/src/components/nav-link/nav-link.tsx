@@ -18,6 +18,7 @@ const NavLink: React.FC<NavLinkProps> = ({ children, activeClassName = 'active',
   // pages/[slug].js will be matched via props.as
 
   const isActive = asPath === props.href || asPath === props.as;
+  // console.log('isActive', isActive, asPath, props.href, props.as);
   const className = isActive ? `${childClassName} ${activeClassName}`.trim() : childClassName;
 
   return (

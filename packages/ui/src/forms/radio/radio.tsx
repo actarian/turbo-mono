@@ -4,6 +4,7 @@ import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
+import RadioGroup from './radio-group';
 import { RadioIcon } from './radio-icon';
 
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
@@ -64,4 +65,10 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(({ className, ...props },
 
 Radio.displayName = 'Radio';
 
-export default Radio;
+(Radio as IRadio).Group = RadioGroup;
+
+export default Radio as IRadio;
+
+type IRadio = typeof Radio & {
+  Group: typeof RadioGroup;
+};

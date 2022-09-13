@@ -1,17 +1,25 @@
 
-import { asStaticProps, getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/core';
+import ContactForm, { IContactForm } from '@components/contact-form/contact-form';
+import { asStaticProps, getCountries, getLayout, getListByKeys, getPage, getProvinces, getRegions, getStaticPathsForSchema, PageProps } from '@websolute/core';
 import { BlogMoreDefaults, BlogPropositionDefaults, ContactDefaults, ContactHeroDefaults, SplitDefaults } from '@websolute/mock';
 import {
-  Accordion, BlogMore, BlogProposition, ContactCard, ContactCardItem, ContactForm, ContactHero,
+  Accordion, BlogMore, BlogProposition, ContactCard, ContactCardItem, ContactHero,
   Container, Divider, Flex, Footer, Grid, Header, Layout, Media, Page, Section, Split,
   Tabs, Text
 } from '@websolute/ui';
 
 import { GetStaticPropsContext } from 'next/types';
+import { useState } from 'react';
 
-export default function Contact({ layout, page, params }: ContactProps) {
+export default function Contact({ layout, page, data, params }: ContactProps) {
 
   const items: ContactCardItem[] = ContactDefaults;
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const onSubmit = (value: any) => {
+    setSubmitted(true);
+  }
 
   return (
     <>
@@ -37,7 +45,7 @@ export default function Contact({ layout, page, params }: ContactProps) {
           <Section id="contact-request">
             <Container>
               <Divider marginBottom="4rem">Contact Request</Divider>
-              <ContactForm />
+              <ContactForm data={data} onSubmit={onSubmit}></ContactForm>
             </Container>
           </Section>
 
@@ -129,6 +137,7 @@ export default function Contact({ layout, page, params }: ContactProps) {
 }
 
 export interface ContactProps extends PageProps {
+  data: IContactForm;
 }
 
 export async function getStaticProps(context: GetStaticPropsContext<any>) {
@@ -136,16 +145,21 @@ export async function getStaticProps(context: GetStaticPropsContext<any>) {
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);
-  const page = await getPage('product_index', id, market, locale);
-  const props = asStaticProps({ ...context, layout, page });
-  // console.log('Contact getStaticProps', props);
+  const page = await getPage('contact', id, market, locale);
+  const lists = await getListByKeys(['magazines', 'occupations'], locale);
+  const countries = await getCountries(locale);
+  const provinces = await getProvinces(locale);
+  const regions = await getRegions(locale);
+  const data = { ...lists, countries, regions, provinces };
+  const props = asStaticProps({ ...context, layout, page, data });
+  // console.log('About getStaticProps', props);
   return {
     props,
   };
 }
 
 export async function getStaticPaths() {
-  const paths = await getStaticPathsForSchema('product_index');
+  const paths = await getStaticPathsForSchema('contact');
   return {
     paths,
     fallback: true,

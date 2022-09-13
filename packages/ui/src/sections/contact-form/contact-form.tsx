@@ -4,7 +4,6 @@ import { Box, Button, Flex, Grid } from '../../components';
 import { ComponentProps } from '../../components/types';
 import { Checkbox, CustomSelect, Field, Form, Input, Label, Radio, Select, TextArea } from '../../forms';
 
-
 type Props = {
 }
 
