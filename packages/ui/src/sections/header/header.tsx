@@ -1,12 +1,11 @@
 import { useDrawer, useLayout, useModal, useScroll } from '@websolute/hooks';
 import { ArrowRight, Hexagon, Menu, ShoppingCart, User } from '@websolute/icons';
+import type { IRouteLink } from '@websolute/models';
+import styled, { css } from 'styled-components';
 import { Button, Container, Flex, Modal, Nav, NavLink, Text } from '../../components';
 import { ComponentProps } from '../../components/types';
 import { CartMini } from '../../sections';
 import AuthDrawer from '../../sections/auth/auth-drawer';
-
-import { IRouteLink } from '@websolute/core';
-import styled, { css } from 'styled-components';
 import MarketsAndLanguagesDrawer from '../markets-and-languages/markets-and-languages-drawer';
 
 type ContainerProps = {
@@ -90,7 +89,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             <Flex flex="1" justifyContent="center">
               {props.menu && <Nav.Row gap="3rem" display="none" displaySm="flex">
                 {props.menu.map((x, i) => (
-                  <NavLink key={i} href={x.href || ''}>
+                  <NavLink key={i} href={x.href || ''} passHref={true}>
                     <Button variant="nav" as="a">{x.title}</Button>
                   </NavLink>
                 ))}

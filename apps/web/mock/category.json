@@ -12,8 +12,7 @@
     "name": "product_index",
     "title": {
       "en": "Products",
-      "it": "Prodotti",
-      "fr": "Produits"
+      "it": "Prodotti"
     },
     "categoryId": 1,
     "pageSchema": "product_index",
@@ -40,11 +39,21 @@
     "name": "contact",
     "title": {
       "en": "Contact us",
-      "it": "Contattaci",
-      "fr": "Contactez-nous"
+      "it": "Contattaci"
     },
     "categoryId": 1,
     "pageSchema": "contact",
+    "pageId": 1
+  },
+  {
+    "id": 6,
+    "name": "reserved_area",
+    "title": {
+      "en": "Reserved area",
+      "it": "Area riservata"
+    },
+    "categoryId": 1,
+    "pageSchema": "reserved_area",
     "pageId": 1
   }
 ]

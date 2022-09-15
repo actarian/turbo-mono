@@ -1,8 +1,8 @@
-import { PAGES } from '../src/@config/pages';
+import { PAGES } from '../src/@config';
 
-import type {
-  CollectionDescription, ICategorized, ICategory, IEntity, ILocalizedString, IMarket, IRoute, SerializedCollection, SerializedStore
-} from '@websolute/core';
+import type { IEntity, ILocalizedString } from '@websolute/core';
+import type { ICategorized, ICategory, IMarket, IRoute } from '@websolute/models';
+import type { CollectionDescription, SerializedCollection, SerializedStore } from '@websolute/store';
 
 const dotenv = require('dotenv');
 const path = require('path');
@@ -188,7 +188,6 @@ function createPageService(store: SerializedStore, PAGES: { [key: string]: strin
       console.warn(`MockBuild.createPageService.collection not found [${key}]`);
     }
   }
-  // console.log('pages', pages);
   const pageCollection = remapCollection('page');
   const pageService = {
     ...pageCollection,
@@ -308,7 +307,7 @@ async function addType(items: IEntity[], c: CollectionDescription, collections: 
   }
   // console.log(types);
   const type = `
-import { IEquatable, ILocalizedString } from '@websolute/core';
+import type { IEquatable, ILocalizedString } from '@websolute/core';
 
 export type I${c.displayName} = {
   ${keys.map(key => `${key}${optionalKeys.indexOf(key) !== -1 ? '?' : ''}: ${types[key].join(' | ')};`).join('\n  ')}

@@ -13,13 +13,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@websolute/store": "*",
     "@websolute/core": "*",
     "@websolute/forms": "*",
     "@websolute/hooks": "*",
     "@websolute/icons": "*",
     "@websolute/mock": "*",
     "@websolute/ui": "*",
-    "next": "^12.2.5",
+    "iron-session": "^6.2.1",
+    "next": "^12.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.5"

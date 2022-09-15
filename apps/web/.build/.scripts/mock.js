@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const pages_1 = require("../src/@config/pages");
+const _config_1 = require("../src/@config");
 const dotenv = require('dotenv');
 const path = require('path');
 const pluralize = require('pluralize');
@@ -176,7 +176,6 @@ function createPageService(store, PAGES) {
             console.warn(`MockBuild.createPageService.collection not found [${key}]`);
         }
     }
-    // console.log('pages', pages);
     const pageCollection = remapCollection('page');
     const pageService = {
         ...pageCollection,
@@ -290,7 +289,7 @@ async function addType(items, c, collections) {
     }
     // console.log(types);
     const type = `
-import { IEquatable, ILocalizedString } from '@websolute/core';
+import type { IEquatable, ILocalizedString } from '@websolute/core';
 
 export type I${c.displayName} = {
   ${keys.map(key => `${key}${optionalKeys.indexOf(key) !== -1 ? '?' : ''}: ${types[key].join(' | ')};`).join('\n  ')}
@@ -345,4 +344,4 @@ function MockBuildAndWatch(pathname, PAGES) {
         BuildAndWatch(pathname, PAGES);
     }
 }
-MockBuildAndWatch('./mock', pages_1.PAGES);
+MockBuildAndWatch('./mock', _config_1.PAGES);

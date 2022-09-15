@@ -1,4 +1,5 @@
-import { apiHandler, getCategories } from '@websolute/core';
+import { apiHandler } from '@websolute/core';
+import { getCategories } from '@websolute/models';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default apiHandler({

@@ -1,10 +1,10 @@
-import { INamedEntity } from '@websolute/core';
+import type { INamedEntity } from '@websolute/core';
 import {
-  EmailValidator, FieldCollection, FieldText, FormAsyncValidator, FormGroup, RequiredIfValidator, RequiredTrueValidator,
-  RequiredValidator, Tester, useFormBuilder, ValidationError
+  EmailValidator, FormAsyncValidator, FormGroup, RequiredIfValidator, RequiredTrueValidator,
+  RequiredValidator, useFormBuilder, ValidationError
 } from '@websolute/forms';
 import { useClasses, useLabel } from '@websolute/hooks';
-import { Button, Flex, Grid } from '@websolute/ui';
+import { Button, FieldCollection, Flex, Grid, Tester } from '@websolute/ui';
 
 export default function ContactForm({ data, onSubmit }: { data: IContactForm, onSubmit: (value: any) => void }) {
   const label = useLabel();
@@ -114,9 +114,6 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
 
   return (
     <form className={className} onSubmit={onValidate}>
-      {false &&
-        <FieldText control={group.controls.magazine}></FieldText>
-      }
       <Grid.Row rowGap="1rem">
         <FieldCollection collection={group} />
       </Grid.Row>

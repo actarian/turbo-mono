@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "slug": {
+      "en": "reserved-area",
+      "it": "area-riservata"
+    },
+    "title": {
+      "en": "Reserved area",
+      "it": "Area riservata"
+    },
+    "abstract": {
+      "en": "Reserved area.",
+      "it": "Area riservata."
+    },
+    "description": {
+      "en": "Reserved area.",
+      "it": "Area riservata."
+    },
+    "categoryId": 6,
+    "meta": {
+      "title": {
+        "en": "Reserved area",
+        "it": "Area riservata"
+      },
+      "description": {
+        "en": "Reserved area.",
+        "it": "Area riservata."
+      },
+      "keywords": "reserved area keywords",
+      "robots": "all"
+    }
+  }
+]

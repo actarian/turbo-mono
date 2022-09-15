@@ -1,5 +1,5 @@
 // import GoogleMap from '../../components/google-map/google-map';
-import { IEquatable } from '@websolute/core';
+import type { IEquatable } from '@websolute/core';
 import type { IFeatureType } from '@websolute/hooks';
 import { Filter, filtersToParams, useDebounce, useFilters, useInfiniteLoader, useSearchParams } from '@websolute/hooks';
 import { MapPin } from '@websolute/icons';

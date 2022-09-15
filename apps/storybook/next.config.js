@@ -6,6 +6,8 @@ const transpiledModules = nextTranspileModules([
   '@websolute/forms',
   '@websolute/hooks',
   '@websolute/icons',
+  '@websolute/models',
+  '@websolute/store',
   '@websolute/ui'
 ], { resolveSymlinks: false });
 

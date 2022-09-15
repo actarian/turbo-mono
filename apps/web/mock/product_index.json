@@ -3,35 +3,29 @@
     "id": 1,
     "slug": {
       "en": "products",
-      "it": "prodotti",
-      "fr": "produits"
+      "it": "prodotti"
     },
     "title": {
       "en": "Products",
-      "it": "Prodotti",
-      "fr": "Produits"
+      "it": "Prodotti"
     },
     "abstract": {
       "en": "The charm of yesterday, the elegance of today",
-      "it": "Il fascino di ieri, l'eleganza di oggi",
-      "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+      "it": "Il fascino di ieri, l'eleganza di oggi"
     },
     "description": {
       "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
-      "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali",
-      "fr": "Tradition et passion entièrement italiennes : plus de 30 ans d'histoire dans l'art ancien de la fabrication de lunettes"
+      "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
     },
     "categoryId": 2,
     "meta": {
       "title": {
         "en": "Products",
-        "it": "Prodotti",
-        "fr": "Produits"
+        "it": "Prodotti"
       },
       "description": {
         "en": "The charm of yesterday, the elegance of today",
-        "it": "Il fascino di ieri, l'eleganza di oggi",
-        "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+        "it": "Il fascino di ieri, l'eleganza di oggi"
       },
       "keywords": "products keywords",
       "robots": "all"

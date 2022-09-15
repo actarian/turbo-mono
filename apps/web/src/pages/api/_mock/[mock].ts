@@ -1,4 +1,5 @@
-import { apiHandler, parseMockApi } from '@websolute/core';
+import { apiHandler } from '@websolute/core';
+import { parseMockApi } from '@websolute/store';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default apiHandler({

@@ -1,5 +1,5 @@
+import type { IEquatable } from '@websolute/core';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { IEquatable } from '../../core';
 import type { Filter, FilterParams, IFeatureType } from './filter';
 import { getFilters, setFilters } from './filter.service';
 

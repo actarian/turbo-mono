@@ -1,4 +1,4 @@
-import type { ILayout } from '@websolute/core';
+import type { ILayout } from '@websolute/models';
 import React from 'react';
 import { createGenericContext } from '../useGenericContext/useGenericContext';
 

@@ -1,5 +1,6 @@
 
-import { apiHandler, getRoute, getRoutes } from '@websolute/core';
+import { apiHandler } from '@websolute/core';
+import { getRoute, getRoutes } from '@websolute/models';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default apiHandler({
@@ -17,6 +18,7 @@ export default apiHandler({
     const data = await getRoute(pathname);
     // console.log('route.apiHandler', pathname, '->', data);
     return response.status(200).json(data);
+    /*
     // !!! throwing error not working check
     if (data) {
       response.status(200).json(data);
@@ -24,6 +26,7 @@ export default apiHandler({
       throw 'not found';
       // response.status(404).send('Route not found');
     }
+    */
   }
 });
 

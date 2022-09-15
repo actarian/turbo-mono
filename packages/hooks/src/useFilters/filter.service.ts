@@ -1,4 +1,4 @@
-import { IEquatable } from '../../core';
+import type { IEquatable } from '@websolute/core';
 import type { FilterParams } from './filter';
 import { Filter, FilterMode, IFeatureType } from './filter';
 

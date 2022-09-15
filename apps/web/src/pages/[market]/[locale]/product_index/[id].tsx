@@ -1,38 +1,48 @@
 
-import { asStaticProps, getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/core';
+import type { IStaticContext } from '@websolute/core';
+import { asStaticProps } from '@websolute/core';
 import { CategoriesPropositionDefaults, CategoryPropositionDefaults, ProductsHeroDefaults, ProductsPropositionDefaults } from '@websolute/mock';
-import { CategoriesProposition, CategoryProposition, Footer, Header, Layout, Page, ProductsHero, ProductsProposition } from '@websolute/ui';
-import { GetStaticPropsContext } from 'next/types';
+import { getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/models';
+import { CategoriesProposition, CategoryProposition, Footer, Header, Layout, Meta, Page, ProductsHero, ProductsProposition } from '@websolute/ui';
 
 export default function Products({ layout, page, params }: ProductsProps) {
 
   return (
-    <>
-      <Layout>
-        <Page>
+    <Layout>
+      <Meta />
+      <Page>
+        <Header fixed menu={layout.tree ? layout.tree.items : []} />
 
-          <Header fixed menu={layout.tree ? layout.tree.items : []} />
+        <ProductsHero items={ProductsHeroDefaults.items} />
 
-          <ProductsHero items={ProductsHeroDefaults.items} />
+        <CategoriesProposition items={CategoriesPropositionDefaults.items} />
 
-          <CategoriesProposition items={CategoriesPropositionDefaults.items} />
+        <ProductsProposition items={ProductsPropositionDefaults.items} />
 
-          <ProductsProposition items={ProductsPropositionDefaults.items} />
+        <CategoryProposition item={CategoryPropositionDefaults.item} />
 
-          <CategoryProposition item={CategoryPropositionDefaults.item} />
-
-          <Footer />
-
-        </Page>
-      </Layout>
-    </>
+        <Footer />
+      </Page>
+    </Layout>
   )
 }
 
 export interface ProductsProps extends PageProps {
 }
 
-export async function getStaticProps(context: GetStaticPropsContext<any>) {
+/*
+import { ParsedUrlQuery } from 'querystring'
+
+interface IParams extends ParsedUrlQuery {
+  params: {
+    id: string;
+    market: string;
+    locale: string;
+  }
+}
+*/
+
+export async function getStaticProps(context: IStaticContext) {
   const id = parseInt(context.params.id);
   const market = context.params.market;
   const locale = context.params.locale;

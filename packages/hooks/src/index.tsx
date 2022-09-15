@@ -1,4 +1,5 @@
 export { consoleWarn } from './consoleWarn/consoleWarn';
+export { useApiDelete, useApiFetch, useApiGet, useApiPatch, useApiPost, useApiPut } from './useApi/useApi';
 export { useBodyScroll } from './useBodyScroll/useBodyScroll';
 export { useBreakpoint } from './useBreakpoint/useBreakpoint';
 export { useClasses } from './useClasses/useClasses';
@@ -19,6 +20,7 @@ export { useFilters } from './useFilters/useFilters';
 export { createGenericContext } from './useGenericContext/useGenericContext';
 export * from './useGeolocation/geolocation.service';
 export { useGeolocation } from './useGeolocation/useGeolocation';
+// export { useHttpDelete, useHttpFetch, useHttpGet, useHttpPatch, useHttpPost, useHttpPut } from './useHttp/useHttp';
 export { useInfiniteLoader } from './useInfiniteLoader/useInfiniteLoader';
 export { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect/useIsomorphicLayoutEffect';
 export { KeyCode, useKeyboard } from './useKeyboard/useKeyboard';

@@ -1,5 +1,5 @@
 import type { FindParams } from '@websolute/core';
-import { getStore } from '@websolute/core';
+import { getStore } from '@websolute/store';
 // import { awaitAll } from '@core/utils';
 // import { decorateHref } from '@models/route/route.service';
 import type { ITile } from './tile';

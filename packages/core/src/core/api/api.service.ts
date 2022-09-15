@@ -1,7 +1,7 @@
 import { FetchRequestOptions, httpFetch } from '../http/http.service';
 import { merge } from '../utils';
 
-const LOCAL_API_URL = process.env.NEXT_PUBLIC_URL === 'https://' ? 'http://localhost:3007' : process.env.NEXT_PUBLIC_URL;
+const LOCAL_API_URL = process.env.NEXT_PUBLIC_URL === 'https://' ? 'http://localhost:3000' : process.env.NEXT_PUBLIC_URL;
 const LOCAL_API_BASE = process.env.NEXT_PUBLIC_API || '/api';
 // const BEARER = process.env.STORE_BEARER || '7584f15d12972fb1e7695e998dd5e4c754f46c74d06a08e8d76f556adcd045e48cd52bed6faac098784471ac273ee40243194b9cff7eba3c4a768f8f41d2d51959a7f767b943c7f0170f6e5f632db523803c357083bf7a7bf03ee8e0df2d8ce5cd52e0211283b34d7781313da775018a9e950433d2b6faf711c20e5a63b25243';
 

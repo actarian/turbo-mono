@@ -28,6 +28,7 @@
   },
   "globalDependencies": [
     "$NODE_ENV",
+    "$SECRET_COOKIE_PASSWORD",
     "$STORE_STRATEGY",
     "$STORE_URL",
     "$STORE_API",

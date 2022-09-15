@@ -1,27 +1,25 @@
 
-import { asStaticProps, getLayout, getPage, getStaticPathsForSchema, IFeatureType, PageProps } from '@websolute/core';
+import type { IStaticContext } from '@websolute/core';
+import { asStaticProps } from '@websolute/core';
 import { SplitDefaults, StoreLocatorDefaults, StoreLocatorFeaturesDefaults, StoreLocatorSearchDefaults } from '@websolute/mock';
-import { Footer, Header, Layout, Page, Split, StoreLocatorItem, StoreLocatorSearch } from '@websolute/ui';
-import { GetStaticPropsContext } from 'next/types';
+import { getLayout, getPage, getStaticPathsForSchema, IFeatureType, PageProps } from '@websolute/models';
+import { Footer, Header, Layout, Meta, Page, Split, StoreLocatorItem, StoreLocatorSearch } from '@websolute/ui';
 
 export default function StoreLocator({ layout, page, country, items = [], featureTypes = [], params }: StoreLocatorProps) {
 
   return (
-    <>
-      <Layout>
-        <Page>
+    <Layout>
+      <Meta />
+      <Page>
+        <Header sticky menu={layout.tree ? layout.tree.items : []} />
 
-          <Header sticky menu={layout.tree ? layout.tree.items : []} />
+        <StoreLocatorSearch locale={layout.locale} country={country} item={StoreLocatorSearchDefaults.item} items={items} featureTypes={featureTypes} />
 
-          <StoreLocatorSearch locale={layout.locale} country={country} item={StoreLocatorSearchDefaults.item} items={items} featureTypes={featureTypes} />
+        <Split item={SplitDefaults.item} />
 
-          <Split item={SplitDefaults.item} />
-
-          <Footer />
-
-        </Page>
-      </Layout>
-    </>
+        <Footer />
+      </Page>
+    </Layout>
   )
 }
 
@@ -31,7 +29,7 @@ export interface StoreLocatorProps extends PageProps {
   featureTypes: IFeatureType[],
 }
 
-export async function getStaticProps(context: GetStaticPropsContext<any>) {
+export async function getStaticProps(context: IStaticContext) {
   const id = parseInt(context.params.id);
   const market = context.params.market;
   const locale = context.params.locale;

@@ -1,6 +1,7 @@
 
 import { PAGES } from '@config';
-import { isApiRequest, isStaticRequest, mockInterceptor, routeInterceptor } from '@websolute/core';
+import { routeInterceptor } from '@websolute/models';
+import { isApiRequest, isStaticRequest } from '@websolute/store';
 import type { NextFetchEvent, NextRequest } from 'next/server';
 
 export async function middleware(request: NextRequest, next: NextFetchEvent) {
@@ -16,7 +17,10 @@ export async function middleware(request: NextRequest, next: NextFetchEvent) {
    * Checking for mock interceptor for api requests
   */
   if (isApiRequest(request)) {
+    return;
+    /*
     return await mockInterceptor(request, next);
+    */
   }
 
   /*

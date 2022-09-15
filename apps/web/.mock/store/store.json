@@ -8,35 +8,29 @@
         "id": 1,
         "slug": {
           "en": "who-we-are",
-          "it": "chi-siamo",
-          "fr": "qui-nous-sommes"
+          "it": "chi-siamo"
         },
         "title": {
           "en": "Who we are",
-          "it": "Chi Siamo",
-          "fr": "Qui nous sommes"
+          "it": "Chi Siamo"
         },
         "abstract": {
           "en": "The Nouvelle Vague line is a springboard towards a future capable of exploring new spaces and frontiers without ever forgetting the roots that anchor it to a tradition made of genius and respect, imagination and deep knowledge of natural materials, including captivating shapes, lace, lace and undisputed technical capacity.",
-          "it": "La linea Nouvelle Vague è un trampolino verso un futuro capace di esplorare nuovi spazi e frontiere senza mai dimenticare le radici che la ancora ad una tradizione fatta di genialità e rispetto, fantasia e profonda conoscenza di materiali naturali, tra forme accattivanti, pizzi, merletti e indiscussa capacità tecnica.",
-          "fr": "La ligne Nouvelle Vague est un tremplin vers un futur capable d'explorer de nouveaux espaces et frontières sans jamais oublier les racines qui l'ancrent dans une tradition faite de génie et de respect, d'imagination et de connaissance approfondie des matériaux naturels, y compris les formes captivantes, la dentelle, la dentelle et capacité technique incontestée."
+          "it": "La linea Nouvelle Vague è un trampolino verso un futuro capace di esplorare nuovi spazi e frontiere senza mai dimenticare le radici che la ancora ad una tradizione fatta di genialità e rispetto, fantasia e profonda conoscenza di materiali naturali, tra forme accattivanti, pizzi, merletti e indiscussa capacità tecnica."
         },
         "description": {
           "en": "Born from the genius of those who have been able to look beyond the rigid rules imposed by a past that was close to a world in continuous evolution, Nouvelle Vague thus manages to combine the attention to the undisputed quality of materials, all strictly Italian, the continuous scientific updating and technological, and the unstoppable desire to make lenses and eyewear engines of emotion and color.",
-          "it": "Nata dal genio di chi ha saputo guardare oltre le rigide regole imposte da un passato che stava stretto ad un mondo in continua evoluzione, Nouvelle Vague riesce così a coniugare l’attenzione per la qualità indiscussa di materiali, tutti rigorosamente italiani, il continuo aggiornamento scientifico e tecnologico, e l’inarrestabile voglia di fare di lenti e occhiali motori di emozione e colore.",
-          "fr": "Née du génie de ceux qui ont su regarder au-delà des règles rigides imposées par un passé proche d'un monde en constante évolution, Nouvelle Vague parvient ainsi à allier l'attention à la qualité incontestée des matériaux, tous strictement italiens, la une mise à jour scientifique et technologique continue, et le désir irrésistible de faire des verres et des lunettes des moteurs d'émotion et de couleur."
+          "it": "Nata dal genio di chi ha saputo guardare oltre le rigide regole imposte da un passato che stava stretto ad un mondo in continua evoluzione, Nouvelle Vague riesce così a coniugare l’attenzione per la qualità indiscussa di materiali, tutti rigorosamente italiani, il continuo aggiornamento scientifico e tecnologico, e l’inarrestabile voglia di fare di lenti e occhiali motori di emozione e colore."
         },
         "categoryId": 2,
         "meta": {
           "title": {
             "en": "Who we are",
-            "it": "Chi Siamo",
-            "fr": "Qui nous sommes"
+            "it": "Chi Siamo"
           },
           "description": {
             "en": "The Nouvelle Vague line is a springboard towards future.",
-            "it": "La linea Nouvelle Vague è un trampolino verso il futuro.",
-            "fr": "La ligne Nouvelle Vague est un tremplin vers le futur."
+            "it": "La linea Nouvelle Vague è un trampolino verso il futuro."
           },
           "keywords": "about keywords",
           "robots": "all"
@@ -64,8 +58,7 @@
         "name": "product_index",
         "title": {
           "en": "Products",
-          "it": "Prodotti",
-          "fr": "Produits"
+          "it": "Prodotti"
         },
         "categoryId": 1,
         "pageSchema": "product_index",
@@ -95,11 +88,22 @@
         "name": "contact",
         "title": {
           "en": "Contact us",
-          "it": "Contattaci",
-          "fr": "Contactez-nous"
+          "it": "Contattaci"
         },
         "categoryId": 1,
         "pageSchema": "contact",
+        "pageId": 1,
+        "schema": "category"
+      },
+      {
+        "id": 6,
+        "name": "reserved_area",
+        "title": {
+          "en": "Reserved area",
+          "it": "Area riservata"
+        },
+        "categoryId": 1,
+        "pageSchema": "reserved_area",
         "pageId": 1,
         "schema": "category"
       }
@@ -114,35 +118,29 @@
         "id": 1,
         "slug": {
           "en": "contact-us",
-          "it": "contattaci",
-          "fr": "contactez-nous"
+          "it": "contattaci"
         },
         "title": {
           "en": "Contact us",
-          "it": "Contattaci",
-          "fr": "Contactez-nous"
+          "it": "Contattaci"
         },
         "abstract": {
           "en": "Contact request.",
-          "it": "Richiesta di contatto.",
-          "fr": "Demande de contact."
+          "it": "Richiesta di contatto."
         },
         "description": {
           "en": "For any request, fill out the form in all its parts, we will reply as soon as possible.",
-          "it": "Per qualsiasi richiesta, compilate il form in tutte le sue parti, vi risponderemo nel più breve tempo possibile.",
-          "fr": "Pour toute demande, remplissez le formulaire dans toutes ses parties, nous vous répondrons dans les plus brefs délais."
+          "it": "Per qualsiasi richiesta, compilate il form in tutte le sue parti, vi risponderemo nel più breve tempo possibile."
         },
         "categoryId": 5,
         "meta": {
           "title": {
             "en": "Contact us",
-            "it": "Contattaci",
-            "fr": "Contactez-nous"
+            "it": "Contattaci"
           },
           "description": {
             "en": "Contact request.",
-            "it": "Richiesta di contatto.",
-            "fr": "Demande de contact."
+            "it": "Richiesta di contatto."
           },
           "keywords": "contact keywords",
           "robots": "all"
@@ -1904,31 +1902,26 @@
         "slug": "",
         "title": {
           "en": "New Wave",
-          "it": "Bossa nova",
-          "fr": "Nouvelle vague"
+          "it": "Bossa nova"
         },
         "abstract": {
           "en": "The charm of yesterday, the elegance of today",
-          "it": "Il fascino di ieri, l'eleganza di oggi",
-          "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+          "it": "Il fascino di ieri, l'eleganza di oggi"
         },
         "description": {
           "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
-          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali",
-          "fr": "Tradition et passion entièrement italiennes : plus de 30 ans d'histoire dans l'art ancien de la fabrication de lunettes"
+          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
         },
         "image": "/assets/homepage/banner.png",
         "categoryId": 1,
         "meta": {
           "title": {
             "en": "New Wave",
-            "it": "Bossa nova",
-            "fr": "Nouvelle vague"
+            "it": "Bossa nova"
           },
           "description": {
             "en": "The charm of yesterday, the elegance of today",
-            "it": "Il fascino di ieri, l'eleganza di oggi",
-            "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+            "it": "Il fascino di ieri, l'eleganza di oggi"
           },
           "keywords": "homepage keywords",
           "robots": "all"
@@ -1946,8 +1939,7 @@
         "id": "navigation.back",
         "text": {
           "en": "Back",
-          "it": "Indietro",
-          "fr": "Retour"
+          "it": "Indietro"
         },
         "schema": "label"
       },
@@ -1955,8 +1947,7 @@
         "id": "product.note",
         "text": {
           "en": "This note details something important.",
-          "it": "Questa nota descrive qualcosa di importante.",
-          "fr": "Cette note détaille quelque chose d'important."
+          "it": "Questa nota descrive qualcosa di importante."
         },
         "schema": "label"
       },
@@ -1964,8 +1955,7 @@
         "id": "product_search.items",
         "text": {
           "en": "@total items found",
-          "it": "trovati @total articoli",
-          "fr": "@total articles trouvés"
+          "it": "trovati @total articoli"
         },
         "schema": "label"
       },
@@ -1973,8 +1963,7 @@
         "id": "pagination.prev",
         "text": {
           "en": "Prev",
-          "it": "Indietro",
-          "fr": "Précédent"
+          "it": "Indietro"
         },
         "schema": "label"
       },
@@ -1982,8 +1971,7 @@
         "id": "pagination.next",
         "text": {
           "en": "Next",
-          "it": "Avanti",
-          "fr": "Prochain"
+          "it": "Avanti"
         },
         "schema": "label"
       },
@@ -1991,8 +1979,7 @@
         "id": "notfound.title",
         "text": {
           "en": "Page not found",
-          "it": "Pagina non trovata",
-          "fr": "Page non trouvée"
+          "it": "Pagina non trovata"
         },
         "schema": "label"
       },
@@ -2000,8 +1987,7 @@
         "id": "notfound.abstract",
         "text": {
           "en": "The page you are looking for does not exist.",
-          "it": "La pagina che stai cercando non esiste.",
-          "fr": "La page que vous recherchez n'existe pas."
+          "it": "La pagina che stai cercando non esiste."
         },
         "schema": "label"
       },
@@ -2009,8 +1995,7 @@
         "id": "field.magazine",
         "text": {
           "en": "Magazine",
-          "it": "Magazine",
-          "fr": "Revue"
+          "it": "Magazine"
         },
         "schema": "label"
       },
@@ -2018,8 +2003,7 @@
         "id": "field.firstName",
         "text": {
           "en": "Name",
-          "it": "Nome",
-          "fr": "Nom"
+          "it": "Nome"
         },
         "schema": "label"
       },
@@ -2027,8 +2011,7 @@
         "id": "field.lastName",
         "text": {
           "en": "Surname",
-          "it": "Cognome",
-          "fr": "Nom de famille"
+          "it": "Cognome"
         },
         "schema": "label"
       },
@@ -2036,8 +2019,23 @@
         "id": "field.email",
         "text": {
           "en": "Email",
-          "it": "Email",
-          "fr": "E-mail"
+          "it": "Email"
+        },
+        "schema": "label"
+      },
+      {
+        "id": "field.password",
+        "text": {
+          "en": "Password",
+          "it": "Password"
+        },
+        "schema": "label"
+      },
+      {
+        "id": "field.rememberMe",
+        "text": {
+          "en": "Remember me",
+          "it": "Ricordami"
         },
         "schema": "label"
       },
@@ -2045,8 +2043,7 @@
         "id": "field.telephone",
         "text": {
           "en": "Phone",
-          "it": "Telefono",
-          "fr": "Téléphone"
+          "it": "Telefono"
         },
         "schema": "label"
       },
@@ -2054,8 +2051,7 @@
         "id": "field.occupation",
         "text": {
           "en": "Occupation",
-          "it": "Occupazione",
-          "fr": "Profession"
+          "it": "Occupazione"
         },
         "schema": "label"
       },
@@ -2063,8 +2059,7 @@
         "id": "field.country",
         "text": {
           "en": "Country",
-          "it": "Nazione",
-          "fr": "Pays"
+          "it": "Nazione"
         },
         "schema": "label"
       },
@@ -2072,8 +2067,7 @@
         "id": "field.region",
         "text": {
           "en": "Region",
-          "it": "Regione",
-          "fr": "Région"
+          "it": "Regione"
         },
         "schema": "label"
       },
@@ -2081,8 +2075,7 @@
         "id": "field.printedCopy",
         "text": {
           "en": "Would you also like to receive the printed version of the Magazine?",
-          "it": "Vorresti ricevere anche la versione cartacea del Magazine?",
-          "fr": "Souhaitez-vous également recevoir la version papier du Magazine ?"
+          "it": "Vorresti ricevere anche la versione cartacea del Magazine?"
         },
         "schema": "label"
       },
@@ -2090,8 +2083,7 @@
         "id": "field.shippingInfo",
         "text": {
           "en": "Shipping Info",
-          "it": "Informazioni di spedizione",
-          "fr": "Informations d'expédition"
+          "it": "Informazioni di spedizione"
         },
         "schema": "label"
       },
@@ -2099,8 +2091,7 @@
         "id": "field.city",
         "text": {
           "en": "Town",
-          "it": "Città",
-          "fr": "Ville"
+          "it": "Città"
         },
         "schema": "label"
       },
@@ -2108,8 +2099,7 @@
         "id": "field.province",
         "text": {
           "en": "Province",
-          "it": "Provincia",
-          "fr": "Province"
+          "it": "Provincia"
         },
         "schema": "label"
       },
@@ -2117,8 +2107,7 @@
         "id": "field.zipCode",
         "text": {
           "en": "Postcode",
-          "it": "Codice postale",
-          "fr": "Code postal"
+          "it": "Codice postale"
         },
         "schema": "label"
       },
@@ -2126,8 +2115,7 @@
         "id": "field.address",
         "text": {
           "en": "Street address",
-          "it": "Indirizzo",
-          "fr": "Adresse"
+          "it": "Indirizzo"
         },
         "schema": "label"
       },
@@ -2135,8 +2123,7 @@
         "id": "field.streetNumber",
         "text": {
           "en": "Street number",
-          "it": "Numero civico",
-          "fr": "Numéro de la rue"
+          "it": "Numero civico"
         },
         "schema": "label"
       },
@@ -2144,8 +2131,7 @@
         "id": "field.phoneNumber",
         "text": {
           "en": "Phone Number",
-          "it": "Telefono",
-          "fr": "Téléphone"
+          "it": "Telefono"
         },
         "schema": "label"
       },
@@ -2153,8 +2139,7 @@
         "id": "field.privacy",
         "text": {
           "en": "I have read the privacy policy and I consent to the processing of data *",
-          "it": "Ho letto l'informativa sulla privacy e acconsento al trattamento dei dati *",
-          "fr": "J'ai lu la politique de confidentialité et je consens au traitement des données *"
+          "it": "Ho letto l'informativa sulla privacy e acconsento al trattamento dei dati *"
         },
         "schema": "label"
       },
@@ -2162,8 +2147,7 @@
         "id": "field.newsletter",
         "text": {
           "en": "To the processing of my personal data for direct marketing activities by subscribing to the newsletter. *",
-          "it": "Al trattamento dei miei dati personali per attività di marketing diretto mediante l'iscrizione alla newsletter. *",
-          "fr": "Au traitement de mes données personnelles pour des activités de marketing direct en m'inscrivant à la newsletter. *"
+          "it": "Al trattamento dei miei dati personali per attività di marketing diretto mediante l'iscrizione alla newsletter. *"
         },
         "schema": "label"
       },
@@ -2171,8 +2155,7 @@
         "id": "field.commercial",
         "text": {
           "en": "To the processing of my personal data for profiling activities, in order to receive commercial communications that are closer to my interests. *",
-          "it": "Al trattamento dei miei dati personali per attività di profilazione, al fine di ricevere comunicazioni commerciali più vicine ai miei interessi. *",
-          "fr": "Au traitement de mes données personnelles pour les activités de profilage, afin de recevoir des communications commerciales plus proches de mes intérêts. *"
+          "it": "Al trattamento dei miei dati personali per attività di profilazione, al fine di ricevere comunicazioni commerciali più vicine ai miei interessi. *"
         },
         "schema": "label"
       },
@@ -2180,8 +2163,7 @@
         "id": "field.promotion",
         "text": {
           "en": "To the transfer of my personal data for promotional activities by third parties. The data will be transferred exclusively to companies that are part of the Group. *",
-          "it": "Al trasferimento dei miei dati personali per attività promozionali da parte di terzi. I dati verranno ceduti esclusivamente a società facenti parte del Gruppo. *",
-          "fr": "Au transfert de mes données personnelles pour des activités promotionnelles par des tiers. Les données seront transférées exclusivement aux sociétés qui font partie du Groupe. *"
+          "it": "Al trasferimento dei miei dati personali per attività promozionali da parte di terzi. I dati verranno ceduti esclusivamente a società facenti parte del Gruppo. *"
         },
         "schema": "label"
       },
@@ -2189,8 +2171,7 @@
         "id": "form.accept.true",
         "text": {
           "en": "I agree",
-          "it": "Acconsento",
-          "fr": "Je suis d'accord"
+          "it": "Acconsento"
         },
         "schema": "label"
       },
@@ -2198,8 +2179,7 @@
         "id": "form.accept.false",
         "text": {
           "en": "I do not agree",
-          "it": "Non acconsento",
-          "fr": "Je ne suis pas d'accord"
+          "it": "Non acconsento"
         },
         "schema": "label"
       },
@@ -2207,8 +2187,7 @@
         "id": "form.submit",
         "text": {
           "en": "Submit",
-          "it": "Invia",
-          "fr": "Soumettre"
+          "it": "Invia"
         },
         "schema": "label"
       },
@@ -2216,8 +2195,7 @@
         "id": "form.reset",
         "text": {
           "en": "Reset",
-          "it": "Cancella",
-          "fr": "Réinitialiser"
+          "it": "Cancella"
         },
         "schema": "label"
       },
@@ -2225,8 +2203,7 @@
         "id": "form.test",
         "text": {
           "en": "Test",
-          "it": "Test",
-          "fr": "Test"
+          "it": "Test"
         },
         "schema": "label"
       },
@@ -2234,8 +2211,7 @@
         "id": "error.required",
         "text": {
           "en": "Required field",
-          "it": "Campo obbligatorio",
-          "fr": "Champ obligatoire"
+          "it": "Campo obbligatorio"
         },
         "schema": "label"
       },
@@ -2243,8 +2219,7 @@
         "id": "error.email",
         "text": {
           "en": "Invalid email",
-          "it": "EMail non valida",
-          "fr": "E-mail invalide"
+          "it": "Email non valida"
         },
         "schema": "label"
       },
@@ -2252,8 +2227,7 @@
         "id": "error.exhist",
         "text": {
           "en": "This value is already in use",
-          "it": "Questo valore è già in uso",
-          "fr": "Cette valeur est déjà utilisée"
+          "it": "Questo valore è già in uso"
         },
         "schema": "label"
       }
@@ -2379,11 +2353,6 @@
         "id": "it",
         "title": "Italiano",
         "schema": "locale"
-      },
-      {
-        "id": "fr",
-        "title": "Français",
-        "schema": "locale"
       }
     ]
   },
@@ -2396,8 +2365,7 @@
         "id": 1,
         "slug": {
           "en": "magazine",
-          "it": "magazine",
-          "fr": "magazine"
+          "it": "magazine"
         },
         "title": "Magazine",
         "abstract": "Magazine",
@@ -2429,11 +2397,11 @@
         "title": "Europe",
         "countries": [
           "it",
-          "fr"
+          "en"
         ],
         "languages": [
           "it",
-          "fr"
+          "en"
         ],
         "schema": "market"
       }
@@ -2491,13 +2459,11 @@
         "title": "T-Shirt",
         "abstract": {
           "en": "Your perfect item for everyday use and walks in the forest.",
-          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-          "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
         },
         "description": {
           "en": "<p>This t-shirt is a must-have in your wardrobe, combining the timeless fit of a classic tee with an intricate embroidered detail that brings the shirt to a whole new level. It's soft and durable, so be prepared to have a new favorite t-shirt!</p>",
-          "it": "<p>Questa t-shirt è un must nel tuo guardaroba, combina la vestibilità senza tempo di una t-shirt classica con un intricato dettaglio ricamato che porta la maglia a un livello completamente nuovo. È morbido e resistente, quindi preparati ad avere una nuova maglietta preferita!</p>",
-          "fr": "<p>Ce t-shirt est un incontournable de votre garde-robe, combinant la coupe intemporelle d'un t-shirt classique avec un détail brodé complexe qui amène la chemise à un tout autre niveau. Il est doux et résistant, alors préparez-vous à avoir un nouveau t-shirt préféré !</p>"
+          "it": "<p>Questa t-shirt è un must nel tuo guardaroba, combina la vestibilità senza tempo di una t-shirt classica con un intricato dettaglio ricamato che porta la maglia a un livello completamente nuovo. È morbido e resistente, quindi preparati ad avere una nuova maglietta preferita!</p>"
         },
         "image": "/assets/products/t-shirt.webp",
         "price": 160.12,
@@ -2506,8 +2472,7 @@
           "title": "T-Shirt",
           "description": {
             "en": "Your perfect item for everyday use and walks in the forest.",
-            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-            "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
           },
           "keywords": "t-shirt keywords",
           "robots": "all"
@@ -2518,23 +2483,19 @@
         "id": 2,
         "slug": {
           "en": "unisex-skinny-joggers",
-          "it": "pantaloni-skinny-da-jogging-unisex",
-          "fr": "jogging-skinny-unisexe"
+          "it": "pantaloni-skinny-da-jogging-unisex"
         },
         "title": {
           "en": "Unisex Skinny Joggers",
-          "it": "Pantaloni skinny da jogging unisex",
-          "fr": "Jogging skinny unisexe"
+          "it": "Pantaloni skinny da jogging unisex"
         },
         "abstract": {
           "en": "Your perfect item for everyday use and walks in the forest.",
-          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-          "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
         },
         "description": {
           "en": "<p>It looks like you found your next favorite workout sweatpants—the slim fit joggers are light and breathable, making them perfect for sports. Or if you feel like lounging on the couch, these soft joggers are just what you need. • 65% polyester, 35% cotton • Fabric weight: 250 g/m² (10.5 oz/y²) • Elastic waistband with a self-colored flat cord • Brushed metal eyelets for the cord • Double layer ribbed ankle cuffs • Side pockets with double layered ribbed hem • Back patch pocket • Slim fit (women may want to order a size down)</p>",
-          "it": "<p>Sembra che tu abbia trovato i tuoi prossimi pantaloni della tuta da allenamento preferiti: i jogger slim fit sono leggeri e traspiranti, il che li rende perfetti per lo sport. O se hai voglia di sdraiarti sul divano, questi morbidi jogger sono proprio quello di cui hai bisogno. • 65% poliestere, 35% cotone • Peso del tessuto: 250 g/m² (10.5 oz/y²) • Cintura elastica con cordino piatto in tinta • Occhielli in metallo spazzolato per il cordino • Polsini alla caviglia a costine doppio strato • Tasche laterali con doppio orlo a costine a strati • Tasca applicata sul retro • Vestibilità slim (le donne potrebbero voler ordinare una taglia in meno)</p>",
-          "fr": "<p>Il semble que vous ayez trouvé votre prochain pantalon de survêtement d'entraînement préféré : les pantalons de jogging slim sont légers et respirants, ce qui les rend parfaits pour le sport. Ou si vous avez envie de vous prélasser sur le canapé, ces pantalons de jogging doux sont exactement ce dont vous avez besoin. • 65 % polyester, 35 % coton • Poids du tissu : 250 g/m² (10,5 oz/y²) • Taille élastique avec un cordon plat de même couleur • Œillets en métal brossé pour le cordon • Chevilles côtelées à double épaisseur • Poches latérales avec double ourlet côtelé superposé • Poche arrière plaquée • Coupe ajustée (les femmes peuvent vouloir commander une taille en dessous)</p>"
+          "it": "<p>Sembra che tu abbia trovato i tuoi prossimi pantaloni della tuta da allenamento preferiti: i jogger slim fit sono leggeri e traspiranti, il che li rende perfetti per lo sport. O se hai voglia di sdraiarti sul divano, questi morbidi jogger sono proprio quello di cui hai bisogno. • 65% poliestere, 35% cotone • Peso del tessuto: 250 g/m² (10.5 oz/y²) • Cintura elastica con cordino piatto in tinta • Occhielli in metallo spazzolato per il cordino • Polsini alla caviglia a costine doppio strato • Tasche laterali con doppio orlo a costine a strati • Tasca applicata sul retro • Vestibilità slim (le donne potrebbero voler ordinare una taglia in meno)</p>"
         },
         "image": "/assets/products/trouser.webp",
         "price": 160.12,
@@ -2542,13 +2503,11 @@
         "meta": {
           "title": {
             "en": "Unisex Skinny Joggers",
-            "it": "Pantaloni skinny da jogging unisex",
-            "fr": "Jogging skinny unisexe"
+            "it": "Pantaloni skinny da jogging unisex"
           },
           "description": {
             "en": "Your perfect item for everyday use and walks in the forest.",
-            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-            "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
           },
           "keywords": "unisex skinny joggers keywords",
           "robots": "all"
@@ -2559,23 +2518,19 @@
         "id": 3,
         "slug": {
           "en": "lightweight-jacket",
-          "it": "giacca-leggera",
-          "fr": "veste-legere"
+          "it": "giacca-leggera"
         },
         "title": {
           "en": "Lightweight Jacket",
-          "it": "Giacca Leggera",
-          "fr": "Veste légère"
+          "it": "Giacca Leggera"
         },
         "abstract": {
           "en": "Your perfect item for everyday use and walks in the forest.",
-          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-          "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
         },
         "description": {
           "en": "<p>Add a little zing to your winter wardrobe with this vibrant Winter-breaker Jacket. With a brushed fleece inside, and a relaxed unisex fit, this jacket is just the stuff of the dreams, so be quick to grab yourself one!     Long sleeve ripstop jacket colorblocked in black. Rough pattern in obsidian black and brown printed throughout. Printed graphic in white throughout. Logo-woven webbing trim in white and black throughout. Bungee-style drawstring at hood featuring rubberized logo hardware. Zip closure at front. Rubberized logo appliqué at chest. Welt pockets and textile logo patch in orange at waist. Elasticized cuffs. Partially lined. Black hardware.</p>",
-          "it": "<p>Aggiungi un po' di brio al tuo guardaroba invernale con questa vivace giacca invernale. Con un pile spazzolato all'interno e una vestibilità unisex rilassata, questa giacca è solo la roba dei sogni, quindi affrettati a prenderne una! Giacca in ripstop a maniche lunghe colorblock in nero. Motivo grezzo in ossidiana nero e marrone stampato ovunque. Grafica stampata in bianco dappertutto. Finiture in tessuto con logo in bianco e nero. Coulisse in stile bungee sul cappuccio con logo in gomma. Chiusura con zip sul davanti. Logo gommato applicato sul petto. Tasche a filetto e patch logo in tessuto in arancione in vita. Polsini elasticizzati. Parzialmente foderato. Hardware nero.</p>",
-          "fr": "<p>Ajoutez un peu de piquant à votre garde-robe d'hiver avec cette éclatante veste Winter-breaker. Avec un intérieur en polaire brossée et une coupe unisexe décontractée, cette veste est tout ce dont vous rêvez, alors n'hésitez pas à vous en procurer une ! Blouson à manches longues anti-déchirures contrasté noir. Motif rugueux en noir obsidienne et marron imprimé sur l'ensemble. Image blanche imprimée sur l'ensemble. Garniture nattée à logo tissée blanche et noire sur l'ensemble. Cordon coulissant de style élastique à la capuche à ferrure à logo caoutchoutée. Fermeture zippée à l'avant. Appliqué à logo caoutchouté à la poitrine. Poches passepoilées et écusson à logo en tissu orange à la taille. Poignets élastiqués. Partiellement doublé. Quincaillerie noire.</p>"
+          "it": "<p>Aggiungi un po' di brio al tuo guardaroba invernale con questa vivace giacca invernale. Con un pile spazzolato all'interno e una vestibilità unisex rilassata, questa giacca è solo la roba dei sogni, quindi affrettati a prenderne una! Giacca in ripstop a maniche lunghe colorblock in nero. Motivo grezzo in ossidiana nero e marrone stampato ovunque. Grafica stampata in bianco dappertutto. Finiture in tessuto con logo in bianco e nero. Coulisse in stile bungee sul cappuccio con logo in gomma. Chiusura con zip sul davanti. Logo gommato applicato sul petto. Tasche a filetto e patch logo in tessuto in arancione in vita. Polsini elasticizzati. Parzialmente foderato. Hardware nero.</p>"
         },
         "image": "/assets/products/jacket.webp",
         "price": 249.99,
@@ -2583,13 +2538,11 @@
         "meta": {
           "title": {
             "en": "Lightweight Jacket",
-            "it": "Giacca Leggera",
-            "fr": "Veste légère"
+            "it": "Giacca Leggera"
           },
           "description": {
             "en": "Your perfect item for everyday use and walks in the forest.",
-            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-            "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
           },
           "keywords": "lightweight jacket keywords",
           "robots": "all"
@@ -2600,23 +2553,19 @@
         "id": 4,
         "slug": {
           "en": "black-beanie",
-          "it": "berretto-nero",
-          "fr": "bonnet-noir"
+          "it": "berretto-nero"
         },
         "title": {
           "en": "Black Beanie",
-          "it": "Berretto Nero",
-          "fr": "Bonnet Noir"
+          "it": "Berretto Nero"
         },
         "abstract": {
           "en": "Your perfect item for everyday use and walks in the forest.",
-          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-          "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
         },
         "description": {
           "en": "<p>The Next.js beanie has arrived! This embroidered beauty has a snug fit that ensures you're going to feel cozy and warm whatever you're doing.</p><ol><li>60% cotton, 40% acrylic</li><li>Breathable cotton blend</li><li>Form-fitting shape</li><li>One size fits most</li></ol>",
-          "it": "<p>Il berretto Next.js è arrivato! Questa bellezza ricamata ha una vestibilità aderente che ti assicura di sentirti comodo e caldo qualunque cosa tu stia facendo.</p><ol><li>60% cotone, 40% acrilico</li><li>Cotone traspirante misto</li><li>Forma aderente</li><li>Taglia unica</li></ol>",
-          "fr": "<p>Le bonnet Next.js est arrivé ! Cette beauté brodée a une coupe ajustée qui garantit que vous vous sentirez confortable et au chaud quoi que vous fassiez.</p> <ol> <li>60 % coton, 40 % acrylique</li> <li>Coton respirant blend</li><li>Forme ajustée</li><li>Taille unique</li></ol>"
+          "it": "<p>Il berretto Next.js è arrivato! Questa bellezza ricamata ha una vestibilità aderente che ti assicura di sentirti comodo e caldo qualunque cosa tu stia facendo.</p><ol><li>60% cotone, 40% acrilico</li><li>Cotone traspirante misto</li><li>Forma aderente</li><li>Taglia unica</li></ol>"
         },
         "image": "/assets/products/hat.webp",
         "price": 160.12,
@@ -2624,13 +2573,11 @@
         "meta": {
           "title": {
             "en": "Black Beanie",
-            "it": "Berretto Nero",
-            "fr": "Bonnet Noir"
+            "it": "Berretto Nero"
           },
           "description": {
             "en": "Your perfect item for everyday use and walks in the forest.",
-            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-            "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
           },
           "keywords": "black beanie keywords",
           "robots": "all"
@@ -2648,35 +2595,29 @@
         "id": 1,
         "slug": {
           "en": "products",
-          "it": "prodotti",
-          "fr": "produits"
+          "it": "prodotti"
         },
         "title": {
           "en": "Products",
-          "it": "Prodotti",
-          "fr": "Produits"
+          "it": "Prodotti"
         },
         "abstract": {
           "en": "The charm of yesterday, the elegance of today",
-          "it": "Il fascino di ieri, l'eleganza di oggi",
-          "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+          "it": "Il fascino di ieri, l'eleganza di oggi"
         },
         "description": {
           "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
-          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali",
-          "fr": "Tradition et passion entièrement italiennes : plus de 30 ans d'histoire dans l'art ancien de la fabrication de lunettes"
+          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
         },
         "categoryId": 2,
         "meta": {
           "title": {
             "en": "Products",
-            "it": "Prodotti",
-            "fr": "Produits"
+            "it": "Prodotti"
           },
           "description": {
             "en": "The charm of yesterday, the elegance of today",
-            "it": "Il fascino di ieri, l'eleganza di oggi",
-            "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+            "it": "Il fascino di ieri, l'eleganza di oggi"
           },
           "keywords": "products keywords",
           "robots": "all"
@@ -2694,35 +2635,29 @@
         "id": 1,
         "slug": {
           "en": "product-search-csr",
-          "it": "ricerca-prodotti-csr",
-          "fr": "recherche-produit-csr"
+          "it": "ricerca-prodotti-csr"
         },
         "title": {
           "en": "Product search CSR",
-          "it": "Ricerca prodotti CSR",
-          "fr": "Recherche produit CSR"
+          "it": "Ricerca prodotti CSR"
         },
         "abstract": {
           "en": "Easily find the porcelain stoneware tiles and wall tiles that meet your needs.",
-          "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni.",
-          "fr": "Trouvez facilement les carreaux et revêtements muraux en grès cérame qui répondent à vos besoins."
+          "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni."
         },
         "description": {
           "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
-          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali",
-          "fr": "Tradition et passion entièrement italiennes : plus de 30 ans d'histoire dans l'art ancien de la fabrication de lunettes"
+          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
         },
         "categoryId": 10,
         "meta": {
           "title": {
             "en": "Product search",
-            "it": "Ricerca prodotti",
-            "fr": "Recherche produit"
+            "it": "Ricerca prodotti"
           },
           "description": {
             "en": "Easily find the porcelain stoneware tiles and wall tiles that meet your needs.",
-            "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni.",
-            "fr": "Trouvez facilement les carreaux et revêtements muraux en grès cérame qui répondent à vos besoins."
+            "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni."
           },
           "keywords": "product search keywords",
           "robots": "all"
@@ -2740,35 +2675,29 @@
         "id": 1,
         "slug": {
           "en": "product-search-ssr",
-          "it": "ricerca-prodotti-ssr",
-          "fr": "recherche-produit-ssr"
+          "it": "ricerca-prodotti-ssr"
         },
         "title": {
           "en": "Product search SSR",
-          "it": "Ricerca prodotti SSR",
-          "fr": "Recherche produit SSR"
+          "it": "Ricerca prodotti SSR"
         },
         "abstract": {
           "en": "Easily find the porcelain stoneware tiles and wall tiles that meet your needs.",
-          "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni.",
-          "fr": "Trouvez facilement les carreaux et revêtements muraux en grès cérame qui répondent à vos besoins."
+          "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni."
         },
         "description": {
           "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
-          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali",
-          "fr": "Tradition et passion entièrement italiennes : plus de 30 ans d'histoire dans l'art ancien de la fabrication de lunettes"
+          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
         },
         "categoryId": 11,
         "meta": {
           "title": {
             "en": "Product search",
-            "it": "Ricerca prodotti",
-            "fr": "Recherche produit"
+            "it": "Ricerca prodotti"
           },
           "description": {
             "en": "Easily find the porcelain stoneware tiles and wall tiles that meet your needs.",
-            "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni.",
-            "fr": "Trouvez facilement les carreaux et revêtements muraux en grès cérame qui répondent à vos besoins."
+            "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni."
           },
           "keywords": "product search keywords",
           "robots": "all"
@@ -3438,6 +3367,46 @@
         "id": 20,
         "name": "Veneto",
         "schema": "region"
+      }
+    ]
+  },
+  "reserved_area": {
+    "singularName": "reserved_area",
+    "pluralName": "reserved_areas",
+    "displayName": "Reserved_area",
+    "items": [
+      {
+        "id": 1,
+        "slug": {
+          "en": "reserved-area",
+          "it": "area-riservata"
+        },
+        "title": {
+          "en": "Reserved area",
+          "it": "Area riservata"
+        },
+        "abstract": {
+          "en": "Reserved area.",
+          "it": "Area riservata."
+        },
+        "description": {
+          "en": "Reserved area.",
+          "it": "Area riservata."
+        },
+        "categoryId": 6,
+        "meta": {
+          "title": {
+            "en": "Reserved area",
+            "it": "Area riservata"
+          },
+          "description": {
+            "en": "Reserved area.",
+            "it": "Area riservata."
+          },
+          "keywords": "reserved area keywords",
+          "robots": "all"
+        },
+        "schema": "reserved_area"
       }
     ]
   },
@@ -58577,31 +58546,26 @@
         "slug": "",
         "title": {
           "en": "New Wave",
-          "it": "Bossa nova",
-          "fr": "Nouvelle vague"
+          "it": "Bossa nova"
         },
         "abstract": {
           "en": "The charm of yesterday, the elegance of today",
-          "it": "Il fascino di ieri, l'eleganza di oggi",
-          "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+          "it": "Il fascino di ieri, l'eleganza di oggi"
         },
         "description": {
           "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
-          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali",
-          "fr": "Tradition et passion entièrement italiennes : plus de 30 ans d'histoire dans l'art ancien de la fabrication de lunettes"
+          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
         },
         "image": "/assets/homepage/banner.png",
         "categoryId": 1,
         "meta": {
           "title": {
             "en": "New Wave",
-            "it": "Bossa nova",
-            "fr": "Nouvelle vague"
+            "it": "Bossa nova"
           },
           "description": {
             "en": "The charm of yesterday, the elegance of today",
-            "it": "Il fascino di ieri, l'eleganza di oggi",
-            "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+            "it": "Il fascino di ieri, l'eleganza di oggi"
           },
           "keywords": "homepage keywords",
           "robots": "all"
@@ -58612,35 +58576,29 @@
         "id": 1,
         "slug": {
           "en": "who-we-are",
-          "it": "chi-siamo",
-          "fr": "qui-nous-sommes"
+          "it": "chi-siamo"
         },
         "title": {
           "en": "Who we are",
-          "it": "Chi Siamo",
-          "fr": "Qui nous sommes"
+          "it": "Chi Siamo"
         },
         "abstract": {
           "en": "The Nouvelle Vague line is a springboard towards a future capable of exploring new spaces and frontiers without ever forgetting the roots that anchor it to a tradition made of genius and respect, imagination and deep knowledge of natural materials, including captivating shapes, lace, lace and undisputed technical capacity.",
-          "it": "La linea Nouvelle Vague è un trampolino verso un futuro capace di esplorare nuovi spazi e frontiere senza mai dimenticare le radici che la ancora ad una tradizione fatta di genialità e rispetto, fantasia e profonda conoscenza di materiali naturali, tra forme accattivanti, pizzi, merletti e indiscussa capacità tecnica.",
-          "fr": "La ligne Nouvelle Vague est un tremplin vers un futur capable d'explorer de nouveaux espaces et frontières sans jamais oublier les racines qui l'ancrent dans une tradition faite de génie et de respect, d'imagination et de connaissance approfondie des matériaux naturels, y compris les formes captivantes, la dentelle, la dentelle et capacité technique incontestée."
+          "it": "La linea Nouvelle Vague è un trampolino verso un futuro capace di esplorare nuovi spazi e frontiere senza mai dimenticare le radici che la ancora ad una tradizione fatta di genialità e rispetto, fantasia e profonda conoscenza di materiali naturali, tra forme accattivanti, pizzi, merletti e indiscussa capacità tecnica."
         },
         "description": {
           "en": "Born from the genius of those who have been able to look beyond the rigid rules imposed by a past that was close to a world in continuous evolution, Nouvelle Vague thus manages to combine the attention to the undisputed quality of materials, all strictly Italian, the continuous scientific updating and technological, and the unstoppable desire to make lenses and eyewear engines of emotion and color.",
-          "it": "Nata dal genio di chi ha saputo guardare oltre le rigide regole imposte da un passato che stava stretto ad un mondo in continua evoluzione, Nouvelle Vague riesce così a coniugare l’attenzione per la qualità indiscussa di materiali, tutti rigorosamente italiani, il continuo aggiornamento scientifico e tecnologico, e l’inarrestabile voglia di fare di lenti e occhiali motori di emozione e colore.",
-          "fr": "Née du génie de ceux qui ont su regarder au-delà des règles rigides imposées par un passé proche d'un monde en constante évolution, Nouvelle Vague parvient ainsi à allier l'attention à la qualité incontestée des matériaux, tous strictement italiens, la une mise à jour scientifique et technologique continue, et le désir irrésistible de faire des verres et des lunettes des moteurs d'émotion et de couleur."
+          "it": "Nata dal genio di chi ha saputo guardare oltre le rigide regole imposte da un passato che stava stretto ad un mondo in continua evoluzione, Nouvelle Vague riesce così a coniugare l’attenzione per la qualità indiscussa di materiali, tutti rigorosamente italiani, il continuo aggiornamento scientifico e tecnologico, e l’inarrestabile voglia di fare di lenti e occhiali motori di emozione e colore."
         },
         "categoryId": 2,
         "meta": {
           "title": {
             "en": "Who we are",
-            "it": "Chi Siamo",
-            "fr": "Qui nous sommes"
+            "it": "Chi Siamo"
           },
           "description": {
             "en": "The Nouvelle Vague line is a springboard towards future.",
-            "it": "La linea Nouvelle Vague è un trampolino verso il futuro.",
-            "fr": "La ligne Nouvelle Vague est un tremplin vers le futur."
+            "it": "La linea Nouvelle Vague è un trampolino verso il futuro."
           },
           "keywords": "about keywords",
           "robots": "all"
@@ -58651,35 +58609,29 @@
         "id": 1,
         "slug": {
           "en": "contact-us",
-          "it": "contattaci",
-          "fr": "contactez-nous"
+          "it": "contattaci"
         },
         "title": {
           "en": "Contact us",
-          "it": "Contattaci",
-          "fr": "Contactez-nous"
+          "it": "Contattaci"
         },
         "abstract": {
           "en": "Contact request.",
-          "it": "Richiesta di contatto.",
-          "fr": "Demande de contact."
+          "it": "Richiesta di contatto."
         },
         "description": {
           "en": "For any request, fill out the form in all its parts, we will reply as soon as possible.",
-          "it": "Per qualsiasi richiesta, compilate il form in tutte le sue parti, vi risponderemo nel più breve tempo possibile.",
-          "fr": "Pour toute demande, remplissez le formulaire dans toutes ses parties, nous vous répondrons dans les plus brefs délais."
+          "it": "Per qualsiasi richiesta, compilate il form in tutte le sue parti, vi risponderemo nel più breve tempo possibile."
         },
         "categoryId": 5,
         "meta": {
           "title": {
             "en": "Contact us",
-            "it": "Contattaci",
-            "fr": "Contactez-nous"
+            "it": "Contattaci"
           },
           "description": {
             "en": "Contact request.",
-            "it": "Richiesta di contatto.",
-            "fr": "Demande de contact."
+            "it": "Richiesta di contatto."
           },
           "keywords": "contact keywords",
           "robots": "all"
@@ -58690,8 +58642,7 @@
         "id": 1,
         "slug": {
           "en": "magazine",
-          "it": "magazine",
-          "fr": "magazine"
+          "it": "magazine"
         },
         "title": "Magazine",
         "abstract": "Magazine",
@@ -58709,35 +58660,29 @@
         "id": 1,
         "slug": {
           "en": "products",
-          "it": "prodotti",
-          "fr": "produits"
+          "it": "prodotti"
         },
         "title": {
           "en": "Products",
-          "it": "Prodotti",
-          "fr": "Produits"
+          "it": "Prodotti"
         },
         "abstract": {
           "en": "The charm of yesterday, the elegance of today",
-          "it": "Il fascino di ieri, l'eleganza di oggi",
-          "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+          "it": "Il fascino di ieri, l'eleganza di oggi"
         },
         "description": {
           "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
-          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali",
-          "fr": "Tradition et passion entièrement italiennes : plus de 30 ans d'histoire dans l'art ancien de la fabrication de lunettes"
+          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
         },
         "categoryId": 2,
         "meta": {
           "title": {
             "en": "Products",
-            "it": "Prodotti",
-            "fr": "Produits"
+            "it": "Prodotti"
           },
           "description": {
             "en": "The charm of yesterday, the elegance of today",
-            "it": "Il fascino di ieri, l'eleganza di oggi",
-            "fr": "Le charme d'hier, l'élégance d'aujourd'hui"
+            "it": "Il fascino di ieri, l'eleganza di oggi"
           },
           "keywords": "products keywords",
           "robots": "all"
@@ -58748,35 +58693,29 @@
         "id": 1,
         "slug": {
           "en": "product-search-csr",
-          "it": "ricerca-prodotti-csr",
-          "fr": "recherche-produit-csr"
+          "it": "ricerca-prodotti-csr"
         },
         "title": {
           "en": "Product search CSR",
-          "it": "Ricerca prodotti CSR",
-          "fr": "Recherche produit CSR"
+          "it": "Ricerca prodotti CSR"
         },
         "abstract": {
           "en": "Easily find the porcelain stoneware tiles and wall tiles that meet your needs.",
-          "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni.",
-          "fr": "Trouvez facilement les carreaux et revêtements muraux en grès cérame qui répondent à vos besoins."
+          "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni."
         },
         "description": {
           "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
-          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali",
-          "fr": "Tradition et passion entièrement italiennes : plus de 30 ans d'histoire dans l'art ancien de la fabrication de lunettes"
+          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
         },
         "categoryId": 10,
         "meta": {
           "title": {
             "en": "Product search",
-            "it": "Ricerca prodotti",
-            "fr": "Recherche produit"
+            "it": "Ricerca prodotti"
           },
           "description": {
             "en": "Easily find the porcelain stoneware tiles and wall tiles that meet your needs.",
-            "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni.",
-            "fr": "Trouvez facilement les carreaux et revêtements muraux en grès cérame qui répondent à vos besoins."
+            "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni."
           },
           "keywords": "product search keywords",
           "robots": "all"
@@ -58787,35 +58726,29 @@
         "id": 1,
         "slug": {
           "en": "product-search-ssr",
-          "it": "ricerca-prodotti-ssr",
-          "fr": "recherche-produit-ssr"
+          "it": "ricerca-prodotti-ssr"
         },
         "title": {
           "en": "Product search SSR",
-          "it": "Ricerca prodotti SSR",
-          "fr": "Recherche produit SSR"
+          "it": "Ricerca prodotti SSR"
         },
         "abstract": {
           "en": "Easily find the porcelain stoneware tiles and wall tiles that meet your needs.",
-          "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni.",
-          "fr": "Trouvez facilement les carreaux et revêtements muraux en grès cérame qui répondent à vos besoins."
+          "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni."
         },
         "description": {
           "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
-          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali",
-          "fr": "Tradition et passion entièrement italiennes : plus de 30 ans d'histoire dans l'art ancien de la fabrication de lunettes"
+          "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
         },
         "categoryId": 11,
         "meta": {
           "title": {
             "en": "Product search",
-            "it": "Ricerca prodotti",
-            "fr": "Recherche produit"
+            "it": "Ricerca prodotti"
           },
           "description": {
             "en": "Easily find the porcelain stoneware tiles and wall tiles that meet your needs.",
-            "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni.",
-            "fr": "Trouvez facilement les carreaux et revêtements muraux en grès cérame qui répondent à vos besoins."
+            "it": "Trova facilmente le piastrelle in gres porcellanato e rivestimenti che rispondono ai tuoi bisogni."
           },
           "keywords": "product search keywords",
           "robots": "all"
@@ -58828,13 +58761,11 @@
         "title": "T-Shirt",
         "abstract": {
           "en": "Your perfect item for everyday use and walks in the forest.",
-          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-          "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
         },
         "description": {
           "en": "<p>This t-shirt is a must-have in your wardrobe, combining the timeless fit of a classic tee with an intricate embroidered detail that brings the shirt to a whole new level. It's soft and durable, so be prepared to have a new favorite t-shirt!</p>",
-          "it": "<p>Questa t-shirt è un must nel tuo guardaroba, combina la vestibilità senza tempo di una t-shirt classica con un intricato dettaglio ricamato che porta la maglia a un livello completamente nuovo. È morbido e resistente, quindi preparati ad avere una nuova maglietta preferita!</p>",
-          "fr": "<p>Ce t-shirt est un incontournable de votre garde-robe, combinant la coupe intemporelle d'un t-shirt classique avec un détail brodé complexe qui amène la chemise à un tout autre niveau. Il est doux et résistant, alors préparez-vous à avoir un nouveau t-shirt préféré !</p>"
+          "it": "<p>Questa t-shirt è un must nel tuo guardaroba, combina la vestibilità senza tempo di una t-shirt classica con un intricato dettaglio ricamato che porta la maglia a un livello completamente nuovo. È morbido e resistente, quindi preparati ad avere una nuova maglietta preferita!</p>"
         },
         "image": "/assets/products/t-shirt.webp",
         "price": 160.12,
@@ -58843,8 +58774,7 @@
           "title": "T-Shirt",
           "description": {
             "en": "Your perfect item for everyday use and walks in the forest.",
-            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-            "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
           },
           "keywords": "t-shirt keywords",
           "robots": "all"
@@ -58855,23 +58785,19 @@
         "id": 2,
         "slug": {
           "en": "unisex-skinny-joggers",
-          "it": "pantaloni-skinny-da-jogging-unisex",
-          "fr": "jogging-skinny-unisexe"
+          "it": "pantaloni-skinny-da-jogging-unisex"
         },
         "title": {
           "en": "Unisex Skinny Joggers",
-          "it": "Pantaloni skinny da jogging unisex",
-          "fr": "Jogging skinny unisexe"
+          "it": "Pantaloni skinny da jogging unisex"
         },
         "abstract": {
           "en": "Your perfect item for everyday use and walks in the forest.",
-          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-          "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
         },
         "description": {
           "en": "<p>It looks like you found your next favorite workout sweatpants—the slim fit joggers are light and breathable, making them perfect for sports. Or if you feel like lounging on the couch, these soft joggers are just what you need. • 65% polyester, 35% cotton • Fabric weight: 250 g/m² (10.5 oz/y²) • Elastic waistband with a self-colored flat cord • Brushed metal eyelets for the cord • Double layer ribbed ankle cuffs • Side pockets with double layered ribbed hem • Back patch pocket • Slim fit (women may want to order a size down)</p>",
-          "it": "<p>Sembra che tu abbia trovato i tuoi prossimi pantaloni della tuta da allenamento preferiti: i jogger slim fit sono leggeri e traspiranti, il che li rende perfetti per lo sport. O se hai voglia di sdraiarti sul divano, questi morbidi jogger sono proprio quello di cui hai bisogno. • 65% poliestere, 35% cotone • Peso del tessuto: 250 g/m² (10.5 oz/y²) • Cintura elastica con cordino piatto in tinta • Occhielli in metallo spazzolato per il cordino • Polsini alla caviglia a costine doppio strato • Tasche laterali con doppio orlo a costine a strati • Tasca applicata sul retro • Vestibilità slim (le donne potrebbero voler ordinare una taglia in meno)</p>",
-          "fr": "<p>Il semble que vous ayez trouvé votre prochain pantalon de survêtement d'entraînement préféré : les pantalons de jogging slim sont légers et respirants, ce qui les rend parfaits pour le sport. Ou si vous avez envie de vous prélasser sur le canapé, ces pantalons de jogging doux sont exactement ce dont vous avez besoin. • 65 % polyester, 35 % coton • Poids du tissu : 250 g/m² (10,5 oz/y²) • Taille élastique avec un cordon plat de même couleur • Œillets en métal brossé pour le cordon • Chevilles côtelées à double épaisseur • Poches latérales avec double ourlet côtelé superposé • Poche arrière plaquée • Coupe ajustée (les femmes peuvent vouloir commander une taille en dessous)</p>"
+          "it": "<p>Sembra che tu abbia trovato i tuoi prossimi pantaloni della tuta da allenamento preferiti: i jogger slim fit sono leggeri e traspiranti, il che li rende perfetti per lo sport. O se hai voglia di sdraiarti sul divano, questi morbidi jogger sono proprio quello di cui hai bisogno. • 65% poliestere, 35% cotone • Peso del tessuto: 250 g/m² (10.5 oz/y²) • Cintura elastica con cordino piatto in tinta • Occhielli in metallo spazzolato per il cordino • Polsini alla caviglia a costine doppio strato • Tasche laterali con doppio orlo a costine a strati • Tasca applicata sul retro • Vestibilità slim (le donne potrebbero voler ordinare una taglia in meno)</p>"
         },
         "image": "/assets/products/trouser.webp",
         "price": 160.12,
@@ -58879,13 +58805,11 @@
         "meta": {
           "title": {
             "en": "Unisex Skinny Joggers",
-            "it": "Pantaloni skinny da jogging unisex",
-            "fr": "Jogging skinny unisexe"
+            "it": "Pantaloni skinny da jogging unisex"
           },
           "description": {
             "en": "Your perfect item for everyday use and walks in the forest.",
-            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-            "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
           },
           "keywords": "unisex skinny joggers keywords",
           "robots": "all"
@@ -58896,23 +58820,19 @@
         "id": 3,
         "slug": {
           "en": "lightweight-jacket",
-          "it": "giacca-leggera",
-          "fr": "veste-legere"
+          "it": "giacca-leggera"
         },
         "title": {
           "en": "Lightweight Jacket",
-          "it": "Giacca Leggera",
-          "fr": "Veste légère"
+          "it": "Giacca Leggera"
         },
         "abstract": {
           "en": "Your perfect item for everyday use and walks in the forest.",
-          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-          "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
         },
         "description": {
           "en": "<p>Add a little zing to your winter wardrobe with this vibrant Winter-breaker Jacket. With a brushed fleece inside, and a relaxed unisex fit, this jacket is just the stuff of the dreams, so be quick to grab yourself one!     Long sleeve ripstop jacket colorblocked in black. Rough pattern in obsidian black and brown printed throughout. Printed graphic in white throughout. Logo-woven webbing trim in white and black throughout. Bungee-style drawstring at hood featuring rubberized logo hardware. Zip closure at front. Rubberized logo appliqué at chest. Welt pockets and textile logo patch in orange at waist. Elasticized cuffs. Partially lined. Black hardware.</p>",
-          "it": "<p>Aggiungi un po' di brio al tuo guardaroba invernale con questa vivace giacca invernale. Con un pile spazzolato all'interno e una vestibilità unisex rilassata, questa giacca è solo la roba dei sogni, quindi affrettati a prenderne una! Giacca in ripstop a maniche lunghe colorblock in nero. Motivo grezzo in ossidiana nero e marrone stampato ovunque. Grafica stampata in bianco dappertutto. Finiture in tessuto con logo in bianco e nero. Coulisse in stile bungee sul cappuccio con logo in gomma. Chiusura con zip sul davanti. Logo gommato applicato sul petto. Tasche a filetto e patch logo in tessuto in arancione in vita. Polsini elasticizzati. Parzialmente foderato. Hardware nero.</p>",
-          "fr": "<p>Ajoutez un peu de piquant à votre garde-robe d'hiver avec cette éclatante veste Winter-breaker. Avec un intérieur en polaire brossée et une coupe unisexe décontractée, cette veste est tout ce dont vous rêvez, alors n'hésitez pas à vous en procurer une ! Blouson à manches longues anti-déchirures contrasté noir. Motif rugueux en noir obsidienne et marron imprimé sur l'ensemble. Image blanche imprimée sur l'ensemble. Garniture nattée à logo tissée blanche et noire sur l'ensemble. Cordon coulissant de style élastique à la capuche à ferrure à logo caoutchoutée. Fermeture zippée à l'avant. Appliqué à logo caoutchouté à la poitrine. Poches passepoilées et écusson à logo en tissu orange à la taille. Poignets élastiqués. Partiellement doublé. Quincaillerie noire.</p>"
+          "it": "<p>Aggiungi un po' di brio al tuo guardaroba invernale con questa vivace giacca invernale. Con un pile spazzolato all'interno e una vestibilità unisex rilassata, questa giacca è solo la roba dei sogni, quindi affrettati a prenderne una! Giacca in ripstop a maniche lunghe colorblock in nero. Motivo grezzo in ossidiana nero e marrone stampato ovunque. Grafica stampata in bianco dappertutto. Finiture in tessuto con logo in bianco e nero. Coulisse in stile bungee sul cappuccio con logo in gomma. Chiusura con zip sul davanti. Logo gommato applicato sul petto. Tasche a filetto e patch logo in tessuto in arancione in vita. Polsini elasticizzati. Parzialmente foderato. Hardware nero.</p>"
         },
         "image": "/assets/products/jacket.webp",
         "price": 249.99,
@@ -58920,13 +58840,11 @@
         "meta": {
           "title": {
             "en": "Lightweight Jacket",
-            "it": "Giacca Leggera",
-            "fr": "Veste légère"
+            "it": "Giacca Leggera"
           },
           "description": {
             "en": "Your perfect item for everyday use and walks in the forest.",
-            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-            "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
           },
           "keywords": "lightweight jacket keywords",
           "robots": "all"
@@ -58937,23 +58855,19 @@
         "id": 4,
         "slug": {
           "en": "black-beanie",
-          "it": "berretto-nero",
-          "fr": "bonnet-noir"
+          "it": "berretto-nero"
         },
         "title": {
           "en": "Black Beanie",
-          "it": "Berretto Nero",
-          "fr": "Bonnet Noir"
+          "it": "Berretto Nero"
         },
         "abstract": {
           "en": "Your perfect item for everyday use and walks in the forest.",
-          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-          "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+          "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
         },
         "description": {
           "en": "<p>The Next.js beanie has arrived! This embroidered beauty has a snug fit that ensures you're going to feel cozy and warm whatever you're doing.</p><ol><li>60% cotton, 40% acrylic</li><li>Breathable cotton blend</li><li>Form-fitting shape</li><li>One size fits most</li></ol>",
-          "it": "<p>Il berretto Next.js è arrivato! Questa bellezza ricamata ha una vestibilità aderente che ti assicura di sentirti comodo e caldo qualunque cosa tu stia facendo.</p><ol><li>60% cotone, 40% acrilico</li><li>Cotone traspirante misto</li><li>Forma aderente</li><li>Taglia unica</li></ol>",
-          "fr": "<p>Le bonnet Next.js est arrivé ! Cette beauté brodée a une coupe ajustée qui garantit que vous vous sentirez confortable et au chaud quoi que vous fassiez.</p> <ol> <li>60 % coton, 40 % acrylique</li> <li>Coton respirant blend</li><li>Forme ajustée</li><li>Taille unique</li></ol>"
+          "it": "<p>Il berretto Next.js è arrivato! Questa bellezza ricamata ha una vestibilità aderente che ti assicura di sentirti comodo e caldo qualunque cosa tu stia facendo.</p><ol><li>60% cotone, 40% acrilico</li><li>Cotone traspirante misto</li><li>Forma aderente</li><li>Taglia unica</li></ol>"
         },
         "image": "/assets/products/hat.webp",
         "price": 160.12,
@@ -58961,13 +58875,11 @@
         "meta": {
           "title": {
             "en": "Black Beanie",
-            "it": "Berretto Nero",
-            "fr": "Bonnet Noir"
+            "it": "Berretto Nero"
           },
           "description": {
             "en": "Your perfect item for everyday use and walks in the forest.",
-            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta.",
-            "fr": "Votre article parfait pour un usage quotidien et des promenades en forêt."
+            "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
           },
           "keywords": "black beanie keywords",
           "robots": "all"
@@ -58988,6 +58900,39 @@
           "robots": "all"
         },
         "schema": "store_index"
+      },
+      {
+        "id": 1,
+        "slug": {
+          "en": "reserved-area",
+          "it": "area-riservata"
+        },
+        "title": {
+          "en": "Reserved area",
+          "it": "Area riservata"
+        },
+        "abstract": {
+          "en": "Reserved area.",
+          "it": "Area riservata."
+        },
+        "description": {
+          "en": "Reserved area.",
+          "it": "Area riservata."
+        },
+        "categoryId": 6,
+        "meta": {
+          "title": {
+            "en": "Reserved area",
+            "it": "Area riservata"
+          },
+          "description": {
+            "en": "Reserved area.",
+            "it": "Area riservata."
+          },
+          "keywords": "reserved area keywords",
+          "robots": "all"
+        },
+        "schema": "reserved_area"
       }
     ]
   },
@@ -59013,14 +58958,6 @@
         "pageId": 1
       },
       {
-        "id": "/ww/fr",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "homepage",
-        "pageId": 1
-      },
-      {
         "id": "/eu/it",
         "schema": "route",
         "marketId": "eu",
@@ -59029,10 +58966,10 @@
         "pageId": 1
       },
       {
-        "id": "/eu/fr",
+        "id": "/eu/en",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "homepage",
         "pageId": 1
       },
@@ -59061,14 +58998,6 @@
         "pageId": 1
       },
       {
-        "id": "/ww/fr/produits/qui-nous-sommes",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "about",
-        "pageId": 1
-      },
-      {
         "id": "/eu/it/prodotti/chi-siamo",
         "schema": "route",
         "marketId": "eu",
@@ -59077,10 +59006,10 @@
         "pageId": 1
       },
       {
-        "id": "/eu/fr/produits/qui-nous-sommes",
+        "id": "/eu/en/products/who-we-are",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "about",
         "pageId": 1
       },
@@ -59101,14 +59030,6 @@
         "pageId": 1
       },
       {
-        "id": "/ww/fr/contactez-nous",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "contact",
-        "pageId": 1
-      },
-      {
         "id": "/eu/it/contattaci",
         "schema": "route",
         "marketId": "eu",
@@ -59117,10 +59038,10 @@
         "pageId": 1
       },
       {
-        "id": "/eu/fr/contactez-nous",
+        "id": "/eu/en/contact-us",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "contact",
         "pageId": 1
       },
@@ -59141,14 +59062,6 @@
         "pageId": 1
       },
       {
-        "id": "/ww/fr/magazine",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "magazine_index",
-        "pageId": 1
-      },
-      {
         "id": "/eu/it/magazine",
         "schema": "route",
         "marketId": "eu",
@@ -59157,10 +59070,10 @@
         "pageId": 1
       },
       {
-        "id": "/eu/fr/magazine",
+        "id": "/eu/en/magazine",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "magazine_index",
         "pageId": 1
       },
@@ -59181,14 +59094,6 @@
         "pageId": 1
       },
       {
-        "id": "/ww/fr/produits",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "product_index",
-        "pageId": 1
-      },
-      {
         "id": "/eu/it/prodotti",
         "schema": "route",
         "marketId": "eu",
@@ -59197,10 +59102,10 @@
         "pageId": 1
       },
       {
-        "id": "/eu/fr/produits",
+        "id": "/eu/en/products",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "product_index",
         "pageId": 1
       },
@@ -59221,14 +59126,6 @@
         "pageId": 1
       },
       {
-        "id": "/ww/fr/recherche-produit-csr",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "product_search_csr",
-        "pageId": 1
-      },
-      {
         "id": "/eu/it/ricerca-prodotti-csr",
         "schema": "route",
         "marketId": "eu",
@@ -59237,10 +59134,10 @@
         "pageId": 1
       },
       {
-        "id": "/eu/fr/recherche-produit-csr",
+        "id": "/eu/en/product-search-csr",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "product_search_csr",
         "pageId": 1
       },
@@ -59261,14 +59158,6 @@
         "pageId": 1
       },
       {
-        "id": "/ww/fr/recherche-produit-ssr",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "product_search_ssr",
-        "pageId": 1
-      },
-      {
         "id": "/eu/it/ricerca-prodotti-ssr",
         "schema": "route",
         "marketId": "eu",
@@ -59277,15 +59166,15 @@
         "pageId": 1
       },
       {
-        "id": "/eu/fr/recherche-produit-ssr",
+        "id": "/eu/en/product-search-ssr",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "product_search_ssr",
         "pageId": 1
       },
       {
-        "id": "/ww/en/t-shirt",
+        "id": "/ww/en/reserved-area/t-shirt",
         "schema": "route",
         "marketId": "ww",
         "localeId": "en",
@@ -59293,7 +59182,7 @@
         "pageId": 1
       },
       {
-        "id": "/ww/it/t-shirt",
+        "id": "/ww/it/area-riservata/t-shirt",
         "schema": "route",
         "marketId": "ww",
         "localeId": "it",
@@ -59301,15 +59190,7 @@
         "pageId": 1
       },
       {
-        "id": "/ww/fr/t-shirt",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "product",
-        "pageId": 1
-      },
-      {
-        "id": "/eu/it/t-shirt",
+        "id": "/eu/it/area-riservata/t-shirt",
         "schema": "route",
         "marketId": "eu",
         "localeId": "it",
@@ -59317,10 +59198,10 @@
         "pageId": 1
       },
       {
-        "id": "/eu/fr/t-shirt",
+        "id": "/eu/en/reserved-area/t-shirt",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "product",
         "pageId": 1
       },
@@ -59341,14 +59222,6 @@
         "pageId": 2
       },
       {
-        "id": "/ww/fr/jogging-skinny-unisexe",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "product",
-        "pageId": 2
-      },
-      {
         "id": "/eu/it/pantaloni-skinny-da-jogging-unisex",
         "schema": "route",
         "marketId": "eu",
@@ -59357,10 +59230,10 @@
         "pageId": 2
       },
       {
-        "id": "/eu/fr/jogging-skinny-unisexe",
+        "id": "/eu/en/unisex-skinny-joggers",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "product",
         "pageId": 2
       },
@@ -59381,14 +59254,6 @@
         "pageId": 3
       },
       {
-        "id": "/ww/fr/veste-legere",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "product",
-        "pageId": 3
-      },
-      {
         "id": "/eu/it/giacca-leggera",
         "schema": "route",
         "marketId": "eu",
@@ -59397,10 +59262,10 @@
         "pageId": 3
       },
       {
-        "id": "/eu/fr/veste-legere",
+        "id": "/eu/en/lightweight-jacket",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "product",
         "pageId": 3
       },
@@ -59421,14 +59286,6 @@
         "pageId": 4
       },
       {
-        "id": "/ww/fr/bonnet-noir",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "product",
-        "pageId": 4
-      },
-      {
         "id": "/eu/it/berretto-nero",
         "schema": "route",
         "marketId": "eu",
@@ -59437,10 +59294,10 @@
         "pageId": 4
       },
       {
-        "id": "/eu/fr/bonnet-noir",
+        "id": "/eu/en/black-beanie",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "product",
         "pageId": 4
       },
@@ -59461,14 +59318,6 @@
         "pageId": 1
       },
       {
-        "id": "/ww/fr/stores",
-        "schema": "route",
-        "marketId": "ww",
-        "localeId": "fr",
-        "pageSchema": "store_index",
-        "pageId": 1
-      },
-      {
         "id": "/eu/it/stores",
         "schema": "route",
         "marketId": "eu",
@@ -59477,11 +59326,43 @@
         "pageId": 1
       },
       {
-        "id": "/eu/fr/stores",
+        "id": "/eu/en/stores",
         "schema": "route",
         "marketId": "eu",
-        "localeId": "fr",
+        "localeId": "en",
         "pageSchema": "store_index",
+        "pageId": 1
+      },
+      {
+        "id": "/ww/en/reserved-area",
+        "schema": "route",
+        "marketId": "ww",
+        "localeId": "en",
+        "pageSchema": "reserved_area",
+        "pageId": 1
+      },
+      {
+        "id": "/ww/it/area-riservata",
+        "schema": "route",
+        "marketId": "ww",
+        "localeId": "it",
+        "pageSchema": "reserved_area",
+        "pageId": 1
+      },
+      {
+        "id": "/eu/it/area-riservata",
+        "schema": "route",
+        "marketId": "eu",
+        "localeId": "it",
+        "pageSchema": "reserved_area",
+        "pageId": 1
+      },
+      {
+        "id": "/eu/en/reserved-area",
+        "schema": "route",
+        "marketId": "eu",
+        "localeId": "en",
+        "pageSchema": "reserved_area",
         "pageId": 1
       }
     ]

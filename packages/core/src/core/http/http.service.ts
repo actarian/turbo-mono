@@ -18,6 +18,7 @@ export async function httpFetch(url: string, options: FetchRequestOptions = {}):
   // console.log('httpFetch', url, options);
   const httpOptions = merge({ ...defaultOptions }, options);
   const httpResponse = await fetch(url, httpOptions);
+  // console.log('httpResponse', httpResponse);
   if (!httpResponse.ok) {
     throw httpResponse;
   }

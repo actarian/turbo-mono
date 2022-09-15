@@ -1,4 +1,4 @@
-import { IEquatable } from '../../core';
+import type { IEquatable } from '@websolute/core';
 
 export type FilterParams = { [key: string]: IEquatable[] | null };
 export type FilterValues = IEquatable[][];

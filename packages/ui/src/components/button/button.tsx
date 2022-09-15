@@ -37,9 +37,12 @@ const StyledButton = styled.div<ButtonProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
+  type = 'button',
+  ...props
+}, ref) => {
   const className = useClasses('button', { disabled: props.disabled });
-  return (<StyledButton ref={ref} className={className} as="button" {...props}>{props.children}</StyledButton>);
+  return (<StyledButton ref={ref} className={className} as="button" type={type} {...props}>{props.children}</StyledButton>);
 });
 
 Button.displayName = 'Button';

@@ -6,6 +6,8 @@ const transpiledModules = nextTranspileModules([
   '@websolute/forms',
   '@websolute/hooks',
   '@websolute/icons',
+  '@websolute/models',
+  '@websolute/store',
   '@websolute/ui'
 ], { resolveSymlinks: false });
 
@@ -19,7 +21,9 @@ module.exports = transpiledModules({
     },
   },
   images: {
-    domains: ['unsplash.com']
+    domains: [
+      'unsplash.com'
+    ]
   },
   webpack(config) {
     config.module.rules.push({

@@ -1,4 +1,3 @@
-// import type { AppStore } from '@config';
 import type { IEntity, IQuerable } from '../entity/entity';
 import { fsReadJson } from '../fs/fs.service';
 import { IStore } from '../store/store';

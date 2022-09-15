@@ -1,5 +1,4 @@
 import { INamedEntity } from '@websolute/core';
-import { FieldType } from './fields/fields';
 import { FormAbstract } from './form-abstract';
 import { FormAbstractCollection } from './form-abstract-collection';
 import { FormArray } from './form-array';
@@ -7,10 +6,6 @@ import { FormControl } from './form-control';
 import { FormGroup } from './form-group';
 
 export type IControlParam = { uid: number, control: FormControl };
-
-export type IFields = {
-  [key in FieldType]: (control: FormControl, uid?: number) => JSX.Element;
-}
 
 export type FormOptions = {
   schema?: ControlType;
@@ -46,7 +41,7 @@ export type FormState<T> = {
   errors: FormValidationErrors,
 }
 
-export type ControlType = 'group' | 'array' | FieldType;
+export type ControlType = 'group' | 'array' | string;
 
 export interface IFormBuilderControlSchema {
   schema: ControlType;

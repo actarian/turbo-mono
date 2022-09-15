@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@websolute/core": "*",
+    "@websolute/models": "*",
+    "@websolute/store": "*",
     "@websolute/icons": "*",
     "framer-motion": "^7.2.1",
     "lodash": "^4.17.21",

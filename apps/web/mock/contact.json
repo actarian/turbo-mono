@@ -3,35 +3,29 @@
     "id": 1,
     "slug": {
       "en": "contact-us",
-      "it": "contattaci",
-      "fr": "contactez-nous"
+      "it": "contattaci"
     },
     "title": {
       "en": "Contact us",
-      "it": "Contattaci",
-      "fr": "Contactez-nous"
+      "it": "Contattaci"
     },
     "abstract": {
       "en": "Contact request.",
-      "it": "Richiesta di contatto.",
-      "fr": "Demande de contact."
+      "it": "Richiesta di contatto."
     },
     "description": {
       "en": "For any request, fill out the form in all its parts, we will reply as soon as possible.",
-      "it": "Per qualsiasi richiesta, compilate il form in tutte le sue parti, vi risponderemo nel più breve tempo possibile.",
-      "fr": "Pour toute demande, remplissez le formulaire dans toutes ses parties, nous vous répondrons dans les plus brefs délais."
+      "it": "Per qualsiasi richiesta, compilate il form in tutte le sue parti, vi risponderemo nel più breve tempo possibile."
     },
     "categoryId": 5,
     "meta": {
       "title": {
         "en": "Contact us",
-        "it": "Contattaci",
-        "fr": "Contactez-nous"
+        "it": "Contattaci"
       },
       "description": {
         "en": "Contact request.",
-        "it": "Richiesta di contatto.",
-        "fr": "Demande de contact."
+        "it": "Richiesta di contatto."
       },
       "keywords": "contact keywords",
       "robots": "all"

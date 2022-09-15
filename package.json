@@ -12,6 +12,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "start": "turbo run start --scope=web",
+    "serve": "turbo run start --scope=web",
     "storybook": "turbo run dev --parallel --filter=storybook"
   },
   "dependencies": {
