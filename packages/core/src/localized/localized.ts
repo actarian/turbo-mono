@@ -1,4 +1,4 @@
-import { ILocalizedString } from "../entity/entity";
+import { ILocalizedString } from '../entity/entity';
 
 export function isLocalizedString(value: any): value is ILocalizedString {
   let isLocalizedString = false;

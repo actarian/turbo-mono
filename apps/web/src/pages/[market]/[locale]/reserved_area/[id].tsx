@@ -40,7 +40,13 @@ export default function ReservedArea({ layout, page, user, params }: ReservedAre
                 </Box>
                 <Box padding="0 1rem">
                   <Text size="3" fontWeight="700" marginBottom="0.5rem">{page.title}</Text>
-                  <Text color="var(--color-neutral-500)" marginBottom="2rem">{JSON.stringify(user)}</Text>
+                  <Text color="var(--color-neutral-500)" marginBottom="2rem">
+                    <ul>{
+                      Object.entries(user).map(([key, value]) => (
+                        <li key={key}><b>{key}</b> {value}</li>
+                      ))}
+                    </ul>
+                  </Text>
                   <Flex.Responsive>
                     <NavLink href="/">
                       <Button variant="primary" onClick={() => onLogout()}><span>Logout</span></Button>

@@ -4,13 +4,24 @@ import { apiHandler } from '@websolute/core';
 import { withIronSessionApiRoute } from 'iron-session/next';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-async function loginPost(request: NextApiRequest, response: NextApiResponse<IUser>) {
+async function loginPost(request: NextApiRequest, response: NextApiResponse<IUser | null>) {
   const body = request.body;
-  const user = body;
-  console.log('user', user);
+  let user = undefined;
+  if (body.email === 'jhon.appleseed@gmail.com' && body.password === '123456') {
+    user = {
+      ...body,
+      firstName: 'Jhon',
+      lastName: 'Appleseed',
+    };
+  }
+  console.log('loginPost.user', user);
   request.session.user = user
   await request.session.save();
-  response.status(200).json(user);
+  if (user) {
+    response.status(200).json(user);
+  } else {
+    response.status(401).json(null);
+  }
 }
 
 export default apiHandler({

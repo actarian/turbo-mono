@@ -84,6 +84,13 @@
     }
   },
   {
+    "id": "field.confirmPassword",
+    "text": {
+      "en": "Confirm password",
+      "it": "Conferma password"
+    }
+  },
+  {
     "id": "field.rememberMe",
     "text": {
       "en": "Remember me",
@@ -238,6 +245,20 @@
     }
   },
   {
+    "id": "form.submit.error",
+    "text": {
+      "en": "An error occurred",
+      "it": "Si è verificato un errore"
+    }
+  },
+  {
+    "id": "form.auth.unauthorized",
+    "text": {
+      "en": "Invalid username or password",
+      "it": "Nome utente o password non valida"
+    }
+  },
+  {
     "id": "error.required",
     "text": {
       "en": "Required field",
@@ -249,6 +270,13 @@
     "text": {
       "en": "Invalid email",
       "it": "Email non valida"
+    }
+  },
+  {
+    "id": "error.match",
+    "text": {
+      "en": "Fields do not match",
+      "it": "I campi non corrispondono"
     }
   },
   {

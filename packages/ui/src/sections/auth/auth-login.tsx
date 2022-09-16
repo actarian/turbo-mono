@@ -1,10 +1,11 @@
-import { httpPost } from '@websolute/core/src/core/http/http.service';
+import { httpPost } from '@websolute/core';
 import { EmailValidator, FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
 // import { useApiGet, useClasses } from '@websolute/hooks';
-import { useClasses } from '@websolute/hooks';
-import { ReactNode } from 'react';
+import { useLabel } from '@websolute/hooks';
+import { ReactNode, useState } from 'react';
 import { Button, Divider, Flex, Text } from '../../components';
 import { FieldCheckbox, FieldPassword, FieldText, Tester } from '../../fields';
+import { Form } from '../../forms';
 
 export interface AuthSignInProps {
   children?: ReactNode;
@@ -14,6 +15,7 @@ export interface AuthSignInProps {
 }
 
 const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNavToRegister }: AuthSignInProps) => {
+  const label = useLabel();
 
   /*
   const { response } = useApiGet('/hello');
@@ -41,37 +43,33 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
   }
 
   const onReset = () => {
-    console.log('onReset');
     reset();
   }
 
-  const onValidate = (event: React.FormEvent<HTMLFormElement>) => {
+  const [error, setError] = useState<Error>();
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (form.flags.valid) {
-      // form.value
-      console.log('ContactForm.onSubmit.valid', form.value);
-      onSignIn();
-    } else {
-      console.log('ContactForm.onSubmit.invalid');
-      setTouched();
-    }
-  }
-
-  const className = useClasses('form', form.flags);
-
-  const onSignIn = async () => {
-    // form.value
-    try {
-      const data = await httpPost('/api/auth/login', form.value);
-      if (data) {
-        // mutateUser(data);
-        console.log(data);
-        if (typeof onSignedIn === 'function') {
-          onSignedIn();
-        }
+      console.log('AuthLogin.valid', form.value);
+      try {
+        setError(undefined);
+        const user = await httpPost('/api/auth/login', form.value);
+        if (user) {
+          // mutateUser(user);
+          if (typeof onSignedIn === 'function') {
+            onSignedIn();
+          }
+        }/* else {
+          setError(new Error('an error occurred'));
+        }*/
+      } catch (error) {
+        console.log('AuthLogin.error', error);
+        setError(error as Error);
       }
-    } catch (error) {
-      console.error('An unexpected error happened:', error);
+    } else {
+      console.log('AuthLogin.invalid');
+      setTouched();
     }
   }
 
@@ -89,15 +87,27 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
 
   return (
     <Flex.Col justifyContent="space-between">
-      <form className={className} onSubmit={onValidate}>
+      <Form state={form} onSubmit={onSubmit}>
         <Flex.Col flex="1" rowGap="1rem">
           <Text size="6" fontWeight="700" marginBottom="1rem">Sign in to your account</Text>
+          <FieldText control={group.controls.checkField}></FieldText>
           <FieldText control={group.controls.email}></FieldText>
           <FieldPassword control={group.controls.password}></FieldPassword>
           <Flex.Row justifyContent="space-between">
             <FieldCheckbox margin="0" control={group.controls.rememberMe}></FieldCheckbox>
             <Button variant="link" onClick={onForgot}>Forgot your password?</Button>
           </Flex.Row>
+          {/* !!! creare componente errore */}
+          {error &&
+            <Text
+              padding="1rem"
+              fontWeight="700"
+              textAlign="center"
+              background="var(--color-danger-100)"
+              color="var(--color-danger-500)"
+            >{label('form.auth.unauthorized')}
+            </Text>
+          }
           <Button type="submit" variant="primary" size="lg" justifyContent="center" margin="1rem 0"><span>Sign In</span></Button>
           {/*
           <Flex.Row justifyContent="flex-end" margin="1rem 0">
@@ -110,8 +120,8 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
           </Flex.Row>
           <Tester form={form} onTest={onTest} onReset={onReset}></Tester>
         </Flex.Col>
-      </form>
-      {false && <Button variant="primary" size="lg" position="sticky" bottom="1rem" justifyContent="center" onClick={onSignIn}><span>Sign In</span></Button>}
+        {false && <Button type="submit" variant="primary" size="lg" position="sticky" bottom="1rem" justifyContent="center"><span>Sign In</span></Button>}
+      </Form>
     </Flex.Col>
   );
 };

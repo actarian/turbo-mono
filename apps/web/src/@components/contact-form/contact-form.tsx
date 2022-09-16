@@ -10,9 +10,7 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
   const label = useLabel();
 
   const required = RequiredValidator();
-
   const requiredTrue = RequiredTrueValidator();
-
   const email = EmailValidator();
 
   const exhist: FormAsyncValidator = async (value: any, rootValue: any) => {

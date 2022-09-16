@@ -16,7 +16,7 @@ export async function getLayout(market: string, locale: string): Promise<ILayout
   // const paths = await getStaticPathsForSchema('reserved_area');
   // console.log(paths);
   /*
-  // get known routes eg 'reserved_area';
+  // get known routes eg 'reserved_area', 'login', 'homepage';
   const store = await getStore<IModelStore>();
   const route = await store.route.findOne({ where: { pageSchema: 'reserved_area' }, market, locale });
   console.log(route);
