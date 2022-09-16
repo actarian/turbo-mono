@@ -1,4 +1,5 @@
-import { useClasses, useCurrentState } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
+import { useCurrentState } from '@websolute/hooks';
 import React, { CSSProperties, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps, Ellipsis, Flex, getChildsByType } from '../../components';
@@ -262,12 +263,11 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     setSelectFocus(false);
   };
 
-  const classes = useClasses('select', { active: selectFocus || visible, opened: visible, multiple, disabled }, className);
+  const classNames = getClassNames('select', { active: selectFocus || visible, opened: visible, multiple, disabled }, className);
 
-  // console.log(value, selectedChildren);
   return (
     <SelectContext.Provider value={initialValue}>
-      <StyledSelect ref={ref} className={classes} onClick={clickHandler} onMouseDown={mouseDownHandler}
+      <StyledSelect ref={ref} className={classNames} onClick={clickHandler} onMouseDown={mouseDownHandler}
         {...props}>
         <SelectInput ref={inputRef} name={props.name} visible={visible} onFocus={() => setSelectFocus(true)} onBlur={onInputBlur} />
         {isEmpty && (

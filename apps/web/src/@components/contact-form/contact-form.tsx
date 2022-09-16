@@ -1,9 +1,9 @@
-import type { INamedEntity } from '@websolute/core';
+import { getClassNames, INamedEntity } from '@websolute/core';
 import {
   EmailValidator, FormAsyncValidator, FormGroup, RequiredIfValidator, RequiredTrueValidator,
   RequiredValidator, useFormBuilder, ValidationError
 } from '@websolute/forms';
-import { useClasses, useLabel } from '@websolute/hooks';
+import { useLabel } from '@websolute/hooks';
 import { Button, FieldCollection, Flex, Grid, Tester } from '@websolute/ui';
 
 export default function ContactForm({ data, onSubmit }: { data: IContactForm, onSubmit: (value: any) => void }) {
@@ -108,10 +108,10 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
     }
   }
 
-  const className = useClasses('form', form.flags);
+  const classNames = getClassNames('form', form.flags);
 
   return (
-    <form className={className} onSubmit={onValidate}>
+    <form className={classNames} onSubmit={onValidate}>
       <Grid.Row rowGap="1rem">
         <FieldCollection collection={group} />
       </Grid.Row>

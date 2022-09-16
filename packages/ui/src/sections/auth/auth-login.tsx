@@ -1,15 +1,16 @@
 import { httpPost } from '@websolute/core';
 import { EmailValidator, FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
-// import { useApiGet, useClasses } from '@websolute/hooks';
 import { useLabel } from '@websolute/hooks';
+import { IUser, IUserLogin } from '@websolute/models';
 import { ReactNode, useState } from 'react';
 import { Button, Divider, Flex, Text } from '../../components';
 import { FieldCheckbox, FieldPassword, FieldText, Tester } from '../../fields';
 import { Form } from '../../forms';
+import { useUser } from '../../hooks';
 
 export interface AuthSignInProps {
   children?: ReactNode;
-  onSignedIn?: () => void;
+  onSignedIn?: (user: IUser) => void;
   onNavToForgot?: () => void;
   onNavToRegister?: () => void;
 }
@@ -27,7 +28,7 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
   const required = RequiredValidator();
   const email = EmailValidator();
 
-  const [form, setValue, setTouched, reset, group] = useFormBuilder<any, FormGroup>({
+  const [form, setValue, setTouched, reset, group] = useFormBuilder<IUserLogin, FormGroup>({
     email: { schema: 'text', label: 'field.email', validators: [required, email] },
     password: { schema: 'text', label: 'field.password', validators: required },
     rememberMe: { schema: 'checkbox', label: 'field.rememberMe' },
@@ -46,6 +47,8 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
     reset();
   }
 
+  const setUser = useUser((state) => state.update);
+
   const [error, setError] = useState<Error>();
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -56,9 +59,9 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
         setError(undefined);
         const user = await httpPost('/api/auth/login', form.value);
         if (user) {
-          // mutateUser(user);
+          setUser(user);
           if (typeof onSignedIn === 'function') {
-            onSignedIn();
+            onSignedIn(user);
           }
         }/* else {
           setError(new Error('an error occurred'));

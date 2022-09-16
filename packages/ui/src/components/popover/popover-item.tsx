@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
 import { usePopoverContext } from './popover-context';
@@ -61,7 +61,6 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
   const { disableItemsAutoClose, onItemClick } = usePopoverContext();
   const hasHandler = Boolean(onClick);
   const dontCloseByClick = disableAutoClose || disableItemsAutoClose || title || line;
-  const classes = useClasses('item', { line, title }, className);
 
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     onClick && onClick(event);
@@ -71,9 +70,11 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
     onItemClick(event);
   };
 
+  const classNames = getClassNames('item', { line, title }, className);
+
   return (
     <>
-      <StyledPopoverItem {...props} className={classes} hasHandler={hasHandler} onClick={clickHandler}>
+      <StyledPopoverItem {...props} className={classNames} hasHandler={hasHandler} onClick={clickHandler}>
         {children}
       </StyledPopoverItem>
       {title && <PopoverItemComponent line title={false} />}

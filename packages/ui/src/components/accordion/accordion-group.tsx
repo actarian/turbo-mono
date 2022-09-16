@@ -1,4 +1,5 @@
-import { useClasses, useCurrentState } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
+import { useCurrentState } from '@websolute/hooks';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { setChildrenIndex } from '../popover/popover-collections';
@@ -38,8 +39,6 @@ const AccordionGroup: React.FC<React.PropsWithChildren<AccordionGroupProps>> = (
 
   const [state, setState, stateRef] = useCurrentState<Array<number>>([]);
 
-  const classes = useClasses('accordion-group', className);
-
   const updateValues = (currentIndex: number, nextState: boolean) => {
     const hasChild = stateRef.current.find(val => val === currentIndex);
 
@@ -69,9 +68,11 @@ const AccordionGroup: React.FC<React.PropsWithChildren<AccordionGroupProps>> = (
 
   const hasIndexChildren = useMemo(() => setChildrenIndex(children, [Accordion]), [children]);
 
+  const classNames = getClassNames('accordion-group', className);
+
   return (
     <AccordionContext.Provider value={initialValue}>
-      <StyledAccordionGroup className={classes} {...props}>
+      <StyledAccordionGroup className={classNames} {...props}>
         {hasIndexChildren}
       </StyledAccordionGroup>
     </AccordionContext.Provider>

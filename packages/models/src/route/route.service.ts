@@ -19,6 +19,24 @@ export async function getRoute(id: string): Promise<IRoute | null> {
   return route;
 }
 
+export async function getRoutesForSchemas(schemas: string[], market?: string, locale?: string): Promise<{
+  [key: string]: string;
+}> {
+  const store = await getStore<IModelStore>();
+  const routes = await store.route.findMany({
+    where: {
+      pageSchema: schemas, marketId: market, localeId: locale
+    }, market, locale
+  });
+  const pageSchemas: {
+    [key: string]: string;
+  } = {};
+  routes.forEach(route => {
+    pageSchemas[route.pageSchema] = route.id;
+  });
+  return pageSchemas;
+}
+
 export async function getStaticPathsForSchema(schema: string): Promise<StaticPath[]> {
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany({ where: { pageSchema: schema } });

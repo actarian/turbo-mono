@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
@@ -31,8 +31,9 @@ const StyleContent = styled.div`
 `;
 
 const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalContentProps> & typeof defaultProps) => { // !!! any
+  const classNames = getClassNames('content', className);
   return (
-    <StyleContent className={useClasses('content', className)} {...props}>
+    <StyleContent className={classNames} {...props}>
       {children}
     </StyleContent>
   )

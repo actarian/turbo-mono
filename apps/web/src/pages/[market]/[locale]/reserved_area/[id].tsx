@@ -2,22 +2,19 @@
 import { sessionOptions } from '@config/session';
 import { asStaticProps, httpGet, IContextParams } from '@websolute/core';
 import { getLayout, getPage, PageProps } from '@websolute/models';
-import { Box, Button, Container, Flex, Footer, Header, Layout, Meta, NavLink, Page, Section, Text } from '@websolute/ui';
+import { Box, Button, Container, Flex, Footer, Header, Layout, Meta, NavLink, Page, Section, Text, useUser } from '@websolute/ui';
 import { withIronSessionSsr } from 'iron-session/next';
 import { useRouter } from 'next/router';
 
 export default function ReservedArea({ layout, page, user, params }: ReservedAreaProps) {
   const router = useRouter();
 
+  const setUser = useUser((state) => state.update);
+
   const onLogout = async () => {
     try {
       await httpGet('/api/auth/logout');
-      /*
-      mutateUser(
-        await fetchJson('/api/logout', { method: 'POST' }),
-        false
-      )
-      */
+      setUser(null);
       router.push('/');
 
     } catch (error) {
@@ -72,6 +69,15 @@ export interface ReservedAreaProps extends PageProps {
 export const getServerSideProps = withIronSessionSsr(async function (context) {
   const params = context.params as IContextParams;
   const query = context.query;
+
+  // Layout
+  const id = parseInt(params.id);
+  const market = params.market;
+  const locale = params.locale;
+  const layout = await getLayout(market, locale);
+
+  // console.log('knownRoutes', layout.knownRoutes);
+
   const user = context.req.session.user;
   if (user === undefined) {
     /*
@@ -87,16 +93,10 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
     return {
       redirect: {
         permanent: false,
-        destination: '/',
+        destination: layout.knownRoutes?.login || '/',
       },
     }
   }
-
-  // Layout
-  const id = parseInt(params.id);
-  const market = params.market;
-  const locale = params.locale;
-  const layout = await getLayout(market, locale);
 
   // Page
   const page = await getPage('reserved_area', id, market, locale);

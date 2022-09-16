@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { ComponentCssResponsiveProps, SizeVariant, VariantOf } from '../../components/types';
@@ -41,8 +41,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   type = 'button',
   ...props
 }, ref) => {
-  const className = useClasses('button', { disabled: props.disabled });
-  return (<StyledButton ref={ref} className={className} as="button" type={type} {...props}>{props.children}</StyledButton>);
+  const classNames = getClassNames('button', { disabled: props.disabled });
+  return (<StyledButton ref={ref} className={classNames} as="button" type={type} {...props}>{props.children}</StyledButton>);
 });
 
 Button.displayName = 'Button';

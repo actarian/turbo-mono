@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useClasses, useClickAnyWhere, usePortal, useResize } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
+import { useClickAnyWhere, usePortal, useResize } from '@websolute/hooks';
 import React, { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
@@ -68,7 +69,6 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   const selfRef = useRef<HTMLDivElement>(null);
   const [rect, setRect] = useState<TooltipPosition>(defaultTooltipPosition);
   const hasShadow = type === 'default';
-  const classes = useClasses('tooltip-content', className);
   if (!parent) {
     return null;
   }
@@ -96,9 +96,11 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
 
   const props = { rect, iconOffset, hasShadow };
 
+  const classNames = getClassNames('tooltip-content', className);
+
   return createPortal(
     <Transition visible={visible}>
-      <StyledTooltipContent {...props} className={classes} ref={selfRef} onClick={preventHandler}>
+      <StyledTooltipContent {...props} className={classNames} ref={selfRef} onClick={preventHandler}>
         <div className="inner">
           {!hideArrow && <TooltipIcon placement={placement} shadow={hasShadow} />}
           {children}

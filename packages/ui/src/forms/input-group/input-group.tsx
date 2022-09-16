@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
@@ -57,7 +57,7 @@ const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(({
   className,
   ...props
 }, ref) => {
-  const classNames = useClasses('input-group', className);
+  const classNames = getClassNames('input-group', className);
   return (
     <StyledInputGroup className={classNames} as="div" {...props}>
       {children}

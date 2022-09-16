@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -22,9 +22,9 @@ const BreadcrumbsSeparator: React.FC<React.PropsWithChildren<BreadcrumbsSeparato
   className = '',
   children,
 }: BreadcrumbsSeparatorProps) => {
-  const classes = useClasses('breadcrumb-separator', className);
+  const classNames = getClassNames('breadcrumb-separator', className);
   return (
-    <StyledBreadcrumbsSeparator className={classes}>
+    <StyledBreadcrumbsSeparator className={classNames}>
       {children}
     </StyledBreadcrumbsSeparator>
   )

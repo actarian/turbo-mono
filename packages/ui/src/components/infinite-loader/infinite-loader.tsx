@@ -1,4 +1,5 @@
-import { useClasses, useEventListener, useIsomorphicLayoutEffect } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
+import { useEventListener, useIsomorphicLayoutEffect } from '@websolute/hooks';
 import React, { ReactNode, useRef } from 'react';
 import styled from 'styled-components';
 import { Loading } from '../../components';
@@ -26,8 +27,6 @@ const StyledInfiniteLoader = styled.div<InfiniteLoaderProps>`
 const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ onMore, children, ...props }) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const classNames = useClasses('infinite-loader');
-
   const handleScroll = () => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
@@ -45,6 +44,8 @@ const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ onMore, children, ...pr
     handleScroll();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const classNames = getClassNames('infinite-loader');
 
   return (
     <StyledInfiniteLoader ref={ref} className={classNames} {...props}>

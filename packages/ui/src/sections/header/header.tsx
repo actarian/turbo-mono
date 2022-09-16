@@ -1,11 +1,15 @@
+import { httpGet } from '@websolute/core';
 import { useDrawer, useLayout, useModal, useScroll } from '@websolute/hooks';
 import { ArrowRight, Hexagon, Menu, ShoppingCart, User } from '@websolute/icons';
 import type { IRouteLink } from '@websolute/models';
+import { useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import { Button, Container, Flex, Modal, Nav, NavLink, Text } from '../../components';
+import { Box, Button, Container, Flex, Modal, Nav, NavLink, Text } from '../../components';
 import { ComponentProps } from '../../components/types';
+import { useUser } from '../../hooks';
 import { CartMini } from '../../sections';
 import AuthDrawer from '../../sections/auth/auth-drawer';
+import { getShortName } from '../../utils';
 import MarketsAndLanguagesDrawer from '../markets-and-languages/markets-and-languages-drawer';
 
 type ContainerProps = {
@@ -71,15 +75,30 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const scroll = useScroll();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   const [modal, onOpenModal, onCloseModal] = useModal();
+  const user = useUser((state) => state.user);
+  const setUser = useUser((state) => state.update);
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
-  // console.log('layout', layout);
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const user = await httpGet('/api/auth/me');
+        // console.log('Header.getUser', user);
+        setUser(user);
+      } catch (error) {
+        console.log('Header.getUser.error', error);
+      }
+    };
+    getUser();
+  }, [setUser]);
+
   return (
     <>
       <HeaderContainer {...containerProps}>
         <Container.Fluid>
           <Flex.Row gap="1rem" gapSm="3rem">
             <Flex>
-              <NavLink href="/">
+              <NavLink href={layout.knownRoutes?.homepage || ''} passHref={true}>
                 <Button as="a">
                   <Hexagon width="3rem" height="3rem" />
                   <Text size="6" padding="0 0.5rem">Hexagon</Text>
@@ -88,7 +107,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             </Flex>
             <Flex flex="1" justifyContent="center">
               {props.menu && <Nav.Row gap="3rem" display="none" displaySm="flex">
-                {props.menu.map((x, i) => (
+                {props.menu.filter(x => x.categoryId && x.categoryId < 7).map((x, i) => (
                   <NavLink key={i} href={x.href || ''} passHref={true}>
                     <Button variant="nav" as="a">{x.title}</Button>
                   </NavLink>
@@ -96,9 +115,20 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
               </Nav.Row>}
             </Flex>
             <Flex gap="1rem">
-              <Button display='none' displaySm='block' onClick={() => onOpenDrawer('auth')}>
-                <User width="2rem" height="2rem" />
-              </Button>
+              <Box minWidth="38px">
+                {user &&
+                  <NavLink href={layout.knownRoutes?.reserved_area || ''} passHref={true}>
+                    <Button as="a" variant="circle" size="sm" letterSpacing="0.1em">
+                      {getShortName(user)}
+                    </Button>
+                  </NavLink>
+                }
+                {user === null &&
+                  <Button display='none' displaySm='block' onClick={() => onOpenDrawer('auth')}>
+                    <User width="2rem" height="2rem" />
+                  </Button>
+                }
+              </Box>
               <Button onClick={() => onOpenDrawer('cart')}>
                 <ShoppingCart width="2rem" height="2rem" />
               </Button>

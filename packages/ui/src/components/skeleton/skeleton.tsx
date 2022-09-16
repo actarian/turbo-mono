@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { Loading } from '../../components';
@@ -23,7 +23,7 @@ const StyledSkeleton = styled.div<SkeletonProps>`
 const Skeleton: React.FC<SkeletonProps> = ({ loading, ...props }) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const classNames = useClasses('skeleton');
+  const classNames = getClassNames('skeleton');
 
   return (
     <StyledSkeleton ref={ref} className={classNames} {...props}>

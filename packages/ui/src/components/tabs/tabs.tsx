@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { CSSProperties, MouseEvent, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Highlight } from '../../components';
@@ -145,10 +145,10 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
 
   return (
     <TabsContext.Provider value={initialValue}>
-      <StyledTabs className={useClasses('tabs', className)} leftSpace={leftSpace} align={align} {...props}>
+      <StyledTabs className={getClassNames('tabs', className)} leftSpace={leftSpace} align={align} {...props}>
         <header ref={ref} onMouseLeave={() => setDisplayHighlight(false)}>
           <Highlight rect={rect} visible={displayHighlight} hoverHeightRatio={hoverHeightRatio} hoverWidthRatio={hoverWidthRatio} />
-          <div className={useClasses('scroll-container', { 'hide-divider': hideDivider })}>
+          <div className={getClassNames('scroll-container', { 'hide-divider': hideDivider })}>
             {tabs.map(({ cell: Cell, value }) => (
               <Cell key={value} activeClassName={activeClassName} activeStyle={activeStyle} hideBorder={hideBorder}
                 onClick={clickHandler} onMouseOver={tabItemMouseOverHandler}

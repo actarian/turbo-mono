@@ -21,7 +21,8 @@ export { getProvinces } from './province/province.service';
 export { getRegions } from './region/region.service';
 export type { IRoute, IRouteLink, IRouteParams, SchemaType } from './route/route';
 export { routeInterceptor } from './route/route.interceptor';
-export { categoryToRouteLink, decorateHref, getBreadcrumbFromCategoryTree, getChildCategories, getRoute, getRouteLinkTree, getRoutes, getStaticPathsForSchema, resolveRoute } from './route/route.service';
+export { categoryToRouteLink, decorateHref, getBreadcrumbFromCategoryTree, getChildCategories, getRoute, getRouteLinkTree, getRoutes, getRoutesForSchemas, getStaticPathsForSchema, resolveRoute } from './route/route.service';
 export type { StaticPath } from './route/route.service';
 export type { IModelStore } from './store/store';
+export type { IUser, IUserForgot, IUserLogin, IUserRegister } from './user/user';
 

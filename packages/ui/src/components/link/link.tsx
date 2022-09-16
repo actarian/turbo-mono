@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
 import LinkIcon from './link-icon';
@@ -49,9 +49,9 @@ const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkPro
   children,
   ...props
 }: React.PropsWithChildren<LinkProps>, ref: React.Ref<HTMLAnchorElement>) => {
-  const classes = useClasses('link', { underline }, className);
+  const classNames = getClassNames('link', { underline }, className);
   return (
-    <StyledLink as="a" className={classes} href={href} ref={ref} {...props}>
+    <StyledLink as="a" className={classNames} href={href} ref={ref} {...props}>
       {children}
       {icon && <LinkIcon />}
     </StyledLink>

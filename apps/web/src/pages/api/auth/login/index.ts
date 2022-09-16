@@ -1,6 +1,6 @@
 import { sessionOptions } from '@config/session';
-import { IUser } from '@models';
 import { apiHandler } from '@websolute/core';
+import { IUser } from '@websolute/models';
 import { withIronSessionApiRoute } from 'iron-session/next';
 import { NextApiRequest, NextApiResponse } from 'next';
 
@@ -9,9 +9,11 @@ async function loginPost(request: NextApiRequest, response: NextApiResponse<IUse
   let user = undefined;
   if (body.email === 'jhon.appleseed@gmail.com' && body.password === '123456') {
     user = {
-      ...body,
+      id: 1,
+      schema: 'user',
       firstName: 'Jhon',
       lastName: 'Appleseed',
+      email: body.email,
     };
   }
   console.log('loginPost.user', user);

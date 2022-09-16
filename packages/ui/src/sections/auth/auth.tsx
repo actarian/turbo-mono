@@ -1,5 +1,6 @@
 import { useDrawer } from '@websolute/hooks';
-import { ReactNode, useState } from 'react';
+import { IUser } from '@websolute/models';
+import { useState } from 'react';
 import AuthForgot from './auth-forgot';
 import AuthForgotSuccess from './auth-forgot-success';
 import AuthLogin from './auth-login';
@@ -7,15 +8,18 @@ import AuthRegister from './auth-register';
 import AuthRegisterSuccess from './auth-register-success';
 
 export interface AuthProps {
-  children?: ReactNode;
+  onSignedIn?: (user: IUser) => void;
 }
 
-const Auth: React.FC<AuthProps> = ({ }: AuthProps) => {
+const Auth: React.FC<AuthProps> = (props: AuthProps) => {
   const [, , onCloseDrawer] = useDrawer();
   const [view, setView] = useState('login');
-  const onSignedIn = () => {
+  const onSignedIn = (user: IUser) => {
     console.log('onSignedIn');
     onCloseDrawer();
+    if (typeof props.onSignedIn === 'function') {
+      props.onSignedIn(user);
+    }
   };
   const onSignedUp = () => {
     console.log('onSignedUp');

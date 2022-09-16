@@ -1,5 +1,5 @@
 
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
@@ -53,7 +53,7 @@ const StyledCheckbox = styled.div<CheckboxProps>`
 `
 
 const Checkbox: React.FC<CheckboxProps> = forwardRef<HTMLInputElement, CheckboxProps>(({ className, ...props }, ref) => {
-  const classNames = useClasses('checkbox', className);
+  const classNames = getClassNames('checkbox', className);
   return (
     <StyledCheckbox className={classNames}>
       <StyledCheckboxInput ref={ref} as='input' type='checkbox' {...props} />

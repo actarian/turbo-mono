@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { MouseEvent, useImperativeHandle, useRef } from 'react';
 import styled from 'styled-components';
 import Button, { ButtonProps } from '../../components/button/button';
@@ -81,12 +81,12 @@ const ModalButtonComponent = React.forwardRef<HTMLButtonElement, React.PropsWith
     // const { className: resolveClassName, styles } = css`
     const resolveClassName = '.my-class'; // !!!
 
-    const classes = useClasses(resolveClassName, className);
-
     const overrideProps = { ...props, effect: false, ref: btnRef };
 
+    const classNames = getClassNames(resolveClassName, className);
+
     return (
-      <StyledButton variant="default" className={classes} {...overrideProps} onClick={onButtonClick}
+      <StyledButton variant="default" className={classNames} {...overrideProps} onClick={onButtonClick}
       // disabled={disabled} // !!!
       >
         {children}

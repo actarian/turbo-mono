@@ -1,6 +1,7 @@
 import { httpPost } from '@websolute/core';
 import { EmailValidator, FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
+import { IUserForgot } from '@websolute/models';
 import { ReactNode, useState } from 'react';
 import { Button, Divider, Flex, Text } from '../../components';
 import { FieldText, Tester } from '../../fields';
@@ -19,7 +20,7 @@ const AuthForgot: React.FC<AuthForgotProps> = ({ onPasswordSent, onNavToLogin, o
   const required = RequiredValidator();
   const email = EmailValidator();
 
-  const [form, setValue, setTouched, reset, group] = useFormBuilder<any, FormGroup>({
+  const [form, setValue, setTouched, reset, group] = useFormBuilder<IUserForgot, FormGroup>({
     email: { schema: 'text', label: 'field.email', validators: [required, email] },
     checkRequest: { schema: 'text', value: 'window.antiforgery', hidden: true }, // todo take antiforgery token from server
     checkField: { schema: 'text', hidden: true }, // check hidden field for antiforgery

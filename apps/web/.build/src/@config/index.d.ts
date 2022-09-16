@@ -9,6 +9,7 @@ export declare const PAGES: {
     product: string;
     store_index: string;
     reserved_area: string;
+    login: string;
     notfound: string;
 };
 //# sourceMappingURL=index.d.ts.map

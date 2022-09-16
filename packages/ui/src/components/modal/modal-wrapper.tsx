@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { isChildElement } from '../../components/utils';
@@ -98,9 +98,10 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps | any>> =
     }
   };
 
+  const classNames = getClassNames('wrapper', className);
   return (
     <Transition name="wrapper" visible={visible} clearTime={300}>
-      <StyledWrapper className={useClasses('wrapper', className)} role="dialog" tabIndex={-1} onKeyDown={onKeyDown} ref={modalContent}
+      <StyledWrapper className={classNames} role="dialog" tabIndex={-1} onKeyDown={onKeyDown} ref={modalContent}
         {...props}>
         <div tabIndex={0} className="hide-tab" aria-hidden="true" ref={tabStart} />
         {children}

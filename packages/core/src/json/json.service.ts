@@ -74,7 +74,10 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
       const keys = Object.keys(where);
       items = items.filter(x => {
         return keys.reduce<boolean>((p, c) => {
-          return p && (x[c] === where[c]);
+          const whereValue = where[c];
+          const shouldMatch = Array.isArray(whereValue) ? whereValue : [whereValue];
+          // console.log('key', c, 'value', x[c], 'shouldMatch', shouldMatch);
+          return p && (shouldMatch.indexOf(x[c]) !== -1);
         }, true);
       })
     }

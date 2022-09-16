@@ -4,7 +4,7 @@ import { ILocale } from '../locale/locale';
 import { getLocales } from '../locale/locale.service';
 import { IMarket } from '../market/market';
 import { getMarkets } from '../market/market.service';
-import { getRouteLinkTree } from '../route/route.service';
+import { getRouteLinkTree, getRoutesForSchemas } from '../route/route.service';
 import { ILayout } from './layout';
 
 export async function getLayout(market: string, locale: string): Promise<ILayout> {
@@ -15,12 +15,9 @@ export async function getLayout(market: string, locale: string): Promise<ILayout
   const tree = await getRouteLinkTree(market, locale);
   // const paths = await getStaticPathsForSchema('reserved_area');
   // console.log(paths);
-  /*
   // get known routes eg 'reserved_area', 'login', 'homepage';
-  const store = await getStore<IModelStore>();
-  const route = await store.route.findOne({ where: { pageSchema: 'reserved_area' }, market, locale });
-  console.log(route);
-  */
+  const knownRoutes = await getRoutesForSchemas(['homepage', 'login', 'reserved_area'], market, locale);
+  // console.log('knownRoutes', knownRoutes);
   // console.log('getLayout', market, locale);
   return {
     markets,
@@ -29,5 +26,6 @@ export async function getLayout(market: string, locale: string): Promise<ILayout
     locale,
     labels,
     tree,
+    knownRoutes,
   };
 }

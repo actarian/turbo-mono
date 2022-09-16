@@ -1,6 +1,6 @@
 import { sessionOptions } from '@config/session';
-import { IUser } from '@models';
 import { apiHandler } from '@websolute/core';
+import { IUser } from '@websolute/models';
 import { withIronSessionApiRoute } from 'iron-session/next';
 import { NextApiRequest, NextApiResponse } from 'next';
 

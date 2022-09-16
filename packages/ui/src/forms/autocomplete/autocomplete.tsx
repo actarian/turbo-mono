@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
@@ -247,7 +247,7 @@ const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(({
     }
   }, [initialValue]);
 
-  const classNames = useClasses('autocomplete', {
+  const classNames = getClassNames('autocomplete', {
     focus,
     disabled: props.disabled,
     readonly: props.readOnly,

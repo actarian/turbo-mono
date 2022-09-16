@@ -1,5 +1,5 @@
 
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { Text } from '../../components';
@@ -79,7 +79,7 @@ const RadioColor = forwardRef<HTMLInputElement, RadioColorProps>(({
   className,
   ...props
 }, ref) => {
-  const classNames = useClasses('radio-color', className);
+  const classNames = getClassNames('radio-color', className);
   return (
     <StyledRadioColor className={classNames}>
       <StyledRadioColorInput ref={ref} as='input' type='radio' {...props} />

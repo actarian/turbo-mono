@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../../components';
@@ -39,7 +39,7 @@ const SelectMultipleValue: React.FC<React.PropsWithChildren<Props>> = ({
   onClear,
   children,
 }) => {
-  const classNames = useClasses('multiple-value', { disabled });
+  const classNames = getClassNames('multiple-value', { disabled });
   return (
     <>
       <Button variant="secondary" size="sm" className={classNames} disabled={disabled}>

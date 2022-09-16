@@ -1,4 +1,5 @@
-import { consoleWarn, useClasses, useCurrentState } from '@websolute/hooks';
+import { consoleWarn, getClassNames } from '@websolute/core';
+import { useCurrentState } from '@websolute/hooks';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Expand } from '../../components';
@@ -91,8 +92,6 @@ const Accordion: React.FC<React.PropsWithChildren<AccordionProps>> = ({
 
   const [visible, setVisible, visibleRef] = useCurrentState<boolean>(initialVisible);
 
-  const classes = useClasses('accordion', { shadow }, className);
-
   if (!title) {
     consoleWarn('"title" is required.', 'Accordion');
   }
@@ -111,8 +110,10 @@ const Accordion: React.FC<React.PropsWithChildren<AccordionProps>> = ({
     updateValues && updateValues(index, next);
   };
 
+  const classNames = getClassNames('accordion', { shadow }, className);
+
   return (
-    <StyledAccordion className={classes} {...props}>
+    <StyledAccordion className={classNames} {...props}>
       <div className="view" role="button" onClick={clickHandler}>
         <div className="title">
           <span>{title}</span> <AccordionIcon active={visible} />

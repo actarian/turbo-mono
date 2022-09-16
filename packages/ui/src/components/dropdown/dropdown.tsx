@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { consoleWarn, useClasses, useClickAnyWhere, useDomObserver, usePortal, useResize } from '@websolute/hooks';
+import { consoleWarn, getClassNames } from '@websolute/core';
+import { useClickAnyWhere, useDomObserver, usePortal, useResize } from '@websolute/hooks';
 import React, { MutableRefObject, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
@@ -52,8 +53,6 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
   const portal = usePortal('dropdown', getPopupContainer);
 
   const [rect, setRect] = useState<ReactiveDomReact>(defaultRect);
-
-  const classes = useClasses('dropdown', disableMatchWidth ? 'disable-match' : 'width-match');
 
   if (!parent) {
     return null;
@@ -118,9 +117,11 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
     return null;
   }
 
+  const classNames = getClassNames('dropdown', disableMatchWidth ? 'disable-match' : 'width-match');
+
   return createPortal(
     <Transition visible={visible}>
-      <StyledDropdown className={classes} rect={rect} onClick={clickHandler} onMouseDown={mouseDownHandler}>
+      <StyledDropdown className={classNames} rect={rect} onClick={clickHandler} onMouseDown={mouseDownHandler}>
         {children}
       </StyledDropdown>
     </Transition>,

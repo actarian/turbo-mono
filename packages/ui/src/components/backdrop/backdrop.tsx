@@ -1,4 +1,5 @@
-import { useClasses, useCurrentState } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
+import { useCurrentState } from '@websolute/hooks';
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
 import { ComponentProps } from '../../components/types';
@@ -111,10 +112,10 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = React.m
 
     return (
       <Transition name="backdrop-wrapper" visible={visible} clearTime={300}>
-        <StyledBackdrop className={useClasses('backdrop', backdropClassName)} onClick={clickHandler} onMouseUp={mouseUpHandler}
+        <StyledBackdrop className={getClassNames('backdrop', backdropClassName)} onClick={clickHandler} onMouseUp={mouseUpHandler}
           {...props}>
-          <div className={useClasses('layer', layerClassName)} />
-          <div className={useClasses('position', positionClassName)} style={{ width }} onClick={onContentClick} onMouseDown={() => setIsContentMouseDown(true)}>
+          <div className={getClassNames('layer', layerClassName)} />
+          <div className={getClassNames('position', positionClassName)} style={{ width }} onClick={onContentClick} onMouseDown={() => setIsContentMouseDown(true)}>
             {children}
           </div>
         </StyledBackdrop>

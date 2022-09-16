@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { tupleNumber } from '../../components/tooltip/tooltip-props';
@@ -109,13 +109,13 @@ const Rating: React.FC<RatingProps> = ({
     setValue(customValue < 0 ? 0 : customValue);
   }, [customValue]);
 
-  const ratingClassName = useClasses('rating', className);
-  const iconClassName = (index: number) => useClasses('icon', { hovered: index + 1 <= value });
+  const ratingClassNames = getClassNames('rating', className);
+  const getIconClassNames = (index: number) => getClassNames('icon', { hovered: index + 1 <= value });
 
   return (
-    <StyledRating className={ratingClassName} {...props}>
+    <StyledRating className={ratingClassNames} {...props}>
       {[...Array(count)].map((_, index) => (
-        <div key={index} className={iconClassName(index)} onMouseEnter={() => onMouseEnter(index + 1)} onClick={() => onClick(index + 1)}>
+        <div key={index} className={getIconClassNames(index)} onMouseEnter={() => onMouseEnter(index + 1)} onClick={() => onClick(index + 1)}>
           {icon}
         </div>
       ))}

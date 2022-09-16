@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -71,8 +71,6 @@ const StyledPaginationItem = styled.div`
 
 const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = ({ children, active, disabled, onClick, ...props }) => {
 
-  const className = useClasses({ active, disabled });
-
   const onClick_ = (event: React.MouseEvent) => {
     if (disabled) {
       return;
@@ -80,9 +78,11 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
     onClick && onClick(event);
   };
 
+  const classNames = getClassNames({ active, disabled });
+
   return (
     <StyledPaginationItem as="li">
-      <button className={className} onClick={onClick_} {...props}>
+      <button className={classNames} onClick={onClick_} {...props}>
         {children}
       </button>
     </StyledPaginationItem>

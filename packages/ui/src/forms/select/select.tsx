@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, SVGProps } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
@@ -75,7 +75,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({
   className,
   ...props
 }, ref) => {
-  const classNames = useClasses('select', className);
+  const classNames = getClassNames('select', className);
   return (
     <StyledSelect className={classNames}>
       <StyledSelectSelect ref={ref} as='select' {...props} />

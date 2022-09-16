@@ -10,4 +10,7 @@ export interface ILayout {
   locales: ILocale[];
   labels: ILabel[];
   tree?: IRouteLink;
+  knownRoutes?: {
+    [key: string]: string;
+  }
 }

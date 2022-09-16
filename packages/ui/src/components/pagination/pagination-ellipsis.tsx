@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import PaginationItem from './pagination-item';
@@ -21,11 +21,8 @@ const StyledPaginationItem = styled(PaginationItem)`
 `
 
 const PaginationEllipsis: React.FC<Props> = ({ isBefore, onClick }) => {
-
   const [showMore, setShowMore] = useState(false);
-
-  const moreClassName = useClasses('more', { before: isBefore });
-
+  const moreClassNames = getClassNames('more', { before: isBefore });
   return (
     <StyledPaginationItem
       onClick={e => onClick && onClick(e)}
@@ -33,7 +30,7 @@ const PaginationEllipsis: React.FC<Props> = ({ isBefore, onClick }) => {
       onMouseLeave={() => setShowMore(false)}>
       {showMore ? (
         <svg
-          className={moreClassName}
+          className={moreClassNames}
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth="1.5"

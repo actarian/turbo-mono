@@ -1,5 +1,5 @@
+import { getClassNames } from '@websolute/core';
 import { FormState } from '@websolute/forms';
-import { useClasses } from '@websolute/hooks';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
@@ -19,7 +19,7 @@ const StyledForm = styled.div<FormProps>`
 `;
 
 const Form = forwardRef<HTMLFormElement, FormProps>(({ className, ...props }, ref) => {
-  const classNames = useClasses('form', className, props.state?.flags);
+  const classNames = getClassNames('form', className, props.state?.flags);
   return (
     <StyledForm ref={ref} className={classNames} as='form' {...props} />
   );

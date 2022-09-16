@@ -1,3 +1,4 @@
+
 const warningStack: { [key: string]: boolean } = {};
 
 export function consoleWarn(message: string, component?: string): void {

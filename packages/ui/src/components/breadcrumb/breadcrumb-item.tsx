@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { ReactNode, useMemo } from 'react';
 import Link, { Props as LinkBasicProps } from '../link/link';
 import { pickChild } from '../popover/popover-collections';
@@ -28,22 +28,23 @@ const BreadcrumbItem = React.forwardRef<HTMLAnchorElement, React.PropsWithChildr
 }: BreadcrumbItemProps, ref: React.Ref<HTMLAnchorElement>) => {
   const isLink = useMemo(() => href !== undefined || nextLink, [href, nextLink]);
   const [withoutSepChildren] = pickChild(children, BreadcrumbSeparator);
-  const classes = useClasses('breadcrumb-item', className);
 
   const clickHandler = (event: React.MouseEvent) => {
     onClick && onClick(event);
   };
 
+  const classNames = getClassNames('breadcrumb-item', className);
+
   if (!isLink) {
     return (
-      <span className={classes} onClick={clickHandler}>
+      <span className={classNames} onClick={clickHandler}>
         {withoutSepChildren}
       </span>
     );
   }
 
   return (
-    <Link className={classes} href={href} onClick={clickHandler} ref={ref} {...props}>
+    <Link className={classNames} href={href} onClick={clickHandler} ref={ref} {...props}>
       {withoutSepChildren}
     </Link>
   );

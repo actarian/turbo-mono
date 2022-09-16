@@ -1,5 +1,7 @@
 export { apiHandler } from './api/api.helper';
 export { apiDelete, apiFetch, apiGet, apiPatch, apiPost, apiPut } from './api/api.service';
+export { getClassNames } from './classNames/classNames';
+export { consoleWarn } from './consoleWarn/consoleWarn';
 export { toFindParams } from './entity/entity';
 export type { FindParams, FindWhereParams, IEntity, IEquatable, ILocalizedString, INamedEntity, IQuerable, ISchema } from './entity/entity';
 export { httpDelete, httpFetch, httpGet, httpPatch, httpPost, httpPut } from './http/http.service';

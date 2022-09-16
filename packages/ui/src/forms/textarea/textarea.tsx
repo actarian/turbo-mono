@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
@@ -57,7 +57,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({
   className,
   ...props
 }, ref) => {
-  const classNames = useClasses('textarea', className);
+  const classNames = getClassNames('textarea', className);
   return (
     <StyledTextArea ref={ref} className={classNames} as='textarea' {...props}>
       {children}

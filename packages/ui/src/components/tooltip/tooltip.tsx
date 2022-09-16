@@ -1,4 +1,5 @@
-import { useClasses, useClickOut } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
+import { useClickOut } from '@websolute/hooks';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import TooltipContent, { TooltipIconOffset } from './tooltip-content';
@@ -114,7 +115,7 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   };
 
   return (
-    <StyledTooltip ref={ref} className={useClasses('tooltip', className)}
+    <StyledTooltip ref={ref} className={getClassNames('tooltip', className)}
       onMouseEnter={() => onEnterLeave(true)}
       onMouseLeave={() => onEnterLeave(false)}
       onClick={onClick}

@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { SVGProps } from 'react';
 import styled from 'styled-components';
 
@@ -28,7 +28,7 @@ const DownArrow = styled(DownArrowSvg)`
 `;
 
 const AccordionIcon: React.FC<Props> = ({ active }) => {
-  const classNames = useClasses({ active });
+  const classNames = getClassNames({ active });
   return (
     <DownArrow className={classNames} />
   );

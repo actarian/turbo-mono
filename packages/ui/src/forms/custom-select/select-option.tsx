@@ -1,4 +1,4 @@
-import { consoleWarn, useClasses } from '@websolute/hooks';
+import { consoleWarn, getClassNames } from '@websolute/core';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { Ellipsis } from '../../components';
@@ -101,8 +101,6 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
     return value.includes(`${optionValue}`);
   }, [optionValue, value]);
 
-  const classes = useClasses('option', { divider, label, active }, className);
-
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     if (preventAllEvents) {
       return;
@@ -116,8 +114,10 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
     updateValue && updateValue(optionValue);
   };
 
+  const classNames = getClassNames('option', { divider, label, active }, className);
+
   return (
-    <StyledSelectOption className={classes} onClick={clickHandler} {...props}>
+    <StyledSelectOption className={classNames} onClick={clickHandler} {...props}>
       <Ellipsis>{children}</Ellipsis>
     </StyledSelectOption>
   )

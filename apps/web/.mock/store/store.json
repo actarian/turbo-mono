@@ -106,6 +106,18 @@
         "pageSchema": "reserved_area",
         "pageId": 1,
         "schema": "category"
+      },
+      {
+        "id": 7,
+        "name": "login",
+        "title": {
+          "en": "Login",
+          "it": "Accedi"
+        },
+        "categoryId": 1,
+        "pageSchema": "login",
+        "pageId": 1,
+        "schema": "category"
       }
     ]
   },
@@ -2385,6 +2397,46 @@
         "id": "it",
         "title": "Italiano",
         "schema": "locale"
+      }
+    ]
+  },
+  "login": {
+    "singularName": "login",
+    "pluralName": "logins",
+    "displayName": "Login",
+    "items": [
+      {
+        "id": 1,
+        "slug": {
+          "en": "login",
+          "it": "accedi"
+        },
+        "title": {
+          "en": "Login",
+          "it": "Accedi"
+        },
+        "abstract": {
+          "en": "Login.",
+          "it": "Accedi."
+        },
+        "description": {
+          "en": "Login.",
+          "it": "Accedi."
+        },
+        "categoryId": 7,
+        "meta": {
+          "title": {
+            "en": "Login",
+            "it": "Accedi"
+          },
+          "description": {
+            "en": "Login.",
+            "it": "Accedi."
+          },
+          "keywords": "login keywords",
+          "robots": "all"
+        },
+        "schema": "login"
       }
     ]
   },
@@ -58965,6 +59017,39 @@
           "robots": "all"
         },
         "schema": "reserved_area"
+      },
+      {
+        "id": 1,
+        "slug": {
+          "en": "login",
+          "it": "accedi"
+        },
+        "title": {
+          "en": "Login",
+          "it": "Accedi"
+        },
+        "abstract": {
+          "en": "Login.",
+          "it": "Accedi."
+        },
+        "description": {
+          "en": "Login.",
+          "it": "Accedi."
+        },
+        "categoryId": 7,
+        "meta": {
+          "title": {
+            "en": "Login",
+            "it": "Accedi"
+          },
+          "description": {
+            "en": "Login.",
+            "it": "Accedi."
+          },
+          "keywords": "login keywords",
+          "robots": "all"
+        },
+        "schema": "login"
       }
     ]
   },
@@ -59238,7 +59323,7 @@
         "pageId": 1
       },
       {
-        "id": "/ww/en/unisex-skinny-joggers",
+        "id": "/ww/en/login/unisex-skinny-joggers",
         "schema": "route",
         "marketId": "ww",
         "localeId": "en",
@@ -59246,7 +59331,7 @@
         "pageId": 2
       },
       {
-        "id": "/ww/it/pantaloni-skinny-da-jogging-unisex",
+        "id": "/ww/it/accedi/pantaloni-skinny-da-jogging-unisex",
         "schema": "route",
         "marketId": "ww",
         "localeId": "it",
@@ -59254,7 +59339,7 @@
         "pageId": 2
       },
       {
-        "id": "/eu/it/pantaloni-skinny-da-jogging-unisex",
+        "id": "/eu/it/accedi/pantaloni-skinny-da-jogging-unisex",
         "schema": "route",
         "marketId": "eu",
         "localeId": "it",
@@ -59262,7 +59347,7 @@
         "pageId": 2
       },
       {
-        "id": "/eu/en/unisex-skinny-joggers",
+        "id": "/eu/en/login/unisex-skinny-joggers",
         "schema": "route",
         "marketId": "eu",
         "localeId": "en",
@@ -59395,6 +59480,38 @@
         "marketId": "eu",
         "localeId": "en",
         "pageSchema": "reserved_area",
+        "pageId": 1
+      },
+      {
+        "id": "/ww/en/login",
+        "schema": "route",
+        "marketId": "ww",
+        "localeId": "en",
+        "pageSchema": "login",
+        "pageId": 1
+      },
+      {
+        "id": "/ww/it/accedi",
+        "schema": "route",
+        "marketId": "ww",
+        "localeId": "it",
+        "pageSchema": "login",
+        "pageId": 1
+      },
+      {
+        "id": "/eu/it/accedi",
+        "schema": "route",
+        "marketId": "eu",
+        "localeId": "it",
+        "pageSchema": "login",
+        "pageId": 1
+      },
+      {
+        "id": "/eu/en/login",
+        "schema": "route",
+        "marketId": "eu",
+        "localeId": "en",
+        "pageSchema": "login",
         "pageId": 1
       }
     ]

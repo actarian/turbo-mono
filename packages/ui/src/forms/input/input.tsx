@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode, useState } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
@@ -92,12 +92,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   onBlur,
   ...props }, ref) => {
   const [focus, setFocus] = useState<boolean>(false);
-  const classNames = useClasses('input', {
-    focus,
-    disabled: props.disabled,
-    readonly: props.readOnly,
-    hidden: props.hidden,
-  }, className);
   const onFocus_ = (event: React.FocusEvent<HTMLInputElement>) => {
     onFocus && onFocus(event);
     setFocus(true);
@@ -106,6 +100,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
     onBlur && onBlur(event);
     setFocus(false);
   }
+  const classNames = getClassNames('input', {
+    focus,
+    disabled: props.disabled,
+    readonly: props.readOnly,
+    hidden: props.hidden,
+  }, className);
   return (
     <StyledInputContainer className={classNames} {...props}>
       {before}

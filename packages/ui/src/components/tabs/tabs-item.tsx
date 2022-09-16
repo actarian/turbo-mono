@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { useEffect, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import { TabsInternalCellProps, useTabsContext } from './tabs-context';
@@ -120,17 +120,18 @@ const TabsItem: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
       const ref = useRef<HTMLDivElement | null>(null);
       const { currentValue } = useTabsContext();
       const active = currentValue === value;
-      const classes = useClasses('tab', { active, disabled, [activeClassName!]: active, 'hide-border': hideBorder });
       const clickHandler = () => {
         if (disabled) {
           return;
         }
         onClick && onClick(value);
       };
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const classNames = getClassNames('tab', { active, disabled, [activeClassName!]: active, 'hide-border': hideBorder });
       return (
         <StyledInternalCell ref={ref} key={value}
           label={label}
-          className={classes} style={active ? activeStyle : {}} role="button" data-geist="tab-item"
+          className={classNames} style={active ? activeStyle : {}} role="button" data-geist="tab-item"
           onMouseOver={onMouseOver} onClick={clickHandler}>
           {label}
         </StyledInternalCell>

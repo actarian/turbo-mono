@@ -1,5 +1,5 @@
 
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
@@ -54,7 +54,7 @@ const StyledRadio = styled.div`
 `
 
 const Radio = forwardRef<HTMLInputElement, RadioProps>(({ className, ...props }, ref) => {
-  const classNames = useClasses('radio', className);
+  const classNames = getClassNames('radio', className);
   return (
     <StyledRadio className={classNames}>
       <StyledRadioInput ref={ref} as='input' type='radio' {...props} />

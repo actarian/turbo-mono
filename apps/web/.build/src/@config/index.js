@@ -15,5 +15,6 @@ exports.PAGES = {
     product: 'product',
     store_index: 'store_index',
     reserved_area: 'reserved_area',
+    login: 'login',
     notfound: 'notfound',
 };

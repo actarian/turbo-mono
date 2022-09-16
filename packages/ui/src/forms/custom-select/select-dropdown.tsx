@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { CSSProperties, useImperativeHandle, useRef } from 'react';
 import styled from 'styled-components';
 import { Dropdown } from '../../components';
@@ -39,13 +39,13 @@ const SelectDropdown = React.forwardRef<HTMLDivElement | null, React.PropsWithCh
 
   const { ref } = useSelectContext();
 
-  const classes = useClasses('select-dropdown', className);
-
   useImperativeHandle<HTMLDivElement | null, HTMLDivElement | null>(dropdownRef, () => internalDropdownRef.current);
+
+  const classNames = getClassNames('select-dropdown', className);
 
   return (
     <Dropdown parent={ref} visible={visible} disableMatchWidth={disableMatchWidth} getPopupContainer={getPopupContainer}>
-      <StyledSelectDropdown ref={internalDropdownRef} className={classes} style={dropdownStyle}>
+      <StyledSelectDropdown ref={internalDropdownRef} className={classNames} style={dropdownStyle}>
         {children}
       </StyledSelectDropdown>
     </Dropdown>

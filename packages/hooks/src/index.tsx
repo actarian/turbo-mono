@@ -1,8 +1,6 @@
-export { consoleWarn } from './consoleWarn/consoleWarn';
 export { useApiDelete, useApiFetch, useApiGet, useApiPatch, useApiPost, useApiPut } from './useApi/useApi';
 export { useBodyScroll } from './useBodyScroll/useBodyScroll';
 export { useBreakpoint } from './useBreakpoint/useBreakpoint';
-export { useClasses } from './useClasses/useClasses';
 export { useClickAnyWhere } from './useClickAnyWhere/useClickAnyWhere';
 export { useClickOut } from './useClickOut/useClickOut';
 export { useCurrency } from './useCurrency/useCurrency';
@@ -44,6 +42,7 @@ export { useScrollTo } from './useScrollTo/useScrollTo';
 export { decode, getSearchParams, pushSearchParams, replaceSearchParams, replaceSearchParamsSilently, updateSearchParams, useSearchParams } from './useSearchParams/useSearchParams';
 export { useSSR } from './useSSR/useSSR';
 export { useUI } from './useUI/useUI';
+export type { IUIStateValue } from './useUI/useUI';
 export { useWindowSize } from './useWindowSize/useWindowSize';
 
 /**

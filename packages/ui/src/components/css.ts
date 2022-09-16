@@ -131,8 +131,8 @@ const CssObj = {
   "height": "height",
   "justifyContent": "justify-content",
   "left": "left",
-  /*
   "letterSpacing": "letter-spacing",
+  /*
   "lineHeight": "line-height",
   "listStyle": "list-style",
   "listStyleImage": "list-style-image",

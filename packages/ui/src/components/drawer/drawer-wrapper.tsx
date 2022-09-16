@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { useEffect, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import Transition from '../../components/transition/transition';
@@ -107,7 +107,6 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps | any>>
   const tabStart = useRef<HTMLDivElement>(null);
   const tabEnd = useRef<HTMLDivElement>(null);
   const transform = useMemo(() => getDrawerTransform(placement), [placement]);
-  const classes = useClasses('wrapper', placement, className);
 
   useEffect(() => {
     if (!visible) {
@@ -138,9 +137,11 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps | any>>
     }
   }
 
+  const classNames = getClassNames('wrapper', placement, className);
+
   return (
     <Transition name="wrapper" visible={visible} clearTime={300}>
-      <StyledWrapper className={classes} role="dialog" tabIndex={-1} transform={transform} onKeyDown={onKeyDown} ref={modalContent} {...props}>
+      <StyledWrapper className={classNames} role="dialog" tabIndex={-1} transform={transform} onKeyDown={onKeyDown} ref={modalContent} {...props}>
         <div tabIndex={0} className="hide-tab start" aria-hidden="true" ref={tabStart} />
         {children}
         <div tabIndex={0} className="hide-tab end" aria-hidden="true" ref={tabEnd} />

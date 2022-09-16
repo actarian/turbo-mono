@@ -1,4 +1,5 @@
-import { useClasses, usePrevious } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
+import { usePrevious } from '@websolute/hooks';
 import React, { useMemo, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { isUnplacedRect, ReactiveDomReact } from '../dropdown/dropdown-layout';
@@ -68,8 +69,10 @@ const Highlight: React.FC<HighlightProps> = ({
     }
   }, [rect, hoverWidthRatio, hoverHeightRatio, isFirstVisible]);
 
+  const classNames = getClassNames('highlight', { active: visible }, className);
+
   return (
-    <StyledHighlight ref={ref} className={useClasses('highlight', { active: visible }, className)}
+    <StyledHighlight ref={ref} className={classNames}
       position={position} activeOpacity={activeOpacity} {...props}>
     </StyledHighlight>
   )

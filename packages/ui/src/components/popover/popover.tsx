@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import Tooltip, { TooltipOnVisibleChange, TooltipProps } from '../tooltip/tooltip';
@@ -69,8 +69,6 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
     };
   }, [disableItemsAutoClose, onPopoverVisibleChange]);
 
-  const classes = useClasses('popover', portalClassName);
-
   useEffect(() => {
     if (customVisible === undefined) {
       return;
@@ -78,13 +76,15 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
     onPopoverVisibleChange(customVisible);
   }, [customVisible, onPopoverVisibleChange]);
 
+  const portalClassNames = getClassNames('popover', portalClassName);
+
   return (
     <PopoverContext.Provider value={value}>
       <StyledTooltip
         text={textNode}
         trigger={trigger}
         placement={placement}
-        portalClassName={classes}
+        portalClassName={portalClassNames}
         visible={visible}
         onVisibleChange={onPopoverVisibleChange}
         {...props}>

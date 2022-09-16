@@ -1,4 +1,4 @@
-import { useClasses } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { ComponentCssResponsiveProps } from '../../components/types';
@@ -21,7 +21,7 @@ const StyledLabel = styled.div`
 `;
 
 const Label = forwardRef<HTMLLabelElement, LabelProps>(({ className, ...props }, ref) => {
-  const classNames = useClasses('label', className);
+  const classNames = getClassNames('label', className);
   return (
     <StyledLabel ref={ref} className={classNames} as='label' {...props} />
   );

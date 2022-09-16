@@ -55,5 +55,16 @@
     "categoryId": 1,
     "pageSchema": "reserved_area",
     "pageId": 1
+  },
+  {
+    "id": 7,
+    "name": "login",
+    "title": {
+      "en": "Login",
+      "it": "Accedi"
+    },
+    "categoryId": 1,
+    "pageSchema": "login",
+    "pageId": 1
   }
 ]

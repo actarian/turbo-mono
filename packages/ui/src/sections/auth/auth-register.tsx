@@ -1,6 +1,7 @@
 import { httpPost } from '@websolute/core';
 import { EmailValidator, FormGroup, MatchValidator, RequiredTrueValidator, RequiredValidator, useFormBuilder } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
+import { IUserRegister } from '@websolute/models';
 import { ReactNode, useState } from 'react';
 import { Button, Divider, Flex, Text } from '../../components';
 import { FieldCheckbox, FieldPassword, FieldText, Tester } from '../../fields';
@@ -23,7 +24,7 @@ const AuthSignUp: React.FC<AuthSignUpProps> = ({ onSignedUp, onNavToLogin }: Aut
     return rootValue?.password;
   });
 
-  const [form, setValue, setTouched, reset, group] = useFormBuilder<any, FormGroup>({
+  const [form, setValue, setTouched, reset, group] = useFormBuilder<IUserRegister, FormGroup>({
     firstName: { schema: 'text', label: 'field.firstName', validators: [required] },
     lastName: { schema: 'text', label: 'field.lastName', validators: [required] },
     email: { schema: 'text', label: 'field.email', validators: [required, email] },

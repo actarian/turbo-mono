@@ -1,4 +1,5 @@
-import { useClasses, useRealSize } from '@websolute/hooks';
+import { getClassNames } from '@websolute/core';
+import { useRealSize } from '@websolute/hooks';
 import React, { CSSProperties, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
@@ -46,8 +47,6 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
 
   const [size, updateSize] = useRealSize<HTMLDivElement>(contentRef);
 
-  const classes = useClasses('container', { expanded: selfExpanded, visible });
-
   useEffect(() => setHeight(`${size.height}px`), [size.height]);
 
   useEffect(() => {
@@ -84,8 +83,10 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
     }
   }, [isExpanded]);
 
+  const classNames = getClassNames('container', { expanded: selfExpanded, visible });
+
   return (
-    <StyledExpand className={classes} height={height} delay={delay}>
+    <StyledExpand className={classNames} height={height} delay={delay}>
       <div ref={contentRef} className="content">
         {children}
       </div>
