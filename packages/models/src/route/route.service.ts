@@ -11,7 +11,9 @@ import path from 'path';
 
 export async function getRoutes(params: FindParams = {}): Promise<IRoute[]> {
   const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
-  console.log('RouteService.getRoutes.pathname', pathname);
+  // Read the json data file data.json
+  const data = await fs.readFile(pathname, 'utf8');
+  console.log('RouteService.getRoutes.pathname', pathname, data);
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany(params);
   return routes;
@@ -22,7 +24,7 @@ export async function getRoute(id: string): Promise<IRoute | null> {
   const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
   // Read the json data file data.json
   const data = await fs.readFile(pathname, 'utf8');
-  console.log('RouteService.getRoutes.pathname', pathname);
+  console.log('RouteService.getRoute.pathname', pathname, data);
   const store = await getStore<IModelStore>();
   const route = await store.route.findOne(id);
   // console.log('getRoute', id, '->', route);
