@@ -3,6 +3,7 @@ import { getApiStore } from '../store-api/store-api.store';
 import { IStore, StoreStrategy, storeStrategy } from './store';
 
 export async function getStore<T extends IStore>(PAGES: { [key: string]: string } = {}): Promise<T> {
+  console.log(storeStrategy);
   switch (storeStrategy) {
     case StoreStrategy.Api:
       return getApiStore<T>(PAGES);

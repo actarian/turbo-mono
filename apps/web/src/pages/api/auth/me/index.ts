@@ -4,6 +4,8 @@ import { IUser } from '@websolute/models';
 import { withIronSessionApiRoute } from 'iron-session/next';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+console.log('sessionOptions', sessionOptions);
+
 function meGet(request: NextApiRequest, response: NextApiResponse<IUser | null>) {
   if (request.session.user) {
     // in a real world application you might read the user id from the session and then do a database request
