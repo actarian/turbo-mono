@@ -5,14 +5,20 @@ import type { ICategory } from '../category/category';
 import { IModelStore } from '../store/store';
 // import { parseMockApi } from '@core';
 import type { IRoute, IRouteLink } from './route';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path');
 
 export async function getRoutes(params: FindParams = {}): Promise<IRoute[]> {
+  const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
+  console.log('RouteService.getRoutes.pathname', pathname);
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany(params);
   return routes;
 }
 
 export async function getRoute(id: string): Promise<IRoute | null> {
+  const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
+  console.log('RouteService.getRoutes.pathname', pathname);
   const store = await getStore<IModelStore>();
   const route = await store.route.findOne(id);
   // console.log('getRoute', id, '->', route);

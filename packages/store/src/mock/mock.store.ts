@@ -10,7 +10,6 @@ let STORE_: IStore;
 
 export async function getMockStore<T extends IStore>(): Promise<T> {
   console.log('getMockStore', STORE_ ? Object.keys(STORE_) : null);
-  console.log('getMockStore.STORE_', STORE_);
   console.log('getMockStore.process.cwd', process.cwd());
   if (STORE_) {
     return STORE_ as T;
