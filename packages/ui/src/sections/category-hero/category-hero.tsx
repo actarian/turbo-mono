@@ -35,25 +35,25 @@ const CategoryHero: React.FC<CategoryHeroProps> = ({ ...props }: CategoryHeroPro
           <Grid md={6}>
             <Grid.Row columns="3" columnGap="1rem" rowGap="1rem">
               <Media rounded>
-                <img src="/new-arrivals/01.jpg" />
+                <img src="/assets/new-arrivals/01.jpg" />
               </Media>
               <Media rounded>
-                <img src="/new-arrivals/02.jpg" />
+                <img src="/assets/new-arrivals/02.jpg" />
               </Media>
               <Media rounded>
-                <img src="/new-arrivals/03.jpg" />
+                <img src="/assets/new-arrivals/03.jpg" />
               </Media>
               <Media rounded>
-                <img src="/new-arrivals/04.jpg" />
+                <img src="/assets/new-arrivals/04.jpg" />
               </Media>
               <Media rounded>
-                <img src="/new-arrivals/05.jpg" />
+                <img src="/assets/new-arrivals/05.jpg" />
               </Media>
               <Media rounded>
-                <img src="/new-arrivals/06.jpg" />
+                <img src="/assets/new-arrivals/06.jpg" />
               </Media>
               <Media rounded display="none">
-                <img src="/new-arrivals/07.jpg" />
+                <img src="/assets/new-arrivals/07.jpg" />
               </Media>
             </Grid.Row>
           </Grid>

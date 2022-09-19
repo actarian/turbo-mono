@@ -20,7 +20,7 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
   const [markers, setMarkers] = useState<google.maps.Marker[]>();
 
   useEffect(() => {
-    let markers_:google.maps.Marker[] = [];
+    let markers_: google.maps.Marker[] = [];
     if (!map) {
       return;
     }
@@ -55,12 +55,12 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
   }, [items, map, onClick]);
 
   useEffect(() => {
-    let instance:MarkerClusterer;
+    let instance: MarkerClusterer;
     if (map && markers) {
       // console.log('MarkerClusterer 2', map);
       /*
       const instance = new MarkerClusterer(map, markers, {
-        imagePath: `/map/cluster-`,
+        imagePath: `/assets/map/cluster-`,
       });
       */
       console.log('MarkerClusterer');
@@ -75,7 +75,7 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
             const count = markers ? markers.length : 0;
             const size = Math.max(1, Math.min(5, Math.ceil(count / 5)));
             const icon = {
-              url: `/map/cluster-${size}.png`,
+              url: `/assets/map/cluster-${size}.png`,
               size: new google.maps.Size(40 + size * 8, 40 + size * 8),
               origin: new google.maps.Point(0, 0),
               anchor: new google.maps.Point(17, 34),

@@ -6,34 +6,21 @@ import { IModelStore } from '../store/store';
 // import { parseMockApi } from '@core';
 import type { IRoute, IRouteLink } from './route';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-import { promises as fs } from 'fs';
-import path from 'path';
 
 export async function getRoutes(params: FindParams = {}): Promise<IRoute[]> {
-  const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
-  // Read the json data file data.json
-  const data = await fs.readFile(pathname, 'utf8');
-  console.log('RouteService.getRoutes.pathname', pathname, data);
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany(params);
   return routes;
 }
 
 export async function getRoute(id: string): Promise<IRoute | null> {
-  // Find the absolute path of the json directory
-  const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
-  // Read the json data file data.json
-  const data = await fs.readFile(pathname, 'utf8');
-  console.log('RouteService.getRoute.pathname', pathname, data);
   const store = await getStore<IModelStore>();
   const route = await store.route.findOne(id);
   // console.log('getRoute', id, '->', route);
   return route;
 }
 
-export async function getRoutesForSchemas(schemas: string[], market?: string, locale?: string): Promise<{
-  [key: string]: string;
-}> {
+export async function getRoutesForSchemas(schemas: string[], market?: string, locale?: string): Promise<{ [key: string]: string; }> {
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany({
     where: {

@@ -32,7 +32,7 @@ const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> 
     if (items.length) {
       markers_ = items.map(item => {
         const icon = {
-          url: `/map/marker-sm.png`,
+          url: `/assets/map/marker-sm.png`,
           size: new google.maps.Size(24, 32),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(12, 32),
@@ -61,7 +61,7 @@ const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> 
     if (map && markers) {
       console.log('clusterer init');
       clusterer = new MarkerClustererPlus(map, markers, {
-        imagePath: `/map/cluster-`,
+        imagePath: `/assets/map/cluster-`,
       });
       const styles = clusterer.getStyles();
       const sizes = [48, 56, 64, 72, 80];
@@ -87,12 +87,12 @@ const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> 
 
 export default GoogleMapMarkerClustererPlus;
 
-function markerDispose(marker:google.maps.Marker) {
+function markerDispose(marker: google.maps.Marker) {
   marker.setMap(null);
   marker.unbindAll();
 }
 
-function markersDispose(markers?:google.maps.Marker[]) {
+function markersDispose(markers?: google.maps.Marker[]) {
   if (markers) {
     markers.forEach(x => markerDispose(x));
   }

@@ -8,7 +8,7 @@
       "price": 48,
       "media": {
         "type": "image",
-        "src": "/product-list-01.jpg"
+        "src": "/assets/product-list-01.jpg"
       }
     },
     {
@@ -19,7 +19,7 @@
       "price": 35,
       "media": {
         "type": "image",
-        "src": "/product-list-02.jpg"
+        "src": "/assets/product-list-02.jpg"
       }
     },
     {
@@ -30,7 +30,7 @@
       "price": 89,
       "media": {
         "type": "image",
-        "src": "/product-list-03.jpg"
+        "src": "/assets/product-list-03.jpg"
       }
     },
     {
@@ -41,7 +41,7 @@
       "price": 35,
       "media": {
         "type": "image",
-        "src": "/product-list-04.jpg"
+        "src": "/assets/product-list-04.jpg"
       }
     },
     {
@@ -52,7 +52,7 @@
       "price": 64,
       "media": {
         "type": "image",
-        "src": "/product-list-05.jpg"
+        "src": "/assets/product-list-05.jpg"
       }
     },
     {
@@ -63,7 +63,7 @@
       "price": 39,
       "media": {
         "type": "image",
-        "src": "/product-list-06.jpg"
+        "src": "/assets/product-list-06.jpg"
       }
     },
     {
@@ -74,7 +74,7 @@
       "price": 50,
       "media": {
         "type": "image",
-        "src": "/product-list-07.jpg"
+        "src": "/assets/product-list-07.jpg"
       }
     },
     {
@@ -85,7 +85,7 @@
       "price": 32,
       "media": {
         "type": "image",
-        "src": "/product-list-08.jpg"
+        "src": "/assets/product-list-08.jpg"
       }
     }
   ]

@@ -18,11 +18,12 @@ export default function Application({ Component, pageProps }: ApplicationProps) 
     locales: [],
     labels: [],
     tree: undefined,
+    knownRoutes: {},
   };
 
   const page = {};
 
-  console.log('layout', layout, 'page', page);
+  // console.log('layout', layout, 'page', page);
 
   return (
     <>

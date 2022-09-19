@@ -5,10 +5,15 @@
   "scripts": {
     "mock:build": "tsc --project ./tsconfig.server.json",
     "mock:run": "node .build/.scripts/mock.js mock",
+    "dev:clean": "rimraf public/* \"!public/.gitkeep\"",
+    "dev:public": "copyfiles ../../public/**/* web/public",
     "dev:mock": "run-s mock:*",
     "dev:next": "next dev",
-    "dev": "run-p dev:*",
-    "build": "next build",
+    "dev": "run-s dev:*",
+    "build:clean": "rimraf public/* \"!public/.gitkeep\"",
+    "build:public": "copyfiles ../../public/**/* web/public",
+    "build:next": "next build",
+    "build": "run-s build:*",
     "start": "next start",
     "lint": "next lint"
   },
@@ -33,6 +38,7 @@
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "@websolute/tsconfig": "*",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.23.0",
     "eslint-config-websolute": "*",
     "module-alias": "^2.2.2",
@@ -40,6 +46,7 @@
     "npm-run-all": "^4.1.5",
     "pluralize": "^8.0.0",
     "raw-loader": "^4.0.2",
+    "rimraf": "^3.0.2",
     "typescript": "^4.8.2"
   }
 }

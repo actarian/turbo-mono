@@ -8,19 +8,19 @@
     "media": [
       {
         "type": "image",
-        "src": "/product-04.jpg"
+        "src": "/assets/product-04.jpg"
       },
       {
         "type": "image",
-        "src": "/product-01.jpg"
+        "src": "/assets/product-01.jpg"
       },
       {
         "type": "image",
-        "src": "/product-02.jpg"
+        "src": "/assets/product-02.jpg"
       },
       {
         "type": "image",
-        "src": "/product-03.jpg"
+        "src": "/assets/product-03.jpg"
       }
     ]
   }
