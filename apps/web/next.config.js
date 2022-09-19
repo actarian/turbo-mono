@@ -12,7 +12,6 @@ const transpiledModules = nextTranspileModules([
 ], { resolveSymlinks: false });
 
 module.exports = transpiledModules({
-  outputFileTracing: true,
   reactStrictMode: true,
   compiler: {
     styledComponents: {
