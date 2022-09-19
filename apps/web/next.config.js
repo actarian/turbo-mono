@@ -12,6 +12,7 @@ const transpiledModules = nextTranspileModules([
 ], { resolveSymlinks: false });
 
 module.exports = transpiledModules({
+  output: 'standalone',
   reactStrictMode: true,
   compiler: {
     styledComponents: {
