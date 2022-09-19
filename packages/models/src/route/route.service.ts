@@ -6,7 +6,8 @@ import { IModelStore } from '../store/store';
 // import { parseMockApi } from '@core';
 import type { IRoute, IRouteLink } from './route';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require('path');
+import { promises as fs } from 'fs';
+import path from 'path';
 
 export async function getRoutes(params: FindParams = {}): Promise<IRoute[]> {
   const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
@@ -17,7 +18,10 @@ export async function getRoutes(params: FindParams = {}): Promise<IRoute[]> {
 }
 
 export async function getRoute(id: string): Promise<IRoute | null> {
+  // Find the absolute path of the json directory
   const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
+  // Read the json data file data.json
+  const data = await fs.readFile(pathname, 'utf8');
   console.log('RouteService.getRoutes.pathname', pathname);
   const store = await getStore<IModelStore>();
   const route = await store.route.findOne(id);
