@@ -9,6 +9,7 @@ const path = require('path');
 let STORE_: IStore;
 
 export async function getMockStore<T extends IStore>(): Promise<T> {
+  console.log('getMockStore', STORE_ ? Object.keys(STORE_) : null);
   if (STORE_) {
     return STORE_ as T;
   }
@@ -16,7 +17,6 @@ export async function getMockStore<T extends IStore>(): Promise<T> {
   const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
   console.log('getMockStore.pathname', pathname);
   const json = await fsReadJson(pathname);
-  console.log('getMockStore.json', json);
   const store: { [key: string]: IQuerable<IEntity> } = {};
   if (json != null) {
     Object.keys(json).forEach(key => {

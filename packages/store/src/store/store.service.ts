@@ -6,8 +6,8 @@ export async function getStore<T extends IStore>(PAGES: { [key: string]: string 
   console.log(storeStrategy);
   switch (storeStrategy) {
     case StoreStrategy.Api:
-      return getApiStore<T>(PAGES);
+      return await getApiStore<T>(PAGES);
     default:
-      return getMockStore<T>();
+      return await getMockStore<T>();
   }
 }
