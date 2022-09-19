@@ -73,7 +73,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
   const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
   // Read the json data file data.json
   const data = await fs.readFile(pathname, 'utf8');
-  console.log('data', Object.keys(data));
+  // console.log('data', Object.keys(data));
 
   const params = context.params as IContextParams;
   const query = context.query;

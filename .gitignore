@@ -1,5 +1,16 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+#public
+apps/storybook/public/*
+apps/theme/public/*
+apps/web/public/*
+!apps/storybook/public/.gitkeep
+!apps/theme/public/.gitkeep
+!apps/web/public/.gitkeep
+
+# exception to the rule
+!somefolder/.gitkeep
+
 # dependencies
 node_modules
 .pnp
