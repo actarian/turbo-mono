@@ -2,6 +2,7 @@
 import { sessionOptions } from '@config/session';
 import { asStaticProps, httpGet, IContextParams } from '@websolute/core';
 import { getLayout, getPage, PageProps } from '@websolute/models';
+import { StoreStrategy, storeStrategy } from '@websolute/store';
 import { Box, Button, Container, Flex, Footer, Header, Layout, Meta, NavLink, Page, Section, Text, useUser } from '@websolute/ui';
 import { promises as fs } from 'fs';
 import { withIronSessionSsr } from 'iron-session/next';
@@ -69,11 +70,11 @@ export interface ReservedAreaProps extends PageProps {
 }
 
 export const getServerSideProps = withIronSessionSsr(async function (context) {
-  // Find the absolute path of the json directory
-  const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
-  // Read the json data file data.json
-  const data = await fs.readFile(pathname, 'utf8');
-  // console.log('data', Object.keys(data));
+  // !!! hack for vercel lambdas
+  if (storeStrategy === StoreStrategy.Mock) {
+    const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
+    const data = await fs.readFile(pathname, 'utf8');
+  }
 
   const params = context.params as IContextParams;
   const query = context.query;

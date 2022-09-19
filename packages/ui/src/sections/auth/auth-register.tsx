@@ -4,8 +4,8 @@ import { useLabel } from '@websolute/hooks';
 import { IUserRegister } from '@websolute/models';
 import { ReactNode, useState } from 'react';
 import { Button, Divider, Flex, Text } from '../../components';
-import { FieldCheckbox, FieldPassword, FieldText, Tester } from '../../fields';
-import { Form } from '../../forms';
+import { FieldCheckbox, FieldPassword, FieldText } from '../../fields';
+import { Form, FormTester } from '../../forms';
 
 
 export interface AuthSignUpProps {
@@ -107,7 +107,7 @@ const AuthSignUp: React.FC<AuthSignUpProps> = ({ onSignedUp, onNavToLogin }: Aut
           <Flex.Row justifyContent="center">
             <Button variant="link" onClick={onLogin}>Login</Button>
           </Flex.Row>
-          <Tester form={form} onTest={onTest} onReset={onReset}></Tester>
+          <FormTester form={form} onTest={onTest} onReset={onReset}></FormTester>
         </Flex.Col>
         {false && <Button type="submit" variant="primary" size="lg" position="sticky" bottom="1rem" justifyContent="center"><span>Register</span></Button>}
       </Form>

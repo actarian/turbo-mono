@@ -15,7 +15,7 @@ export default function Contact() {
       <Head>
         <title>Contacts</title>
         <meta name="description" content="Contacts description" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/head/favicon.ico" />
       </Head>
 
       <Layout>

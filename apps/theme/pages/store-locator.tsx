@@ -9,7 +9,7 @@ const StoreLocator: React.FC<StoreLocatorProps> = ({ locale, country, items = []
       <Head>
         <title>Store locator</title>
         <meta name="description" content="Store locator description" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/head/favicon.ico" />
       </Head>
 
       <Layout>

@@ -11,7 +11,7 @@ export default function Category({ items }: ProductsRelatedProps) {
       <Head>
         <title>Category</title>
         <meta name="description" content="Category description" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/head/favicon.ico" />
       </Head>
 
       <Layout>

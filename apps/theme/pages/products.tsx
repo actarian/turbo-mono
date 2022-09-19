@@ -11,7 +11,7 @@ export default function Products() {
       <Head>
         <title>Products</title>
         <meta name="description" content="Products description" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/head/favicon.ico" />
       </Head>
 
       <Layout>

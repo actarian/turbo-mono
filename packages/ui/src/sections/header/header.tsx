@@ -107,7 +107,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             </Flex>
             <Flex flex="1" justifyContent="center">
               {props.menu && <Nav.Row gap="3rem" display="none" displaySm="flex">
-                {props.menu.filter(x => x.categoryId && x.categoryId < 7).map((x, i) => (
+                {props.menu.filter(x => !x.categoryId || x.categoryId < 7).map((x, i) => (
                   <NavLink key={i} href={x.href || ''} passHref={true}>
                     <Button variant="nav" as="a">{x.title}</Button>
                   </NavLink>
@@ -135,10 +135,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
               <Button display='none' displaySm='flex' onClick={() => onOpenDrawer('markets-and-languages')}>
                 <Text marginRight="0.5rem">{layout.locale.toUpperCase()}</Text> <Menu />
               </Button>
-              <NavLink href="#menu">
-                <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" />
-                </Button>
-              </NavLink>
+              <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" /></Button>
             </Flex>
           </Flex.Row>
         </Container.Fluid>

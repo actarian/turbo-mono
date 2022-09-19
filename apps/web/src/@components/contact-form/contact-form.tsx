@@ -4,7 +4,7 @@ import {
   RequiredValidator, useFormBuilder, ValidationError
 } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
-import { Button, FieldCollection, Flex, Grid, Tester } from '@websolute/ui';
+import { Button, FieldCollection, Flex, FormTester, Grid } from '@websolute/ui';
 
 export default function ContactForm({ data, onSubmit }: { data: IContactForm, onSubmit: (value: any) => void }) {
   const label = useLabel();
@@ -119,7 +119,7 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
         <Button variant="secondary" onClick={onReset}>{label('form.reset')}</Button>
         <Button variant="primary" type="submit">{label('form.submit')}</Button>
       </Flex.Row>
-      <Tester form={form} onTest={onTest} onReset={onReset}></Tester>
+      <FormTester form={form} onTest={onTest} onReset={onReset}></FormTester>
     </form>
   )
 }

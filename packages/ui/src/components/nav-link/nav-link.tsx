@@ -1,5 +1,6 @@
 import { usePage } from '@websolute/hooks';
 import Link, { LinkProps } from 'next/link';
+import { useRouter } from 'next/router';
 import React, { Children } from 'react';
 
 export interface NavLinkProps extends LinkProps {
@@ -13,13 +14,11 @@ const NavLink: React.FC<NavLinkProps> = ({ children, activeClassName = 'active',
   const childClassName = child.props.className || '';
 
   const { href } = usePage();
-  // console.log('href', href, 'props.href', props.href);
+  const router = useRouter();
+  const pathname = href || router.pathname;
+  // console.log('pathname', pathname, 'props.href', props.href);
 
-  // pages/index.js will be matched via props.href
-  // pages/about.js will be matched via props.href
-  // pages/[slug].js will be matched via props.as
-
-  const isActive = href === props.href || href === props.as;
+  const isActive = pathname && (pathname === props.href || pathname === props.as);
   // console.log('isActive', isActive, href, props.href, props.as);
   const className = isActive ? `${childClassName} ${activeClassName}`.trim() : childClassName;
 

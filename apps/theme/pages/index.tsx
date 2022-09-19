@@ -12,7 +12,7 @@ export default function Index() {
       <Head>
         <title>Homepage</title>
         <meta name="description" content="Homepage description" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/head/favicon.ico" />
       </Head>
       <Layout>
         <Page>

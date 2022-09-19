@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev:clean": "rimraf public/* \"!public/.gitkeep\"",
-    "dev:public": "copyfiles ../../public/**/* theme/public",
+    "dev:copy": "copyfiles ../../public/**/* theme/public",
     "dev:next": "next dev --port 3001",
     "dev": "run-s dev:*",
     "build:clean": "rimraf public/* \"!public/.gitkeep\"",
-    "build:public": "copyfiles ../../public/**/* theme/public",
+    "build:copy": "copyfiles ../../public/**/* theme/public",
     "build:next": "next build",
     "build": "run-s build:*",
     "start": "next start",

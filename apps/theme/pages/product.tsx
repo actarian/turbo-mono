@@ -29,7 +29,7 @@ export default function Product({ item, ...props }: Props) {
       <Head>
         <title>Product</title>
         <meta name="description" content="Product description" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/head/favicon.ico" />
       </Head>
 
       <Layout>

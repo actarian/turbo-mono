@@ -44,52 +44,33 @@ export type ComponentCssResponsiveProps<T, U extends NativeElement> = NativeThem
 
 export type ComponentGridProps<T, U extends NativeElement> = NativeThemeProps<T, U> & GridProps;
 
-// Polymorphic
-export type PropsOf<E extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>> = JSX.LibraryManagedAttributes<E, React.ComponentPropsWithRef<E>>;
-export interface PolymorphicElementOwnProps<E extends React.ElementType = React.ElementType> { as?: E; }
-export type PolymorphicElementProps<E extends React.ElementType> = PolymorphicElementOwnProps<E> & Omit<PropsOf<E>, keyof PolymorphicElementOwnProps>;
-export type PolymorphicProps<E extends React.ElementType, P> = P & PolymorphicElementProps<E>;
-// Polymorphic
+// todo polymorphism
 
-export type AsProps<C extends React.ElementType> = {
-  as?: C;
-};
+type AsProp<C extends React.ElementType> = { as?: C; };
 
-export type PropsToOmit<C extends React.ElementType, P> = keyof (AsProps<C> & P);
+type PropsToOmit<C extends React.ElementType, P> = keyof (AsProp<C> & P);
 
-// This is the type for the "ref" only
+export type PolymorphicComponentProp<C extends React.ElementType, Props = {}> = React.PropsWithChildren<Props & AsProp<C>> & Omit<React.ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>;
+
+export type PolymorphicComponentPropWithRef<C extends React.ElementType, Props = {}> = PolymorphicComponentProp<C, Props> & { ref?: PolymorphicRef<C> };
+
 export type PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref'];
 
-// This is the first reusable type utility we built
-export type PolymorphicComponentProp<C extends React.ElementType, Props = {}> =
-  React.PropsWithChildren<Props &
-    AsProps<C>> &
-  Omit<React.ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>;
-
-// This is a new type utitlity with ref!
-export type PolymorphicComponentPropWithRef<C extends React.ElementType, Props = {}> =
-  PolymorphicComponentProp<C, Props> &
-  { ref?: PolymorphicRef<C> };
-
 /*
-// This is the updated component props using PolymorphicComponentPropWithRef
 
-type TextProps<C extends React.ElementType> = PolymorphicComponentPropWithRef<C, { color?: 'white' | 'black' }>;
+type Props = {};
 
-// This is the type used in the type annotation for the component
-type TextComponent = <C extends React.ElementType = 'span'>(props: TextProps<C>) => React.ReactElement | null;
+type ButtonProps<C extends React.ElementType> = PolymorphicComponentPropWithRef<C, Props> & CssResponsiveProps;
 
-// export type StyledProps<P, C extends React.ElementType> = PolymorphicComponentPropWithRef<C, P> & CssResponsiveProps;
+type ButtonComponent = <C extends React.ElementType = 'button'>(props: ButtonProps<C>) => React.ReactElement | null;
 
-export const Text: TextComponent = React.forwardRef(
-  <C extends React.ElementType = 'span'>({ as, color, children }: TextProps<C>, ref?: PolymorphicRef<C>) => {
-    const Component = as || "span";
-    const style = color ? { style: { color } } : {};
-    return (
-      <Component {...style} ref={ref}>
-        {children}
-      </Component>
-    );
-  }
-);
+const PolymorphicButton: ButtonComponent = React.forwardRef(<C extends React.ElementType = 'button'>({ as, color, children, ...props }: ButtonProps<C>, ref?: PolymorphicRef<C>) => {
+  const Component = as || 'button';
+  return (
+    <Component ref={ref} {...props}>
+      {children}
+    </Component>
+  );
+});
+
 */

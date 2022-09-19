@@ -20,6 +20,8 @@ export default function Homepage({ layout, page, params }: PageProps) {
   }
   */
 
+  // console.log('layout.tree', JSON.stringify(layout.tree));
+
   return (
     <Layout>
       <Meta />

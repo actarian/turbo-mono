@@ -4,8 +4,8 @@ import { useLabel } from '@websolute/hooks';
 import { IUserForgot } from '@websolute/models';
 import { ReactNode, useState } from 'react';
 import { Button, Divider, Flex, Text } from '../../components';
-import { FieldText, Tester } from '../../fields';
-import { Form } from '../../forms';
+import { FieldText } from '../../fields';
+import { Form, FormTester } from '../../forms';
 
 export interface AuthForgotProps {
   children?: ReactNode;
@@ -97,7 +97,7 @@ const AuthForgot: React.FC<AuthForgotProps> = ({ onPasswordSent, onNavToLogin, o
           <Flex.Row justifyContent="center">
             <Button variant="link" onClick={onRegister}>Register</Button>
           </Flex.Row>
-          <Tester form={form} onTest={onTest} onReset={onReset}></Tester>
+          <FormTester form={form} onTest={onTest} onReset={onReset}></FormTester>
         </Flex.Col>
         {false && <Button type="submit" variant="primary" size="lg" position="sticky" bottom="1rem" justifyContent="center"><span>Send</span></Button>}
       </Form>

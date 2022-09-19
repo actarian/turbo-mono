@@ -6,5 +6,3 @@ export { default as FieldError } from './field-error';
 export { default as FieldPassword } from './field-password';
 export { default as FieldSelect } from './field-select';
 export { default as FieldText } from './field-text';
-export { default as Tester } from './tester';
-

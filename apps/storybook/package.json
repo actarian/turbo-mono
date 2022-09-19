@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev:clean": "rimraf public/* \"!public/.gitkeep\"",
-    "dev:public": "copyfiles ../../public/**/* web/public",
+    "dev:copy": "copyfiles ../../public/**/* web/public",
     "dev:storybook": "start-storybook --ci -c .storybook -p 3002",
     "dev": "run-s dev:*",
     "start_": "serve storybook-dist",
     "build:clean": "rimraf public/* \"!public/.gitkeep\"",
-    "build:public": "copyfiles ../../public/**/* storybook/public",
+    "build:copy": "copyfiles ../../public/**/* storybook/public",
     "build:storybook": "build-storybook --quiet -c .storybook -o .storybook-dist",
     "build_": "run-s build:*"
   },
