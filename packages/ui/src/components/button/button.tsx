@@ -1,7 +1,7 @@
 import { getClassNames } from '@websolute/core';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import { ComponentCssResponsiveProps, SizeVariant, VariantOf } from '../../components/types';
+import { SizeVariant, UIComponentWithRef, UIStyledComponentProps, VariantOf } from '../../components/types';
 import { getCssResponsive, getVariant } from '../../components/utils';
 import { CssButtonCircle, CssButtonDefault, CssButtonGhost, CssButtonLink, CssButtonNav, CssButtonOutline, CssButtonPrimary, CssButtonSecondary, CssButtonUnderline, CssDefault } from './button.css';
 
@@ -21,12 +21,15 @@ const variants: ButtonVariants = {
   circle: CssButtonCircle,
 };
 
-interface Props extends ComponentPropsWithRef<'button'> {
+interface Props {
   variant?: ButtonVariant;
   size?: SizeVariant;
+  children?: React.ReactNode;
 }
 
-export type ButtonProps = ComponentCssResponsiveProps<Props, HTMLButtonElement>;
+export type ButtonProps<C extends React.ElementType = 'button'> = UIStyledComponentProps<Props, C>;
+
+export type ButtonComponent<C extends React.ElementType = 'button'> = UIComponentWithRef<C, ButtonProps<C>>;
 
 const StyledButton = styled.div<ButtonProps>`
   ${CssDefault}
@@ -35,40 +38,11 @@ const StyledButton = styled.div<ButtonProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ type = 'button', as = 'button', ...props }, ref) => {
+const Button: ButtonComponent = forwardRef(({ children, as = 'button', type = 'button', ...props }, ref) => {
   const classNames = getClassNames('button', { disabled: props.disabled });
-  return (<StyledButton ref={ref} className={classNames} type={type} forwardedAs={as} {...props}>{props.children}</StyledButton>);
+  return (<StyledButton className={classNames} ref={ref} as={as} type={type} {...props}>{children}</StyledButton>);
 });
 
 Button.displayName = 'Button';
 
 export default Button;
-
-// Polymorphic version
-
-/*
-import { PolymorphicComponentPropWithRef, PolymorphicRef } from '../../components/types';
-import { CssResponsiveProps } from '../css';
-
-type PolymorphicButtonProps<C extends React.ElementType> = PolymorphicComponentPropWithRef<C, Props & CssResponsiveProps>;
-
-type PolymorphicButtonComponent = <C extends React.ElementType = 'button'>(props: PolymorphicButtonProps<C>) => React.ReactElement | null;
-
-// eslint-disable-next-line react/display-name
-const PolymorphicButton: PolymorphicButtonComponent = forwardRef(<C extends React.ElementType = 'button'>({ as, color, children, type = 'button', ...props }: PolymorphicButtonProps<C>, ref?: PolymorphicRef<C>) => {
-  const classNames = getClassNames('button', { disabled: props.disabled });
-  const Component = as || 'button';
-  return (
-    <Component ref={ref} className={classNames} type={type} {...props}>{children}</Component>
-  );
-});
-
-const StyledPolymorphicButton: PolymorphicButtonComponent = styled(PolymorphicButton)`
-  ${CssDefault}
-  ${props => getVariant(variants, props.variant)}
-  ${props => (css`font-size: var(--button-size-${props.size || 'md'});`)}
-  ${props => getCssResponsive(props)}
-`;
-
- export default StyledPolymorphicButton;
-*/

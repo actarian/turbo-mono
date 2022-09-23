@@ -44,7 +44,15 @@ export type ComponentCssResponsiveProps<T, U extends NativeElement> = NativeThem
 
 export type ComponentGridProps<T, U extends NativeElement> = NativeThemeProps<T, U> & GridProps;
 
-// todo polymorphism
+// props
+// Source: https://github.com/emotion-js/emotion/blob/master/packages/styled-base/types/helper.d.ts
+// A more precise version of just React.ComponentPropsWithoutRef on its own
+export type PropsOf<C extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>> = JSX.LibraryManagedAttributes<C, React.ComponentPropsWithoutRef<C>>
+// see
+// https://www.benmvp.com/blog/polymorphic-react-components-typescript/
+// https://www.benmvp.com/blog/forwarding-refs-polymorphic-react-component-typescript/
+
+// polymorphic
 
 type AsProp<C extends React.ElementType> = { as?: C; };
 
@@ -55,6 +63,28 @@ export type PolymorphicComponentProp<C extends React.ElementType, Props = {}> = 
 export type PolymorphicComponentPropWithRef<C extends React.ElementType, Props = {}> = PolymorphicComponentProp<C, Props> & { ref?: PolymorphicRef<C> };
 
 export type PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref'];
+
+// generics
+
+export type UIBaseProps = { as?: React.ElementType, displayName?: string, children?: React.ReactNode }; // rimuovere children
+
+export type UIStyleProps<P = {}> = P & CssResponsiveProps & ThemeProps;
+
+export type NativeAttrs<C extends React.ElementType = 'div', P = {}> = Omit<PropsOf<C>, keyof P>;
+
+export type UIComponentProps<P = {}, C extends React.ElementType = 'div'> = P & NativeAttrs<C, P> & UIBaseProps;
+
+export type UIStyledComponentProps<P = {}, C extends React.ElementType = 'div', S = UIStyleProps<P>> = S & NativeAttrs<C, S> & UIBaseProps;
+
+export type UIComponentPropsWithoutRef<C extends React.ElementType, P> = PolymorphicComponentProp<C, P>;
+
+export type UIComponentPropsWithRef<C extends React.ElementType, P> = PolymorphicComponentPropWithRef<C, P>;
+
+export type UIComponent<T extends React.ElementType, P = {}> = { displayName?: string } & (<C extends React.ElementType = T>(props: UIComponentPropsWithoutRef<C, P>) => React.ReactElement | null);
+
+export type UIComponentWithRef<T extends React.ElementType, P = {}> = { displayName?: string } & (<C extends React.ElementType = T>(props: UIComponentPropsWithRef<C, P>) => React.ReactElement | null);
+
+export type UIForwardingComponentWithRef<T extends React.ElementType, P = {}> = <C extends React.ElementType = T>(props: P, ref?: PolymorphicRef<C>) => UIComponentWithRef<C, P>;
 
 /*
 

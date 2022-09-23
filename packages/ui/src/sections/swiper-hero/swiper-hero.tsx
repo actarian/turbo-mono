@@ -77,7 +77,7 @@ const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) => {
                 <Grid className='right' md={6} padding="3rem 0 6rem 0">
                   <Text size="6" marginBottom="1rem">{item.abstract}</Text>
                   {item.link &&
-                    <Link href={item.link.href}>
+                    <Link href={item.link.href} passHref={true}>
                       <Button variant="link" as="a"><Text>{item.link.label}</Text> <ArrowRight /></Button>
                     </Link>}
                 </Grid>

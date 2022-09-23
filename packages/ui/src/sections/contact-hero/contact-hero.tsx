@@ -44,9 +44,7 @@ const ContactHero: React.FC<ContactHeroProps> = ({ item }: ContactHeroProps) => 
                 <Link href="/store-locator">
                   <Button variant="primary"><span>Search dealers</span> <Search /></Button>
                 </Link>
-                <Link href="#contact-request" passHref>
-                  <Button as="a" variant="secondary" onClick={scrollTo}><span>Contact Us</span> <Send /></Button>
-                </Link>
+                <Button as="a" href="#contact-request" variant="secondary" onClick={scrollTo}><span>Contact Us</span> <Send /></Button>
               </Flex.Responsive>
             </Card.Content>
           </Grid>
