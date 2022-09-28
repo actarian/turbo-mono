@@ -31,7 +31,7 @@ const StyledWrapper = styled.div<{ transform: any }>`
   flex-direction: column;
   box-sizing: border-box;
   background-color: var(--color-neutral-100);
-  color: var(--color-netral-900);
+  color: var(--color-neutral-900);
   box-shadow: var(--shadow-lg);
   opacity: 0;
   outline: none;

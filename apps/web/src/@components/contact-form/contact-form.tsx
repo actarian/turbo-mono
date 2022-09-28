@@ -1,4 +1,5 @@
-import { getClassNames, INamedEntity } from '@websolute/core';
+import type { INamedEntity } from '@websolute/core';
+import { getClassNames } from '@websolute/core';
 import {
   EmailValidator, FormAsyncValidator, FormGroup, RequiredIfValidator, RequiredTrueValidator,
   RequiredValidator, useFormBuilder, ValidationError

@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { Carousel } from '../../components/carousel/carousel';
+import MediaImage from '../../components/media/media-image';
 
 const TestFramerCarousel: React.FC<null> = () => {
 
@@ -47,7 +48,7 @@ const TestFramerCarousel: React.FC<null> = () => {
         const modulo = index % items.length;
         const imageIndex = modulo < 0 ? items.length + modulo : modulo;
         return (
-          <img draggable={false} alt="Mountain" style={{ width: "100%" }} src={items[imageIndex].media.src} />
+          <MediaImage {...items[imageIndex].media} alt="Mountain" style={{ width: "100%" }} draggable={false} />
         );
       }}</Carousel>
     </div>

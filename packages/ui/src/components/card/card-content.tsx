@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
 }
 
-export type CardContentProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type CardContentProps = UIStyledComponentProps<Props>;
 
 export const CardContent = styled.div<CardContentProps>`
   position: relative;

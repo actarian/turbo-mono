@@ -13,6 +13,7 @@ export type { ILocale } from './locale/locale';
 export { getLocales } from './locale/locale.service';
 export type { IMarket } from './market/market';
 export { getMarkets } from './market/market.service';
+export type { IMedia, IMediaType } from './media/media';
 export type { IMenu } from './menu/menu';
 export { getMenu, getMenus } from './menu/menu.service';
 export type { IImage, IMeta, IPage, PageProps } from './page/page';

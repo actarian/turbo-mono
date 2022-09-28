@@ -1,7 +1,7 @@
 import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import Input from '../../forms/input/input';
 
@@ -9,7 +9,7 @@ interface Props extends ComponentPropsWithRef<'input'> {
   children?: ReactNode;
 }
 
-export type InputGroupProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
+export type InputGroupProps = UIStyledComponentProps<Props, 'input'>;
 
 const StyledInputGroup = styled.div<InputGroupProps>`
   display: block;
@@ -51,6 +51,8 @@ const StyledInputGroup = styled.div<InputGroupProps>`
 
   ${props => getCssResponsive(props)}
 `;
+
+// !!! unused?
 
 const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(({
   children,

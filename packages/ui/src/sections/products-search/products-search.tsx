@@ -1,7 +1,7 @@
 import { useDrawer } from '@websolute/hooks';
 import { ChevronDown, ChevronLeft, ChevronRight, Filter } from '@websolute/icons';
 import { Button, Container, Flex, Grid, Nav, Pagination, Popover, Section, Text } from '../../components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import ProductsSearchCard, { ProductSearchItem } from './products-search-card';
 import ProductsSearchFilters from './products-search-filters';
 import ProductsSearchFiltersModal from './products-search-filters-modal';
@@ -20,7 +20,7 @@ type Props = {
   items: ProductSearchItem[]
 }
 
-export type ProductsSearchProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type ProductsSearchProps = UIStyledComponentProps<Props>;
 
 const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, ...props }: ProductsSearchProps) => {
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();

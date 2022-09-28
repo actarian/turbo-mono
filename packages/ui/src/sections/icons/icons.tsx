@@ -1,7 +1,7 @@
 import { Icons as IconList } from '@websolute/icons';
 import { createElement, FunctionComponent, Suspense, useMemo, useState } from 'react';
 import { Card, Code, Container, Flex, Media, Modal, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 import { Input } from '../../forms';
 
 type Props = {
@@ -12,7 +12,7 @@ export type IIcon = {
   component: FunctionComponent<unknown>;
 }
 
-export type IconsProps = ComponentProps<Props, HTMLDivElement>;
+export type IconsProps = UIComponentProps<Props>;
 
 const SectionIcons: React.FC<IconsProps> = (props: IconsProps) => {
   const [showModal, setShowModal] = useState(false);

@@ -18,7 +18,7 @@ export default function Login({ layout, page, params }: PageProps) {
     <Layout>
       <Meta />
       <Page>
-        <Header sticky menu={layout.tree ? layout.tree.items : []} />
+        <Header sticky />
 
         <Section>
           <Container>

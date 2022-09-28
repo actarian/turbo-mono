@@ -2,12 +2,13 @@ import React, { ComponentPropsWithRef, useContext, useEffect, useRef, useState }
 import { ThemeContext } from 'styled-components';
 import { Box, Code, Flex, List, Section, Text } from '../../components';
 import { FontSize } from '../../components/text/text';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
+import { ITheme } from '../../styles/theme';
 
 type Props = {
 }
 
-export type TypographyProps = ComponentProps<Props, HTMLDivElement>;
+export type TypographyProps = UIComponentProps<Props>;
 
 interface TypographyTextProps extends ComponentPropsWithRef<'div'> {
   type: string, k: number, size: string, s: number
@@ -46,13 +47,13 @@ const TypographyItem = (props: { type: string, k: number, size: string, s: numbe
 };
 
 const Typography = (props: TypographyProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) as ITheme;
   return (
     <Section padding="3rem 0">
-      {Object.keys(theme.font).map((key, k) => (
+      {Object.entries(theme.font).map(([key, value]: [string, { family: string, size: string[], lineHeight: string[] }], k) => (
         <Box key={k} padding="0 1rem 3rem 1rem">
-          <Code>{theme.font[key].family}</Code>
-          {theme.font[key].size.map((size: string, s: number) => (
+          <Code>{value.family}</Code>
+          {value.size.map((size: string, s: number) => (
             <TypographyItem key={s} type={key} k={k} size={size} s={s} />
           ))}
         </Box>

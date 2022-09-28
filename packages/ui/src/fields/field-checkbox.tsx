@@ -23,7 +23,7 @@ export default function FieldCheckbox({
   const [state, setValue, setTouched] = useControl<boolean>(control);
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log('onChange', event.target.checked);
+    // console.log('onChange', event.target.checked);
     setValue(event.target.checked);
   }
 

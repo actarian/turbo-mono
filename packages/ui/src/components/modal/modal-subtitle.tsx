@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 
 const defaultProps = {
   className: '',
@@ -10,7 +10,7 @@ interface Props {
   className?: string;
 }
 
-export type ModalSubtitleProps = ComponentProps<Props, HTMLDivElement>;
+export type ModalSubtitleProps = UIComponentProps<Props>;
 
 const StyledSubtitle = styled.div`
   font-weight: normal;

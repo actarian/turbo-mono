@@ -2,7 +2,7 @@
 import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
+import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import RadioGroup from './radio-group';
 import { RadioIcon } from './radio-icon';
@@ -11,7 +11,9 @@ interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
   size?: SizeVariant;
 }
 
-export type RadioProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
+export type RadioProps = UIStyledComponentProps<Props, 'input'>;
+
+export type RadioComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
 
 const StyledRadioInput = styled.div`
   position: absolute;
@@ -53,11 +55,11 @@ const StyledRadio = styled.div`
   ${props => getCssResponsive(props)}
 `
 
-const Radio = forwardRef<HTMLInputElement, RadioProps>(({ className, ...props }, ref) => {
+const Radio: RadioComponent = forwardRef(({ as = 'input', className, ...props }, ref) => {
   const classNames = getClassNames('radio', className);
   return (
     <StyledRadio className={classNames}>
-      <StyledRadioInput ref={ref} as='input' type='radio' {...props} />
+      <StyledRadioInput ref={ref} as={as} type='radio' {...props} />
       <StyledRadioIcon as={RadioIcon} aria-hidden='true' />
     </StyledRadio>
   );

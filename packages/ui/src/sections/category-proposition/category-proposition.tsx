@@ -1,5 +1,6 @@
-import { Button, Card, Container, Flex, Media, MediaType, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { IMedia } from '@websolute/models';
+import { Button, Card, Container, Flex, Media, MediaImage, Section, Text } from '../../components';
+import type { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: CategoryPropositionItem,
@@ -9,13 +10,10 @@ export type CategoryPropositionItem = {
   id: number;
   href: string;
   title: string;
-  media: {
-    type: MediaType;
-    src: string;
-  };
+  media: IMedia;
 }
 
-export type CategoryPropositionProps = ComponentProps<Props, HTMLDivElement>;
+export type CategoryPropositionProps = UIComponentProps<Props>;
 
 const CategoryProposition: React.FC<CategoryPropositionProps> = ({ item }) => {
   return (
@@ -24,7 +22,7 @@ const CategoryProposition: React.FC<CategoryPropositionProps> = ({ item }) => {
         <Card aspectRatio={1} aspectRatioSm={1.44} aspectRatioMd={1.87} aspectRatioLg={2.3} justifyContent="center" borderRadius="0.4rem">
           <Card.Background>
             <Media overlay={0.7}>
-              <img src={item.media.src} />
+              <MediaImage {...item.media} />
             </Media>
           </Card.Background>
           <Card.Content>

@@ -1,11 +1,11 @@
 import { Calendar, RefreshCcw, Truck } from '@websolute/icons';
 import { Box, Container, Flex, Grid, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 
 type Props = {
 }
 
-export type ProductsIncentiveProps = ComponentProps<Props, HTMLDivElement>;
+export type ProductsIncentiveProps = UIComponentProps<Props>;
 
 const ProductsIncentive: React.FC<ProductsIncentiveProps> = ({ }: ProductsIncentiveProps) => {
   return (

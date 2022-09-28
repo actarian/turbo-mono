@@ -1,18 +1,20 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIComponent, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import BreadcrumbItem from './breadcrumb-item';
 import BreadcrumbSeparator from './breadcrumb-separator';
 
 interface Props {
   separator?: string | ReactNode;
-  className?: string;
+  children?: ReactNode;
 }
 
-export type BreadcrumbProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type BreadcrumbProps = UIStyledComponentProps<Props>;
 
-const StyledBreadcrumb = styled.div`
+export type BreadcrumbComponent<C extends React.ElementType = 'nav'> = UIComponent<C, Props>;
+
+const StyledBreadcrumb = styled.div<BreadcrumbProps>`
   display: flex;
   align-items: center;
 
@@ -39,14 +41,8 @@ const StyledBreadcrumb = styled.div`
   ${props => getCssResponsive(props)}
 `;
 
-const Breadcrumb: React.FC<React.PropsWithChildren<BreadcrumbProps>> = ({
-  separator = '/',
-  className = '',
-  children,
-  ...props
-}: BreadcrumbProps) => {
+const Breadcrumb: BreadcrumbComponent = ({ children, as = 'nav' as React.ElementType, separator = '/', className = '', ...props }) => {
   const childrenArray = React.Children.toArray(children);
-
   const withSeparatorChildren = childrenArray.map((item, index) => {
     if (!React.isValidElement(item)) {
       return item;
@@ -64,9 +60,8 @@ const Breadcrumb: React.FC<React.PropsWithChildren<BreadcrumbProps>> = ({
     }
     return item;
   });
-
   return (
-    <StyledBreadcrumb as="nav" className={className} {...props}>
+    <StyledBreadcrumb as={as} className={className} {...props}>
       {withSeparatorChildren}
     </StyledBreadcrumb>
   );

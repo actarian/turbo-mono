@@ -10,7 +10,7 @@ export default function Error404({ layout, page, params }: PageProps) {
     <Layout>
       <Meta />
       <Page>
-        <Header sticky menu={layout.tree ? layout.tree.items : []} />
+        <Header sticky />
 
         <Section>
           <Container>

@@ -3,7 +3,7 @@ import { getClassNames } from '@websolute/core';
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { tupleNumber } from '../../components/tooltip/tooltip-props';
-import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
+import type { SizeVariant, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import RatingIcon from './rating-icon';
 
@@ -24,7 +24,7 @@ interface Props {
   onLockedChange?: (locked: boolean) => void;
 }
 
-export type RatingProps = ComponentCssResponsiveProps<Props, HTMLButtonElement>;
+export type RatingProps = UIStyledComponentProps<Props>;
 
 const StyledRating = styled.div<RatingProps>`
   display: inline-flex;

@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import { Button, Card, Container, Flex, Grid, Media, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import { Button, Card, Container, Flex, Grid, Media, MediaImage, Section, Text } from '../../components';
+import type { UIComponentProps } from '../../components/types';
 import BlogCard, { BlogItem } from './blog-card';
 
 type Props = {
   items: BlogItem[],
 }
 
-export type BlogMoreProps = ComponentProps<Props, HTMLDivElement>;
+export type BlogMoreProps = UIComponentProps<Props>;
 
 const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
   return (
@@ -26,10 +26,10 @@ const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
             <Grid sm={6}>
               <Card>
                 <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} marginBottom="1rem">
-                  <img src={'https://picsum.photos/640/480?u=2'} />
+                  <MediaImage src={'https://picsum.photos/640/480?u=2'} />
                 </Media>
                 <Card.Content>
-                  <Link href="#we-choose-to-go-to-the-moon">
+                  <Link href="/#we-choose-to-go-to-the-moon">
                     <Button variant="link" as="a" marginBottom="1rem">
                       <Text size="5">We choose to go to the moon.</Text>
                     </Button>
@@ -40,7 +40,7 @@ const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
                 <Card.Footer marginTop="1rem">
                   <Flex.Row>
                     <Media width="3rem" height="3rem" circle>
-                      <img src="https://i.pravatar.cc/128?u=3" />
+                      <MediaImage src="https://i.pravatar.cc/128?u=3" />
                     </Media>
                     <Text size="8" fontWeight="700">Joe Haddad</Text>
                   </Flex.Row>
@@ -50,10 +50,10 @@ const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
             <Grid sm={6}>
               <Card>
                 <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} marginBottom="1rem">
-                  <img src={'https://picsum.photos/640/480?u=4'} />
+                  <MediaImage src={'https://picsum.photos/640/480?u=4'} />
                 </Media>
                 <Card.Content>
-                  <Link href="#the-view-of-the-earth-from-the-moon">
+                  <Link href="/#the-view-of-the-earth-from-the-moon">
                     <Button variant="link" as="a" marginBottom="1rem">
                       <Text size="5">The earth from the moon.</Text>
                     </Button>
@@ -64,7 +64,7 @@ const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
                 <Card.Footer marginTop="1rem">
                   <Flex.Row>
                     <Media width="3rem" height="3rem" circle>
-                      <img src="https://i.pravatar.cc/128?u=5" />
+                      <MediaImage src="https://i.pravatar.cc/128?u=5" />
                     </Media>
                     <Text size="8" fontWeight="700">JJ Kasper</Text>
                   </Flex.Row>

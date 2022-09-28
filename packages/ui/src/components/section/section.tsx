@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 import Background from '../../components/background/background';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getAspectResponsive, getCssResponsive, hasChildOfType } from '../../components/utils';
 
 type Props = {
 };
 
-export type SectionProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type SectionProps = UIStyledComponentProps<Props>;
 
 const SectionContainer = styled.div<SectionProps>`
   display: flex;

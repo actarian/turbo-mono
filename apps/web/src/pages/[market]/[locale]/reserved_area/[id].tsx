@@ -29,7 +29,7 @@ export default function ReservedArea({ layout, page, user, params }: ReservedAre
     <Layout>
       <Meta />
       <Page>
-        <Header sticky menu={layout.tree ? layout.tree.items : []} />
+        <Header sticky />
 
         <Section>
           <Container>

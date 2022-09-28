@@ -2,7 +2,7 @@
   "items": [
     {
       "id": 1,
-      "href": "/product",
+      "href": "/shop_detail",
       "title": "Focus Paper Refill",
       "abstract": "3 sizes available",
       "price": 13,
@@ -13,7 +13,7 @@
     },
     {
       "id": 2,
-      "href": "/product",
+      "href": "/shop_detail",
       "title": "Focus Card Holder",
       "abstract": "Walnut",
       "price": 64,
@@ -24,7 +24,7 @@
     },
     {
       "id": 3,
-      "href": "/product",
+      "href": "/shop_detail",
       "title": "Focus Carry Case",
       "abstract": "Heather Gray",
       "price": 32,
@@ -35,7 +35,7 @@
     },
     {
       "id": 4,
-      "href": "/product",
+      "href": "/shop_detail",
       "title": "Focus Multi Pack",
       "abstract": "3 refill packs",
       "price": 39,
@@ -46,7 +46,7 @@
     },
     {
       "id": 5,
-      "href": "/product",
+      "href": "/shop_detail",
       "title": "Machined Mechanical Pencil",
       "abstract": "Black and brass",
       "price": 35,
@@ -57,7 +57,7 @@
     },
     {
       "id": 6,
-      "href": "/product",
+      "href": "/shop_detail",
       "title": "Brass Scissors",
       "abstract": "Includes brass stand",
       "price": 50,

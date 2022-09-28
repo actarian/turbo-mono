@@ -13,6 +13,11 @@ export async function getLayout(market: string, locale: string): Promise<ILayout
   const locales: ILocale[] = await getLocales({ locale });
   const labels: ILabel[] = await getLabels({ locale });
   const tree = await getRouteLinkTree(market, locale);
+  const navs = {
+    primary: (tree && tree.items ? tree.items : []),
+    secondary: [],
+    footer: [],
+  };
   // const paths = await getStaticPathsForSchema('reserved_area');
   // console.log(paths);
   // get known routes eg 'reserved_area', 'login', 'homepage';
@@ -26,6 +31,7 @@ export async function getLayout(market: string, locale: string): Promise<ILayout
     locale,
     labels,
     tree,
+    navs,
     knownRoutes,
   };
 }

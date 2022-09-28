@@ -3,7 +3,7 @@ import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode, SVGProps } from 'react';
 import styled, { css } from 'styled-components';
 import { CssDefault } from '../../components/button/button.css';
-import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
+import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import RadioOptionGroup from './radio-option-group';
 
@@ -12,7 +12,9 @@ interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
   children?: ReactNode;
 }
 
-export type RadioOptionProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
+export type RadioOptionProps = UIStyledComponentProps<Props, 'input'>;
+
+export type RadioOptionComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
 
 const RadioOptionDisabledSvg = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor" {...props}>
@@ -104,7 +106,8 @@ const StyledRadioOption = styled.div<RadioOptionProps>`
   ${props => getCssResponsive(props)}
 `
 
-const RadioOption = forwardRef<HTMLInputElement, RadioOptionProps>(({
+const RadioOption: RadioOptionComponent = forwardRef(({
+  as = 'input',
   children,
   className,
   ...props
@@ -112,7 +115,7 @@ const RadioOption = forwardRef<HTMLInputElement, RadioOptionProps>(({
   const classNames = getClassNames('radio-option', className);
   return (
     <StyledRadioOption size={props.size} className={classNames}>
-      <StyledRadioOptionInput ref={ref} as='input' type='radio' {...props} />
+      <StyledRadioOptionInput ref={ref} as={as} type='radio' {...props} />
       <StyledRadioOptionButton as="button" size={props.size}>
         <span>{children}</span>
       </StyledRadioOptionButton>

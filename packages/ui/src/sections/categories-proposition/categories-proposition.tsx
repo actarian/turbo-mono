@@ -1,14 +1,14 @@
 import { ArrowRight } from '@websolute/icons';
 import Link from 'next/link';
 import { Button, Container, Flex, Grid, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 import CategoriesPropositionCard, { CategoriesPropositionItem } from './categories-proposition-card';
 
 type Props = {
   items: CategoriesPropositionItem[],
 }
 
-export type CategoriesPropositionProps = ComponentProps<Props, HTMLDivElement>;
+export type CategoriesPropositionProps = UIComponentProps<Props>;
 
 const CategoriesProposition: React.FC<CategoriesPropositionProps> = ({ items }: CategoriesPropositionProps) => {
   return (
@@ -16,7 +16,7 @@ const CategoriesProposition: React.FC<CategoriesPropositionProps> = ({ items }: 
       <Container>
         <Flex.Row justifyContent="space-between" marginBottom="1rem">
           <Text size="7" fontWeight="700">Shop by category</Text>
-          <Link href="#categories">
+          <Link href="/#categories">
             <Button variant="link"><span>Browse all categories</span> <ArrowRight /></Button>
           </Link>
         </Flex.Row>

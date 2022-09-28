@@ -1,7 +1,8 @@
 import { PhoneCall } from '@websolute/icons';
+import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
-import { Button, Card, Container, Grid, Media, MediaType, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import { Button, Card, Container, Grid, Media, MediaImage, Section, Text } from '../../components';
+import type { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: SplitItem,
@@ -19,13 +20,10 @@ export type SplitItem = {
   title: string;
   abstract: string;
   link: SplitItemLink;
-  media: {
-    type: MediaType;
-    src: string;
-  };
+  media: IMedia;
 }
 
-export type SplitProps = ComponentProps<Props, HTMLDivElement>;
+export type SplitProps = UIComponentProps<Props>;
 
 const Split: React.FC<SplitProps> = ({ item }: SplitProps) => {
   return (
@@ -34,11 +32,11 @@ const Split: React.FC<SplitProps> = ({ item }: SplitProps) => {
         <Card borderRadius="0.4rem" overflow="hidden">
           <Card.Background>
             <Media overlay={0.3}>
-              <img src={item.media.src} />
+              <MediaImage {...item.media} />
             </Media>
             {false &&
               <Media overlay={0.2} backgroundColor="var(--color-neutral-500)">
-                <img src={item.media.src} style={{ mixBlendMode: 'multiply' }} />
+                <MediaImage {...item.media} style={{ mixBlendMode: 'multiply' }} />
               </Media>
             }
           </Card.Background>

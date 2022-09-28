@@ -1,9 +1,11 @@
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { FlexCol } from './flex-col';
 import { FlexResponsive } from './flex-responsive';
 import { FlexRow } from './flex-row';
+
+export type FlexProps = UIStyledComponentProps<Props>;
 
 const Flex = styled.div<FlexProps>`
   display: flex;
@@ -19,8 +21,6 @@ export default Flex as IFlex;
 
 type Props = {
 }
-
-export type FlexProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 type IFlex = typeof Flex & {
   Row: typeof FlexRow;

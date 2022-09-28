@@ -1,8 +1,9 @@
 import { getClassNames } from '@websolute/core';
 import { useCurrentState } from '@websolute/hooks';
-import React, { CSSProperties, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import React, { CSSProperties, forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps, Ellipsis, Flex, getChildsByType } from '../../components';
+import { Ellipsis, Flex, getChildsByType } from '../../components';
+import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { SelectConfig, SelectContext } from './select-context';
 import StyledSelectDivider from './select-divider';
@@ -26,6 +27,8 @@ interface Props {
   initialValue?: string | string[];
   placeholder?: React.ReactNode | string;
   icon?: React.ComponentType;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
   onChange?: (value: string | string[]) => void;
   pure?: boolean;
   multiple?: boolean;
@@ -38,9 +41,11 @@ interface Props {
   getPopupContainer?: () => HTMLElement | null;
 }
 
-export type SelectProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type SelectProps = UIStyledComponentProps<Props>;
 
-const StyledSelect = styled.div<SelectProps & { visible?: boolean }>`
+export type SelectComponent<C extends React.ElementType = 'select'> = UIComponentWithRef<C, Props>;
+
+const StyledSelect = styled.div<UIStyledComponentProps<{ disabled?: boolean }>>`
   position: relative;
   display: inline-flex;
   justify-content: space-between;
@@ -123,7 +128,7 @@ const StyledSelect = styled.div<SelectProps & { visible?: boolean }>`
   ${props => getCssResponsive(props)}
 `;
 
-const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>(({
+const Select: SelectComponent = forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>(({
   disabled = false,
   pure = false,
   multiple = false,
@@ -140,6 +145,8 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
   dropdownClassName,
   dropdownStyle,
   getPopupContainer,
+  onBlur,
+  onFocus,
   ...props
 }: React.PropsWithChildren<SelectProps>, selectRef) => {
 
@@ -258,10 +265,16 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     });
   })();
 
-  const onInputBlur = () => {
+  const onFocus_ = (event: React.FocusEvent<HTMLInputElement>) => {
+    onFocus && onFocus(event);
+    setSelectFocus(true);
+  }
+
+  const onBlur_ = (event: React.FocusEvent<HTMLInputElement>) => {
+    onBlur && onBlur(event);
     updateVisible(false);
     setSelectFocus(false);
-  };
+  }
 
   const classNames = getClassNames('select', { active: selectFocus || visible, opened: visible, multiple, disabled }, className);
 
@@ -269,7 +282,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     <SelectContext.Provider value={initialValue}>
       <StyledSelect ref={ref} className={classNames} onClick={clickHandler} onMouseDown={mouseDownHandler}
         {...props}>
-        <SelectInput ref={inputRef} name={props.name} visible={visible} onFocus={() => setSelectFocus(true)} onBlur={onInputBlur} />
+        <SelectInput ref={inputRef} name={props.name} visible={visible} onFocus={onFocus_} onBlur={onBlur_} />
         {isEmpty && (
           <span className="value placeholder">
             <Ellipsis>{placeholder}</Ellipsis>

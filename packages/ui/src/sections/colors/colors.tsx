@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Code, Flex, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 
 type Props = {
 }
 
-export type ColorsProps = ComponentProps<Props, HTMLDivElement>;
+export type ColorsProps = UIComponentProps<Props>;
 
 const Colors: React.FC<ColorsProps> = (props: ColorsProps) => {
   const theme = useContext(ThemeContext);

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { ThemeProps, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { sizes } from '../../styles';
 import { GridRow } from './grid-row';
@@ -12,9 +12,9 @@ type Props = {
   xl?: number;
 }
 
-export type GridProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type GridProps = UIStyledComponentProps<Props>;
 
-export const Grid = styled.div<GridProps>`
+export const Grid = styled.div<GridProps & ThemeProps>`
   // default grid column
   grid-column: span var(--grid-columns);
 
@@ -29,13 +29,13 @@ export const Grid = styled.div<GridProps>`
   ${props => getCssResponsive(props)}
 `;
 
-function getMediaQueryColumn(props: GridProps) {
+function getMediaQueryColumn(props: GridProps & ThemeProps) {
   const theme = props.theme;
   return sizes.map(size => {
     const key = size as keyof GridProps;
     const columns = props[key];
     if (typeof columns === 'number' && theme.mediaQuery) {
-      const width = theme.mediaQuery[key];
+      const width = theme.mediaQuery[key as keyof typeof theme.mediaQuery];
       return key === 'xs' ?
         `grid-column: span ${columns};
         ` : `

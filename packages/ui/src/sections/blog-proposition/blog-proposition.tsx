@@ -1,7 +1,8 @@
 import { ArrowRight } from '@websolute/icons';
+import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
-import { Button, Container, Flex, Grid, Media, MediaType, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import { Button, Container, Flex, Grid, Media, MediaImage, Section, Text } from '../../components';
+import type { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: BlogPropositionItem
@@ -15,14 +16,11 @@ export type BlogPropositionItem = {
   date: string | Date;
   author: {
     fullName: string;
-    media: {
-      type: MediaType;
-      src: string;
-    };
+    media: IMedia;
   };
 }
 
-export type BlogPropositionProps = ComponentProps<Props, HTMLDivElement>;
+export type BlogPropositionProps = UIComponentProps<Props>;
 
 const BlogProposition: React.FC<BlogPropositionProps> = ({ item, ...props }: BlogPropositionProps) => {
   const getDate = (value: Date | string): string => {
@@ -49,7 +47,7 @@ const BlogProposition: React.FC<BlogPropositionProps> = ({ item, ...props }: Blo
             <Flex.Row justifyContent="space-between" marginTop="1rem">
               <Flex>
                 <Media width="3rem" height="3rem" marginRight="0.75rem" circle>
-                  <img src={item.author.media.src} />
+                  <MediaImage {...item.author.media} />
                 </Media>
                 <Text size="8" fontWeight="700">{item.author.fullName}</Text>
               </Flex>

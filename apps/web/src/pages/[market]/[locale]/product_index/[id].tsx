@@ -11,7 +11,7 @@ export default function Products({ layout, page, params }: ProductsProps) {
     <Layout>
       <Meta />
       <Page>
-        <Header fixed menu={layout.tree ? layout.tree.items : []} />
+        <Header fixed />
 
         <ProductsHero items={ProductsHeroDefaults.items} />
 

@@ -3,15 +3,7 @@ import { css, FlattenInterpolation } from 'styled-components';
 import { CssMap, CssResponsiveProps } from './css';
 import { GridProps, ThemeProps } from './types';
 
-export function setClass<T>(className: string) {
-  return (props: T) => {
-    const classNames: string[] = [className];
-    if ((props as any).className != null) {
-      classNames.unshift((props as any).className);
-    }
-    return ({ ...props, className: className_(...classNames) });
-  }
-}
+export const ObjectKeys = Object.keys as <T>(o: T) => (Extract<keyof T, string>)[];
 
 export function getContainer(props: ThemeProps, fluid?: boolean) {
   if (fluid) {
@@ -21,7 +13,7 @@ export function getContainer(props: ThemeProps, fluid?: boolean) {
   } else {
     const theme = props.theme;
     if (theme.maxWidth && theme.mediaQuery) {
-      return Object.keys(theme.mediaQuery).map(key => {
+      return ObjectKeys(theme.mediaQuery).map((key) => {
         const value = theme.mediaQuery[key];
         return `
 @media(min-width: ${value}px) {
@@ -41,12 +33,12 @@ export function getCssResponsive(props: CssResponsiveProps & ThemeProps, default
   for (const [key, value] of Object.entries(props)) {
     // console.log(`${key}: ${value}`);
     const rule = key.replace(/(.+?)(Sm|Md|Lg|Xl)?$/, function (m, g1, g2) {
-      const prop: any = g1;
+      const prop: string = g1;
       if (CssMap.has(prop)) {
         // console.log('prop', prop);
         const rule = `${CssMap.get(prop)}: ${value};`;
         if (g2) {
-          const size: any = g2.toLowerCase();
+          const size: keyof typeof props.theme.mediaQuery = g2.toLowerCase();
           // console.log('size', size, 'rule', rule);
           return `@media(min-width: ${props.theme.mediaQuery[size]}px) {
               ${rule}
@@ -69,14 +61,14 @@ export function getAspectResponsive(props: CssResponsiveProps & ThemeProps, defa
   let rules = '';
   for (const [key, value] of Object.entries(props)) {
     const rule = key.replace(/(.+?)(Sm|Md|Lg|Xl)?$/, function (m, g1, g2) {
-      const prop: any = g1;
+      const prop = g1;
       if (prop === 'aspectRatio') {
         const rule = `
           position: relative;
           overflow: hidden;
         `;
         if (g2) {
-          const size: any = g2.toLowerCase();
+          const size: keyof typeof props.theme.mediaQuery = g2.toLowerCase();
           // console.log('size', size, 'rule', rule);
           return `@media(min-width: ${props.theme.mediaQuery[size]}px) {
               ${rule}
@@ -119,7 +111,7 @@ export function getGrid(props: GridProps, defaultValue: GridProps = {}) {
 export function eachMedia(props: ThemeProps, callback: (key: string) => string | void) {
   const theme = props.theme;
   if (theme.mediaQuery && typeof callback === 'function') {
-    return Object.keys(theme.mediaQuery).map(key => {
+    return ObjectKeys(theme.mediaQuery).map(key => {
       const value = theme.mediaQuery[key];
       const rule = callback(key);
       return rule ? `@media(min-width: ${value}px) { ${rule} }` : '';
@@ -129,17 +121,9 @@ export function eachMedia(props: ThemeProps, callback: (key: string) => string |
   }
 }
 
-export function getVariant<T extends string>(variants: { [key in T]?: FlattenInterpolation<any> }, type?: T): FlattenInterpolation<any> | '' {
+export function getVariant<T extends string>(variants: { [key in T]?: FlattenInterpolation<unknown> }, type?: T): FlattenInterpolation<unknown> | '' {
   return (type && variants[type]) ? (variants[type] || '') : '';
 }
-
-function className_(...args: ({ [key: string]: boolean } | string)[]): string {
-  return args.map(x => {
-    return (typeof x === 'object') ? Object.keys(x).filter(key => x[key]).join(' ') : x.toString();
-  }).join(' ');
-}
-
-export const className = className_;
 
 export function isChildElement(parent: Element | null | undefined, child: Element | null | undefined): boolean {
   if (!parent || !child) {

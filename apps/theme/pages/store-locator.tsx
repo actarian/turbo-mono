@@ -1,5 +1,5 @@
 import { IFeatureType } from '@websolute/hooks';
-import { HeaderDefaults, SplitDefaults, StoreLocatorDefaults, StoreLocatorFeaturesDefaults, StoreLocatorSearchDefaults } from '@websolute/mock';
+import { SplitDefaults, StoreLocatorDefaults, StoreLocatorFeaturesDefaults, StoreLocatorSearchDefaults } from '@websolute/mock';
 import { Footer, Header, Layout, Page, Split, StoreLocatorItem, StoreLocatorSearch } from '@websolute/ui';
 import Head from 'next/head';
 
@@ -14,8 +14,7 @@ const StoreLocator: React.FC<StoreLocatorProps> = ({ locale, country, items = []
 
       <Layout>
         <Page>
-
-          <Header sticky menu={HeaderDefaults.menu} />
+          <Header sticky />
 
           <StoreLocatorSearch locale={locale} country={country} item={StoreLocatorSearchDefaults.item} items={items} featureTypes={featureTypes} />
 

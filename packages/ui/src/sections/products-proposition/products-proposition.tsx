@@ -1,12 +1,12 @@
 import { Container, Grid, Section } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 import ProductsPropositionCard, { ProductsPropositionItem } from './products-proposition-card';
 
 type Props = {
   items: ProductsPropositionItem[],
 }
 
-export type ProductsPropositionProps = ComponentProps<Props, HTMLDivElement>;
+export type ProductsPropositionProps = UIComponentProps<Props>;
 
 const ProductsProposition: React.FC<ProductsPropositionProps> = ({ items }: ProductsPropositionProps) => {
   return (

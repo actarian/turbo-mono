@@ -2,7 +2,7 @@ import { ArrowRight } from '@websolute/icons';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { SwiperProps } from 'swiper/react';
-import { Button, Card, Container, Grid, Media, Swiper, Text } from '../../components';
+import { Button, Card, Container, Grid, Media, MediaImage, Swiper, Text } from '../../components';
 
 const CardHero = styled(Card)`
   .media {
@@ -65,7 +65,7 @@ const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) => {
                 (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
                   <source src={item.media.src} type="video/mp4"></source>
                 </video>) :
-                (<img draggable={false} alt={item.title} src={item.media.src} />)}
+                (<MediaImage {...item.media} alt={item.title} draggable={false} />)}
             </Media>
           </Card.Background>
           <Card.Content>

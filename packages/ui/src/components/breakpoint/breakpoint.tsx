@@ -1,12 +1,12 @@
 import { useBreakpoint } from '@websolute/hooks';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
 };
 
-export type BreakpointProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type BreakpointProps = UIStyledComponentProps<Props>;
 
 const StyledBreakpoint = styled.div<BreakpointProps>`
   position: fixed;
@@ -22,12 +22,12 @@ const StyledBreakpoint = styled.div<BreakpointProps>`
   font-size: 0.8rem;
   line-height: 1;
   ${props => getCssResponsive(props)}
-`;
+` as typeof Breakpoint;
 
-const Breakpoint: React.FC<BreakpointProps> = ((props: BreakpointProps) => {
+const Breakpoint = ((props: BreakpointProps) => {
   const breakpoint = useBreakpoint();
   return breakpoint.max > 0 ? (
-    <StyledBreakpoint as='div' {...props}>{breakpoint.key} ({breakpoint.min}/{breakpoint.max < 50000 ? breakpoint.max : '∞'})</StyledBreakpoint>
+    <StyledBreakpoint {...props}>{breakpoint.key} ({breakpoint.min}/{breakpoint.max < 50000 ? breakpoint.max : '∞'})</StyledBreakpoint>
   ) : null;
 });
 

@@ -6,7 +6,7 @@ import { BlogMoreDefaults, BlogPropositionDefaults, ContactDefaults, ContactHero
 import { getCountries, getLayout, getListByKeys, getPage, getProvinces, getRegions, getStaticPathsForSchema, PageProps } from '@websolute/models';
 import {
   Accordion, BlogMore, BlogProposition, ContactCard, ContactCardItem, ContactHero,
-  Container, Divider, Flex, Footer, Grid, Header, Layout, Media, Meta, Page, Section, Split,
+  Container, Divider, Flex, Footer, Grid, Header, Layout, Media, MediaImage, Meta, Page, Section, Split,
   Tabs, Text
 } from '@websolute/ui';
 
@@ -26,7 +26,7 @@ export default function Contact({ layout, page, data, params }: ContactProps) {
     <Layout>
       <Meta />
       <Page>
-        <Header sticky menu={layout.tree ? layout.tree.items : []} />
+        <Header sticky />
 
         <ContactHero item={ContactHeroDefaults.item} />
 
@@ -63,7 +63,7 @@ export default function Contact({ layout, page, data, params }: ContactProps) {
                     <Text size="8" maxWidth="60ch">Heroes, feature sections, newsletter sign up forms — everything you need to build beautiful marketing websites.</Text>
                     <Flex.Row marginTop="1rem">
                       <Media width="3rem" height="3rem" circle>
-                        <img src="https://i.pravatar.cc/128?u=1" />
+                        <MediaImage src="https://i.pravatar.cc/128?u=1" />
                       </Media>
                       <Text size="8" fontWeight="700">Tim Neutkens</Text>
                     </Flex.Row>
@@ -81,7 +81,7 @@ export default function Contact({ layout, page, data, params }: ContactProps) {
                     <Text size="8" maxWidth="60ch">Checkout forms, shopping carts, product views — everything you need to build your next ecommerce front-end.</Text>
                     <Flex.Row marginTop="1rem">
                       <Media width="3rem" height="3rem" circle>
-                        <img src="https://i.pravatar.cc/128?u=5" />
+                        <MediaImage src="https://i.pravatar.cc/128?u=5" />
                       </Media>
                       <Text size="8" fontWeight="700">JJ Kasper</Text>
                     </Flex.Row>
@@ -120,7 +120,7 @@ export default function Contact({ layout, page, data, params }: ContactProps) {
         <Section aspectRatio={4 / 3} aspectRatioSm={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
           <Section.Background>
             <Media overlay>
-              <img draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' />
+              <MediaImage draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' />
             </Media>
           </Section.Background>
           <Container textAlign='center'>

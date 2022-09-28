@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {};
 
-export type LoadingProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type LoadingProps = UIStyledComponentProps<Props>;
 
 const StyledLoading = styled.div<LoadingProps>`
 	display: block;

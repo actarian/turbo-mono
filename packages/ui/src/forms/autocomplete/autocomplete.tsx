@@ -1,7 +1,7 @@
 import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { AutocompleteContext, IAutocomplete, IAutocompleteItem } from './autocomplete-context';
 import AutocompleteDropdown from './autocomplete-dropdown';
@@ -16,7 +16,9 @@ interface Props extends ComponentPropsWithRef<'input'> {
   onDropdownVisibleChange?: (visible: boolean) => void;
 }
 
-export type AutocompleteProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
+export type AutocompleteProps = UIStyledComponentProps<Props, 'input'>;
+
+export type AutocompleteComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
 
 const StyledAutocompleteItem = styled.div`
   display: block;
@@ -155,7 +157,7 @@ const StyledAutocomplete = styled.div<AutocompleteProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(({
+const Autocomplete: AutocompleteComponent = forwardRef(({
   className,
   initialValue,
   before,

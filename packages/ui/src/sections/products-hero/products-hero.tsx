@@ -1,13 +1,14 @@
+import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
-import { Button, Card, Container, Flex, Grid, Media, MediaType, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import { Button, Card, Container, Flex, Grid, Media, MediaImage, Section, Text } from '../../components';
+import type { UIComponentProps } from '../../components/types';
 import ProductsHeroCard from './products-hero-card';
 
 type Props = {
   items: ProductHeroItem[],
 }
 
-export type ProductsHeroProps = ComponentProps<Props, HTMLDivElement>;
+export type ProductsHeroProps = UIComponentProps<Props>;
 
 const ProductsHero: React.FC<ProductsHeroProps> = ({ items }: ProductsHeroProps) => {
   return (
@@ -15,7 +16,7 @@ const ProductsHero: React.FC<ProductsHeroProps> = ({ items }: ProductsHeroProps)
       <Card justifyContent="center" height="90vh">
         <Card.Background>
           <Media overlay={0.5}>
-            <img draggable={false} alt="Products" src="https://unsplash.com/photos/FV3GConVSss/download?force=true&w=1600" />
+            <MediaImage draggable={false} alt="Products" src="https://unsplash.com/photos/FV3GConVSss/download?force=true&w=1600" />
           </Media>
         </Card.Background>
         <Card.Content marginBottom="30vh">
@@ -23,7 +24,7 @@ const ProductsHero: React.FC<ProductsHeroProps> = ({ items }: ProductsHeroProps)
             <Flex.Col alignItems="center">
               <Text size="2" fontWeight="700" marginBottom="1rem">Mid-Season Sale</Text>
               {false && <Text size="8">We combine technology and creativity for the farmers of today and tomorrow.</Text>}
-              <Link href="/category"><Button variant="primary" as="a" size="lg">Shop Collection</Button></Link>
+              <Link href="/shop_category"><Button variant="primary" as="a" size="lg">Shop Collection</Button></Link>
             </Flex.Col>
           </Container.Fluid>
         </Card.Content>
@@ -45,10 +46,7 @@ export type ProductHeroItem = {
   id: number;
   href: string;
   title: string;
-  media: {
-    type: MediaType;
-    src: string;
-  };
+  media: IMedia;
 }
 
 export default ProductsHero;

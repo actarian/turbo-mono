@@ -6,6 +6,23 @@ export const CssDefault = css`
   text-decoration: none;
   background: none;
   appearance: none;
+
+  font-family: inherit;
+  font-style: inherit;
+  font-variant-ligatures: inherit;
+  font-variant-caps: inherit;
+  font-variant-numeric: inherit;
+  font-variant-east-asian: inherit;
+  font-weight: inherit;
+  font-stretch: inherit;
+  text-rendering: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  line-height: inherit;
+  text-transform: none;
+  text-indent: inherit;
+  text-shadow: none;
+
   color: inherit;
   display: inline-flex;
   align-items: center;

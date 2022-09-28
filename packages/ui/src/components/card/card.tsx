@@ -1,7 +1,8 @@
-import React from 'react';
+import { getClassNames } from '@websolute/core';
+import React, { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import Background from '../../components/background/background';
-import { ComponentCssResponsiveProps, Variant, Variants } from '../../components/types';
+import type { UIComponentWithRef, UIStyledComponentProps, Variant, Variants } from '../../components/types';
 import { getAspectResponsive, getCssResponsive, getVariant, hasChildOfType } from '../../components/utils';
 import { CardContent } from './card-content';
 import { CardFooter } from './card-footer';
@@ -35,7 +36,9 @@ type Props = {
   hoverable?: boolean;
 };
 
-export type CardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type CardProps = UIStyledComponentProps<Props>;
+
+export type CardComponent<C extends React.ElementType = 'div'> = UIComponentWithRef<C, Props>;
 
 const CardContainer = styled.div<CardProps>`
   display: flex;
@@ -60,6 +63,11 @@ const CardContainer = styled.div<CardProps>`
       .media {
         &>:not(.media-info) {
           transform: scale(1.1);
+        }
+      }
+      .button {
+        &:after {
+          transform: scale(1, 1);
         }
       }
     }
@@ -121,8 +129,9 @@ function hasBackground(props: CardProps): boolean {
   return hasChildOfType(props.children, Background);
 }
 
-const Card = React.forwardRef<Element, CardProps>((props: CardProps, ref?: React.Ref<Element>) => {
-  return (<CardContainer {...props} ref={ref}>{props.children}</CardContainer>);
+const Card: CardComponent = forwardRef(({ children, as = 'div', ...props }, ref) => {
+  const classNames = getClassNames('card');
+  return (<CardContainer className={classNames} ref={ref} as={as} {...props}>{children}</CardContainer>);
 });
 
 Card.displayName = 'Card';

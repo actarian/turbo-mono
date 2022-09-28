@@ -2,7 +2,7 @@ import { getClassNames } from '@websolute/core';
 import { useCurrentState } from '@websolute/hooks';
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 import Transition from '../transition/transition';
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
   layerClassName?: string
 }
 
-export type BackdropProps = ComponentProps<Props, HTMLDivElement>;
+export type BackdropProps = UIComponentProps<Props>;
 
 const defaultProps = {
   onClick: () => { },

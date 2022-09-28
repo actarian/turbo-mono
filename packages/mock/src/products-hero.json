@@ -2,7 +2,7 @@
   "items": [
     {
       "id": 1,
-      "href": "/category",
+      "href": "/shop_category",
       "title": "Women's",
       "media": {
         "type": "image",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "href": "/category",
+      "href": "/shop_category",
       "title": "Men's",
       "media": {
         "type": "image",
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "href": "/category",
+      "href": "/shop_category",
       "title": "Desk accessories",
       "media": {
         "type": "image",

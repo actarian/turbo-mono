@@ -1,7 +1,7 @@
 import { getClassNames } from '@websolute/core';
 import { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import { SizeVariant, UIComponentWithRef, UIStyledComponentProps, VariantOf } from '../../components/types';
+import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps, VariantOf } from '../../components/types';
 import { getCssResponsive, getVariant } from '../../components/utils';
 import { CssButtonCircle, CssButtonDefault, CssButtonGhost, CssButtonLink, CssButtonNav, CssButtonOutline, CssButtonPrimary, CssButtonSecondary, CssButtonUnderline, CssDefault } from './button.css';
 
@@ -25,11 +25,12 @@ interface Props {
   variant?: ButtonVariant;
   size?: SizeVariant;
   children?: React.ReactNode;
+  type?: string;
 }
 
-export type ButtonProps<C extends React.ElementType = 'button'> = UIStyledComponentProps<Props, C>;
+export type ButtonProps = UIStyledComponentProps<Props>;
 
-export type ButtonComponent<C extends React.ElementType = 'button'> = UIComponentWithRef<C, ButtonProps<C>>;
+export type ButtonComponent<C extends React.ElementType = 'button'> = UIComponentWithRef<C, Props>;
 
 const StyledButton = styled.div<ButtonProps>`
   ${CssDefault}

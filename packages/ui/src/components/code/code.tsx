@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
 };
 
-export type CodeProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type CodeProps = UIStyledComponentProps<Props>;
 
 const Code = styled.div<CodeProps>`
   padding: 0.3em 0.8em;

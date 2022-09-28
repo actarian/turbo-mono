@@ -1,7 +1,7 @@
-import { BlogMoreDefaults, BlogPropositionDefaults, CategoriesPropositionDefaults, HeaderDefaults, ProductsPropositionDefaults, SplitDefaults, SwiperHeroDefaults } from '@websolute/mock';
+import { BlogMoreDefaults, BlogPropositionDefaults, CategoriesPropositionDefaults, ProductsPropositionDefaults, SplitDefaults, SwiperHeroDefaults } from '@websolute/mock';
 import {
   BlogMore, BlogProposition, CategoriesProposition,
-  Container, Flex, Footer, Header, Layout, Media, Page, ProductsProposition,
+  Container, Flex, Footer, Header, Layout, Media, MediaImage, Page, ProductsProposition,
   Proposition, Section, Split, SwiperHero, Text
 } from '@websolute/ui';
 import Head from 'next/head';
@@ -16,8 +16,7 @@ export default function Index() {
       </Head>
       <Layout>
         <Page>
-
-          <Header fixed menu={HeaderDefaults.menu} />
+          <Header fixed />
 
           <SwiperHero items={SwiperHeroDefaults.items} />
 
@@ -44,7 +43,7 @@ export default function Index() {
           <Section aspectRatio={4 / 3} aspectRatioSm={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
             <Section.Background>
               <Media overlay>
-                <img draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' />
+                <MediaImage draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' />
               </Media>
             </Section.Background>
             <Container textAlign='center'>

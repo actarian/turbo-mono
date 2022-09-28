@@ -1,7 +1,7 @@
 import { KeyCode, useBodyScroll, useKeyboard, usePortal } from '@websolute/hooks';
 import React, { MouseEvent, useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 import { getChildsByType } from '../../components/utils';
 import Backdrop from '../backdrop/backdrop';
 import ModalButton from './modal-button';
@@ -35,7 +35,7 @@ interface Props {
   onContentClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
-export type ModalProps = ComponentProps<Props, HTMLDivElement>;
+export type ModalProps = UIComponentProps<Props>;
 
 const Modal: React.FC<React.PropsWithChildren<ModalProps | any>> =
   ({ width, backdropClassName, positionClassName, layerClassName, wrapClassName,

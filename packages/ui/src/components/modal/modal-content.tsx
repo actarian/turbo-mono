@@ -1,8 +1,10 @@
 import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
+
+// !!!
 
 interface Props {
   className?: string;
@@ -12,7 +14,7 @@ const defaultProps = {
   className: '',
 };
 
-export type ModalContentProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type ModalContentProps = UIStyledComponentProps<Props>;
 
 const StyleContent = styled.div`
   position: relative;

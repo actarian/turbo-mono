@@ -1,9 +1,11 @@
-import { CategoriesPropositionDefaults, CategoryPropositionDefaults, HeaderDefaults, ProductsHeroDefaults, ProductsPropositionDefaults } from '@websolute/mock';
+import { CategoriesPropositionDefaults, CategoryPropositionDefaults, ProductsHeroDefaults, ProductsPropositionDefaults } from '@websolute/mock';
 import {
   CategoriesProposition, CategoryProposition, Footer, Header,
   Layout, Page, ProductsHero, ProductsProposition
 } from '@websolute/ui';
 import Head from 'next/head';
+
+// !!! unused, header menu goes directly to products_category
 
 export default function Products() {
   return (
@@ -16,8 +18,7 @@ export default function Products() {
 
       <Layout>
         <Page>
-
-          <Header fixed menu={HeaderDefaults.menu} />
+          <Header fixed />
 
           <ProductsHero items={ProductsHeroDefaults.items} />
 
@@ -28,7 +29,6 @@ export default function Products() {
           <CategoryProposition item={CategoryPropositionDefaults.item} />
 
           <Footer />
-
         </Page>
       </Layout>
     </>

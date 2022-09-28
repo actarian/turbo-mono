@@ -10,6 +10,8 @@ export { default as ContactHeroDefaults } from './contact-hero.json';
 export { default as ContactDefaults } from './contact.json';
 export { default as HeaderDefaults } from './header.json';
 export { default as HeroDefaults } from './hero.json';
+export { default as LayoutDefaults } from './layout.json';
+export { default as PageDefaults } from './page.json';
 export { default as ProductOverviewGalleryDefaults } from './product-overview-gallery.json';
 export { default as ProductOverviewDefaults } from './product-overview.json';
 export { default as ProductDefaults } from './product.json';

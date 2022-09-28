@@ -1,4 +1,5 @@
 import { LabelProvider, LayoutProvider, PageProvider } from '@websolute/hooks';
+import { LayoutDefaults, PageDefaults } from '@websolute/mock';
 import type { ILayout, IPage, IRouteParams } from '@websolute/models';
 import { Breakpoint, GlobalStyle, theme } from '@websolute/ui';
 // import { NextPage } from 'next';
@@ -11,17 +12,9 @@ export default function Application({ Component, pageProps }: ApplicationProps) 
 
   // const { layout, page } = pageProps;
 
-  const layout = {
-    market: 'ww',
-    locale: 'en',
-    markets: [],
-    locales: [],
-    labels: [],
-    tree: undefined,
-    knownRoutes: {},
-  };
+  const layout = LayoutDefaults as ILayout;
 
-  const page = {};
+  const page = PageDefaults as IPage;
 
   // console.log('layout', layout, 'page', page);
 

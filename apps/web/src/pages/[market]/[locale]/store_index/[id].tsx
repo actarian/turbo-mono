@@ -11,7 +11,7 @@ export default function StoreLocator({ layout, page, country, items = [], featur
     <Layout>
       <Meta />
       <Page>
-        <Header sticky menu={layout.tree ? layout.tree.items : []} />
+        <Header sticky />
 
         <StoreLocatorSearch locale={layout.locale} country={country} item={StoreLocatorSearchDefaults.item} items={items} featureTypes={featureTypes} />
 

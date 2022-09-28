@@ -6,7 +6,7 @@ import { BlogMoreDefaults, BlogPropositionDefaults, CategoriesPropositionDefault
 import { getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/models';
 import {
   BlogMore, BlogProposition, CategoriesProposition, Container, Flex, Footer, Header, Layout,
-  Media, Meta, Page, ProductsProposition, Proposition, Section, Split, SwiperHero, Text
+  Media, MediaImage, Meta, Page, ProductsProposition, Proposition, Section, Split, SwiperHero, Text
 } from '@websolute/ui';
 
 export default function Homepage({ layout, page, params }: PageProps) {
@@ -26,7 +26,7 @@ export default function Homepage({ layout, page, params }: PageProps) {
     <Layout>
       <Meta />
       <Page>
-        <Header fixed menu={layout.tree ? layout.tree.items : []} />
+        <Header fixed />
 
         <SwiperHero items={SwiperHeroDefaults.items} />
 
@@ -57,7 +57,7 @@ export default function Homepage({ layout, page, params }: PageProps) {
         <Section aspectRatio={4 / 3} aspectRatioSm={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
           <Section.Background>
             <Media overlay>
-              <img draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' alt="title" />
+              <MediaImage draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' alt="title" />
             </Media>
           </Section.Background>
           <Container textAlign='center'>

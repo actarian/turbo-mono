@@ -1,13 +1,15 @@
 import { getClassNames } from '@websolute/core';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
 };
 
-export type LabelProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type LabelProps = UIStyledComponentProps<Props>;
+
+export type LabelComponent<C extends React.ElementType = 'label'> = UIComponentWithRef<C, Props>;
 
 const StyledLabel = styled.div`
   display: flex;
@@ -20,10 +22,10 @@ const StyledLabel = styled.div`
   ${props => getCssResponsive(props)}
 `;
 
-const Label = forwardRef<HTMLLabelElement, LabelProps>(({ className, ...props }, ref) => {
+const Label: LabelComponent = forwardRef(({ className, as = 'label', ...props }, ref) => {
   const classNames = getClassNames('label', className);
   return (
-    <StyledLabel ref={ref} className={classNames} as='label' {...props} />
+    <StyledLabel className={classNames} ref={ref} as={as} {...props} />
   );
 });
 

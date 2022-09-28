@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getContainer, getCssResponsive } from '../../components/utils';
 
 type Props = {
   fluid?: boolean;
+  children?: React.ReactNode;
 }
 
-export type ContainerProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type ContainerProps = UIStyledComponentProps<Props>;
+
+export type ContainerComponent<C extends React.ElementType = 'div'> = UIComponentWithRef<C, Props>;
 
 const Container = styled.div<ContainerProps>`
   width: 100%;
@@ -16,8 +19,8 @@ const Container = styled.div<ContainerProps>`
   ${props => getCssResponsive(props)}
 `;
 
-export const ContainerFluid = React.forwardRef<Element, ContainerProps>((props: ContainerProps, ref?: React.Ref<Element>) => {
-  return (<Container {...props} ref={ref} fluid>{props.children}</Container>);
+export const ContainerFluid: ContainerComponent = forwardRef(({ children, as = 'div', ...props }, ref) => {
+  return (<Container ref={ref} as={as} {...props} fluid>{children}</Container>);
 });
 
 ContainerFluid.displayName = 'ContainerFluid';

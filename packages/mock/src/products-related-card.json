@@ -1,8 +1,8 @@
 {
   "item": {
     "id": 1,
-    "schema": "product",
-    "href": "/product",
+    "schema": "shop_detail",
+    "href": "/shop_detail",
     "title": "Focus Paper Refill",
     "abstract": "3 sizes available",
     "price": 13,

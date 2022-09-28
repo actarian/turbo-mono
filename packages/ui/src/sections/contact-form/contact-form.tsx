@@ -1,13 +1,13 @@
 import { Send } from '@websolute/icons';
 import React from 'react';
 import { Box, Button, Flex, Grid } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 import { Checkbox, CustomSelect, Field, Form, Input, Label, Radio, Select, TextArea } from '../../forms';
 
 type Props = {
 }
 
-export type ContactFormProps = ComponentProps<Props, HTMLDivElement>;
+export type ContactFormProps = UIComponentProps<Props>;
 
 const ContactForm: React.FC<ContactFormProps> = (props: ContactFormProps) => {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {

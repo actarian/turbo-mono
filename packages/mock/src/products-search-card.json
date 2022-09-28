@@ -1,8 +1,8 @@
 {
   "item": {
     "id": 1,
-    "schema": "product",
-    "href": "/product",
+    "schema": "shop_detail",
+    "href": "/shop_detail",
     "title": "Earthen Bottle",
     "abstract": "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
     "price": 48,

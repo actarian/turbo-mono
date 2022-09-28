@@ -1,14 +1,12 @@
-import { Card, Container, Flex, Grid, Media, MediaType, Section } from '../../components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { IMedia } from '@websolute/models';
+import { Card, Container, Flex, Grid, Media, MediaImage, Section } from '../../components';
+import type { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
-  media: {
-    type: MediaType;
-    src: string;
-  }[]
+  media: IMedia[]
 }
 
-export type ProductOverviewProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type ProductOverviewProps = UIStyledComponentProps<Props>;
 
 const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, ...props }: ProductOverviewProps) => {
   return (
@@ -19,7 +17,7 @@ const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, ...prop
             <Card aspectRatio={0.8} aspectRatioSm='auto' heightSm='100%' hoverable borderRadius="0.4rem">
               <Card.Background>
                 <Media rounded>
-                  <img src={media[0].src} />
+                  <MediaImage {...media[0]} />
                 </Media>
               </Card.Background>
             </Card>
@@ -28,7 +26,7 @@ const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, ...prop
             <Card aspectRatio={0.8} aspectRatioSm='auto' heightSm='100%' hoverable>
               <Card.Background>
                 <Media rounded>
-                  <img src={media[1].src} />
+                  <MediaImage {...media[1]} />
                 </Media>
               </Card.Background>
             </Card>
@@ -38,14 +36,14 @@ const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, ...prop
               <Card aspectRatio={4 / 3} hoverable>
                 <Card.Background>
                   <Media rounded >
-                    <img src={media[2].src} />
+                    <MediaImage {...media[2]} />
                   </Media>
                 </Card.Background>
               </Card>
               <Card aspectRatio={4 / 3} hoverable>
                 <Card.Background>
                   <Media rounded >
-                    <img src={media[3].src} />
+                    <MediaImage {...media[3]} />
                   </Media>
                 </Card.Background>
               </Card>

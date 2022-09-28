@@ -1,0 +1,85 @@
+{
+  "market": "ww",
+  "locale": "en",
+  "markets": [],
+  "locales": [],
+  "labels": [],
+  "tree": null,
+  "navs": {
+    "primary": [
+      {
+        "title": "Collections",
+        "href": "#collections",
+        "items": [
+          {
+            "href": "/products_category",
+            "title": "Tiles",
+            "media": {
+              "type": "image",
+              "src": "/assets/header/6366_n_tiles.jpg"
+            }
+          },
+          {
+            "href": "/products_category",
+            "title": "3D Elements",
+            "media": {
+              "type": "image",
+              "src": "/assets/header/6369_n_3d_elements_menu_cover.webp"
+            }
+          },
+          {
+            "href": "/products_category",
+            "title": "Paints",
+            "media": {
+              "type": "image",
+              "src": "/assets/header/6367_n_paints.jpg"
+            }
+          },
+          {
+            "href": "/products_category",
+            "title": "Wood &amp; Metal",
+            "media": {
+              "type": "image",
+              "src": "/assets/header/6368_n_menu_wood_metal.webp"
+            }
+          },
+          {
+            "href": "/products_category",
+            "title": "Accessories",
+            "media": {
+              "type": "image",
+              "src": "/assets/header/6371_n_accessories.jpg"
+            }
+          },
+          {
+            "href": "/products_category",
+            "title": "Editions",
+            "media": {
+              "type": "image",
+              "src": "/assets/header/7858_n_Menu.webp"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Magazine",
+        "href": "/magazine"
+      },
+      {
+        "title": "Stores",
+        "href": "/store-locator"
+      },
+      {
+        "title": "Contacts",
+        "href": "/contacts"
+      },
+      {
+        "title": "Shop",
+        "href": "/shop"
+      }
+    ],
+    "secondary": [],
+    "footer": []
+  },
+  "knownRoutes": {}
+}

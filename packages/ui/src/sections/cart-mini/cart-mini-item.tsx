@@ -1,7 +1,7 @@
 import { useCurrency, useMounted, useUI } from '@websolute/hooks';
 import { Minus, Plus, Trash } from '@websolute/icons';
 import NextLink from 'next/link';
-import { Button, Card, Flex, Media, Text } from '../../components';
+import { Button, Card, Flex, Media, MediaImage, Text } from '../../components';
 import { Input } from '../../forms';
 import { useCart } from '../../hooks';
 import { ICartItem } from '../../hooks/useCart/useCart';
@@ -45,7 +45,7 @@ const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem
         <Flex.Row alignItems="flex-start">
           <Flex>
             <Media aspectRatio={1} width="80px" height="80px" flex="0 0 80px" rounded>
-              <img width="80px" height="80px" src={item.media.src} draggable={false} title={item.title} />
+              <MediaImage width="80px" height="80px" src={item.media.src} draggable={false} title={item.title} />
             </Media>
           </Flex>
           <Card.Content flex="1" padding="0 1rem">

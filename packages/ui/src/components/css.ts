@@ -227,12 +227,41 @@ const CssObj = {
 
 export const CssMap = new Map(Object.entries(CssObj));
 
-// type ValueOf<T> = T[keyof T];
-
 export type CssKeys = keyof typeof CssObj;
 
-export type CssProps = Record<CssKeys, string>;
+export type CssFullProps = Record<CssKeys, string | number>;
 
+export type CssProps = Omit<CssFullProps, 'color'> & { color: string };
+
+export type PropertyOfProps<Type> = {
+  [Property in keyof Type]?: Type[Property];
+};
+
+export type PropertyOfPropsSm<Type> = {
+  [Property in keyof Type as `${Uncapitalize<string & Property>}Sm`]?: Type[Property];
+};
+
+export type PropertyOfPropsMd<Type> = {
+  [Property in keyof Type as `${Uncapitalize<string & Property>}Md`]?: Type[Property];
+};
+
+export type PropertyOfPropsLg<Type> = {
+  [Property in keyof Type as `${Uncapitalize<string & Property>}Lg`]?: Type[Property];
+};
+
+export type PropertyOfPropsXl<Type> = {
+  [Property in keyof Type as `${Uncapitalize<string & Property>}Xl`]?: Type[Property];
+};
+
+export type ResponsiveProps<T> = PropertyOfProps<T> &
+  PropertyOfPropsSm<T> &
+  PropertyOfPropsMd<T> &
+  PropertyOfPropsLg<T> &
+  PropertyOfPropsXl<T>;
+
+export type CssResponsiveProps = ResponsiveProps<CssProps>;
+
+/*
 export type PropertyOfProps<Type, U> = {
   [Property in keyof Type]?: U;
 };
@@ -260,3 +289,4 @@ export type ResponsiveProps<T, U> = PropertyOfProps<T, U> &
   PropertyOfPropsXl<T, U>;
 
 export type CssResponsiveProps = ResponsiveProps<CssProps, string | number>;
+*/

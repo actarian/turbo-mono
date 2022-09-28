@@ -25,7 +25,7 @@ export { default as Link } from './link/link';
 export { default as List } from './list/list';
 export { default as Loading } from './loading/loading';
 export { default as Media } from './media/media';
-export type { MediaType } from './media/media';
+export { default as MediaImage } from './media/media-image';
 export { default as Meta } from './meta/meta';
 export { default as Modal } from './modal/modal';
 export { default as NavLink } from './nav-link/nav-link';

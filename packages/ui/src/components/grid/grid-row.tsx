@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps, GridProps } from '../../components/types';
+import type { GridProps, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive, getGrid } from '../../components/utils';
 
 type Props = {
 }
 
-export type GridRowProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type GridRowProps = UIStyledComponentProps<Props & GridProps>;
 
 export const GridRow = styled.div<GridRowProps>`
   ${props => getCssResponsive(props)}
-  ${props => getGrid(props as GridProps)}
+  ${props => getGrid(props)}
 `;

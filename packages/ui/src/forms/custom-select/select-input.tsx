@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 export interface SelectInputProps extends ComponentPropsWithRef<'input'> {
   visible: boolean;
-  onBlur: () => void;
-  onFocus: () => void;
+  onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onFocus: (event: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 const StyledInput = styled.input`

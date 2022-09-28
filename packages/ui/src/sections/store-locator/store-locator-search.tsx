@@ -13,7 +13,7 @@ import GoogleMapMarkerClusterer from '../../components/google-map/google-map-mar
 import GoogleMapMarkerClustererPlus from '../../components/google-map/google-map-marker-clusterer-plus';
 import GoogleMapSkeleton from '../../components/google-map/google-map-skeleton';
 import { autocompleteSource, calculateDistances, findMe, geocode, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '../../components/google-map/google-map.service';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 import { RadioOption } from '../../forms';
 import Autocomplete from '../../forms/autocomplete/autocomplete';
 import { IAutocompleteItem } from '../../forms/autocomplete/autocomplete-context';
@@ -48,7 +48,7 @@ export type StoreLocatorHeadItem = {
   abstract: string;
 }
 
-export type StoreLocatorHeadProps = ComponentProps<Props, HTMLDivElement>;
+export type StoreLocatorHeadProps = UIComponentProps<Props>;
 
 const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   locale,

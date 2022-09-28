@@ -1,7 +1,7 @@
 import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode, useState } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 interface Props extends ComponentPropsWithRef<'input'> {
@@ -9,7 +9,9 @@ interface Props extends ComponentPropsWithRef<'input'> {
   after?: ReactNode;
 }
 
-export type InputProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
+export type InputProps = UIStyledComponentProps<Props, 'input'>;
+
+export type InputComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
 
 const StyledInputContainer = styled.div<InputProps>`
   display: flex;
@@ -83,7 +85,10 @@ const StyledInput = styled.div<InputProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Input = forwardRef<HTMLInputElement, InputProps>(({
+// !!! as
+
+const Input: InputComponent = forwardRef(({
+  as = 'input',
   className,
   before,
   after,
@@ -109,7 +114,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   return (
     <StyledInputContainer className={classNames} {...props}>
       {before}
-      <StyledInput ref={ref} as='input' type={type} onFocus={onFocus_} onBlur={onBlur_} {...props} />
+      <StyledInput ref={ref} as={as} type={type} onFocus={onFocus_} onBlur={onBlur_} {...props} />
       {after}
     </StyledInputContainer>
   );

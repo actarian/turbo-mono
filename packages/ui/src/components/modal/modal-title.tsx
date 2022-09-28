@@ -2,14 +2,14 @@ import { X } from '@websolute/icons';
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 
 interface Props {
   className?: string;
   onClose?: () => void;
 }
 
-export type ModalTitleProps = ComponentProps<Props, HTMLDivElement>;
+export type ModalTitleProps = UIComponentProps<Props>;
 
 const StyledTitle = styled.h2`
   flex-shrink: 0;

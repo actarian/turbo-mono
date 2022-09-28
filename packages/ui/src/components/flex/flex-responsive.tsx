@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
 }
 
-export type FlexResponsiveProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type FlexResponsiveProps = UIStyledComponentProps<Props>;
 
 export const FlexResponsive = styled.div<FlexResponsiveProps>`
   display: flex;

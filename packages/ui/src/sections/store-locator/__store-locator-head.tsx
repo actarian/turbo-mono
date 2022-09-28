@@ -1,5 +1,5 @@
 import { Container, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 import Dots from './store-locator-dots';
 
 type Props = {
@@ -12,7 +12,7 @@ export type StoreLocatorHeadItem = {
   abstract: string;
 }
 
-export type StoreLocatorHeadProps = ComponentProps<Props, HTMLDivElement>;
+export type StoreLocatorHeadProps = UIComponentProps<Props>;
 
 const StoreLocatorHead = ({ item }: StoreLocatorHeadProps) => {
   return (

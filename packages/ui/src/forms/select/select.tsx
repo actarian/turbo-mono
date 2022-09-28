@@ -1,13 +1,15 @@
 import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, SVGProps } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 interface Props extends ComponentPropsWithRef<'select'> {
 }
 
-export type SelectProps = ComponentCssResponsiveProps<Props, HTMLSelectElement>;
+export type SelectProps = UIStyledComponentProps<Props, 'select'>;
+
+export type SelectComponent<C extends React.ElementType = 'select'> = UIComponentWithRef<C, Props>;
 
 const DownArrowSvg = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -71,14 +73,15 @@ const StyledSelect = styled.div`
   ${props => getCssResponsive(props)}
 `
 
-const Select = forwardRef<HTMLSelectElement, SelectProps>(({
+const Select: SelectComponent = forwardRef(({
+  as = 'select',
   className,
   ...props
 }, ref) => {
   const classNames = getClassNames('select', className);
   return (
     <StyledSelect className={classNames}>
-      <StyledSelectSelect ref={ref} as='select' {...props} />
+      <StyledSelectSelect ref={ref} as={as} {...props} />
       <DownArrow />
     </StyledSelect>
   );

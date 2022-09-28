@@ -1,6 +1,7 @@
 import { useCurrency, useDrawer } from '@websolute/hooks';
+import type { IMedia } from '@websolute/models';
 import { useState } from 'react';
-import { Button, Container, Flex, Grid, MediaType, Section, Text } from '../../components';
+import { Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { RadioColor, RadioOption, Rating } from '../../forms';
 import { useCart } from '../../hooks';
 import ProductOverviewGallery from './product-overview-gallery';
@@ -12,10 +13,7 @@ export type ProductItem = {
   title: string;
   abstract: string;
   price: number;
-  media: {
-    type: MediaType;
-    src: string;
-  }[];
+  media: IMedia[];
 }
 
 type ProductOverviewProps = {

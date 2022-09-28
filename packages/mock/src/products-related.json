@@ -2,8 +2,8 @@
   "items": [
     {
       "id": 1,
-      "schema": "product",
-      "href": "/product",
+      "schema": "shop_detail",
+      "href": "/shop_detail",
       "title": "Focus Paper Refill",
       "abstract": "3 sizes available",
       "price": 13,
@@ -14,8 +14,8 @@
     },
     {
       "id": 2,
-      "schema": "product",
-      "href": "/product",
+      "schema": "shop_detail",
+      "href": "/shop_detail",
       "title": "Focus Card Holder",
       "abstract": "Walnut",
       "price": 64,
@@ -26,8 +26,8 @@
     },
     {
       "id": 3,
-      "schema": "product",
-      "href": "/product",
+      "schema": "shop_detail",
+      "href": "/shop_detail",
       "title": "Focus Carry Case",
       "abstract": "Heather Gray",
       "price": 32,
@@ -38,8 +38,8 @@
     },
     {
       "id": 4,
-      "schema": "product",
-      "href": "/product",
+      "schema": "shop_detail",
+      "href": "/shop_detail",
       "title": "Focus Multi Pack",
       "abstract": "3 refill packs",
       "price": 39,

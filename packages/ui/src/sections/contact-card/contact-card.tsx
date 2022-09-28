@@ -2,7 +2,7 @@ import { Phone } from '@websolute/icons';
 import Link from 'next/link';
 import { Box, Button, Card, Nav, Text } from '../../components';
 import { CardProps } from '../../components/card/card';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: ContactCardItem,
@@ -25,7 +25,7 @@ export type ContactCardItem = {
   href?: string;
 }
 
-export type ContactCardProps = ComponentProps<Props, HTMLDivElement>;
+export type ContactCardProps = UIComponentProps<Props>;
 
 const ContactCard: React.FC<ContactCardProps> = ({ item, ...props }: ContactCardProps) => {
   const getAddressLine2 = (): string => {

@@ -1,11 +1,12 @@
-import { CategoryPropositionDefaults, HeaderDefaults, ProductDefaults, ProductsRelatedDefaults } from '@websolute/mock';
+import { CategoryPropositionDefaults, ProductDefaults, ProductsRelatedDefaults } from '@websolute/mock';
+import type { IMedia } from '@websolute/models';
 import {
-  Breadcrumb, CategoryProposition, Container, Footer, Header, Layout, MediaType, Page,
+  Breadcrumb, CategoryProposition, Container, Footer, Header, Layout, Page,
   ProductOverview, ProductsIncentive, ProductsRelated, Section
 } from '@websolute/ui';
 import Head from 'next/head';
 
-export type ProductItem = {
+export type ShopDetailItem = {
   id: number;
   schema: string;
   href: string;
@@ -13,35 +14,31 @@ export type ProductItem = {
   abstract: string;
   price: number;
   date: string | Date;
-  media: {
-    type: MediaType;
-    src: string;
-  }[];
+  media: IMedia[];
 }
 
 type Props = {
-  item: ProductItem
+  item: ShopDetailItem
 }
 
-export default function Product({ item, ...props }: Props) {
+export default function ShopDetail({ item, ...props }: Props) {
   return (
     <>
       <Head>
-        <title>Product</title>
-        <meta name="description" content="Product description" />
+        <title>Shop detail</title>
+        <meta name="description" content="Shop detail description" />
         <link rel="icon" href="/assets/head/favicon.ico" />
       </Head>
 
       <Layout>
         <Page>
-
-          <Header sticky menu={HeaderDefaults.menu} />
+          <Header sticky />
 
           <Section paddingBottom="0">
             <Container>
               <Breadcrumb marginBottom="1rem">
-                <Breadcrumb.Item href="/products">Shop</Breadcrumb.Item>
-                <Breadcrumb.Item href="/category">Men</Breadcrumb.Item>
+                <Breadcrumb.Item href="/shop">Shop</Breadcrumb.Item>
+                <Breadcrumb.Item href="/shop_category">Men</Breadcrumb.Item>
                 <Breadcrumb.Item>Basic Tee 6-Pack</Breadcrumb.Item>
               </Breadcrumb>
             </Container>
@@ -65,4 +62,4 @@ export default function Product({ item, ...props }: Props) {
   )
 }
 
-Product.defaultProps = ProductDefaults;
+ShopDetail.defaultProps = ProductDefaults;

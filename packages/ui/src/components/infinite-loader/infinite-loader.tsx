@@ -3,7 +3,7 @@ import { useEventListener, useIsomorphicLayoutEffect } from '@websolute/hooks';
 import React, { ReactNode, useRef } from 'react';
 import styled from 'styled-components';
 import { Loading } from '../../components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIComponent, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
@@ -11,9 +11,13 @@ type Props = {
   children?: ReactNode;
 }
 
-export type InfiniteLoaderProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type InfiniteLoaderProps = UIStyledComponentProps<Props>;
 
-const StyledInfiniteLoader = styled.div<InfiniteLoaderProps>`
+export type InfiniteLoaderComponent<C extends React.ElementType = 'div'> = UIComponent<C, Props>;
+
+export type StyledInfiniteLoaderProps = UIStyledComponentProps;
+
+const StyledInfiniteLoader = styled.div<StyledInfiniteLoaderProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,9 +26,9 @@ const StyledInfiniteLoader = styled.div<InfiniteLoaderProps>`
   margin: 1rem 0;
   background-color: var(--color-primary-100);
   ${props => getCssResponsive(props)}
-`
+`;
 
-const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ onMore, children, ...props }) => {
+const InfiniteLoader: InfiniteLoaderComponent = ({ children, as = 'div' as React.ElementType, onMore, ...props }) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   const handleScroll = () => {
@@ -48,7 +52,7 @@ const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ onMore, children, ...pr
   const classNames = getClassNames('infinite-loader');
 
   return (
-    <StyledInfiniteLoader ref={ref} className={classNames} {...props}>
+    <StyledInfiniteLoader as={as} ref={ref} className={classNames} {...props}>
       <Loading></Loading>
     </StyledInfiniteLoader>
   )

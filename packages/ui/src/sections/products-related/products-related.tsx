@@ -1,12 +1,12 @@
 import { Container, Flex, Grid, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 import ProductsRelatedCard, { ProductsRelatedItem } from './products-related-card';
 
 type Props = {
   items: ProductsRelatedItem[],
 }
 
-export type ProductsRelatedProps = ComponentProps<Props, HTMLDivElement>;
+export type ProductsRelatedProps = UIComponentProps<Props>;
 
 const ProductsRelated: React.FC<ProductsRelatedProps> = ({ items }: ProductsRelatedProps) => {
   return (

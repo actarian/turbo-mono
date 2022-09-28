@@ -1,4 +1,5 @@
 import type { IEntity, IEquatable } from '@websolute/core';
+import type { IMedia } from '../media/media';
 
 export interface IRoute extends IEntity {
   id: string;
@@ -14,6 +15,7 @@ export interface IRouteLink {
   title?: string;
   categoryId?: IEquatable;
   items?: IRouteLink[];
+  media?: IMedia;
 }
 
 export interface IRouteParams {
@@ -22,11 +24,5 @@ export interface IRouteParams {
   locale: string,
   [key: string]: any,
 }
-
-/*
-import type { PAGES } from '@config';
-
-export type SchemaType = keyof typeof PAGES;
-*/
 
 export type SchemaType = string;

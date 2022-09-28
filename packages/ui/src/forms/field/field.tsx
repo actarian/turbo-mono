@@ -1,13 +1,15 @@
 import { getClassNames } from '@websolute/core';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
 };
 
-export type FieldProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type FieldProps = UIStyledComponentProps<Props>;
+
+export type FieldComponent<C extends React.ElementType = 'div'> = UIComponentWithRef<C, Props>;
 
 const StyledField = styled.div<FieldProps>`
   display: flex;
@@ -21,7 +23,7 @@ const StyledField = styled.div<FieldProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Field = forwardRef<HTMLDivElement, FieldProps>(({ className, ...props }, ref) => {
+const Field: FieldComponent = forwardRef(({ className, ...props }, ref) => {
   const classNames = getClassNames('input', className);
   return (
     <StyledField ref={ref} className={classNames} as='div' {...props} />

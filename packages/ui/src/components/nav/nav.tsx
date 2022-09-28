@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ComponentCssResponsiveProps, Variant, Variants } from '../../components/types';
+import type { UIStyledComponentProps, Variant, Variants } from '../../components/types';
 import { getCssResponsive, getVariant } from '../../components/utils';
 
 const variants: Variants = {
@@ -20,7 +20,7 @@ type Props = {
   type?: Variant;
 }
 
-export type NavProps = ComponentCssResponsiveProps<Props, HTMLUListElement>;
+export type NavProps = UIStyledComponentProps<Props, 'ul'>;
 
 const NavUl = styled.ul<NavProps>`
   list-style: none;

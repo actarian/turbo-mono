@@ -1,12 +1,12 @@
 import { useDrawer, useModal } from '@websolute/hooks';
 import Link from 'next/link';
 import { Button, Container, Flex, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { UIComponentProps } from '../../components/types';
 
 type Props = {
 }
 
-export type PropositionProps = ComponentProps<Props, HTMLDivElement>;
+export type PropositionProps = UIComponentProps<Props>;
 
 const Proposition: React.FC<PropositionProps> = (props: PropositionProps) => {
   const [modal, onOpenModal, onCloseModal] = useModal();

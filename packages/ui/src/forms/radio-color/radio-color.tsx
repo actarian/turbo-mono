@@ -4,7 +4,7 @@ import { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { Text } from '../../components';
 import { CssDefault } from '../../components/button/button.css';
-import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
+import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import RadioColorGroup from './radio-color-group';
 
@@ -14,7 +14,9 @@ interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
   children?: ReactNode;
 }
 
-export type RadioColorProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
+export type RadioColorProps = UIStyledComponentProps<Props, 'input'>;
+
+export type RadioColorComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
 
 const StyledRadioColorInput = styled.div`
   position: absolute;
@@ -73,7 +75,8 @@ const StyledRadioColor = styled.div`
   ${props => getCssResponsive(props)}
 `
 
-const RadioColor = forwardRef<HTMLInputElement, RadioColorProps>(({
+const RadioColor: RadioColorComponent = forwardRef(({
+  as = 'input',
   color = 'white',
   children,
   className,
@@ -82,7 +85,7 @@ const RadioColor = forwardRef<HTMLInputElement, RadioColorProps>(({
   const classNames = getClassNames('radio-color', className);
   return (
     <StyledRadioColor className={classNames}>
-      <StyledRadioColorInput ref={ref} as='input' type='radio' {...props} />
+      <StyledRadioColorInput ref={ref} as={as} type='radio' {...props} />
       <StyledRadioColorButton as="button" backgroundColor={color} size={props.size}>
         <Text.SROnly>{children}</Text.SROnly>
       </StyledRadioColorButton>

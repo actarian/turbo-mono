@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getAspectResponsive, getCssResponsive } from '../../components/utils';
-
-export type MediaType = 'image' | 'video' | string;
 
 type Props = {
   circle?: boolean;
@@ -10,7 +8,7 @@ type Props = {
   overlay?: boolean | number;
 };
 
-export type MediaProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type MediaProps = UIStyledComponentProps<Props>;
 
 const StyledMediaInfo = styled.div`
   position: absolute;
@@ -26,9 +24,11 @@ const StyledMediaInfo = styled.div`
   ${props => getCssResponsive(props)}
 `;
 
-export type MediaInfoProps = ComponentCssResponsiveProps<{}, HTMLDivElement>;
+export type MediaInfoProps = UIStyledComponentProps;
 
-const MediaInfo = ({ children, ...props }: MediaInfoProps) => (<StyledMediaInfo className="media-info" {...props}>{children}</StyledMediaInfo>);
+const MediaInfo = ({ children, className, ...props }: MediaInfoProps) => {
+  return (<StyledMediaInfo className="media-info" {...props}>{children}</StyledMediaInfo>);
+}
 
 const Media = styled.div<MediaProps>`
   position: relative;

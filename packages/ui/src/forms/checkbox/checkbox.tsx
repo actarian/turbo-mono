@@ -2,14 +2,16 @@
 import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { CheckboxIcon } from './checkbox-icon';
 
 interface Props extends ComponentPropsWithRef<'input'> {
 }
 
-export type CheckboxProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
+export type CheckboxProps = UIStyledComponentProps<Props, 'input'>;
+
+export type CheckboxComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
 
 const StyledCheckboxInput = styled.input`
   position: absolute;
@@ -52,7 +54,7 @@ const StyledCheckbox = styled.div<CheckboxProps>`
   ${props => getCssResponsive(props)}
 `
 
-const Checkbox: React.FC<CheckboxProps> = forwardRef<HTMLInputElement, CheckboxProps>(({ className, ...props }, ref) => {
+const Checkbox: CheckboxComponent = forwardRef(({ className, ...props }, ref) => {
   const classNames = getClassNames('checkbox', className);
   return (
     <StyledCheckbox className={classNames}>

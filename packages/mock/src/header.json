@@ -1,8 +1,8 @@
 {
   "menu": [
     {
-      "title": "Products",
-      "href": "/products"
+      "title": "Collections",
+      "href": "#collections"
     },
     {
       "title": "Magazine",
@@ -15,6 +15,10 @@
     {
       "title": "Contacts",
       "href": "/contacts"
+    },
+    {
+      "title": "Shop",
+      "href": "/shop"
     }
   ]
 }

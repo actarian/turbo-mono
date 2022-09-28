@@ -1,6 +1,6 @@
 import React, { forwardRef, ReactElement, useMemo } from 'react';
 import styled, { css } from 'styled-components';
-import { ComponentCssResponsiveProps, Variant, Variants } from '../../components/types';
+import type { UIComponentWithRef, UIStyledComponentProps, Variant, Variants } from '../../components/types';
 import { getCssResponsive, getVariant } from '../../components/utils';
 
 const variants: Variants = {
@@ -30,7 +30,9 @@ type Props = {
   vertical?: boolean;
 }
 
-export type ButtonGroupProps = ComponentCssResponsiveProps<Props, Element>;
+export type ButtonGroupProps = UIStyledComponentProps<Props>;
+
+export type ButtonGroupComponent<C extends React.ElementType = 'button'> = UIComponentWithRef<C, Props>;
 
 const StyledButtonGroup = styled.div<ButtonGroupProps>`
   display: inline-flex;
@@ -90,11 +92,11 @@ const StyledButtonGroup = styled.div<ButtonGroupProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const ButtonGroup = forwardRef<Element, ButtonGroupProps>(({ children, ...props }: ButtonGroupProps, ref?: React.Ref<Element>) => {
+const ButtonGroup: ButtonGroupComponent = forwardRef(({ children, as = 'div', ...props }, ref) => {
   const mappedChildren = useMemo(() => React.Children.map(children as any, (child: ReactElement) =>
     React.cloneElement(child, child.props ? { ...child.props, className: `${child.props.className} btn` } : null)
   ), [children]);
-  return (<StyledButtonGroup {...props} ref={ref}>{mappedChildren}</StyledButtonGroup>);
+  return (<StyledButtonGroup {...props} as={as} ref={ref}>{mappedChildren}</StyledButtonGroup>);
 });
 
 ButtonGroup.displayName = 'ButtonGroup';

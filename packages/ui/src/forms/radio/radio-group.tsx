@@ -1,7 +1,7 @@
 
 import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useState } from 'react';
 import { Flex } from '../../components';
-import { ComponentCssResponsiveProps, SizeVariant } from '../../components/types';
+import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import Radio from './radio';
 
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
@@ -10,9 +10,11 @@ interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
   children?: ReactNode;
 }
 
-export type RadioGroupProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
+export type RadioGroupProps = UIStyledComponentProps<Props, 'input'>;
 
-const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(({
+export type RadioGroupComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
+
+const RadioGroup: RadioGroupComponent = forwardRef(({
   children,
   className,
   size,
@@ -43,6 +45,8 @@ const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(({
     }
     return child;
   });
+
+  // !!! ref to group
 
   return (
     <Flex flexWrap="wrap" gap="1rem" ref={ref} className={className} {...props}>

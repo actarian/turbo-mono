@@ -1,7 +1,7 @@
 import { useCurrentState } from '@websolute/hooks';
 import React, { useEffect, useMemo } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { pickChild } from '../popover/popover-collections';
 import { PaginationConfig, PaginationContext, PaginationUpdateType } from './pagination-context';
@@ -18,7 +18,7 @@ interface Props {
   className?: string;
 }
 
-export type PaginationProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type PaginationProps = UIStyledComponentProps<Props>;
 
 const StyledPagination = styled.div`
   display: flex;

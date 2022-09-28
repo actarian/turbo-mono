@@ -1,6 +1,7 @@
+import { getClassNames } from '@websolute/core';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
-import { Button, className, Flex } from '../../components';
+import { Button, Flex } from '../../components';
 import { useSwiperIndex } from '../../hooks';
 
 const Bullet = styled.div`
@@ -63,12 +64,13 @@ const SwiperPagination: React.FC<SwiperPaginationProp> = (props: SwiperPaginatio
   const onSetSlide = (index: number) => {
     setIndex(index);
   };
+  const getClassName = (i: number) => getClassNames({ active: index === i });
   return (
     <PaginationContainer>
       <Flex.Row justifyContent='center' gap='1rem'>
         {props.items.map((_, i) => (
           <Button key={i} title={i.toString()} onClick={() => onSetSlide((i + 1))}>
-            <Bullet className={className({ active: index === i })} />
+            <Bullet className={getClassName(i)} />
           </Button>
         ))}
       </Flex.Row>

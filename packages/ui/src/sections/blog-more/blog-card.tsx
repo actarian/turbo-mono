@@ -1,7 +1,8 @@
 import { ArrowRight } from '@websolute/icons';
+import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
-import { Button, Card, Flex, Media, MediaType, Text } from '../../components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import { Button, Card, Flex, Media, MediaImage, Text } from '../../components';
+import type { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: BlogItem
@@ -13,20 +14,14 @@ export type BlogItem = {
   title: string;
   abstract: string;
   date: string | Date;
-  media: {
-    type: MediaType;
-    src: string;
-  };
+  media: IMedia;
   author: {
     fullName: string;
-    media: {
-      type: MediaType;
-      src: string;
-    };
+    media: IMedia;
   };
 }
 
-export type BlogCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type BlogCardProps = UIStyledComponentProps<Props>;
 
 const BlogCard: React.FC<BlogCardProps> = ({ item, ...props }: BlogCardProps) => {
   const getDate = (value: Date | string): string => {
@@ -44,7 +39,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ item, ...props }: BlogCardProps) =>
     <Link href={item.href}>
       <Card height="100%" hoverable {...props}>
         <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} borderRadius="0.4rem" marginBottom="1rem">
-          <img src={item.media.src} />
+          <MediaImage {...item.media} />
         </Media>
         <Card.Content flex="1">
           <Text size="5">{item.title}</Text>
@@ -55,7 +50,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ item, ...props }: BlogCardProps) =>
           <Flex.Row justifyContent="space-between">
             <Flex>
               <Media width="3rem" height="3rem" marginRight="0.75rem" circle>
-                <img src={item.author.media.src} />
+                <MediaImage {...item.author.media} />
               </Media>
               <Text size="8" fontWeight="700">{item.author.fullName}</Text>
             </Flex>

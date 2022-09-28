@@ -1,7 +1,8 @@
 import { useCurrency, useDrawer } from '@websolute/hooks';
+import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
-import { Button, Card, Flex, Media, MediaType, Text } from '../../components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import { Button, Card, Flex, Media, MediaImage, Text } from '../../components';
+import type { UIStyledComponentProps } from '../../components/types';
 import { useCart } from '../../hooks';
 
 type Props = {
@@ -15,13 +16,10 @@ export type ProductsRelatedItem = {
   title: string;
   abstract: string;
   price: number;
-  media: {
-    type: MediaType;
-    src: string;
-  };
+  media: IMedia;
 }
 
-export type ProductsRelatedCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type ProductsRelatedCardProps = UIStyledComponentProps<Props>;
 
 const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...props }: ProductsRelatedCardProps) => {
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
@@ -39,7 +37,7 @@ const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...prop
     <Card {...props} hoverable>
       <Link href={item.href}>
         <Media aspectRatio={1} borderRadius="0.4rem" marginBottom="1rem" overlay>
-          <img src={item.media.src} />
+          <MediaImage {...item.media} />
           <Media.Info padding="1rem" justifyContent="flex-end" alignItems="flex-end">
             <Text size="8">{price}</Text>
           </Media.Info>

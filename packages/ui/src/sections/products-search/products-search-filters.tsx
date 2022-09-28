@@ -1,11 +1,11 @@
 import { Accordion, Box, Button, Nav } from '../../components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { Checkbox, Label } from '../../forms';
 
 type Props = {
 }
 
-export type ProductsSearchFiltersProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type ProductsSearchFiltersProps = UIStyledComponentProps<Props>;
 
 const ProductsSearchFilters: React.FC<ProductsSearchFiltersProps> = ({ ...props }: ProductsSearchFiltersProps) => {
   return (

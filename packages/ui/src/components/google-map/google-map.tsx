@@ -1,6 +1,7 @@
 import { forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { Box, ComponentCssResponsiveProps } from '../../components';
+import type { UIStyledComponent, UIStyledComponentProps } from '../../components/types';
+import { getCssResponsive } from '../../components/utils';
 import { GoogleMapContext, IGoogleMapContext } from './google-map-context';
 import { GoogleMapStyle } from './google-map.style';
 
@@ -12,9 +13,13 @@ export interface Props extends google.maps.MapOptions {
   children?: ReactNode;
 }
 
-export type GoogleMapProps = ComponentCssResponsiveProps<Props, HTMLDivElement>
+export type GoogleMapProps = UIStyledComponentProps<Props>;
 
-const StyledBox = styled(Box)`
+export type StyledMapProps = UIStyledComponentProps<google.maps.MapOptions>;
+
+export type StyledMapComponent = UIStyledComponent<'div', StyledMapProps>;
+
+const StyledMap: StyledMapComponent = styled.div<StyledMapProps>`
   &,
   iframe {
     background-color: var(--color-primary-100);
@@ -22,9 +27,8 @@ const StyledBox = styled(Box)`
   .gm-style-cc {
     display: none;
   }
+  ${props => getCssResponsive(props)}
 `;
-
-
 
 const GoogleMap = forwardRef<google.maps.Map, GoogleMapProps>(({
   onLoad,
@@ -108,7 +112,7 @@ const GoogleMap = forwardRef<google.maps.Map, GoogleMapProps>(({
 
   return (
     <GoogleMapContext.Provider value={contextValue}>
-      <StyledBox ref={innerRef} id="map" {...options} />
+      <StyledMap ref={innerRef} id="map" {...options} />
       {children}
     </GoogleMapContext.Provider>
   );
@@ -116,7 +120,7 @@ const GoogleMap = forwardRef<google.maps.Map, GoogleMapProps>(({
   /*
   return (
     <GoogleMapContext.Provider value={contextValue}>
-      <StyledBox ref={innerRef} id="map" {...options} />
+      <StyledMap ref={innerRef} id="map" {...options} />
       {React.Children.map(children, (child) => {
         if (!React.isValidElement(child)) {
           return null;

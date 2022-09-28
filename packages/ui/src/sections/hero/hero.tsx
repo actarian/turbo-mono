@@ -1,5 +1,6 @@
-import { Card, Container, Grid, Media, MediaType, Section, Text } from '../../components';
-import { ComponentProps } from '../../components/types';
+import type { IMedia } from '@websolute/models';
+import { Card, Container, Grid, Media, MediaImage, Section, Text } from '../../components';
+import type { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: HeroItem,
@@ -10,13 +11,10 @@ export type HeroItem = {
   href: string;
   title: string;
   abstract: string;
-  media: {
-    type: MediaType;
-    src: string;
-  };
+  media: IMedia;
 }
 
-export type HeroProps = ComponentProps<Props, HTMLDivElement>;
+export type HeroProps = UIComponentProps<Props>;
 
 const Hero: React.FC<HeroProps> = ({ item, ...props }: HeroProps) => {
   return (
@@ -24,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({ item, ...props }: HeroProps) => {
       <Card justifyContent="flex-end" height="100vh">
         <Card.Background>
           <Media overlay>
-            <img draggable={false} alt={item.title} src={item.media.src} />
+            <MediaImage draggable={false} alt={item.title} src={item.media.src} />
           </Media>
         </Card.Background>
         <Card.Content>

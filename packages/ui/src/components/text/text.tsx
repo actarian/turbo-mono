@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 const CssUl = css`
@@ -21,7 +21,7 @@ type Props = {
   gradient?: boolean;
 }
 
-export type TextProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type TextProps = UIStyledComponentProps<Props>;
 
 const Text = styled.div<TextProps>`
   font-family: var(--font-primary-family);

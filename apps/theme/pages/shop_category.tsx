@@ -1,29 +1,28 @@
-import { CategoryPropositionDefaults, HeaderDefaults, ProductsSearchDefaults } from '@websolute/mock';
+import { CategoryPropositionDefaults, ProductsSearchDefaults } from '@websolute/mock';
 import {
   Breadcrumb, CategoryHero, CategoryProposition, Container, Footer, Header, Layout, Page,
   ProductsIncentive, ProductsRelatedProps, ProductsSearch, Section
 } from '@websolute/ui';
 import Head from 'next/head';
 
-export default function Category({ items }: ProductsRelatedProps) {
+export default function ShopCategory({ items }: ProductsRelatedProps) {
   return (
     <>
       <Head>
-        <title>Category</title>
-        <meta name="description" content="Category description" />
+        <title>Shop category</title>
+        <meta name="description" content="Shop category description" />
         <link rel="icon" href="/assets/head/favicon.ico" />
       </Head>
 
       <Layout>
         <Page>
-
-          <Header sticky menu={HeaderDefaults.menu} />
+          <Header sticky />
 
           {false &&
             <Section borderBottom="1px solid var(--color-neutral-200)">
               <Container>
                 <Breadcrumb>
-                  <Breadcrumb.Item href="/products">Shop</Breadcrumb.Item>
+                  <Breadcrumb.Item href="/shop">Shop</Breadcrumb.Item>
                   <Breadcrumb.Item>New Arrivals</Breadcrumb.Item>
                 </Breadcrumb>
               </Container>

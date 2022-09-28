@@ -1,8 +1,9 @@
 import { useScrollTo } from '@websolute/hooks';
 import { Search, Send } from '@websolute/icons';
+import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
-import { Button, Card, Container, Flex, Grid, MediaType, Section, Text, Tooltip } from '../../components';
-import { ComponentProps } from '../../components/types';
+import { Button, Card, Container, Flex, Grid, Section, Text, Tooltip } from '../../components';
+import type { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: ContactHeroItem,
@@ -12,13 +13,10 @@ export type ContactHeroItem = {
   id: number;
   href: string;
   title: string;
-  media: {
-    type: MediaType;
-    src: string;
-  };
+  media: IMedia;
 }
 
-export type ContactHeroProps = ComponentProps<Props, HTMLDivElement>;
+export type ContactHeroProps = UIComponentProps<Props>;
 
 const ContactHero: React.FC<ContactHeroProps> = ({ item }: ContactHeroProps) => {
   const scrollTo = useScrollTo();

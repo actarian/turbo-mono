@@ -1,13 +1,15 @@
 import { getClassNames } from '@websolute/core';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
 }
 
-export type TextAreaProps = ComponentCssResponsiveProps<Props, HTMLTextAreaElement>;
+export type TextAreaProps = UIStyledComponentProps<Props, 'textarea'>;
+
+export type TextAreaComponent<C extends React.ElementType = 'textarea'> = UIComponentWithRef<C, Props>;
 
 const StyledTextArea = styled.div`
   display: block;
@@ -52,14 +54,15 @@ const StyledTextArea = styled.div`
   ${props => getCssResponsive(props)}
 `;
 
-const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({
+const TextArea: TextAreaComponent = forwardRef(({
+  as = 'textarea',
   children,
   className,
   ...props
 }, ref) => {
   const classNames = getClassNames('textarea', className);
   return (
-    <StyledTextArea ref={ref} className={classNames} as='textarea' {...props}>
+    <StyledTextArea className={classNames} ref={ref} as={as} {...props}>
       {children}
     </StyledTextArea>
   );

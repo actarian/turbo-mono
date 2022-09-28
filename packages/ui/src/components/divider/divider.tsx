@@ -1,31 +1,14 @@
-/*
-import styled, { css } from 'styled-components';
-import { ComponentCssResponsiveProps, Variant, Variants } from '../../components/types';
-*/
 import styled from 'styled-components';
-import { ComponentCssResponsiveProps } from '../../components/types';
+import type { UIComponent, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
-/*
-const variants: Variants = {
-  default: css`
-`,
-  alfa: css`
-`,
-  beta: css`
-`,
-  gamma: css`
-`,
-  delta: css`
-`
-};
-*/
-
 type Props = {
-  // type?: Variant;
+  children?: React.ReactNode;
 }
 
-export type DividerProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type DividerProps = UIStyledComponentProps<Props>;
+
+export type DividerComponent<C extends React.ElementType = 'div'> = UIComponent<C, Props>;
 
 const DividerContainer = styled.div<DividerProps>`
   position: relative;
@@ -48,8 +31,6 @@ const DividerContainer = styled.div<DividerProps>`
   ${props => getCssResponsive(props, { padding: props.children ? '1rem 0' : '0.5rem 0' })}
 `;
 
-// ${props => getVariant(variants, props.type)}
-
 const DividerTitle = styled.span<DividerProps>`
   position: relative;
   display: inline-flex;
@@ -64,10 +45,10 @@ const DividerTitle = styled.span<DividerProps>`
   white-space: nowrap;
 `;
 
-const Divider: React.FC<DividerProps> = (props: DividerProps) => {
+const Divider: DividerComponent = ({ children, as = 'div' as React.ElementType, ...props }) => {
   return (
-    <DividerContainer {...props}>
-      {props.children && <DividerTitle {...props}>{props.children}</DividerTitle>}
+    <DividerContainer as={as} {...props}>
+      {children && <DividerTitle {...props}>{children}</DividerTitle>}
     </DividerContainer>
   )
 };
