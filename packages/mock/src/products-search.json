@@ -54,7 +54,6 @@
     {
       "schema": "products_detail",
       "colors": [],
-      "designer": null,
       "id": 10951,
       "categoryId": 191,
       "category": "Botanica",
@@ -167,7 +166,7 @@
           "type": "image"
         },
         {
-          "src": "/assets/products/483_t_1 - De╠üchirer XL Avana, Grafite, Gesso.jpg",
+          "src": "/assets/products/483_t_1_DECHIRER_XL_Avana_Grafite_Gesso.jpg",
           "type": "image"
         }
       ],
@@ -303,7 +302,6 @@
     {
       "schema": "products_detail",
       "colors": [],
-      "designer": null,
       "id": 10921,
       "categoryId": 190,
       "category": "Kosei",

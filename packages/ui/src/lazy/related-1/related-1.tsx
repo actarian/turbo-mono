@@ -20,8 +20,8 @@ const Related1 = ({ item }: { item: Related1Props }) => {
       <Container>
         {item.title && <Text size="3" textAlign="center" marginBottom="4rem" dangerouslySetInnerHTML={{ __html: item.title }} />}
         <Grid.Row rowGap="3rem">
-          {item.items.map(related => (
-            <Grid sm={6} justifyContent="center">
+          {item.items.map((related, r) => (
+            <Grid key={r} sm={6} justifyContent="center">
               <Related1Card item={related} />
             </Grid>
           ))}

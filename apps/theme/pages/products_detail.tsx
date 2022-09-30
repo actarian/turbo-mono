@@ -1,26 +1,27 @@
+import type { IEquatable } from '@websolute/core';
 import { ChevronLeft } from '@websolute/icons';
 import { CategoryPropositionDefaults, ProductsDetailDefaults, ProductsRelatedDefaults } from '@websolute/mock';
 import type { IMedia } from '@websolute/models';
+import type { ILazyComponent } from '@websolute/ui';
 import {
-  Button, Card, CategoryProposition, Container, Flex, Footer, Header, Layout, LazyLoader, Media, MediaImage, NavLink, Page,
-  ProductOverview, ProductsRelated, Section, ShopIncentive, Text
+  Button, Card, CategoryProposition, Container, Flex, Footer, Header, Layout, LazyLoader, Media, MediaImage, NavLink, Page, ProductsRelated, Section, ShopIncentive, Text
 } from '@websolute/ui';
+
 import Head from 'next/head';
 
 export type ProductsDetailItem = {
-  id: number;
+  id: IEquatable;
   schema: string;
   href: string;
   title: string;
   abstract: string;
-  price: number;
-  date: string | Date;
-  media: IMedia[];
+  medias: IMedia[];
+  categoryId: IEquatable;
   category: {
     href: string;
     title: string;
   };
-  components: any[];
+  components: ILazyComponent[];
 }
 
 export default function ProductsDetail({ item }: ProductsDetailProps) {
@@ -55,26 +56,24 @@ export default function ProductsDetail({ item }: ProductsDetailProps) {
           {false &&
             <>
               <Media className="media" aspectRatio={16 / 10}>
-                {item.media[0].type === 'video' ?
+                {item.medias[0].type === 'video' ?
                   (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                    <source src={item.media[0].src} type="video/mp4"></source>
+                    <source src={item.medias[0].src} type="video/mp4"></source>
                   </video>) :
-                  (<MediaImage {...item.media[0]} alt={item.title} draggable={false} />)}
+                  (<MediaImage {...item.medias[0]} alt={item.title} draggable={false} />)}
               </Media>
 
               <Card justifyContent="center" height="50vh" overflow="hidden">
                 <Card.Background>
                   <Media className="media">
-                    {item.media[0].type === 'video' ?
+                    {item.medias[0].type === 'video' ?
                       (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                        <source src={item.media[0].src} type="video/mp4"></source>
+                        <source src={item.medias[0].src} type="video/mp4"></source>
                       </video>) :
-                      (<MediaImage {...item.media[0]} alt={item.title} draggable={false} />)}
+                      (<MediaImage {...item.medias[0]} alt={item.title} draggable={false} />)}
                   </Media>
                 </Card.Background>
               </Card>
-
-              <ProductOverview item={item} />
 
               <ShopIncentive />
 

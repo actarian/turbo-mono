@@ -9,10 +9,12 @@
   "scripts": {
     "dev": "turbo run dev --parallel --filter=!storybook",
     "build": "turbo run build --filter=!storybook --filter=!theme",
+    "build:theme": "turbo run build --filter=!storybook --filter=!web",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "start": "turbo run start --scope=web",
     "serve": "turbo run start --scope=web",
+    "serve:theme": "turbo run start --scope=theme",
     "storybook": "turbo run dev --parallel --filter=storybook"
   },
   "dependencies": {

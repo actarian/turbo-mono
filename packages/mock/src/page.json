@@ -2,6 +2,7 @@
   "id": 1,
   "schema": "page",
   "href": "/",
+  "title": "Page title",
   "alternates": [],
   "breadcrumb": [],
   "images": []

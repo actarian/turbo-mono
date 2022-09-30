@@ -44,7 +44,7 @@ const SectionIcons: React.FC<IconsProps> = (props: IconsProps) => {
         <Input name="search" placeholder="start typing..." onChange={onSearch} marginBottom="2rem" />
         <Flex.Row gap="1rem" justifyContent="center" flexWrap="wrap">
           {visibleIcons.map(icon => (
-            <Card key={icon.key} onClick={() => onSetIcon(icon)} type="alfa" flexGrow="1" width="180px" padding="0.5rem" border="2px solid var(--color-neutral-200)" hoverable>
+            <Card key={icon.key} onClick={() => onSetIcon(icon)} variant="alfa" flexGrow="1" width="180px" padding="0.5rem" border="2px solid var(--color-neutral-200)" hoverable>
               <Media padding="1rem" height="4rem">
                 <Suspense fallback={<div>Loading...</div>}>{createElement(icon.component, {})}</Suspense>
               </Media>

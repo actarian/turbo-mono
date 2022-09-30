@@ -1,13 +1,14 @@
 import { LabelProvider, LayoutProvider, PageProvider } from '@websolute/hooks';
 import { LayoutDefaults, PageDefaults } from '@websolute/mock';
 import type { ILayout, IPage, IRouteParams } from '@websolute/models';
-import { Breakpoint, GlobalStyle, theme } from '@websolute/ui';
+import { Breakpoint, GlobalStyle, PageLoader, theme } from '@websolute/ui';
 // import { NextPage } from 'next';
 // import { AppProps } from 'next/app';
+import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 
-export default function Application({ Component, pageProps }: ApplicationProps) {
+export default function Application({ Component, pageProps, router }: ApplicationProps) {
   // const Application: NextPage<AppProps<{ [key: string]: any }>> = ({ Component, pageProps }) => {
 
   // const { layout, page } = pageProps;
@@ -30,7 +31,10 @@ export default function Application({ Component, pageProps }: ApplicationProps) 
             </Head>
             <ThemeProvider theme={theme}>
               <GlobalStyle />
-              <Component {...pageProps} />
+              <AnimatePresence exitBeforeEnter>
+                <Component {...pageProps} key={router.route} />
+                <PageLoader page={page} />
+              </AnimatePresence>
               <Breakpoint></Breakpoint>
             </ThemeProvider>
           </PageProvider>
@@ -42,6 +46,7 @@ export default function Application({ Component, pageProps }: ApplicationProps) 
 
 export type ApplicationProps = {
   Component: any;
+  router: any;
   pageProps: {
     layout: ILayout,
     page: IPage,

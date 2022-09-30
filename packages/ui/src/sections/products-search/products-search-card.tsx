@@ -15,7 +15,7 @@ export type ProductSearchItem = {
   href: string;
   title: string;
   medias: IMedia[];
-  designer: IEquatable;
+  designer?: IEquatable;
   colors: IEquatable[];
 }
 

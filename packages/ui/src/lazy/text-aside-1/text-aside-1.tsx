@@ -20,7 +20,7 @@ const TextAside1 = ({ item }: { item: TextAside1Props }) => {
           <Grid sm={4}>
             <Flex.Col gap="3rem">
               {item.aside.map((aside, a) => (
-                <Flex.Col gap="1rem">
+                <Flex.Col key={a} gap="1rem">
                   <Text size="6">{aside.title}</Text>
                   <Flex.Col gap="0.5rem">
                     {aside.items.map((text, t) => (

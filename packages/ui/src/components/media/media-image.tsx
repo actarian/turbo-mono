@@ -11,6 +11,7 @@ export type MediaImageProps = UIStyledComponentProps<Props & ImageProps, 'img'>;
 
 const StyledMediaImage = styled(Image)`
   max-width: 100%;
+  user-select: none;
 `;
 
 const MediaImage = ({ alt = '', ...props }: MediaImageProps) => {
