@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const nextTranspileModules = require('next-transpile-modules');
 
 const transpiledModules = nextTranspileModules([
@@ -49,5 +48,7 @@ module.exports = transpiledModules({
       ],
     });
     return config;
-  }
+  },
+  // Docker support: build the project as a standalone app inside the Docker image
+  output: 'standalone'
 });
