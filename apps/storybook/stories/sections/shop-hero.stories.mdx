@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ShopHero, ShopHeroCard } from '@websolute/ui';
+import { ShopHeroDefaults, ShopHeroCardDefaults } from '@websolute/mock';
+
+<Meta
+  title="Sections / ShopHero"
+  component={ShopHero}
+  subcomponents={{ ShopHeroCard }}
+/>
+
+# ShopHero
+
+A component to display a `ShopHero`.
+
+[View source](https://github.com/actarian/turbo-mono/tree/main/packages/ui/src/sections/shop-hero)
+
+## Imports
+
+```js
+import { ShopHero } from '@websolute/ui';
+```
+
+## Example
+
+A basic example of `ShopHero`.
+
+<Canvas>
+  <Story name="ShopHero">
+    <ShopHero items={ShopHeroDefaults.items} />
+  </Story>
+  <Story name="ShopHeroCard">
+    <ShopHeroCard item={ShopHeroCardDefaults.item} maxWidth="540px" margin="3rem" />
+  </Story>
+</Canvas>

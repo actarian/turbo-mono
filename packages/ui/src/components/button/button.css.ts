@@ -112,7 +112,7 @@ export const CssAfter = css`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 1px;
+  height: 1.1px;
   background: currentColor;
   transform: scale(0, 1);
   transform-origin: left;
@@ -135,7 +135,7 @@ export const CssAfterInverted = css`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 1px;
+  height: 1.1px;
   background: currentColor;
   transform: scale(1, 1);
   transform-origin: left;
@@ -284,6 +284,14 @@ export const CssButtonNav = css`
   ${CssSvg}
   `;
 
+export const CssButtonNavInverted = css`
+  position: relative;
+  line-height: 1.5;
+
+  ${CssAfterInverted}
+  ${CssSvg}
+  `;
+
 export const CssButtonCircle = css`
   justify-content: center;
   width: 3em;
@@ -307,4 +315,10 @@ export const CssButtonCircle = css`
   ${CssFocus}
   ${CssActive}
   ${CssDisabled}
+`;
+
+export const CssButtonToggle = css`
+  &:not(.active) {
+    opacity: 0.2;
+  }
 `;

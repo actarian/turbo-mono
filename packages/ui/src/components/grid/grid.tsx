@@ -18,11 +18,10 @@ export const Grid = styled.div<GridProps & ThemeProps>`
   // default grid column
   grid-column: span var(--grid-columns);
 
-  /*
   ${props => (props.justifyContent || props.alignItems) ? css`
     display: flex;
+    flex-direction: column;
   ` : ''}
-  */
 
   // get media query column
   ${props => getMediaQueryColumn(props)}

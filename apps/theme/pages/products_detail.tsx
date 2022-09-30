@@ -1,8 +1,9 @@
-import { CategoryPropositionDefaults, ProductDefaults, ProductsRelatedDefaults } from '@websolute/mock';
+import { ChevronLeft } from '@websolute/icons';
+import { CategoryPropositionDefaults, ProductsDetailDefaults, ProductsRelatedDefaults } from '@websolute/mock';
 import type { IMedia } from '@websolute/models';
 import {
-  Breadcrumb, CategoryProposition, Container, Footer, Header, Layout, Page,
-  ProductOverview, ProductsIncentive, ProductsRelated, Section
+  Button, Card, CategoryProposition, Container, Flex, Footer, Header, Layout, LazyLoader, Media, MediaImage, NavLink, Page,
+  ProductOverview, ProductsRelated, Section, ShopIncentive, Text
 } from '@websolute/ui';
 import Head from 'next/head';
 
@@ -15,13 +16,14 @@ export type ProductsDetailItem = {
   price: number;
   date: string | Date;
   media: IMedia[];
+  category: {
+    href: string;
+    title: string;
+  };
+  components: any[];
 }
 
-type Props = {
-  item: ProductsDetailItem
-}
-
-export default function ProductsDetail({ item, ...props }: Props) {
+export default function ProductsDetail({ item }: ProductsDetailProps) {
   return (
     <>
       <Head>
@@ -34,25 +36,54 @@ export default function ProductsDetail({ item, ...props }: Props) {
         <Page>
           <Header sticky />
 
-          <Section paddingBottom="0">
-            <Container>
-              <Breadcrumb marginBottom="1rem">
-                <Breadcrumb.Item href="/shop">Shop</Breadcrumb.Item>
-                <Breadcrumb.Item href="/shop_category">Men</Breadcrumb.Item>
-                <Breadcrumb.Item>Basic Tee 6-Pack</Breadcrumb.Item>
-              </Breadcrumb>
-            </Container>
+          <Section padding="7rem 0">
+            <Container.Fluid>
+              <Flex.Col alignItems="center">
+                <NavLink href={item.category.href} passHref={true}>
+                  <Button variant="nav" as="a" marginBottom="1rem">
+                    <ChevronLeft />
+                    <Text size="10" fontWeight="700" textTransform="uppercase">{item.category.title}</Text>
+                  </Button>
+                </NavLink>
+                <Text size="2" textAlign="center">{item.title}</Text>
+              </Flex.Col>
+            </Container.Fluid>
           </Section>
 
-          <ProductOverview.Gallery media={item.media} paddingTop="0" />
+          <LazyLoader components={item.components} />
 
-          <ProductOverview item={item} />
+          {false &&
+            <>
+              <Media className="media" aspectRatio={16 / 10}>
+                {item.media[0].type === 'video' ?
+                  (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
+                    <source src={item.media[0].src} type="video/mp4"></source>
+                  </video>) :
+                  (<MediaImage {...item.media[0]} alt={item.title} draggable={false} />)}
+              </Media>
 
-          <ProductsIncentive />
+              <Card justifyContent="center" height="50vh" overflow="hidden">
+                <Card.Background>
+                  <Media className="media">
+                    {item.media[0].type === 'video' ?
+                      (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
+                        <source src={item.media[0].src} type="video/mp4"></source>
+                      </video>) :
+                      (<MediaImage {...item.media[0]} alt={item.title} draggable={false} />)}
+                  </Media>
+                </Card.Background>
+              </Card>
 
-          <ProductsRelated items={ProductsRelatedDefaults.items} />
+              <ProductOverview item={item} />
 
-          <CategoryProposition item={CategoryPropositionDefaults.item} />
+              <ShopIncentive />
+
+              <ProductsRelated items={ProductsRelatedDefaults.items} />
+
+              <CategoryProposition item={CategoryPropositionDefaults.item} />
+
+            </>
+          }
 
           <Footer />
 
@@ -62,4 +93,15 @@ export default function ProductsDetail({ item, ...props }: Props) {
   )
 }
 
-ProductsDetail.defaultProps = ProductDefaults;
+export type ProductsDetailProps = {
+  item: ProductsDetailItem;
+}
+
+export async function getStaticProps(): Promise<{ props: ProductsDetailProps }> {
+  const props = {
+    item: ProductsDetailDefaults.item,
+  };
+  return {
+    props,
+  };
+}

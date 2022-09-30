@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ShopSearch, ShopSearchCard, ShopSearchFilters, ShopSearchFiltersModal } from '@websolute/ui';
+import { ShopSearchDefaults, ShopSearchCardDefaults } from '@websolute/mock';
+
+<Meta
+  title="Sections / ShopSearch"
+  component={ShopSearch}
+  subcomponents={{ ShopSearchCard, ShopSearchFilters, ShopSearchFiltersModal }}
+/>
+
+# ShopSearch
+
+A component to display a `ShopSearch`.
+
+[View source](https://github.com/actarian/turbo-mono/tree/main/packages/ui/src/sections/shop-search)
+
+## Imports
+
+```js
+import { ShopSearch } from '@websolute/ui';
+```
+
+## Example
+
+A basic example of `ShopSearch`.
+
+<Canvas>
+  <Story name="ShopSearch">
+    <ShopSearch items={ShopSearchDefaults.items} />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="ShopSearchCard">
+    <ShopSearchCard item={ShopSearchCardDefaults.item} maxWidth="540px" margin="3rem" />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="ShopSearchFilters">
+    <ShopSearchFilters maxWidth="540px" margin="3rem" />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="ShopSearchFiltersModal">
+    <ShopSearchFiltersModal visible={true} onClose={() => alert} />
+  </Story>
+</Canvas>

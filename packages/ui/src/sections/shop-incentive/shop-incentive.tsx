@@ -5,9 +5,9 @@ import type { UIComponentProps } from '../../components/types';
 type Props = {
 }
 
-export type ProductsIncentiveProps = UIComponentProps<Props>;
+export type ShopIncentiveProps = UIComponentProps<Props>;
 
-const ProductsIncentive: React.FC<ProductsIncentiveProps> = ({ }: ProductsIncentiveProps) => {
+const ShopIncentive: React.FC<ShopIncentiveProps> = ({ }: ShopIncentiveProps) => {
   return (
     <Section padding="2rem 0">
       <Container>
@@ -45,4 +45,4 @@ const ProductsIncentive: React.FC<ProductsIncentiveProps> = ({ }: ProductsIncent
   )
 }
 
-export default ProductsIncentive;
+export default ShopIncentive;

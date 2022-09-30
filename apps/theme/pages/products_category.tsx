@@ -1,11 +1,13 @@
-import { CategoryPropositionDefaults, ProductsSearchDefaults } from '@websolute/mock';
+import { CategoryHeroDefaults, CategoryPropositionDefaults, ProductsSearchDefaults, ProductsSearchFeaturesDefaults } from '@websolute/mock';
+import type { IFeatureType } from '@websolute/models';
+import type { ProductSearchItem } from '@websolute/ui';
 import {
   Breadcrumb, CategoryHero, CategoryProposition, Container, Footer, Header, Layout, Page,
-  ProductsIncentive, ProductsRelatedProps, ProductsSearch, Section
+  ProductsSearch, Section
 } from '@websolute/ui';
 import Head from 'next/head';
 
-export default function ProductsCategory({ items }: ProductsRelatedProps) {
+export default function ProductsCategory({ items = [], featureTypes = [] }) {
   return (
     <>
       <Head>
@@ -18,24 +20,24 @@ export default function ProductsCategory({ items }: ProductsRelatedProps) {
         <Page>
           <Header sticky />
 
+          <CategoryHero item={CategoryHeroDefaults.item} />
+
           {false &&
             <Section borderBottom="1px solid var(--color-neutral-200)">
               <Container>
                 <Breadcrumb>
-                  <Breadcrumb.Item href="/shop">Shop</Breadcrumb.Item>
-                  <Breadcrumb.Item>New Arrivals</Breadcrumb.Item>
+                  <Breadcrumb.Item>Collections</Breadcrumb.Item>
+                  <Breadcrumb.Item>Our tiles collections</Breadcrumb.Item>
                 </Breadcrumb>
               </Container>
             </Section>
           }
 
-          <CategoryHero />
+          <ProductsSearch id="serp" padding="3rem 0" items={items} featureTypes={featureTypes}></ProductsSearch>
 
-          <ProductsSearch id="serp" padding="3rem 0" items={ProductsSearchDefaults.items}></ProductsSearch>
-
-          <CategoryProposition item={CategoryPropositionDefaults.item} />
-
-          <ProductsIncentive />
+          {false &&
+            <CategoryProposition item={CategoryPropositionDefaults.item} />
+          }
 
           <Footer />
 
@@ -43,4 +45,27 @@ export default function ProductsCategory({ items }: ProductsRelatedProps) {
       </Layout>
     </>
   )
+}
+
+/*
+import type { PageProps } from '@websolute/models';
+export interface ProductsSearchProps extends PageProps {
+  items: ProductSearchItem[];
+  featureTypes: IFeatureType[];
+}
+*/
+
+export type ProductsSearchProps = {
+  items: ProductSearchItem[];
+  featureTypes: IFeatureType[];
+}
+
+export async function getStaticProps(): Promise<{ props: ProductsSearchProps }> {
+  const props = {
+    items: ProductsSearchDefaults.items,
+    featureTypes: ProductsSearchFeaturesDefaults
+  };
+  return {
+    props,
+  };
 }

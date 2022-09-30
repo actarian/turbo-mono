@@ -14,21 +14,21 @@ export type HeaderCardItem = {
   media?: IMedia;
 }
 
-export type HeaderCardProps = UIStyledComponentProps<Props>;
+export type HeaderCardProps = UIStyledComponentProps<Props, 'a'>;
 
 const HeaderCard: React.FC<HeaderCardProps> = ({ item, onSelect, ...props }: HeaderCardProps) => {
   const onSelect_ = () => {
     onSelect && onSelect(item);
   }
   return (
-    <Link href={item.href || '#'}>
-      <Card height="100%" hoverable {...props} onClick={onSelect_}>
+    <Link href={item.href || '#'} passHref={true}>
+      <Card as="a" height="100%" hoverable onClick={onSelect_} {...props}>
         {item.media && <Media aspectRatio={3 / 2} borderRadius="0.4rem" marginBottom="1rem">
           <MediaImage {...item.media} />
         </Media>}
         <Card.Content flex="1">
-          <Button variant="nav" as="a">
-            {item.title && <Text size="7" dangerouslySetInnerHTML={{ __html: item.title }}></Text>}
+          <Button variant="nav">
+            <Text size="7" dangerouslySetInnerHTML={{ __html: item.title || 'untitled' }}></Text>
           </Button>
         </Card.Content>
       </Card>

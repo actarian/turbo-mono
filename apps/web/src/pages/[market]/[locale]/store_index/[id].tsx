@@ -2,7 +2,8 @@
 import type { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
 import { SplitDefaults, StoreLocatorDefaults, StoreLocatorFeaturesDefaults, StoreLocatorSearchDefaults } from '@websolute/mock';
-import { getLayout, getPage, getStaticPathsForSchema, IFeatureType, PageProps } from '@websolute/models';
+import type { IFeatureType, PageProps } from '@websolute/models';
+import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
 import { Footer, Header, Layout, Meta, Page, Split, StoreLocatorItem, StoreLocatorSearch } from '@websolute/ui';
 
 export default function StoreLocator({ layout, page, country, items = [], featureTypes = [], params }: StoreLocatorProps) {

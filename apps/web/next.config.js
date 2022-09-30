@@ -13,17 +13,20 @@ const transpiledModules = nextTranspileModules([
 
 module.exports = transpiledModules({
   reactStrictMode: true,
+  images: {
+    domains: [
+      'unsplash.com',
+      'picsum.photos',
+      'i.pravatar.cc',
+      process.env.IMAGE_DOMAIN,
+    ]
+  },
   compiler: {
     styledComponents: {
       ssr: true,
       displayName: true,
       pure: true,
     },
-  },
-  images: {
-    domains: [
-      'unsplash.com'
-    ]
   },
   webpack(config) {
     config.module.rules.push({

@@ -32,7 +32,7 @@ const variants: Variants = {
 };
 
 type Props = {
-  type?: Variant;
+  variant?: Variant;
   hoverable?: boolean;
 };
 
@@ -40,12 +40,12 @@ export type CardProps = UIStyledComponentProps<Props>;
 
 export type CardComponent<C extends React.ElementType = 'div'> = UIComponentWithRef<C, Props>;
 
-const CardContainer = styled.div<CardProps>`
+const StyledCard = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
   // margin: 0 0 40px 0;
 
-  ${props => getVariant(variants, props.type)}
+  ${props => getVariant(variants, props.variant)}
   ${props => getCssResponsive(props)}
   ${props => getAspectResponsive(props)};
   ${props => props.hoverable ? css`
@@ -56,7 +56,8 @@ const CardContainer = styled.div<CardProps>`
       align-items: center;
       overflow: hidden;
       &>:not(.media-info) {
-        transition: transform ease-in-out 200ms;
+        transition: ease-in-out 200ms;
+        transition-property: transform, opacity;
       }
     }
     &:hover {
@@ -81,6 +82,31 @@ const CardContainer = styled.div<CardProps>`
     }
   `: ''}
 `;
+
+const Card: CardComponent = forwardRef(({ children, className, as = 'div', ...props }, ref) => {
+  const classNames = getClassNames('card', className);
+  return (<StyledCard className={classNames} ref={ref} as={as} {...props}>{children}</StyledCard>);
+});
+
+Card.displayName = 'Card';
+
+(Card as ICard).Background = Background;
+(Card as ICard).Content = CardContent;
+(Card as ICard).Footer = CardFooter;
+
+export default Card as ICard;
+
+type ICard = typeof Card & {
+  Background: typeof Background;
+  Content: typeof CardContent;
+  Footer: typeof CardFooter;
+};
+
+// utils
+
+function hasBackground(props: CardProps): boolean {
+  return hasChildOfType(props.children, Background);
+}
 
 /*
 ${props => props.aspect ? css`
@@ -124,26 +150,3 @@ ${props => props.background ? css`
   }
 `: ''}
 */
-
-function hasBackground(props: CardProps): boolean {
-  return hasChildOfType(props.children, Background);
-}
-
-const Card: CardComponent = forwardRef(({ children, as = 'div', ...props }, ref) => {
-  const classNames = getClassNames('card');
-  return (<CardContainer className={classNames} ref={ref} as={as} {...props}>{children}</CardContainer>);
-});
-
-Card.displayName = 'Card';
-
-(Card as ICard).Background = Background;
-(Card as ICard).Content = CardContent;
-(Card as ICard).Footer = CardFooter;
-
-export default Card as ICard;
-
-type ICard = typeof Card & {
-  Background: typeof Background;
-  Content: typeof CardContent;
-  Footer: typeof CardFooter;
-};

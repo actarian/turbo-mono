@@ -125,9 +125,9 @@ export type UIComponentPropsWithRef<C extends React.ElementType, P> = Polymorphi
 
 export type UIStyledComponent<C extends React.ElementType, P = {}> = React.FC<Omit<React.ComponentProps<C>, keyof P>>;
 
-export type UIComponent<T extends React.ElementType, P = {}> = (<C extends React.ElementType = T>(props: UIComponentPropsWithoutRef<C, UIStyledComponentProps<P, C>>) => React.ReactElement | null) & UIDevProps;
+export type UIComponent<T extends React.ElementType, P = {}> = (<C extends React.ElementType = T>(props: UIComponentPropsWithoutRef<C, UIStyledComponentProps<P, C>>) => React.ReactElement<C> | null) & UIDevProps;
 
-export type UIComponentWithRef<T extends React.ElementType, P = {}> = (<C extends React.ElementType = T>(props: UIComponentPropsWithRef<C, UIStyledComponentProps<P, C>>) => React.ReactElement | null) & UIDevProps;
+export type UIComponentWithRef<T extends React.ElementType, P = {}> = (<C extends React.ElementType = T>(props: UIComponentPropsWithRef<C, UIStyledComponentProps<P, C>>) => React.ReactElement<C> | null) & UIDevProps;
 
 // export type UIForwardingComponentWithRef<T extends React.ElementType, P = {}> = <C extends React.ElementType = T>(props: P, ref?: PolymorphicRef<C>) => UIComponentWithRef<C, P>;
 

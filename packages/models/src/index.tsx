@@ -7,6 +7,7 @@ export type { ILabel } from './label/label';
 export { getLabels, resolveLabel } from './label/label.service';
 export type { ILayout } from './layout/layout';
 export { getLayout } from './layout/layout.service';
+export type { ILink } from './link/link';
 export type { IKeyedList, IList } from './list/list';
 export { getListByKeys, getLists } from './list/list.service';
 export type { ILocale } from './locale/locale';

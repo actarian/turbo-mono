@@ -1,6 +1,20 @@
 import styled, { css } from 'styled-components';
 import type { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
+import { CssButtonNavInverted, CssDefault } from '../button/button.css';
+
+const CssA = css`
+  a[href] {
+    ${CssDefault}
+    ${CssButtonNavInverted}
+  }
+`;
+
+const CssP = css`
+  p {
+    margin-bottom: 2rem;
+  }
+`;
 
 const CssUl = css`
   ul {
@@ -40,6 +54,8 @@ const Text = styled.div<TextProps>`
     -webkit-text-fill-color: transparent;
   ` : ''}
 
+  ${CssP}
+  ${CssA}
   ${CssUl}
   ${props => getCssResponsive(props)}
 `;

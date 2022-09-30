@@ -1,0 +1,237 @@
+{
+  "item": {
+    "id": 1,
+    "href": "/products_detail",
+    "categoryId": 11,
+    "title": "Azulej by Patricia Urquiola",
+    "abstract": "<p>Azulej è volta a rivalorizzare la memoria delle antiche maioliche artigianali e del cemento idraulico, sperimentando una tecnica di stampa innovativa orientata verso un prodotto di larga diffusione. Questa tradizione – rivisitata in chiave contemporanea – viene realizzata serialmente in formato 20x20 cm.</p> <p>La composizione riprende le caratteristiche della tecnica patchwork: un mix and match innovativo, volutamente casuale, che abbina disegni astratti e colori non saturi, neutri, appena consumati; colori che si fissano al materiale di supporto in modo naturalmente irregolare.</p>",
+    "category": {
+      "id": 11,
+      "name": "tiles",
+      "title": "All tiles",
+      "categoryId": 10,
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category",
+      "href": "/products_category"
+    },
+    "components": [
+      {
+        "type": "media-full-1",
+        "title": "Azulej by Patricia Urquiola",
+        "media": {
+          "src": "/assets/products_detail/hero.jpg",
+          "type": "image",
+          "alt": "Azulej by Patricia Urquiola"
+        }
+      },
+      {
+        "type": "text-aside-1",
+        "description": "<p>Azulej è volta a rivalorizzare la memoria delle antiche maioliche artigianali e del cemento idraulico, sperimentando una tecnica di stampa innovativa orientata verso un prodotto di larga diffusione. Questa tradizione – rivisitata in chiave contemporanea – viene realizzata serialmente in formato 20x20 cm.</p> <p>La composizione riprende le caratteristiche della tecnica patchwork: un mix and match innovativo, volutamente casuale, che abbina disegni astratti e colori non saturi, neutri, appena consumati; colori che si fissano al materiale di supporto in modo naturalmente irregolare.</p>",
+        "aside": [
+          {
+            "title": "Awards",
+            "items": [
+              "Wallpaper Design Award 2013",
+              "Interior Innovation Award 2014"
+            ]
+          },
+          {
+            "title": "Sustainability",
+            "items": [
+              "Azulej rispetta l’ambiente e non contiene V.O.C."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "media-full-2",
+        "title": "Azulej Bianco: Cubo, Trevo, Estrela, Flores, Renda",
+        "media": {
+          "src": "/assets/products_detail/full.jpg",
+          "type": "image",
+          "alt": "Azulej Bianco: Cubo, Trevo, Estrela, Flores, Renda"
+        }
+      },
+      {
+        "type": "text-media-1",
+        "abstract": "In questo modo i pattern di Azulej combinano linguaggi volutamente diversi: memoria, geometrie, pixel, sviluppati sia in senso longitudinale che diagonale. Un risultato unico e sorprendente, che regala libertà compositiva e unicità di disegno, mantenendo intatte le caratteristiche del ‘fatto a mano’, con le prestazioni di un materiale ad alta tecnologia adatto sia a pavimenti che a rivestimenti.",
+        "media": {
+          "src": "/assets/products_detail/detail.jpg",
+          "type": "image",
+          "alt": "Azulej Grigio: Combination, Cubo"
+        }
+      },
+      {
+        "type": "media-full-2",
+        "title": "Azulej Bianco: Trama, Trevo, Estrela",
+        "media": {
+          "src": "/assets/products_detail/full-02.jpg",
+          "type": "image",
+          "alt": "Azulej Bianco: Trama, Trevo, Estrela"
+        }
+      },
+      {
+        "type": "carousel-1",
+        "title": "In use",
+        "items": [
+          {
+            "title": "Masseria Trullo di Pezza",
+            "href": "/projects_detail",
+            "media": {
+              "src": "/assets/products_detail/projects-01.jpg",
+              "type": "image"
+            }
+          },
+          {
+            "title": "House in Paris",
+            "href": "/projects_detail",
+            "media": {
+              "src": "/assets/products_detail/projects-02.jpg",
+              "type": "image"
+            }
+          },
+          {
+            "title": "Architect's Office",
+            "href": "/projects_detail",
+            "media": {
+              "src": "/assets/products_detail/projects-03.jpg",
+              "type": "image"
+            }
+          },
+          {
+            "title": "Villa Gea",
+            "href": "/projects_detail",
+            "media": {
+              "src": "/assets/products_detail/projects-04.jpg",
+              "type": "image"
+            }
+          },
+          {
+            "title": "Malesherbes",
+            "href": "/projects_detail",
+            "media": {
+              "src": "/assets/products_detail/projects-05.jpg",
+              "type": "image"
+            }
+          },
+          {
+            "title": "The Social House",
+            "href": "/projects_detail",
+            "media": {
+              "src": "/assets/products_detail/projects-06.jpg",
+              "type": "image"
+            }
+          }
+        ]
+      },
+      {
+        "type": "text-media-1",
+        "title": "Patricia Urquiola",
+        "abstract": "Architetta e designer spagnola, ma italiana di adozione, fa parte del team Mutina dal 2008. Ha disegnato numerose collezioni, tra cui: la serie <a href=\"https://www.mutina.it/it/collection/dechirer-by-patricia-urquiola\">Déchirer</a>, <a href=\"https://www.mutina.it/it/collezioni/bas-relief-by-patricia-urquiola\">Bas-Relief</a>, <a href=\"https://www.mutina.it/it/collezioni/azulej-by-patricia-urquiola\">Azulej</a>, <a href=\"https://www.mutina.it/it/collezioni/tierras-by-patricia-urquiola\">Tierras</a>, <a href=\"https://www.mutina.it/it/collezioni/dechirer-xl-by-patricia-urquiola\">Déchirer XL</a>,&nbsp;<a href=\"https://www.mutina.it/it/3d-elements/celosia-by-patricia-urquiola\">Celosia</a>&nbsp;ed <a href=\"https://www.mutina.it/it/mutina-shop/editions/el-lobo-by-patricia-urquiola\">El Lobo</a>.",
+        "description": "“Con la collezione Azulej volevamo dare nuovo valore alla memoria del cemento idraulico. Un processo sviluppatosi in modo esponenziale, dove abbiamo voluto abbozzare soltanto le prime combinazioni di una lunga serie. E ora, it’s up to you!”",
+        "media": {
+          "src": "/assets/products_detail/designer.jpg",
+          "type": "image"
+        }
+      },
+      {
+        "type": "sizes-colors-1",
+        "title": "Size & Color",
+        "list": [
+          {
+            "title": "Production",
+            "abstract": "Industriale"
+          },
+          {
+            "title": "Material",
+            "abstract": "Gres porcellanato rettificato smaltato con stampa digitale"
+          },
+          {
+            "title": "Nominal Sizes",
+            "abstract": "20·20 cm (8”·8”)"
+          },
+          {
+            "title": "Thickness",
+            "abstract": "10 mm"
+          }
+        ],
+        "media": [
+          {
+            "src": "/assets/products_detail/version-01.jpg",
+            "type": "image"
+          },
+          {
+            "src": "/assets/products_detail/version-02.jpg",
+            "type": "image"
+          },
+          {
+            "src": "/assets/products_detail/version-03.jpg",
+            "type": "image"
+          }
+        ]
+      },
+      {
+        "type": "download-1",
+        "title": "Download",
+        "links": [
+          {
+            "href": "/downloads/2160/56/Mutina_Cat_Azulej_Aff_LR.PDF",
+            "title": "Catalogo (6.77 MB)",
+            "type": ".pdf"
+          },
+          {
+            "href": "/downloads/2160/57/HIGH RESOLUTION IMAGES.zip",
+            "title": "Immagini in alta risoluzione (75.38 MB)",
+            "type": ".zip"
+          },
+          {
+            "href": "/downloads/2160/212/AZULEJ_3DCADLIBRARY.zip",
+            "title": "Minimali (4.99 MB)",
+            "type": ".zip"
+          },
+          {
+            "href": "/downloads/2160/276/3D CAD LIBRARY HR.zip",
+            "title": "Minimali in alta risoluzione (55.61 MB)",
+            "type": ".zip",
+            "secure": true
+          },
+          {
+            "href": "/downloads/2160/213/TechnicalFeatures_Azulej.zip",
+            "title": "Specifiche tecniche (9.99 MB)",
+            "type": ".zip"
+          },
+          {
+            "href": "/downloads/2160/214/AZULEJ _ CONSIGLI DI POSA E MANUTENZIONE.pdf",
+            "title": "Consigli posa e manutenzione (119.8 KB)",
+            "type": ".pdf"
+          }
+        ]
+      },
+      {
+        "type": "related-1",
+        "title": "You may also like",
+        "items": [
+          {
+            "id": 2,
+            "href": "/products_detail",
+            "title": "Déchirer by Patricia Urquiola",
+            "media": {
+              "src": "/assets/products_detail/related-01.jpg",
+              "type": "image"
+            }
+          },
+          {
+            "id": 3,
+            "href": "/products_detail",
+            "title": "Puzzle by Barber & Osgerby",
+            "media": {
+              "src": "/assets/products_detail/related-02.jpg",
+              "type": "image"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

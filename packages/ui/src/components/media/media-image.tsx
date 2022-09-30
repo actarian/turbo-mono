@@ -1,3 +1,4 @@
+import Image, { ImageProps } from 'next/image';
 import styled from 'styled-components';
 import type { UIStyledComponentProps } from '../../components/types';
 
@@ -6,14 +7,14 @@ export type Props = {
   alt?: string;
 };
 
-export type MediaImageProps = UIStyledComponentProps<Props, 'image'>;
+export type MediaImageProps = UIStyledComponentProps<Props & ImageProps, 'img'>;
 
-const StyledMediaImage = styled.img`
+const StyledMediaImage = styled(Image)`
   max-width: 100%;
 `;
 
-const MediaImage = ({ alt = '', ...props }) => {
-  return (<StyledMediaImage {...props} alt={alt} />);
+const MediaImage = ({ alt = '', ...props }: MediaImageProps) => {
+  return (<StyledMediaImage {...props} alt={alt} layout="fill" objectFit={'cover'} />);
 }
 
 export default MediaImage;

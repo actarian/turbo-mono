@@ -1,4 +1,5 @@
 import { ArrowRight } from '@websolute/icons';
+import { ILink, IMedia } from '@websolute/models';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { SwiperProps } from 'swiper/react';
@@ -31,22 +32,12 @@ const CardHero = styled(Card)`
   }
 `;
 
-export type SwiperHeroItemMedia = {
-  type: string;
-  src: string;
-}
-
-export type SwiperHeroItemLink = {
-  href: string;
-  label: string;
-}
-
 export type SwiperHeroItem = {
   id: number;
   title: string;
   abstract: string;
-  link: SwiperHeroItemLink;
-  media: SwiperHeroItemMedia;
+  link: ILink;
+  media: IMedia;
 }
 
 export type SwiperHeroProps = {
@@ -78,7 +69,7 @@ const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) => {
                   <Text size="6" marginBottom="1rem">{item.abstract}</Text>
                   {item.link &&
                     <Link href={item.link.href} passHref={true}>
-                      <Button variant="link" as="a"><Text>{item.link.label}</Text> <ArrowRight /></Button>
+                      <Button variant="link" as="a"><Text>{item.link.title}</Text> <ArrowRight /></Button>
                     </Link>}
                 </Grid>
               </Grid.Row>

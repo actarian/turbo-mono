@@ -1,0 +1,15 @@
+{
+  "item": {
+    "id": 1,
+    "title": "Our tiles collection",
+    "abstract": "We are the only private and independent Italian multinational in the agrotechnology sector.",
+    "link": {
+      "href": "/#trusted-group",
+      "title": "Do you want to know more?"
+    },
+    "media": {
+      "type": "image",
+      "src": "/assets/category/hero.jpg"
+    }
+  }
+}

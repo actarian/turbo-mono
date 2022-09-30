@@ -13,6 +13,14 @@ const transpiledModules = nextTranspileModules([
 
 module.exports = transpiledModules({
   reactStrictMode: true,
+  images: {
+    domains: [
+      'unsplash.com',
+      'picsum.photos',
+      'i.pravatar.cc',
+      process.env.IMAGE_DOMAIN,
+    ]
+  },
   compiler: {
     styledComponents: {
       ssr: true,

@@ -2,7 +2,7 @@ import { CategoryPropositionDefaults, ProductDefaults, ProductsRelatedDefaults }
 import type { IMedia } from '@websolute/models';
 import {
   Breadcrumb, CategoryProposition, Container, Footer, Header, Layout, Page,
-  ProductOverview, ProductsIncentive, ProductsRelated, Section
+  ProductOverview, ProductsRelated, Section, ShopIncentive
 } from '@websolute/ui';
 import Head from 'next/head';
 
@@ -48,7 +48,7 @@ export default function ShopDetail({ item, ...props }: Props) {
 
           <ProductOverview item={item} />
 
-          <ProductsIncentive />
+          <ShopIncentive />
 
           <ProductsRelated items={ProductsRelatedDefaults.items} />
 

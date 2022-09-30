@@ -28,6 +28,7 @@
   },
   "globalDependencies": [
     "$NODE_ENV",
+    "$IMAGE_DOMAIN",
     "$SECRET_COOKIE_PASSWORD",
     "$STORE_STRATEGY",
     "$STORE_URL",

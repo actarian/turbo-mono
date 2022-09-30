@@ -3,9 +3,9 @@ import { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps, VariantOf } from '../../components/types';
 import { getCssResponsive, getVariant } from '../../components/utils';
-import { CssButtonCircle, CssButtonDefault, CssButtonGhost, CssButtonLink, CssButtonNav, CssButtonOutline, CssButtonPrimary, CssButtonSecondary, CssButtonUnderline, CssDefault } from './button.css';
+import { CssButtonCircle, CssButtonDefault, CssButtonGhost, CssButtonLink, CssButtonNav, CssButtonOutline, CssButtonPrimary, CssButtonSecondary, CssButtonToggle, CssButtonUnderline, CssDefault } from './button.css';
 
-export type ButtonVariant = 'default' | 'primary' | 'secondary' | 'outline' | 'ghost' | 'link' | 'underline' | 'nav' | 'circle';
+export type ButtonVariant = 'default' | 'primary' | 'secondary' | 'outline' | 'ghost' | 'link' | 'underline' | 'nav' | 'circle' | 'toggle';
 
 export type ButtonVariants = VariantOf<ButtonVariant>;
 
@@ -19,6 +19,7 @@ const variants: ButtonVariants = {
   underline: CssButtonUnderline,
   nav: CssButtonNav,
   circle: CssButtonCircle,
+  toggle: CssButtonToggle,
 };
 
 interface Props {
@@ -39,8 +40,8 @@ const StyledButton = styled.div<ButtonProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Button: ButtonComponent = forwardRef(({ children, as = 'button', type = 'button', ...props }, ref) => {
-  const classNames = getClassNames('button', { disabled: props.disabled });
+const Button: ButtonComponent = forwardRef(({ children, className, as = 'button', type = 'button', ...props }, ref) => {
+  const classNames = getClassNames('button', className, { disabled: props.disabled });
   return (<StyledButton className={classNames} ref={ref} as={as} type={type} {...props}>{children}</StyledButton>);
 });
 

@@ -1,11 +1,11 @@
-import { CategoryPropositionDefaults, ProductsSearchDefaults } from '@websolute/mock';
+import { CategoryPropositionDefaults, ShopSearchDefaults } from '@websolute/mock';
 import {
-  Breadcrumb, CategoryHero, CategoryProposition, Container, Footer, Header, Layout, Page,
-  ProductsIncentive, ProductsRelatedProps, ProductsSearch, Section
+  Breadcrumb, CategoryProposition, Container, Footer, Header, Layout, Page, Section,
+  ShopCategoryHero, ShopIncentive, ShopSearch
 } from '@websolute/ui';
 import Head from 'next/head';
 
-export default function ShopCategory({ items }: ProductsRelatedProps) {
+export default function ShopCategory() {
   return (
     <>
       <Head>
@@ -29,13 +29,13 @@ export default function ShopCategory({ items }: ProductsRelatedProps) {
             </Section>
           }
 
-          <CategoryHero />
+          <ShopCategoryHero />
 
-          <ProductsSearch id="serp" padding="3rem 0" items={ProductsSearchDefaults.items}></ProductsSearch>
+          <ShopSearch id="serp" padding="3rem 0" items={ShopSearchDefaults.items}></ShopSearch>
 
           <CategoryProposition item={CategoryPropositionDefaults.item} />
 
-          <ProductsIncentive />
+          <ShopIncentive />
 
           <Footer />
 

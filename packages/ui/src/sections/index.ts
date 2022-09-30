@@ -21,7 +21,6 @@ export { default as ProductOverview } from './product-overview/product-overview'
 export { default as ProductOverviewGallery } from './product-overview/product-overview-gallery';
 export { default as ProductsHero } from './products-hero/products-hero';
 export { default as ProductsHeroCard } from './products-hero/products-hero-card';
-export { default as ProductsIncentive } from './products-incentive/products-incentive';
 export { default as ProductsProposition } from './products-proposition/products-proposition';
 export { default as ProductsPropositionCard } from './products-proposition/products-proposition-card';
 export { default as ProductsRelated } from './products-related/products-related';
@@ -29,12 +28,24 @@ export type { ProductsRelatedProps } from './products-related/products-related';
 export { default as ProductsRelatedCard } from './products-related/products-related-card';
 export { default as ProductsSearch } from './products-search/products-search';
 export { default as ProductsSearchCard } from './products-search/products-search-card';
+export type { ProductSearchItem } from './products-search/products-search-card';
 export { default as ProductsSearchFilters } from './products-search/products-search-filters';
 export { default as ProductsSearchFiltersModal } from './products-search/products-search-filters-modal';
 export { default as Proposition } from './proposition/proposition';
+export { default as ShopCategoryHero } from './shop-category-hero/shop-category-hero';
+export { default as ShopHero } from './shop-hero/shop-hero';
+export { default as ShopHeroCard } from './shop-hero/shop-hero-card';
+export { default as ShopIncentive } from './shop-incentive/shop-incentive';
+export { default as ShopItemsProposition } from './shop-items-proposition/shop-items-proposition';
+export { default as ShopItemsPropositionCard } from './shop-items-proposition/shop-items-proposition-card';
+export { default as ShopSearch } from './shop-search/shop-search';
+export { default as ShopSearchCard } from './shop-search/shop-search-card';
+export { default as ShopSearchFilters } from './shop-search/shop-search-filters';
+export { default as ShopSearchFiltersModal } from './shop-search/shop-search-filters-modal';
 export { default as Split } from './split/split';
 export { default as StoreLocatorSearch } from './store-locator/store-locator-search';
 export type { StoreLocatorItem } from './store-locator/store-locator-search';
 export { default as SwiperHero } from './swiper-hero/swiper-hero';
 export { default as Typography } from './typography/typography';
+
 

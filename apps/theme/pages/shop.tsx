@@ -1,7 +1,7 @@
-import { CategoriesPropositionDefaults, CategoryPropositionDefaults, ProductsHeroDefaults, ProductsPropositionDefaults } from '@websolute/mock';
+import { CategoriesPropositionDefaults, CategoryPropositionDefaults, ShopHeroDefaults, ShopItemsPropositionDefaults } from '@websolute/mock';
 import {
   CategoriesProposition, CategoryProposition, Footer, Header,
-  Layout, Page, ProductsHero, ProductsProposition
+  Layout, Page, ShopHero, ShopItemsProposition
 } from '@websolute/ui';
 import Head from 'next/head';
 
@@ -18,11 +18,11 @@ export default function ShopIndex() {
         <Page>
           <Header fixed />
 
-          <ProductsHero items={ProductsHeroDefaults.items} />
+          <ShopHero items={ShopHeroDefaults.items} />
 
           <CategoriesProposition items={CategoriesPropositionDefaults.items} />
 
-          <ProductsProposition items={ProductsPropositionDefaults.items} />
+          <ShopItemsProposition items={ShopItemsPropositionDefaults.items} />
 
           <CategoryProposition item={CategoryPropositionDefaults.item} />
 

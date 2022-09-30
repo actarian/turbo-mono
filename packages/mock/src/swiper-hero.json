@@ -6,7 +6,7 @@
       "abstract": "We are the only private and independent Italian multinational in the agrotechnology sector.",
       "link": {
         "href": "/#trusted-group",
-        "label": "Do you want to know more?"
+        "title": "Do you want to know more?"
       },
       "media": {
         "type": "image",
@@ -19,7 +19,7 @@
       "abstract": "We support our clients to develop both new and existing chemical solutions.",
       "link": {
         "href": "/#expertise-and-tailor-made-services",
-        "label": "Do you want to know more?"
+        "title": "Do you want to know more?"
       },
       "media": {
         "type": "image",
@@ -32,7 +32,7 @@
       "abstract": "We combine technology and creativity for the farmers of today and tomorrow.",
       "link": {
         "href": "/#sustainable-agriculture",
-        "label": "Do you want to know more?"
+        "title": "Do you want to know more?"
       },
       "media": {
         "type": "video",
