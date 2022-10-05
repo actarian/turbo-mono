@@ -1,5 +1,5 @@
 import type { IMedia } from '@websolute/models';
-import { Card, Container, Grid, Media, MediaImage, Section, Text } from '../../components';
+import { Card, Container, Grid, Media, Section, Text } from '../../components';
 import type { UIComponentProps } from '../../components/types';
 
 type Props = {
@@ -21,9 +21,7 @@ const Hero: React.FC<HeroProps> = ({ item, ...props }: HeroProps) => {
     <Section padding="0">
       <Card justifyContent="flex-end" height="100vh">
         <Card.Background>
-          <Media overlay>
-            <MediaImage draggable={false} alt={item.title} src={item.media.src} />
-          </Media>
+          <Media overlay item={item.media} />
         </Card.Background>
         <Card.Content>
           <Container.Fluid>

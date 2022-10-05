@@ -2,7 +2,7 @@ import { IEquatable } from '@websolute/core';
 import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Button, Card, Flex, Media, MediaImage, Text } from '../../components';
+import { Button, Card, Flex, Media, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 
 export type Related1ItemItem = {
@@ -20,7 +20,14 @@ export type Related1CardProps = UIStyledComponentProps<Props>;
 
 const StyledCard = styled(Card)`
   .media{
-    &>*{
+    .image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      object-fit: cover;
+
       &:not(:first-child) {
         opacity: 0!important;
       }
@@ -28,7 +35,7 @@ const StyledCard = styled(Card)`
   }
   &:hover {
     .media {
-      &>:nth-child(2) {
+      .image:nth-child(2) {
           opacity: 1!important;
       }
     }
@@ -39,9 +46,7 @@ const Related1Card: React.FC<Related1CardProps> = ({ item, ...props }: Related1C
   return (
     <StyledCard {...props} hoverable>
       <Link href={item.href} passHref={true}>
-        <Media aspectRatio={880 / 550} borderRadius="0.4rem" marginBottom="1.5rem">
-          <MediaImage {...item.media} />
-        </Media>
+        <Media as="a" aspectRatio={880 / 550} borderRadius="0.4rem" marginBottom="1.5rem" item={item.media} />
       </Link>
       <Card.Content>
         <Flex.Row justifyContent="space-between">

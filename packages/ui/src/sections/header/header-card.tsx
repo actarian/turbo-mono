@@ -1,6 +1,6 @@
 import type { IMedia, IRouteLink } from '@websolute/models';
 import Link from 'next/link';
-import { Button, Card, Media, MediaImage, Text } from '../../components';
+import { Button, Card, Media, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
@@ -23,9 +23,7 @@ const HeaderCard: React.FC<HeaderCardProps> = ({ item, onSelect, ...props }: Hea
   return (
     <Link href={item.href || '#'} passHref={true}>
       <Card as="a" height="100%" hoverable onClick={onSelect_} {...props}>
-        {item.media && <Media aspectRatio={3 / 2} borderRadius="0.4rem" marginBottom="1rem">
-          <MediaImage {...item.media} />
-        </Media>}
+        {item.media && <Media aspectRatio={3 / 2} borderRadius="0.4rem" marginBottom="1rem" item={item.media} />}
         <Card.Content flex="1">
           <Button variant="nav">
             <Text size="7" dangerouslySetInnerHTML={{ __html: item.title || 'untitled' }}></Text>

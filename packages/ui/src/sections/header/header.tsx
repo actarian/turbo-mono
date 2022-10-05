@@ -133,7 +133,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                       <HeaderSubmenu item={x as HeaderSubmenuItem} visible={nav === x.href} onSelect={() => onNav()}></HeaderSubmenu>
                     </Box> :
                     <NavLink key={i} href={x.href || ''} passHref={true}>
-                      <Button variant="nav" as="a" onClick={() => onNav()}>{x.title}</Button>
+                      <Button as="a" variant="nav" onClick={() => onNav()}>{x.title}</Button>
                     </NavLink>)
                 ))}
               </Nav.Row>}
@@ -142,7 +142,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                   (x.items && x.items.length ?
                     <Button variant="nav" onClick={() => onSubmenu(x)}>{x.title}</Button> :
                     <NavLink key={i} href={x.href || ''} passHref={true}>
-                      <Button variant="nav" as="a">{x.title}</Button>
+                      <Button as="a" variant="nav">{x.title}</Button>
                     </NavLink>)
                 ))}
                   </Nav.Row>*/}

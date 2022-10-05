@@ -1,7 +1,7 @@
 import { useCurrency, useDrawer } from '@websolute/hooks';
 import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
-import { Button, Card, Flex, Media, MediaImage, Text } from '../../components';
+import { Button, Card, Flex, Media, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 import { useCart } from '../../hooks';
 
@@ -35,15 +35,13 @@ const ShopRelatedCard: React.FC<ShopRelatedCardProps> = ({ item, ...props }: Sho
 
   return (
     <Card {...props} hoverable>
-      <Link href={item.href}>
-        <Media aspectRatio={1} borderRadius="0.4rem" marginBottom="0.5rem">
-          <MediaImage {...item.media} />
-        </Media>
+      <Link href={item.href} passHref={true}>
+        <Media as="a" aspectRatio={1} borderRadius="0.4rem" marginBottom="0.5rem" item={item.media} />
       </Link>
       <Card.Content>
         <Flex.Row justifyContent="space-between">
-          <Link href={item.href}>
-            <Text size="9">{item.title}</Text>
+          <Link href={item.href} passHref={true}>
+            <Text as="a" size="9">{item.title}</Text>
           </Link>
         </Flex.Row>
         <Text size="8" fontWeight="600" marginBottom="1rem">{price}</Text>

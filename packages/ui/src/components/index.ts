@@ -30,7 +30,6 @@ export { default as Meta } from './meta/meta';
 export { default as Modal } from './modal/modal';
 export { default as NavLink } from './nav-link/nav-link';
 export { default as Nav } from './nav/nav';
-export { default as PageLoader } from './page-loader/page-loader';
 export { default as Page } from './page/page';
 export { default as Pagination } from './pagination/pagination';
 export { default as Popover } from './popover/popover';
@@ -46,4 +45,3 @@ export { default as Tooltip } from './tooltip/tooltip';
 export { default as Transition } from './transition/transition';
 export * from './types';
 export * from './utils';
-

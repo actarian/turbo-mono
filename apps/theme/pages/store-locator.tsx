@@ -1,6 +1,6 @@
 import { SplitDefaults, StoreLocatorDefaults, StoreLocatorFeaturesDefaults, StoreLocatorSearchDefaults } from '@websolute/mock';
 import type { IFeatureType } from '@websolute/models';
-import { Footer, Header, Layout, Page, Split, StoreLocatorItem, StoreLocatorSearch } from '@websolute/ui';
+import { Footer, Header, Layout, Page, Split, StoreLocatorItem, StoreLocatorSearch, withPageTransition } from '@websolute/ui';
 import Head from 'next/head';
 
 const StoreLocator: React.FC<StoreLocatorProps> = ({ locale, country, items = [], featureTypes = [] }) => {
@@ -28,8 +28,6 @@ const StoreLocator: React.FC<StoreLocatorProps> = ({ locale, country, items = []
   )
 }
 
-export default StoreLocator;
-
 type StoreLocatorProps = {
   locale: string;
   country: { id: string, name: string },
@@ -53,3 +51,5 @@ export async function getStaticProps(): Promise<{ props: StoreLocatorProps }> {
     props,
   };
 }
+
+export default withPageTransition(StoreLocator);

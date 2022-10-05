@@ -38,37 +38,37 @@ const Footer: React.FC<FooterProps> = (props: FooterProps) => {
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8" color="var(--color-neutral-500)">Solutions</Text>
-              <Link href="/#marketing" passHref={true}><Button variant="nav" as="a">Marketing</Button></Link>
-              <Link href="/#analytics" passHref={true}><Button variant="nav" as="a">Analytics</Button></Link>
-              <Link href="/#commerce" passHref={true}><Button variant="nav" as="a">Commerce</Button></Link>
-              <Link href="/#insights" passHref={true}><Button variant="nav" as="a">Insights</Button></Link>
+              <Link href="/#marketing" passHref={true}><Button as="a" variant="nav">Marketing</Button></Link>
+              <Link href="/#analytics" passHref={true}><Button as="a" variant="nav">Analytics</Button></Link>
+              <Link href="/#commerce" passHref={true}><Button as="a" variant="nav">Commerce</Button></Link>
+              <Link href="/#insights" passHref={true}><Button as="a" variant="nav">Insights</Button></Link>
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8" color="var(--color-neutral-500)">Support</Text>
-              <Link href="/#pricing" passHref={true}><Button variant="nav" as="a">Pricing</Button></Link>
-              <Link href="/#documentation" passHref={true}><Button variant="nav" as="a">Documentation</Button></Link>
-              <Link href="/#guides" passHref={true}><Button variant="nav" as="a">Guides</Button></Link>
-              <Link href="/#api-status" passHref={true}><Button variant="nav" as="a">API Status</Button></Link>
+              <Link href="/#pricing" passHref={true}><Button as="a" variant="nav">Pricing</Button></Link>
+              <Link href="/#documentation" passHref={true}><Button as="a" variant="nav">Documentation</Button></Link>
+              <Link href="/#guides" passHref={true}><Button as="a" variant="nav">Guides</Button></Link>
+              <Link href="/#api-status" passHref={true}><Button as="a" variant="nav">API Status</Button></Link>
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8" color="var(--color-neutral-500)">Company</Text>
-              <Link href="/#about" passHref={true}><Button variant="nav" as="a">About</Button></Link>
-              <Link href="/#blog" passHref={true}><Button variant="nav" as="a">Blog</Button></Link>
-              <Link href="/#jobs" passHref={true}><Button variant="nav" as="a">Jobs</Button></Link>
-              <Link href="/#press" passHref={true}><Button variant="nav" as="a">Press</Button></Link>
-              <Link href="/#partners" passHref={true}><Button variant="nav" as="a">Partners</Button></Link>
+              <Link href="/#about" passHref={true}><Button as="a" variant="nav">About</Button></Link>
+              <Link href="/#blog" passHref={true}><Button as="a" variant="nav">Blog</Button></Link>
+              <Link href="/#jobs" passHref={true}><Button as="a" variant="nav">Jobs</Button></Link>
+              <Link href="/#press" passHref={true}><Button as="a" variant="nav">Press</Button></Link>
+              <Link href="/#partners" passHref={true}><Button as="a" variant="nav">Partners</Button></Link>
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8" color="var(--color-neutral-500)">Legal</Text>
-              <Link href="/#claim" passHref={true}><Button variant="nav" as="a">Claim</Button></Link>
-              <Link href="/#privacy" passHref={true}><Button variant="nav" as="a">Privacy</Button></Link>
-              <Link href="/#terms" passHref={true}><Button variant="nav" as="a">Terms</Button></Link>
+              <Link href="/#claim" passHref={true}><Button as="a" variant="nav">Claim</Button></Link>
+              <Link href="/#privacy" passHref={true}><Button as="a" variant="nav">Privacy</Button></Link>
+              <Link href="/#terms" passHref={true}><Button as="a" variant="nav">Terms</Button></Link>
             </Nav.Col>
           </Grid>
         </Grid.Row>
@@ -76,7 +76,9 @@ const Footer: React.FC<FooterProps> = (props: FooterProps) => {
           <Grid paddingTop="1rem">
             <Flex.Row justifyContent="space-between">
               <Text size="10" color="var(--color-neutral-500)">©{getYear()} websolute spa - PI 02063520411 - Capitale sociale Eur 194.084,34 i.v., REA PU</Text>
-              <Link href="https://www.websolute.com" target="_blank" passHref={true}><Button as="a"><Websolute /></Button></Link>
+              <Link href="https://www.websolute.com" target="_blank" passHref={true}>
+                <Button as="a"><Websolute /></Button>
+              </Link>
             </Flex.Row>
           </Grid>
         </Grid.Row>

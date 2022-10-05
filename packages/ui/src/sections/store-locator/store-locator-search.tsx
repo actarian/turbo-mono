@@ -18,7 +18,7 @@ import { RadioOption } from '../../forms';
 import Autocomplete from '../../forms/autocomplete/autocomplete';
 import { IAutocompleteItem } from '../../forms/autocomplete/autocomplete-context';
 import ContactCard from '../../sections/contact-card/contact-card';
-import Dots from './store-locator-dots';
+// import Dots from './store-locator-dots';
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '';
 const USE_CLUSTERER = false;
@@ -331,7 +331,7 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   return (
     <>
       <Section padding="2rem 0" position="relative" overflow="hidden">
-        {false && <Dots />}
+        {/* <Dots /> */}
         <Container position="relative" textAlign="center" maxWidthMd="80ch">
           <Text size="10" textTransform="uppercase">{item.category}</Text>
           <Text size="2" marginBottom="1rem" fontWeight="700">{item.title}</Text>

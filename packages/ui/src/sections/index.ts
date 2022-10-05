@@ -17,6 +17,13 @@ export { default as Footer } from './footer/footer';
 export { default as Header } from './header/header';
 export { default as Hero } from './hero/hero';
 export { default as Icons } from './icons/icons';
+export { default as MagazineRelated } from './magazine-related/magazine-related';
+export type { MagazineRelatedItem, MagazineRelatedProps } from './magazine-related/magazine-related';
+export { default as MagazineSearch } from './magazine-search/magazine-search';
+export { default as MagazineSearchCard } from './magazine-search/magazine-search-card';
+export type { MagazineSearchItem } from './magazine-search/magazine-search-card';
+export { default as MagazineSearchFilters } from './magazine-search/magazine-search-filters';
+export { default as MagazineSearchFiltersModal } from './magazine-search/magazine-search-filters-modal';
 export { default as ProductOverview } from './product-overview/product-overview';
 export { default as ProductOverviewGallery } from './product-overview/product-overview-gallery';
 export { default as ProductsHero } from './products-hero/products-hero';
@@ -47,5 +54,4 @@ export { default as StoreLocatorSearch } from './store-locator/store-locator-sea
 export type { StoreLocatorItem } from './store-locator/store-locator-search';
 export { default as SwiperHero } from './swiper-hero/swiper-hero';
 export { default as Typography } from './typography/typography';
-
 

@@ -2,11 +2,11 @@ import { BlogMoreDefaults, BlogPropositionDefaults, CategoriesPropositionDefault
 import {
   BlogMore, BlogProposition, CategoriesProposition,
   Container, Flex, Footer, Header, Layout, Media, MediaImage, Page, ProductsProposition,
-  Proposition, Section, Split, SwiperHero, Text
+  Proposition, Section, Split, SwiperHero, Text, withPageTransition
 } from '@websolute/ui';
 import Head from 'next/head';
 
-export default function Index() {
+const Index = () => {
   return (
     <>
       <Head>
@@ -58,3 +58,5 @@ export default function Index() {
     </>
   )
 }
+
+export default withPageTransition(Index);

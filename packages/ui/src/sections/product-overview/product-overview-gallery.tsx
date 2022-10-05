@@ -1,5 +1,5 @@
 import type { IMedia } from '@websolute/models';
-import { Card, Container, Flex, Grid, Media, MediaImage, Section } from '../../components';
+import { Card, Container, Flex, Grid, Media, Section } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
@@ -16,18 +16,14 @@ const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, ...prop
           <Grid sm={4} orderSm={4}>
             <Card aspectRatio={0.8} aspectRatioSm='auto' heightSm='100%' hoverable borderRadius="0.4rem">
               <Card.Background>
-                <Media rounded>
-                  <MediaImage {...media[0]} />
-                </Media>
+                <Media rounded item={media[0]} />
               </Card.Background>
             </Card>
           </Grid>
           <Grid sm={4}>
             <Card aspectRatio={0.8} aspectRatioSm='auto' heightSm='100%' hoverable>
               <Card.Background>
-                <Media rounded>
-                  <MediaImage {...media[1]} />
-                </Media>
+                <Media rounded item={media[1]} />
               </Card.Background>
             </Card>
           </Grid>
@@ -35,16 +31,12 @@ const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, ...prop
             <Flex.Col rowGap="2rem">
               <Card aspectRatio={4 / 3} hoverable>
                 <Card.Background>
-                  <Media rounded >
-                    <MediaImage {...media[2]} />
-                  </Media>
+                  <Media rounded item={media[2]} />
                 </Card.Background>
               </Card>
               <Card aspectRatio={4 / 3} hoverable>
                 <Card.Background>
-                  <Media rounded >
-                    <MediaImage {...media[3]} />
-                  </Media>
+                  <Media rounded item={media[3]} />
                 </Card.Background>
               </Card>
             </Flex.Col>

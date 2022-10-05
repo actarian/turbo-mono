@@ -7,7 +7,8 @@ import { useCallback, useState } from 'react';
 import { Box, Button, Container, Flex, Grid, InfiniteLoader, Nav, Popover, Section, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 import { CustomSelect } from '../../forms';
-import ProductsSearchCard, { ProductSearchItem } from './products-search-card';
+import type { ProductSearchItem } from './products-search-card';
+import ProductsSearchCard from './products-search-card';
 import ProductsSearchFilters from './products-search-filters';
 import ProductsSearchFiltersModal from './products-search-filters-modal';
 import ProductsSearchRecap from './products-search-recap';
@@ -139,7 +140,7 @@ const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, featureTypes, ..
               </Grid>
             ))}
             {true && hasMore &&
-              <Grid display="flex" justifyContent="center">
+              <Grid alignItems="center">
                 <Button variant="outline" onClick={onMore}>View More</Button>
               </Grid>
             }

@@ -8,13 +8,20 @@
   ],
   "scripts": {
     "dev": "turbo run dev --parallel --filter=!storybook",
+    "dev:web": "turbo run dev --parallel --filter=!storybook --filter=!theme",
+    "dev:theme": "turbo run dev --parallel --filter=!storybook --filter=!web",
+    "dev:stories": "turbo run dev --parallel --filter=!web --filter=!theme",
     "build": "turbo run build --filter=!storybook --filter=!theme",
+    "build:web": "turbo run build --filter=!storybook --filter=!theme",
     "build:theme": "turbo run build --filter=!storybook --filter=!web",
+    "build:stories": "turbo run build --filter=!web --filter=!theme",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "start": "turbo run start --scope=web",
     "serve": "turbo run start --scope=web",
+    "serve:web": "turbo run start --scope=web",
     "serve:theme": "turbo run start --scope=theme",
+    "serve:stories": "turbo run start --scope=storybook",
     "storybook": "turbo run dev --parallel --filter=storybook"
   },
   "dependencies": {

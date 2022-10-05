@@ -1,5 +1,5 @@
 import type { IMedia } from '@websolute/models';
-import { Button, Card, Container, Flex, Media, MediaImage, Section, Text } from '../../components';
+import { Button, Card, Container, Flex, Media, Section, Text } from '../../components';
 import type { UIComponentProps } from '../../components/types';
 
 type Props = {
@@ -21,9 +21,7 @@ const CategoryProposition: React.FC<CategoryPropositionProps> = ({ item }) => {
       <Container>
         <Card aspectRatio={1} aspectRatioSm={1.44} aspectRatioMd={1.87} aspectRatioLg={2.3} justifyContent="center" borderRadius="0.4rem">
           <Card.Background>
-            <Media overlay={0.7}>
-              <MediaImage {...item.media} />
-            </Media>
+            <Media overlay={0.7} item={item.media} />
           </Card.Background>
           <Card.Content>
             <Container.Fluid>

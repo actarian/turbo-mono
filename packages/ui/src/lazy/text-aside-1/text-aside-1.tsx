@@ -1,7 +1,10 @@
+import { getClassNames } from '@websolute/core';
+import dynamic from 'next/dynamic';
 import { Container, Flex, Grid, Section, Text } from '../../components';
+import type { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
-type TextAside1Props = {
-  type: 'text-aside-1';
+export interface TextAside1Item extends ILazyComponent {
+  schema: 'text-aside-1';
   description: string;
   aside: {
     title: string;
@@ -9,9 +12,14 @@ type TextAside1Props = {
   }[];
 };
 
-const TextAside1 = ({ item }: { item: TextAside1Props }) => {
+export interface TextAside1Props extends ILazyComponentProps {
+  item: TextAside1Item;
+}
+
+const TextAside1: React.FC<TextAside1Props> = ({ item }: TextAside1Props) => {
+  const classNames = getClassNames(item.schema);
   return (
-    <Section borderBottom="1px solid var(--color-neutral-300)">
+    <Section className={classNames} padding="6rem 0">
       <Container>
         <Grid.Row rowGap="3rem">
           <Grid sm={8}>
@@ -38,3 +46,7 @@ const TextAside1 = ({ item }: { item: TextAside1Props }) => {
 }
 
 export default TextAside1;
+
+export const TextAside1Export = {
+  'text-aside-1': dynamic<TextAside1Props>(() => import('../text-aside-1/text-aside-1')),
+};

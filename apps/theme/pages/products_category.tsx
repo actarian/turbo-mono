@@ -1,13 +1,13 @@
-import { CategoryHeroDefaults, CategoryPropositionDefaults, ProductsSearchDefaults, ProductsSearchFeaturesDefaults } from '@websolute/mock';
+import { CategoryPropositionDefaults, ProductsCategoryHeroDefaults, ProductsSearchDefaults, ProductsSearchFeaturesDefaults } from '@websolute/mock';
 import type { IFeatureType } from '@websolute/models';
 import type { ProductSearchItem } from '@websolute/ui';
 import {
   Breadcrumb, CategoryHero, CategoryProposition, Container, Footer, Header, Layout, Page,
-  ProductsSearch, Section
+  ProductsSearch, Section, withPageTransition
 } from '@websolute/ui';
 import Head from 'next/head';
 
-export default function ProductsCategory({ items = [], featureTypes = [] }) {
+const ProductsCategory = ({ items = [], featureTypes = [] }) => {
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ export default function ProductsCategory({ items = [], featureTypes = [] }) {
         <Page>
           <Header sticky />
 
-          <CategoryHero item={CategoryHeroDefaults.item} />
+          <CategoryHero item={ProductsCategoryHeroDefaults.item} />
 
           {false &&
             <Section borderBottom="1px solid var(--color-neutral-200)">
@@ -69,3 +69,5 @@ export async function getStaticProps(): Promise<{ props: ProductsSearchProps }> 
     props,
   };
 }
+
+export default withPageTransition(ProductsCategory);

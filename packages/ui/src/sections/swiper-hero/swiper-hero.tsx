@@ -3,7 +3,7 @@ import { ILink, IMedia } from '@websolute/models';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { SwiperProps } from 'swiper/react';
-import { Button, Card, Container, Grid, Media, MediaImage, Swiper, Text } from '../../components';
+import { Button, Card, Container, Grid, Media, Swiper, Text } from '../../components';
 
 const CardHero = styled(Card)`
   .media {
@@ -51,13 +51,7 @@ const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) => {
       {items.map((item, i) => (
         <CardHero key={i} justifyContent="flex-end" height="100vh" overflow="hidden">
           <Card.Background>
-            <Media className="media" overlay>
-              {item.media.type === 'video' ?
-                (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                  <source src={item.media.src} type="video/mp4"></source>
-                </video>) :
-                (<MediaImage {...item.media} alt={item.title} draggable={false} />)}
-            </Media>
+            <Media overlay item={item.media} />
           </Card.Background>
           <Card.Content>
             <Container.Fluid>
@@ -69,7 +63,7 @@ const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) => {
                   <Text size="6" marginBottom="1rem">{item.abstract}</Text>
                   {item.link &&
                     <Link href={item.link.href} passHref={true}>
-                      <Button variant="link" as="a"><Text>{item.link.title}</Text> <ArrowRight /></Button>
+                      <Button as="a" variant="link"><Text>{item.link.title}</Text> <ArrowRight /></Button>
                     </Link>}
                 </Grid>
               </Grid.Row>

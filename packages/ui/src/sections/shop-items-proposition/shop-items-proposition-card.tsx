@@ -1,7 +1,7 @@
 import { useCurrency } from '@websolute/hooks';
 import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
-import { Card, Flex, Media, MediaImage, Text } from '../../components';
+import { Card, Flex, Media, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
@@ -17,16 +17,14 @@ export type ShopItemsPropositionItem = {
   media: IMedia;
 }
 
-export type ShopItemsPropositionCardProps = UIStyledComponentProps<Props>;
+export type ShopItemsPropositionCardProps = UIStyledComponentProps<Props, 'a'>;
 
 const ShopItemsPropositionCard: React.FC<ShopItemsPropositionCardProps> = ({ item, ...props }: ShopItemsPropositionCardProps) => {
   const price = useCurrency(item.price);
   return (
-    <Link href={item.href}>
-      <Card {...props} hoverable>
-        <Media aspectRatio={4 / 3} aspectRatioMd={3 / 4} borderRadius="0.4rem" marginBottom="1rem">
-          <MediaImage {...item.media} />
-        </Media>
+    <Link href={item.href} passHref={true}>
+      <Card as="a" {...props} hoverable>
+        <Media aspectRatio={4 / 3} aspectRatioMd={3 / 4} borderRadius="0.4rem" marginBottom="1rem" item={item.media} />
         <Card.Content>
           <Flex.Row justifyContent="space-between">
             <Text size="8" fontWeight="700">{item.title}</Text>

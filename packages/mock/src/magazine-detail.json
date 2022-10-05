@@ -1,0 +1,211 @@
+{
+  "item": {
+    "id": 2,
+    "schema": "magazine_detail",
+    "href": "/magazine_detail",
+    "category": {
+      "href": "/magazine",
+      "title": "Talks"
+    },
+    "date": "2022-06-01T12:20:00.000Z",
+    "photographer": "Fotografie di Piergiorgio Sorgetti",
+    "title": "A talk with Maria Cristina Didero",
+    "abstract": "Curatrice, consulente e autrice indipendente di design, Maria Cristina Didero è stata nominata Curatorial Director di Design Miami 2022. Durante il nostro incontro, ci ha parlato di come si è sviluppata la sua passione per il design e del suo approccio personale, positivamente influenzato da un percorso di studi in ambito umanistico. Abbiamo parlato anche della nuova edizione della fiera, delle sezioni maggiormente significative e del ruolo ricoperto dell’esperienza digitale.",
+    "media": {
+      "type": "image",
+      "alt": "A talk with Maria Cristina Didero",
+      "src": "/assets/magazine_detail/8976_n_165A4739_880.jpg",
+      "zoom": "/assets/magazine_detail/8976_z_165A4739_2074.jpg",
+      "thumb": "/assets/magazine_detail/8976_t_165A4739_432.jpg"
+    },
+    "components": [
+      {
+        "schema": "media-media-1",
+        "id": 10328,
+        "medias": [
+          {
+            "type": "image",
+            "alt": "A talk with Maria Cristina Didero",
+            "src": "/assets/magazine_detail/8983_n_165A4072_880.jpg",
+            "zoom": "/assets/magazine_detail/8983_z_165A4072_2074.jpg",
+            "thumb": "/assets/magazine_detail/8983_t_165A4072_432.jpg"
+          },
+          {
+            "type": "image",
+            "alt": "A talk with Maria Cristina Didero",
+            "src": "/assets/magazine_detail/8984_n_165A4500880.jpg",
+            "zoom": "/assets/magazine_detail/8984_z_165A45002074.jpg",
+            "thumb": "/assets/magazine_detail/8984_t_165A4500432.jpg"
+          }
+        ]
+      },
+      {
+        "schema": "text-text-1",
+        "id": 10318,
+        "description": "<h4 class=\"h4\">Com’è nata e come si è sviluppata la tua passione per il design?</h4><p>Fin da bambina mi sono sempre circondata di oggetti strani e inusuali, domandandomi come fossero realizzarti. Mi piaceva utilizzarli in modi diversi, rispetto a quello per cui erano stati pensati.</p><p>Sono laureata in Lettere e Filosofia, nello specifico in Storia dell’Unione Sovietica, e ho iniziato a lavorare nel mondo del design conclusa l’università a Bologna. Credo che la mia formazione umanistica abbia influenzato molto il mio approccio al progetto: per quanto ami gli oggetti, le persone e la loro indagine sono fondamentali per me. Mi piace capire come nasce e perché viene realizzato un progetto, quali sono il pensiero all’origine e la fonte di ispirazione, la voce di chi l’ha pensato e realizzato. E poi mi piace che il design sia un lavoro collettivo.</p><h4 class=\"h4\">Sei curatrice, consulente e autrice indipendente di design a livello internazionale. Tra questi ruoli, ce n’è uno a cui ti senti particolarmente legata o nel quale ti rispecchi maggiormente?</h4><p>A prima vista sembrano mondi un po’ distanti, ma in realtà non lo sono affatto. Mi piace la parola curatore – o curatrice, in questo caso – perché richiama l‘idea del prendersi cura, accudire, creare e dare direzione. Penso che il curatore debba sempre camminare due passi dietro al progettista, che è la vera star – un po’ come faceva il principe Filippo con la Regina Elisabetta, per capirci. Sono anche convinta, però, che le idee migliori scaturiscano dal dialogo e dal confronto. E questo succede solo quando c’è più di un cervello in una stanza.</p><h4 class=\"h4\">Come descriveresti il tuo approccio personale?</h4><p>Come anticipato, la formazione umanistica mi ha portata a sviluppare un approccio olistico, attento prima alle persone e poi agli oggetti. Con le mie mostre, cerco sempre di raccontare storie di noi esseri umani attraverso gli oggetti; il rapporto con la religione con il libanese Carlo Massoud, quello con la sostenibilità con il design vegano di Erez Nevi Pana, il design e le relazioni interpersonali con Friends&Design.</p><p>Il design è una forza incomparabile ed eccezionale, capace di cambiare le nostre vite. Esiste per migliorare e ottimizzare le nostre risorse. Design significa pensiero, significa che un progetto è stato immaginato e realizzato secondo un preciso disegno mentale e fattuale. Non si può parlare di magia perché tutto è studiato nei minimi particolari, ma deve essere intrigante. Conosco progettisti affermati, che fanno questo lavoro da tempo, che ancora si emozionano alla nascita di una loro creazione, e conosco altrettante persone che si emozionano di fronte a un oggetto di cui non conoscevano l’esistenza.</p>"
+      },
+      {
+        "schema": "media-media-1",
+        "id": 10325,
+        "medias": [
+          {
+            "type": "image",
+            "alt": "A talk with Maria Cristina Didero",
+            "src": "/assets/magazine_detail/8980_n_165A4176_880.jpg",
+            "zoom": "/assets/magazine_detail/8980_z_165A4176_2074.jpg",
+            "thumb": "/assets/magazine_detail/8980_t_165A4176_432.jpg"
+          },
+          {
+            "type": "image",
+            "alt": "A talk with Maria Cristina Didero",
+            "src": "/assets/magazine_detail/8979_n_165A4042_880.jpg",
+            "zoom": "/assets/magazine_detail/8979_z_165A4042_2074.jpg",
+            "thumb": "/assets/magazine_detail/8979_t_165A4042_432.jpg"
+          }
+        ]
+      },
+      {
+        "schema": "text-1",
+        "id": 10320,
+        "description": "Mi piace capire come nasce e perché viene realizzato un progetto, quali sono il pensiero all’origine e la fonte di ispirazione, la voce di chi l’ha pensato e realizzato. E poi mi piace che il design sia un lavoro collettivo."
+      },
+      {
+        "schema": "text-text-1",
+        "id": 10322,
+        "description": "<h4 class=\"h4\">Quest’anno sei stata nominata curatrice di Design Miami che, proprio in occasione di questa nuova edizione, oltre a Basilea e Miami, si svolgerà per la prima volta anche a Parigi. Che cosa rappresenta e come è stato sviluppato il tema della fiera, The Golden Age?</h4><p>È la prima volta che Design Miami decide di mantenere lo stesso tema per più edizioni. È chiaro che l’età dell’oro di cui parlo è un auspicio, un desiderio, una direzione verso cui tutti dovremmo tendere. Questo tema era stato pensato lo scorso autunno, in risposta alla pandemia e alle restrizioni, quando si tentava di uscire da un lungo e articolato periodo dove eventi più grandi di noi ci avevano debilitato fortemente.</p><p>Senza dubbio, il domani è argomento di grande interesse. Dieci giorni dopo la chiusura della fiera di Basilea, inaugurerò una mostra al Museo di Arti Applicate di Amburgo, in Germania, intitolata “Ask Me If I Believe In The Future”. Domanda a cui hanno dato risposte positive quattro studi di progettazione: il duo veneto Zaven, gli Objects of Common Interest con base a New York, l’israeliano Erez Nevi Pana e la svizzera Caroline Niebling. È un quesito semplice che si sono posti in molti, ovviamente non solo con l’avvento della pandemia. Per quel che riguarda me, ho due bambine di sette mesi e quindi si, la mia risposta è: certo che credo nel futuro!</p><h4 class=\"h4\">C’è una sezione, tra quelle proposte per questa edizione, che trovi particolarmente significativa? Per quale motivo?</h4><p>Dopo averlo introdotto a Miami e Shangai, per la prima volta a Basilea presentiamo Podium: una mostra curata che esplicita il tema della fiera. Dato che è così ampio e aperto a diverse interpretazioni, abbiamo chiesto ai galleristi di lavorare insieme e proporci degli oggetti che, secondo loro, potessero essere in linea con la tematica – e siamo molto contenti delle proposte. La coralità è sempre un’arma potentissima.</p><h4 class=\"h4\">Cosa pensi di questo nuovo metodo di partecipazione che, complice la pandemia, ha preso sempre più piede nella realtà delle fiere?</h4><p>La mostra appena citata, The Golden Age, sarà visibile anche online. Inoltre, Design Miami dispone da tempo di un e-shop efficace ed esaustivo per argomenti, prodotti e curiosità. Dopo un biennio in cui la nostra attitudine al digitale si è impennata considerevolmente, penso che sia una risorsa di grande valore. In periodo di lockdown è stato di grande aiuto non solo per le economie, ma anche per condividere emozioni e, in alcuni casi, ha aiutato a risolvere situazioni limite. È uno strumento in più a nostra completa disposizione, ma penso comunque che la vita sia fuori, a contatto diretto con le persone.</p>"
+      },
+      {
+        "schema": "media-media-1",
+        "id": 10327,
+        "medias": [
+          {
+            "type": "image",
+            "alt": "A talk with Maria Cristina Didero",
+            "src": "/assets/magazine_detail/8981_n_165A4117_880.jpg",
+            "zoom": "/assets/magazine_detail/8981_z_165A4117_2074.jpg",
+            "thumb": "/assets/magazine_detail/8981_t_165A4117_432.jpg"
+          },
+          {
+            "type": "image",
+            "alt": "A talk with Maria Cristina Didero",
+            "src": "/assets/magazine_detail/8982_n_165A4626_2074.jpg",
+            "zoom": "/assets/magazine_detail/8982_n_165A4626_2074.jpg",
+            "thumb": "/assets/magazine_detail/8982_t_165A4626_432.jpg"
+          }
+        ]
+      },
+      {
+        "schema": "text-text-1",
+        "id": 10326,
+        "description": "<h4 class=\"h4\">Come hai scoperto Mutina? Che cosa ti piace di più dell’azienda?</h4><p>Mutina è un’azienda importante, che lavora con progettisti che stimo molto. Il primo contatto risale a diversi anni fa e aveva delle ragioni personali: ero alla ricerca di un prodotto di qualità, vicino alla mia sensibilità, per la cucina della mia casa in campagna…</p><h4 class=\"h4\">Qual è la tua collezione Mutina preferita? Per quale motivo?</h4><p>Questa è una domanda difficile perché ci sono diverse collezioni che trovo molto belle. Se proprio devo sceglierne una, allora è Phenomenon di Tokujin Yoshioka – che è un amico e una grande professionista di questo settore. La sua genialità dall’eleganza rara e la semplicità studiata nei minimi particolari costituiscono un’eccellenza a livello internazionale.</p><h4 class=\"h4\">Come la utilizzeresti?</h4><p>Userei questa texture per rivestire tutto il mio terrazzo, pavimento e parete esterna.</p>"
+      },
+      {
+        "schema": "media-media-1",
+        "id": 10324,
+        "medias": [
+          {
+            "type": "image",
+            "alt": "A talk with Maria Cristina Didero",
+            "src": "/assets/magazine_detail/8978_n_165A4024_880.jpg",
+            "zoom": "/assets/magazine_detail/8978_z_165A4024_2074.jpg",
+            "thumb": "/assets/magazine_detail/8978_t_165A4024_432.jpg"
+          },
+          {
+            "type": "image",
+            "alt": "A talk with Maria Cristina Didero",
+            "src": "/assets/magazine_detail/8977_n_165A4048_880.jpg",
+            "zoom": "/assets/magazine_detail/8977_z_165A4048_2074.jpg",
+            "thumb": "/assets/magazine_detail/8977_t_165A4048_432.jpg"
+          }
+        ]
+      },
+      {
+        "schema": "text-1",
+        "id": 10319,
+        "description": "Il design è una forza incomparabile ed eccezionale, capace di cambiare le nostre vite. Esiste per migliorare e ottimizzare le nostre risorse."
+      }
+    ],
+    "related": {
+      "id": 10323,
+      "schema": "magazine_related",
+      "title": "Continua a leggere",
+      "items": [
+        {
+          "id": 1,
+          "schema": "magazine_detail",
+          "href": "/magazine_detail",
+          "title": "A talk with Vincent Van Duysen",
+          "category": {
+            "title": "Talks"
+          },
+          "media": {
+            "type": "image",
+            "src": "/assets/magazine_detail/10036_n_VVD_2016_Fred Debrock_HR_2_final_BW_880.jpg",
+            "alt": "A talk with Vincent Van Duysen"
+          },
+          "date": "2022-09-22T12:20:00.000Z"
+        },
+        {
+          "id": 2,
+          "schema": "magazine_detail",
+          "href": "/magazine_detail",
+          "title": "A talk with Nicola Ricciardi",
+          "category": {
+            "title": "Talks"
+          },
+          "media": {
+            "type": "image",
+            "src": "/assets/magazine_detail/8966_n_P.S.AllaCarta_Ricciardi_Cover.jpg",
+            "alt": "A talk with Nicola Ricciardi"
+          },
+          "date": "2022-03-30T12:20:00.000Z"
+        },
+        {
+          "id": 3,
+          "schema": "magazine_detail",
+          "href": "/magazine_detail",
+          "title": "A talk with Chiara Rusconi",
+          "category": {
+            "title": "Talks"
+          },
+          "media": {
+            "type": "image",
+            "src": "/assets/magazine_detail/8458_n_Chiara_Rusconi_cover.jpg",
+            "alt": "A talk with Chiara Rusconi"
+          },
+          "date": "2022-02-24T12:20:00.000Z"
+        },
+        {
+          "id": 4,
+          "schema": "magazine_detail",
+          "href": "/magazine_detail",
+          "title": "A talk with Ginevra Bocini",
+          "category": {
+            "title": "Talks"
+          },
+          "media": {
+            "type": "image",
+            "src": "/assets/magazine_detail/8199_n_PS_AllaCartStudio_Bitossi_880.jpg",
+            "alt": "A talk with Ginevra Bocini"
+          },
+          "date": "2022-02-09T12:20:00.000Z"
+        },
+        {
+          "id": 5,
+          "schema": "magazine_detail",
+          "href": "/magazine_detail",
+          "title": "A talk with Shirana Shahbazi",
+          "category": {
+            "title": "Talks"
+          },
+          "media": {
+            "type": "image",
+            "src": "/assets/magazine_detail/8216_n_Mutina-StefaniaZanetti-Thisisnotaprize-3_880.jpg",
+            "alt": "A talk with Shirana Shahbazi"
+          },
+          "date": "2022-02-02T12:20:00.000Z"
+        }
+      ]
+    }
+  }
+}

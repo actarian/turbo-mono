@@ -62,22 +62,22 @@ const ContactCard: React.FC<ContactCardProps> = ({ item, ...props }: ContactCard
         {addressLine2 && <Text>{addressLine2}</Text>}
         <Nav.Col gap="0" paddingTop="2rem">
           {item.phoneNumber && <>
-            <Link href={getTelLink(item.phoneNumber)}>
-              <Button variant="link">
+            <Link href={getTelLink(item.phoneNumber)} passHref={true}>
+              <Button as="a" variant="link">
                 <Phone /> <span>{item.phoneNumber}</span>
               </Button>
             </Link>
           </>}
           {item.faxNumber && <>
-            <Link href={getFaxLink(item.faxNumber)}>
-              <Button variant="link">
+            <Link href={getFaxLink(item.faxNumber)} passHref={true}>
+              <Button as="a" variant="link">
                 <Phone /> <span>{item.faxNumber}</span>
               </Button>
             </Link>
           </>}
           {item.contactEmail && <>
-            <Link href={getMailToLink(item.contactEmail)}>
-              <Button variant="link">
+            <Link href={getMailToLink(item.contactEmail)} passHref={true}>
+              <Button as="a" variant="link">
                 <Phone /> <span>{item.contactEmail}</span>
               </Button>
             </Link>
@@ -86,8 +86,8 @@ const ContactCard: React.FC<ContactCardProps> = ({ item, ...props }: ContactCard
         {item.pressEmail && <>
           <Box paddingTop="1rem">
             <Text size="10" fontWeight="700">Press requests</Text>
-            <Link href={getMailToLink(item.pressEmail)}>
-              <Button variant="link">
+            <Link href={getMailToLink(item.pressEmail)} passHref={true}>
+              <Button as="a" variant="link">
                 <Phone /> <span>{item.pressEmail}</span>
               </Button>
             </Link>

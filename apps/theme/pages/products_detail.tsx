@@ -4,7 +4,7 @@ import { CategoryPropositionDefaults, ProductsDetailDefaults, ProductsRelatedDef
 import type { IMedia } from '@websolute/models';
 import type { ILazyComponent } from '@websolute/ui';
 import {
-  Button, Card, CategoryProposition, Container, Flex, Footer, Header, Layout, LazyLoader, Media, MediaImage, NavLink, Page, ProductsRelated, Section, ShopIncentive, Text
+  Button, Card, CategoryProposition, Container, Flex, Footer, Header, Layout, LazyLoader, Media, NavLink, Page, ProductsRelated, Section, ShopIncentive, Text, withPageTransition
 } from '@websolute/ui';
 
 import Head from 'next/head';
@@ -24,7 +24,7 @@ export type ProductsDetailItem = {
   components: ILazyComponent[];
 }
 
-export default function ProductsDetail({ item }: ProductsDetailProps) {
+const ProductsDetail = ({ item }: ProductsDetailProps) => {
   return (
     <>
       <Head>
@@ -41,7 +41,7 @@ export default function ProductsDetail({ item }: ProductsDetailProps) {
             <Container.Fluid>
               <Flex.Col alignItems="center">
                 <NavLink href={item.category.href} passHref={true}>
-                  <Button variant="nav" as="a" marginBottom="1rem">
+                  <Button as="a" variant="nav" marginBottom="1rem">
                     <ChevronLeft />
                     <Text size="10" fontWeight="700" textTransform="uppercase">{item.category.title}</Text>
                   </Button>
@@ -55,23 +55,10 @@ export default function ProductsDetail({ item }: ProductsDetailProps) {
 
           {false &&
             <>
-              <Media className="media" aspectRatio={16 / 10}>
-                {item.medias[0].type === 'video' ?
-                  (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                    <source src={item.medias[0].src} type="video/mp4"></source>
-                  </video>) :
-                  (<MediaImage {...item.medias[0]} alt={item.title} draggable={false} />)}
-              </Media>
-
+              <Media aspectRatio={16 / 10} item={item.medias[0]} />
               <Card justifyContent="center" height="50vh" overflow="hidden">
                 <Card.Background>
-                  <Media className="media">
-                    {item.medias[0].type === 'video' ?
-                      (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                        <source src={item.medias[0].src} type="video/mp4"></source>
-                      </video>) :
-                      (<MediaImage {...item.medias[0]} alt={item.title} draggable={false} />)}
-                  </Media>
+                  <Media item={item.medias[0]} />
                 </Card.Background>
               </Card>
 
@@ -80,7 +67,6 @@ export default function ProductsDetail({ item }: ProductsDetailProps) {
               <ProductsRelated items={ProductsRelatedDefaults.items} />
 
               <CategoryProposition item={CategoryPropositionDefaults.item} />
-
             </>
           }
 
@@ -104,3 +90,5 @@ export async function getStaticProps(): Promise<{ props: ProductsDetailProps }> 
     props,
   };
 }
+
+export default withPageTransition(ProductsDetail);

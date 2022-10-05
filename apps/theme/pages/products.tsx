@@ -1,13 +1,13 @@
 import { CategoriesPropositionDefaults, CategoryPropositionDefaults, ProductsHeroDefaults, ProductsPropositionDefaults } from '@websolute/mock';
 import {
   CategoriesProposition, CategoryProposition, Footer, Header,
-  Layout, Page, ProductsHero, ProductsProposition
+  Layout, Page, ProductsHero, ProductsProposition, withPageTransition
 } from '@websolute/ui';
 import Head from 'next/head';
 
 // !!! unused, header menu goes directly to products_category
 
-export default function Products() {
+const Products = () => {
   return (
     <>
       <Head>
@@ -34,3 +34,5 @@ export default function Products() {
     </>
   )
 }
+
+export default withPageTransition(Products);

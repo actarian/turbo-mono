@@ -5,6 +5,7 @@ export { useClickAnyWhere } from './useClickAnyWhere/useClickAnyWhere';
 export { useClickOut } from './useClickOut/useClickOut';
 export { useCurrency } from './useCurrency/useCurrency';
 export { useCurrentState } from './useCurrentState/useCurrentState';
+export { useDateTimeFormat } from './useDateTimeFormat/useDateTimeFormat';
 export { useDebounce } from './useDebounce/useDebounce';
 export { useDebugChangedProps } from './useDebugChangedProps/useDebugChangedProps';
 export { useDomObserver } from './useDomObserver/useDomObserver';

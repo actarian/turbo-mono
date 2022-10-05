@@ -1,21 +1,27 @@
+import { getClassNames } from '@websolute/core';
 import { IMedia } from '@websolute/models';
-import { Media, MediaImage } from '../../components';
+import dynamic from 'next/dynamic';
+import { Media } from '../../components';
+import type { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
-type MediaFull1Props = {
-  type: 'media-full-1';
+export interface MediaFull1Item extends ILazyComponent {
+  schema: 'media-full-1';
   media: IMedia;
 };
 
-const MediaFull1 = ({ item }: { item: MediaFull1Props }) => {
+export interface MediaFull1Props extends ILazyComponentProps {
+  item: MediaFull1Item;
+}
+
+const MediaFull1: React.FC<MediaFull1Props> = ({ item }: MediaFull1Props) => {
+  const classNames = getClassNames('media', item.schema);
   return (
-    <Media className="media" aspectRatio={16 / 10}>
-      {item.media.type === 'video' ?
-        (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
-          <source src={item.media.src} type="video/mp4"></source>
-        </video>) :
-        (<MediaImage {...item.media} alt={item.media.alt} draggable={false} />)}
-    </Media>
+    <Media className={classNames} aspectRatio={16 / 10} item={item.media} />
   );
 }
 
 export default MediaFull1;
+
+export const MediaFull1Export = {
+  'media-full-1': dynamic<MediaFull1Props>(() => import('../media-full-1/media-full-1')),
+};

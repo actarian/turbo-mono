@@ -19,7 +19,7 @@
     },
     "components": [
       {
-        "type": "media-full-1",
+        "schema": "media-full-1",
         "title": "Azulej by Patricia Urquiola",
         "media": {
           "src": "/assets/products_detail/hero.jpg",
@@ -28,7 +28,7 @@
         }
       },
       {
-        "type": "text-aside-1",
+        "schema": "text-aside-1",
         "description": "<p>Azulej è volta a rivalorizzare la memoria delle antiche maioliche artigianali e del cemento idraulico, sperimentando una tecnica di stampa innovativa orientata verso un prodotto di larga diffusione. Questa tradizione – rivisitata in chiave contemporanea – viene realizzata serialmente in formato 20x20 cm.</p> <p>La composizione riprende le caratteristiche della tecnica patchwork: un mix and match innovativo, volutamente casuale, che abbina disegni astratti e colori non saturi, neutri, appena consumati; colori che si fissano al materiale di supporto in modo naturalmente irregolare.</p>",
         "aside": [
           {
@@ -47,7 +47,7 @@
         ]
       },
       {
-        "type": "media-full-2",
+        "schema": "media-full-2",
         "title": "Azulej Bianco: Cubo, Trevo, Estrela, Flores, Renda",
         "media": {
           "src": "/assets/products_detail/full.jpg",
@@ -56,7 +56,7 @@
         }
       },
       {
-        "type": "text-media-1",
+        "schema": "text-media-1",
         "abstract": "In questo modo i pattern di Azulej combinano linguaggi volutamente diversi: memoria, geometrie, pixel, sviluppati sia in senso longitudinale che diagonale. Un risultato unico e sorprendente, che regala libertà compositiva e unicità di disegno, mantenendo intatte le caratteristiche del ‘fatto a mano’, con le prestazioni di un materiale ad alta tecnologia adatto sia a pavimenti che a rivestimenti.",
         "media": {
           "src": "/assets/products_detail/detail.jpg",
@@ -65,7 +65,7 @@
         }
       },
       {
-        "type": "media-full-2",
+        "schema": "media-full-2",
         "title": "Azulej Bianco: Trama, Trevo, Estrela",
         "media": {
           "src": "/assets/products_detail/full-02.jpg",
@@ -74,7 +74,7 @@
         }
       },
       {
-        "type": "carousel-1",
+        "schema": "carousel-1",
         "title": "In use",
         "items": [
           {
@@ -128,9 +128,9 @@
         ]
       },
       {
-        "type": "text-media-1",
+        "schema": "text-media-1",
         "title": "Patricia Urquiola",
-        "abstract": "Architetta e designer spagnola, ma italiana di adozione, fa parte del team Mutina dal 2008. Ha disegnato numerose collezioni, tra cui: la serie <a href=\"https://www.mutina.it/it/collection/dechirer-by-patricia-urquiola\">Déchirer</a>, <a href=\"https://www.mutina.it/it/collezioni/bas-relief-by-patricia-urquiola\">Bas-Relief</a>, <a href=\"https://www.mutina.it/it/collezioni/azulej-by-patricia-urquiola\">Azulej</a>, <a href=\"https://www.mutina.it/it/collezioni/tierras-by-patricia-urquiola\">Tierras</a>, <a href=\"https://www.mutina.it/it/collezioni/dechirer-xl-by-patricia-urquiola\">Déchirer XL</a>,&nbsp;<a href=\"https://www.mutina.it/it/3d-elements/celosia-by-patricia-urquiola\">Celosia</a>&nbsp;ed <a href=\"https://www.mutina.it/it/mutina-shop/editions/el-lobo-by-patricia-urquiola\">El Lobo</a>.",
+        "abstract": "Architetta e designer spagnola, ma italiana di adozione, fa parte del team Hexagon dal 2008. Ha disegnato numerose collezioni, tra cui: la serie <a href=\"/it/collection/dechirer-by-patricia-urquiola\">Déchirer</a>, <a href=\"/it/collezioni/bas-relief-by-patricia-urquiola\">Bas-Relief</a>, <a href=\"/it/collezioni/azulej-by-patricia-urquiola\">Azulej</a>, <a href=\"/it/collezioni/tierras-by-patricia-urquiola\">Tierras</a>, <a href=\"/it/collezioni/dechirer-xl-by-patricia-urquiola\">Déchirer XL</a>,&nbsp;<a href=\"/it/3d-elements/celosia-by-patricia-urquiola\">Celosia</a>&nbsp;ed <a href=\"/it/shop/editions/el-lobo-by-patricia-urquiola\">El Lobo</a>.",
         "description": "“Con la collezione Azulej volevamo dare nuovo valore alla memoria del cemento idraulico. Un processo sviluppatosi in modo esponenziale, dove abbiamo voluto abbozzare soltanto le prime combinazioni di una lunga serie. E ora, it’s up to you!”",
         "media": {
           "src": "/assets/products_detail/designer.jpg",
@@ -138,7 +138,7 @@
         }
       },
       {
-        "type": "sizes-colors-1",
+        "schema": "sizes-colors-1",
         "title": "Size & Color",
         "list": [
           {
@@ -174,7 +174,7 @@
         ]
       },
       {
-        "type": "download-1",
+        "schema": "download-1",
         "title": "Download",
         "links": [
           {
@@ -211,7 +211,7 @@
         ]
       },
       {
-        "type": "related-1",
+        "schema": "related-1",
         "title": "You may also like",
         "items": [
           {

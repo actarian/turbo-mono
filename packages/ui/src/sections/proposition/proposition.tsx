@@ -17,11 +17,11 @@ const Proposition: React.FC<PropositionProps> = (props: PropositionProps) => {
         <Container>
           <Flex.Col justifyContent="center" alignItems="center">
             <Text size="3" fontWeight="700" marginBottom="2rem">Prow scuttle parrel provost Sail.</Text>
-            <Link href="https://design-system-ruddy.vercel.app" target="_blank">
-              <Button variant="primary" as="a" marginBottom="1rem" onClick={() => onOpenModal('foreign-market')}>Read documentation</Button>
+            <Link href="https://design-system-ruddy.vercel.app" target="_blank" passHref={true}>
+              <Button as="a" variant="primary" marginBottom="1rem" onClick={() => onOpenModal('foreign-market')}>Read documentation</Button>
             </Link>
-            <Link href="https://github.com/actarian/design-system" target="_blank">
-              <Button variant="link" as="a" onClick={() => onOpenDrawer('cart')}>view on GitHub</Button>
+            <Link href="https://github.com/actarian/design-system" target="_blank" passHref={true}>
+              <Button as="a" variant="link" onClick={() => onOpenDrawer('cart')}>view on GitHub</Button>
             </Link>
           </Flex.Col>
         </Container>

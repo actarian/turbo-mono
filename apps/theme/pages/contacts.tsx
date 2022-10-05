@@ -2,11 +2,11 @@ import { BlogMoreDefaults, BlogPropositionDefaults, ContactDefaults, ContactHero
 import {
   Accordion, BlogMore, BlogProposition, ContactCard, ContactCardItem, ContactForm, ContactHero,
   Container, Divider, Flex, Footer, Grid, Header, Layout, Media, MediaImage, Page, Section, Split,
-  Tabs, Text
+  Tabs, Text, withPageTransition
 } from '@websolute/ui';
 import Head from 'next/head';
 
-export default function Contact() {
+const Contacts = () => {
 
   const items: ContactCardItem[] = ContactDefaults;
 
@@ -129,3 +129,5 @@ export default function Contact() {
     </>
   )
 }
+
+export default withPageTransition(Contacts);

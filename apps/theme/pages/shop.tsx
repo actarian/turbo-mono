@@ -1,11 +1,11 @@
 import { CategoriesPropositionDefaults, CategoryPropositionDefaults, ShopHeroDefaults, ShopItemsPropositionDefaults } from '@websolute/mock';
 import {
   CategoriesProposition, CategoryProposition, Footer, Header,
-  Layout, Page, ShopHero, ShopItemsProposition
+  Layout, Page, ShopHero, ShopItemsProposition, withPageTransition
 } from '@websolute/ui';
 import Head from 'next/head';
 
-export default function ShopIndex() {
+const Shop = () => {
   return (
     <>
       <Head>
@@ -33,3 +33,5 @@ export default function ShopIndex() {
     </>
   )
 }
+
+export default withPageTransition(Shop);

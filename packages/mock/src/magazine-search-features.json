@@ -1,0 +1,38 @@
+[
+  {
+    "id": "category",
+    "schema": "featureType",
+    "title": "Category",
+    "mode": "select",
+    "features": [
+      {
+        "id": "Art",
+        "title": "Art"
+      },
+      {
+        "id": "Diary",
+        "title": "Diary"
+      },
+      {
+        "id": "Events",
+        "title": "Events"
+      },
+      {
+        "id": "Inside",
+        "title": "Inside"
+      },
+      {
+        "id": "Library",
+        "title": "Library"
+      },
+      {
+        "id": "Places",
+        "title": "Places"
+      },
+      {
+        "id": "Talks",
+        "title": "Talks"
+      }
+    ]
+  }
+]

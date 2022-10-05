@@ -35,8 +35,8 @@ const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...prop
 
   return (
     <Card {...props} hoverable>
-      <Link href={item.href}>
-        <Media aspectRatio={1} borderRadius="0.4rem" marginBottom="1rem" overlay>
+      <Link href={item.href} passHref={true}>
+        <Media as="a" aspectRatio={1} borderRadius="0.4rem" marginBottom="1rem" overlay>
           <MediaImage {...item.media} />
           <Media.Info padding="1rem" justifyContent="flex-end" alignItems="flex-end">
             <Text size="8">{price}</Text>
@@ -45,8 +45,8 @@ const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...prop
       </Link>
       <Card.Content>
         <Flex.Row justifyContent="space-between">
-          <Link href={item.href}>
-            <Text size="9" fontWeight="700">{item.title}</Text>
+          <Link href={item.href} passHref={true}>
+            <Text as="a" size="9" fontWeight="700">{item.title}</Text>
           </Link>
         </Flex.Row>
         <Text size="9" marginBottom="2rem">{item.abstract}</Text>

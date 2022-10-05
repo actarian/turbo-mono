@@ -2,7 +2,7 @@ import { IEquatable } from '@websolute/core';
 import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Button, Card, Flex, Media, MediaImage, Text } from '../../components';
+import { Button, Card, Flex, Media, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
@@ -19,11 +19,18 @@ export type ProductSearchItem = {
   colors: IEquatable[];
 }
 
-export type ProductsRelatedCardProps = UIStyledComponentProps<Props>;
+export type ProductsSearchCardProps = UIStyledComponentProps<Props>;
 
 const StyledCard = styled(Card)`
   .media{
-    &>*{
+    .image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      object-fit: cover;
+
       &:not(:first-child) {
         opacity: 0!important;
       }
@@ -31,22 +38,18 @@ const StyledCard = styled(Card)`
   }
   &:hover {
     .media {
-      &>:nth-child(2) {
+      .image:nth-child(2) {
           opacity: 1!important;
       }
     }
   }
 `;
 
-const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...props }: ProductsRelatedCardProps) => {
+const ProductsSearchCard: React.FC<ProductsSearchCardProps> = ({ item, ...props }: ProductsSearchCardProps) => {
   return (
     <StyledCard {...props} hoverable>
       <Link href={item.href} passHref={true}>
-        <Media aspectRatio={1} borderRadius="0.4rem" marginBottom="0.5rem">
-          {item.medias.map((media, i) => (
-            <MediaImage key={i} {...media} />
-          ))}
-        </Media>
+        <Media as="a" aspectRatio={1} borderRadius="0.4rem" marginBottom="0.5rem" item={item.medias} />
       </Link>
       <Card.Content>
         <Flex.Row justifyContent="space-between">
@@ -59,4 +62,4 @@ const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...prop
   )
 }
 
-export default ProductsRelatedCard;
+export default ProductsSearchCard;

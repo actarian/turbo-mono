@@ -1,6 +1,6 @@
 import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
-import { Card, Media, MediaImage, Text } from '../../components';
+import { Card, Media, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
@@ -14,16 +14,14 @@ export type CategoriesPropositionItem = {
   media: IMedia;
 }
 
-export type CategoriesPropositionCardProps = UIStyledComponentProps<Props>;
+export type CategoriesPropositionCardProps = UIStyledComponentProps<Props, 'a'>;
 
 const CategoriesPropositionCard: React.FC<CategoriesPropositionCardProps> = ({ item, ...props }: CategoriesPropositionCardProps) => {
   return (
-    <Link href={item.href}>
-      <Card aspectRatio={2 / 1} {...props} hoverable borderRadius="0.4rem" justifyContent="flex-end">
+    <Link href={item.href} passHref={true}>
+      <Card as="a" aspectRatio={2 / 1} {...props} hoverable borderRadius="0.4rem" justifyContent="flex-end">
         <Card.Background>
-          <Media overlay>
-            <MediaImage {...item.media} />
-          </Media>
+          <Media overlay item={item.media} />
         </Card.Background>
         <Card.Content padding="1rem" justifyContent="flex-end">
           <Text size="8" fontWeight="700">{item.title}</Text>

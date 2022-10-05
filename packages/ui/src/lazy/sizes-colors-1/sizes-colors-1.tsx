@@ -1,8 +1,11 @@
+import { getClassNames } from '@websolute/core';
 import { IMedia } from '@websolute/models';
-import { Box, Button, Container, Flex, Grid, Media, MediaImage, Section, Text } from '../../components';
+import dynamic from 'next/dynamic';
+import { Box, Button, Container, Flex, Grid, Media, Section, Text } from '../../components';
+import type { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
-type SizesColors1Props = {
-  type: 'sizes-colors-1';
+export interface SizesColors1Item extends ILazyComponent {
+  schema: 'sizes-colors-1';
   title: string;
   list: {
     title: string;
@@ -11,9 +14,14 @@ type SizesColors1Props = {
   medias: IMedia[];
 };
 
-const SizesColors1 = ({ item }: { item: SizesColors1Props }) => {
+export interface SizesColors1Props extends ILazyComponentProps {
+  item: SizesColors1Item;
+}
+
+const SizesColors1: React.FC<SizesColors1Props> = ({ item }: SizesColors1Props) => {
+  const classNames = getClassNames(item.schema);
   return (
-    <Section borderBottom="1px solid var(--color-neutral-300)">
+    <Section className={classNames} padding="6rem 0">
       <Container>
         <Grid.Row rowGap="3rem">
           <Grid sm={6} justifyContent="center">
@@ -29,14 +37,7 @@ const SizesColors1 = ({ item }: { item: SizesColors1Props }) => {
           </Grid>
           <Grid sm={6} alignItems="center" justifyContent="center" gap="2rem">
             <Box width="100%" maxWidth="300px">
-              <Media className="media" aspectRatio={1}>
-                {item.medias.map((media, m) => media.type === 'video' ?
-                  (<video key={m} playsInline={true} autoPlay={true} muted={true} loop={true}>
-                    <source src={media.src} type="video/mp4"></source>
-                  </video>) :
-                  (<MediaImage key={m} {...media} alt={media.alt} draggable={false} />)
-                )}
-              </Media>
+              <Media aspectRatio={1} item={item.medias} />
             </Box>
             <Button variant="outline">Vedi tutti i colori</Button>
           </Grid>
@@ -47,3 +48,7 @@ const SizesColors1 = ({ item }: { item: SizesColors1Props }) => {
 }
 
 export default SizesColors1;
+
+export const SizesColors1Export = {
+  'sizes-colors-1': dynamic<SizesColors1Props>(() => import('../sizes-colors-1/sizes-colors-1')),
+};

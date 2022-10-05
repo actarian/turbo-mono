@@ -31,9 +31,7 @@ const Split: React.FC<SplitProps> = ({ item }: SplitProps) => {
       <Container.Fluid>
         <Card borderRadius="0.4rem" overflow="hidden">
           <Card.Background>
-            <Media overlay={0.3}>
-              <MediaImage {...item.media} />
-            </Media>
+            <Media overlay={0.3} item={item.media} />
             {false &&
               <Media overlay={0.2} backgroundColor="var(--color-neutral-500)">
                 <MediaImage {...item.media} style={{ mixBlendMode: 'multiply' }} />
@@ -47,8 +45,8 @@ const Split: React.FC<SplitProps> = ({ item }: SplitProps) => {
                 <Text size="3" marginBottom="0.5rem">{item.title}</Text>
                 <Text size="7" marginBottom="3rem" maxWidthSm="40ch">{item.abstract}</Text>
                 {item.link &&
-                  <Link href={item.link.href}>
-                    <Button variant="secondary"><span>{item.link.label}</span> <PhoneCall /></Button>
+                  <Link href={item.link.href} passHref={true}>
+                    <Button as="a" variant="secondary"><span>{item.link.label}</span> <PhoneCall /></Button>
                   </Link>
                 }
               </Card.Content>

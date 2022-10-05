@@ -1,14 +1,10 @@
+import { getClassNames } from '@websolute/core';
+import type { IMedia as IMediaItem } from '@websolute/models';
+import { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
+import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getAspectResponsive, getCssResponsive } from '../../components/utils';
-
-type Props = {
-  circle?: boolean;
-  rounded?: boolean;
-  overlay?: boolean | number;
-};
-
-export type MediaProps = UIStyledComponentProps<Props>;
+import MediaImage from './media-image';
 
 const StyledMediaInfo = styled.div`
   position: absolute;
@@ -27,10 +23,22 @@ const StyledMediaInfo = styled.div`
 export type MediaInfoProps = UIStyledComponentProps;
 
 const MediaInfo = ({ children, className, ...props }: MediaInfoProps) => {
-  return (<StyledMediaInfo className="media-info" {...props}>{children}</StyledMediaInfo>);
+  const classNames = getClassNames(className, 'media-info');
+  return (<StyledMediaInfo className={classNames} {...props}>{children}</StyledMediaInfo>);
 }
 
-const Media = styled.div<MediaProps>`
+type Props = {
+  circle?: boolean;
+  rounded?: boolean;
+  overlay?: boolean | number;
+  item?: IMediaItem | IMediaItem[];
+};
+
+export type MediaProps = UIStyledComponentProps<Props>;
+
+export type MediaComponent<C extends React.ElementType = 'div'> = UIComponentWithRef<C, Props>;
+
+const StyledMedia = styled.div<MediaProps>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -86,6 +94,14 @@ const Media = styled.div<MediaProps>`
   `) : ''}
 `;
 
+const Media: MediaComponent = forwardRef(({ children, item, className, as = 'div', ...props }, ref) => {
+  const classNames = getClassNames(className, 'media');
+  const mediaChildren = (item && !children) ? getMediaItems(item) : children;
+  return (<StyledMedia className={classNames} ref={ref} as={as} {...props}>{mediaChildren}</StyledMedia>);
+});
+
+Media.displayName = 'Media';
+
 (Media as IMedia).Info = MediaInfo;
 
 export default Media as IMedia;
@@ -94,6 +110,13 @@ type IMedia = typeof Media & {
   Info: typeof MediaInfo;
 };
 
-Media.defaultProps = {
-  className: 'media',
-};
+function getMediaItems(itemOrItems: IMediaItem | IMediaItem[]) {
+  const items = Array.isArray(itemOrItems) ? itemOrItems : [itemOrItems];
+  return (
+    items.map((media, m) => media.type === 'video' ?
+      (<video key={m} playsInline={true} autoPlay={true} muted={true} loop={true}>
+        <source src={media.src} type="video/mp4"></source>
+      </video>) :
+      (<MediaImage key={m} {...media} alt={media.alt} draggable={false} />)
+    ));
+}

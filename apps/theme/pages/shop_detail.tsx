@@ -2,7 +2,7 @@ import { CategoryPropositionDefaults, ProductDefaults, ProductsRelatedDefaults }
 import type { IMedia } from '@websolute/models';
 import {
   Breadcrumb, CategoryProposition, Container, Footer, Header, Layout, Page,
-  ProductOverview, ProductsRelated, Section, ShopIncentive
+  ProductOverview, ProductsRelated, Section, ShopIncentive, withPageTransition
 } from '@websolute/ui';
 import Head from 'next/head';
 
@@ -21,7 +21,7 @@ type Props = {
   item: ShopDetailItem
 }
 
-export default function ShopDetail({ item, ...props }: Props) {
+const ShopDetail = ({ item, ...props }: Props) => {
   return (
     <>
       <Head>
@@ -63,3 +63,5 @@ export default function ShopDetail({ item, ...props }: Props) {
 }
 
 ShopDetail.defaultProps = ProductDefaults;
+
+export default withPageTransition(ShopDetail);

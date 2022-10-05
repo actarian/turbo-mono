@@ -1,0 +1,10 @@
+{
+  "item": {
+    "id": 1,
+    "title": "Our tiles collection",
+    "media": {
+      "type": "image",
+      "src": "/assets/category/hero.jpg"
+    }
+  }
+}

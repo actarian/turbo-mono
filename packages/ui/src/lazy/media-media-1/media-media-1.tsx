@@ -1,0 +1,38 @@
+import { getClassNames } from '@websolute/core';
+import type { IMedia } from '@websolute/models';
+import dynamic from 'next/dynamic';
+import { Container, Grid, Media, Section, Text } from '../../components';
+import type { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
+
+export interface MediaMedia1Item extends ILazyComponent {
+  schema: 'media-media-1';
+  medias: IMedia[];
+};
+
+export interface MediaMedia1Props extends ILazyComponentProps {
+  item: MediaMedia1Item;
+}
+
+const MediaMedia1: React.FC<MediaMedia1Props> = ({ item }: MediaMedia1Props) => {
+  const classNames = getClassNames(item.schema);
+  return (
+    <Section className={classNames} padding="6rem 0">
+      <Container.Fluid>
+        <Grid.Row rowGap="3rem">
+          {item.medias.map((media, i) => (
+            <Grid key={i} sm={6} justifyContent="center">
+              <Media item={media} />
+              {media.alt && <Text size="8" marginTop="1rem">{media.alt}</Text>}
+            </Grid>
+          ))}
+        </Grid.Row>
+      </Container.Fluid>
+    </Section>
+  );
+}
+
+export default MediaMedia1;
+
+export const MediaMedia1Export = {
+  'media-media-1': dynamic<MediaMedia1Props>(() => import('../media-media-1/media-media-1')),
+};
