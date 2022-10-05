@@ -37,6 +37,15 @@ cd my-turborepo
 npm run build
 ```
 
+### Container
+
+To build apps/web Docker image, run the following command:
+
+```
+cd my-turborepo
+docker build -t ws.bom.mixer.web:latest .
+```
+
 ### Develop
 
 To develop all apps and packages, run the following command:
