@@ -39,7 +39,7 @@ const ContactHero: React.FC<ContactHeroProps> = ({ item }: ContactHeroProps) => 
                 </Tooltip> <span>production technologies.</span>
               </Text>
               <Flex.Responsive>
-                <Link href="/store-locator" passHref={true}>
+                <Link href="/store-locator" passHref>
                   <Button as="a" variant="primary"><span>Search dealers</span> <Search /></Button>
                 </Link>
                 <Button as="a" href="#contact-request" variant="secondary" onClick={scrollTo}><span>Contact Us</span> <Send /></Button>

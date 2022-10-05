@@ -31,7 +31,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ item, ...props }: BlogCardProps) =>
     day: 'numeric'
   });
   return (
-    <Link href={item.href} passHref={true}>
+    <Link href={item.href} passHref>
       <Card as="a" height="100%" hoverable {...props}>
         <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} borderRadius="0.4rem" marginBottom="1rem" item={item.media} />
         <Card.Content flex="1">
@@ -46,7 +46,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ item, ...props }: BlogCardProps) =>
               <Text size="8" fontWeight="700">{item.author.fullName}</Text>
             </Flex>
             {false &&
-              <Link href={item.href} passHref={true}>
+              <Link href={item.href} passHref>
                 <Button as="a" variant="link"><Text>Read more</Text> <ArrowRight /></Button>
               </Link>
             }

@@ -45,7 +45,7 @@ const Split: React.FC<SplitProps> = ({ item }: SplitProps) => {
                 <Text size="3" marginBottom="0.5rem">{item.title}</Text>
                 <Text size="7" marginBottom="3rem" maxWidthSm="40ch">{item.abstract}</Text>
                 {item.link &&
-                  <Link href={item.link.href} passHref={true}>
+                  <Link href={item.link.href} passHref>
                     <Button as="a" variant="secondary"><span>{item.link.label}</span> <PhoneCall /></Button>
                   </Link>
                 }

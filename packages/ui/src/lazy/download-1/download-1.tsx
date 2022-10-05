@@ -23,7 +23,7 @@ const Download1: React.FC<Download1Props> = ({ item }: Download1Props) => {
         <Flex.Col>
           {item.title && <Text size="3" marginBottom="3rem" textAlign="center">{item.title}</Text>}
           {item.links.map((link, l) => (
-            <NavLink href={link.href} key={l} passHref={true}>
+            <NavLink href={link.href} key={l} passHref>
               <Button as="a" variant="secondary">
                 <Flex.Row width="100%">
                   {link.secure && <Lock />}

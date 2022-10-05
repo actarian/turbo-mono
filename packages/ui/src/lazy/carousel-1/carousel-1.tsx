@@ -65,7 +65,7 @@ const Carousel1: React.FC<Carousel1Props & SwiperProps> = ({ item, ...props }: C
         {items.map((item, i) => (
           <SwiperSlide key={i} virtualIndex={i} style={{ width: '60vw' }}>
             <StyledCard width="60vw" hoverable>
-              <Link href={item.href} passHref={true}>
+              <Link href={item.href} passHref>
                 <Media as="a" aspectRatio={16 / 9} item={item.media} />
               </Link>
               {item.title &&

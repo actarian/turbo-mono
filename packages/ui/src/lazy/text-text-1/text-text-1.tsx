@@ -17,7 +17,7 @@ const TextText1: React.FC<TextText1Props> = ({ item }: TextText1Props) => {
   return (
     <Section className={classNames} padding="6rem 0">
       <Container>
-        <Box columnCount={2} columnGap="var(--grid-column-gap)">
+        <Box columnCount={1} columnCountSm={2} columnGap="var(--grid-column-gap)">
           {item.description && <Text size="8" lineHeight="2" dangerouslySetInnerHTML={{ __html: item.description }} />}
         </Box>
       </Container>

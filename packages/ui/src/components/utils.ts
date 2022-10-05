@@ -139,13 +139,34 @@ export function isChildElement(parent: Element | null | undefined, child: Elemen
   return false;
 }
 
-export function getChildsByType(children: ReactNode | undefined, child: React.ElementType): [ReactNode | undefined, ReactNode | undefined] {
+export function mapChildsByType(
+  children: ReactNode | undefined,
+  type: React.ElementType,
+  mapMethod: (child: ReactNode) => ReactNode,
+): ReactNode {
+  return React.Children.map(children, (child) => {
+    if (!React.isValidElement(child)) {
+      return child;
+    }
+    if (child.type === type) {
+      return mapMethod(child);
+    } else if (child.props.children) {
+      child = React.cloneElement(child, {
+        ...child.props,
+        children: mapChildsByType(child.props.children, type, mapMethod),
+      });
+    }
+    return child;
+  });
+}
+
+export function getChildsByType(children: ReactNode | undefined, type: React.ElementType): [ReactNode | undefined, ReactNode | undefined] {
   const items: ReactNode[] = [];
   const others = React.Children.map(children, (item) => {
     if (!React.isValidElement(item)) {
       return item;
     }
-    if (item.type === child) {
+    if (item.type === type) {
       items.push(item);
       return null;
     }
@@ -156,8 +177,8 @@ export function getChildsByType(children: ReactNode | undefined, child: React.El
   return [childs, others];
 }
 
-export function hasChildOfType(children: ReactNode | undefined, child: React.ElementType): boolean {
-  const [foundChildren, otherChildren] = getChildsByType(children, child);
+export function hasChildOfType(children: ReactNode | undefined, type: React.ElementType): boolean {
+  const [foundChildren, otherChildren] = getChildsByType(children, type);
   const hasChildOfType = foundChildren !== undefined;
   return hasChildOfType;
 }

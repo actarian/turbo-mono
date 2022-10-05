@@ -29,7 +29,7 @@ const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
                   <MediaImage src={'https://picsum.photos/640/480?u=2'} />
                 </Media>
                 <Card.Content>
-                  <Link href="/#we-choose-to-go-to-the-moon" passHref={true}>
+                  <Link href="/#we-choose-to-go-to-the-moon" passHref>
                     <Button as="a" variant="link" marginBottom="1rem">
                       <Text size="5">We choose to go to the moon.</Text>
                     </Button>
@@ -53,7 +53,7 @@ const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
                   <MediaImage src={'https://picsum.photos/640/480?u=4'} />
                 </Media>
                 <Card.Content>
-                  <Link href="/#the-view-of-the-earth-from-the-moon" passHref={true}>
+                  <Link href="/#the-view-of-the-earth-from-the-moon" passHref>
                     <Button as="a" variant="link" marginBottom="1rem">
                       <Text size="5">The earth from the moon.</Text>
                     </Button>

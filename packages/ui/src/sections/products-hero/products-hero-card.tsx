@@ -18,7 +18,7 @@ export type ProductsHeroCardProps = UIStyledComponentProps<Props, 'a'>;
 
 const ProductsHeroCard: React.FC<ProductsHeroCardProps> = ({ item, ...props }: ProductsHeroCardProps) => {
   return (
-    <Link href={item.href} passHref={true}>
+    <Link href={item.href} passHref>
       <Card as="a" aspectRatio={2 / 1} {...props} hoverable borderRadius="0.4rem" justifyContent="flex-end">
         <Card.Background>
           <Media overlay={0.2} item={item.media} />

@@ -6,7 +6,8 @@ import { Button, Card, Flex, Media, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
-  item: MagazineSearchItem
+  item: MagazineSearchItem;
+  fixedRatio?: boolean;
 }
 
 export type MagazineSearchItem = {
@@ -21,7 +22,7 @@ export type MagazineSearchItem = {
 
 export type MagazineSearchCardProps = UIStyledComponentProps<Props>;
 
-const MagazineSearchCard: React.FC<MagazineSearchCardProps> = ({ item, ...props }: MagazineSearchCardProps) => {
+const MagazineSearchCard: React.FC<MagazineSearchCardProps> = ({ item, fixedRatio = false, ...props }: MagazineSearchCardProps) => {
   const dateTimeFormat = useDateTimeFormat({
     year: 'numeric',
     month: 'short',
@@ -29,8 +30,8 @@ const MagazineSearchCard: React.FC<MagazineSearchCardProps> = ({ item, ...props 
   });
   return (
     <Card {...props} hoverable width="100%">
-      <Link href={item.href} passHref={true}>
-        <Media as="a" marginBottom="2rem" item={item.media} />
+      <Link href={item.href} passHref>
+        <Media as="a" aspectRatio={fixedRatio ? 400 / 472 : undefined} marginBottom="2rem" item={item.media} />
       </Link>
       <Card.Content>
         <Flex.Row alignItems="flex-start" gap="2rem">

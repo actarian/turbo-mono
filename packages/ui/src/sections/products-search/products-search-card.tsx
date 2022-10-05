@@ -48,7 +48,7 @@ const StyledCard = styled(Card)`
 const ProductsSearchCard: React.FC<ProductsSearchCardProps> = ({ item, ...props }: ProductsSearchCardProps) => {
   return (
     <StyledCard {...props} hoverable>
-      <Link href={item.href} passHref={true}>
+      <Link href={item.href} passHref>
         <Media as="a" aspectRatio={1} borderRadius="0.4rem" marginBottom="0.5rem" item={item.medias} />
       </Link>
       <Card.Content>

@@ -117,7 +117,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         <Container.Fluid>
           <Flex.Row gap="1rem" gapSm="3rem">
             <Flex>
-              <NavLink href={layout.knownRoutes?.homepage || '/'} passHref={true}>
+              <NavLink href={layout.knownRoutes?.homepage || '/'} passHref>
                 <Button as="a">
                   <Hexagon width="3rem" height="3rem" />
                   <Text size="6" padding="0 0.5rem">Hexagon</Text>
@@ -132,7 +132,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                       <Button variant="nav" onClick={() => onNav(x)}>{x.title}</Button>
                       <HeaderSubmenu item={x as HeaderSubmenuItem} visible={nav === x.href} onSelect={() => onNav()}></HeaderSubmenu>
                     </Box> :
-                    <NavLink key={i} href={x.href || ''} passHref={true}>
+                    <NavLink key={i} href={x.href || ''} passHref>
                       <Button as="a" variant="nav" onClick={() => onNav()}>{x.title}</Button>
                     </NavLink>)
                 ))}
@@ -141,7 +141,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                 {layout.navs.primary.filter(x => !x.categoryId || x.categoryId < 7).map((x, i) => (
                   (x.items && x.items.length ?
                     <Button variant="nav" onClick={() => onSubmenu(x)}>{x.title}</Button> :
-                    <NavLink key={i} href={x.href || ''} passHref={true}>
+                    <NavLink key={i} href={x.href || ''} passHref>
                       <Button as="a" variant="nav">{x.title}</Button>
                     </NavLink>)
                 ))}
@@ -150,7 +150,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             <Flex gap="1rem">
               <Box minWidth="38px">
                 {user &&
-                  <NavLink href={layout.knownRoutes?.reserved_area || ''} passHref={true}>
+                  <NavLink href={layout.knownRoutes?.reserved_area || ''} passHref>
                     <Button as="a" variant="circle" size="sm" letterSpacing="0.1em">
                       {getShortName(user)}
                     </Button>

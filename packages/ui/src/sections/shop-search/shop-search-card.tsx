@@ -35,12 +35,12 @@ const ShopRelatedCard: React.FC<ShopRelatedCardProps> = ({ item, ...props }: Sho
 
   return (
     <Card {...props} hoverable>
-      <Link href={item.href} passHref={true}>
+      <Link href={item.href} passHref>
         <Media as="a" aspectRatio={1} borderRadius="0.4rem" marginBottom="0.5rem" item={item.media} />
       </Link>
       <Card.Content>
         <Flex.Row justifyContent="space-between">
-          <Link href={item.href} passHref={true}>
+          <Link href={item.href} passHref>
             <Text as="a" size="9">{item.title}</Text>
           </Link>
         </Flex.Row>

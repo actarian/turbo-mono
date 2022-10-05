@@ -28,8 +28,12 @@ export interface MagazineRelatedProps extends ILazyComponentProps {
 
 const StyledSection = styled(Section)`
   .swiper-slide {
-    width: 60vw;
     overflow: hidden;
+    width: 400px;
+
+    @media (max-width: 767px) {
+      width: calc(100% - 40px);
+    }
   }
 `
 
@@ -62,12 +66,12 @@ const MagazineRelated: React.FC<MagazineRelatedProps & SwiperProps> = ({ item, .
   return (
     <StyledSection className={classNames} padding="7rem 0">
       <Container textAlign="center">
-        {item.title && <Text size="2" marginBottom="4rem">{item.title}</Text>}
+        {item.title && <Text size="3" marginBottom="4rem">{item.title}</Text>}
       </Container>
       <Swiper {...props} spaceBetween={60} slidesPerView={'auto'} centeredSlides style={{ width: '100%' }}>
         {items.map((item, i) => (
-          <SwiperSlide key={i} virtualIndex={i} style={{ maxWidth: '400px' }}>
-            <MagazineSearchCard item={item} />
+          <SwiperSlide key={i} virtualIndex={i}>
+            <MagazineSearchCard fixedRatio item={item} />
           </SwiperSlide>
         ))}
       </Swiper>

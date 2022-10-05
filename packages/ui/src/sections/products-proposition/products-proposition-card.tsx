@@ -22,7 +22,7 @@ export type ProductsPropositionCardProps = UIStyledComponentProps<Props, 'a'>;
 const ProductsPropositionCard: React.FC<ProductsPropositionCardProps> = ({ item, ...props }: ProductsPropositionCardProps) => {
   const price = useCurrency(item.price);
   return (
-    <Link href={item.href} passHref={true}>
+    <Link href={item.href} passHref>
       <Card as="a" {...props} hoverable>
         <Media aspectRatio={4 / 3} aspectRatioMd={3 / 4} borderRadius="0.4rem" marginBottom="1rem" item={item.media} />
         <Card.Content>

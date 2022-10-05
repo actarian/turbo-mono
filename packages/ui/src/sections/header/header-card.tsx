@@ -21,7 +21,7 @@ const HeaderCard: React.FC<HeaderCardProps> = ({ item, onSelect, ...props }: Hea
     onSelect && onSelect(item);
   }
   return (
-    <Link href={item.href || '#'} passHref={true}>
+    <Link href={item.href || '#'} passHref>
       <Card as="a" height="100%" hoverable onClick={onSelect_} {...props}>
         {item.media && <Media aspectRatio={3 / 2} borderRadius="0.4rem" marginBottom="1rem" item={item.media} />}
         <Card.Content flex="1">

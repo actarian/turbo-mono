@@ -45,7 +45,7 @@ const BlogProposition: React.FC<BlogPropositionProps> = ({ item, ...props }: Blo
                 <Text size="8" fontWeight="700">{item.author.fullName}</Text>
               </Flex>
               {false &&
-                <Link href={item.href} passHref={true}>
+                <Link href={item.href} passHref>
                   <Button as="a" variant="link"><Text>Read more</Text> <ArrowRight /></Button>
                 </Link>
               }

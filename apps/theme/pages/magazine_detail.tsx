@@ -1,15 +1,15 @@
 import type { IEquatable } from '@websolute/core';
-import { useDateTimeFormat } from '@websolute/hooks';
+import { useDateTimeFormat, useModal } from '@websolute/hooks';
 import { ChevronLeft } from '@websolute/icons';
 import { MagazineDetailDefaults } from '@websolute/mock';
 import type { IMedia } from '@websolute/models';
-import type { MagazineRelatedItem } from '@websolute/ui';
 import {
-  Button, Container, Flex, Footer, Grid, Header, ILazyComponent, Layout, LazyLoader,
-  MagazineRelated, Media, NavLink, Page, Section, Text, withPageTransition
+  Button, Container, Flex, Footer, Grid, Header, ILazyComponent, Layout, LazyLoader, MagazineRelated,
+  MagazineRelatedItem, mapChildsByType, Media, Modal, NavLink, Page, Section, Text, withPageTransition
 } from '@websolute/ui';
 
 import Head from 'next/head';
+import React from 'react';
 
 export type MagazineDetailItem = {
   id: IEquatable;
@@ -30,6 +30,7 @@ export type MagazineDetailItem = {
 }
 
 const MagazineDetail = ({ item }: MagazineDetailProps) => {
+  const [modal, onOpenModal, onCloseModal] = useModal();
   const dateTimeFormat = useDateTimeFormat({
     year: 'numeric',
     month: 'short',
@@ -49,15 +50,15 @@ const MagazineDetail = ({ item }: MagazineDetailProps) => {
 
           <Section padding="7rem 0">
             <Container.Fluid>
-              <Grid.Row>
+              <Grid.Row rowGap="1rem">
                 <Grid sm={6}>
                   <Media item={item.media} />
                 </Grid>
                 <Grid sm={6}>
-                  <Flex.Col gap="4rem">
+                  <Flex.Col gap="3rem" gapSm="4rem" gapMd="5rem" gapLg="6rem">
                     <Flex.Row justifyContent="space-between">
-                      <NavLink href={item.category.href} passHref={true}>
-                        <Button as="a" variant="nav" marginBottom="1rem">
+                      <NavLink href={item.category.href} passHref>
+                        <Button as="a" variant="nav">
                           <ChevronLeft />
                           <Text size="10" fontWeight="700" textTransform="uppercase">{item.category.title}</Text>
                         </Button>
@@ -79,6 +80,12 @@ const MagazineDetail = ({ item }: MagazineDetailProps) => {
 
           <Footer />
 
+          <Modal width="100vw" visible={modal == 'gallery'} onClose={onCloseModal}>
+            <Modal.Content>
+              CONTENT
+            </Modal.Content>
+          </Modal>
+
         </Page>
       </Layout>
     </>
@@ -99,3 +106,16 @@ export async function getStaticProps(): Promise<{ props: MagazineDetailProps }> 
 }
 
 export default withPageTransition(MagazineDetail);
+
+// !!! mappedChildren
+
+function ImageGallery({ children }: React.PropsWithChildren) {
+  const mappedChildren = mapChildsByType(children, Media, (child: React.ReactNode) => {
+    console.log(child);
+    return child;
+  });
+  // console.log(mappedChildren);
+  return <>
+    {children}
+  </>
+}

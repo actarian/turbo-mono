@@ -40,7 +40,7 @@ const ProductsDetail = ({ item }: ProductsDetailProps) => {
           <Section padding="7rem 0">
             <Container.Fluid>
               <Flex.Col alignItems="center">
-                <NavLink href={item.category.href} passHref={true}>
+                <NavLink href={item.category.href} passHref>
                   <Button as="a" variant="nav" marginBottom="1rem">
                     <ChevronLeft />
                     <Text size="10" fontWeight="700" textTransform="uppercase">{item.category.title}</Text>

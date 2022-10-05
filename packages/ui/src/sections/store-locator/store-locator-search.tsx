@@ -369,7 +369,7 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
           <Grid.Row columnGap="1rem" rowGap="1rem">
             {visibleItems.map((item, i) => (
               <Grid key={i} sm={6} md={4} lg={3}>
-                <ContactCard item={item} height="100%" hoverable={true} onClick={() => onItemClick(item)} />
+                <ContactCard item={item} height="100%" hoverable onClick={() => onItemClick(item)} />
               </Grid>
             ))}
           </Grid.Row>

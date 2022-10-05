@@ -1,4 +1,5 @@
 import { getClassNames } from '@websolute/core';
+import { useModal } from '@websolute/hooks';
 import type { IMedia as IMediaItem } from '@websolute/models';
 import { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
@@ -97,7 +98,8 @@ const StyledMedia = styled.div<MediaProps>`
 const Media: MediaComponent = forwardRef(({ children, item, className, as = 'div', ...props }, ref) => {
   const classNames = getClassNames(className, 'media');
   const mediaChildren = (item && !children) ? getMediaItems(item) : children;
-  return (<StyledMedia className={classNames} ref={ref} as={as} {...props}>{mediaChildren}</StyledMedia>);
+  const [modal, onOpenModal, onCloseModal] = useModal();
+  return (<StyledMedia className={classNames} ref={ref} as={as} onClick={() => onOpenModal('gallery')} {...props}>{mediaChildren}</StyledMedia>);
 });
 
 Media.displayName = 'Media';
