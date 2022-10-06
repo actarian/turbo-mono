@@ -13,12 +13,7 @@
   "compilerOptions": {
     "outDir": ".build",
     "baseUrl": ".",
-    "paths": {
-      "@config*": ["src/@config*"],
-      "@config": ["src/@config/index"],
-      "@models*": ["src/@models*"],
-      "@models": ["src/@models/index"],
-    },
+    "paths": {},
     "skipLibCheck": true,
     "jsx": "preserve",
     "lib": [

@@ -5,14 +5,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
-    "paths": {
-      "ui/components": ["../../packages/ui/src/components/index"],
-      "ui/core": ["../../packages/ui/src/core/index"],
-      "ui/forms": ["../../packages/ui/src/forms/index"],
-      "ui/hooks": ["../../packages/ui/src/hooks/index"],
-      "ui/icons": ["../../packages/ui/src/icons/index"],
-      "ui/sections": ["../../packages/ui/src/sections/index"],
-      "ui/styles": ["../../packages/ui/src/styles/index"]
-    },
+    "paths": {},
   },
 }

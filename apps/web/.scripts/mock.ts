@@ -1,4 +1,4 @@
-import { PAGES } from '../src/@config';
+import { PAGES } from '../src/config';
 
 import type { IEntity, ILocalizedString } from '@websolute/core';
 import type { ICategorized, ICategory, IMarket, IRoute } from '@websolute/models';
@@ -138,6 +138,7 @@ function resolveCategoryTree(item: ICategorized, items: ICategorized[], categori
       schema: 'category',
       name: item.schema,
       title: item.title,
+      media: item.media,
       slug: item.slug,
       pageSchema: item.schema,
       pageId: item.id,

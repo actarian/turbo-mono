@@ -5,15 +5,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
-    "paths": {
-      "@components*": ["src/@components*"],
-      "@components": ["src/@components/index"],
-      "@config*": ["src/@config*"],
-      "@config": ["src/@config/index"],
-      "@hooks*": ["src/@hooks*"],
-      "@hooks": ["src/@hooks/index"],
-      "@models*": ["src/@models*"],
-      "@models": ["src/@models/index"],
-    },
+    "paths": {},
   },
 }

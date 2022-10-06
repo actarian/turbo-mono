@@ -1,13 +1,14 @@
 
-import { Breadcrumbs } from '@components';
 import type { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
 import { BlogMoreDefaults, BlogPropositionDefaults, CategoriesPropositionDefaults, ProductsPropositionDefaults, SplitDefaults, SwiperHeroDefaults } from '@websolute/mock';
-import { getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/models';
+import type { PageProps } from '@websolute/models';
+import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
 import {
   BlogMore, BlogProposition, CategoriesProposition, Container, Flex, Footer, Header, Layout,
   Media, MediaImage, Meta, Page, ProductsProposition, Proposition, Section, Split, SwiperHero, Text
 } from '@websolute/ui';
+import { Breadcrumbs } from 'src/components';
 
 export default function Homepage({ layout, page, params }: PageProps) {
   // console.log('Homepage.layout', layout);

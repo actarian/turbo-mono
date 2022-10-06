@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "slug": "tiles",
+    "title": "Our tiles collection",
+    "media": {
+      "type": "image",
+      "src": "/assets/category/hero.jpg"
+    },
+    "categoryId": 21,
+    "meta": {
+      "title": "Tiles",
+      "description": {
+        "en": "The charm of yesterday, the elegance of today",
+        "it": "Il fascino di ieri, l'eleganza di oggi"
+      },
+      "keywords": "tiles keywords",
+      "robots": "all"
+    }
+  }
+]

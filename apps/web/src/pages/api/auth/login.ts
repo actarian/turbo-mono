@@ -1,8 +1,8 @@
-import { sessionOptions } from '@config/session';
 import { apiHandler } from '@websolute/core';
 import { IUser } from '@websolute/models';
 import { withIronSessionApiRoute } from 'iron-session/next';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { sessionOptions } from 'src/config/session';
 
 async function loginPost(request: NextApiRequest, response: NextApiResponse<IUser | null>) {
   const body = request.body;

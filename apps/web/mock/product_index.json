@@ -2,12 +2,12 @@
   {
     "id": 1,
     "slug": {
-      "en": "products",
-      "it": "prodotti"
+      "en": "collections",
+      "it": "collezioni"
     },
     "title": {
-      "en": "Products",
-      "it": "Prodotti"
+      "en": "Collections",
+      "it": "Collezioni"
     },
     "abstract": {
       "en": "The charm of yesterday, the elegance of today",
@@ -20,8 +20,8 @@
     "categoryId": 2,
     "meta": {
       "title": {
-        "en": "Products",
-        "it": "Prodotti"
+        "en": "Collections",
+        "it": "Collezioni"
       },
       "description": {
         "en": "The charm of yesterday, the elegance of today",

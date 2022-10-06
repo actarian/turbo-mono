@@ -3,7 +3,6 @@ import { isLocalizedString, localizedToString } from '@websolute/core';
 import { getStore } from '@websolute/store';
 import type { ICategory } from '../category/category';
 import { IModelStore } from '../store/store';
-// import { parseMockApi } from '@core';
 import type { IRoute, IRouteLink } from './route';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 
@@ -108,6 +107,7 @@ export function categoryToRouteLink(routes: IRoute[], categories: ICategory[], c
     categoryId: category.id,
     title,
     href,
+    media: category.media,
     items: getChildCategories(routes, categories, category, market, locale),
   };
 }

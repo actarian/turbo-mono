@@ -1,10 +1,12 @@
 import type { IEntity, IEquatable, ILocalizedString } from '@websolute/core';
+import { IMedia } from '../media/media';
 
 export interface ICategory extends IEntity {
   id: IEquatable;
   name: string;
-  title?: ILocalizedString | string;
   slug?: ILocalizedString | string;
+  title?: ILocalizedString | string;
+  media?: IMedia;
   pageSchema?: string;
   pageId?: IEquatable;
   categoryId?: IEquatable;
@@ -17,7 +19,8 @@ export interface ICategoryItem extends ICategory {
 export interface ICategorized {
   id: IEquatable;
   schema: string;
-  title?: ILocalizedString | string;
   slug?: ILocalizedString | string;
+  title?: ILocalizedString | string;
   categoryId?: IEquatable;
+  media?: IMedia;
 }

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const _config_1 = require("../src/@config");
+const config_1 = require("../src/config");
 const dotenv = require('dotenv');
 const path = require('path');
 const pluralize = require('pluralize');
@@ -344,4 +344,4 @@ function MockBuildAndWatch(pathname, PAGES) {
         BuildAndWatch(pathname, PAGES);
     }
 }
-MockBuildAndWatch('./mock', _config_1.PAGES);
+MockBuildAndWatch('./mock', config_1.PAGES);

@@ -1,14 +1,16 @@
 
-import ContactForm, { IContactForm } from '@components/contact-form/contact-form';
 import type { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
 import { BlogMoreDefaults, BlogPropositionDefaults, ContactDefaults, ContactHeroDefaults, SplitDefaults } from '@websolute/mock';
-import { getCountries, getLayout, getListByKeys, getPage, getProvinces, getRegions, getStaticPathsForSchema, PageProps } from '@websolute/models';
+import type { PageProps } from '@websolute/models';
+import { getCountries, getLayout, getListByKeys, getPage, getProvinces, getRegions, getStaticPathsForSchema } from '@websolute/models';
 import {
   Accordion, BlogMore, BlogProposition, ContactCard, ContactCardItem, ContactHero,
   Container, Divider, Flex, Footer, Grid, Header, Layout, Media, MediaImage, Meta, Page, Section, Split,
   Tabs, Text
 } from '@websolute/ui';
+import type { IContactForm } from 'src/components/contact-form/contact-form';
+import ContactForm from 'src/components/contact-form/contact-form';
 
 import { useState } from 'react';
 

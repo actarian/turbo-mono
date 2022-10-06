@@ -1,13 +1,14 @@
 
-import { sessionOptions } from '@config/session';
 import { asStaticProps, httpGet, IContextParams } from '@websolute/core';
-import { getLayout, getPage, PageProps } from '@websolute/models';
+import type { PageProps } from '@websolute/models';
+import { getLayout, getPage } from '@websolute/models';
 import { StoreStrategy, storeStrategy } from '@websolute/store';
 import { Box, Button, Container, Flex, Footer, Header, Layout, Meta, NavLink, Page, Section, Text, useUser } from '@websolute/ui';
 import { promises as fs } from 'fs';
 import { withIronSessionSsr } from 'iron-session/next';
 import { useRouter } from 'next/router';
 import path from 'path';
+import { sessionOptions } from 'src/config/session';
 
 export default function ReservedArea({ layout, page, user, params }: ReservedAreaProps) {
   const router = useRouter();

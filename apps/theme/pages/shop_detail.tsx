@@ -18,10 +18,10 @@ export type ShopDetailItem = {
 }
 
 type Props = {
-  item: ShopDetailItem
+  page: ShopDetailItem
 }
 
-const ShopDetail = ({ item, ...props }: Props) => {
+const ShopDetail = ({ page, ...props }: Props) => {
   return (
     <>
       <Head>
@@ -44,9 +44,9 @@ const ShopDetail = ({ item, ...props }: Props) => {
             </Container>
           </Section>
 
-          <ProductOverview.Gallery media={item.media} paddingTop="0" />
+          <ProductOverview.Gallery media={page.media} paddingTop="0" />
 
-          <ProductOverview item={item} />
+          <ProductOverview item={page} />
 
           <ShopIncentive />
 
@@ -62,6 +62,8 @@ const ShopDetail = ({ item, ...props }: Props) => {
   )
 }
 
-ShopDetail.defaultProps = ProductDefaults;
+ShopDetail.defaultProps = {
+  page: ProductDefaults.item
+};
 
 export default withPageTransition(ShopDetail);

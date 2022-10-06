@@ -11,11 +11,26 @@
     "id": 2,
     "name": "product_index",
     "title": {
-      "en": "Products",
-      "it": "Prodotti"
+      "en": "Collections",
+      "it": "Collezioni"
     },
     "categoryId": 1,
     "pageSchema": "product_index",
+    "pageId": 1
+  },
+  {
+    "id": 21,
+    "name": "tiles",
+    "title": {
+      "en": "Tiles",
+      "it": "Tiles"
+    },
+    "media": {
+      "type": "image",
+      "src": "/assets/header/6366_n_tiles.jpg"
+    },
+    "categoryId": 2,
+    "pageSchema": "product_category",
     "pageId": 1
   },
   {
@@ -24,6 +39,14 @@
     "title": "Magazine",
     "categoryId": 1,
     "pageSchema": "magazine_index",
+    "pageId": 1
+  },
+  {
+    "id": 31,
+    "name": "magazine_category",
+    "title": "Talks",
+    "categoryId": 3,
+    "pageSchema": "magazine_category",
     "pageId": 1
   },
   {
@@ -47,6 +70,17 @@
   },
   {
     "id": 6,
+    "name": "shop",
+    "title": {
+      "en": "Shop",
+      "it": "Shop"
+    },
+    "categoryId": 1,
+    "pageSchema": "shop_index",
+    "pageId": 1
+  },
+  {
+    "id": 7,
     "name": "reserved_area",
     "title": {
       "en": "Reserved area",
@@ -57,7 +91,7 @@
     "pageId": 1
   },
   {
-    "id": 7,
+    "id": 8,
     "name": "login",
     "title": {
       "en": "Login",

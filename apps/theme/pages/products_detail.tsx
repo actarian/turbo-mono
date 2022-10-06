@@ -28,7 +28,7 @@ export type ProductsDetailItem = {
   related: ProductsDetailRelatedItem;
 }
 
-const ProductsDetail = ({ item }: ProductsDetailProps) => {
+const ProductsDetail = ({ page }: ProductsDetailProps) => {
   const pageNavItems = [{
     href: '#overview',
     title: 'Overview'
@@ -68,26 +68,26 @@ const ProductsDetail = ({ item }: ProductsDetailProps) => {
             <Section padding="7rem 0" id="overview">
               <Container.Fluid>
                 <Flex.Col alignItems="center">
-                  <NavLink href={item.category.href} passHref>
+                  <NavLink href={page.category.href} passHref>
                     <Button as="a" variant="nav" marginBottom="1rem">
                       <ChevronLeft />
-                      <Text size="10" fontWeight="700" textTransform="uppercase">{item.category.title}</Text>
+                      <Text size="10" fontWeight="700" textTransform="uppercase">{page.category.title}</Text>
                     </Button>
                   </NavLink>
-                  <Text size="2" textAlign="center">{item.title}</Text>
+                  <Text size="2" textAlign="center">{page.title}</Text>
                 </Flex.Col>
               </Container.Fluid>
             </Section>
 
-            <LazyLoader components={item.components} />
+            <LazyLoader components={page.components} />
 
           </MediaGallery>
 
-          <ProductsDetailSizeColor id="size-color" item={item.sizeColor} />
+          <ProductsDetailSizeColor id="size-color" item={page.sizeColor} />
 
-          <ProductsDetailDownload id="download" item={item.download} />
+          <ProductsDetailDownload id="download" item={page.download} />
 
-          <ProductsDetailRelated id="related" item={item.related} />
+          <ProductsDetailRelated id="related" item={page.related} />
 
           <Footer />
 
@@ -98,12 +98,12 @@ const ProductsDetail = ({ item }: ProductsDetailProps) => {
 }
 
 export type ProductsDetailProps = {
-  item: ProductsDetailItem;
+  page: ProductsDetailItem;
 }
 
 export async function getStaticProps(): Promise<{ props: ProductsDetailProps }> {
   const props = {
-    item: ProductsDetailDefaults.item,
+    page: ProductsDetailDefaults.item,
   };
   return {
     props,

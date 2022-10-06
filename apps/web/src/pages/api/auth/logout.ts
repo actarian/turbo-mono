@@ -1,7 +1,7 @@
-import { sessionOptions } from '@config/session';
 import { apiHandler } from '@websolute/core';
 import { withIronSessionApiRoute } from 'iron-session/next';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { sessionOptions } from 'src/config/session';
 
 function logoutGet(request: NextApiRequest, response: NextApiResponse) {
   request.session.destroy();

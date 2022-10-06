@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "slug": "shop",
+    "title": "Shop",
+    "abstract": {
+      "en": "The charm of yesterday, the elegance of today",
+      "it": "Il fascino di ieri, l'eleganza di oggi"
+    },
+    "description": {
+      "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
+      "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
+    },
+    "categoryId": 6,
+    "meta": {
+      "title": "Shop",
+      "description": {
+        "en": "The charm of yesterday, the elegance of today",
+        "it": "Il fascino di ieri, l'eleganza di oggi"
+      },
+      "keywords": "shop keywords",
+      "robots": "all"
+    }
+  }
+]

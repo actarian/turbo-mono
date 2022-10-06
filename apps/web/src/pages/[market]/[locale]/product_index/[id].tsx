@@ -2,7 +2,8 @@
 import type { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
 import { CategoriesPropositionDefaults, CategoryPropositionDefaults, ProductsHeroDefaults, ProductsPropositionDefaults } from '@websolute/mock';
-import { getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/models';
+import type { PageProps } from '@websolute/models';
+import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
 import { CategoriesProposition, CategoryProposition, Footer, Header, Layout, Meta, Page, ProductsHero, ProductsProposition } from '@websolute/ui';
 
 export default function Products({ layout, page, params }: ProductsProps) {

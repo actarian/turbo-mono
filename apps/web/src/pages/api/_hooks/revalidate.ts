@@ -1,8 +1,8 @@
 
-import { PAGES } from '@config';
 import { apiHandler } from '@websolute/core';
 import { getRoute, resolveRoute } from '@websolute/models';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { PAGES } from 'src/config';
 
 export default apiHandler({
   post: async (request: NextApiRequest, response: NextApiResponse) => {

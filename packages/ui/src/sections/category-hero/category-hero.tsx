@@ -3,7 +3,6 @@ import { Card, Container, Flex, Media, Section, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 
 export type CategoryHeroItem = {
-  id: number;
   title?: string;
   abstract?: string;
   media?: IMedia;
