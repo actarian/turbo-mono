@@ -1,12 +1,13 @@
 import type { IEquatable } from '@websolute/core';
 import { ChevronLeft } from '@websolute/icons';
-import { CategoryPropositionDefaults, ProductsDetailDefaults, ProductsRelatedDefaults } from '@websolute/mock';
+import { ProductsDetailDefaults } from '@websolute/mock';
 import type { IMedia } from '@websolute/models';
-import type { ILazyComponent } from '@websolute/ui';
 import {
-  Button, Card, CategoryProposition, Container, Flex, Footer, Header, Layout, LazyLoader, Media, NavLink, Page, ProductsRelated, Section, ShopIncentive, Text, withPageTransition
+  Button, Container, Flex, Footer, Header, ILazyComponent, Layout, LazyLoader, MediaGallery, Nav, NavLink,
+  Page, PageNav, ProductsDetailDownload, ProductsDetailDownloadItem, ProductsDetailRelated,
+  ProductsDetailRelatedItem, ProductsDetailSizeColor, ProductsDetailSizeColorItem, Section, Text,
+  withPageTransition
 } from '@websolute/ui';
-
 import Head from 'next/head';
 
 export type ProductsDetailItem = {
@@ -22,9 +23,28 @@ export type ProductsDetailItem = {
     title: string;
   };
   components: ILazyComponent[];
+  sizeColor: ProductsDetailSizeColorItem;
+  download: ProductsDetailDownloadItem;
+  related: ProductsDetailRelatedItem;
 }
 
 const ProductsDetail = ({ item }: ProductsDetailProps) => {
+  const pageNavItems = [{
+    href: '#overview',
+    title: 'Overview'
+  }, {
+    href: '#in-use',
+    title: 'In Use'
+  }, {
+    href: '#designer',
+    title: 'Designer'
+  }, {
+    href: '#size-color',
+    title: 'Size & Color'
+  }, {
+    href: '#download',
+    title: 'Download'
+  }];
   return (
     <>
       <Head>
@@ -37,38 +57,37 @@ const ProductsDetail = ({ item }: ProductsDetailProps) => {
         <Page>
           <Header sticky />
 
-          <Section padding="7rem 0">
-            <Container.Fluid>
-              <Flex.Col alignItems="center">
-                <NavLink href={item.category.href} passHref>
-                  <Button as="a" variant="nav" marginBottom="1rem">
-                    <ChevronLeft />
-                    <Text size="10" fontWeight="700" textTransform="uppercase">{item.category.title}</Text>
-                  </Button>
-                </NavLink>
-                <Text size="2" textAlign="center">{item.title}</Text>
-              </Flex.Col>
-            </Container.Fluid>
-          </Section>
+          <PageNav items={pageNavItems}>
+            {false && <Nav.Row gap="3rem" display="none" displaySm="flex">
+              <Button as="a" variant="primary">More</Button>
+            </Nav.Row>}
+          </PageNav>
 
-          <LazyLoader components={item.components} />
+          <MediaGallery>
 
-          {false &&
-            <>
-              <Media aspectRatio={16 / 10} item={item.medias[0]} />
-              <Card justifyContent="center" height="50vh" overflow="hidden">
-                <Card.Background>
-                  <Media item={item.medias[0]} />
-                </Card.Background>
-              </Card>
+            <Section padding="7rem 0" id="overview">
+              <Container.Fluid>
+                <Flex.Col alignItems="center">
+                  <NavLink href={item.category.href} passHref>
+                    <Button as="a" variant="nav" marginBottom="1rem">
+                      <ChevronLeft />
+                      <Text size="10" fontWeight="700" textTransform="uppercase">{item.category.title}</Text>
+                    </Button>
+                  </NavLink>
+                  <Text size="2" textAlign="center">{item.title}</Text>
+                </Flex.Col>
+              </Container.Fluid>
+            </Section>
 
-              <ShopIncentive />
+            <LazyLoader components={item.components} />
 
-              <ProductsRelated items={ProductsRelatedDefaults.items} />
+          </MediaGallery>
 
-              <CategoryProposition item={CategoryPropositionDefaults.item} />
-            </>
-          }
+          <ProductsDetailSizeColor id="size-color" item={item.sizeColor} />
+
+          <ProductsDetailDownload id="download" item={item.download} />
+
+          <ProductsDetailRelated id="related" item={item.related} />
 
           <Footer />
 

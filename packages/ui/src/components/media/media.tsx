@@ -1,10 +1,10 @@
 import { getClassNames } from '@websolute/core';
-import { useModal } from '@websolute/hooks';
 import type { IMedia as IMediaItem } from '@websolute/models';
 import { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getAspectResponsive, getCssResponsive } from '../../components/utils';
+import { useMediaGalleryContext } from '../media-gallery/media-gallery-context';
 import MediaImage from './media-image';
 
 const StyledMediaInfo = styled.div`
@@ -95,11 +95,14 @@ const StyledMedia = styled.div<MediaProps>`
   `) : ''}
 `;
 
-const Media: MediaComponent = forwardRef(({ children, item, className, as = 'div', ...props }, ref) => {
+const Media: MediaComponent = forwardRef(({ children, item, onClick, className, as = 'div', ...props }, ref) => {
   const classNames = getClassNames(className, 'media');
-  const mediaChildren = (item && !children) ? getMediaItems(item) : children;
-  const [modal, onOpenModal, onCloseModal] = useModal();
-  return (<StyledMedia className={classNames} ref={ref} as={as} onClick={() => onOpenModal('gallery')} {...props}>{mediaChildren}</StyledMedia>);
+
+  const { id, open } = useMediaGalleryContext();
+
+  const mediaChildren = (item && !children) ? getMediaItems(item, id, open) : children;
+
+  return (<StyledMedia className={classNames} ref={ref} as={as} {...props}>{mediaChildren}</StyledMedia>);
 });
 
 Media.displayName = 'Media';
@@ -112,13 +115,22 @@ type IMedia = typeof Media & {
   Info: typeof MediaInfo;
 };
 
-function getMediaItems(itemOrItems: IMediaItem | IMediaItem[]) {
+function getMediaItems(itemOrItems: IMediaItem | IMediaItem[], galleryId?: string, open?: (media: IMediaItem) => void) {
   const items = Array.isArray(itemOrItems) ? itemOrItems : [itemOrItems];
+  const hasGallery = galleryId != null && typeof open === 'function';
+  const getGalleryProps = (media: IMediaItem) => hasGallery ? {
+    'data-gallery': JSON.stringify({ galleryId, media }),
+    onClick: (event: React.MouseEvent) => {
+      if (open) {
+        open(media);
+      }
+    },
+  } : undefined;
   return (
     items.map((media, m) => media.type === 'video' ?
-      (<video key={m} playsInline={true} autoPlay={true} muted={true} loop={true}>
+      (<video key={m} playsInline={true} autoPlay={true} muted={true} loop={true} {...getGalleryProps(media)}>
         <source src={media.src} type="video/mp4"></source>
       </video>) :
-      (<MediaImage key={m} {...media} alt={media.alt} draggable={false} />)
+      (<MediaImage key={m} {...media} alt={media.alt} draggable={false} {...getGalleryProps(media)} />)
     ));
 }

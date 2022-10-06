@@ -26,6 +26,12 @@ export { default as MagazineSearchFilters } from './magazine-search/magazine-sea
 export { default as MagazineSearchFiltersModal } from './magazine-search/magazine-search-filters-modal';
 export { default as ProductOverview } from './product-overview/product-overview';
 export { default as ProductOverviewGallery } from './product-overview/product-overview-gallery';
+export { default as ProductsDetailDownload } from './products-detail-download/products-detail-download';
+export type { ProductsDetailDownloadItem, ProductsDetailDownloadProps } from './products-detail-download/products-detail-download';
+export { default as ProductsDetailRelated } from './products-detail-related/products-detail-related';
+export type { ProductsDetailRelatedItem, ProductsDetailRelatedProps } from './products-detail-related/products-detail-related';
+export { default as ProductsDetailSizeColor } from './products-detail-size-color/products-detail-size-color';
+export type { ProductsDetailSizeColorItem, ProductsDetailSizeColorProps } from './products-detail-size-color/products-detail-size-color';
 export { default as ProductsHero } from './products-hero/products-hero';
 export { default as ProductsHeroCard } from './products-hero/products-hero-card';
 export { default as ProductsProposition } from './products-proposition/products-proposition';

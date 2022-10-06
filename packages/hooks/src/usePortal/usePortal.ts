@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSSR } from '../useSSR/useSSR';
 
-const namespace = 'design-system';
+const namespace = 'theme';
 
 export function usePortal(name: string = getUID(), getContainer?: () => HTMLElement | null): HTMLElement | null {
   const { isBrowser } = useSSR();

@@ -19,7 +19,7 @@ export function useScrollTo(): (event: React.MouseEvent<HTMLElement>) => void {
             // console.log(rect);
             const from = window.scrollY;
             const to = window.scrollY + rect.top - 60;
-            const duration = Math.abs((to - from) / 2000);
+            const duration = Math.sqrt(Math.abs(to - from) / 4000);
             // console.log(from, to, duration);
             animate(from, to, { duration, onUpdate: v => window.scrollTo(0, v) });
           }

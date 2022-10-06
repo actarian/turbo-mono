@@ -1,4 +1,5 @@
 // import Image, { ImageProps } from 'next/image';
+// import Image, { ImageProps } from 'next/future/image'; // !!! todo implement this
 import { getClassNames } from '@websolute/core';
 import styled from 'styled-components';
 import type { UIStyledComponentProps } from '../../components/types';

@@ -89,7 +89,17 @@ const StyledBackdrop = styled.div`
 `;
 
 const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = React.memo(
-  ({ children, onClick, visible, width, onContentClick, backdropClassName, positionClassName, layerClassName, ...props }: React.PropsWithChildren<BackdropProps> & typeof defaultProps) => { // !!! any
+  ({
+    children,
+    onClick,
+    visible,
+    width,
+    onContentClick,
+    backdropClassName,
+    layerClassName,
+    positionClassName,
+    ...props
+  }: React.PropsWithChildren<BackdropProps> & typeof defaultProps) => { // !!! any
 
     const [, setIsContentMouseDown, IsContentMouseDownRef] = useCurrentState(false);
 
@@ -110,12 +120,18 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = React.m
       }, 0);
     }
 
+    const backdropClassNames = getClassNames('backdrop', backdropClassName);
+    const layerClassNames = getClassNames('layer', layerClassName);
+    const positionClassNames = getClassNames('position', positionClassName);
+
+    // !!! todo backdrop position styled component with css responsive.
+
     return (
       <Transition name="backdrop-wrapper" visible={visible} clearTime={300}>
-        <StyledBackdrop className={getClassNames('backdrop', backdropClassName)} onClick={clickHandler} onMouseUp={mouseUpHandler}
+        <StyledBackdrop className={backdropClassNames} onClick={clickHandler} onMouseUp={mouseUpHandler}
           {...props}>
-          <div className={getClassNames('layer', layerClassName)} />
-          <div className={getClassNames('position', positionClassName)} style={{ width }} onClick={onContentClick} onMouseDown={() => setIsContentMouseDown(true)}>
+          <div className={layerClassNames} />
+          <div className={positionClassNames} style={{ width }} onClick={onContentClick} onMouseDown={() => setIsContentMouseDown(true)}>
             {children}
           </div>
         </StyledBackdrop>

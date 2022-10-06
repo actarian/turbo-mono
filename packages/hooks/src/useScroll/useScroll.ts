@@ -10,7 +10,7 @@ interface Scroll {
 export function useScroll(): Scroll {
   const [scroll, setScroll] = useState<Scroll>({ left: 0, top: 0 });
 
-  const handleScroll = () => {
+  const onScroll = () => {
     const left = window.pageXOffset;
     const top = window.pageYOffset;
     if (scroll.left !== left || scroll.top !== top) {
@@ -18,11 +18,11 @@ export function useScroll(): Scroll {
     }
   };
 
-  useEventListener('scroll', handleScroll);
+  useEventListener('scroll', onScroll);
 
   // Set size at the first client-side load
   useIsomorphicLayoutEffect(() => {
-    handleScroll();
+    onScroll();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

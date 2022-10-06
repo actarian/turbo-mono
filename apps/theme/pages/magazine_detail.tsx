@@ -5,7 +5,7 @@ import { MagazineDetailDefaults } from '@websolute/mock';
 import type { IMedia } from '@websolute/models';
 import {
   Button, Container, Flex, Footer, Grid, Header, ILazyComponent, Layout, LazyLoader, MagazineRelated,
-  MagazineRelatedItem, mapChildsByType, Media, Modal, NavLink, Page, Section, Text, withPageTransition
+  MagazineRelatedItem, mapChildsByType, Media, MediaGallery, NavLink, Page, Section, Text, withPageTransition
 } from '@websolute/ui';
 
 import Head from 'next/head';
@@ -48,43 +48,41 @@ const MagazineDetail = ({ item }: MagazineDetailProps) => {
         <Page>
           <Header sticky />
 
-          <Section padding="7rem 0">
-            <Container.Fluid>
-              <Grid.Row rowGap="1rem">
-                <Grid sm={6}>
-                  <Media item={item.media} />
-                </Grid>
-                <Grid sm={6}>
-                  <Flex.Col gap="3rem" gapSm="4rem" gapMd="5rem" gapLg="6rem">
-                    <Flex.Row justifyContent="space-between">
-                      <NavLink href={item.category.href} passHref>
-                        <Button as="a" variant="nav">
-                          <ChevronLeft />
-                          <Text size="10" fontWeight="700" textTransform="uppercase">{item.category.title}</Text>
-                        </Button>
-                      </NavLink>
-                      <Text size="10" fontWeight="700" textTransform="uppercase">{dateTimeFormat(item.date)}</Text>
-                    </Flex.Row>
-                    <Text size="2">{item.title}</Text>
-                    <Text size="10" fontWeight="700" textTransform="uppercase">{item.photographer}</Text>
-                    <Text size="7" lineHeight="2" dangerouslySetInnerHTML={{ __html: item.abstract }}></Text>
-                  </Flex.Col>
-                </Grid>
-              </Grid.Row>
-            </Container.Fluid>
-          </Section>
+          <MediaGallery>
 
-          <LazyLoader components={item.components} />
+            <Section padding="7rem 0">
+              <Container.Fluid>
+                <Grid.Row rowGap="1rem">
+                  <Grid sm={6}>
+                    <Media item={item.media} />
+                  </Grid>
+                  <Grid sm={6}>
+                    <Flex.Col gap="3rem" gapSm="4rem" gapMd="5rem" gapLg="6rem">
+                      <Flex.Row justifyContent="space-between">
+                        <NavLink href={item.category.href} passHref>
+                          <Button as="a" variant="nav">
+                            <ChevronLeft />
+                            <Text size="10" fontWeight="700" textTransform="uppercase">{item.category.title}</Text>
+                          </Button>
+                        </NavLink>
+                        <Text size="10" fontWeight="700" textTransform="uppercase">{dateTimeFormat(item.date)}</Text>
+                      </Flex.Row>
+                      <Text size="2">{item.title}</Text>
+                      <Text size="10" fontWeight="700" textTransform="uppercase">{item.photographer}</Text>
+                      <Text size="7" lineHeight="2" dangerouslySetInnerHTML={{ __html: item.abstract }}></Text>
+                    </Flex.Col>
+                  </Grid>
+                </Grid.Row>
+              </Container.Fluid>
+            </Section>
+
+            <LazyLoader components={item.components} />
+
+          </MediaGallery>
 
           <MagazineRelated item={item.related} />
 
           <Footer />
-
-          <Modal width="100vw" visible={modal == 'gallery'} onClose={onCloseModal}>
-            <Modal.Content>
-              CONTENT
-            </Modal.Content>
-          </Modal>
 
         </Page>
       </Layout>

@@ -37,75 +37,85 @@ interface Props {
 
 export type ModalProps = UIComponentProps<Props>;
 
-const Modal: React.FC<React.PropsWithChildren<ModalProps | any>> =
-  ({ width, backdropClassName, positionClassName, layerClassName, wrapClassName,
-    disableBackdropClick, keyboard, visible: customVisible, onClose, children, onContentClick }: React.PropsWithChildren<ModalProps> & typeof defaultProps) => { // !!! any
+const Modal: React.FC<React.PropsWithChildren<ModalProps | any>> = ({
+  width,
+  backdropClassName,
+  positionClassName,
+  layerClassName,
+  wrapClassName,
+  disableBackdropClick,
+  keyboard,
+  visible: customVisible,
+  onClose,
+  children,
+  onContentClick,
+}: React.PropsWithChildren<ModalProps> & typeof defaultProps) => { // !!! any
 
-    const portal = usePortal('modal');
+  const portal = usePortal('modal');
 
-    const [visible, setVisible] = useState<boolean>(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
-    const [, setBodyHidden] = useBodyScroll(null, { delayReset: 300 });
+  const [, setBodyHidden] = useBodyScroll(null, { delayReset: 300 });
 
-    const [buttonChildren, otherChildren] = getChildsByType(children, ModalButton);
+  const [buttonChildren, otherChildren] = getChildsByType(children, ModalButton);
 
-    const hasButtons = buttonChildren && React.Children.count(buttonChildren) > 0;
+  const hasButtons = buttonChildren && React.Children.count(buttonChildren) > 0;
 
-    const close = useCallback(() => {
-      if (onClose) {
-        onClose();
-      }
-      setVisible(false);
-      setBodyHidden(false);
-    }, [onClose, setBodyHidden]);
-
-    useEffect(() => {
-      if (typeof customVisible === 'undefined') {
-        return;
-      }
-      setVisible(customVisible);
-      setBodyHidden(customVisible);
-    }, [customVisible, setBodyHidden]);
-
-    const { bindings } = useKeyboard(() => {
-      if (keyboard) {
-        close();
-      }
-    }, KeyCode.Escape, { disableGlobalEvent: true });
-
-    const onBackdropClick = () => {
-      if (!disableBackdropClick) {
-        close();
-      }
+  const close = useCallback(() => {
+    if (onClose) {
+      onClose();
     }
+    setVisible(false);
+    setBodyHidden(false);
+  }, [onClose, setBodyHidden]);
 
-    const modalContextValue: ModalConfig = useMemo(() => ({ close }), [close]);
-
-    if (!portal) {
-      return null;
+  useEffect(() => {
+    if (typeof customVisible === 'undefined') {
+      return;
     }
+    setVisible(customVisible);
+    setBodyHidden(customVisible);
+  }, [customVisible, setBodyHidden]);
 
-    return createPortal(
-      <ModalContext.Provider value={modalContextValue}>
-        <Backdrop width={width}
-          positionClassName={positionClassName} backdropClassName={backdropClassName} layerClassName={layerClassName}
-          visible={visible} onClick={onBackdropClick} onContentClick={onContentClick}
-          {...bindings}>
-          <ModalWrapper className={wrapClassName} visible={visible}>
-            {false && otherChildren}
-            {(React.Children.map(otherChildren, child => {
-              if (React.isValidElement(child) && child.type === ModalTitle) {
-                return React.cloneElement(child, { ...child.props, onClose: child.props.onClose || onBackdropClick });
-              } else {
-                return child;
-              }
-            }))}
-            {hasButtons && <ModalFooter>{buttonChildren}</ModalFooter>}
-          </ModalWrapper>
-        </Backdrop>
-      </ModalContext.Provider>
-      , portal);
-  };
+  const { bindings } = useKeyboard(() => {
+    if (keyboard) {
+      close();
+    }
+  }, KeyCode.Escape, { disableGlobalEvent: true });
+
+  const onBackdropClick = () => {
+    if (!disableBackdropClick) {
+      close();
+    }
+  }
+
+  const modalContextValue: ModalConfig = useMemo(() => ({ close }), [close]);
+
+  if (!portal) {
+    return null;
+  }
+
+  return createPortal(
+    <ModalContext.Provider value={modalContextValue}>
+      <Backdrop width={width}
+        positionClassName={positionClassName} backdropClassName={backdropClassName} layerClassName={layerClassName}
+        visible={visible} onClick={onBackdropClick} onContentClick={onContentClick}
+        {...bindings}>
+        <ModalWrapper className={wrapClassName} visible={visible}>
+          {false && otherChildren}
+          {(React.Children.map(otherChildren, child => {
+            if (React.isValidElement(child) && child.type === ModalTitle) {
+              return React.cloneElement(child, { ...child.props, onClose: child.props.onClose || onBackdropClick });
+            } else {
+              return child;
+            }
+          }))}
+          {hasButtons && <ModalFooter>{buttonChildren}</ModalFooter>}
+        </ModalWrapper>
+      </Backdrop>
+    </ModalContext.Provider>
+    , portal);
+};
 
 Modal.defaultProps = defaultProps;
 

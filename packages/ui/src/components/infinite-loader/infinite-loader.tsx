@@ -31,7 +31,7 @@ const StyledInfiniteLoader = styled.div<StyledInfiniteLoaderProps>`
 const InfiniteLoader: InfiniteLoaderComponent = ({ children, as = 'div' as React.ElementType, onMore, ...props }) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const handleScroll = () => {
+  const onScroll = () => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
       // console.log('rect', rect);
@@ -41,11 +41,11 @@ const InfiniteLoader: InfiniteLoaderComponent = ({ children, as = 'div' as React
     }
   };
 
-  useEventListener('scroll', handleScroll);
+  useEventListener('scroll', onScroll);
 
   // Set size at the first client-side load
   useIsomorphicLayoutEffect(() => {
-    handleScroll();
+    onScroll();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

@@ -136,104 +136,109 @@
           "src": "/assets/products_detail/designer.jpg",
           "type": "image"
         }
-      },
-      {
-        "schema": "sizes-colors-1",
-        "title": "Size & Color",
-        "list": [
-          {
-            "title": "Production",
-            "abstract": "Industriale"
-          },
-          {
-            "title": "Material",
-            "abstract": "Gres porcellanato rettificato smaltato con stampa digitale"
-          },
-          {
-            "title": "Nominal Sizes",
-            "abstract": "20·20 cm (8”·8”)"
-          },
-          {
-            "title": "Thickness",
-            "abstract": "10 mm"
-          }
-        ],
-        "medias": [
-          {
-            "src": "/assets/products_detail/version-01.jpg",
-            "type": "image"
-          },
-          {
-            "src": "/assets/products_detail/version-02.jpg",
-            "type": "image"
-          },
-          {
-            "src": "/assets/products_detail/version-03.jpg",
-            "type": "image"
-          }
-        ]
-      },
-      {
-        "schema": "download-1",
-        "title": "Download",
-        "links": [
-          {
-            "href": "/downloads/2160/56/Mutina_Cat_Azulej_Aff_LR.PDF",
-            "title": "Catalogo (6.77 MB)",
-            "type": ".pdf"
-          },
-          {
-            "href": "/downloads/2160/57/HIGH RESOLUTION IMAGES.zip",
-            "title": "Immagini in alta risoluzione (75.38 MB)",
-            "type": ".zip"
-          },
-          {
-            "href": "/downloads/2160/212/AZULEJ_3DCADLIBRARY.zip",
-            "title": "Minimali (4.99 MB)",
-            "type": ".zip"
-          },
-          {
-            "href": "/downloads/2160/276/3D CAD LIBRARY HR.zip",
-            "title": "Minimali in alta risoluzione (55.61 MB)",
-            "type": ".zip",
-            "secure": true
-          },
-          {
-            "href": "/downloads/2160/213/TechnicalFeatures_Azulej.zip",
-            "title": "Specifiche tecniche (9.99 MB)",
-            "type": ".zip"
-          },
-          {
-            "href": "/downloads/2160/214/AZULEJ _ CONSIGLI DI POSA E MANUTENZIONE.pdf",
-            "title": "Consigli posa e manutenzione (119.8 KB)",
-            "type": ".pdf"
-          }
-        ]
-      },
-      {
-        "schema": "related-1",
-        "title": "You may also like",
-        "items": [
-          {
-            "id": 2,
-            "href": "/products_detail",
-            "title": "Déchirer by Patricia Urquiola",
-            "media": {
-              "src": "/assets/products_detail/related-01.jpg",
-              "type": "image"
-            }
-          },
-          {
-            "id": 3,
-            "href": "/products_detail",
-            "title": "Puzzle by Barber & Osgerby",
-            "media": {
-              "src": "/assets/products_detail/related-02.jpg",
-              "type": "image"
-            }
-          }
-        ]
       }
-    ]
+    ],
+    "sizeColor": {
+      "id": 10000,
+      "schema": "product_size_color",
+      "title": "Size & Color",
+      "list": [
+        {
+          "title": "Production",
+          "abstract": "Industriale"
+        },
+        {
+          "title": "Material",
+          "abstract": "Gres porcellanato rettificato smaltato con stampa digitale"
+        },
+        {
+          "title": "Nominal Sizes",
+          "abstract": "20·20 cm (8”·8”)"
+        },
+        {
+          "title": "Thickness",
+          "abstract": "10 mm"
+        }
+      ],
+      "medias": [
+        {
+          "src": "/assets/products_detail/version-01.jpg",
+          "type": "image"
+        },
+        {
+          "src": "/assets/products_detail/version-02.jpg",
+          "type": "image"
+        },
+        {
+          "src": "/assets/products_detail/version-03.jpg",
+          "type": "image"
+        }
+      ]
+    },
+    "download": {
+      "id": 11000,
+      "schema": "product_download",
+      "title": "Download",
+      "links": [
+        {
+          "href": "/downloads/2160/56/Mutina_Cat_Azulej_Aff_LR.PDF",
+          "title": "Catalogo (6.77 MB)",
+          "type": ".pdf"
+        },
+        {
+          "href": "/downloads/2160/57/HIGH RESOLUTION IMAGES.zip",
+          "title": "Immagini in alta risoluzione (75.38 MB)",
+          "type": ".zip"
+        },
+        {
+          "href": "/downloads/2160/212/AZULEJ_3DCADLIBRARY.zip",
+          "title": "Minimali (4.99 MB)",
+          "type": ".zip"
+        },
+        {
+          "href": "/downloads/2160/276/3D CAD LIBRARY HR.zip",
+          "title": "Minimali in alta risoluzione (55.61 MB)",
+          "type": ".zip",
+          "secure": true
+        },
+        {
+          "href": "/downloads/2160/213/TechnicalFeatures_Azulej.zip",
+          "title": "Specifiche tecniche (9.99 MB)",
+          "type": ".zip"
+        },
+        {
+          "href": "/downloads/2160/214/AZULEJ _ CONSIGLI DI POSA E MANUTENZIONE.pdf",
+          "title": "Consigli posa e manutenzione (119.8 KB)",
+          "type": ".pdf"
+        }
+      ]
+    },
+    "related": {
+      "id": 12000,
+      "schema": "product_related",
+      "title": "You may also like",
+      "items": [
+        {
+          "id": 2,
+          "schema": "products_detail",
+          "href": "/products_detail",
+          "title": "Déchirer by Patricia Urquiola",
+          "media": {
+            "src": "/assets/products_detail/related-01.jpg",
+            "type": "image"
+          }
+        },
+        {
+          "id": 3,
+          "schema": "products_detail",
+          "href": "/products_detail",
+          "title": "Puzzle by Barber & Osgerby",
+          "media": {
+            "src": "/assets/products_detail/related-02.jpg",
+            "type": "image"
+          }
+        }
+      ]
+    }
   }
 }
