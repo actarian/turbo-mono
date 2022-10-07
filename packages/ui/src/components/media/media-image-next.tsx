@@ -1,23 +1,27 @@
+// import Image, { ImageProps } from 'next/image';
 import { getClassNames } from '@websolute/core';
+import Image, { ImageProps } from 'next/future/image'; // !!! todo implement this
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
+import type { UIStyledComponentProps } from '../types';
 
 export type Props = {
   src: string;
   alt?: string;
 };
 
-export type MediaImageProps = UIStyledComponentProps<Props, 'img'>;
+export type MediaImageNextProps = UIStyledComponentProps<Props & ImageProps, 'img'>;
 
-const StyledMediaImage = styled.img`
+const StyledMediaImageNext = styled(Image)`
   max-width: 100%;
   // height: auto;
   user-select: none;
+  position: relative !important;
 `;
 
-const MediaImage = ({ alt = '', className, ...props }: MediaImageProps) => {
+const MediaImageNext = ({ alt = '', className, ...props }: MediaImageNextProps) => {
+  // return (<StyledMediaImageNext {...props} alt={alt} layout="fill" objectFit={'cover'} />);
   const classNames = getClassNames(className, 'image');
-  return (<StyledMediaImage className={classNames} {...props} alt={alt} />);
+  return (<StyledMediaImageNext className={classNames} {...props} fill alt={alt} />);
 }
 
 /*
@@ -38,4 +42,4 @@ const MediaImage = ({ alt = '', className, ...props }: MediaImageProps) => {
 >
 */
 
-export default MediaImage;
+export default MediaImageNext;

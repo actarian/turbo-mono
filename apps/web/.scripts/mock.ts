@@ -174,6 +174,7 @@ async function buildStore(jsons: { name: string, data: IEntity[] }[], PAGES: { [
     // types generator disabled !!!
     await awaitAll(collections, async (c) => await addType(c.items, c, collections));
   }
+  // pageKeys.forEach(key => delete store[key]);
   return store;
 }
 
