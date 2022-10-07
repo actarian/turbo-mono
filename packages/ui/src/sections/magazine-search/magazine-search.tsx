@@ -14,7 +14,7 @@ import MagazineSearchRecap from './magazine-search-recap';
 function filterMagazineItem(key: string, item: MagazineSearchItem, value: IEquatable) {
   switch (key) {
     case 'category':
-      return item.category === value;
+      return item.categoryId === value;
     case 'title':
       return item.title.toLowerCase().includes(value.toString().toLowerCase());
     default:

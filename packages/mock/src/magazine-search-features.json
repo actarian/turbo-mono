@@ -6,31 +6,31 @@
     "mode": "select",
     "features": [
       {
-        "id": "Art",
+        "id": "magazine_category_art",
         "title": "Art"
       },
       {
-        "id": "Diary",
+        "id": "magazine_category_diary",
         "title": "Diary"
       },
       {
-        "id": "Events",
+        "id": "magazine_category_event",
         "title": "Events"
       },
       {
-        "id": "Inside",
+        "id": "magazine_category_inside",
         "title": "Inside"
       },
       {
-        "id": "Library",
+        "id": "magazine_category_library",
         "title": "Library"
       },
       {
-        "id": "Places",
+        "id": "magazine_category_place",
         "title": "Places"
       },
       {
-        "id": "Talks",
+        "id": "magazine_category_talk",
         "title": "Talks"
       }
     ]

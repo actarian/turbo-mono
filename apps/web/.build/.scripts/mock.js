@@ -126,8 +126,8 @@ function resolveCategoryTree(item, items, categories) {
         categoryTree.push({
             id: item.id,
             schema: 'category',
-            name: item.schema,
             title: item.title,
+            media: item.media,
             slug: item.slug,
             pageSchema: item.schema,
             pageId: item.id,
@@ -147,9 +147,10 @@ async function rebuildStore(pathname, PAGES) {
 }
 async function buildStore(jsons, PAGES) {
     const store = {};
-    let collections = jsons.map(json => remapCollection(json.name));
+    const pageKeys = Object.keys(PAGES);
+    let collections = jsons.map(json => getCollectionNames(json.name));
     collections.forEach((c, i) => {
-        store[c.singularName] = toServiceSchema(c, jsons[i].data);
+        store[c.singularName] = toServiceSchema(c, jsons[i].data, pageKeys.includes(c.singularName));
     });
     const pageService = createPageService(store, PAGES);
     store['page'] = pageService;
@@ -176,12 +177,22 @@ function createPageService(store, PAGES) {
             console.warn(`MockBuild.createPageService.collection not found [${key}]`);
         }
     }
-    const pageCollection = remapCollection('page');
+    const pageCollection = getCollectionNames('page');
     const pageService = {
         ...pageCollection,
         items: pages,
     };
     return pageService;
+}
+function titleToSlug(title) {
+    return title.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, "") //remove diacritics
+        .toLowerCase()
+        .replace(/\s+/g, '-') //spaces to dashes
+        .replace(/&/g, '-and-') //ampersand to and
+        .replace(/[^\w\-]+/g, '') //remove non-words
+        .replace(/\-\-+/g, '-') //collapse multiple dashes
+        .replace(/^-+/, '') //trim starting dash
+        .replace(/-+$/, ''); //trim ending dash
 }
 function getRoute(href, marketId, localeId, pageSchema, pageId) {
     return {
@@ -240,27 +251,66 @@ function createRouteService(store, PAGES) {
         }
     }
     // console.log('routes', routes);
-    const routeCollection = remapCollection('route');
+    const routeCollection = getCollectionNames('route');
     const routeService = {
         ...routeCollection,
         items: routes,
     };
     return routeService;
 }
-function remapCollection(key) {
+function getCollectionNames(key) {
     return {
         singularName: key,
         pluralName: pluralize(key),
         displayName: key.charAt(0).toUpperCase() + key.substring(1, key.length).toLowerCase(),
     };
 }
-function toServiceSchema(c, collection) {
+function toServiceSchema(c, collection, isPage) {
     if (c.singularName === c.pluralName) {
-        throw `DataService.getData: invalid plural key: ${c.singularName}`;
+        throw `MOCK > collection error: invalid plural key ${c.singularName}`;
     }
+    const mapToPage = (x, i) => {
+        if (typeof x.slug !== 'string') {
+            if (x.title != null) {
+                if (typeof x.title === 'string') {
+                    x.slug = titleToSlug(x.title);
+                }
+                else {
+                    const slug = { ...x.title };
+                    Object.keys(slug).forEach((key) => {
+                        slug[key] = titleToSlug(slug[key]);
+                    });
+                    x.slug = slug;
+                }
+            }
+            else {
+                throw `MOCK > ${c.singularName} error: invalid page missing title or slug`;
+            }
+        }
+        if (!x.title) {
+            throw `MOCK > ${c.singularName} error: invalid page missing title`;
+        }
+        x.id = i + 1;
+        const meta = (x.meta || {});
+        meta.title = meta.title || x.title;
+        meta.description = meta.description || x.abstract;
+        meta.keywords = meta.keywords || 'keywords';
+        meta.robots = meta.robots || 'all';
+        x.meta = meta;
+        return ({
+            ...x,
+            schema: c.singularName
+        });
+    };
+    const mapToData = (x, i) => {
+        return ({
+            ...x,
+            schema: c.singularName
+        });
+    };
     return {
         ...c,
-        items: collection.map(x => ({ ...x, schema: c.singularName })),
+        items: collection.map((x, i) => isPage ? mapToPage(x, i) : mapToData(x, i)),
     };
 }
 async function addType(items, c, collections) {
@@ -341,7 +391,9 @@ function MockBuildAndWatch(pathname, PAGES) {
     // console.log(process.argv);
     if (process.argv.includes('mock') && process.env.NODE_ENV !== 'production') {
         global.Request = {};
-        BuildAndWatch(pathname, PAGES);
+        BuildAndWatch(pathname, PAGES).catch(error => {
+            console.error(error);
+        });
     }
 }
 MockBuildAndWatch('./mock', config_1.PAGES);

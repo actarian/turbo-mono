@@ -23,11 +23,13 @@ export async function getPage<T extends IPage>(schema: string, id: IEquatable, m
     const alternates = routes.filter((x: any) => x.marketId !== market || x.localeId !== locale);
     const categoryTree: ICategory[] = await getCategoryTree(page);
     const breadcrumb: IRouteLink[] = await getBreadcrumbFromCategoryTree(categoryTree, market, locale);
+    const parentRoute: IRouteLink | undefined = breadcrumb.length > 1 ? breadcrumb[breadcrumb.length - 2] : undefined;
     return {
       ...page,
       href: currentRoute.id, // !!! route?
       alternates,
-      breadcrumb: breadcrumb,
+      breadcrumb,
+      parentRoute,
     } as T;
   } else {
     console.log('PageService.getPage.notfound', schema, id, locale);

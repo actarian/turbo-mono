@@ -1,10 +1,6 @@
 [
   {
-    "id": 1,
-    "slug": {
-      "en": "login",
-      "it": "accedi"
-    },
+    "categoryId": "login",
     "title": {
       "en": "Login",
       "it": "Accedi"
@@ -16,19 +12,6 @@
     "description": {
       "en": "Login.",
       "it": "Accedi."
-    },
-    "categoryId": 8,
-    "meta": {
-      "title": {
-        "en": "Login",
-        "it": "Accedi"
-      },
-      "description": {
-        "en": "Login.",
-        "it": "Accedi."
-      },
-      "keywords": "login keywords",
-      "robots": "all"
     }
   }
 ]

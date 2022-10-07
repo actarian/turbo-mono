@@ -126,7 +126,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             </Flex>
             <Flex flex="1" justifyContent="center">
               {layout.navs.primary && <Nav.Row gap="3rem" display="none" displaySm="flex">
-                {layout.navs.primary.filter(x => !x.categoryId || x.categoryId < 8).map((x, i) => (
+                {layout.navs.primary.filter(x => !x.categoryId || x.categoryId !== 'login').map((x, i) => (
                   (x.href && x.items && x.items.length ?
                     <Box key={i}>
                       <Button variant="nav" onClick={() => onNav(x)}>{x.title}</Button>
@@ -138,7 +138,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                 ))}
               </Nav.Row>}
               {/*layout.navs.primary && <Nav.Row gap="3rem" display="none" displaySm="flex">
-                {layout.navs.primary.filter(x => !x.categoryId || x.categoryId < 7).map((x, i) => (
+                {layout.navs.primary.filter(x => !x.categoryId || x.categoryId !== 'login').map((x, i) => (
                   (x.items && x.items.length ?
                     <Button variant="nav" onClick={() => onSubmenu(x)}>{x.title}</Button> :
                     <NavLink key={i} href={x.href || ''} passHref>

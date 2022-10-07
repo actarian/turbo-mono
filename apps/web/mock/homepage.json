@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "categoryId": "homepage",
     "slug": "",
     "title": {
       "en": "New Wave",
@@ -15,7 +16,6 @@
       "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
     },
     "image": "/assets/homepage/banner.png",
-    "categoryId": 1,
     "meta": {
       "title": {
         "en": "New Wave",
@@ -25,7 +25,7 @@
         "en": "The charm of yesterday, the elegance of today",
         "it": "Il fascino di ieri, l'eleganza di oggi"
       },
-      "keywords": "homepage keywords",
+      "keywords": "hexagon keywords",
       "robots": "all"
     }
   }

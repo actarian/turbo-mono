@@ -136,7 +136,6 @@ function resolveCategoryTree(item: ICategorized, items: ICategorized[], categori
     categoryTree.push({
       id: item.id,
       schema: 'category',
-      name: item.schema,
       title: item.title,
       media: item.media,
       slug: item.slug,
@@ -160,9 +159,10 @@ async function rebuildStore(pathname: string, PAGES: { [key: string]: string }):
 
 async function buildStore(jsons: { name: string, data: IEntity[] }[], PAGES: { [key: string]: string }): Promise<SerializedStore> {
   const store: SerializedStore = {};
-  let collections: CollectionDescription[] = jsons.map(json => remapCollection(json.name));
+  const pageKeys = Object.keys(PAGES);
+  let collections: CollectionDescription[] = jsons.map(json => getCollectionNames(json.name));
   collections.forEach((c, i) => {
-    store[c.singularName] = toServiceSchema(c, jsons[i].data);
+    store[c.singularName] = toServiceSchema(c, jsons[i].data, pageKeys.includes(c.singularName));
   });
   const pageService = createPageService(store, PAGES);
   store['page'] = pageService;
@@ -189,12 +189,23 @@ function createPageService(store: SerializedStore, PAGES: { [key: string]: strin
       console.warn(`MockBuild.createPageService.collection not found [${key}]`);
     }
   }
-  const pageCollection = remapCollection('page');
+  const pageCollection = getCollectionNames('page');
   const pageService = {
     ...pageCollection,
     items: pages,
   };
   return pageService;
+}
+
+function titleToSlug(title: string): string {
+  return title.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, "") //remove diacritics
+    .toLowerCase()
+    .replace(/\s+/g, '-') //spaces to dashes
+    .replace(/&/g, '-and-') //ampersand to and
+    .replace(/[^\w\-]+/g, '') //remove non-words
+    .replace(/\-\-+/g, '-') //collapse multiple dashes
+    .replace(/^-+/, '') //trim starting dash
+    .replace(/-+$/, ''); //trim ending dash
 }
 
 function getRoute(href: string, marketId: string, localeId: string, pageSchema: string, pageId: string): IRoute {
@@ -254,7 +265,7 @@ function createRouteService(store: SerializedStore, PAGES: { [key: string]: stri
     }
   }
   // console.log('routes', routes);
-  const routeCollection = remapCollection('route');
+  const routeCollection = getCollectionNames('route');
   const routeService = {
     ...routeCollection,
     items: routes,
@@ -262,7 +273,7 @@ function createRouteService(store: SerializedStore, PAGES: { [key: string]: stri
   return routeService;
 }
 
-function remapCollection(key: string): CollectionDescription {
+function getCollectionNames(key: string): CollectionDescription {
   return {
     singularName: key,
     pluralName: pluralize(key),
@@ -270,13 +281,50 @@ function remapCollection(key: string): CollectionDescription {
   };
 }
 
-function toServiceSchema(c: CollectionDescription, collection: IEntity[]): SerializedCollection {
+function toServiceSchema(c: CollectionDescription, collection: IEntity[], isPage: boolean): SerializedCollection {
   if (c.singularName === c.pluralName) {
-    throw `DataService.getData: invalid plural key: ${c.singularName}`;
+    throw `MOCK > collection error: invalid plural key ${c.singularName}`;
+  }
+  const mapToPage = (x: IEntity, i: number) => {
+    if (typeof x.slug !== 'string') {
+      if (x.title != null) {
+        if (typeof x.title === 'string') {
+          x.slug = titleToSlug(x.title);
+        } else {
+          const slug: ILocalizedString = { ...x.title };
+          Object.keys(slug).forEach((key: string) => {
+            slug[key] = titleToSlug(slug[key]);
+          });
+          x.slug = slug;
+        }
+      } else {
+        throw `MOCK > ${c.singularName} error: invalid page missing title or slug`;
+      }
+    }
+    if (!x.title) {
+      throw `MOCK > ${c.singularName} error: invalid page missing title`;
+    }
+    x.id = i + 1;
+    const meta: { [key: string]: string | ILocalizedString } = (x.meta || {} as any);
+    meta.title = meta.title || x.title as string | ILocalizedString;
+    meta.description = meta.description || x.abstract as string | ILocalizedString;
+    meta.keywords = meta.keywords || 'keywords';
+    meta.robots = meta.robots || 'all';
+    x.meta = meta;
+    return ({
+      ...x,
+      schema: c.singularName
+    });
+  }
+  const mapToData = (x: IEntity, i: number) => {
+    return ({
+      ...x,
+      schema: c.singularName
+    });
   }
   return {
     ...c,
-    items: collection.map(x => ({ ...x, schema: c.singularName })),
+    items: collection.map((x, i) => isPage ? mapToPage(x, i) : mapToData(x, i)),
   };
 }
 
@@ -356,7 +404,9 @@ function MockBuildAndWatch(pathname: string, PAGES: { [key: string]: string }) {
   // console.log(process.argv);
   if (process.argv.includes('mock') && process.env.NODE_ENV !== 'production') {
     global.Request = {} as any;
-    BuildAndWatch(pathname, PAGES);
+    BuildAndWatch(pathname, PAGES).catch(error => {
+      console.error(error);
+    });
   }
 }
 

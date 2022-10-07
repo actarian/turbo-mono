@@ -131,13 +131,8 @@
       "title": "Continua a leggere",
       "items": [
         {
-          "id": 1,
-          "schema": "magazine_detail",
           "href": "/magazine_detail",
           "title": "A talk with Vincent Van Duysen",
-          "category": {
-            "title": "Talks"
-          },
           "media": {
             "type": "image",
             "src": "/assets/magazine_detail/10036_n_VVD_2016_Fred Debrock_HR_2_final_BW_880.jpg",
@@ -146,13 +141,8 @@
           "date": "2022-09-22T12:20:00.000Z"
         },
         {
-          "id": 2,
-          "schema": "magazine_detail",
           "href": "/magazine_detail",
           "title": "A talk with Nicola Ricciardi",
-          "category": {
-            "title": "Talks"
-          },
           "media": {
             "type": "image",
             "src": "/assets/magazine_detail/8966_n_P.S.AllaCarta_Ricciardi_Cover.jpg",
@@ -161,13 +151,8 @@
           "date": "2022-03-30T12:20:00.000Z"
         },
         {
-          "id": 3,
-          "schema": "magazine_detail",
           "href": "/magazine_detail",
           "title": "A talk with Chiara Rusconi",
-          "category": {
-            "title": "Talks"
-          },
           "media": {
             "type": "image",
             "src": "/assets/magazine_detail/8458_n_Chiara_Rusconi_cover.jpg",
@@ -176,13 +161,8 @@
           "date": "2022-02-24T12:20:00.000Z"
         },
         {
-          "id": 4,
-          "schema": "magazine_detail",
           "href": "/magazine_detail",
           "title": "A talk with Ginevra Bocini",
-          "category": {
-            "title": "Talks"
-          },
           "media": {
             "type": "image",
             "src": "/assets/magazine_detail/8199_n_PS_AllaCartStudio_Bitossi_880.jpg",
@@ -191,13 +171,8 @@
           "date": "2022-02-09T12:20:00.000Z"
         },
         {
-          "id": 5,
-          "schema": "magazine_detail",
           "href": "/magazine_detail",
           "title": "A talk with Shirana Shahbazi",
-          "category": {
-            "title": "Talks"
-          },
           "media": {
             "type": "image",
             "src": "/assets/magazine_detail/8216_n_Mutina-StefaniaZanetti-Thisisnotaprize-3_880.jpg",

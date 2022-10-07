@@ -1,15 +1,37 @@
 [
   {
-    "id": 1,
-    "slug": "talks",
+    "title": "Art",
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
+    "categoryId": "magazine_category_art"
+  },
+  {
+    "title": "Diary",
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
+    "categoryId": "magazine_category_diary"
+  },
+  {
+    "title": "Events",
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
+    "categoryId": "magazine_category_event"
+  },
+  {
+    "title": "Inside",
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
+    "categoryId": "magazine_category_inside"
+  },
+  {
+    "title": "Library",
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
+    "categoryId": "magazine_category_library"
+  },
+  {
+    "title": "Places",
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
+    "categoryId": "magazine_category_place"
+  },
+  {
     "title": "Talks",
     "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
-    "categoryId": 31,
-    "meta": {
-      "title": "Talks",
-      "description": "Talks",
-      "keywords": "talks keywords",
-      "robots": "all"
-    }
+    "categoryId": "magazine_category_talk"
   }
 ]

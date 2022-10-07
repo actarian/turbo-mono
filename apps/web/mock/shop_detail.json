@@ -1,7 +1,6 @@
 [
   {
-    "id": 1,
-    "slug": "t-shirt",
+    "categoryId": "shop_index",
     "title": "T-Shirt",
     "abstract": {
       "en": "Your perfect item for everyday use and walks in the forest.",
@@ -12,24 +11,10 @@
       "it": "<p>Questa t-shirt è un must nel tuo guardaroba, combina la vestibilità senza tempo di una t-shirt classica con un intricato dettaglio ricamato che porta la maglia a un livello completamente nuovo. È morbido e resistente, quindi preparati ad avere una nuova maglietta preferita!</p>"
     },
     "image": "/assets/products/t-shirt.webp",
-    "price": 160.12,
-    "categoryId": 6,
-    "meta": {
-      "title": "T-Shirt",
-      "description": {
-        "en": "Your perfect item for everyday use and walks in the forest.",
-        "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
-      },
-      "keywords": "t-shirt keywords",
-      "robots": "all"
-    }
+    "price": 160.12
   },
   {
-    "id": 2,
-    "slug": {
-      "en": "unisex-skinny-joggers",
-      "it": "pantaloni-skinny-da-jogging-unisex"
-    },
+    "categoryId": "shop_index",
     "title": {
       "en": "Unisex Skinny Joggers",
       "it": "Pantaloni skinny da jogging unisex"
@@ -43,27 +28,10 @@
       "it": "<p>Sembra che tu abbia trovato i tuoi prossimi pantaloni della tuta da allenamento preferiti: i jogger slim fit sono leggeri e traspiranti, il che li rende perfetti per lo sport. O se hai voglia di sdraiarti sul divano, questi morbidi jogger sono proprio quello di cui hai bisogno. • 65% poliestere, 35% cotone • Peso del tessuto: 250 g/m² (10.5 oz/y²) • Cintura elastica con cordino piatto in tinta • Occhielli in metallo spazzolato per il cordino • Polsini alla caviglia a costine doppio strato • Tasche laterali con doppio orlo a costine a strati • Tasca applicata sul retro • Vestibilità slim (le donne potrebbero voler ordinare una taglia in meno)</p>"
     },
     "image": "/assets/products/trouser.webp",
-    "price": 160.12,
-    "categoryId": 6,
-    "meta": {
-      "title": {
-        "en": "Unisex Skinny Joggers",
-        "it": "Pantaloni skinny da jogging unisex"
-      },
-      "description": {
-        "en": "Your perfect item for everyday use and walks in the forest.",
-        "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
-      },
-      "keywords": "unisex skinny joggers keywords",
-      "robots": "all"
-    }
+    "price": 160.12
   },
   {
-    "id": 3,
-    "slug": {
-      "en": "lightweight-jacket",
-      "it": "giacca-leggera"
-    },
+    "categoryId": "shop_index",
     "title": {
       "en": "Lightweight Jacket",
       "it": "Giacca Leggera"
@@ -77,27 +45,10 @@
       "it": "<p>Aggiungi un po' di brio al tuo guardaroba invernale con questa vivace giacca invernale. Con un pile spazzolato all'interno e una vestibilità unisex rilassata, questa giacca è solo la roba dei sogni, quindi affrettati a prenderne una! Giacca in ripstop a maniche lunghe colorblock in nero. Motivo grezzo in ossidiana nero e marrone stampato ovunque. Grafica stampata in bianco dappertutto. Finiture in tessuto con logo in bianco e nero. Coulisse in stile bungee sul cappuccio con logo in gomma. Chiusura con zip sul davanti. Logo gommato applicato sul petto. Tasche a filetto e patch logo in tessuto in arancione in vita. Polsini elasticizzati. Parzialmente foderato. Hardware nero.</p>"
     },
     "image": "/assets/products/jacket.webp",
-    "price": 249.99,
-    "categoryId": 6,
-    "meta": {
-      "title": {
-        "en": "Lightweight Jacket",
-        "it": "Giacca Leggera"
-      },
-      "description": {
-        "en": "Your perfect item for everyday use and walks in the forest.",
-        "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
-      },
-      "keywords": "lightweight jacket keywords",
-      "robots": "all"
-    }
+    "price": 249.99
   },
   {
-    "id": 4,
-    "slug": {
-      "en": "black-beanie",
-      "it": "berretto-nero"
-    },
+    "categoryId": "shop_index",
     "title": {
       "en": "Black Beanie",
       "it": "Berretto Nero"
@@ -111,19 +62,6 @@
       "it": "<p>Il berretto Next.js è arrivato! Questa bellezza ricamata ha una vestibilità aderente che ti assicura di sentirti comodo e caldo qualunque cosa tu stia facendo.</p><ol><li>60% cotone, 40% acrilico</li><li>Cotone traspirante misto</li><li>Forma aderente</li><li>Taglia unica</li></ol>"
     },
     "image": "/assets/products/hat.webp",
-    "price": 160.12,
-    "categoryId": 6,
-    "meta": {
-      "title": {
-        "en": "Black Beanie",
-        "it": "Berretto Nero"
-      },
-      "description": {
-        "en": "Your perfect item for everyday use and walks in the forest.",
-        "it": "Il tuo capo perfetto per l'uso quotidiano e le passeggiate nella foresta."
-      },
-      "keywords": "black beanie keywords",
-      "robots": "all"
-    }
+    "price": 160.12
   }
 ]

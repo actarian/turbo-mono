@@ -1,11 +1,12 @@
 
 import type { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
-import { MagazineSearchDefaults, MagazineSearchFeaturesDefaults } from '@websolute/mock';
+import { MagazineSearchFeaturesDefaults } from '@websolute/mock';
 import type { IFeatureType, PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
 import type { MagazineSearchItem } from '@websolute/ui';
 import { CategoryHero, Footer, Header, Layout, MagazineSearch, Meta, Page } from '@websolute/ui';
+import { getMagazineDetails } from 'src/models';
 
 export default function MagazineCategory({ layout, page, items = [], featureTypes = [], params }: MagazineCategoryProps) {
   return (
@@ -37,7 +38,7 @@ export async function getStaticProps(context: IStaticContext) {
   const layout = await getLayout(market, locale);
   const page = await getPage('magazine_category', id, market, locale);
 
-  const items = MagazineSearchDefaults.items;
+  const items = await getMagazineDetails({ market, locale });
   const featureTypes = MagazineSearchFeaturesDefaults;
 
   const props = asStaticProps({ ...context, layout, page, items, featureTypes });

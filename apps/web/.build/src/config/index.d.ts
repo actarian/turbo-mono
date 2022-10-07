@@ -1,16 +1,16 @@
 export declare const PAGES: {
-    contact: string;
     homepage: string;
-    login: string;
+    product_index: string;
+    product_category: string;
+    product_detail: string;
     magazine_index: string;
     magazine_category: string;
     magazine_detail: string;
-    notfound: string;
-    product_category: string;
-    product_detail: string;
-    product_index: string;
-    reserved_area: string;
-    shop_index: string;
     store_index: string;
+    shop_index: string;
+    contact: string;
+    login: string;
+    reserved_area: string;
+    notfound: string;
 };
 //# sourceMappingURL=index.d.ts.map

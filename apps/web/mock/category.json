@@ -1,26 +1,23 @@
 [
   {
-    "id": 1,
-    "name": "homepage",
-    "title": "home",
+    "id": "homepage",
+    "title": "homepage",
     "categoryId": null,
     "pageSchema": "homepage",
     "pageId": 1
   },
   {
-    "id": 2,
-    "name": "product_index",
+    "id": "product_index",
     "title": {
       "en": "Collections",
       "it": "Collezioni"
     },
-    "categoryId": 1,
+    "categoryId": "homepage",
     "pageSchema": "product_index",
     "pageId": 1
   },
   {
-    "id": 21,
-    "name": "tiles",
+    "id": "product_category_tile",
     "title": {
       "en": "Tiles",
       "it": "Tiles"
@@ -29,75 +26,110 @@
       "type": "image",
       "src": "/assets/header/6366_n_tiles.jpg"
     },
-    "categoryId": 2,
+    "categoryId": "product_index",
     "pageSchema": "product_category",
     "pageId": 1
   },
   {
-    "id": 3,
-    "name": "magazine_index",
+    "id": "magazine_index",
     "title": "Magazine",
-    "categoryId": 1,
+    "categoryId": "homepage",
     "pageSchema": "magazine_index",
     "pageId": 1
   },
   {
-    "id": 31,
-    "name": "magazine_category",
-    "title": "Talks",
-    "categoryId": 3,
+    "id": "magazine_category_art",
+    "title": "Art",
+    "categoryId": "magazine_index",
     "pageSchema": "magazine_category",
     "pageId": 1
   },
   {
-    "id": 4,
-    "name": "store_index",
+    "id": "magazine_category_diary",
+    "title": "Diary",
+    "categoryId": "magazine_index",
+    "pageSchema": "magazine_category",
+    "pageId": 2
+  },
+  {
+    "id": "magazine_category_event",
+    "title": "Events",
+    "categoryId": "magazine_index",
+    "pageSchema": "magazine_category",
+    "pageId": 3
+  },
+  {
+    "id": "magazine_category_inside",
+    "title": "Inside",
+    "categoryId": "magazine_index",
+    "pageSchema": "magazine_category",
+    "pageId": 4
+  },
+  {
+    "id": "magazine_category_library",
+    "title": "Library",
+    "categoryId": "magazine_index",
+    "pageSchema": "magazine_category",
+    "pageId": 5
+  },
+  {
+    "id": "magazine_category_place",
+    "title": "Places",
+    "categoryId": "magazine_index",
+    "pageSchema": "magazine_category",
+    "pageId": 6
+  },
+  {
+    "id": "magazine_category_talk",
+    "title": "Talks",
+    "categoryId": "magazine_index",
+    "pageSchema": "magazine_category",
+    "pageId": 7
+  },
+  {
+    "id": "store_index",
     "title": "Stores",
-    "categoryId": 1,
+    "categoryId": "homepage",
     "pageSchema": "store_index",
     "pageId": 1
   },
   {
-    "id": 5,
-    "name": "contact",
+    "id": "contact",
     "title": {
       "en": "Contact us",
       "it": "Contattaci"
     },
-    "categoryId": 1,
+    "categoryId": "homepage",
     "pageSchema": "contact",
     "pageId": 1
   },
   {
-    "id": 6,
-    "name": "shop",
+    "id": "shop_index",
     "title": {
       "en": "Shop",
       "it": "Shop"
     },
-    "categoryId": 1,
+    "categoryId": "homepage",
     "pageSchema": "shop_index",
     "pageId": 1
   },
   {
-    "id": 7,
-    "name": "reserved_area",
+    "id": "reserved_area",
     "title": {
       "en": "Reserved area",
       "it": "Area riservata"
     },
-    "categoryId": 1,
+    "categoryId": "homepage",
     "pageSchema": "reserved_area",
     "pageId": 1
   },
   {
-    "id": 8,
-    "name": "login",
+    "id": "login",
     "title": {
       "en": "Login",
       "it": "Accedi"
     },
-    "categoryId": 1,
+    "categoryId": "homepage",
     "pageSchema": "login",
     "pageId": 1
   }

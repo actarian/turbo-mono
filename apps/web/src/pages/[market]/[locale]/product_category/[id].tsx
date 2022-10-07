@@ -1,7 +1,7 @@
 
 import type { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
-import { ProductsSearchDefaults, ProductsSearchFeaturesDefaults } from '@websolute/mock';
+import { ProductsSearchFeaturesDefaults } from '@websolute/mock';
 import type { IFeatureType, PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
 import { CategoryHero, Footer, Header, Layout, Meta, Page, ProductSearchItem, ProductsSearch } from '@websolute/ui';
@@ -38,10 +38,7 @@ export async function getStaticProps(context: IStaticContext) {
   const layout = await getLayout(market, locale);
   const page = await getPage('product_category', id, market, locale);
 
-  const products = await getProductDetails({ market, locale })
-  // console.log(products);
-
-  const items = ProductsSearchDefaults.items;
+  const items = await getProductDetails({ market, locale });
   const featureTypes = ProductsSearchFeaturesDefaults;
 
   const props = asStaticProps({ ...context, layout, page, items, featureTypes });

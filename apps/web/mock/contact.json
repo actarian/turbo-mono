@@ -1,10 +1,6 @@
 [
   {
-    "id": 1,
-    "slug": {
-      "en": "contact-us",
-      "it": "contattaci"
-    },
+    "categoryId": "contact",
     "title": {
       "en": "Contact us",
       "it": "Contattaci"
@@ -16,19 +12,6 @@
     "description": {
       "en": "For any request, fill out the form in all its parts, we will reply as soon as possible.",
       "it": "Per qualsiasi richiesta, compilate il form in tutte le sue parti, vi risponderemo nel più breve tempo possibile."
-    },
-    "categoryId": 5,
-    "meta": {
-      "title": {
-        "en": "Contact us",
-        "it": "Contattaci"
-      },
-      "description": {
-        "en": "Contact request.",
-        "it": "Richiesta di contatto."
-      },
-      "keywords": "contact keywords",
-      "robots": "all"
     }
   }
 ]

@@ -8,7 +8,6 @@ import {
   BlogMore, BlogProposition, CategoriesProposition, Container, Flex, Footer, Header, Layout,
   Media, MediaImage, Meta, Page, ProductsProposition, Proposition, Section, Split, SwiperHero, Text
 } from '@websolute/ui';
-import { Breadcrumbs } from 'src/components';
 
 export default function Homepage({ layout, page, params }: PageProps) {
   // console.log('Homepage.layout', layout);
@@ -30,10 +29,6 @@ export default function Homepage({ layout, page, params }: PageProps) {
         <Header fixed />
 
         <SwiperHero items={SwiperHeroDefaults.items} />
-
-        <Breadcrumbs items={page.breadcrumb} />
-
-        <Text size="1">{page.title}</Text>
 
         <BlogProposition item={BlogPropositionDefaults.item} />
 

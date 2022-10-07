@@ -1,4 +1,4 @@
-import type { IEntity, IEquatable } from '@websolute/core';
+import type { IEntity } from '@websolute/core';
 import type { ILayout } from '../layout/layout';
 import type { IRoute, IRouteLink, IRouteParams } from '../route/route';
 
@@ -22,11 +22,12 @@ export interface IImage {
 export interface IPage extends IEntity {
   // id: IEquatable;
   // schema: SchemaType;
-  categoryId?: IEquatable;
+  categoryId?: string;
   slug?: string;
   href: string;
   alternates: IRoute[];
   breadcrumb: IRouteLink[];
+  parentRoute?: IRouteLink;
   title?: string;
   abstract?: string;
   description?: string;

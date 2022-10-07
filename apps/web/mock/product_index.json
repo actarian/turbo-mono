@@ -1,10 +1,6 @@
 [
   {
-    "id": 1,
-    "slug": {
-      "en": "collections",
-      "it": "collezioni"
-    },
+    "categoryId": "product_index",
     "title": {
       "en": "Collections",
       "it": "Collezioni"
@@ -16,19 +12,6 @@
     "description": {
       "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
       "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
-    },
-    "categoryId": 2,
-    "meta": {
-      "title": {
-        "en": "Collections",
-        "it": "Collezioni"
-      },
-      "description": {
-        "en": "The charm of yesterday, the elegance of today",
-        "it": "Il fascino di ieri, l'eleganza di oggi"
-      },
-      "keywords": "products keywords",
-      "robots": "all"
     }
   }
 ]

@@ -1,19 +1,17 @@
 [
   {
     "id": 1,
-    "slug": "azulej",
     "title": "Azulej by Patricia Urquiola",
     "abstract": {
       "en": "<p>Azulej è volta a rivalorizzare la memoria delle antiche maioliche artigianali e del cemento idraulico, sperimentando una tecnica di stampa innovativa orientata verso un prodotto di larga diffusione. Questa tradizione – rivisitata in chiave contemporanea – viene realizzata serialmente in formato 20x20 cm.</p> <p>La composizione riprende le caratteristiche della tecnica patchwork: un mix and match innovativo, volutamente casuale, che abbina disegni astratti e colori non saturi, neutri, appena consumati; colori che si fissano al materiale di supporto in modo naturalmente irregolare.</p>",
       "it": "<p>Azulej è volta a rivalorizzare la memoria delle antiche maioliche artigianali e del cemento idraulico, sperimentando una tecnica di stampa innovativa orientata verso un prodotto di larga diffusione. Questa tradizione – rivisitata in chiave contemporanea – viene realizzata serialmente in formato 20x20 cm.</p> <p>La composizione riprende le caratteristiche della tecnica patchwork: un mix and match innovativo, volutamente casuale, che abbina disegni astratti e colori non saturi, neutri, appena consumati; colori che si fissano al materiale di supporto in modo naturalmente irregolare.</p>"
     },
-    "categoryId": 21,
+    "categoryId": "product_category_tile",
     "category": {
-      "id": 21,
-      "href": "/products_category",
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "name": "tiles",
-      "categoryId": 21,
+      "categoryId": "product_index",
       "pageSchema": "products_category",
       "pageId": 1,
       "schema": "category"
@@ -221,31 +219,840 @@
       "items": [
         {
           "id": 2,
-          "schema": "products_detail",
-          "href": "/products_detail",
           "title": "Déchirer by Patricia Urquiola",
           "media": {
             "src": "/assets/products_detail/related-01.jpg",
             "type": "image"
-          }
+          },
+          "href": "/products_detail"
         },
         {
           "id": 3,
-          "schema": "products_detail",
-          "href": "/products_detail",
           "title": "Puzzle by Barber & Osgerby",
           "media": {
             "src": "/assets/products_detail/related-02.jpg",
             "type": "image"
-          }
+          },
+          "href": "/products_detail"
         }
       ]
     },
-    "meta": {
-      "title": "Azulej by Patricia Urquiola",
-      "description": "Azulej by Patricia Urquiola",
-      "keywords": "azulej keywords",
-      "robots": "all"
-    }
+    "colors": [
+      5293,
+      2216,
+      2215,
+      5282
+    ],
+    "designer": 2224,
+    "medias": [
+      {
+        "src": "/assets/products/181_t_181_t_thumb_compressed.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/127_t_127_t_1---Azulej-Binaco-_-cubo,-trevo,-estrela,-flores,-renda_compressed.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      5282,
+      2215
+    ],
+    "designer": 2224,
+    "id": 2293,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BQ",
+    "title": "Bas-Relief by Patricia Urquiola",
+    "medias": [
+      {
+        "src": "/assets/products/256_t_Bas-Relief_hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/257_t_1---Bas-Relief-Code-Cipria.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [],
+    "id": 10951,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BZG",
+    "title": "Botanica by Tokujin Yoshioka",
+    "medias": [
+      {
+        "src": "/assets/products/9939_t_Pic_220901_Mutina67899_POST_880.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/9940_t_Pic_220901_Mutina246351_880x550.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      5282,
+      5283,
+      2216
+    ],
+    "designer": 2667,
+    "id": 2356,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BS",
+    "title": "Ceramica by Silvia Giacobazzi",
+    "medias": [
+      {
+        "src": "/assets/products/368_t_ceramica_hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/408_t_1---Ceramica-Grigio-Medio,-Ceramica-Grigio-Chiaro.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      2215
+    ],
+    "designer": 6352,
+    "id": 5339,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BJ",
+    "title": "Chymia by Laboratorio Avallone",
+    "medias": [
+      {
+        "src": "/assets/products/4277_t_listing_1.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/4363_t_Chymia_living_01_880px.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      2216,
+      2215,
+      5282
+    ],
+    "designer": 2224,
+    "id": 2380,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BU",
+    "title": "Déchirer by Patricia Urquiola",
+    "medias": [
+      {
+        "src": "/assets/products/436_t_DECHIRER_hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/463_t_463_t_1---Déchirer-Decor-Nero.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      2215,
+      5282
+    ],
+    "designer": 2224,
+    "id": 2392,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BV",
+    "title": "Déchirer XL by Patricia Urquiola",
+    "medias": [
+      {
+        "src": "/assets/products/482_t_DECHIRER_XL_hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/483_t_1_DECHIRER_XL_Avana_Grafite_Gesso.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5285,
+      5293,
+      2215,
+      5287,
+      5281,
+      5284,
+      5289,
+      5283
+    ],
+    "designer": 2228,
+    "id": 2404,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BW",
+    "title": "Diarama by Hella Jongerius",
+    "medias": [
+      {
+        "src": "/assets/products/514_t_Diarama_hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/528_t_01_Diarama_Dusk_880.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      2216,
+      2215
+    ],
+    "designer": 5982,
+    "id": 8268,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BZB",
+    "title": "DIN by Konstantin Grcic",
+    "medias": [
+      {
+        "src": "/assets/products/6867_t_Mutina-DIN_detail_2_880x550.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/6990_t_01_Din_Bagno_Dark_Blue_880x550.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      2215,
+      2216,
+      5282
+    ],
+    "designer": 2667,
+    "id": 2416,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BX",
+    "title": "Flow by Mutina Team",
+    "medias": [
+      {
+        "src": "/assets/products/545_t_FLOW_hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/546_t_1---Flow-White.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293
+    ],
+    "designer": 2948,
+    "id": 2428,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BY",
+    "title": "Folded by Raw Edges",
+    "medias": [
+      {
+        "src": "/assets/products/594_t_FOLDED_hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/595_t_1---Folded.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293
+    ],
+    "designer": 2948,
+    "id": 2440,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BZ",
+    "title": "Folded XL by Raw Edges",
+    "medias": [
+      {
+        "src": "/assets/products/621_t_FOLDED_hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/622_t_1---Folded-XL.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [],
+    "id": 10921,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BZF",
+    "title": "Kosei by Vincent Van Duysen",
+    "medias": [
+      {
+        "src": "/assets/products/9835_t_Pic_220901_Mutina67586_LR.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/9836_t_2_LR.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      2215,
+      5290,
+      5282,
+      2216
+    ],
+    "designer": 2891,
+    "id": 2452,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "B[",
+    "title": "Lane by Barber & Osgerby",
+    "medias": [
+      {
+        "src": "/assets/products/638_t_Lane_hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/652_t_1--Lane-Poly-Black,-Base-Black.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      2216,
+      2215
+    ],
+    "designer": 5982,
+    "id": 6607,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BZA",
+    "title": "Mattonelle Margherita by Nathalie Du Pasquier",
+    "medias": [
+      {
+        "src": "/assets/products/5608_t_mattonelle_margherita_cover_880px.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/5610_t_5515_t_2_LR.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      2216,
+      5281
+    ],
+    "designer": 2891,
+    "id": 2464,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "B\\",
+    "title": "Mews by Barber & Osgerby",
+    "medias": [
+      {
+        "src": "/assets/products/671_t_MEWS_Hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/699_t_1---Mews-Soot.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      2215,
+      2216,
+      5282
+    ],
+    "designer": 2925,
+    "id": 2500,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BB",
+    "title": "Phenomenon by Tokujin Yoshioka",
+    "medias": [
+      {
+        "src": "/assets/products/773_t_PHENOMENON_Hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/810_t_Pic_220901_Mutina245844 copia_880.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      2216,
+      5281,
+      5285
+    ],
+    "designer": 2937,
+    "id": 2525,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BD",
+    "title": "Pico by Ronan & Erwan Bouroullec",
+    "medias": [
+      {
+        "src": "/assets/products/886_t_PICO_Hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/887_t_1---Wall- -Pico-Blue-Dots-Gris.-Floor- -Pico-Down-Natural-Gris.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5281,
+      5293,
+      2216,
+      2215,
+      5284
+    ],
+    "designer": 2891,
+    "id": 2537,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BE",
+    "title": "Primavera by Barber & Osgerby",
+    "medias": [
+      {
+        "src": "/assets/products/937_t_PRIMAVERA_Hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/938_t_6414_t_Miniset_Primavera_60x60_880x550.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5284,
+      5293,
+      2216,
+      5281,
+      5287,
+      5285
+    ],
+    "designer": 2937,
+    "id": 8733,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BZE",
+    "title": "Punto by Ronan & Erwan Bouroullec",
+    "medias": [
+      {
+        "src": "/assets/products/7247_t__DSC7158-Modifica_880.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/7248_t__DSC7168-Modifica_880.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5286,
+      5293,
+      2216,
+      5283,
+      2215,
+      5281,
+      5287,
+      5284
+    ],
+    "designer": 2891,
+    "id": 2554,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BF",
+    "title": "Puzzle by Barber & Osgerby",
+    "medias": [
+      {
+        "src": "/assets/products/999_t_PUZZLE_Hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/1000_t_1---Puzzle-Skye,-Slate,-Edge-Slate.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5284,
+      5293,
+      2216,
+      5281,
+      5287,
+      5285
+    ],
+    "designer": 2937,
+    "id": 2569,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BG",
+    "title": "Rombini by Ronan & Erwan Bouroullec",
+    "medias": [
+      {
+        "src": "/assets/products/1053_t_Mutina_ph_Delfino_Sisto_Legnani_DSC6840-Modifica_880.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/1085_t_Immagine_02_880.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      2216,
+      5293,
+      5285,
+      5283,
+      2215,
+      5284,
+      5281,
+      5287
+    ],
+    "designer": 2948,
+    "id": 2581,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BH",
+    "title": "Tape by Raw Edges",
+    "medias": [
+      {
+        "src": "/assets/products/1115_t_TAPE_Hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/1116_t_1HJ6P5~P.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5293,
+      2215,
+      5282,
+      5283,
+      2216
+    ],
+    "designer": 2667,
+    "id": 2605,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BL",
+    "title": "Teknotessere by Mutina Team",
+    "medias": [
+      {
+        "src": "/assets/products/1198_t_TEKNOTESSERE_listing_macro.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/1199_t_1---FS9T6566-6559-6560-6562-6564-6592.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      5289,
+      5293,
+      2215,
+      5283,
+      2215,
+      2216,
+      5287,
+      5284
+    ],
+    "designer": 2948,
+    "id": 2617,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BM",
+    "title": "Tex by Raw Edges",
+    "medias": [
+      {
+        "src": "/assets/products/1218_t_TEX_Hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/1234_t_1---Tex-Grey,-Black-19.24.40.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "colors": [
+      2215,
+      5282,
+      5285,
+      5284,
+      5281,
+      5283
+    ],
+    "designer": 2224,
+    "id": 2629,
+    "categoryId": "product_category_tile",
+    "category": {
+      "id": "product_category_tile",
+      "href": "/ww/en/collections/tiles",
+      "title": "All tiles",
+      "categoryId": "product_index",
+      "pageSchema": "products_category",
+      "pageId": 1,
+      "schema": "category"
+    },
+    "code": "BN",
+    "title": "Tierras by Patricia Urquiola",
+    "medias": [
+      {
+        "src": "/assets/products/1248_t_TIERRAS_Hero.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/assets/products/1292_t_1---Tierras-Collection.jpg",
+        "type": "image"
+      }
+    ]
   }
 ]

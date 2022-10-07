@@ -1,12 +1,12 @@
 {
   "item": {
     "id": 1,
-    "href": "#support",
+    "href": "/#support",
     "caption": "Award winning support",
     "title": "We're here to help",
     "abstract": "And even if he's a lazy man, and the Dude was certainly that quite possibly the laziest in Los Angeles County.",
     "link": {
-      "href": "#support",
+      "href": "/#support",
       "label": "Visit the help center"
     },
     "media": {

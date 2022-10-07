@@ -2,6 +2,7 @@
 import type { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
 import { ChevronLeft } from '@websolute/icons';
+import { ProductsDetailDefaults } from '@websolute/mock';
 import type { PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
 import { Button, Container, Flex, Footer, Header, Layout, LazyLoader, MediaGallery, Meta, Nav, NavLink, Page, PageNav, ProductsDetailDownload, ProductsDetailRelated, ProductsDetailSizeColor, Section, Text } from '@websolute/ui';
@@ -40,12 +41,12 @@ export default function ProductDetail({ layout, page, params }: ProductDetailPro
           <Section padding="7rem 0" id="overview">
             <Container.Fluid>
               <Flex.Col alignItems="center">
-                <NavLink href={page.category.href} passHref>
+                {page.parentRoute && page.parentRoute.href && <NavLink href={page.parentRoute.href} passHref>
                   <Button as="a" variant="nav" marginBottom="1rem">
                     <ChevronLeft />
-                    <Text size="10" fontWeight="700" textTransform="uppercase">{page.category.title}</Text>
+                    <Text size="10" fontWeight="700" textTransform="uppercase">{page.parentRoute.title}</Text>
                   </Button>
-                </NavLink>
+                </NavLink>}
                 <Text size="2" textAlign="center">{page.title}</Text>
               </Flex.Col>
             </Container.Fluid>
@@ -77,7 +78,19 @@ export async function getStaticProps(context: IStaticContext) {
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);
-  const page = await getPage('product_detail', id, market, locale);
+  let page = await getPage('product_detail', id, market, locale);
+
+  if (page && !page.related) {
+    const item = ProductsDetailDefaults.item;
+    page = {
+      ...page,
+      abstract: item.abstract,
+      components: item.components,
+      sizeColor: item.sizeColor,
+      download: item.download,
+      related: item.related,
+    };
+  }
 
   const props = asStaticProps({ ...context, layout, page });
   // console.log('ProductDetail getStaticProps', props);

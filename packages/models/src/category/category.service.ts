@@ -16,7 +16,7 @@ export async function getCategoryTree(item: ICategorized, params: FindParams = {
   return resolveCategoryTree(item, pages, categories);
 }
 
-export function resolveCategoryTree(item: ICategorized, items: ICategorized[], categories: ICategory[]): ICategory[] {
+export function resolveCategoryTree(item: ICategorized, pages: ICategorized[], categories: ICategory[]): ICategory[] {
   const categoryTree: ICategory[] = [];
   let categoryId = item.categoryId || null;
   let skipLast = false;
@@ -27,7 +27,7 @@ export function resolveCategoryTree(item: ICategorized, items: ICategorized[], c
       categoryTree.unshift(b);
       categoryId = b.categoryId || null;
       if (b.pageSchema) {
-        const page = items.find(p => p.schema === b.pageSchema && p.id === b.pageId);
+        const page = pages.find(p => p.schema === b.pageSchema && p.id === b.pageId);
         if (page) {
           b.slug = page.slug;
         }
@@ -43,9 +43,8 @@ export function resolveCategoryTree(item: ICategorized, items: ICategorized[], c
     categoryTree.push({
       id: item.id,
       schema: 'category',
-      name: item.schema,
-      title: item.title,
       slug: item.slug,
+      title: item.title,
       pageSchema: item.schema,
       pageId: item.id,
     });
