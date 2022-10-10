@@ -100,7 +100,11 @@ const Media: MediaComponent = forwardRef(({ children, item, onClick, className, 
 
   const { id, open } = useMediaGalleryContext();
 
-  const mediaChildren = (item && !children) ? getMediaItems(item, id, open) : children;
+  const mediaChildren = (item && !children) ? getMediaItems(item, {
+    aspectRatio: props.aspectRatio,
+    galleryId: id,
+    open,
+  }) : children;
 
   return (<StyledMedia className={classNames} ref={ref} as={as} {...props}>{mediaChildren}</StyledMedia>);
 });
@@ -115,22 +119,42 @@ type IMedia = typeof Media & {
   Info: typeof MediaInfo;
 };
 
-function getMediaItems(itemOrItems: IMediaItem | IMediaItem[], galleryId?: string, open?: (media: IMediaItem) => void) {
+function getMediaItems(itemOrItems: IMediaItem | IMediaItem[], options: {
+  aspectRatio?: string | number,
+  galleryId?: string,
+  open?: (media: IMediaItem) => void,
+} = {}) {
   const items = Array.isArray(itemOrItems) ? itemOrItems : [itemOrItems];
-  const hasGallery = galleryId != null && typeof open === 'function';
-  const getGalleryProps = (media: IMediaItem) => hasGallery ? {
-    'data-gallery': JSON.stringify({ galleryId, media }),
-    onClick: (event: React.MouseEvent) => {
-      if (open) {
-        open(media);
+  const hasGallery = options.galleryId != null && typeof open === 'function';
+  const getMediaItemProps = (media: IMediaItem) => {
+    const props: {
+      width?: string | number;
+      height?: string | number;
+      'data-gallery'?: string;
+      onClick?: (event: React.MouseEvent) => void;
+    } = {};
+    if (hasGallery) {
+      props['data-gallery'] = JSON.stringify({ galleryId: options.galleryId, media });
+      props.onClick = (event: React.MouseEvent) => {
+        if (options.open) {
+          options.open(media);
+        }
+      };
+    }
+    if (media.type === 'image') {
+      const aspectRatio = typeof options.aspectRatio === 'string' ? parseFloat(options.aspectRatio) : options.aspectRatio;
+      if (aspectRatio != null) {
+        props.width = 800;
+        props.height = 800 / aspectRatio;
       }
-    },
-  } : undefined;
+    }
+    return props;
+  }
   return (
     items.map((media, m) => media.type === 'video' ?
-      (<video key={m} playsInline={true} autoPlay={true} muted={true} loop={true} {...getGalleryProps(media)}>
+      (<video key={m} playsInline={true} autoPlay={true} muted={true} loop={true} {...getMediaItemProps(media)}>
         <source src={media.src} type="video/mp4"></source>
       </video>) :
-      (<MediaImage key={m} {...media} alt={media.alt} draggable={false} {...getGalleryProps(media)} />)
+      (<MediaImage key={m} {...media} alt={media.alt} draggable={false} {...getMediaItemProps(media)} />)
     ));
 }
