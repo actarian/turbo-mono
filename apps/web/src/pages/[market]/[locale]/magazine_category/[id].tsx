@@ -17,7 +17,7 @@ export default function MagazineCategory({ layout, page, items = [], featureType
 
         <CategoryHero item={page} />
 
-        <MagazineSearch id="serp" padding="3rem 0" items={items} featureTypes={featureTypes}></MagazineSearch>
+        <MagazineSearch id="serp" padding="3rem 0" items={items} featureTypes={featureTypes} categoryId={page.categoryId}></MagazineSearch>
 
         <Footer />
 

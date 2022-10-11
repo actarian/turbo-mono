@@ -26,10 +26,10 @@ export default function MagazineDetail({ layout, page, params }: MagazineDetailP
           <Section padding="7rem 0">
             <Container.Fluid>
               <Grid.Row rowGap="1rem">
-                <Grid sm={6}>
+                <Grid md={6}>
                   <Media item={page.media} />
                 </Grid>
-                <Grid sm={6}>
+                <Grid md={6}>
                   <Flex.Col gap="3rem" gapSm="4rem" gapMd="5rem" gapLg="6rem">
                     <Flex.Row justifyContent="space-between">
                       {page.parentRoute && page.parentRoute.href && <NavLink href={page.parentRoute.href} passHref>

@@ -7,6 +7,7 @@
   "navs": {
     "primary": [
       {
+        "id": "product_index",
         "title": "Collections",
         "href": "#collections",
         "items": [
@@ -61,18 +62,22 @@
         ]
       },
       {
+        "id": "magazine_index",
         "title": "Magazine",
         "href": "/magazine"
       },
       {
+        "id": "store_index",
         "title": "Stores",
         "href": "/store-locator"
       },
       {
+        "id": "contact",
         "title": "Contacts",
         "href": "/contacts"
       },
       {
+        "id": "shop_index",
         "title": "Shop",
         "href": "/shop"
       }
@@ -80,5 +85,6 @@
     "secondary": [],
     "footer": []
   },
-  "knownRoutes": {}
+  "topLevelRoutes": {},
+  "topLevelHrefs": {}
 }

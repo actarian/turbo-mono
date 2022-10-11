@@ -86,7 +86,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
   const locale = params.locale;
   const layout = await getLayout(market, locale);
 
-  // console.log('knownRoutes', layout.knownRoutes);
+  // console.log('topLevelHrefs', layout.topLevelHrefs);
 
   const user = context.req.session.user;
   if (user === undefined) {
@@ -103,7 +103,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
     return {
       redirect: {
         permanent: false,
-        destination: layout.knownRoutes?.login || '/',
+        destination: layout.topLevelHrefs.login || '/',
       },
     }
   }

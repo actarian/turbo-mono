@@ -3,7 +3,7 @@ import type { IFilterOption } from '@websolute/hooks';
 import { Filter, filtersToParams, useDrawer, useFilters, useInfiniteLoader, useSearchParams } from '@websolute/hooks';
 import { Filter as FilterIcon } from '@websolute/icons';
 import type { IFeatureType } from '@websolute/models';
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import { Box, Button, Container, Flex, InfiniteLoader, Section, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 import type { MagazineSearchItem } from './magazine-search-card';
@@ -22,14 +22,27 @@ function filterMagazineItem(key: string, item: MagazineSearchItem, value: IEquat
   }
 }
 
+function getDefaultFilterParams(filter?: { [key: string]: IEquatable[] }, categoryId?: IEquatable): { [key: string]: IEquatable[] } | undefined {
+  if (filter) {
+    return filter;
+  }
+  if (categoryId) {
+    return {
+      category: [categoryId]
+    };
+  }
+  return undefined;
+}
+
 type Props = {
   items: MagazineSearchItem[];
   featureTypes: IFeatureType[];
+  categoryId?: IEquatable;
 };
 
 export type MagazineSearchProps = UIStyledComponentProps<Props>;
 
-const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTypes, ...props }: MagazineSearchProps) => {
+const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTypes, categoryId, ...props }: MagazineSearchProps) => {
 
   // deserialize queryString encoded params
   const { params, replaceParamsSilently } = useSearchParams();
@@ -38,7 +51,7 @@ const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTypes, ..
   const filterItem = useCallback(filterMagazineItem, []);
 
   // initialize filters with items, featureTypes and queryString params
-  const { filteredItems, filters, setFilter } = useFilters<MagazineSearchItem>(items, featureTypes, filterItem, params?.filter);
+  const { filteredItems, filters, setFilter } = useFilters<MagazineSearchItem>(items, featureTypes, filterItem, getDefaultFilterParams(params?.filter, categoryId));
 
   // fires when user make a change on filters
   const onFilterChange = (filter: Filter<MagazineSearchItem>, values?: IEquatable[]) => {
@@ -63,7 +76,6 @@ const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTypes, ..
   const [visibleItems, onMore, hasMore] = useInfiniteLoader(filteredItems);
 
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
-  const [large, setLarge] = useState<boolean>(false);
 
   const categoryFilter = filters.find(x => x.id === 'category');
 

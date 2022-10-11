@@ -1,3 +1,4 @@
+import { IEquatable } from '@websolute/core';
 import type { IMedia, IRouteLink } from '@websolute/models';
 import Link from 'next/link';
 import { Button, Card, Media, Text } from '../../components';
@@ -9,8 +10,9 @@ type Props = {
 }
 
 export type HeaderCardItem = {
-  href?: string;
-  title?: string;
+  id: IEquatable;
+  href: string;
+  title: string;
   media?: IMedia;
 }
 
@@ -21,12 +23,12 @@ const HeaderCard: React.FC<HeaderCardProps> = ({ item, onSelect, ...props }: Hea
     onSelect && onSelect(item);
   }
   return (
-    <Link href={item.href || '#'} passHref>
+    <Link href={item.href} passHref>
       <Card as="a" height="100%" hoverable onClick={onSelect_} {...props}>
         {item.media && <Media aspectRatio={3 / 2} borderRadius="0.4rem" marginBottom="1rem" item={item.media} />}
         <Card.Content flex="1">
           <Button variant="nav">
-            <Text size="7" dangerouslySetInnerHTML={{ __html: item.title || 'untitled' }}></Text>
+            <Text size="7" dangerouslySetInnerHTML={{ __html: item.title }}></Text>
           </Button>
         </Card.Content>
       </Card>

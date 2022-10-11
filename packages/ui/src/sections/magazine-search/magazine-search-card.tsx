@@ -11,8 +11,6 @@ type Props = {
 }
 
 export type MagazineSearchItem = {
-  id: IEquatable;
-  schema?: string;
   href: string;
   date: Date | string;
   title: string;

@@ -49,19 +49,23 @@ export async function decorateHref(item: any, market: string = 'ww', locale: str
 
 export async function getBreadcrumbFromCategoryTree(categoryTree: ICategory[], market: string = 'ww', locale: string = 'en'): Promise<IRouteLink[]> {
   const routes: IRoute[] = await getRoutes({ where: { marketId: market, localeId: locale } });
-  const tree: IRouteLink[] = categoryTree.map(x => {
-    const route = x.pageSchema && x.pageId ? routes.find(r =>
-      r.pageSchema === x.pageSchema &&
-      r.pageId === x.pageId
-    ) : null;
-    const href = route ? route.id.toString() : undefined;
-    let title = x.title;
+  const tree: IRouteLink[] = categoryTree.map(category => {
+    const route = category.pageSchema && category.pageId ? routes.find(r =>
+      r.pageSchema === category.pageSchema &&
+      r.pageId === category.pageId
+    ) : undefined;
+    const href = route ? route.id.toString() : '/#';
+    return { category, href };
+  }).map(x => {
+    const category: ICategory = x.category;
+    const href: string = x.href;
+    let title = category.title || 'untitled';
     if (isLocalizedString(title)) {
       title = localizedToString(title, locale);
     }
     return {
-      categoryId: x.id,
-      title,
+      id: category.id,
+      title: title,
       href,
       items: [],
     }
@@ -98,13 +102,13 @@ export function categoryToRouteLink(routes: IRoute[], categories: ICategory[], c
     r.marketId === market &&
     r.localeId === locale
   ) : null;
-  const href = route ? route.id.toString() : undefined;
-  let title = category.title;
+  const href = route ? route.id.toString() : '/#';
+  let title = category.title || 'untitled';
   if (isLocalizedString(title)) {
     title = localizedToString(title, locale);
   }
   return {
-    categoryId: category.id,
+    id: category.id,
     title,
     href,
     media: category.media,

@@ -12,8 +12,16 @@ export interface ILayout {
   tree?: IRouteLink;
   navs: {
     [key: string]: IRouteLink[],
-  },
+  };
+  topLevelRoutes: {
+    [key: string]: IRouteLink;
+  };
+  topLevelHrefs: {
+    [key: string]: string;
+  };
+  /*
   knownRoutes?: {
     [key: string]: string;
-  }
+  };
+  */
 }

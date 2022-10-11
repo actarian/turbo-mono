@@ -7,6 +7,7 @@ export { useCurrency } from './useCurrency/useCurrency';
 export { useCurrentState } from './useCurrentState/useCurrentState';
 export { useDateTimeFormat } from './useDateTimeFormat/useDateTimeFormat';
 export { useDebounce } from './useDebounce/useDebounce';
+export { useDebounceCallback } from './useDebounceCallback/useDebounceCallback';
 export { useDebugChangedProps } from './useDebugChangedProps/useDebugChangedProps';
 export { useDomObserver } from './useDomObserver/useDomObserver';
 export { useDrawer } from './useDrawer/useDrawer';
@@ -42,13 +43,16 @@ export { useScroll } from './useScroll/useScroll';
 export { useScrollTo } from './useScrollTo/useScrollTo';
 export { decode, getSearchParams, pushSearchParams, replaceSearchParams, replaceSearchParamsSilently, updateSearchParams, useSearchParams } from './useSearchParams/useSearchParams';
 export { useSSR } from './useSSR/useSSR';
+export { useSyncedRef } from './useSyncedRef/useSyncedRef';
 export { useUI } from './useUI/useUI';
 export type { IUIStateValue } from './useUI/useUI';
+export { useUnmountEffect } from './useUnmountEffect/useUnmountEffect';
 export { useWindowSize } from './useWindowSize/useWindowSize';
 
 /**
  *
  * useful hooks
  * https://streamich.github.io/react-use
+ * https://github.com/react-hookz/web
  *
  */

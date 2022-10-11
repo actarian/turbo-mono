@@ -20,7 +20,7 @@ const CategoryHero: React.FC<CategoryHeroProps> = ({ item, ...props }: CategoryH
     item.media ?
       <Card justifyContent="center" height="50vh" overflow="hidden">
         <Card.Background>
-          <Media overlay item={item.media} />
+          <Media overlay eager item={item.media} />
         </Card.Background>
         <Card.Content>
           <Container>

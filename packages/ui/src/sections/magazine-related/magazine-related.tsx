@@ -1,4 +1,4 @@
-import { getClassNames, IEquatable } from '@websolute/core';
+import { getClassNames } from '@websolute/core';
 import { IMedia } from '@websolute/models';
 import dynamic from 'next/dynamic';
 import styled from 'styled-components';
@@ -8,7 +8,6 @@ import type { ILazyComponent, ILazyComponentProps } from '../../lazy/lazy-loader
 import MagazineSearchCard from '../magazine-search/magazine-search-card';
 
 export type MagazineRelatedSubItem = {
-  id: IEquatable;
   title: string;
   href: string;
   media: IMedia;
@@ -16,7 +15,6 @@ export type MagazineRelatedSubItem = {
 }
 
 export interface MagazineRelatedItem extends ILazyComponent {
-  id: IEquatable;
   schema: string;
   title: string;
   items: MagazineRelatedSubItem[];

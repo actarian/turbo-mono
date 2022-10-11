@@ -9,7 +9,8 @@ export function useFilters<T>(items: T[], featureTypes: IFeatureType[], filterIt
   // creating filters with useMemo because is an heavy operation
   const filters = useMemo(() => {
     return getFilters<T>(items, featureTypes, filterItem, initialValues);
-  }, [items, featureTypes, filterItem, initialValues]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [items, featureTypes, filterItem]);
 
   const [filteredItems, setFilteredItems] = useState<T[]>(() => setFilters(items, filters));
 

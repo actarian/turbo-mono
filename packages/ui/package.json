@@ -7,6 +7,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "sideEffects": false,
   "scripts": {
     "dev:vars": "node .scripts/vars.js",
     "dev": "run-p dev:*",
@@ -25,14 +26,12 @@
     "@websolute/store": "*",
     "fast-equals": "^4.0.1",
     "framer-motion": "^7.2.1",
-    "lodash": "^4.17.21",
     "styled-components": "^5.3.5",
     "swiper": "^8.3.2",
     "zustand": "^4.1.1"
   },
   "devDependencies": {
     "@types/google.maps": "^3.50.0",
-    "@types/lodash": "^4.14.184",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.26",

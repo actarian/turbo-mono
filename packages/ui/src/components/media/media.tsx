@@ -32,6 +32,7 @@ type Props = {
   circle?: boolean;
   rounded?: boolean;
   overlay?: boolean | number;
+  eager?: boolean;
   item?: IMediaItem | IMediaItem[];
 };
 
@@ -102,6 +103,7 @@ const Media: MediaComponent = forwardRef(({ children, item, onClick, className, 
 
   const mediaChildren = (item && !children) ? getMediaItems(item, {
     aspectRatio: props.aspectRatio,
+    eager: props.eager,
     galleryId: id,
     open,
   }) : children;
@@ -121,6 +123,7 @@ type IMedia = typeof Media & {
 
 function getMediaItems(itemOrItems: IMediaItem | IMediaItem[], options: {
   aspectRatio?: string | number,
+  eager?: boolean,
   galleryId?: string,
   open?: (media: IMediaItem) => void,
 } = {}) {
@@ -130,6 +133,7 @@ function getMediaItems(itemOrItems: IMediaItem | IMediaItem[], options: {
     const props: {
       width?: string | number;
       height?: string | number;
+      loading?: 'eager' | 'lazy';
       'data-gallery'?: string;
       onClick?: (event: React.MouseEvent) => void;
     } = {};
@@ -146,6 +150,9 @@ function getMediaItems(itemOrItems: IMediaItem | IMediaItem[], options: {
       if (aspectRatio != null) {
         props.width = 800;
         props.height = 800 / aspectRatio;
+      }
+      if (options.eager) {
+        props.loading = 'eager';
       }
     }
     return props;

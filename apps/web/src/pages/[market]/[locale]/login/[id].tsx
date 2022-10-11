@@ -11,7 +11,7 @@ export default function Login({ layout, page, params }: PageProps) {
 
   const onSignedIn = (user: IUser) => {
     if (user) {
-      router.push(layout.knownRoutes?.reserved_area || '/');
+      router.push(layout.topLevelHrefs.reserved_area || '/');
     }
   };
 

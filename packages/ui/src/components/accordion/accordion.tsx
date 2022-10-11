@@ -7,7 +7,7 @@ import { useAccordionContext } from './accordion-context';
 import AccordionIcon from './accordion-icon';
 
 interface Props {
-  title: string
+  title: React.ReactNode | string
   subtitle?: React.ReactNode | string
   initialVisible?: boolean
   shadow?: boolean
@@ -120,9 +120,7 @@ const Accordion: React.FC<React.PropsWithChildren<AccordionProps>> = ({
         </div>
         {subtitle && <div className="subtitle">{subtitle}</div>}
       </div>
-      <Expand isExpanded={visible}>
-        <div className="content">{children}</div>
-      </Expand>
+      <Expand isExpanded={visible}>{children}</Expand>
     </StyledAccordion>
   )
 }
