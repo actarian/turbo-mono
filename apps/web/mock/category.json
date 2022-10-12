@@ -1,7 +1,7 @@
 [
   {
     "id": "homepage",
-    "title": "homepage",
+    "title": "Home",
     "categoryId": null,
     "pageSchema": "homepage",
     "pageId": 1
@@ -18,17 +18,69 @@
   },
   {
     "id": "product_category_tile",
-    "title": {
-      "en": "Tiles",
-      "it": "Tiles"
-    },
+    "title": "Tiles",
+    "categoryId": "product_index",
+    "pageSchema": "product_category",
+    "pageId": 1,
     "media": {
       "type": "image",
       "src": "/assets/header/6366_n_tiles.jpg"
-    },
+    }
+  },
+  {
+    "id": "product_category_element",
+    "title": "3D Elements",
     "categoryId": "product_index",
     "pageSchema": "product_category",
-    "pageId": 1
+    "pageId": 2,
+    "media": {
+      "type": "image",
+      "src": "/assets/header/6369_n_3d_elements_menu_cover.webp"
+    }
+  },
+  {
+    "id": "product_category_paint",
+    "title": "Paints",
+    "categoryId": "product_index",
+    "pageSchema": "product_category",
+    "pageId": 3,
+    "media": {
+      "type": "image",
+      "src": "/assets/header/6367_n_paints.jpg"
+    }
+  },
+  {
+    "id": "product_category_woodmetal",
+    "title": "Wood & Metal",
+    "categoryId": "product_index",
+    "pageSchema": "product_category",
+    "pageId": 4,
+    "media": {
+      "type": "image",
+      "src": "/assets/header/6368_n_menu_wood_metal.webp"
+    }
+  },
+  {
+    "id": "product_category_accessory",
+    "title": "Accessories",
+    "categoryId": "product_index",
+    "pageSchema": "product_category",
+    "pageId": 5,
+    "media": {
+      "type": "image",
+      "src": "/assets/header/6371_n_accessories.jpg"
+    }
+  },
+  {
+    "id": "product_category_edition",
+    "title": "Editions",
+    "categoryId": "product_index",
+    "pageSchema": "product_category",
+    "pageId": 6,
+    "media": {
+      "type": "image",
+      "src": "/assets/header/7858_n_Menu.webp"
+    }
   },
   {
     "id": "magazine_index",
@@ -112,6 +164,55 @@
     "categoryId": "homepage",
     "pageSchema": "shop_index",
     "pageId": 1
+  },
+  {
+    "id": "shop_category_women",
+    "title": "Women's",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 1
+  },
+  {
+    "id": "shop_category_men",
+    "title": "Men's",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 2
+  },
+  {
+    "id": "shop_category_desk",
+    "title": "Desk accessories",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 3
+  },
+  {
+    "id": "shop_category_accessory",
+    "title": "Accessories",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 4
+  },
+  {
+    "id": "shop_category_workspace",
+    "title": "Workspace",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 5
+  },
+  {
+    "id": "shop_category_new",
+    "title": "New Arrivals",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 6
+  },
+  {
+    "id": "shop_category_sale",
+    "title": "Mid-Season Sale",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 7
   },
   {
     "id": "reserved_area",

@@ -4,7 +4,47 @@
     "title": "Our tiles collection",
     "media": {
       "type": "image",
-      "src": "/assets/category/hero.jpg"
+      "src": "/assets/product_category/hero-01.jpg"
+    }
+  },
+  {
+    "categoryId": "product_category_element",
+    "title": "3D Elements",
+    "media": {
+      "type": "image",
+      "src": "/assets/product_category/hero-02.jpg"
+    }
+  },
+  {
+    "categoryId": "product_category_paint",
+    "title": "Paints",
+    "media": {
+      "type": "image",
+      "src": "/assets/product_category/hero-03.jpg"
+    }
+  },
+  {
+    "categoryId": "product_category_woodmetal",
+    "title": "Wood & Metal",
+    "media": {
+      "type": "image",
+      "src": "/assets/product_category/hero-04.jpg"
+    }
+  },
+  {
+    "categoryId": "product_category_accessory",
+    "title": "Accessories",
+    "media": {
+      "type": "image",
+      "src": "/assets/product_category/hero-05.jpg"
+    }
+  },
+  {
+    "categoryId": "product_category_edition",
+    "title": "Editions",
+    "media": {
+      "type": "image",
+      "src": "/assets/product_category/hero-06.jpg"
     }
   }
 ]

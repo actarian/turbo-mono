@@ -49,7 +49,6 @@ export async function getErrorPageLayout(): Promise<{ layout: ILayout, page: IPa
     href: '',
     alternates: [],
     breadcrumb: [],
-    images: [],
     title,
     abstract,
     meta: {

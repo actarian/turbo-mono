@@ -56,9 +56,11 @@ const MediaGallery: MediaGalleryComponent = forwardRef(({ children, as = 'div', 
       const data = element.dataset.gallery;
       return data ? JSON.parse(data) : null;
     }).filter(x => x && x.galleryId === id).map(x => x.media);
-    // console.log('open', medias, elements);
-    setItems(medias);
-    onOpenModal('gallery');
+    console.log('MediaGallery.open', medias, elements);
+    if (medias.length) {
+      setItems(medias);
+      onOpenModal('gallery');
+    }
   }, [id, setItems, onOpenModal]);
 
   const close = useCallback(() => {

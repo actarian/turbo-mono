@@ -17,7 +17,7 @@ export default function Meta() {
       {page.alternates && page.alternates.map((alternate: any) => (
         <link key={`${alternate.marketId}-${alternate.localeId}`} rel="alternate" href={origin + alternate.id} />
       ))}
-      {page.image && <meta property="og:image" content={origin + page.image} />}
+      {page.media && <meta property="og:image" content={origin + page.media.src} />}
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <link rel="apple-touch-icon" sizes="180x180" href="/assets/head/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/assets/head/favicon-32x32.png" />

@@ -1,4 +1,5 @@
 import { useScrollTo } from '@websolute/hooks';
+import { IMedia, IRouteLink } from '@websolute/models';
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 import { Breadcrumb, Button, Container, Grid, Media, MediaImage, Section, Text } from '../../components';
@@ -10,24 +11,32 @@ const ADiv = ({ children }: { children?: ReactNode }) => (<motion.div
   transition={{ ease: 'linear', duration: 4, repeat: Infinity, repeatDelay: 0 }}
 >{children}</motion.div>);
 
+export type ShopCategoryHeroItem = {
+  categoryId?: string;
+  href: string;
+  breadcrumb: IRouteLink[];
+  title?: string;
+  abstract?: string;
+  description?: string;
+  media?: IMedia;
+}
+
 type Props = {
+  item: ShopCategoryHeroItem;
 }
 
 export type ShopCategoryHeroProps = UIStyledComponentProps<Props>;
 
-const ShopCategoryHero: React.FC<ShopCategoryHeroProps> = ({ ...props }: ShopCategoryHeroProps) => {
+const ShopCategoryHero: React.FC<ShopCategoryHeroProps> = ({ item, ...props }: ShopCategoryHeroProps) => {
   const scrollTo = useScrollTo();
   return (
     <Section overflow="hidden" {...props}>
       <Container padding="3rem 0">
         <Grid.Row>
           <Grid md={6}>
-            <Breadcrumb marginBottom="0.5rem">
-              <Breadcrumb.Item href="/shop">Shop</Breadcrumb.Item>
-              <Breadcrumb.Item>New Arrivals</Breadcrumb.Item>
-            </Breadcrumb>
-            <Text size="2" fontWeight="700" marginBottom="1rem">Summer styles are finally here</Text>
-            <Text size="7" marginBottom="2rem">This year, our new summer collection will shelter you from the harsh elements of a world that doesn&apos;t care if you live or die.</Text>
+            {item.breadcrumb && <Breadcrumb.Group marginBottom="0.5rem" items={item.breadcrumb} />}
+            {item.abstract && <Text size="2" fontWeight="700" marginBottom="1rem" dangerouslySetInnerHTML={{ __html: item.abstract }}></Text>}
+            {item.description && <Text size="7" marginBottom="2rem" dangerouslySetInnerHTML={{ __html: item.description }}></Text>}
             <Button as="a" href="#serp" variant="primary" onClick={scrollTo}>Shop Collection</Button>
           </Grid>
           <Grid md={6}>

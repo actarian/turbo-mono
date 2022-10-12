@@ -1,14 +1,13 @@
 import type { IEntity, IEquatable } from '@websolute/core';
+import { IMedia } from '@websolute/models';
 
 export interface IShopDetail extends IEntity {
-  // id: IEquatable;
-  // schema: string;
+  categoryId: IEquatable;
   slug: string;
+  href?: string;
   title: string;
   abstract: string;
   description: string;
-  image: string;
+  media: IMedia;
   price: number;
-  categoryId: IEquatable;
-  href?: string;
 }

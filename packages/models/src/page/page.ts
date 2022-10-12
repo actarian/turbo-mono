@@ -1,5 +1,6 @@
 import type { IEntity } from '@websolute/core';
 import type { ILayout } from '../layout/layout';
+import { IMedia } from '../media/media';
 import type { IRoute, IRouteLink, IRouteParams } from '../route/route';
 
 export interface IMeta {
@@ -35,7 +36,7 @@ export interface IPage extends IEntity {
   createdAt?: Date;
   updatedAt?: Date;
   meta?: IMeta;
-  images: IImage[];
+  media?: IMedia;
   [key: string]: any;
 }
 

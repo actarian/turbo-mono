@@ -1,0 +1,72 @@
+[
+  {
+    "categoryId": "shop_category_women",
+    "title": "Women's",
+    "abstract": "Summer styles are finally here",
+    "description": "This year, our new summer collection will shelter you from the harsh elements of a world that doesn&apos;t care if you live or die.",
+    "media": {
+      "type": "image",
+      "src": "/assets/shop_category/hero-01.jpg"
+    }
+  },
+  {
+    "categoryId": "shop_category_men",
+    "title": "Men's",
+    "abstract": "Summer styles are finally here",
+    "description": "This year, our new summer collection will shelter you from the harsh elements of a world that doesn&apos;t care if you live or die.",
+    "media": {
+      "type": "image",
+      "src": "/assets/shop_category/hero-02.jpg"
+    }
+  },
+  {
+    "categoryId": "shop_category_desk",
+    "title": "Desk accessories",
+    "abstract": "Summer styles are finally here",
+    "description": "This year, our new summer collection will shelter you from the harsh elements of a world that doesn&apos;t care if you live or die.",
+    "media": {
+      "type": "image",
+      "src": "/assets/shop_category/hero-03.jpg"
+    }
+  },
+  {
+    "categoryId": "shop_category_accessory",
+    "title": "Accessories",
+    "abstract": "Summer styles are finally here",
+    "description": "This year, our new summer collection will shelter you from the harsh elements of a world that doesn&apos;t care if you live or die.",
+    "media": {
+      "type": "image",
+      "src": "/assets/shop_category/hero-04.jpg"
+    }
+  },
+  {
+    "categoryId": "shop_category_workspace",
+    "title": "Workspace",
+    "abstract": "Summer styles are finally here",
+    "description": "This year, our new summer collection will shelter you from the harsh elements of a world that doesn&apos;t care if you live or die.",
+    "media": {
+      "type": "image",
+      "src": "/assets/shop_category/hero-05.jpg"
+    }
+  },
+  {
+    "categoryId": "shop_category_new",
+    "title": "New Arrivals",
+    "abstract": "Summer styles are finally here",
+    "description": "This year, our new summer collection will shelter you from the harsh elements of a world that doesn&apos;t care if you live or die.",
+    "media": {
+      "type": "image",
+      "src": "/assets/shop_category/hero-06.jpg"
+    }
+  },
+  {
+    "categoryId": "shop_category_sale",
+    "title": "Mid-Season Sale",
+    "abstract": "Summer styles are finally here",
+    "description": "This year, our new summer collection will shelter you from the harsh elements of a world that doesn&apos;t care if you live or die.",
+    "media": {
+      "type": "image",
+      "src": "/assets/shop_category/hero-07.jpg"
+    }
+  }
+]

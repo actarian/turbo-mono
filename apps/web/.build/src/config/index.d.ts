@@ -8,6 +8,8 @@ export declare const PAGES: {
     magazine_detail: string;
     store_index: string;
     shop_index: string;
+    shop_category: string;
+    shop_detail: string;
     contact: string;
     login: string;
     reserved_area: string;

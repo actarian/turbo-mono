@@ -4,6 +4,7 @@ import type { UIComponent, UIStyledComponentProps } from '../../components/types
 import { getCssResponsive } from '../../components/utils';
 import BreadcrumbItem from './breadcrumb-item';
 import BreadcrumbSeparator from './breadcrumb-separator';
+import BreadcrumbGroup from './breadcrumb.group';
 
 interface Props {
   separator?: string | ReactNode;
@@ -71,10 +72,12 @@ Breadcrumb.displayName = 'Breadcrumb';
 
 (Breadcrumb as IBreadcrumb).Item = BreadcrumbItem;
 (Breadcrumb as IBreadcrumb).Separator = BreadcrumbSeparator;
+(Breadcrumb as IBreadcrumb).Group = BreadcrumbGroup;
 
 export default Breadcrumb as IBreadcrumb;
 
 type IBreadcrumb = typeof Breadcrumb & {
   Item: typeof BreadcrumbItem;
   Separator: typeof BreadcrumbSeparator;
+  Group: typeof BreadcrumbGroup;
 };

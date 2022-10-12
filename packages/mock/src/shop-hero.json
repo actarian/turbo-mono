@@ -1,5 +1,43 @@
 {
-  "items": [
+  "item": {
+    "categoryId": "shop_category_sale",
+    "title": "Mid-Season Sale",
+    "media": {
+      "type": "image",
+      "src": "/assets/shop_category/hero-07.jpg"
+    },
+    "href": "/ww/en/shop/mid-season-sale",
+    "items": [
+      {
+        "categoryId": "shop_category_women",
+        "title": "Women's",
+        "media": {
+          "type": "image",
+          "src": "/assets/shop_category/hero-01.jpg"
+        },
+        "href": "/ww/en/shop/womens"
+      },
+      {
+        "categoryId": "shop_category_men",
+        "title": "Men's",
+        "media": {
+          "type": "image",
+          "src": "/assets/shop_category/hero-02.jpg"
+        },
+        "href": "/ww/en/shop/mens"
+      },
+      {
+        "categoryId": "shop_category_desk",
+        "title": "Desk accessories",
+        "media": {
+          "type": "image",
+          "src": "/assets/shop_category/hero-03.jpg"
+        },
+        "href": "/ww/en/shop/desk-accessories"
+      }
+    ]
+  },
+  "items__": [
     {
       "id": 1,
       "href": "/shop_category",

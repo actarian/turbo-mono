@@ -2,8 +2,7 @@
 import type { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
 import {
-  CategoriesPropositionDefaults, CategoryPropositionDefaults, ShopHeroDefaults,
-  ShopItemsPropositionDefaults
+  CategoryPropositionDefaults, ShopItemsPropositionDefaults
 } from '@websolute/mock';
 import type { PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
@@ -11,18 +10,18 @@ import {
   CategoriesProposition, CategoryProposition, Footer, Header, Layout, Meta, Page, ShopHero,
   ShopItemsProposition
 } from '@websolute/ui';
+import { getShopCategories, IShopCategory } from 'src/models';
 
-export default function ShopIndex({ layout, page, params }: ShopIndexProps) {
-
+export default function ShopIndex({ layout, page, categories, heroCategory, secondaryCategories, params }: ShopIndexProps) {
   return (
     <Layout>
       <Meta />
       <Page>
         <Header fixed />
 
-        <ShopHero items={ShopHeroDefaults.items} />
+        <ShopHero item={heroCategory} />
 
-        <CategoriesProposition items={CategoriesPropositionDefaults.items} />
+        <CategoriesProposition items={secondaryCategories.items} />
 
         <ShopItemsProposition items={ShopItemsPropositionDefaults.items} />
 
@@ -35,6 +34,9 @@ export default function ShopIndex({ layout, page, params }: ShopIndexProps) {
 }
 
 export interface ShopIndexProps extends PageProps {
+  categories: IShopCategory[];
+  heroCategory: IShopCategory;
+  secondaryCategories: { items: IShopCategory[] };
 }
 
 export async function getStaticProps(context: IStaticContext) {
@@ -43,7 +45,19 @@ export async function getStaticProps(context: IStaticContext) {
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);
   const page = await getPage('shop_index', id, market, locale);
-  const props = asStaticProps({ ...context, layout, page });
+
+  const categories = await getShopCategories();
+
+  const heroMainCategory = categories.find(x => x.categoryId === 'shop_category_sale');
+  const heroCategory = {
+    ...heroMainCategory,
+    items: categories.filter(x => ['shop_category_women', 'shop_category_men', 'shop_category_desk'].includes(x.categoryId.toString())),
+  };
+  const secondaryCategories = {
+    items: categories.filter(x => ['shop_category_new', 'shop_category_accessory', 'shop_category_workspace'].includes(x.categoryId.toString())),
+  };
+
+  const props = asStaticProps({ ...context, layout, page, categories, heroCategory, secondaryCategories });
   // console.log('ShopIndex getStaticProps', props);
   return {
     props,

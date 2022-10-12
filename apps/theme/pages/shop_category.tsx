@@ -1,11 +1,10 @@
-import { CategoryPropositionDefaults, ShopSearchDefaults } from '@websolute/mock';
-import {
-  Breadcrumb, CategoryProposition, Container, Footer, Header, Layout, Page, Section,
-  ShopCategoryHero, ShopIncentive, ShopSearch, withPageTransition
-} from '@websolute/ui';
+import { CategoryPropositionDefaults, ShopCategoryDefaults, ShopSearchDefaults, ShopSearchFeaturesDefaults } from '@websolute/mock';
+import type { IFeatureType } from '@websolute/models';
+import type { ShopCategoryHeroItem, ShopSearchItem } from '@websolute/ui';
+import { CategoryProposition, Footer, Header, Layout, Page, ShopCategoryHero, ShopIncentive, ShopSearch, withPageTransition } from '@websolute/ui';
 import Head from 'next/head';
 
-const ShopCategory = () => {
+const ShopCategory = ({ page, items = [], featureTypes = [] }: ShopCategoryProps) => {
   return (
     <>
       <Head>
@@ -18,20 +17,9 @@ const ShopCategory = () => {
         <Page>
           <Header sticky />
 
-          {false &&
-            <Section borderBottom="1px solid var(--color-neutral-200)">
-              <Container>
-                <Breadcrumb>
-                  <Breadcrumb.Item href="/shop">Shop</Breadcrumb.Item>
-                  <Breadcrumb.Item>New Arrivals</Breadcrumb.Item>
-                </Breadcrumb>
-              </Container>
-            </Section>
-          }
+          <ShopCategoryHero item={page} />
 
-          <ShopCategoryHero />
-
-          <ShopSearch id="serp" padding="3rem 0" items={ShopSearchDefaults.items}></ShopSearch>
+          <ShopSearch id="serp" padding="3rem 0" title={page.title || ''} items={items} featureTypes={featureTypes}></ShopSearch>
 
           <CategoryProposition item={CategoryPropositionDefaults.item} />
 
@@ -43,6 +31,23 @@ const ShopCategory = () => {
       </Layout>
     </>
   )
+}
+
+export type ShopCategoryProps = {
+  page: ShopCategoryHeroItem;
+  items: ShopSearchItem[];
+  featureTypes: IFeatureType[];
+}
+
+export async function getStaticProps(): Promise<{ props: ShopCategoryProps }> {
+  const props = {
+    page: ShopCategoryDefaults.item,
+    items: ShopSearchDefaults.items,
+    featureTypes: ShopSearchFeaturesDefaults
+  };
+  return {
+    props,
+  };
 }
 
 export default withPageTransition(ShopCategory);

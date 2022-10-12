@@ -122,13 +122,13 @@ type IMedia = typeof Media & {
 };
 
 function getMediaItems(itemOrItems: IMediaItem | IMediaItem[], options: {
-  aspectRatio?: string | number,
-  eager?: boolean,
-  galleryId?: string,
-  open?: (media: IMediaItem) => void,
+  aspectRatio?: string | number;
+  eager?: boolean;
+  galleryId?: string;
+  open?: (media: IMediaItem) => void;
 } = {}) {
   const items = Array.isArray(itemOrItems) ? itemOrItems : [itemOrItems];
-  const hasGallery = options.galleryId != null && typeof open === 'function';
+  const hasGallery = options.galleryId != null && typeof options.open === 'function';
   const getMediaItemProps = (media: IMediaItem) => {
     const props: {
       width?: string | number;

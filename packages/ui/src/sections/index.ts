@@ -46,6 +46,7 @@ export { default as ProductsSearchFilters } from './products-search/products-sea
 export { default as ProductsSearchFiltersModal } from './products-search/products-search-filters-modal';
 export { default as Proposition } from './proposition/proposition';
 export { default as ShopCategoryHero } from './shop-category-hero/shop-category-hero';
+export type { ShopCategoryHeroItem } from './shop-category-hero/shop-category-hero';
 export { default as ShopHero } from './shop-hero/shop-hero';
 export { default as ShopHeroCard } from './shop-hero/shop-hero-card';
 export { default as ShopIncentive } from './shop-incentive/shop-incentive';
@@ -53,6 +54,7 @@ export { default as ShopItemsProposition } from './shop-items-proposition/shop-i
 export { default as ShopItemsPropositionCard } from './shop-items-proposition/shop-items-proposition-card';
 export { default as ShopSearch } from './shop-search/shop-search';
 export { default as ShopSearchCard } from './shop-search/shop-search-card';
+export type { ShopSearchItem } from './shop-search/shop-search-card';
 export { default as ShopSearchFilters } from './shop-search/shop-search-filters';
 export { default as ShopSearchFiltersModal } from './shop-search/shop-search-filters-modal';
 export { default as Split } from './split/split';

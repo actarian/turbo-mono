@@ -14,6 +14,8 @@ exports.PAGES = {
     magazine_detail: 'magazine_detail',
     store_index: 'store_index',
     shop_index: 'shop_index',
+    shop_category: 'shop_category',
+    shop_detail: 'shop_detail',
     contact: 'contact',
     login: 'login',
     reserved_area: 'reserved_area',

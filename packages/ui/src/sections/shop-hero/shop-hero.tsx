@@ -1,30 +1,28 @@
 import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
-import { Button, Card, Container, Flex, Grid, Media, MediaImage, Section, Text } from '../../components';
+import { Button, Card, Container, Flex, Grid, Media, Section, Text } from '../../components';
 import type { UIComponentProps } from '../../components/types';
 import ShopHeroCard from './shop-hero-card';
 
 type Props = {
-  items: ShopHeroItem[],
+  item: ShopHeroItem;
 }
 
 export type ShopHeroProps = UIComponentProps<Props>;
 
-const ShopHero: React.FC<ShopHeroProps> = ({ items }: ShopHeroProps) => {
+const ShopHero: React.FC<ShopHeroProps> = ({ item }: ShopHeroProps) => {
   return (
     <Section padding="0">
       <Card justifyContent="center" height="90vh">
         <Card.Background>
-          <Media overlay={0.5}>
-            <MediaImage draggable={false} alt="Shop" src="https://unsplash.com/photos/FV3GConVSss/download?force=true&w=1600" />
-          </Media>
+          <Media overlay={0.5} item={item.media} />
         </Card.Background>
         <Card.Content marginBottom="30vh">
           <Container.Fluid>
             <Flex.Col alignItems="center">
-              <Text size="2" fontWeight="700" marginBottom="1rem">Mid-Season Sale</Text>
-              {false && <Text size="8">We combine technology and creativity for the farmers of today and tomorrow.</Text>}
-              <Link href="/shop_category" passHref>
+              <Text size="2" fontWeight="700" marginBottom="1rem">{item.title}</Text>
+              {item.abstract && <Text size="8" marginBottom="1rem">{item.abstract}</Text>}
+              <Link href={item.href} passHref>
                 <Button as="a" variant="primary" size="lg">Shop Collection</Button>
               </Link>
             </Flex.Col>
@@ -33,7 +31,7 @@ const ShopHero: React.FC<ShopHeroProps> = ({ items }: ShopHeroProps) => {
       </Card>
       <Container marginTop="-30vh">
         <Grid.Row columnGap="1rem" rowGap="2rem">
-          {items.map((item, i) => (
+          {item.items && item.items.map((item, i) => (
             <Grid sm={4} key={i}>
               <ShopHeroCard aspectRatio={4 / 5} item={item} />
             </Grid>
@@ -45,10 +43,11 @@ const ShopHero: React.FC<ShopHeroProps> = ({ items }: ShopHeroProps) => {
 }
 
 export type ShopHeroItem = {
-  id: number;
   href: string;
   title: string;
+  abstract?: string;
   media: IMedia;
+  items?: ShopHeroItem[];
 }
 
 export default ShopHero;
