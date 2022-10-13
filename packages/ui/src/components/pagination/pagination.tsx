@@ -60,31 +60,34 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
     ];
   }, [prevChildren, nextChildren]);
 
-  const values = useMemo<PaginationConfig>(() => {
-    const update = (type: PaginationUpdateType) => {
-      if (type === 'prev' && pageRef.current > 1) {
-        setPage(last => last - 1);
-      }
-      if (type === 'next' && pageRef.current < count) {
-        setPage(last => last + 1);
-      }
+  const update = (type: PaginationUpdateType) => {
+    if (type === 'prev' && pageRef.current > 1) {
+      setPage(last => last - 1);
     }
+    if (type === 'next' && pageRef.current < count) {
+      setPage(last => last + 1);
+    }
+  }
+  const values = useMemo<PaginationConfig>(() => {
     return {
       isFirst: page <= 1,
       isLast: page >= count,
       update,
     };
-  }, [page, count, pageRef, setPage]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page, count]);
 
   useEffect(() => {
     onChange && onChange(page);
-  }, [onChange, page]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
 
   useEffect(() => {
     if (customPage !== undefined) {
       setPage(customPage);
     }
-  }, [customPage, setPage]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [customPage]);
 
   return (
     <PaginationContext.Provider value={values}>

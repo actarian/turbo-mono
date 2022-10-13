@@ -6,7 +6,7 @@ export const CssDefault = css`
   display: inline-flex;
   align-items: center;
   font-size: 1em;
-  line-height: 1;
+  line-height: normal;
   transition: ease 150ms;
   transition-property: background-color, color, border-color, outline-color, opacity;
   cursor: pointer;
@@ -130,7 +130,7 @@ export const CssAfterInverted = css`
 `;
 
 export const CssButtonDefault = css`
-  padding: 0.8em 1.6em;
+  padding: 0.4em 1em;
   border-radius: var(--button-border-radius);
   color: var(--color-primary-500);
   border: 2px solid var(--color-primary-100);
@@ -145,7 +145,7 @@ export const CssButtonDefault = css`
 `;
 
 export const CssButtonPrimary = css`
-  padding: 0.8em 1.6em;
+  padding: 0.4em 1em;
   border-radius: var(--button-border-radius);
   background: var(--color-primary-500);
   color: var(--color-neutral-100);
@@ -166,7 +166,7 @@ export const CssButtonPrimary = css`
 `;
 
 export const CssButtonSecondary = css`
-  padding: 0.8em 1.6em;
+  padding: 0.4em 1em;
   border-radius: var(--button-border-radius);
   background: var(--color-primary-100);
   border: 2px solid var(--color-primary-100);
@@ -186,7 +186,7 @@ export const CssButtonSecondary = css`
 `;
 
 export const CssButtonOutline = css`
-  padding: 0.8em 1.6em;
+  padding: 0.4em 1em;
   border-radius: var(--button-border-radius);
   background: transparent;
   border: 2px solid var(--color-primary-500);
@@ -207,7 +207,7 @@ export const CssButtonOutline = css`
 `;
 
 export const CssButtonGhost = css`
-  padding: 0.8em 1.6em;
+  padding: 0.4em 1em;
   border-radius: var(--button-border-radius);
   background: transparent;
   border: 2px solid transparent;
@@ -229,7 +229,6 @@ export const CssButtonGhost = css`
 
 export const CssButtonLink = css`
   position: relative;
-  line-height: 1.5;
   color: var(--color-primary-400);
 
   &:hover,
@@ -243,7 +242,6 @@ export const CssButtonLink = css`
 
 export const CssButtonUnderline = css`
   position: relative;
-  line-height: 1.5;
   color: var(--color-primary-400);
 
   &:hover,
@@ -257,7 +255,6 @@ export const CssButtonUnderline = css`
 
 export const CssButtonNav = css`
   position: relative;
-  line-height: 1.5;
 
   ${CssAfter}
   ${CssSvg}
@@ -265,7 +262,6 @@ export const CssButtonNav = css`
 
 export const CssButtonNavInverted = css`
   position: relative;
-  line-height: 1.5;
 
   ${CssAfterInverted}
   ${CssSvg}

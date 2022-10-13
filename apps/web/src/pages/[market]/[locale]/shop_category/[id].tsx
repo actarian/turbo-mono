@@ -1,14 +1,10 @@
 
 import type { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
-import { CategoryPropositionDefaults, ProductsSearchFeaturesDefaults } from '@websolute/mock';
+import { CategoryPropositionDefaults, ShopSearchFeaturesDefaults } from '@websolute/mock';
 import type { IFeatureType, PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
-import type { ShopSearchItem } from '@websolute/ui';
-import {
-  Breadcrumb, CategoryProposition, Container, Footer, Header, Layout, Meta, Page, Section,
-  ShopCategoryHero, ShopIncentive, ShopSearch
-} from '@websolute/ui';
+import { CategoryHero, CategoryProposition, Footer, Header, Layout, Meta, Page, ShopIncentive, ShopSearch, ShopSearchItem } from '@websolute/ui';
 import { getShopDetails } from 'src/models';
 
 export default function ShopCategory({ layout, page, items = [], featureTypes = [], params }: ShopCategoryProps) {
@@ -18,24 +14,15 @@ export default function ShopCategory({ layout, page, items = [], featureTypes = 
       <Page>
         <Header sticky />
 
-        {false &&
-          <Section borderBottom="1px solid var(--color-neutral-200)">
-            <Container>
-              {page.breadcrumb && <Breadcrumb.Group items={page.breadcrumb} />}
-            </Container>
-          </Section>
-        }
+        <CategoryHero item={page} />
 
-        <ShopCategoryHero item={page} />
-
-        <ShopSearch id="serp" padding="3rem 0" title={page.title || ''} items={items} featureTypes={featureTypes}></ShopSearch>
+        <ShopSearch id="serp" padding="3rem 0" items={items} featureTypes={featureTypes} categoryId={page.categoryId}></ShopSearch>
 
         <CategoryProposition item={CategoryPropositionDefaults.item} />
 
         <ShopIncentive />
 
         <Footer />
-
       </Page>
     </Layout>
   )
@@ -55,7 +42,15 @@ export async function getStaticProps(context: IStaticContext) {
 
   // const items = ShopSearchDefaults.items; // await getProductDetails({ market, locale });
   const items = await getShopDetails({ market, locale });
-  const featureTypes = ProductsSearchFeaturesDefaults;
+  const featureTypes = ShopSearchFeaturesDefaults;
+
+  featureTypes.forEach(featureType => {
+    featureType.features.sort((a, b) => {
+      const textA = a.title.toUpperCase();
+      const textB = b.title.toUpperCase();
+      return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    });
+  });
 
   const props = asStaticProps({ ...context, layout, page, items, featureTypes });
   // console.log('ShopCategory getStaticProps', props);

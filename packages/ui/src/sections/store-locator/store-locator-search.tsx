@@ -24,7 +24,7 @@ const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '';
 const USE_CLUSTERER = false;
 const USE_CLUSTERER_PLUS = true;
 
-// this function filters the store locator items by bounds or category
+// this function filters the store locator items by category
 export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, value: IEquatable): boolean {
   switch (key) {
     case 'category':

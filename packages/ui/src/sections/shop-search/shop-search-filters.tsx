@@ -18,7 +18,7 @@ const ShopSearchFilters: React.FC<ShopSearchFiltersProps> = ({ ...props }: ShopS
         <Button variant="nav" as="a">Laptop Sleeves</Button>
       </Nav.Col>
       <Accordion.Group>
-        <Accordion title="Color">
+        <Accordion title="Color" initialVisible>
           <Box padding="0 0.15rem">
             <Label><Checkbox value='white' /> White</Label>
             <Label><Checkbox value='beige' /> Beige</Label>
@@ -28,7 +28,7 @@ const ShopSearchFilters: React.FC<ShopSearchFiltersProps> = ({ ...props }: ShopS
             <Label><Checkbox value='purple' /> Purple</Label>
           </Box>
         </Accordion>
-        <Accordion title="Category">
+        <Accordion title="Category" initialVisible>
           <Box padding="0 0.15rem">
             <Label><Checkbox value='white' /> New Arrivals</Label>
             <Label><Checkbox value='white' /> Sale</Label>
@@ -37,7 +37,7 @@ const ShopSearchFilters: React.FC<ShopSearchFiltersProps> = ({ ...props }: ShopS
             <Label><Checkbox value='white' /> Accessories</Label>
           </Box>
         </Accordion>
-        <Accordion title="Size">
+        <Accordion title="Size" initialVisible>
           <Box padding="0 0.15rem">
             <Label><Checkbox value='white' /> 2L</Label>
             <Label><Checkbox value='white' /> 6L</Label>

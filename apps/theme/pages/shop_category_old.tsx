@@ -1,10 +1,7 @@
 import { CategoryPropositionDefaults, ShopCategoryDefaults, ShopSearchDefaults, ShopSearchFeaturesDefaults } from '@websolute/mock';
 import type { IFeatureType } from '@websolute/models';
 import type { ShopCategoryHeroItem, ShopSearchItem } from '@websolute/ui';
-import {
-  CategoryHero, CategoryProposition, Footer, Header, Layout, Page, ShopIncentive,
-  ShopSearch, withPageTransition
-} from '@websolute/ui';
+import { CategoryProposition, Footer, Header, Layout, Page, ShopCategoryHero, ShopIncentive, ShopSearch, withPageTransition } from '@websolute/ui';
 import Head from 'next/head';
 
 const ShopCategory = ({ page, items = [], featureTypes = [] }: ShopCategoryProps) => {
@@ -20,15 +17,16 @@ const ShopCategory = ({ page, items = [], featureTypes = [] }: ShopCategoryProps
         <Page>
           <Header sticky />
 
-          <CategoryHero item={page} />
+          <ShopCategoryHero item={page} />
 
-          <ShopSearch id="serp" padding="3rem 0" items={items} featureTypes={featureTypes} categoryId={page.categoryId}></ShopSearch>
+          <ShopSearch id="serp" padding="3rem 0" title={page.title || ''} items={items} featureTypes={featureTypes}></ShopSearch>
 
           <CategoryProposition item={CategoryPropositionDefaults.item} />
 
           <ShopIncentive />
 
           <Footer />
+
         </Page>
       </Layout>
     </>

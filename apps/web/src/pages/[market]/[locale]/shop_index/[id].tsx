@@ -1,31 +1,22 @@
 
 import type { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
-import {
-  CategoryPropositionDefaults, ShopItemsPropositionDefaults
-} from '@websolute/mock';
-import type { PageProps } from '@websolute/models';
+import { ShopSearchFeaturesDefaults } from '@websolute/mock';
+import type { IFeatureType, PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
-import {
-  CategoriesProposition, CategoryProposition, Footer, Header, Layout, Meta, Page, ShopHero,
-  ShopItemsProposition
-} from '@websolute/ui';
-import { getShopCategories, IShopCategory } from 'src/models';
+import { Footer, Header, Layout, Meta, Page, ShopIncentive, ShopSearch, ShopSearchItem } from '@websolute/ui';
+import { getShopDetails } from 'src/models';
 
-export default function ShopIndex({ layout, page, categories, heroCategory, secondaryCategories, params }: ShopIndexProps) {
+export default function ShopIndex({ layout, page, items = [], featureTypes = [], params }: ShopIndexProps) {
   return (
     <Layout>
       <Meta />
       <Page>
-        <Header fixed />
+        <Header sticky />
 
-        <ShopHero item={heroCategory} />
+        <ShopSearch id="serp" padding="3rem 0" items={items} featureTypes={featureTypes}></ShopSearch>
 
-        <CategoriesProposition items={secondaryCategories.items} />
-
-        <ShopItemsProposition items={ShopItemsPropositionDefaults.items} />
-
-        <CategoryProposition item={CategoryPropositionDefaults.item} />
+        <ShopIncentive />
 
         <Footer />
       </Page>
@@ -34,9 +25,8 @@ export default function ShopIndex({ layout, page, categories, heroCategory, seco
 }
 
 export interface ShopIndexProps extends PageProps {
-  categories: IShopCategory[];
-  heroCategory: IShopCategory;
-  secondaryCategories: { items: IShopCategory[] };
+  items: ShopSearchItem[];
+  featureTypes: IFeatureType[];
 }
 
 export async function getStaticProps(context: IStaticContext) {
@@ -44,20 +34,21 @@ export async function getStaticProps(context: IStaticContext) {
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);
-  const page = await getPage('shop_index', id, market, locale);
+  const page = await getPage('shop_category', id, market, locale);
 
-  const categories = await getShopCategories();
+  // const items = ShopSearchDefaults.items; // await getProductDetails({ market, locale });
+  const items = await getShopDetails({ market, locale });
+  const featureTypes = ShopSearchFeaturesDefaults;
 
-  const heroMainCategory = categories.find(x => x.categoryId === 'shop_category_sale');
-  const heroCategory = {
-    ...heroMainCategory,
-    items: categories.filter(x => ['shop_category_women', 'shop_category_men', 'shop_category_desk'].includes(x.categoryId.toString())),
-  };
-  const secondaryCategories = {
-    items: categories.filter(x => ['shop_category_new', 'shop_category_accessory', 'shop_category_workspace'].includes(x.categoryId.toString())),
-  };
+  featureTypes.forEach(featureType => {
+    featureType.features.sort((a, b) => {
+      const textA = a.title.toUpperCase();
+      const textB = b.title.toUpperCase();
+      return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    });
+  });
 
-  const props = asStaticProps({ ...context, layout, page, categories, heroCategory, secondaryCategories });
+  const props = asStaticProps({ ...context, layout, page, items, featureTypes });
   // console.log('ShopIndex getStaticProps', props);
   return {
     props,
@@ -65,7 +56,7 @@ export async function getStaticProps(context: IStaticContext) {
 }
 
 export async function getStaticPaths() {
-  const paths = await getStaticPathsForSchema('shop_index');
+  const paths = await getStaticPathsForSchema('shop_category');
   return {
     paths,
     fallback: true,

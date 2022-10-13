@@ -1,3 +1,4 @@
+import { IEquatable } from '@websolute/core';
 import { useCurrency, useDrawer } from '@websolute/hooks';
 import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
@@ -10,13 +11,18 @@ type Props = {
 }
 
 export type ShopSearchItem = {
-  id: number;
+  id: IEquatable;
   schema: string;
+  categoryId: IEquatable;
   href: string;
   title: string;
-  abstract: string;
   price: number;
   media: IMedia;
+  abstract?: string;
+  description?: string;
+  collection?: string;
+  designer?: string;
+  color?: string;
 }
 
 export type ShopRelatedCardProps = UIStyledComponentProps<Props>;

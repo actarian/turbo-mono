@@ -39,26 +39,26 @@ const AccordionGroup: React.FC<React.PropsWithChildren<AccordionGroupProps>> = (
 
   const [state, setState, stateRef] = useCurrentState<Array<number>>([]);
 
-  const updateValues = (currentIndex: number, nextState: boolean) => {
-    const hasChild = stateRef.current.find(val => val === currentIndex);
+  const updateValues = (index: number, visible: boolean) => {
+    const hasChild = stateRef.current.find(x => x === index);
 
     if (accordion) {
-      if (nextState) {
-        return setState([currentIndex]);
+      if (visible) {
+        return setState([index]);
       }
       return setState([]);
     }
 
-    if (nextState) {
+    if (visible) {
       // In a few cases, the user will set Accordion Component state manually.
       // If the user incorrectly set the state, Group component should ignore it.
       /* istanbul ignore if */
       if (hasChild) {
         return;
       }
-      return setState([...stateRef.current, currentIndex]);
+      return setState([...stateRef.current, index]);
     }
-    setState(stateRef.current.filter(item => item !== currentIndex));
+    setState(stateRef.current.filter(item => item !== index));
   }
 
   const initialValue = useMemo<AccordionConfig>(() => ({
@@ -66,14 +66,14 @@ const AccordionGroup: React.FC<React.PropsWithChildren<AccordionGroupProps>> = (
     updateValues,
   }), [state.join(',')]);
 
-  const hasIndexChildren = useMemo(() => setChildrenIndex(children, [Accordion]), [children]);
+  const indexedChildren = useMemo(() => setChildrenIndex(children, [Accordion]), [children]);
 
   const classNames = getClassNames('accordion-group', className);
 
   return (
     <AccordionContext.Provider value={initialValue}>
       <StyledAccordionGroup className={classNames} {...props}>
-        {hasIndexChildren}
+        {indexedChildren}
       </StyledAccordionGroup>
     </AccordionContext.Provider>
   )

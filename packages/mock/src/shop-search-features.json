@@ -1,67 +1,107 @@
 [
   {
-    "id": "color",
+    "id": "category",
     "schema": "featureType",
-    "title": "Color",
+    "title": "Category",
     "mode": "select",
     "features": [
       {
-        "id": 5293,
+        "id": "shop_category_tile",
+        "title": "Tiles"
+      },
+      {
+        "id": "shop_category_element",
+        "title": "3D Elements"
+      },
+      {
+        "id": "shop_category_paint",
+        "title": "Paints"
+      },
+      {
+        "id": "shop_category_woodmetal",
+        "title": "Wood & Metal"
+      },
+      {
+        "id": "shop_category_furniture",
+        "title": "Furniture"
+      },
+      {
+        "id": "shop_category_book",
+        "title": "Books"
+      },
+      {
+        "id": "shop_category_gift",
+        "title": "Gifts"
+      },
+      {
+        "id": "shop_category_edition",
+        "title": "Editions"
+      }
+    ]
+  },
+  {
+    "id": "color",
+    "schema": "featureType",
+    "title": "Color",
+    "mode": "or",
+    "features": [
+      {
+        "id": "Bianco",
         "title": "Bianco",
         "color": "#ffffff"
       },
       {
-        "id": 2216,
+        "id": "Grigio",
         "title": "Grigio",
         "color": "#c7c6c4"
       },
       {
-        "id": 5283,
+        "id": "Marrone",
         "title": "Marrone",
         "color": "#584d49"
       },
       {
-        "id": 5284,
+        "id": "Verde",
         "title": "Verde",
         "color": "#9aa48c"
       },
       {
-        "id": 5285,
+        "id": "Rosso",
         "title": "Rosso",
         "color": "#6e2926"
       },
       {
-        "id": 5281,
+        "id": "Blu",
         "title": "Blu",
         "color": "#0c485e"
       },
       {
-        "id": 2215,
+        "id": "Nero",
         "title": "Nero",
         "color": "#000000"
       },
       {
-        "id": 5282,
+        "id": "Terre",
         "title": "Terre",
         "color": "#96715f"
       },
       {
-        "id": 5289,
+        "id": "Giallo",
         "title": "Giallo",
         "color": "#f1d89f"
       },
       {
-        "id": 5290,
+        "id": "Viola",
         "title": "Viola",
         "color": "#4f3a4b"
       },
       {
-        "id": 5287,
+        "id": "Azzurro",
         "title": "Azzurro",
         "color": "#abcee2"
       },
       {
-        "id": 5286,
+        "id": "Rosa",
         "title": "Rosa",
         "color": "#E48F93"
       }
@@ -71,55 +111,167 @@
     "id": "designer",
     "schema": "featureType",
     "title": "Designer",
-    "mode": "select",
+    "mode": "or",
     "features": [
       {
-        "id": 2224,
+        "id": "Patricia Urquiola",
         "title": "Patricia Urquiola"
       },
       {
-        "id": 2228,
+        "id": "Hella Jongerius",
         "title": "Hella Jongerius"
       },
       {
-        "id": 2891,
+        "id": "Edward Barber & Jay Osgerby",
         "title": "Edward Barber & Jay Osgerby"
       },
       {
-        "id": 2903,
+        "id": "Inga Sempé",
         "title": "Inga Sempé"
       },
       {
-        "id": 2914,
+        "id": "Konstantin Grcic",
         "title": "Konstantin Grcic"
       },
       {
-        "id": 2925,
+        "id": "Tokujin Yoshioka",
         "title": "Tokujin Yoshioka"
       },
       {
-        "id": 2937,
+        "id": "Ronan & Erwan Bouroullec",
         "title": "Ronan & Erwan Bouroullec"
       },
       {
-        "id": 2948,
+        "id": "Raw Edges",
         "title": "Raw Edges"
       },
       {
-        "id": 5982,
+        "id": "Nathalie Du Pasquier",
         "title": "Nathalie Du Pasquier"
       },
       {
-        "id": 6352,
+        "id": "Laboratorio Avallone",
         "title": "Laboratorio Avallone"
       },
       {
-        "id": 6362,
+        "id": "OEO Studio",
         "title": "OEO Studio"
       },
       {
-        "id": 10857,
+        "id": "Vincent Van Duysen",
         "title": "Vincent Van Duysen"
+      }
+    ]
+  },
+  {
+    "id": "collection",
+    "schema": "featureType",
+    "title": "Collection",
+    "mode": "or",
+    "features": [
+      {
+        "id": "Azulej",
+        "title": "Azulej"
+      },
+      {
+        "id": "Bas-Relief",
+        "title": "Bas-Relief"
+      },
+      {
+        "id": "Botanica",
+        "title": "Botanica"
+      },
+      {
+        "id": "Bloc",
+        "title": "Bloc"
+      },
+      {
+        "id": "Brac",
+        "title": "Brac"
+      },
+      {
+        "id": "Celosia",
+        "title": "Celosia"
+      },
+      {
+        "id": "Hives",
+        "title": "Hives"
+      },
+      {
+        "id": "Mistral",
+        "title": "Mistral"
+      },
+      {
+        "id": "Renga",
+        "title": "Renga"
+      },
+      {
+        "id": "Accents Paints",
+        "title": "Accents Paints"
+      },
+      {
+        "id": "Margherita Paints",
+        "title": "Margherita Paints"
+      },
+      {
+        "id": "Accents Wood",
+        "title": "Accents Wood"
+      },
+      {
+        "id": "Accents Metal",
+        "title": "Accents Metal"
+      },
+      {
+        "id": "Pico Bois",
+        "title": "Pico Bois"
+      },
+      {
+        "id": "Accents Accessories",
+        "title": "Accents Accessories"
+      },
+      {
+        "id": "Books",
+        "title": "Books"
+      },
+      {
+        "id": "Posters",
+        "title": "Posters"
+      },
+      {
+        "id": "Notebooks",
+        "title": "Notebooks"
+      },
+      {
+        "id": "Bags",
+        "title": "Bags"
+      },
+      {
+        "id": "Stationery",
+        "title": "Stationery"
+      },
+      {
+        "id": "Rombini Vases",
+        "title": "Rombini Vases"
+      },
+      {
+        "id": "Paesaggi",
+        "title": "Paesaggi"
+      },
+      {
+        "id": "El Lobo",
+        "title": "El Lobo"
+      },
+      {
+        "id": "Phenomenon Plate",
+        "title": "Phenomenon Plate"
+      },
+      {
+        "id": "Yama",
+        "title": "Yama"
+      },
+      {
+        "id": "The Cylinder Glass",
+        "title": "The Cylinder Glass"
       }
     ]
   }

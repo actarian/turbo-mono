@@ -215,6 +215,62 @@
     "pageId": 7
   },
   {
+    "id": "shop_category_tile",
+    "title": "Tiles Samples",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 8
+  },
+  {
+    "id": "shop_category_element",
+    "title": "3D Elements Samples",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 9
+  },
+  {
+    "id": "shop_category_paint",
+    "title": "Paints Samples",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 10
+  },
+  {
+    "id": "shop_category_woodmetal",
+    "title": "Wood & Metal",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 11
+  },
+  {
+    "id": "shop_category_furniture",
+    "title": "Furniture",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 12
+  },
+  {
+    "id": "shop_category_book",
+    "title": "Books",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 13
+  },
+  {
+    "id": "shop_category_gift",
+    "title": "Gifts",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 14
+  },
+  {
+    "id": "shop_category_edition",
+    "title": "Editions",
+    "categoryId": "shop_index",
+    "pageSchema": "shop_category",
+    "pageId": 15
+  },
+  {
     "id": "reserved_area",
     "title": {
       "en": "Reserved area",

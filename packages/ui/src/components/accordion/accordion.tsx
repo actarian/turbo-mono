@@ -100,21 +100,21 @@ const Accordion: React.FC<React.PropsWithChildren<AccordionProps>> = ({
     if (!values.length) {
       return;
     }
-    const isActive = !!values.find(item => item === index);
-    setVisible(isActive);
+    const visible = !!values.find(item => item === index);
+    setVisible(visible);
   }, [values.join(',')]);
 
-  const clickHandler = () => {
-    const next = !visibleRef.current;
-    setVisible(next);
-    updateValues && updateValues(index, next);
+  const onClick = () => {
+    const visible = !visibleRef.current;
+    setVisible(visible);
+    updateValues && updateValues(index, visible);
   };
 
   const classNames = getClassNames('accordion', { shadow }, className);
 
   return (
     <StyledAccordion className={classNames} {...props}>
-      <div className="view" role="button" onClick={clickHandler}>
+      <div className="view" role="button" onClick={onClick}>
         <div className="title">
           <span>{title}</span> <AccordionIcon active={visible} />
         </div>

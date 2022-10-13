@@ -11,6 +11,7 @@ import MagazineSearchCard from './magazine-search-card';
 import MagazineSearchFiltersModal from './magazine-search-filters-modal';
 import MagazineSearchRecap from './magazine-search-recap';
 
+// this is the actual filtering function of the magazine
 function filterMagazineItem(key: string, item: MagazineSearchItem, value: IEquatable) {
   switch (key) {
     case 'category':
@@ -18,7 +19,7 @@ function filterMagazineItem(key: string, item: MagazineSearchItem, value: IEquat
     case 'title':
       return item.title.toLowerCase().includes(value.toString().toLowerCase());
     default:
-      return false;
+      return true;
   }
 }
 

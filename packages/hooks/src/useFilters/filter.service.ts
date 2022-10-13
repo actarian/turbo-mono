@@ -1,10 +1,11 @@
 import type { IEquatable } from '@websolute/core';
+import type { IFeatureType } from '@websolute/models';
 import type { FilterParams } from './filter';
-import { Filter, FilterMode, IFeatureType } from './filter';
+import { Filter, FilterMode } from './filter';
 
 export function getFilters<T>(items: T[], featureTypes: IFeatureType[], filterMap: (key: string, item: T, value: IEquatable) => boolean, params?: FilterParams | null): Filter<T>[] {
   return featureTypes.map(featureType => {
-    const filter = Filter.fromFeatureType<T>(featureType, FilterMode.OR);
+    const filter = Filter.fromFeatureType<T>(featureType, (featureType.mode as FilterMode) || FilterMode.OR);
     filter.filter = (item, value) => {
       if (typeof filterMap === 'function') {
         return filterMap(featureType.id, item, value);

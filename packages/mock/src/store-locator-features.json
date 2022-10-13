@@ -3,7 +3,7 @@
     "id": "category",
     "schema": "featureType",
     "title": "Tipology",
-    "mode": "select",
+    "mode": "or",
     "features": [
       {
         "id": 8,
