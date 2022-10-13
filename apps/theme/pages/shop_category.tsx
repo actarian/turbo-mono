@@ -22,7 +22,7 @@ const ShopCategory = ({ page, items = [], featureTypes = [] }: ShopCategoryProps
 
           <CategoryHero item={page} />
 
-          <ShopSearch id="serp" padding="3rem 0" items={items} featureTypes={featureTypes} categoryId={page.categoryId}></ShopSearch>
+          <ShopSearch id="serp" padding="3rem 0" items={items} featureTypes={featureTypes} categoryId={'shop_category_tile'}></ShopSearch>
 
           <CategoryProposition item={CategoryPropositionDefaults.item} />
 

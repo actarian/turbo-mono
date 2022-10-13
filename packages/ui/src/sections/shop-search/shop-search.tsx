@@ -95,7 +95,7 @@ const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, categoryId
 
   // fires when user make a change on filters
   const onFilterChange = (filter?: Filter<ShopSearchItem>, values?: IEquatable[]) => {
-    console.log('ShopSearch.onFilterChange', filter, values);
+    // console.log('ShopSearch.onFilterChange', filter, values);
     setFilter(filter, values);
     pagination.goToPage(1);
     // serializing querystring filter
@@ -116,7 +116,7 @@ const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, categoryId
 
   // fires when user make a change on sort
   function onSortChange(sort: IEquatable) {
-    console.log('ShopSearch.onSortChange', sort);
+    // console.log('ShopSearch.onSortChange', sort);
     sorting.setSort(sort);
     // serializing querystring pagination
     replaceParamsSilently({ sorting: { sort } });
@@ -125,7 +125,7 @@ const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, categoryId
 
   // fires when user make a change on pagination
   function onPaginationChange(page: number) {
-    console.log('ShopSearch.onPaginationChange', page);
+    // console.log('ShopSearch.onPaginationChange', page);
     pagination.goToPage(page);
     // serializing querystring pagination
     replaceParamsSilently({ pagination: { page } });

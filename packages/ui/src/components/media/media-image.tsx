@@ -50,6 +50,12 @@ function getImageSizes(widths: number[]): string {
 }
 
 /*
+function encodeURIComponentRFC3986(text: string): string {
+  return encodeURIComponent(text).replace(/[!'()*]/g, (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`);
+}
+*/
+
+/*
 <img
 
 loading="lazy"

@@ -3,7 +3,7 @@
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/179_n_Nero_cubo_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/179_n_Nero_cubo_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -11,17 +11,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Cubo Nero",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 1,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/823_n_Nero_diagonal_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/823_n_Nero_diagonal_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -29,17 +28,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Diagonal Nero",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 2,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2706_n_Nero_estrela_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2706_n_Nero_estrela_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -47,17 +45,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Estrela Nero",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 3,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2707_n_Nero_flores_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2707_n_Nero_flores_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -65,17 +62,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Flores Nero",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 4,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2708_n_Nero_fondo_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2708_n_Nero_fondo_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -83,17 +79,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Fondo Nero",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 5,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2709_n_Nero_gira_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2709_n_Nero_gira_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -101,17 +96,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Gira Nero",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 6,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2767_n_Nero_prata_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2767_n_Nero_prata_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -119,17 +113,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Prata Nero",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 7,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2768_n_Nero_renda_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2768_n_Nero_renda_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -137,17 +130,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Renda Nero",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 8,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2769_n_Nero_trama_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2769_n_Nero_trama_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -155,17 +147,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Trama Nero",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 9,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2770_n_Nero_trevo_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2770_n_Nero_trevo_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -173,17 +164,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Trevo Nero",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 10,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2710_n_Grigio_cubo_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2710_n_Grigio_cubo_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -191,17 +181,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination grigio",
       "title": "Cubo Grigio",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 11,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2713_n_grigio_diagonal_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2713_n_grigio_diagonal_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -209,17 +198,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination grigio",
       "title": "Diagonal Grigio",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 12,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2766_n_Grigio_estrela_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2766_n_Grigio_estrela_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -227,17 +215,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination grigio",
       "title": "Estrela Grigio",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 13,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2771_n_Grigio_flores_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2771_n_Grigio_flores_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -245,17 +232,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination grigio",
       "title": "Flores Grigio",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 14,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2772_n_Grigio_fondo_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2772_n_Grigio_fondo_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -263,17 +249,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination grigio",
       "title": "Fondo Grigio",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 15,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2773_n_Grigio_gira_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2773_n_Grigio_gira_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -281,17 +266,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination grigio",
       "title": "Gira Grigio",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 16,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2774_n_Grigio_prata_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2774_n_Grigio_prata_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -299,17 +283,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination grigio",
       "title": "Prata Grigio",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 17,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2775_n_Grigio_renda_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2775_n_Grigio_renda_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -317,17 +300,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination grigio",
       "title": "Renda Grigio",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 18,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2776_n_Grigio_trama_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2776_n_Grigio_trama_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -335,17 +317,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination grigio",
       "title": "Trama Grigio",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 19,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2777_n_Grigio_trevo_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2777_n_Grigio_trevo_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -353,17 +334,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination grigio",
       "title": "Trevo Grigio",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 20,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2714_n_Bianco_cubo_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2714_n_Bianco_cubo_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -371,17 +351,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Cubo Bianco",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 21,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2715_n_Bianco_diagonal_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2715_n_Bianco_diagonal_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -389,17 +368,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Diagonal Bianco",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 22,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2778_n_Bianco_estrela_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2778_n_Bianco_estrela_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -407,17 +385,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Estrela Bianco",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 23,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2780_n_Bianco_flores_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2780_n_Bianco_flores_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -425,17 +402,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Flores Bianco",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 24,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2781_n_Bianco_fondo_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2781_n_Bianco_fondo_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -443,17 +419,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Fondo Bianco",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 25,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2782_n_Bianco_gira_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2782_n_Bianco_gira_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -461,17 +436,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Gira Bianco",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 26,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2783_n_Bianco_prata_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2783_n_Bianco_prata_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -479,17 +453,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Prata Bianco",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 27,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2786_n_Biano_renda_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2786_n_Biano_renda_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -497,17 +470,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Renda Bianco",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 28,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2784_n_Bianco_trama_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2784_n_Bianco_trama_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -515,17 +487,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Trama Bianco",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 29,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2785_n_Bianco_trevo_20·20cm-(8”·8”).jpg"
+        "src": "/assets/shop_detail/2785_n_Bianco_trevo_20x20cm-8x8.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Azulej",
@@ -533,17 +504,16 @@
       "category": "Azulej by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Trevo Bianco",
-      "price": 4.4,
+      "price": 4.40,
       "availability": 6,
-      "description": "20cm x 20cm",
-      "id": 30,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "20cm x 20cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2711_n_Cloud-Bianco-18·54-cm-(7”·21”).jpg"
+        "src": "/assets/shop_detail/2711_n_Cloud-Bianco-18x54-cm-7x21.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -551,17 +521,16 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Cloud Bianco",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "18cm x 54cm",
-      "id": 31,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "18cm x 54cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2751_n_Code-Bianco-26,5·18-cm-(10,55”·7”).jpg"
+        "src": "/assets/shop_detail/2751_n_Code-Bianco-26,5x18-cm-10,55x7.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -569,17 +538,16 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Code Bianco",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "26, 5cm x 18cm",
-      "id": 32,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "26, 5cm x 18cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2754_n_Garland-Bianco-18·54-cm-(7”·21”).jpg"
+        "src": "/assets/shop_detail/2754_n_Garland-Bianco-18x54-cm-7x21.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -587,17 +555,16 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Garland Bianco",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "18cm x 54cm",
-      "id": 33,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "18cm x 54cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2757_n_Patchwork-Bianco-18·54-cm-(7”·21”).jpg"
+        "src": "/assets/shop_detail/2757_n_Patchwork-Bianco-18x54-cm-7x21.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -605,17 +572,16 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination bianco",
       "title": "Patchwork Bianco",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "18cm x 54cm",
-      "id": 34,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "18cm x 54cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2749_n_Cloud-Cipria-18·54-cm-(7”·21”).jpg"
+        "src": "/assets/shop_detail/2749_n_Cloud-Cipria-18x54-cm-7x21.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -623,17 +589,16 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination cipria",
       "title": "Cloud Cipria",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "18cm x 54cm",
-      "id": 35,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "18cm x 54cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2752_n_Code-Cipria-26,5·18-cm-(10,55”·7”).jpg"
+        "src": "/assets/shop_detail/2752_n_Code-Cipria-26,5x18-cm-10,55x7.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -641,17 +606,16 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination cipria",
       "title": "Code Cipria",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "26, 5cm x 18cm",
-      "id": 36,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "26, 5cm x 18cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2755_n_Garland-Cipria-18·54-cm-(7”·21”)).jpg"
+        "src": "/assets/shop_detail/2755_n_Garland-Cipria-18x54-cm-7x21.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -659,17 +623,16 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination cipria",
       "title": "Garland Cipria",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "18cm x 54cm",
-      "id": 37,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "18cm x 54cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2758_n_Patchwork-Cipria-18·54-cm-(7”·21”).jpg"
+        "src": "/assets/shop_detail/2758_n_Patchwork-Cipria-18x54-cm-7x21.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -677,17 +640,16 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination cipria",
       "title": "Patchwork Cipria",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "18cm x 54cm",
-      "id": 38,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "18cm x 54cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2750_n_Cloud-Nero-18·54-cm-(7”·21”).jpg"
+        "src": "/assets/shop_detail/2750_n_Cloud-Nero-18x54-cm-7x21.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -695,17 +657,16 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Cloud Nero",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "18cm x 54cm",
-      "id": 39,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "18cm x 54cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2753_n_Code-Nero-26,5·18-cm-(10,55”·7”).jpg"
+        "src": "/assets/shop_detail/2753_n_Code-Nero-26,5x18-cm-10,55x7.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -713,17 +674,16 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Code Nero",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "26, 5cm x 18cm",
-      "id": 40,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "26, 5cm x 18cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2756_n_Garland-Nero-18·54-cm-(7”·21”).jpg"
+        "src": "/assets/shop_detail/2756_n_Garland-Nero-18x54-cm-7x21.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -731,17 +691,16 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Garland Nero",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "18cm x 54cm",
-      "id": 41,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "18cm x 54cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2759_n_Patchwork-Nero-18·54-cm-(7”·21”).jpg"
+        "src": "/assets/shop_detail/2759_n_Patchwork-Nero-18x54-cm-7x21.jpg"
       },
       "categoryId": "shop_category_tile",
       "collection": "Bas-Relief",
@@ -749,12 +708,11 @@
       "category": "Bas-Relief by Patricia Urquiola",
       "abstract": "Combination nero",
       "title": "Patchwork Nero",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "description": "18cm x 54cm",
-      "id": 42,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "18cm x 54cm"
     },
     {
       "media": {
@@ -769,10 +727,9 @@
       "title": "Flower White Matt",
       "price": 6,
       "availability": 6,
-      "description": "23, 1cm x 40, 3cm",
-      "id": 43,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "23, 1cm x 40, 3cm"
     },
     {
       "media": {
@@ -787,10 +744,9 @@
       "title": "Flower Grey Matt",
       "price": 6,
       "availability": 6,
-      "description": "23, 1cm x 40, 3cm",
-      "id": 44,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "23, 1cm x 40, 3cm"
     },
     {
       "media": {
@@ -805,10 +761,9 @@
       "title": "Seed White Matt",
       "price": 6,
       "availability": 6,
-      "description": "23, 1cm x 39, 9cm",
-      "id": 45,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "23, 1cm x 39, 9cm"
     },
     {
       "media": {
@@ -823,10 +778,9 @@
       "title": "Seed Grey Matt",
       "price": 6,
       "availability": 6,
-      "description": "23, 1cm x 39, 9cm",
-      "id": 46,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "23, 1cm x 39, 9cm"
     },
     {
       "media": {
@@ -841,10 +795,9 @@
       "title": "Seed White Glossy",
       "price": 6,
       "availability": 6,
-      "description": "23, 1cm x 39, 9cm",
-      "id": 47,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "23, 1cm x 39, 9cm"
     },
     {
       "media": {
@@ -859,10 +812,9 @@
       "title": "Seed Grey Glossy",
       "price": 6,
       "availability": 6,
-      "description": "23, 1cm x 39, 9cm",
-      "id": 48,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "23, 1cm x 39, 9cm"
     },
     {
       "media": {
@@ -877,10 +829,9 @@
       "title": "Flower Grey Glossy",
       "price": 6,
       "availability": 6,
-      "description": "23, 1cm x 40, 3cm",
-      "id": 49,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "23, 1cm x 40, 3cm"
     },
     {
       "media": {
@@ -895,10 +846,9 @@
       "title": "Flower White Glossy",
       "price": 6,
       "availability": 6,
-      "description": "23, 1cm x 40, 3cm",
-      "id": 50,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "23, 1cm x 40, 3cm"
     },
     {
       "media": {
@@ -911,13 +861,12 @@
       "category": "Bloc by Ronan & Erwan Bouroullec",
       "finish": "Glossy",
       "title": "Bloc Pearl Glossy",
-      "price": 32.5,
+      "price": 32.50,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
-      "description": "13 x 10cm x 13cm",
-      "id": 51,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
+      "description": "13 x 10cm x 13cm"
     },
     {
       "media": {
@@ -930,13 +879,12 @@
       "category": "Bloc by Ronan & Erwan Bouroullec",
       "finish": "Glossy",
       "title": "Bloc Grey Glossy",
-      "price": 32.5,
+      "price": 32.50,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
-      "description": "13 x 10cm x 13cm",
-      "id": 52,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
+      "description": "13 x 10cm x 13cm"
     },
     {
       "media": {
@@ -949,13 +897,12 @@
       "category": "Bloc by Ronan & Erwan Bouroullec",
       "finish": "Glossy",
       "title": "Bloc Red Glossy",
-      "price": 32.5,
+      "price": 32.50,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
-      "description": "13 x 10cm x 13cm",
-      "id": 53,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
+      "description": "13 x 10cm x 13cm"
     },
     {
       "media": {
@@ -968,13 +915,12 @@
       "category": "Bloc by Ronan & Erwan Bouroullec",
       "finish": "Glossy",
       "title": "Bloc Blue Glossy",
-      "price": 32.5,
+      "price": 32.50,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
-      "description": "13 x 10cm x 13cm",
-      "id": 54,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
+      "description": "13 x 10cm x 13cm"
     },
     {
       "media": {
@@ -989,11 +935,10 @@
       "title": "Bloc Pearl Matt",
       "price": 18,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
-      "description": "13 x 10cm x 13cm",
-      "id": 55,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
+      "description": "13 x 10cm x 13cm"
     },
     {
       "media": {
@@ -1008,11 +953,10 @@
       "title": "Bloc Grey Matt",
       "price": 18,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
-      "description": "13 x 10cm x 13cm",
-      "id": 56,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
+      "description": "13 x 10cm x 13cm"
     },
     {
       "media": {
@@ -1027,11 +971,10 @@
       "title": "Bloc Red Matt",
       "price": 18,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
-      "description": "13 x 10cm x 13cm",
-      "id": 57,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
+      "description": "13 x 10cm x 13cm"
     },
     {
       "media": {
@@ -1046,11 +989,10 @@
       "title": "Bloc Blue Matt",
       "price": 18,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
-      "description": "13 x 10cm x 13cm",
-      "id": 58,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
+      "description": "13 x 10cm x 13cm"
     },
     {
       "media": {
@@ -1063,13 +1005,12 @@
       "category": "Bloc by Ronan & Erwan Bouroullec",
       "finish": "Natural",
       "title": "Bloc Natural",
-      "price": 5.7,
+      "price": 5.70,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
-      "description": "13 x 10cm x 13cm",
-      "id": 59,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Ronan & Erwan Bouroullec.",
+      "description": "13 x 10cm x 13cm"
     },
     {
       "media": {
@@ -1082,13 +1023,12 @@
       "category": "Brac by Nathalie Du Pasquier",
       "color": "Argilla",
       "title": "Brac Argilla",
-      "price": 11.5,
+      "price": 11.50,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Nathalie Du Pasquier.",
-      "description": "13 x 22cm x 10cm",
-      "id": 60,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Nathalie Du Pasquier.",
+      "description": "13 x 22cm x 10cm"
     },
     {
       "media": {
@@ -1103,11 +1043,10 @@
       "title": "Brac Bianco",
       "price": 49,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Nathalie Du Pasquier.",
-      "description": "13 x 22cm x 10cm",
-      "id": 61,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Nathalie Du Pasquier.",
+      "description": "13 x 22cm x 10cm"
     },
     {
       "media": {
@@ -1122,11 +1061,10 @@
       "title": "Brac Salvia",
       "price": 49,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Nathalie Du Pasquier.",
-      "description": "13 x 22cm x 10cm",
-      "id": 62,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Nathalie Du Pasquier.",
+      "description": "13 x 22cm x 10cm"
     },
     {
       "media": {
@@ -1141,11 +1079,10 @@
       "title": "Brac Marrone",
       "price": 49,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Nathalie Du Pasquier.",
-      "description": "13 x 22cm x 10cm",
-      "id": 63,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Nathalie Du Pasquier.",
+      "description": "13 x 22cm x 10cm"
     },
     {
       "media": {
@@ -1160,29 +1097,27 @@
       "title": "Brac Nero",
       "price": 49,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Nathalie Du Pasquier.",
-      "description": "13 x 22cm x 10cm",
-      "id": 64,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Nathalie Du Pasquier.",
+      "description": "13 x 22cm x 10cm"
     },
     {
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2764_n_celosia-20,5·26,5·10-cm-(8”·10”·-4”).jpg"
+        "src": "/assets/shop_detail/2764_n_celosia-20,5x26,5x10-cm-8x10x-4.jpg"
       },
       "categoryId": "shop_category_element",
       "collection": "Celosia",
       "designer": "Patricia Urquiola",
       "category": "Celosia by Patricia Urquiola",
       "title": "Celosia",
-      "price": 11.1,
+      "price": 11.10,
       "availability": 6,
-      "abstract": "Handcrafted 3D element by Patricia Urquiola.",
-      "description": "20, 5 x 26, 5cm x 10cm",
-      "id": 65,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted 3D element by Patricia Urquiola.",
+      "description": "20, 5 x 26, 5cm x 10cm"
     },
     {
       "media": {
@@ -1196,11 +1131,10 @@
       "title": "Hives",
       "price": 11,
       "availability": 6,
-      "abstract": "Handcrafted terracotta brick by Konstantin Grcic.",
-      "description": "13 x 22, 5cm x 7, 5cm",
-      "id": 66,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "Handcrafted terracotta brick by Konstantin Grcic.",
+      "description": "13 x 22, 5cm x 7, 5cm"
     },
     {
       "media": {
@@ -1213,13 +1147,12 @@
       "category": "Mistral by Barber & Osgerby",
       "color": "Nero",
       "title": "Mistral Black",
-      "price": 64.5,
+      "price": 64.50,
       "availability": 6,
-      "abstract": "3D element in terracotta by Barber & Osgerby.",
-      "description": "12, 5 x 25, 5cm x 12, 5cm",
-      "id": 67,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "3D element in terracotta by Barber & Osgerby.",
+      "description": "12, 5 x 25, 5cm x 12, 5cm"
     },
     {
       "media": {
@@ -1232,13 +1165,12 @@
       "category": "Mistral by Barber & Osgerby",
       "color": "Grigio",
       "title": "Mistral Owl",
-      "price": 64.5,
+      "price": 64.50,
       "availability": 6,
-      "abstract": "3D element in terracotta by Barber & Osgerby.",
-      "description": "12, 5 x 25, 5cm x 12, 5cm",
-      "id": 68,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "3D element in terracotta by Barber & Osgerby.",
+      "description": "12, 5 x 25, 5cm x 12, 5cm"
     },
     {
       "media": {
@@ -1251,13 +1183,12 @@
       "category": "Mistral by Barber & Osgerby",
       "color": "Bianco",
       "title": "Mistral White",
-      "price": 64.5,
+      "price": 64.50,
       "availability": 6,
-      "abstract": "3D element in terracotta by Barber & Osgerby.",
-      "description": "12, 5 x 25, 5cm x 12, 5cm",
-      "id": 69,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "abstract": "3D element in terracotta by Barber & Osgerby.",
+      "description": "12, 5 x 25, 5cm x 12, 5cm"
     },
     {
       "media": {
@@ -1272,10 +1203,9 @@
       "title": "Ivory",
       "price": 18,
       "availability": 6,
-      "description": "15cm x 25cm",
-      "id": 70,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "15cm x 25cm"
     },
     {
       "media": {
@@ -1290,10 +1220,9 @@
       "title": "Grey",
       "price": 18,
       "availability": 6,
-      "description": "15cm x 25cm",
-      "id": 71,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "15cm x 25cm"
     },
     {
       "media": {
@@ -1308,10 +1237,9 @@
       "title": "Brown",
       "price": 18,
       "availability": 6,
-      "description": "15cm x 25cm",
-      "id": 72,
       "schema": "shop_detail",
-      "href": "/shop_detail"
+      "href": "/shop_detail",
+      "description": "15cm x 25cm"
     },
     {
       "title": "chalk matt",
@@ -1325,9 +1253,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Chalk Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 73,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1343,9 +1270,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Yarn Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 74,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1361,9 +1287,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Sand Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 75,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1379,9 +1304,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Ivory Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 76,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1397,9 +1321,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Pearl Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 77,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1415,9 +1338,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Pebbles Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 78,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1433,9 +1355,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Limestone Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 79,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1451,9 +1372,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Moss Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 80,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1469,9 +1389,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Slate Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 81,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1487,9 +1406,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Graphite Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 82,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1505,9 +1423,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Iron Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 83,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1523,9 +1440,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Coal Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 84,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1541,9 +1457,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Mist Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 85,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1559,9 +1474,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Pine Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 86,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1577,9 +1491,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Arctic Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 87,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1595,9 +1508,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Olive Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 88,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1613,9 +1525,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Oxide Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 89,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1631,9 +1542,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Earth Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 90,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1649,9 +1559,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Matt",
       "description": "Clay Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 91,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1667,9 +1576,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Limetouch",
       "description": "Flour",
-      "price": 1.7,
+      "price": 1.70,
       "availability": 6,
-      "id": 92,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1685,9 +1593,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Limetouch",
       "description": "Chalk",
-      "price": 1.7,
+      "price": 1.70,
       "availability": 6,
-      "id": 93,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1703,9 +1610,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Limetouch",
       "description": "Limestone",
-      "price": 1.7,
+      "price": 1.70,
       "availability": 6,
-      "id": 94,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1721,9 +1627,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Limetouch",
       "description": "Mountain",
-      "price": 1.7,
+      "price": 1.70,
       "availability": 6,
-      "id": 95,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1739,9 +1644,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Limetouch",
       "description": "Coke",
-      "price": 1.7,
+      "price": 1.70,
       "availability": 6,
-      "id": 96,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1757,9 +1661,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Limetouch",
       "description": "Moss",
-      "price": 1.7,
+      "price": 1.70,
       "availability": 6,
-      "id": 97,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1775,9 +1678,8 @@
       "category": "Margherita Paints by Nathalie du Pasquier",
       "finish": "Matt",
       "description": "Arancione Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 98,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1793,9 +1695,8 @@
       "category": "Margherita Paints by Nathalie du Pasquier",
       "finish": "Matt",
       "description": "Azzurro Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 99,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1811,9 +1712,8 @@
       "category": "Margherita Paints by Nathalie du Pasquier",
       "finish": "Matt",
       "description": "Giallo Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 100,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1829,9 +1729,8 @@
       "category": "Margherita Paints by Nathalie du Pasquier",
       "finish": "Matt",
       "description": "Rosa Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 101,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1847,9 +1746,8 @@
       "category": "Margherita Paints by Nathalie du Pasquier",
       "finish": "Matt",
       "description": "Verde Matt",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 102,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1865,9 +1763,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Chalk Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 103,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1883,9 +1780,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Yarn Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 104,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1901,9 +1797,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Sand Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 105,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1919,9 +1814,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Ivory Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 106,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1937,9 +1831,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Pearl Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 107,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1955,9 +1848,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Pebbles Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 108,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1973,9 +1865,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Limestone Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 109,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -1991,9 +1882,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Moss Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 110,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2009,9 +1899,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Slate Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 111,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2027,9 +1916,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Graphite Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 112,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2045,9 +1933,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Iron Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 113,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2063,9 +1950,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Coal Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 114,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2081,9 +1967,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Mist Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 115,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2099,9 +1984,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Pine Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 116,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2117,9 +2001,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Arctic Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 117,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2135,9 +2018,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Olive Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 118,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2153,9 +2035,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Oxide Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 119,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2171,9 +2052,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Earth Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 120,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2189,9 +2069,8 @@
       "category": "Accents Paints by Oeo Studio",
       "finish": "Satin",
       "description": "Clay Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 121,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2207,9 +2086,8 @@
       "category": "Margherita Paints by Nathalie du Pasquier",
       "finish": "Satin",
       "description": "Arancione Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 122,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2225,9 +2103,8 @@
       "category": "Margherita Paints by Nathalie du Pasquier",
       "finish": "Satin",
       "description": "Azzurro Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 123,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2243,9 +2120,8 @@
       "category": "Margherita Paints by Nathalie du Pasquier",
       "finish": "Satin",
       "description": "Giallo Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 124,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2261,9 +2137,8 @@
       "category": "Margherita Paints by Nathalie du Pasquier",
       "finish": "Satin",
       "description": "Rosa Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 125,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2279,9 +2154,8 @@
       "category": "Margherita Paints by Nathalie du Pasquier",
       "finish": "Satin",
       "description": "Verde Satin",
-      "price": 18.4,
+      "price": 18.40,
       "availability": 6,
-      "id": 126,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2289,16 +2163,15 @@
       "title": "wall panel corner 100 light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/1461_n_wall-panel-corner-100-light-oak-1,5-x-10-x-100-(H)-cm.jpg"
+        "src": "/assets/shop_detail/1461_n_wall-panel-corner-100-light-oak-1,5-x-10-x-100-H-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Wall panel corner 100 light oak",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 127,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2306,16 +2179,15 @@
       "title": "wall panel corner 160 light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2633_n_wall-panel-corner-160-light-oak-1,5-x-10-x-160-(H)-cm.jpg"
+        "src": "/assets/shop_detail/2633_n_wall-panel-corner-160-light-oak-1,5-x-10-x-160-H-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Wall panel corner 160 light oak",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 128,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2323,16 +2195,15 @@
       "title": "wall panel corner 100 dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2673_n_wall-panel-corner-100-dark-oak-1,5-x-10-x-100-(H)-cm.jpg"
+        "src": "/assets/shop_detail/2673_n_wall-panel-corner-100-dark-oak-1,5-x-10-x-100-H-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Wall panel corner 100 dark oak",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 129,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2340,16 +2211,15 @@
       "title": "wall panel corner 160 dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2674_n_wall-panel-corner-160-dark-oak-1,5-x-10-x-160-(H)-cm.jpg"
+        "src": "/assets/shop_detail/2674_n_wall-panel-corner-160-dark-oak-1,5-x-10-x-160-H-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Wall panel corner 160 dark oak",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 130,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2357,16 +2227,15 @@
       "title": "wall panel 160 dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2675_n_wall-panel-160-dark-oak-2-x-19,8-x-160-(H)-cm.jpg"
+        "src": "/assets/shop_detail/2675_n_wall-panel-160-dark-oak-2-x-19,8-x-160-H-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Wall panel 160 dark oak",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 131,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2374,16 +2243,15 @@
       "title": "wall panel 100 dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2676_n_wall-panel-100-dark-oak-2-x-19,8-x-100-(H)-cm.jpg"
+        "src": "/assets/shop_detail/2676_n_wall-panel-100-dark-oak-2-x-19,8-x-100-H-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Wall panel 100 dark oak",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 132,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2391,16 +2259,15 @@
       "title": "wall panel 160 light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2677_n_wall-panel-160-light-oak-2-x-19,8-x-160-(H)-cm.jpg"
+        "src": "/assets/shop_detail/2677_n_wall-panel-160-light-oak-2-x-19,8-x-160-H-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Wall panel 160 light oak",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 133,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2408,16 +2275,15 @@
       "title": "wall panel 100 light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2678_n_wall-panel-100-light-oak-2-x-19,8-x-100-(H)-cm.jpg"
+        "src": "/assets/shop_detail/2678_n_wall-panel-100-light-oak-2-x-19,8-x-100-H-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Wall panel 100 light oak",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 134,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2432,9 +2298,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "End Piece S black painted metal",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 135,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2442,16 +2307,15 @@
       "title": "skirting s light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2681_n_skirting-S-light-oak-3-x-6-(H)-x-240-(L)-cm.jpg"
+        "src": "/assets/shop_detail/2681_n_skirting-S-light-oak-3-x-6-H-x-240-L-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Skirting S light oak",
-      "price": 1.7,
+      "price": 1.70,
       "availability": 6,
-      "id": 136,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2459,16 +2323,15 @@
       "title": "skirting s dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2682_n_skirting-S-dark-oak-3-x-6-(H)-x-240-(L)-cm.jpg"
+        "src": "/assets/shop_detail/2682_n_skirting-S-dark-oak-3-x-6-H-x-240-L-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Skirting S dark oak",
-      "price": 1.7,
+      "price": 1.70,
       "availability": 6,
-      "id": 137,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2483,9 +2346,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "End Piece L black painted metal",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 138,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2493,16 +2355,15 @@
       "title": "skirting l light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2685_n_skirting-L-light-oak-2,5-x-19,8-(H)-x-240-(L)-cm.jpg"
+        "src": "/assets/shop_detail/2685_n_skirting-L-light-oak-2,5-x-19,8-H-x-240-L-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Skirting L light oak",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 139,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2510,16 +2371,15 @@
       "title": "skirting l dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2686_n_skirting-L-dark-oak-2,5-x-19,8-(H)-x-240-(L)-cm.jpg"
+        "src": "/assets/shop_detail/2686_n_skirting-L-dark-oak-2,5-x-19,8-H-x-240-L-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Skirting L dark oak",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 140,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2534,9 +2394,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "End Piece rectangular black painted metal",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 141,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2544,16 +2403,15 @@
       "title": "rectangular skirting light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2689_n_rectangular-skirting-light-oak-2,5-x-6-(H)-x-240-(L)-cm.jpg"
+        "src": "/assets/shop_detail/2689_n_rectangular-skirting-light-oak-2,5-x-6-H-x-240-L-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Rectangular Skirting light oak",
-      "price": 1.7,
+      "price": 1.70,
       "availability": 6,
-      "id": 142,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2561,16 +2419,15 @@
       "title": "rectangular skirting dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2690_n_rectangular-skirting-dark-oak-2,5-x-6-(H)-x-240-(L)-cm.jpg"
+        "src": "/assets/shop_detail/2690_n_rectangular-skirting-dark-oak-2,5-x-6-H-x-240-L-cm.jpg"
       },
       "categoryId": "shop_category_woodmetal",
       "collection": "Accents Wood",
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Rectangular Skirting dark oak",
-      "price": 1.7,
+      "price": 1.70,
       "availability": 6,
-      "id": 143,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2585,9 +2442,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Metal by Oeo Studio",
       "description": "L Profile Corner Black",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 144,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2602,9 +2458,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Metal by Oeo Studio",
       "description": "L Profile Horizontal Black",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 145,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2619,9 +2474,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Metal by Oeo Studio",
       "description": "L Profile Horizontal Grey",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 146,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2636,9 +2490,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Metal by Oeo Studio",
       "description": "L Profile Corner Grey",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 147,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2653,9 +2506,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Metal by Oeo Studio",
       "description": "L Cap Corner Black",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 148,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2670,9 +2522,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Metal by Oeo Studio",
       "description": "L Cap Corner Grey",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 149,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2687,9 +2538,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Metal by Oeo Studio",
       "description": "L Cap Horizontal Grey",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 150,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2704,9 +2554,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Metal by Oeo Studio",
       "description": "L Cap Horizontal Black",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 151,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2721,9 +2570,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Mounting Piece 100",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 152,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2738,9 +2586,8 @@
       "designer": "Oeo Studio",
       "category": "Accents Wood by Oeo Studio",
       "description": "Mounting Piece 160",
-      "price": 3.5,
+      "price": 3.50,
       "availability": 6,
-      "id": 153,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2753,9 +2600,8 @@
       "categoryId": "shop_category_woodmetal",
       "collection": "Pico Bois",
       "description": "Blue Dots",
-      "price": 10.6,
+      "price": 10.60,
       "availability": 6,
-      "id": 154,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2768,14 +2614,13 @@
       "categoryId": "shop_category_woodmetal",
       "collection": "Pico Bois",
       "description": "Red Dots",
-      "price": 10.6,
+      "price": 10.60,
       "availability": 6,
-      "id": 155,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
     {
-      "title": "cabinet large dark oak",
+      "title": "Cabinet Large dark oak",
       "media": {
         "type": "image",
         "src": "/assets/shop_detail/2693_n_Cabinet_large_dark_oak_440px_a.jpg"
@@ -2784,10 +2629,9 @@
       "collection": "Accents Accessories",
       "designer": "Oeo Studio",
       "category": "Accents Accessories by Oeo Studio",
-      "description": "Cabinet Large dark oak",
+      "description": "<p>Mobiletto in legno di rovere e cinghie in pelle da appendere a Rack 72/192.</p> <p>Colore: Rovere scuro + Pelle conciata al vegetale<br />Misure: 14,7 x 48 x 40,5 (H) cm</p>",
       "price": 2576,
       "availability": 6,
-      "id": 156,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2795,7 +2639,7 @@
       "title": "cabinet large light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2697_n_Cabinet-Large---Light-oak- -Vegetable-tanned-leather---14,7-x-48-x-40,5-(H)-cm_DETTAGLIO.jpg"
+        "src": "/assets/shop_detail/2697_n_Cabinet-Large-Light-oak-Vegetable-tanned-leather-14,7-x-48-x-40,5-H-cm_DETTAGLIO.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2804,7 +2648,6 @@
       "description": "Cabinet Large light oak",
       "price": 2576,
       "availability": 6,
-      "id": 157,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2812,7 +2655,7 @@
       "title": "cabinet small dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2698_n_Cabinet-Small---Dark-oak- -Vegetable-tanned-leather---14,7-x-48-x-17,5-(H)-cm_DETTAGLIO.jpg"
+        "src": "/assets/shop_detail/2698_n_Cabinet-Small-Dark-oak-Vegetable-tanned-leather-14,7-x-48-x-17,5-H-cm_DETTAGLIO.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2821,7 +2664,6 @@
       "description": "Cabinet Small dark oak",
       "price": 1149,
       "availability": 6,
-      "id": 158,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2829,7 +2671,7 @@
       "title": "cabinet small light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2699_n_Cabinet-Small---Light-oak- -Vegetable-tanned-leather---14,7-x-48-x-17,5-(H)-cm_DETTAGLIO.jpg"
+        "src": "/assets/shop_detail/2699_n_Cabinet-Small-Light-oak-Vegetable-tanned-leather-14,7-x-48-x-17,5-H-cm_DETTAGLIO.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2838,7 +2680,6 @@
       "description": "Cabinet Small light oak",
       "price": 1149,
       "availability": 6,
-      "id": 159,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2846,7 +2687,7 @@
       "title": "mirror large dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2700_n_Mirror-Large---Dark-oak---2-x-62-x-142-(H)-cm.jpg"
+        "src": "/assets/shop_detail/2700_n_Mirror-Large-Dark-oak-2-x-62-x-142-H-cm.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2855,7 +2696,6 @@
       "description": "Mirror Large dark oak",
       "price": 2054,
       "availability": 6,
-      "id": 160,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2863,7 +2703,7 @@
       "title": "mirror large light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2701_n_Mirror-Large---Light-oak---2-x-62-x-142-(H)-cm.jpg"
+        "src": "/assets/shop_detail/2701_n_Mirror-Large-Light-oak-2-x-62-x-142-H-cm.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2872,7 +2712,6 @@
       "description": "Mirror Large light oak",
       "price": 2054,
       "availability": 6,
-      "id": 161,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2880,7 +2719,7 @@
       "title": "mirror small light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2703_n_Mirror-Small---Light-oak---2-x-42-x-50-(H)-cm.jpg"
+        "src": "/assets/shop_detail/2703_n_Mirror-Small-Light-oak-2-x-42-x-50-H-cm.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2889,7 +2728,6 @@
       "description": "Mirror Small light oak",
       "price": 1252,
       "availability": 6,
-      "id": 162,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2897,7 +2735,7 @@
       "title": "mirror small dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2704_n_Mirror-Small---Dark-oak---2-x-42-x-50-(H)-cm.jpg"
+        "src": "/assets/shop_detail/2704_n_Mirror-Small-Dark-oak-2-x-42-x-50-H-cm.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2906,7 +2744,6 @@
       "description": "Mirror Small dark oak",
       "price": 1252,
       "availability": 6,
-      "id": 163,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2914,7 +2751,7 @@
       "title": "rack 72 dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2705_n_Rack-72---Dark-oak---2,5-x-6-(H)-x-72-(L)-cm_DETTAGLIO.jpg"
+        "src": "/assets/shop_detail/2705_n_Rack-72-Dark-oak-2,5-x-6-H-x-72-L-cm_DETTAGLIO.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2923,7 +2760,6 @@
       "description": "Rack 72 dark oak",
       "price": 258,
       "availability": 6,
-      "id": 164,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2931,7 +2767,7 @@
       "title": "rack 72 light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2716_n_Rack-72---Light-oak---2,5-x-6-(H)-x-72-(L)-cm_DETTAGLIO.jpg"
+        "src": "/assets/shop_detail/2716_n_Rack-72-Light-oak-2,5-x-6-H-x-72-L-cm_DETTAGLIO.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2940,7 +2776,6 @@
       "description": "Rack 72 light oak",
       "price": 258,
       "availability": 6,
-      "id": 165,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2948,7 +2783,7 @@
       "title": "rack 192 light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2717_n_Rack-192---Light-oak---2,5-x-6-(H)-x-192-(L)-cm_DETTAGLIO.jpg"
+        "src": "/assets/shop_detail/2717_n_Rack-192-Light-oak-2,5-x-6-H-x-192-L-cm_DETTAGLIO.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2957,7 +2792,6 @@
       "description": "Rack 192 light oak",
       "price": 479,
       "availability": 6,
-      "id": 166,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2965,7 +2799,7 @@
       "title": "rack 192 dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2718_n_Rack-192---Dark-oak---2,5-x-6-(H)-x-192-(L)-cm_DETTAGLIO.jpg"
+        "src": "/assets/shop_detail/2718_n_Rack-192-Dark-oak-2,5-x-6-H-x-192-L-cm_DETTAGLIO.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2974,7 +2808,6 @@
       "description": "Rack 192 dark oak",
       "price": 479,
       "availability": 6,
-      "id": 167,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2982,7 +2815,7 @@
       "title": "shelf large dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2721_n_Shelf-Large---Dark-oak---2,5-x-23-x-120-(L)-cm_DETTAGLIO.jpg"
+        "src": "/assets/shop_detail/2721_n_Shelf-Large-Dark-oak-2,5-x-23-x-120-L-cm_DETTAGLIO.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -2991,7 +2824,6 @@
       "description": "Shelf Large dark oak",
       "price": 863,
       "availability": 6,
-      "id": 168,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -2999,7 +2831,7 @@
       "title": "shelf small dark oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2724_n_Shelf-Small---Dark-oak---2,5-x-23-x-60-(L)-cm_DETTAGLIO.jpg"
+        "src": "/assets/shop_detail/2724_n_Shelf-Small-Dark-oak-2,5-x-23-x-60-L-cm_DETTAGLIO.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -3008,7 +2840,6 @@
       "description": "Shelf Small dark oak",
       "price": 651,
       "availability": 6,
-      "id": 169,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3016,7 +2847,7 @@
       "title": "towel rack large",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2725_n_Towel-Rack-Large---Black-metal- -Vegetable-tanned-leather---40,5-(H)-cm-x-95-(L)-cm_DETTAGLIO.jpg"
+        "src": "/assets/shop_detail/2725_n_Towel-Rack-Large-Black-metal-Vegetable-tanned-leather-40,5-H-cm-x-95-L-cm_DETTAGLIO.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -3025,7 +2856,6 @@
       "description": "Towel Rack Large",
       "price": 729,
       "availability": 6,
-      "id": 170,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3033,7 +2863,7 @@
       "title": "towel rack tall",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/2726_n_Towel-Rack-Tall---Black-metal- -Vegetable-tanned-leather---53,4-(H)-cm-x-47-(L)-cm_DETTAGLIO.jpg"
+        "src": "/assets/shop_detail/2726_n_Towel-Rack-Tall-Black-metal-Vegetable-tanned-leather-53,4-H-cm-x-47-L-cm_DETTAGLIO.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -3042,7 +2872,6 @@
       "description": "Towel Rack Tall",
       "price": 835,
       "availability": 6,
-      "id": 171,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3050,7 +2879,7 @@
       "title": "shelf small light oak",
       "media": {
         "type": "image",
-        "src": "/assets/shop_detail/3211_n_Shelf Small - Light oak - 2,5 x 23 x 60 (L) cm.jpg"
+        "src": "/assets/shop_detail/3211_n_Shelf Small - Light oak - 2,5 x 23 x 60 L cm.jpg"
       },
       "categoryId": "shop_category_furniture",
       "collection": "Accents Accessories",
@@ -3059,7 +2888,6 @@
       "description": "Shelf Small light oak",
       "price": 651,
       "availability": 6,
-      "id": 172,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3076,7 +2904,6 @@
       "description": "Shelf Large light oak",
       "price": 863,
       "availability": 6,
-      "id": 173,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3089,9 +2916,8 @@
       "categoryId": "shop_category_book",
       "collection": "Books",
       "description": "MUT 2",
-      "price": 28.8,
+      "price": 28.80,
       "availability": 6,
-      "id": 174,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3104,9 +2930,8 @@
       "categoryId": "shop_category_book",
       "collection": "Books",
       "description": "MUT 4",
-      "price": 28.8,
+      "price": 28.80,
       "availability": 6,
-      "id": 175,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3119,9 +2944,8 @@
       "categoryId": "shop_category_book",
       "collection": "Books",
       "description": "MUT 5",
-      "price": 40.3,
+      "price": 40.30,
       "availability": 6,
-      "id": 176,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3134,9 +2958,8 @@
       "categoryId": "shop_category_book",
       "collection": "Books",
       "description": "MUT 6",
-      "price": 28.8,
+      "price": 28.80,
       "availability": 6,
-      "id": 177,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3149,9 +2972,8 @@
       "categoryId": "shop_category_book",
       "collection": "Books",
       "description": "MUT 7",
-      "price": 40.3,
+      "price": 40.30,
       "availability": 6,
-      "id": 178,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3164,9 +2986,8 @@
       "categoryId": "shop_category_gift",
       "collection": "Posters",
       "description": "Poster The Sound of My Left Hand - rosso",
-      "price": 98.2,
+      "price": 98.20,
       "availability": 6,
-      "id": 179,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3179,9 +3000,8 @@
       "categoryId": "shop_category_gift",
       "collection": "Posters",
       "description": "Poster The Sound of My Left Hand - rosa e giallo",
-      "price": 98.2,
+      "price": 98.20,
       "availability": 6,
-      "id": 180,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3194,9 +3014,8 @@
       "categoryId": "shop_category_gift",
       "collection": "Posters",
       "description": "Poster The Sound of My Left Hand - verde",
-      "price": 98.2,
+      "price": 98.20,
       "availability": 6,
-      "id": 181,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3209,9 +3028,8 @@
       "categoryId": "shop_category_gift",
       "collection": "Posters",
       "description": "Poster The Sound of My Left Hand - set",
-      "price": 219.6,
+      "price": 219.60,
       "availability": 6,
-      "id": 182,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3226,7 +3044,6 @@
       "description": "Notebook in tinta unita piccoli",
       "price": 75,
       "availability": 6,
-      "id": 183,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3241,7 +3058,6 @@
       "description": "Notebook in tinta unita grandi",
       "price": 100,
       "availability": 6,
-      "id": 184,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3256,7 +3072,6 @@
       "description": "Notebook in tinta unita grandi e piccoli + matite",
       "price": 205,
       "availability": 6,
-      "id": 185,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3271,7 +3086,6 @@
       "description": "Notebook in tinta unita piccoli + matite",
       "price": 105,
       "availability": 6,
-      "id": 186,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3286,7 +3100,6 @@
       "description": "Notebook in tinta unita grandi + matite",
       "price": 130,
       "availability": 6,
-      "id": 187,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3301,7 +3114,6 @@
       "description": "Notebook Mix",
       "price": 175,
       "availability": 6,
-      "id": 188,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3314,9 +3126,8 @@
       "categoryId": "shop_category_gift",
       "collection": "Bags",
       "description": "Shopper Hexagon verde",
-      "price": 19.6,
+      "price": 19.60,
       "availability": 6,
-      "id": 189,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3329,9 +3140,8 @@
       "categoryId": "shop_category_gift",
       "collection": "Bags",
       "description": "Shopper Hexagon giallo",
-      "price": 19.6,
+      "price": 19.60,
       "availability": 6,
-      "id": 190,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3344,9 +3154,8 @@
       "categoryId": "shop_category_gift",
       "collection": "Bags",
       "description": "Shopper Hexagon blu",
-      "price": 19.6,
+      "price": 19.60,
       "availability": 6,
-      "id": 191,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3361,7 +3170,6 @@
       "description": "Matite",
       "price": 30,
       "availability": 6,
-      "id": 192,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3374,9 +3182,8 @@
       "categoryId": "shop_category_gift",
       "collection": "Posters",
       "description": "Poster BRIC",
-      "price": 36.8,
+      "price": 36.80,
       "availability": 6,
-      "id": 193,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3389,9 +3196,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase A Glossy Blanc",
-      "price": 1207.8,
+      "price": 1207.80,
       "availability": 6,
-      "id": 194,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3404,9 +3210,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase A Glossy Brun",
-      "price": 1207.8,
+      "price": 1207.80,
       "availability": 6,
-      "id": 195,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3419,9 +3224,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase A Glossy Vert",
-      "price": 1207.8,
+      "price": 1207.80,
       "availability": 6,
-      "id": 196,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3434,9 +3238,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase A Glossy Vert-Rose",
-      "price": 1207.8,
+      "price": 1207.80,
       "availability": 6,
-      "id": 197,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3449,9 +3252,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase A Glossy Rose-Brun",
-      "price": 1207.8,
+      "price": 1207.80,
       "availability": 6,
-      "id": 198,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3464,9 +3266,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase A Glossy Gris-Vert",
-      "price": 1207.8,
+      "price": 1207.80,
       "availability": 6,
-      "id": 199,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3479,9 +3280,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase B Glossy Brun-Rose",
-      "price": 2159.4,
+      "price": 2159.40,
       "availability": 6,
-      "id": 200,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3494,9 +3294,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase B Glossy Brun-Matt Blue",
-      "price": 2159.4,
+      "price": 2159.40,
       "availability": 6,
-      "id": 201,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3509,9 +3308,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase B Glossy Vert",
-      "price": 2159.4,
+      "price": 2159.40,
       "availability": 6,
-      "id": 202,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3524,9 +3322,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase C Glossy Vert-Brun",
-      "price": 2159.4,
+      "price": 2159.40,
       "availability": 6,
-      "id": 203,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3539,9 +3336,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase C Glossy Brun-Rose-Vert",
-      "price": 2159.4,
+      "price": 2159.40,
       "availability": 6,
-      "id": 204,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3554,9 +3350,8 @@
       "categoryId": "shop_category_edition",
       "collection": "Rombini Vases",
       "description": "Rombini Vase C Glossy Rose-Matt White-Matt Grey",
-      "price": 2159.4,
+      "price": 2159.40,
       "availability": 6,
-      "id": 205,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3571,7 +3366,6 @@
       "description": "Rettangolo Bianco",
       "price": 3172,
       "availability": 6,
-      "id": 206,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3586,7 +3380,6 @@
       "description": "Rettangolo Nero",
       "price": 3172,
       "availability": 6,
-      "id": 207,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3601,7 +3394,6 @@
       "description": "Rettangolo Policromo",
       "price": 3172,
       "availability": 6,
-      "id": 208,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3616,7 +3408,6 @@
       "description": "Tondo Bianco",
       "price": 2928,
       "availability": 6,
-      "id": 209,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3631,7 +3422,6 @@
       "description": "Tondo Policromo",
       "price": 2928,
       "availability": 6,
-      "id": 210,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3646,7 +3436,6 @@
       "description": "Tondo Verde",
       "price": 2928,
       "availability": 6,
-      "id": 211,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3661,7 +3450,6 @@
       "description": "Quadrato Bianco",
       "price": 2928,
       "availability": 6,
-      "id": 212,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3676,7 +3464,6 @@
       "description": "Quadrato Policromo",
       "price": 2928,
       "availability": 6,
-      "id": 213,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3691,7 +3478,6 @@
       "description": "Quadrato Rosso",
       "price": 2928,
       "availability": 6,
-      "id": 214,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3705,9 +3491,8 @@
       "designer": "Patricia Urquiola",
       "collection": "El Lobo",
       "description": "El Lobo nero",
-      "price": 658.8,
+      "price": 658.80,
       "availability": 6,
-      "id": 215,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3721,9 +3506,8 @@
       "designer": "Patricia Urquiola",
       "collection": "El Lobo",
       "description": "El Lobo whisky",
-      "price": 658.8,
+      "price": 658.80,
       "availability": 6,
-      "id": 216,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3739,7 +3523,6 @@
       "description": "Phenomenon Plate",
       "price": 1708,
       "availability": 6,
-      "id": 217,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3755,7 +3538,6 @@
       "description": "Yama E",
       "price": 3050,
       "availability": 6,
-      "id": 218,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3769,9 +3551,8 @@
       "designer": "Vincent Van Duysen",
       "collection": "Yama",
       "description": "Yama D",
-      "price": 2244.8,
+      "price": 2244.80,
       "availability": 6,
-      "id": 219,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3785,9 +3566,8 @@
       "designer": "Vincent Van Duysen",
       "collection": "Yama",
       "description": "Yama C",
-      "price": 1683.6,
+      "price": 1683.60,
       "availability": 6,
-      "id": 220,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3801,9 +3581,8 @@
       "designer": "Vincent Van Duysen",
       "collection": "Yama",
       "description": "Yama B",
-      "price": 1122.4,
+      "price": 1122.40,
       "availability": 6,
-      "id": 221,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3817,9 +3596,8 @@
       "designer": "Vincent Van Duysen",
       "collection": "Yama",
       "description": "Yama A",
-      "price": 561.2,
+      "price": 561.20,
       "availability": 6,
-      "id": 222,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3834,7 +3612,6 @@
       "description": "Alto Nero",
       "price": 1098,
       "availability": 6,
-      "id": 223,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3849,7 +3626,6 @@
       "description": "Medio Nero",
       "price": 1098,
       "availability": 6,
-      "id": 224,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3864,7 +3640,6 @@
       "description": "Basso Nero",
       "price": 1098,
       "availability": 6,
-      "id": 225,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3879,7 +3654,6 @@
       "description": "Alto Bianco",
       "price": 1098,
       "availability": 6,
-      "id": 226,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3894,7 +3668,6 @@
       "description": "Medio Bianco",
       "price": 1098,
       "availability": 6,
-      "id": 227,
       "schema": "shop_detail",
       "href": "/shop_detail"
     },
@@ -3909,7 +3682,6 @@
       "description": "Basso Bianco",
       "price": 1098,
       "availability": 6,
-      "id": 228,
       "schema": "shop_detail",
       "href": "/shop_detail"
     }

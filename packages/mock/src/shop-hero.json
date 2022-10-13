@@ -6,7 +6,7 @@
       "type": "image",
       "src": "/assets/shop_category/hero-07.jpg"
     },
-    "href": "/ww/en/shop/mid-season-sale",
+    "href": "/shop_category",
     "items": [
       {
         "categoryId": "shop_category_women",
@@ -15,7 +15,7 @@
           "type": "image",
           "src": "/assets/shop_category/hero-01.jpg"
         },
-        "href": "/ww/en/shop/womens"
+        "href": "/shop_category"
       },
       {
         "categoryId": "shop_category_men",
@@ -24,7 +24,7 @@
           "type": "image",
           "src": "/assets/shop_category/hero-02.jpg"
         },
-        "href": "/ww/en/shop/mens"
+        "href": "/shop_category"
       },
       {
         "categoryId": "shop_category_desk",
@@ -33,7 +33,7 @@
           "type": "image",
           "src": "/assets/shop_category/hero-03.jpg"
         },
-        "href": "/ww/en/shop/desk-accessories"
+        "href": "/shop_category"
       }
     ]
   },
