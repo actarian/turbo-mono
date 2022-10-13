@@ -166,109 +166,60 @@
     "pageId": 1
   },
   {
-    "id": "shop_category_women",
-    "title": "Women's",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 1
-  },
-  {
-    "id": "shop_category_men",
-    "title": "Men's",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 2
-  },
-  {
-    "id": "shop_category_desk",
-    "title": "Desk accessories",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 3
-  },
-  {
-    "id": "shop_category_accessory",
-    "title": "Accessories",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 4
-  },
-  {
-    "id": "shop_category_workspace",
-    "title": "Workspace",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 5
-  },
-  {
-    "id": "shop_category_new",
-    "title": "New Arrivals",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 6
-  },
-  {
-    "id": "shop_category_sale",
-    "title": "Mid-Season Sale",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 7
-  },
-  {
     "id": "shop_category_tile",
     "title": "Tiles Samples",
     "categoryId": "shop_index",
     "pageSchema": "shop_category",
-    "pageId": 8
+    "pageId": 1
   },
   {
     "id": "shop_category_element",
     "title": "3D Elements Samples",
     "categoryId": "shop_index",
     "pageSchema": "shop_category",
-    "pageId": 9
+    "pageId": 2
   },
   {
     "id": "shop_category_paint",
     "title": "Paints Samples",
     "categoryId": "shop_index",
     "pageSchema": "shop_category",
-    "pageId": 10
+    "pageId": 3
   },
   {
     "id": "shop_category_woodmetal",
     "title": "Wood & Metal",
     "categoryId": "shop_index",
     "pageSchema": "shop_category",
-    "pageId": 11
+    "pageId": 4
   },
   {
     "id": "shop_category_furniture",
     "title": "Furniture",
     "categoryId": "shop_index",
     "pageSchema": "shop_category",
-    "pageId": 12
+    "pageId": 5
   },
   {
     "id": "shop_category_book",
     "title": "Books",
     "categoryId": "shop_index",
     "pageSchema": "shop_category",
-    "pageId": 13
+    "pageId": 6
   },
   {
     "id": "shop_category_gift",
     "title": "Gifts",
     "categoryId": "shop_index",
     "pageSchema": "shop_category",
-    "pageId": 14
+    "pageId": 7
   },
   {
     "id": "shop_category_edition",
     "title": "Editions",
     "categoryId": "shop_index",
     "pageSchema": "shop_category",
-    "pageId": 15
+    "pageId": 8
   },
   {
     "id": "reserved_area",

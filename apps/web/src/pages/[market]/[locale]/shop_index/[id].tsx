@@ -4,7 +4,8 @@ import { asStaticProps } from '@websolute/core';
 import { ShopSearchFeaturesDefaults } from '@websolute/mock';
 import type { IFeatureType, PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
-import { Footer, Header, Layout, Meta, Page, ShopIncentive, ShopSearch, ShopSearchItem } from '@websolute/ui';
+import type { ShopSearchItem } from '@websolute/ui';
+import { Footer, Header, Layout, Meta, Page, ShopIncentive, ShopSearch } from '@websolute/ui';
 import { getShopDetails } from 'src/models';
 
 export default function ShopIndex({ layout, page, items = [], featureTypes = [], params }: ShopIndexProps) {
@@ -34,7 +35,7 @@ export async function getStaticProps(context: IStaticContext) {
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);
-  const page = await getPage('shop_category', id, market, locale);
+  const page = await getPage('shop_index', id, market, locale);
 
   // const items = ShopSearchDefaults.items; // await getProductDetails({ market, locale });
   const items = await getShopDetails({ market, locale });
@@ -56,7 +57,7 @@ export async function getStaticProps(context: IStaticContext) {
 }
 
 export async function getStaticPaths() {
-  const paths = await getStaticPathsForSchema('shop_category');
+  const paths = await getStaticPathsForSchema('shop_index');
   return {
     paths,
     fallback: true,

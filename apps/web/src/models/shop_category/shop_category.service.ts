@@ -11,7 +11,7 @@ export async function getShopCategories(params: FindParams = {}): Promise<IShopC
   return await awaitAll(items, async (p) => await decorateHref(p, params.market, params.locale));
 }
 
-export async function getShopCategory(id: IEquatable, params: FindParams = {}): Promise<IShopCategory> {
+export async function getShopCategory(id: IEquatable, params: FindParams = {}): Promise<IShopCategory | undefined> {
   const store = await getStore<IModelStore>();
   const item = await store.shop_category.findOne({ where: { id }, market: params.market, locale: params.locale });
   // console.log('item ->', item);

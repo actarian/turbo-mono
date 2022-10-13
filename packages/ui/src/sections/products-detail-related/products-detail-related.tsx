@@ -1,19 +1,14 @@
-import { getClassNames, IEquatable } from '@websolute/core';
-import type { IMedia } from '@websolute/models';
+import { getClassNames } from '@websolute/core';
 import dynamic from 'next/dynamic';
 import { Container, Grid, Section, Text } from '../../components';
 import type { ILazyComponent, ILazyComponentProps } from '../../lazy/lazy-loader/lazy-loader';
+import type { ProductsDetailRelatedCardItem } from './products-detail-related-card';
 import ProductsDetailRelatedCard from './products-detail-related-card';
 
 export interface ProductsDetailRelatedItem extends ILazyComponent {
   schema: string;
   title?: string;
-  items: {
-    id: IEquatable;
-    href: string;
-    title: string;
-    media: IMedia;
-  }[];
+  items: ProductsDetailRelatedCardItem[];
 };
 
 export interface ProductsDetailRelatedProps extends ILazyComponentProps {

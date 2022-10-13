@@ -40,9 +40,9 @@ export interface IPage extends IEntity {
   [key: string]: any;
 }
 
-export type PageProps = {
+export type PageProps<T extends IPage = IPage> = {
   layout: ILayout;
-  page: IPage;
+  page: T;
   params: IRouteParams;
   locales?: string[];
   locale?: string;

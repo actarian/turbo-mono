@@ -25,11 +25,11 @@ export interface INamedEntity extends IEntity {
 }
 
 export interface IQuerable<T extends IEntity> {
-  findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | null>;
+  findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | undefined>;
   findMany(params?: FindParams): Promise<T[]>;
   create(payload: T): Promise<T>;
   update(payload: T): Promise<T>;
-  delete(id: IEquatable): Promise<T | null>;
+  delete(id: IEquatable): Promise<T | undefined>;
 }
 
 export type FindParams = {

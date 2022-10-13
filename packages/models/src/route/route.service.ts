@@ -12,7 +12,7 @@ export async function getRoutes(params: FindParams = {}): Promise<IRoute[]> {
   return routes;
 }
 
-export async function getRoute(id: string): Promise<IRoute | null> {
+export async function getRoute(id: string): Promise<IRoute | undefined> {
   const store = await getStore<IModelStore>();
   const route = await store.route.findOne(id);
   // console.log('getRoute', id, '->', route);

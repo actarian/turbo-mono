@@ -45,6 +45,7 @@ const ShopRelatedCard: React.FC<ShopRelatedCardProps> = ({ item, ...props }: Sho
         <Media as="a" aspectRatio={1} borderRadius="0.4rem" marginBottom="0.5rem" item={item.media} />
       </Link>
       <Card.Content>
+        {item.collection && <Text size="9" fontWeight="600">{item.collection + (item.designer ? ` by ${item.designer}` : '')}</Text>}
         <Flex.Row justifyContent="space-between">
           <Link href={item.href} passHref>
             <Text as="a" size="9">{item.title}</Text>

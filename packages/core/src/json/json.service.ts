@@ -8,14 +8,14 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
     this.items = items;
   }
 
-  findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | null> {
-    return new Promise<T | null>((resolve, reject) => {
+  findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | undefined> {
+    return new Promise<T | undefined>((resolve, reject) => {
       const params = toFindParams(idOrParams);
       const items = this.where_(this.items, params);
       if (items.length > 0) {
         resolve(this.decorator_(items[0], params));
       } else {
-        resolve(null);
+        resolve(undefined);
       }
     });
   }
@@ -54,8 +54,8 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
     });
   }
 
-  delete(id: IEquatable): Promise<T | null> {
-    return new Promise<T | null>((resolve, reject) => {
+  delete(id: IEquatable): Promise<T | undefined> {
+    return new Promise<T | undefined>((resolve, reject) => {
       const index = this.items.reduce((p, c, i) => {
         return c.id === id ? i : p;
       }, -1);
@@ -64,7 +64,7 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
         this.items.splice(index, 1);
         return resolve(item);
       }
-      resolve(null);
+      resolve(undefined);
     });
   }
 

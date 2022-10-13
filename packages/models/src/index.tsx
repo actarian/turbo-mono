@@ -18,7 +18,7 @@ export type { IMedia, IMediaType } from './media/media';
 export type { IMenu } from './menu/menu';
 export { getMenu, getMenus } from './menu/menu.service';
 export type { IImage, IMeta, IPage, PageProps } from './page/page';
-export { getErrorPageLayout, getPage } from './page/page.service';
+export { getErrorPageLayout, getPage, getPageCategory } from './page/page.service';
 export { getProvinces } from './province/province.service';
 export { getRegions } from './region/region.service';
 export type { IRoute, IRouteLink, IRouteParams, SchemaType } from './route/route';

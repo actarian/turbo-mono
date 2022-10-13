@@ -47,6 +47,8 @@ export { default as ProductsSearchFiltersModal } from './products-search/product
 export { default as Proposition } from './proposition/proposition';
 export { default as ShopCategoryHero } from './shop-category-hero/shop-category-hero';
 export type { ShopCategoryHeroItem } from './shop-category-hero/shop-category-hero';
+export { default as ShopDetailRelated } from './shop-detail-related/shop-detail-related';
+export type { ShopDetailRelatedItem, ShopDetailRelatedProps } from './shop-detail-related/shop-detail-related';
 export { default as ShopHero } from './shop-hero/shop-hero';
 export { default as ShopHeroCard } from './shop-hero/shop-hero-card';
 export { default as ShopIncentive } from './shop-incentive/shop-incentive';
@@ -62,4 +64,5 @@ export { default as StoreLocatorSearch } from './store-locator/store-locator-sea
 export type { StoreLocatorItem } from './store-locator/store-locator-search';
 export { default as SwiperHero } from './swiper-hero/swiper-hero';
 export { default as Typography } from './typography/typography';
+
 

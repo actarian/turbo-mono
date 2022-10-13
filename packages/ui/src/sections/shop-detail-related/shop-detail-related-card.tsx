@@ -5,18 +5,18 @@ import styled from 'styled-components';
 import { Button, Card, Flex, Media, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 
-export type ProductsDetailRelatedCardItem = {
+export type ShopDetailRelatedCardItem = {
   id: IEquatable;
-  href: string;
-  title: string;
-  media: IMedia;
+  href?: string;
+  title?: string;
+  media?: IMedia;
 }
 
 type Props = {
-  item: ProductsDetailRelatedCardItem
+  item: ShopDetailRelatedCardItem
 }
 
-export type ProductsDetailRelatedCardProps = UIStyledComponentProps<Props>;
+export type ShopDetailRelatedCardProps = UIStyledComponentProps<Props>;
 
 const StyledCard = styled(Card)`
   .media{
@@ -42,16 +42,16 @@ const StyledCard = styled(Card)`
   }
 `;
 
-const ProductsDetailRelatedCard: React.FC<ProductsDetailRelatedCardProps> = ({ item, ...props }: ProductsDetailRelatedCardProps) => {
+const ShopDetailRelatedCard: React.FC<ShopDetailRelatedCardProps> = ({ item, ...props }: ShopDetailRelatedCardProps) => {
   return (
     <StyledCard {...props} hoverable>
-      <Link href={item.href} passHref>
-        <Media as="a" aspectRatio={880 / 550} borderRadius="0.4rem" marginBottom="1.5rem" item={item.media} />
+      <Link href={item.href || '#'} passHref>
+        <Media as="a" aspectRatio={1} borderRadius="0.4rem" marginBottom="1.5rem" item={item.media} />
       </Link>
       <Card.Content>
         <Flex.Row justifyContent="space-between">
           <Button variant="nav">
-            <Text size="6" dangerouslySetInnerHTML={{ __html: item.title || 'untitled' }}></Text>
+            <Text size="8" dangerouslySetInnerHTML={{ __html: item.title || 'untitled' }}></Text>
           </Button>
         </Flex.Row>
       </Card.Content>
@@ -59,4 +59,4 @@ const ProductsDetailRelatedCard: React.FC<ProductsDetailRelatedCardProps> = ({ i
   )
 }
 
-export default ProductsDetailRelatedCard;
+export default ShopDetailRelatedCard;

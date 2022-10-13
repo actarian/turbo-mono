@@ -1,4 +1,5 @@
 import { IEquatable, ISchema } from '@websolute/core';
+import { IMedia } from '@websolute/models';
 import create, { StateCreator } from 'zustand';
 import { persist } from 'zustand/middleware';
 
@@ -52,17 +53,17 @@ export const useCart =
     create<ICartStore>()(persist(cartStore, { name: 'cart' })) :
     create<ICartStore>(cartStore as StateCreator<any>);
 
-export interface ICartItem extends ISchema {
+export interface ICartAddItem extends ISchema {
   id: IEquatable;
   schema: string;
-  media: {
-    type: 'image' | 'video';
-    src: string;
-  };
+  media: IMedia;
   title: string;
-  abstract: string;
+  abstract?: string;
   href: string;
   price: number;
+}
+
+export interface ICartItem extends ICartAddItem {
   qty: number;
 }
 
@@ -71,7 +72,7 @@ export interface ICartStore {
   count(): number;
   has(item: ISchema): boolean;
   find(item: ISchema): ICartItem | undefined;
-  add(item: ISchema, qty: number): void;
+  add(item: ICartAddItem, qty?: number): void;
   remove(item: ISchema): number;
   update(item: ICartItem): void;
   clear(): void;
