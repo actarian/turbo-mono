@@ -91,21 +91,23 @@ const CheckoutInfo: React.FC<CheckoutInfoProps> = ({ onPrevious, onInfo }: Check
                 <Grid.Row rowGap="3rem">
                   <Grid sm={6}>
                     <Flex.Col gap="1rem" alignItems="flex-start">
-                      <Text size="5" textTransform="uppercase">Login</Text>
+                      <Text size="4" fontWeight="700">Login</Text>
                       <Text marginBottom="1rem">Login to optimise your shopping experience and to see your previous orders.</Text>
                       <Button variant="primary" onClick={() => setView('login')}>Login</Button>
                     </Flex.Col>
                   </Grid>
                   <Grid sm={6}>
-                    <Flex.Col gap="1rem" alignItems="flex-start" marginBottom="3rem">
-                      <Text size="5" textTransform="uppercase">Register</Text>
-                      <Text marginBottom="1rem">Register to optimise your shopping experience and to see your previous orders.</Text>
-                      <Button variant="primary" onClick={() => setView('register')}>Register</Button>
-                    </Flex.Col>
-                    <Flex.Col gap="1rem" alignItems="flex-start">
-                      <Text size="5" textTransform="uppercase">Proceed as guest</Text>
-                      <Text marginBottom="1rem">If you continue your purchase as a guest, we will request your shipping details and assign the appropriate sales outlet, but you will not need to create a personal account. If you would like to access your user area and your order history, please complete the purchase by registering your account.</Text>
-                      <Button variant="primary" onClick={() => setView('address')}>Proceed</Button>
+                    <Flex.Col gap="2rem">
+                      <Flex.Col gap="1rem" alignItems="flex-start" marginBottom="3rem">
+                        <Text size="4" fontWeight="700">Register</Text>
+                        <Text marginBottom="1rem">Register to optimise your shopping experience and to see your previous orders.</Text>
+                        <Button variant="primary" onClick={() => setView('register')}>Register</Button>
+                      </Flex.Col>
+                      <Flex.Col gap="1rem" alignItems="flex-start">
+                        <Text size="4" fontWeight="700">Proceed as guest</Text>
+                        <Text marginBottom="1rem">If you continue your purchase as a guest, we will request your shipping details and assign the appropriate sales outlet, but you will not need to create a personal account. If you would like to access your user area and your order history, please complete the purchase by registering your account.</Text>
+                        <Button variant="primary" onClick={() => setView('address')}>Proceed</Button>
+                      </Flex.Col>
                     </Flex.Col>
                   </Grid>
                 </Grid.Row>

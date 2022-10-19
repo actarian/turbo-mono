@@ -5,7 +5,6 @@ import { Breakpoint, GlobalStyle, theme } from '@websolute/ui';
 // import { NextPage } from 'next';
 // import { AppProps } from 'next/app';
 import { AnimatePresence } from 'framer-motion';
-import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 
 export default function Application({ Component, pageProps, router }: ApplicationProps) {
@@ -24,11 +23,6 @@ export default function Application({ Component, pageProps, router }: Applicatio
       <LayoutProvider layout={layout}>
         <LabelProvider>
           <PageProvider page={page}>
-            <Head>
-              {false && <style>
-                @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800&family=Petrona:wght@300&display=swap');
-              </style>}
-            </Head>
             <ThemeProvider theme={theme}>
               <GlobalStyle />
               <CartProvider>

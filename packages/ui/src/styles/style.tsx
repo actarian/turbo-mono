@@ -15,6 +15,9 @@ import swiperCss from '!!raw-loader!swiper/css';
 
 const GlobalStyle = createGlobalStyle`
 
+  @import url('https://rsms.me/inter/inter.css');
+  // @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800&family=Petrona:wght@300&display=swap');
+
   ${swiperCss}
 
   ${CssReset}

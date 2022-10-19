@@ -1,21 +1,21 @@
 
 import { asStaticProps, IContextParams } from '@websolute/core';
-import { CheckoutProvider } from '@websolute/hooks';
+import { CheckoutProvider, useCart } from '@websolute/hooks';
 import type { IUser, PageProps } from '@websolute/models';
 import { getLayout, getPage } from '@websolute/models';
 import { StoreStrategy, storeStrategy } from '@websolute/store';
-import { Breadcrumb, CheckoutWizard, Container, Footer, Header, Layout, Meta, Page, Section } from '@websolute/ui';
+import {
+  Breadcrumb, Button, CheckoutWizard, Container, Flex, Footer, Header, Layout, Meta, NavLink, Page, Section, Text
+} from '@websolute/ui';
 import { ICheckout } from '@websolute/ui/src/sections/checkout/checkout-wizard';
 import { promises as fs } from 'fs';
 import { withIronSessionSsr } from 'iron-session/next';
-import { useRouter } from 'next/router';
 import path from 'path';
 import { IronSessionStorage, sessionOptions } from 'src/config/session';
 
 export default function Checkout({ layout, page, user, params }: CheckoutProps) {
-  const router = useRouter();
 
-  // const setUser = useUser((state) => state.setUser);
+  const items = useCart((state) => state.items);
 
   const onCheckout = (checkout: ICheckout) => {
     console.log('Checkout.onCheckout', checkout);
@@ -34,7 +34,20 @@ export default function Checkout({ layout, page, user, params }: CheckoutProps) 
             </Container.Fluid>
           </Section>
 
-          <CheckoutWizard onCheckout={onCheckout} />
+          {items.length ?
+            <CheckoutWizard onCheckout={onCheckout} /> :
+            <Section>
+              <Container minHeight="50vh">
+                <Flex.Col gap="1rem" alignItems="center" textAlign="center">
+                  <Text size="4" fontWeight="700">Your cart is empty.</Text>
+                  <Text size="8" marginBottom="1rem" maxWidth="80ch">All’interno di Hexagon Shop è possibile acquistare i campioni delle collezioni Tiles, 3D Elements e Paints, complementi d’arredo in materiali inediti, elementi decorativi esclusivi e oggettistica legata all’universo del brand.</Text>
+                  <NavLink href={layout.topLevelHrefs.shop_index || ''} passHref>
+                    <Button as="a" variant="primary">Continue shopping</Button>
+                  </NavLink>
+                </Flex.Col>
+              </Container>
+            </Section>
+          }
 
           <Footer />
         </Page>

@@ -10,3 +10,4 @@ export { getApiStore } from './store-api/store-api.store';
 export { StoreStrategy, storeStrategy } from './store/store';
 export type { CollectionDescription, SerializedCollection, SerializedStore, Store } from './store/store';
 export { getStore } from './store/store.service';
+

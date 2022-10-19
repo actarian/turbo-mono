@@ -1,5 +1,5 @@
 import { getClassNames } from '@websolute/core';
-import { CheckoutStatus, scrollToY, useCheckout } from '@websolute/hooks';
+import { CheckoutStatus, scrollToY } from '@websolute/hooks';
 import { ICartItem } from '@websolute/models';
 import { useState } from 'react';
 import styled from 'styled-components';
@@ -52,8 +52,12 @@ export type CheckoutWizardProps = UIStyledComponentProps<Props>;
 
 const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...props }: CheckoutWizardProps) => {
 
+  /*
   const status = useCheckout((state) => state.status);
   const setStatus = useCheckout((state) => state.setStatus);
+  */
+
+  const [status, setStatus] = useState<CheckoutStatus>(CheckoutStatus.Basket);
   const [checkout, setCheckout] = useState<ICheckout>({})
 
   // 1.
@@ -105,10 +109,6 @@ const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...props }:
       setStatus(status - 1);
     }
     scrollToY(0);
-  }
-
-  if (status === CheckoutStatus.None) {
-    return null;
   }
 
   return (
