@@ -1,6 +1,6 @@
 
 import type { IEquatable } from '@websolute/core';
-import { FormControl, useControl } from '@websolute/forms';
+import { FormControl, stringToValue, useControl, valueToString } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
 import { FocusEvent, useMemo, useState } from 'react';
 import { Autocomplete, Field, IAutocompleteItem, Label } from '../forms';
@@ -11,27 +11,18 @@ type FieldAutocompleteProps = {
   uid?: number | null | undefined;
 }
 
+// !!! todo
+
 export default function FieldAutocomplete(props: FieldAutocompleteProps) {
   const label = useLabel();
 
   const uniqueName = `${props.control.name}-${props.uid}`;
 
-  const [state, setValue, setTouched] = useControl<string>(props.control);
+  const [state, setValue, setTouched] = useControl<IEquatable | IEquatable[]>(props.control);
 
   const onChange = (value: string | string[]) => {
-    // console.log('FieldAutocomplete', event.target.value);
-    let id: IEquatable | IEquatable[] | null = null;
-    function mapValue(value: string) {
-      const option = props.control.options?.find(x => x.id.toString() === value);
-      return option ? option.id : null;
-    }
-    if (Array.isArray(value)) {
-      id = value.map(x => mapValue(x)).filter(x => x !== null) as IEquatable[];
-    } else {
-      id = mapValue(value);
-    }
-    setValue(id);
-    // props.control.value = event.target.value;
+    const ids = stringToValue(value, props.control.options);
+    setValue(ids);
   }
 
   const [focus, setFocus] = useState(false);
@@ -86,11 +77,12 @@ export default function FieldAutocomplete(props: FieldAutocompleteProps) {
     } else {
       return undefined;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     state.flags.hidden ? (
-      <input type="hidden" value={state.value || ''} />
+      <input type="hidden" value={valueToString(state.value)} />
     ) : (
       <Field>
         {props.control.label &&
@@ -99,6 +91,7 @@ export default function FieldAutocomplete(props: FieldAutocompleteProps) {
 
         <Autocomplete
           background="var(--color-neutral-100)"
+          overflow="hidden"
           id={uniqueName}
           name={uniqueName}
           placeholder={label(props.control.placeholder || props.control.label || '')}

@@ -5,7 +5,7 @@ import { IUser, IUserLogin } from '@websolute/models';
 import { ReactNode, useState } from 'react';
 import { Button, Divider, Flex, Text } from '../../components';
 import { FieldCheckbox, FieldPassword, FieldText } from '../../fields';
-import { Form, FormTester } from '../../forms';
+import { Form, FormError, FormTester } from '../../forms';
 import { useUser } from '../../hooks';
 
 export interface AuthSignInProps {
@@ -47,7 +47,7 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
     reset();
   }
 
-  const setUser = useUser((state) => state.update);
+  const setUser = useUser((state) => state.setUser);
 
   const [error, setError] = useState<Error>();
 
@@ -100,17 +100,7 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
             <FieldCheckbox margin="0" control={group.controls.rememberMe}></FieldCheckbox>
             <Button variant="link" onClick={onForgot}>Forgot your password?</Button>
           </Flex.Row>
-          {/* !!! creare componente errore */}
-          {error &&
-            <Text
-              padding="1rem"
-              fontWeight="700"
-              textAlign="center"
-              background="var(--color-danger-100)"
-              color="var(--color-danger-500)"
-            >{label('form.auth.unauthorized')}
-            </Text>
-          }
+          {error && <FormError error={error}>{label('form.auth.unauthorized')}</FormError>}
           <Button type="submit" variant="primary" size="lg" justifyContent="center" margin="1rem 0"><span>Sign In</span></Button>
           {/*
           <Flex.Row justifyContent="flex-end" margin="1rem 0">

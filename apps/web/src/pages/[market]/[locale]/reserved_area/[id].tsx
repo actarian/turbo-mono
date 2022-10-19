@@ -13,12 +13,12 @@ import { sessionOptions } from 'src/config/session';
 export default function ReservedArea({ layout, page, user, params }: ReservedAreaProps) {
   const router = useRouter();
 
-  const setUser = useUser((state) => state.update);
+  const setUser = useUser((state) => state.setUser);
 
   const onLogout = async () => {
     try {
       await httpGet('/api/auth/logout');
-      setUser(null);
+      setUser();
       router.push('/');
 
     } catch (error) {

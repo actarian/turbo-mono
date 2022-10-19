@@ -4,6 +4,7 @@ export { default as Checkbox } from './checkbox/checkbox';
 export { default as CustomSelect } from './custom-select/select';
 export { default as Field } from './field/field';
 export type { FieldProps } from './field/field';
+export { default as FormError } from './form-error/form-error';
 export { default as FormTester } from './form-tester/form-tester';
 export { default as Form } from './form/form';
 export { default as InputGroup } from './input-group/input-group';

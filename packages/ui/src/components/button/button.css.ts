@@ -73,7 +73,7 @@ export const CssUnderline = css`
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: 0% 0.1em;
-  transition: background-size ease 200ms;
+  transition: background-size 500ms cubic-bezier(0,.97,.43,1);
 }
 
 &:hover {
@@ -95,7 +95,7 @@ export const CssAfter = css`
   background: currentColor;
   transform: scale(0, 1);
   transform-origin: left;
-  transition: transform ease 200ms;
+  transition: transform 500ms cubic-bezier(0,.97,.43,1);
 }
 
 &:hover,
@@ -118,7 +118,7 @@ export const CssAfterInverted = css`
   background: currentColor;
   transform: scale(1, 1);
   transform-origin: left;
-  transition: transform ease 200ms;
+  transition: transform 500ms cubic-bezier(0,.97,.43,1);
 }
 
 &:hover,

@@ -1,12 +1,12 @@
 
 import type { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
-import { useCurrency, useDrawer } from '@websolute/hooks';
+import { useCart, useCurrency, useDrawer } from '@websolute/hooks';
 import { ProductsRelatedDefaults } from '@websolute/mock';
 import { getLayout, getPage, getPageCategory, getStaticPathsForSchema, IPage, PageProps } from '@websolute/models';
 import {
   Breadcrumb, Button, CategoryProposition, Container, Flex, Footer, Grid, Header, Layout, Media, Meta, NavLink,
-  Page, ProductsRelated, Section, ShopDetailRelated, ShopIncentive, ShopSearchItem, Text, useCart
+  Page, ProductsRelated, Section, ShopDetailRelated, ShopIncentive, ShopSearchItem, Text
 } from '@websolute/ui';
 import type { IShopDetail } from 'src/models';
 import { getShopDetails } from 'src/models';
@@ -14,11 +14,11 @@ import { getShopDetails } from 'src/models';
 export default function ShopDetail({ layout, page, category, params }: ShopDetailProps) {
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
 
-  const cart = useCart();
+  const add = useCart(state => state.add);
 
   function onAddToCart() {
     const cartItem = { ...page };
-    cart.add(cartItem, 1);
+    add(cartItem, 1);
     onOpenDrawer('cart');
   }
 
@@ -31,13 +31,13 @@ export default function ShopDetail({ layout, page, category, params }: ShopDetai
         <Header sticky />
 
         <Section paddingBottom="0">
-          <Container>
+          <Container.Fluid>
             <Breadcrumb.Group marginBottom="1rem" items={page.breadcrumb} />
-          </Container>
+          </Container.Fluid>
         </Section>
 
         <Section padding="2rem 0">
-          <Container>
+          <Container.Fluid>
             <Grid.Row rowGap="1rem">
               <Grid md={6}>
                 <Media item={page.media} />
@@ -63,7 +63,7 @@ export default function ShopDetail({ layout, page, category, params }: ShopDetai
                 </Flex.Col>
               </Grid>
             </Grid.Row>
-          </Container>
+          </Container.Fluid>
         </Section>
 
         <ShopDetailRelated id="related" item={page.related} />

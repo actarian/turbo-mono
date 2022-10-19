@@ -1,12 +1,23 @@
-import { IEquatable, ISchema } from '@websolute/core';
-import { IMedia } from '@websolute/models';
+import { ISchema } from '@websolute/core';
+import type { ICartAddItem, ICartItem } from '@websolute/models';
 import create, { StateCreator } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-const PERSIST = true;
+export interface ICartStore {
+  items: ICartItem[];
+  setItems(items: ICartItem[]): void;
+  count(): number;
+  has(item: ISchema): boolean;
+  find(item: ISchema): ICartItem | undefined;
+  add(item: ICartAddItem, qty?: number): void;
+  remove(item: ISchema): number;
+  update(item: ICartItem): void;
+  clear(): void;
+}
 
 const cartStore: IStateCreator<ICartStore> = (set, get) => ({
   items: [],
+  setItems: (items: ICartItem[]) => set(state => ({ items })),
   count: () => {
     return get().items.length;
   },
@@ -48,34 +59,26 @@ const cartStore: IStateCreator<ICartStore> = (set, get) => ({
   clear: () => set(state => ({ items: [] })),
 });
 
+export type IStateCreator<T extends object> = StateCreator<T, any, [], T>;
+
+export const useCart = create<ICartStore>()(
+  persist(
+    cartStore,
+    {
+      name: 'cart',
+      getStorage: () => {
+        // console.log('useCart.getStorage');
+        return localStorage;
+      },
+    }
+  )
+);
+
+/*
+const PERSIST = true;
+
 export const useCart =
   PERSIST ?
     create<ICartStore>()(persist(cartStore, { name: 'cart' })) :
     create<ICartStore>(cartStore as StateCreator<any>);
-
-export interface ICartAddItem extends ISchema {
-  id: IEquatable;
-  schema: string;
-  media: IMedia;
-  title: string;
-  abstract?: string;
-  href: string;
-  price: number;
-}
-
-export interface ICartItem extends ICartAddItem {
-  qty: number;
-}
-
-export interface ICartStore {
-  items: ICartItem[];
-  count(): number;
-  has(item: ISchema): boolean;
-  find(item: ISchema): ICartItem | undefined;
-  add(item: ICartAddItem, qty?: number): void;
-  remove(item: ISchema): number;
-  update(item: ICartItem): void;
-  clear(): void;
-}
-
-export type IStateCreator<T extends object> = StateCreator<T, any, [], T>;
+*/

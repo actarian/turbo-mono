@@ -222,6 +222,16 @@
     "pageId": 8
   },
   {
+    "id": "login",
+    "title": {
+      "en": "Login",
+      "it": "Accedi"
+    },
+    "categoryId": "homepage",
+    "pageSchema": "login",
+    "pageId": 1
+  },
+  {
     "id": "reserved_area",
     "title": {
       "en": "Reserved area",
@@ -232,13 +242,13 @@
     "pageId": 1
   },
   {
-    "id": "login",
+    "id": "checkout",
     "title": {
-      "en": "Login",
-      "it": "Accedi"
+      "en": "Checkout",
+      "it": "Checkout"
     },
     "categoryId": "homepage",
-    "pageSchema": "login",
+    "pageSchema": "checkout",
     "pageId": 1
   }
 ]

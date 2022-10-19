@@ -5,7 +5,7 @@ import { IUserRegister } from '@websolute/models';
 import { ReactNode, useState } from 'react';
 import { Button, Divider, Flex, Text } from '../../components';
 import { FieldCheckbox, FieldPassword, FieldText } from '../../fields';
-import { Form, FormTester } from '../../forms';
+import { Form, FormError, FormTester } from '../../forms';
 
 
 export interface AuthSignUpProps {
@@ -91,17 +91,7 @@ const AuthSignUp: React.FC<AuthSignUpProps> = ({ onSignedUp, onNavToLogin }: Aut
           <FieldPassword control={group.controls.password}></FieldPassword>
           <FieldPassword control={group.controls.confirmPassword}></FieldPassword>
           <FieldCheckbox margin="0" control={group.controls.privacy}></FieldCheckbox>
-          {/* !!! creare componente errore */}
-          {error &&
-            <Text
-              padding="1rem"
-              fontWeight="700"
-              textAlign="center"
-              background="var(--color-danger-100)"
-              color="var(--color-danger-500)"
-            >{label('form.submit.error')}
-            </Text>
-          }
+          {error && <FormError error={error}>{label('form.submit.error')}</FormError>}
           <Button type="submit" variant="primary" size="lg" justifyContent="center" margin="1rem 0"><span>Register</span></Button>
           <Divider>Already registered?</Divider>
           <Flex.Row justifyContent="center">

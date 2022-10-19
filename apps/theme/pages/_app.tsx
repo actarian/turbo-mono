@@ -1,4 +1,4 @@
-import { LabelProvider, LayoutProvider, PageProvider } from '@websolute/hooks';
+import { CartProvider, LabelProvider, LayoutProvider, PageProvider } from '@websolute/hooks';
 import { LayoutDefaults, PageDefaults } from '@websolute/mock';
 import type { ILayout, IPage, IRouteParams } from '@websolute/models';
 import { Breakpoint, GlobalStyle, theme } from '@websolute/ui';
@@ -31,9 +31,11 @@ export default function Application({ Component, pageProps, router }: Applicatio
             </Head>
             <ThemeProvider theme={theme}>
               <GlobalStyle />
-              <AnimatePresence mode="wait">
-                <Component {...pageProps} key={router.route} />
-              </AnimatePresence>
+              <CartProvider>
+                <AnimatePresence mode="wait">
+                  <Component {...pageProps} key={router.route} />
+                </AnimatePresence>
+              </CartProvider>
               <Breakpoint></Breakpoint>
             </ThemeProvider>
           </PageProvider>

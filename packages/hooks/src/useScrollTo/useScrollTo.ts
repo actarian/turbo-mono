@@ -15,16 +15,24 @@ export function useScrollTo(): (event: React.MouseEvent<HTMLElement>) => void {
   return scrollToHash;
 }
 
-
 export function scrollToSelector(selector?: string, offset: number = 0) {
   if (selector && typeof window !== 'undefined') {
     const element = document.querySelector(selector);
     if (element) {
       const rect = element.getBoundingClientRect();
-      const from = window.scrollY;
-      const to = window.scrollY + rect.top - 60 + offset;
-      const duration = Math.sqrt(Math.abs(to - from) / 4000);
-      animate(from, to, { duration, onUpdate: v => window.scrollTo(0, v) });
+      scrollToRelativeY(rect.top, offset);
     }
   }
+}
+
+export function scrollToRelativeY(y: number = 0, offset: number = 0) {
+  const to = window.scrollY + y - 60 + offset;
+  return scrollToY(to);
+}
+
+export function scrollToY(y: number = 0) {
+  const from = window.scrollY;
+  const to = y;
+  const duration = Math.sqrt(Math.abs(to - from) / 4000);
+  animate(from, to, { duration, onUpdate: v => window.scrollTo(0, v) });
 }

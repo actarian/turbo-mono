@@ -19,5 +19,6 @@ exports.PAGES = {
     contact: 'contact',
     login: 'login',
     reserved_area: 'reserved_area',
+    checkout: 'checkout',
     notfound: 'notfound',
 };

@@ -1,3 +1,4 @@
+export type { ICartAddItem, ICartItem } from './cart/cart';
 export type { ICategorized, ICategory, ICategoryItem } from './category/category';
 export { getCategories, getCategoryTree, resolveCategoryTree } from './category/category.service';
 export { getCountries } from './country/country.service';

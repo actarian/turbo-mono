@@ -1,6 +1,8 @@
 export { useApiDelete, useApiFetch, useApiGet, useApiPatch, useApiPost, useApiPut } from './useApi/useApi';
 export { useBodyScroll } from './useBodyScroll/useBodyScroll';
 export { useBreakpoint } from './useBreakpoint/useBreakpoint';
+export { CartProvider, useCart } from './useCart/useCart';
+export { CheckoutProvider, CheckoutStatus, useCheckout } from './useCheckout/useCheckout';
 export { useClickAnyWhere } from './useClickAnyWhere/useClickAnyWhere';
 export { useClickOut } from './useClickOut/useClickOut';
 export { useCurrency } from './useCurrency/useCurrency';
@@ -40,7 +42,7 @@ export { usePrevious } from './usePrevious/usePrevious';
 export { useRealSize } from './useRealSize/useRealSize';
 export { useResize } from './useResize/useResize';
 export { useScroll } from './useScroll/useScroll';
-export { scrollToSelector, useScrollTo } from './useScrollTo/useScrollTo';
+export { scrollToRelativeY, scrollToSelector, scrollToY, useScrollTo } from './useScrollTo/useScrollTo';
 export { decode, getSearchParams, pushSearchParams, replaceSearchParams, replaceSearchParamsSilently, updateSearchParams, useSearchParams } from './useSearchParams/useSearchParams';
 export { useSorting } from './useSorting/useSorting';
 export { useSSR } from './useSSR/useSSR';

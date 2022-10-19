@@ -5,7 +5,7 @@ import { IUserForgot } from '@websolute/models';
 import { ReactNode, useState } from 'react';
 import { Button, Divider, Flex, Text } from '../../components';
 import { FieldText } from '../../fields';
-import { Form, FormTester } from '../../forms';
+import { Form, FormError, FormTester } from '../../forms';
 
 export interface AuthForgotProps {
   children?: ReactNode;
@@ -77,17 +77,7 @@ const AuthForgot: React.FC<AuthForgotProps> = ({ onPasswordSent, onNavToLogin, o
           <Text size="6" fontWeight="700" marginBottom="1rem">Password recovery</Text>
           <FieldText control={group.controls.checkField}></FieldText>
           <FieldText control={group.controls.email}></FieldText>
-          {/* !!! creare componente errore */}
-          {error &&
-            <Text
-              padding="1rem"
-              fontWeight="700"
-              textAlign="center"
-              background="var(--color-danger-100)"
-              color="var(--color-danger-500)"
-            >{label('form.submit.error')}
-            </Text>
-          }
+          {error && <FormError error={error}>{label('form.submit.error')}</FormError>}
           <Button type="submit" variant="primary" size="lg" justifyContent="center" margin="1rem 0"><span>Send</span></Button>
           <Divider>Do you remember your password?</Divider>
           <Flex.Row justifyContent="center">

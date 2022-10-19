@@ -1,9 +1,8 @@
-import { useCurrency, useDrawer } from '@websolute/hooks';
+import { useCart, useCurrency, useDrawer } from '@websolute/hooks';
 import type { IMedia } from '@websolute/models';
 import { useState } from 'react';
 import { Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { RadioColor, RadioOption, Rating } from '../../forms';
-import { useCart } from '../../hooks';
 import ProductOverviewGallery from './product-overview-gallery';
 
 export type ProductItem = {
@@ -23,7 +22,7 @@ type ProductOverviewProps = {
 const ProductOverview: React.FC<ProductOverviewProps> = ({ item, ...props }: ProductOverviewProps) => {
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
 
-  const cart = useCart();
+  const add = useCart((state) => state.add);
 
   const [state, setState] = useState({ color: 'white', size: 'M' });
 
@@ -37,7 +36,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ item, ...props }: Pro
 
   function onAddToCart() {
     const cartItem = { ...item, id: `${item.id}-${state.color}-${state.size}`, abstract: `${state.color} size ${state.size}`, media: item.media[0] } as any;
-    cart.add(cartItem, 1);
+    add(cartItem, 1);
     onOpenDrawer('cart');
   }
 

@@ -1,16 +1,16 @@
-import { useCurrency, useMounted, useUI } from '@websolute/hooks';
+import { useCart, useCurrency, useMounted, useUI } from '@websolute/hooks';
 import { Minus, Plus, Trash } from '@websolute/icons';
+import type { ICartItem } from '@websolute/models';
 import NextLink from 'next/link';
 import { Button, Card, Flex, Media, MediaImage, Text } from '../../components';
 import { Input } from '../../forms';
-import { useCart } from '../../hooks';
-import { ICartItem } from '../../hooks/useCart/useCart';
 
 const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem }) => {
 
   const price = useCurrency(item.price * item.qty);
 
-  const { update, remove } = useCart();
+  const update = useCart(state => state.update);
+  const remove = useCart(state => state.remove);
 
   function onSetQty(qty: number) {
     if (qty > 0) {

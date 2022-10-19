@@ -20,7 +20,7 @@ const ShopDetailRelated: React.FC<ShopDetailRelatedProps> = ({ id, item }: ShopD
   const classNames = getClassNames(item.schema);
   return (
     <Section id={id} className={classNames} padding="6rem 0">
-      <Container>
+      <Container.Fluid>
         {item.title && <Text size="3" textAlign="center" marginBottom="4rem" dangerouslySetInnerHTML={{ __html: item.title }} />}
         <Grid.Row rowGap="3rem">
           {item.items.map((related, r) => (
@@ -29,7 +29,7 @@ const ShopDetailRelated: React.FC<ShopDetailRelatedProps> = ({ id, item }: ShopD
             </Grid>
           ))}
         </Grid.Row>
-      </Container>
+      </Container.Fluid>
     </Section>
   );
 }

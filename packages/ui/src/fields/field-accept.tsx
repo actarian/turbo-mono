@@ -14,7 +14,7 @@ type FieldAcceptProps = {
 export default function FieldAccept(props: FieldAcceptProps) {
   const label = useLabel();
 
-  const [state, setValue, setTouched] = useControl<string>(props.control);
+  const [state, setValue, setTouched] = useControl<boolean>(props.control);
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     onSelect(event.target.value === 'true');
@@ -38,12 +38,11 @@ export default function FieldAccept(props: FieldAcceptProps) {
 
   return (
     state.flags.hidden ? (
-      <input type="hidden" value={state.value || ''} />
+      <input type="hidden" value={state.value ? 'true' : 'false'} />
     ) : (
       <Field padding="1em 0" borderBottom="1px solid var(--color-neutral-200)">
 
-        <Radio.Group
-          initialValue={state.value || ''}
+        <Radio.Group initialValue={state.value ? 'true' : 'false'}
           onChange={onChange}
           onBlur={onBlur}
           onFocus={onFocus}

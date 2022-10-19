@@ -1,10 +1,10 @@
 import { getClassNames, httpGet, IEquatable } from '@websolute/core';
-import { useDrawer, useLayout, useModal, useScroll } from '@websolute/hooks';
+import { useCart, useDrawer, useLayout, useModal, useScroll } from '@websolute/hooks';
 import { ArrowRight, Hexagon, MapPin, Menu, Phone, ShoppingCart, User } from '@websolute/icons';
 import { IRouteLink } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { Accordion, Box, Button, Container, Drawer, Flex, Modal, Nav, NavLink, Text } from '../../components';
+import { Accordion, Badge, Box, Button, Container, Drawer, Flex, Modal, Nav, NavLink, Text } from '../../components';
 import type { UIComponentProps } from '../../components/types';
 import { useUser } from '../../hooks';
 import { CartMini } from '../../sections';
@@ -67,10 +67,14 @@ const StyledAccordion = styled(Accordion)`
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const layout = useLayout();
   const scroll = useScroll();
+
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
+
   const [modal, onOpenModal, onCloseModal] = useModal();
+
   const user = useUser((state) => state.user);
-  const setUser = useUser((state) => state.update);
+  const setUser = useUser((state) => state.setUser);
+
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
 
   const [nav, setNav] = useState<IEquatable | null>(null);
@@ -84,18 +88,40 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     const getUser = async () => {
       try {
         const user = await httpGet('/api/auth/me');
-        // console.log('Header.getUser', user);
+        console.log('Header.getUser /api/auth/me', user);
         setUser(user);
       } catch (error) {
         console.log('Header.getUser.error', error);
       }
     };
     getUser();
-  }, [setUser]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const count = useCart((state) => state.count);
+  const cartItemsCount = count();
+
+  /*
+  const setItems = useCart((state) => state.setItems);
+
+  useEffect(() => {
+    const getItems = async () => {
+      try {
+        const items = await httpGet('/api/cart/items');
+        console.log('Header.getItems /api/cart/items', items);
+        setItems(items);
+      } catch (error) {
+        console.log('Header.getItems.error', error);
+      }
+    };
+    getItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  */
 
   // console.log(layout.topLevelRoutes);
 
-  const primaryNavs: IRouteLink[] = (layout.navs.primary || []).filter(x => x.id !== 'login');
+  const primaryNavs: IRouteLink[] = (layout.navs.primary || []).filter(x => !['checkout', 'login'].includes(x.id.toString()));
 
   const classNames = getClassNames('header', { fixed: props.fixed, sticky: props.sticky });
 
@@ -153,8 +179,9 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                   <User width="24px" height="24px" />
                 </Button>
               }
-              <Button onClick={() => onOpenDrawer('cart')}>
+              <Button position="relative" onClick={() => onOpenDrawer('cart')}>
                 <ShoppingCart width="24px" height="24px" />
+                {cartItemsCount > 0 && <Badge position="absolute" top="-0.4em" right="-0.8em">{cartItemsCount}</Badge>}
               </Button>
               <Button display='none' displayMd='flex' onClick={() => onOpenDrawer('markets-and-languages')}>
                 <Text marginRight="0.5rem">{layout.locale.toUpperCase()}</Text> <Menu />

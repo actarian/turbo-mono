@@ -1097,7 +1097,6 @@
     "description": "15cm x 25cm"
   },
   {
-    "title": "chalk matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/1469_n_01_chalk.jpg"
@@ -1107,12 +1106,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Chalk Matt",
+    "title": "Chalk Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "yarn matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2565_n_02_yarn.jpg"
@@ -1122,12 +1120,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Yarn Matt",
+    "title": "Yarn Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "sand matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2566_n_03_sand.jpg"
@@ -1137,12 +1134,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Sand Matt",
+    "title": "Sand Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "ivory matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2567_n_04_ivory.jpg"
@@ -1152,12 +1148,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Ivory Matt",
+    "title": "Ivory Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "pearl matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2568_n_05_pearl.jpg"
@@ -1167,12 +1162,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Pearl Matt",
+    "title": "Pearl Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "pebbles matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2569_n_06_pebbles.jpg"
@@ -1182,12 +1176,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Pebbles Matt",
+    "title": "Pebbles Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "limestone matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2570_n_07_limestone.jpg"
@@ -1197,12 +1190,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Limestone Matt",
+    "title": "Limestone Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "moss matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2571_n_08_moss.jpg"
@@ -1212,12 +1204,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Moss Matt",
+    "title": "Moss Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "slate matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2572_n_09_slate.jpg"
@@ -1227,12 +1218,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Slate Matt",
+    "title": "Slate Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "graphite matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2614_n_10_graphite.jpg"
@@ -1242,12 +1232,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Graphite Matt",
+    "title": "Graphite Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "iron matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2615_n_11_iron.jpg"
@@ -1257,12 +1246,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Iron Matt",
+    "title": "Iron Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "coal matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2616_n_12_coal.jpg"
@@ -1272,12 +1260,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Coal Matt",
+    "title": "Coal Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "mist matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2617_n_13_mist.jpg"
@@ -1287,12 +1274,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Mist Matt",
+    "title": "Mist Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "pine matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2618_n_14_pine.jpg"
@@ -1302,12 +1288,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Pine Matt",
+    "title": "Pine Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "arctic matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2619_n_15_artic.jpg"
@@ -1317,12 +1302,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Arctic Matt",
+    "title": "Arctic Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "olive matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2620_n_16_olive.jpg"
@@ -1332,12 +1316,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Olive Matt",
+    "title": "Olive Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "oxide matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2621_n_17_oxide.jpg"
@@ -1347,12 +1330,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Oxide Matt",
+    "title": "Oxide Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "earth matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2622_n_18_earth.jpg"
@@ -1362,12 +1344,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Earth Matt",
+    "title": "Earth Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "clay matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2624_n_20_clay.jpg"
@@ -1377,12 +1358,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Matt",
-    "description": "Clay Matt",
+    "title": "Clay Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "flour",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2625_n_01_flour.jpg"
@@ -1392,12 +1372,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Limetouch",
-    "description": "Flour",
+    "title": "Flour",
     "price": 1.70,
     "availability": 6
   },
   {
-    "title": "chalk 2",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2626_n_02_chalk.jpg"
@@ -1407,12 +1386,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Limetouch",
-    "description": "Chalk",
+    "title": "Chalk",
     "price": 1.70,
     "availability": 6
   },
   {
-    "title": "limestone 2",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2627_n_03_limestone.jpg"
@@ -1422,12 +1400,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Limetouch",
-    "description": "Limestone",
+    "title": "Limestone",
     "price": 1.70,
     "availability": 6
   },
   {
-    "title": "mountain",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2628_n_04_mountain.jpg"
@@ -1437,12 +1414,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Limetouch",
-    "description": "Mountain",
+    "title": "Mountain",
     "price": 1.70,
     "availability": 6
   },
   {
-    "title": "coke",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2629_n_06_coke.jpg"
@@ -1452,12 +1428,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Limetouch",
-    "description": "Coke",
+    "title": "Coke",
     "price": 1.70,
     "availability": 6
   },
   {
-    "title": "moss 2",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2630_n_05_moss.jpg"
@@ -1467,12 +1442,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Limetouch",
-    "description": "Moss",
+    "title": "Moss",
     "price": 1.70,
     "availability": 6
   },
   {
-    "title": "arancione matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6279_n_01_arancione.jpg"
@@ -1482,12 +1456,11 @@
     "designer": "Nathalie du Pasquier",
     "category": "Margherita Paints by Nathalie du Pasquier",
     "finish": "Matt",
-    "description": "Arancione Matt",
+    "title": "Arancione Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "azzurro matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6280_n_02_azzurro.jpg"
@@ -1497,12 +1470,11 @@
     "designer": "Nathalie du Pasquier",
     "category": "Margherita Paints by Nathalie du Pasquier",
     "finish": "Matt",
-    "description": "Azzurro Matt",
+    "title": "Azzurro Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "giallo matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6281_n_03_giallo.jpg"
@@ -1512,12 +1484,11 @@
     "designer": "Nathalie du Pasquier",
     "category": "Margherita Paints by Nathalie du Pasquier",
     "finish": "Matt",
-    "description": "Giallo Matt",
+    "title": "Giallo Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "rosa matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6282_n_04_rosa.jpg"
@@ -1527,12 +1498,11 @@
     "designer": "Nathalie du Pasquier",
     "category": "Margherita Paints by Nathalie du Pasquier",
     "finish": "Matt",
-    "description": "Rosa Matt",
+    "title": "Rosa Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "verde matt",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6283_n_05_verde.jpg"
@@ -1542,12 +1512,11 @@
     "designer": "Nathalie du Pasquier",
     "category": "Margherita Paints by Nathalie du Pasquier",
     "finish": "Matt",
-    "description": "Verde Matt",
+    "title": "Verde Matt",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "chalk satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/1469_n_01_chalk_1.jpg"
@@ -1557,12 +1526,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Chalk Satin",
+    "title": "Chalk Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "yarn satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2565_n_02_yarn_1.jpg"
@@ -1572,12 +1540,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Yarn Satin",
+    "title": "Yarn Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "sand satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2566_n_03_sand_1.jpg"
@@ -1587,12 +1554,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Sand Satin",
+    "title": "Sand Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "ivory satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2567_n_04_ivory_1.jpg"
@@ -1602,12 +1568,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Ivory Satin",
+    "title": "Ivory Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "pearl satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2568_n_05_pearl_1.jpg"
@@ -1617,12 +1582,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Pearl Satin",
+    "title": "Pearl Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "pebbles satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2569_n_06_pebbles_1.jpg"
@@ -1632,12 +1596,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Pebbles Satin",
+    "title": "Pebbles Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "limestone satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2570_n_07_limestone_1.jpg"
@@ -1647,12 +1610,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Limestone Satin",
+    "title": "Limestone Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "moss satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2571_n_08_moss_1.jpg"
@@ -1662,12 +1624,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Moss Satin",
+    "title": "Moss Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "slate satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2572_n_09_slate_1.jpg"
@@ -1677,12 +1638,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Slate Satin",
+    "title": "Slate Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "graphite satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2614_n_10_graphite_1.jpg"
@@ -1692,12 +1652,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Graphite Satin",
+    "title": "Graphite Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "iron satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2615_n_11_iron_1.jpg"
@@ -1707,12 +1666,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Iron Satin",
+    "title": "Iron Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "coal satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2616_n_12_coal_1.jpg"
@@ -1722,12 +1680,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Coal Satin",
+    "title": "Coal Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "mist satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2617_n_13_mist_1.jpg"
@@ -1737,12 +1694,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Mist Satin",
+    "title": "Mist Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "pine satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2618_n_14_pine_1.jpg"
@@ -1752,12 +1708,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Pine Satin",
+    "title": "Pine Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "arctic satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2619_n_15_artic_1.jpg"
@@ -1767,12 +1722,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Arctic Satin",
+    "title": "Arctic Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "olive satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2620_n_16_olive_1.jpg"
@@ -1782,12 +1736,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Olive Satin",
+    "title": "Olive Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "oxide satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2621_n_17_oxide_1.jpg"
@@ -1797,12 +1750,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Oxide Satin",
+    "title": "Oxide Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "earth satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2622_n_18_earth_1.jpg"
@@ -1812,12 +1764,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Earth Satin",
+    "title": "Earth Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "clay satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2624_n_20_clay_1.jpg"
@@ -1827,12 +1778,11 @@
     "designer": "Oeo Studio",
     "category": "Accents Paints by Oeo Studio",
     "finish": "Satin",
-    "description": "Clay Satin",
+    "title": "Clay Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "arancione satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6279_n_01_arancione_1.jpg"
@@ -1842,12 +1792,11 @@
     "designer": "Nathalie du Pasquier",
     "category": "Margherita Paints by Nathalie du Pasquier",
     "finish": "Satin",
-    "description": "Arancione Satin",
+    "title": "Arancione Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "azzurro satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6280_n_02_azzurro_1.jpg"
@@ -1857,12 +1806,11 @@
     "designer": "Nathalie du Pasquier",
     "category": "Margherita Paints by Nathalie du Pasquier",
     "finish": "Satin",
-    "description": "Azzurro Satin",
+    "title": "Azzurro Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "giallo satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6281_n_03_giallo_1.jpg"
@@ -1872,12 +1820,11 @@
     "designer": "Nathalie du Pasquier",
     "category": "Margherita Paints by Nathalie du Pasquier",
     "finish": "Satin",
-    "description": "Giallo Satin",
+    "title": "Giallo Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "rosa satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6282_n_04_rosa_1.jpg"
@@ -1887,12 +1834,11 @@
     "designer": "Nathalie du Pasquier",
     "category": "Margherita Paints by Nathalie du Pasquier",
     "finish": "Satin",
-    "description": "Rosa Satin",
+    "title": "Rosa Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "verde satin",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6283_n_05_verde_1.jpg"
@@ -1902,12 +1848,11 @@
     "designer": "Nathalie du Pasquier",
     "category": "Margherita Paints by Nathalie du Pasquier",
     "finish": "Satin",
-    "description": "Verde Satin",
+    "title": "Verde Satin",
     "price": 18.40,
     "availability": 6
   },
   {
-    "title": "wall panel corner 100 light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/1461_n_wall-panel-corner-100-light-oak-1,5-x-10-x-100-H-cm.jpg"
@@ -1916,12 +1861,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Wall panel corner 100 light oak",
+    "title": "Wall panel corner 100 light oak",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "wall panel corner 160 light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2633_n_wall-panel-corner-160-light-oak-1,5-x-10-x-160-H-cm.jpg"
@@ -1930,12 +1874,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Wall panel corner 160 light oak",
+    "title": "Wall panel corner 160 light oak",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "wall panel corner 100 dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2673_n_wall-panel-corner-100-dark-oak-1,5-x-10-x-100-H-cm.jpg"
@@ -1944,12 +1887,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Wall panel corner 100 dark oak",
+    "title": "Wall panel corner 100 dark oak",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "wall panel corner 160 dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2674_n_wall-panel-corner-160-dark-oak-1,5-x-10-x-160-H-cm.jpg"
@@ -1958,12 +1900,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Wall panel corner 160 dark oak",
+    "title": "Wall panel corner 160 dark oak",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "wall panel 160 dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2675_n_wall-panel-160-dark-oak-2-x-19,8-x-160-H-cm.jpg"
@@ -1972,12 +1913,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Wall panel 160 dark oak",
+    "title": "Wall panel 160 dark oak",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "wall panel 100 dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2676_n_wall-panel-100-dark-oak-2-x-19,8-x-100-H-cm.jpg"
@@ -1986,12 +1926,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Wall panel 100 dark oak",
+    "title": "Wall panel 100 dark oak",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "wall panel 160 light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2677_n_wall-panel-160-light-oak-2-x-19,8-x-160-H-cm.jpg"
@@ -2000,12 +1939,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Wall panel 160 light oak",
+    "title": "Wall panel 160 light oak",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "wall panel 100 light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2678_n_wall-panel-100-light-oak-2-x-19,8-x-100-H-cm.jpg"
@@ -2014,12 +1952,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Wall panel 100 light oak",
+    "title": "Wall panel 100 light oak",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "end piece s black painted metal",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2680_n_01_B_440.jpg"
@@ -2028,12 +1965,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "End Piece S black painted metal",
+    "title": "End Piece S black painted metal",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "skirting s light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2681_n_skirting-S-light-oak-3-x-6-H-x-240-L-cm.jpg"
@@ -2042,12 +1978,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Skirting S light oak",
+    "title": "Skirting S light oak",
     "price": 1.70,
     "availability": 6
   },
   {
-    "title": "skirting s dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2682_n_skirting-S-dark-oak-3-x-6-H-x-240-L-cm.jpg"
@@ -2056,12 +1991,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Skirting S dark oak",
+    "title": "Skirting S dark oak",
     "price": 1.70,
     "availability": 6
   },
   {
-    "title": "end piece l black painted metal",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2683_n_01_B_440.jpg"
@@ -2070,12 +2004,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "End Piece L black painted metal",
+    "title": "End Piece L black painted metal",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "skirting l light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2685_n_skirting-L-light-oak-2,5-x-19,8-H-x-240-L-cm.jpg"
@@ -2084,12 +2017,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Skirting L light oak",
+    "title": "Skirting L light oak",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "skirting l dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2686_n_skirting-L-dark-oak-2,5-x-19,8-H-x-240-L-cm.jpg"
@@ -2098,12 +2030,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Skirting L dark oak",
+    "title": "Skirting L dark oak",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "end piece rectangular black painted metal",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2687_n_01_B_440.jpg"
@@ -2112,12 +2043,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "End Piece rectangular black painted metal",
+    "title": "End Piece rectangular black painted metal",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "rectangular skirting light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2689_n_rectangular-skirting-light-oak-2,5-x-6-H-x-240-L-cm.jpg"
@@ -2126,12 +2056,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Rectangular Skirting light oak",
+    "title": "Rectangular Skirting light oak",
     "price": 1.70,
     "availability": 6
   },
   {
-    "title": "rectangular skirting dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2690_n_rectangular-skirting-dark-oak-2,5-x-6-H-x-240-L-cm.jpg"
@@ -2140,12 +2069,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Rectangular Skirting dark oak",
+    "title": "Rectangular Skirting dark oak",
     "price": 1.70,
     "availability": 6
   },
   {
-    "title": "l profile corner black",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2691_n_01.jpg"
@@ -2154,12 +2082,11 @@
     "collection": "Accents Metal",
     "designer": "Oeo Studio",
     "category": "Accents Metal by Oeo Studio",
-    "description": "L Profile Corner Black",
+    "title": "L Profile Corner Black",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "l profile horizontal black",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2692_n_01_440x440.jpg"
@@ -2168,12 +2095,11 @@
     "collection": "Accents Metal",
     "designer": "Oeo Studio",
     "category": "Accents Metal by Oeo Studio",
-    "description": "L Profile Horizontal Black",
+    "title": "L Profile Horizontal Black",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "l profile horizontal grey",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6293_n_01.jpg"
@@ -2182,12 +2108,11 @@
     "collection": "Accents Metal",
     "designer": "Oeo Studio",
     "category": "Accents Metal by Oeo Studio",
-    "description": "L Profile Horizontal Grey",
+    "title": "L Profile Horizontal Grey",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "l profile corner grey",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6294_n_01_01440x440.jpg"
@@ -2196,12 +2121,11 @@
     "collection": "Accents Metal",
     "designer": "Oeo Studio",
     "category": "Accents Metal by Oeo Studio",
-    "description": "L Profile Corner Grey",
+    "title": "L Profile Corner Grey",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "l cap corner black",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6295_n_01_440.jpg"
@@ -2210,12 +2134,11 @@
     "collection": "Accents Metal",
     "designer": "Oeo Studio",
     "category": "Accents Metal by Oeo Studio",
-    "description": "L Cap Corner Black",
+    "title": "L Cap Corner Black",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "l cap corner grey",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6296_n_01_440.jpg"
@@ -2224,12 +2147,11 @@
     "collection": "Accents Metal",
     "designer": "Oeo Studio",
     "category": "Accents Metal by Oeo Studio",
-    "description": "L Cap Corner Grey",
+    "title": "L Cap Corner Grey",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "l cap horizontal grey",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6297_n_01_440.jpg"
@@ -2238,12 +2160,11 @@
     "collection": "Accents Metal",
     "designer": "Oeo Studio",
     "category": "Accents Metal by Oeo Studio",
-    "description": "L Cap Horizontal Grey",
+    "title": "L Cap Horizontal Grey",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "l cap horizontal black",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6298_n_01_440.jpg"
@@ -2252,12 +2173,11 @@
     "collection": "Accents Metal",
     "designer": "Oeo Studio",
     "category": "Accents Metal by Oeo Studio",
-    "description": "L Cap Horizontal Black",
+    "title": "L Cap Horizontal Black",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "mounting piece 100",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6299_n_440x440_0a.jpg"
@@ -2266,12 +2186,11 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Mounting Piece 100",
+    "title": "Mounting Piece 100",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "mounting piece 160",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6300_n_440x440_01.jpg"
@@ -2280,31 +2199,29 @@
     "collection": "Accents Wood",
     "designer": "Oeo Studio",
     "category": "Accents Wood by Oeo Studio",
-    "description": "Mounting Piece 160",
+    "title": "Mounting Piece 160",
     "price": 3.50,
     "availability": 6
   },
   {
-    "title": "pico bois blue dots",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7859_n_PicoBois_Blue_440.jpg"
     },
     "categoryId": "shop_category_woodmetal",
     "collection": "Pico Bois",
-    "description": "Blue Dots",
+    "title": "Blue Dots",
     "price": 10.60,
     "availability": 6
   },
   {
-    "title": "pico bois red dots",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7860_n_PicoBois_Red_440_.jpg"
     },
     "categoryId": "shop_category_woodmetal",
     "collection": "Pico Bois",
-    "description": "Red Dots",
+    "title": "Red Dots",
     "price": 10.60,
     "availability": 6
   },
@@ -2323,7 +2240,6 @@
     "availability": 6
   },
   {
-    "title": "cabinet large light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2697_n_Cabinet-Large-Light-oak-Vegetable-tanned-leather-14,7-x-48-x-40,5-H-cm_DETTAGLIO.jpg"
@@ -2332,12 +2248,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Cabinet Large light oak",
+    "title": "Cabinet Large light oak",
     "price": 2576,
     "availability": 6
   },
   {
-    "title": "cabinet small dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2698_n_Cabinet-Small-Dark-oak-Vegetable-tanned-leather-14,7-x-48-x-17,5-H-cm_DETTAGLIO.jpg"
@@ -2346,12 +2261,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Cabinet Small dark oak",
+    "title": "Cabinet Small dark oak",
     "price": 1149,
     "availability": 6
   },
   {
-    "title": "cabinet small light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2699_n_Cabinet-Small-Light-oak-Vegetable-tanned-leather-14,7-x-48-x-17,5-H-cm_DETTAGLIO.jpg"
@@ -2360,12 +2274,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Cabinet Small light oak",
+    "title": "Cabinet Small light oak",
     "price": 1149,
     "availability": 6
   },
   {
-    "title": "mirror large dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2700_n_Mirror-Large-Dark-oak-2-x-62-x-142-H-cm.jpg"
@@ -2374,12 +2287,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Mirror Large dark oak",
+    "title": "Mirror Large dark oak",
     "price": 2054,
     "availability": 6
   },
   {
-    "title": "mirror large light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2701_n_Mirror-Large-Light-oak-2-x-62-x-142-H-cm.jpg"
@@ -2388,12 +2300,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Mirror Large light oak",
+    "title": "Mirror Large light oak",
     "price": 2054,
     "availability": 6
   },
   {
-    "title": "mirror small light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2703_n_Mirror-Small-Light-oak-2-x-42-x-50-H-cm.jpg"
@@ -2402,12 +2313,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Mirror Small light oak",
+    "title": "Mirror Small light oak",
     "price": 1252,
     "availability": 6
   },
   {
-    "title": "mirror small dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2704_n_Mirror-Small-Dark-oak-2-x-42-x-50-H-cm.jpg"
@@ -2416,12 +2326,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Mirror Small dark oak",
+    "title": "Mirror Small dark oak",
     "price": 1252,
     "availability": 6
   },
   {
-    "title": "rack 72 dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2705_n_Rack-72-Dark-oak-2,5-x-6-H-x-72-L-cm_DETTAGLIO.jpg"
@@ -2430,12 +2339,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Rack 72 dark oak",
+    "title": "Rack 72 dark oak",
     "price": 258,
     "availability": 6
   },
   {
-    "title": "rack 72 light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2716_n_Rack-72-Light-oak-2,5-x-6-H-x-72-L-cm_DETTAGLIO.jpg"
@@ -2444,12 +2352,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Rack 72 light oak",
+    "title": "Rack 72 light oak",
     "price": 258,
     "availability": 6
   },
   {
-    "title": "rack 192 light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2717_n_Rack-192-Light-oak-2,5-x-6-H-x-192-L-cm_DETTAGLIO.jpg"
@@ -2458,12 +2365,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Rack 192 light oak",
+    "title": "Rack 192 light oak",
     "price": 479,
     "availability": 6
   },
   {
-    "title": "rack 192 dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2718_n_Rack-192-Dark-oak-2,5-x-6-H-x-192-L-cm_DETTAGLIO.jpg"
@@ -2472,12 +2378,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Rack 192 dark oak",
+    "title": "Rack 192 dark oak",
     "price": 479,
     "availability": 6
   },
   {
-    "title": "shelf large dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2721_n_Shelf-Large-Dark-oak-2,5-x-23-x-120-L-cm_DETTAGLIO.jpg"
@@ -2486,12 +2391,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Shelf Large dark oak",
+    "title": "Shelf Large dark oak",
     "price": 863,
     "availability": 6
   },
   {
-    "title": "shelf small dark oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2724_n_Shelf-Small-Dark-oak-2,5-x-23-x-60-L-cm_DETTAGLIO.jpg"
@@ -2500,12 +2404,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Shelf Small dark oak",
+    "title": "Shelf Small dark oak",
     "price": 651,
     "availability": 6
   },
   {
-    "title": "towel rack large",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2725_n_Towel-Rack-Large-Black-metal-Vegetable-tanned-leather-40,5-H-cm-x-95-L-cm_DETTAGLIO.jpg"
@@ -2514,12 +2417,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Towel Rack Large",
+    "title": "Towel Rack Large",
     "price": 729,
     "availability": 6
   },
   {
-    "title": "towel rack tall",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/2726_n_Towel-Rack-Tall-Black-metal-Vegetable-tanned-leather-53,4-H-cm-x-47-L-cm_DETTAGLIO.jpg"
@@ -2528,12 +2430,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Towel Rack Tall",
+    "title": "Towel Rack Tall",
     "price": 835,
     "availability": 6
   },
   {
-    "title": "shelf small light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/3211_n_Shelf Small - Light oak - 2,5 x 23 x 60 L cm.jpg"
@@ -2542,12 +2443,11 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Shelf Small light oak",
+    "title": "Shelf Small light oak",
     "price": 651,
     "availability": 6
   },
   {
-    "title": "shelf large light oak",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7849_n_light_oak.jpg"
@@ -2556,504 +2456,462 @@
     "collection": "Accents Accessories",
     "designer": "Oeo Studio",
     "category": "Accents Accessories by Oeo Studio",
-    "description": "Shelf Large light oak",
+    "title": "Shelf Large light oak",
     "price": 863,
     "availability": 6
   },
   {
-    "title": "mut 2",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7596_n_MUT2_Cover.jpg"
     },
     "categoryId": "shop_category_book",
     "collection": "Books",
-    "description": "MUT 2",
+    "title": "MUT 2",
     "price": 28.80,
     "availability": 6
   },
   {
-    "title": "mut 4",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7597_n_MUT4_Cover.jpg"
     },
     "categoryId": "shop_category_book",
     "collection": "Books",
-    "description": "MUT 4",
+    "title": "MUT 4",
     "price": 28.80,
     "availability": 6
   },
   {
-    "title": "mut 5",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7598_n_MUT5_Cover.jpg"
     },
     "categoryId": "shop_category_book",
     "collection": "Books",
-    "description": "MUT 5",
+    "title": "MUT 5",
     "price": 40.30,
     "availability": 6
   },
   {
-    "title": "mut 6",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7599_n_MUT6_HR.jpg"
     },
     "categoryId": "shop_category_book",
     "collection": "Books",
-    "description": "MUT 6",
+    "title": "MUT 6",
     "price": 28.80,
     "availability": 6
   },
   {
-    "title": "mut 7",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/8894_n_bouroullec_book_004_Copertina.jpg"
     },
     "categoryId": "shop_category_book",
     "collection": "Books",
-    "description": "MUT 7",
+    "title": "MUT 7",
     "price": 40.30,
     "availability": 6
   },
   {
-    "title": "poster the sound of my left hand rosso",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7981_n_rosso_50x70-cornice_bianco.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Posters",
-    "description": "Poster The Sound of My Left Hand - rosso",
+    "title": "Poster The Sound of My Left Hand - rosso",
     "price": 98.20,
     "availability": 6
   },
   {
-    "title": "poster the sound of my left hand rosa giallo 2",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7989_n_giallo_50x70-_cornice_BIANCO.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Posters",
-    "description": "Poster The Sound of My Left Hand - rosa e giallo",
+    "title": "Poster The Sound of My Left Hand - rosa e giallo",
     "price": 98.20,
     "availability": 6
   },
   {
-    "title": "poster the sound of my left hand verde",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7985_n_verde_50x70_cornice_bianco.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Posters",
-    "description": "Poster The Sound of My Left Hand - verde",
+    "title": "Poster The Sound of My Left Hand - verde",
     "price": 98.20,
     "availability": 6
   },
   {
-    "title": "poster the sound of my left hand set",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7993_n_Poster_Cover_2000.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Posters",
-    "description": "Poster The Sound of My Left Hand - set",
+    "title": "Poster The Sound of My Left Hand - set",
     "price": 219.60,
     "availability": 6
   },
   {
-    "title": "notebook piccoli",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/8624_n_Notebook_piccoli_2000.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Notebooks",
-    "description": "Notebook in tinta unita piccoli",
+    "title": "Notebook in tinta unita piccoli",
     "price": 75,
     "availability": 6
   },
   {
-    "title": "notebook grandi",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/8630_n_Notebook_grandi_2000.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Notebooks",
-    "description": "Notebook in tinta unita grandi",
+    "title": "Notebook in tinta unita grandi",
     "price": 100,
     "availability": 6
   },
   {
-    "title": "notebook mix",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/8634_n_Notebook_mix_2000.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Notebooks",
-    "description": "Notebook in tinta unita grandi e piccoli + matite",
+    "title": "Notebook in tinta unita grandi e piccoli + matite",
     "price": 205,
     "availability": 6
   },
   {
-    "title": "notebook in tinta unita piccoli matite",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/8673_n_Pic_220203_Mutina233840_2074.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Notebooks",
-    "description": "Notebook in tinta unita piccoli + matite",
+    "title": "Notebook in tinta unita piccoli + matite",
     "price": 105,
     "availability": 6
   },
   {
-    "title": "notebook in tinta unita grandi",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/8678_n_Pic_220203_Mutina233828_2074.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Notebooks",
-    "description": "Notebook in tinta unita grandi + matite",
+    "title": "Notebook in tinta unita grandi + matite",
     "price": 130,
     "availability": 6
   },
   {
-    "title": "notebook mix 2",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/8683_n_Notebook_grandi_piccoli_2000.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Notebooks",
-    "description": "Notebook Mix",
+    "title": "Notebook Mix",
     "price": 175,
     "availability": 6
   },
   {
-    "title": "shopper mutina verde",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7582_n_Bag_verde_2000.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Bags",
-    "description": "Shopper Hexagon verde",
+    "title": "Shopper Hexagon verde",
     "price": 19.60,
     "availability": 6
   },
   {
-    "title": "shopper mutina giallo",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7594_n_Bag_giallo_2000.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Bags",
-    "description": "Shopper Hexagon giallo",
+    "title": "Shopper Hexagon giallo",
     "price": 19.60,
     "availability": 6
   },
   {
-    "title": "shopper mutina blu",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7627_n_Bag_blu_2000.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Bags",
-    "description": "Shopper Hexagon blu",
+    "title": "Shopper Hexagon blu",
     "price": 19.60,
     "availability": 6
   },
   {
-    "title": "matite",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7585_n_Matite_cover_2000.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Stationery",
-    "description": "Matite",
+    "title": "Matite",
     "price": 30,
     "availability": 6
   },
   {
-    "title": "poster bric",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7592_n_0_poster_cover_sq_medium.jpg"
     },
     "categoryId": "shop_category_gift",
     "collection": "Posters",
-    "description": "Poster BRIC",
+    "title": "Poster BRIC",
     "price": 36.80,
     "availability": 6
   },
   {
-    "title": "rombini vase a glossy blanc",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7750_n_vase_A_glossy_blanc-6907_md.png"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase A Glossy Blanc",
+    "title": "Rombini Vase A Glossy Blanc",
     "price": 1207.80,
     "availability": 6
   },
   {
-    "title": "rombini vase a glossy brun",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7718_n_vase_A_glossy_brun-6912_md.png"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase A Glossy Brun",
+    "title": "Rombini Vase A Glossy Brun",
     "price": 1207.80,
     "availability": 6
   },
   {
-    "title": "rombini vase a glossy vert",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7719_n_01_440.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase A Glossy Vert",
+    "title": "Rombini Vase A Glossy Vert",
     "price": 1207.80,
     "availability": 6
   },
   {
-    "title": "rombini vase a glossy vert rose",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7720_n_vase_A_glossy_vert-rose-6897_md.png"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase A Glossy Vert-Rose",
+    "title": "Rombini Vase A Glossy Vert-Rose",
     "price": 1207.80,
     "availability": 6
   },
   {
-    "title": "rombini vase a glossy rose brun",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7721_n_vase_A_glossy_rose-brun-6914_md.png"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase A Glossy Rose-Brun",
+    "title": "Rombini Vase A Glossy Rose-Brun",
     "price": 1207.80,
     "availability": 6
   },
   {
-    "title": "rombini vase a glossy gris vert 2",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7723_n_vase_A_glossy_gris-vert-6904_md.png"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase A Glossy Gris-Vert",
+    "title": "Rombini Vase A Glossy Gris-Vert",
     "price": 1207.80,
     "availability": 6
   },
   {
-    "title": "rombini vase b glossy brun rose",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7722_n_vase_B_glossy_brun_rose-6930_md.png"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase B Glossy Brun-Rose",
+    "title": "Rombini Vase B Glossy Brun-Rose",
     "price": 2159.40,
     "availability": 6
   },
   {
-    "title": "rombini vase b glossy brun matt blue",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7724_n_vase_B_glossy_brun_matt-blue-6927_md.png"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase B Glossy Brun-Matt Blue",
+    "title": "Rombini Vase B Glossy Brun-Matt Blue",
     "price": 2159.40,
     "availability": 6
   },
   {
-    "title": "rombini vase b glossy vert",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7725_n_vase_B_glossy_brun_matt-blue-6925_md.png"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase B Glossy Vert",
+    "title": "Rombini Vase B Glossy Vert",
     "price": 2159.40,
     "availability": 6
   },
   {
-    "title": "rombini vase c glossy vert brun",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7726_n_vase_C_glossy_vert_brun-6932_md.png"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase C Glossy Vert-Brun",
+    "title": "Rombini Vase C Glossy Vert-Brun",
     "price": 2159.40,
     "availability": 6
   },
   {
-    "title": "rombini vase c glossy brun rose vert",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7727_n_vase_C_glossy_brun_rose_vert-6934_md.png"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase C Glossy Brun-Rose-Vert",
+    "title": "Rombini Vase C Glossy Brun-Rose-Vert",
     "price": 2159.40,
     "availability": 6
   },
   {
-    "title": "rombini vase c glossy rose matt white matt grey",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/7728_n_vase_C_glossy-rose_matt-white_matt-grey-6937_md.png"
     },
     "categoryId": "shop_category_edition",
     "collection": "Rombini Vases",
-    "description": "Rombini Vase C Glossy Rose-Matt White-Matt Grey",
+    "title": "Rombini Vase C Glossy Rose-Matt White-Matt Grey",
     "price": 2159.40,
     "availability": 6
   },
   {
-    "title": "rettangolo bianco",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/9241_n_01_440.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "Paesaggi",
-    "description": "Rettangolo Bianco",
+    "title": "Rettangolo Bianco",
     "price": 3172,
     "availability": 6
   },
   {
-    "title": "rettangolo nero",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/9255_n_01_440.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "Paesaggi",
-    "description": "Rettangolo Nero",
+    "title": "Rettangolo Nero",
     "price": 3172,
     "availability": 6
   },
   {
-    "title": "rettangolo policromo",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/9260_n_01_440.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "Paesaggi",
-    "description": "Rettangolo Policromo",
+    "title": "Rettangolo Policromo",
     "price": 3172,
     "availability": 6
   },
   {
-    "title": "tondo bianco",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/9265_n_TondoBianco_440.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "Paesaggi",
-    "description": "Tondo Bianco",
+    "title": "Tondo Bianco",
     "price": 2928,
     "availability": 6
   },
   {
-    "title": "tondo policromo",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/9270_n_TondoPolicromo_440.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "Paesaggi",
-    "description": "Tondo Policromo",
+    "title": "Tondo Policromo",
     "price": 2928,
     "availability": 6
   },
   {
-    "title": "tondo verde",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/9275_n_01_440.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "Paesaggi",
-    "description": "Tondo Verde",
+    "title": "Tondo Verde",
     "price": 2928,
     "availability": 6
   },
   {
-    "title": "quadrato bianco",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/9280_n_01_440.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "Paesaggi",
-    "description": "Quadrato Bianco",
+    "title": "Quadrato Bianco",
     "price": 2928,
     "availability": 6
   },
   {
-    "title": "quadrato policromo",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/9285_n_01_440.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "Paesaggi",
-    "description": "Quadrato Policromo",
+    "title": "Quadrato Policromo",
     "price": 2928,
     "availability": 6
   },
   {
-    "title": "quadrato rosso",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/9290_n_01_440.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "Paesaggi",
-    "description": "Quadrato Rosso",
+    "title": "Quadrato Rosso",
     "price": 2928,
     "availability": 6
   },
   {
-    "title": "el lobo nero",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/9697_n_lupo_nero-181_440.jpg"
@@ -3061,12 +2919,11 @@
     "categoryId": "shop_category_edition",
     "designer": "Patricia Urquiola",
     "collection": "El Lobo",
-    "description": "El Lobo nero",
+    "title": "El Lobo nero",
     "price": 658.80,
     "availability": 6
   },
   {
-    "title": "el lobo whisky",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/9702_n_lupo_wisky-179_440.jpg"
@@ -3074,12 +2931,11 @@
     "categoryId": "shop_category_edition",
     "designer": "Patricia Urquiola",
     "collection": "El Lobo",
-    "description": "El Lobo whisky",
+    "title": "El Lobo whisky",
     "price": 658.80,
     "availability": 6
   },
   {
-    "title": "phenomenon plate",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/10107_n_phenomenon_plate-2056_440.jpg"
@@ -3087,12 +2943,11 @@
     "categoryId": "shop_category_edition",
     "designer": "Tokujin Yoshioka",
     "collection": "Phenomenon Plate",
-    "description": "Phenomenon Plate",
+    "title": "Phenomenon Plate",
     "price": 1708,
     "availability": 6
   },
   {
-    "title": "yama a",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/10108_n_Pic_220901_Mutina246979_POST_440.jpg"
@@ -3100,12 +2955,11 @@
     "categoryId": "shop_category_edition",
     "designer": "Vincent Van Duysen",
     "collection": "Yama",
-    "description": "Yama E",
+    "title": "Yama E",
     "price": 3050,
     "availability": 6
   },
   {
-    "title": "yama b",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/10109_n_Pic_220901_Mutina246980_POST_440.jpg"
@@ -3113,12 +2967,11 @@
     "categoryId": "shop_category_edition",
     "designer": "Vincent Van Duysen",
     "collection": "Yama",
-    "description": "Yama D",
+    "title": "Yama D",
     "price": 2244.80,
     "availability": 6
   },
   {
-    "title": "yama c",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/10110_n_Pic_220901_Mutina246988_POST_440.jpg"
@@ -3126,12 +2979,11 @@
     "categoryId": "shop_category_edition",
     "designer": "Vincent Van Duysen",
     "collection": "Yama",
-    "description": "Yama C",
+    "title": "Yama C",
     "price": 1683.60,
     "availability": 6
   },
   {
-    "title": "yama d",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/10111_n_Pic_220901_Mutina246996_POST_440.jpg"
@@ -3139,12 +2991,11 @@
     "categoryId": "shop_category_edition",
     "designer": "Vincent Van Duysen",
     "collection": "Yama",
-    "description": "Yama B",
+    "title": "Yama B",
     "price": 1122.40,
     "availability": 6
   },
   {
-    "title": "yama e",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/10112_n_Pic_220901_Mutina246998_POST_440.jpg"
@@ -3152,79 +3003,73 @@
     "categoryId": "shop_category_edition",
     "designer": "Vincent Van Duysen",
     "collection": "Yama",
-    "description": "Yama A",
+    "title": "Yama A",
     "price": 561.20,
     "availability": 6
   },
   {
-    "title": "alto nero",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6343_n_alto_nero_cylinder_md.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "The Cylinder Glass",
-    "description": "Alto Nero",
+    "title": "Alto Nero",
     "price": 1098,
     "availability": 6
   },
   {
-    "title": "medio nero",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6337_n_medio_nero_cylindr_md.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "The Cylinder Glass",
-    "description": "Medio Nero",
+    "title": "Medio Nero",
     "price": 1098,
     "availability": 6
   },
   {
-    "title": "basso nero",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6333_n_basso_nero_cylinder_md.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "The Cylinder Glass",
-    "description": "Basso Nero",
+    "title": "Basso Nero",
     "price": 1098,
     "availability": 6
   },
   {
-    "title": "alto bianco",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6333_n_alto_bianco_cylinder_mD_2_2.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "The Cylinder Glass",
-    "description": "Alto Bianco",
+    "title": "Alto Bianco",
     "price": 1098,
     "availability": 6
   },
   {
-    "title": "medio bianco",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6339_n_medio_bianco_cylinder_mD.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "The Cylinder Glass",
-    "description": "Medio Bianco",
+    "title": "Medio Bianco",
     "price": 1098,
     "availability": 6
   },
   {
-    "title": "basso bianco",
     "media": {
       "type": "image",
       "src": "/assets/shop_detail/6335_n_basso_cylinder_white_MD.jpg"
     },
     "categoryId": "shop_category_edition",
     "collection": "The Cylinder Glass",
-    "description": "Basso Bianco",
+    "title": "Basso Bianco",
     "price": 1098,
     "availability": 6
   }

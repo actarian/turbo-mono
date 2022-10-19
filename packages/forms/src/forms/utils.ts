@@ -1,3 +1,4 @@
+import { IEquatable, INamedEntity } from '@websolute/core';
 import { FormErrors, FormValidationError, StateValue } from './types';
 
 export function validValue(value: any) {
@@ -28,10 +29,28 @@ export function deepCopy(source: StateValue): StateValue {
   }
 }
 
-export function className(...args: ({ [key: string]: boolean } | string)[]): string {
-  return args.map(x => (
-    typeof x === 'object' ?
-      Object.keys(x).filter(key => x[key]).join(' ') :
-      x.toString()
-  )).join(' ');
+export function valueToString(value: IEquatable | IEquatable[] | null): string | string[] | undefined {
+  function mapValue(value: IEquatable | null): string | undefined {
+    return value != null ? value.toString() : undefined;
+  }
+  function mapValues(values: IEquatable[]): string[] | undefined {
+    const strings = values.map(x => mapValue(x)).filter(x => x !== undefined) as string[];
+    return strings.length ? strings : undefined;
+  }
+  return Array.isArray(value) ? mapValues(value) : mapValue(value);
+}
+
+export function stringToValue(value: string | string[] | undefined, options?: INamedEntity[]): IEquatable | IEquatable[] | null {
+  function findValue(value: string): IEquatable | null {
+    const option = options?.find(x => x.id.toString() === value);
+    return option ? option.id : null;
+  }
+  function mapValue(value: string | undefined): IEquatable | null {
+    return value !== undefined ? findValue(value) : null;
+  }
+  function mapValues(values: string[]): IEquatable[] | null {
+    const ids = values.map(x => mapValue(x)).filter(x => x !== null) as IEquatable[];
+    return ids.length ? ids : null;
+  }
+  return Array.isArray(value) ? mapValues(value) : mapValue(value);
 }

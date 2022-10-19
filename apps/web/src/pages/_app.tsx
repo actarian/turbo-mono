@@ -1,9 +1,10 @@
-import { LabelProvider, LayoutProvider, PageProvider } from '@websolute/hooks';
+import { CartProvider, LabelProvider, LayoutProvider, PageProvider } from '@websolute/hooks';
 import type { ILayout, IPage, IRouteParams } from '@websolute/models';
 import { Breakpoint, GlobalStyle, theme } from '@websolute/ui';
 // import { NextPage } from 'next';
 // import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { IronSessionStorage } from 'src/config/session';
 import { ThemeProvider } from 'styled-components';
 
 export default function Application({ Component, pageProps }: ApplicationProps) {
@@ -27,7 +28,9 @@ export default function Application({ Component, pageProps }: ApplicationProps) 
             </Head>
             <ThemeProvider theme={theme}>
               <GlobalStyle />
-              <Component {...pageProps} />
+              <CartProvider storage={IronSessionStorage}>
+                <Component {...pageProps} />
+              </CartProvider>
               <Breakpoint></Breakpoint>
             </ThemeProvider>
           </PageProvider>

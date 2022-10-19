@@ -13,6 +13,7 @@ export declare const PAGES: {
     contact: string;
     login: string;
     reserved_area: string;
+    checkout: string;
     notfound: string;
 };
 //# sourceMappingURL=index.d.ts.map
