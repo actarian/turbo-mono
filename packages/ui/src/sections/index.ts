@@ -67,4 +67,3 @@ export type { StoreLocatorItem } from './store-locator/store-locator-search';
 export { default as SwiperHero } from './swiper-hero/swiper-hero';
 export { default as Typography } from './typography/typography';
 
-
