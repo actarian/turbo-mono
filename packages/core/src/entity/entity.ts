@@ -3,6 +3,12 @@ export type IEquatable = number | string;
 
 export type ILocalizedString = { [key: string]: string };
 
+export type IOption = {
+  id: IEquatable;
+  name: string;
+  [key: string]: any;
+}
+
 export interface ISchema {
   id: IEquatable;
   schema: string;
@@ -18,10 +24,6 @@ export interface INamedEntity extends IEntity {
 
 export interface ITitledEntity extends IEntity {
   title: string | ILocalizedString;
-}
-
-export interface INamedEntity extends IEntity {
-  name: string | ILocalizedString;
 }
 
 export interface IQuerable<T extends IEntity> {

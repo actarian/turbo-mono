@@ -14,10 +14,11 @@ export type FieldComponent<C extends React.ElementType = 'div'> = UIComponentWit
 const StyledField = styled.div<FieldProps>`
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.5rem;
+  // margin-bottom: 0.5rem;
 
   label {
     font-weight: 500;
+    margin-bottom: 0.3rem;
   }
 
   ${props => getCssResponsive(props)}

@@ -2,7 +2,7 @@ import type { FetchRequestOptions, FetchService } from '@websolute/core';
 import { httpFetch } from '@websolute/core';
 import { useEffect, useState } from 'react';
 
-export function useHttpFetch<T>(pathname: string, options: FetchRequestOptions = {}, service: FetchService = httpFetch) {
+export function useHttpFetch<T>(pathname: string, options: FetchRequestOptions = {}, service: FetchService<T> = httpFetch, serviceOptions?: any) {
   const [response, setResponse] = useState<T>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<any>(null);
@@ -12,7 +12,7 @@ export function useHttpFetch<T>(pathname: string, options: FetchRequestOptions =
       loading ? null : setLoading(true);
       error ? setError(null) : null;
       try {
-        const response = await service(pathname, options);
+        const response = await service(pathname, options, serviceOptions);
         // console.log('useHttp.response', response);
         setResponse(response);
       } catch (error) {

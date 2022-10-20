@@ -1,5 +1,5 @@
 
-import type { IEquatable } from '@websolute/core';
+import type { IEquatable, IOption } from '@websolute/core';
 import { FormControl, stringToValue, useControl, valueToString } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
 import { FocusEvent, useMemo, useState } from 'react';
@@ -18,11 +18,11 @@ export default function FieldAutocomplete(props: FieldAutocompleteProps) {
 
   const uniqueName = `${props.control.name}-${props.uid}`;
 
-  const [state, setValue, setTouched] = useControl<IEquatable | IEquatable[]>(props.control);
+  const [state, setValue, setTouched] = useControl<IOption | IOption[] | IEquatable | IEquatable[]>(props.control);
 
   const onChange = (value: string | string[]) => {
-    const ids = stringToValue(value, props.control.options);
-    setValue(ids);
+    const valueOrValues = stringToValue(value, props.control.options);
+    setValue(valueOrValues);
   }
 
   const [focus, setFocus] = useState(false);
@@ -64,18 +64,22 @@ export default function FieldAutocomplete(props: FieldAutocompleteProps) {
   }
 
   const initialValue = useMemo(() => {
-    const options = props.control.options || [];
-    if (!state.value) {
-      return undefined;
-    }
-    const option = options.find(x => x.id === state.value);
-    if (option) {
-      return {
-        id: option.id,
-        name: option.name.toString(),
+    if (props.control.optionsExtra?.asEquatable) {
+      const options = props.control.options || [];
+      if (!state.value) {
+        return undefined;
+      }
+      const option = options.find(x => x.id === state.value);
+      if (option) {
+        return {
+          id: option.id,
+          name: option.name.toString(),
+        }
+      } else {
+        return undefined;
       }
     } else {
-      return undefined;
+      return (state.value as IOption) || undefined;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

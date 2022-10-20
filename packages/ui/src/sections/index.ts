@@ -10,7 +10,6 @@ export { default as CategoriesPropositionCard } from './categories-proposition/c
 export { default as CategoryHero } from './category-hero/category-hero';
 export { default as CategoryProposition } from './category-proposition/category-proposition';
 export { default as CheckoutWizard } from './checkout/checkout-wizard';
-export type { ICheckout } from './checkout/checkout-wizard';
 export { default as Colors } from './colors/colors';
 export { default as ContactCard } from './contact-card/contact-card';
 export type { ContactCardItem } from './contact-card/contact-card';

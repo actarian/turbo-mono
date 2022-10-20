@@ -1,23 +1,21 @@
 
 import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useEffect, useState } from 'react';
 import { Flex } from '../../components';
-import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
-import RadioColor, { RadioColorProps } from './radio-color';
+import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import RadioCard, { RadioCardProps } from './radio-card';
 
-interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
+interface Props extends ComponentPropsWithRef<'input'> {
   initialValue?: string;
-  size?: SizeVariant;
   children?: ReactNode;
 }
 
-export type RadioColorGroupProps = UIStyledComponentProps<Props, 'input'>;
+export type RadioCardGroupProps = UIStyledComponentProps<Props, 'input'>;
 
-export type RadioColorGroupComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
+export type RadioCardGroupComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
 
-const RadioColorGroup: RadioColorGroupComponent = forwardRef(({
+const RadioCardGroup: RadioCardGroupComponent = forwardRef(({
   children,
   className,
-  size,
   initialValue,
   onChange,
   ...props
@@ -39,14 +37,13 @@ const RadioColorGroup: RadioColorGroupComponent = forwardRef(({
   };
 
   const mappedChildren = React.Children.map(children || [], (child) => {
-    if (!React.isValidElement<RadioColorProps>(child)) {
+    if (!React.isValidElement<RadioCardProps>(child)) {
       return child;
     }
-    const item: ReactElement<RadioColorProps> = child;
-    if (item.type === RadioColor) {
+    const item: ReactElement<RadioCardProps> = child;
+    if (item.type === RadioCard) {
       return React.cloneElement(item, {
         ...child.props,
-        size: child.props.size || size,
         checked: child.props.value === value,
         onChange: onChange_,
       });
@@ -57,12 +54,12 @@ const RadioColorGroup: RadioColorGroupComponent = forwardRef(({
   // !!! ref to group
 
   return (
-    <Flex flexWrap="wrap" gap="1rem" ref={ref} className={className} {...props}>
+    <Flex.Col gap="2rem" ref={ref} className={className} {...props}>
       {mappedChildren}
-    </Flex>
+    </Flex.Col>
   );
 });
 
-RadioColorGroup.displayName = 'RadioColorGroup';
+RadioCardGroup.displayName = 'RadioCardGroup';
 
-export default RadioColorGroup;
+export default RadioCardGroup;

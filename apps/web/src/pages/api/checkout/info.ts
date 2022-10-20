@@ -9,11 +9,14 @@ export default apiHandler({
     const provinces = await getProvinces(locale);
     const regions = await getRegions(locale);
     const data = { countries, regions, provinces };
+    response.status(200).json(data);
+    /*
     if (data) {
       response.status(200).json(data);
     } else {
       throw 'not found';
       // response.status(404).send('not found');
     }
+    */
   },
 });

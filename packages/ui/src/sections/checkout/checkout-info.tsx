@@ -1,8 +1,8 @@
 import { scrollToY, useLabel } from '@websolute/hooks';
 import { IUser } from '@websolute/models';
-import { useUser } from '@websolute/ui';
 import { useState } from 'react';
 import { Button, Container, Flex, Grid, Section, Text } from '../../components';
+import { useCheckout, useUser } from '../../hooks';
 import CheckoutForgot from './checkout-forgot';
 import CheckoutForgotSuccess from './checkout-forgot-success';
 import CheckoutLogin from './checkout-login';
@@ -11,29 +11,25 @@ import CheckoutRegisterSuccess from './checkout-register-success';
 import type { IUserInfo } from './checkout-user-info';
 import CheckoutUserInfo from './checkout-user-info';
 
-export type ICheckoutInfo = {
-  user?: IUser;
-  userInfo: IUserInfo;
-}
-
 export interface CheckoutInfoProps {
+  onInfo?: (info: IUserInfo) => void;
   onPrevious?: () => void;
-  onInfo?: (info: ICheckoutInfo) => void;
 }
 
 const CheckoutInfo: React.FC<CheckoutInfoProps> = ({ onPrevious, onInfo }: CheckoutInfoProps) => {
   const label = useLabel();
 
+  const checkout = useCheckout((state) => state.checkout);
   const user = useUser((state) => state.user);
   const setUser = useUser((state) => state.setUser);
 
-  const [view, setView] = useState(user ? 'address' : 'choose');
+  const [view, setView] = useState((checkout.info || user) ? 'address' : 'choose');
 
   // const [user, setUser] = useState<IUser>();
 
-  const onUserInfo = (userInfo: IUserInfo) => {
+  const onUserInfo = (info: IUserInfo) => {
     if (typeof onInfo === 'function') {
-      onInfo({ user, userInfo });
+      onInfo(info);
     }
   }
 
@@ -87,12 +83,12 @@ const CheckoutInfo: React.FC<CheckoutInfoProps> = ({ onPrevious, onInfo }: Check
         return (
           <>
             <Section>
-              <Container>
+              <Container minHeight="50vh">
                 <Grid.Row rowGap="3rem">
                   <Grid sm={6}>
                     <Flex.Col gap="1rem" alignItems="flex-start">
                       <Text size="4" fontWeight="700">Login</Text>
-                      <Text marginBottom="1rem">Login to optimise your shopping experience and to see your previous orders.</Text>
+                      <Text size="8" marginBottom="1rem" maxWidth="60ch">Login to optimise your shopping experience and to see your previous orders.</Text>
                       <Button variant="primary" onClick={() => setView('login')}>Login</Button>
                     </Flex.Col>
                   </Grid>
@@ -100,12 +96,12 @@ const CheckoutInfo: React.FC<CheckoutInfoProps> = ({ onPrevious, onInfo }: Check
                     <Flex.Col gap="2rem">
                       <Flex.Col gap="1rem" alignItems="flex-start" marginBottom="3rem">
                         <Text size="4" fontWeight="700">Register</Text>
-                        <Text marginBottom="1rem">Register to optimise your shopping experience and to see your previous orders.</Text>
+                        <Text size="8" marginBottom="1rem" maxWidth="60ch">Register to optimise your shopping experience and to see your previous orders.</Text>
                         <Button variant="primary" onClick={() => setView('register')}>Register</Button>
                       </Flex.Col>
                       <Flex.Col gap="1rem" alignItems="flex-start">
                         <Text size="4" fontWeight="700">Proceed as guest</Text>
-                        <Text marginBottom="1rem">If you continue your purchase as a guest, we will request your shipping details and assign the appropriate sales outlet, but you will not need to create a personal account. If you would like to access your user area and your order history, please complete the purchase by registering your account.</Text>
+                        <Text size="8" marginBottom="1rem" maxWidth="60ch">If you continue your purchase as a guest, we will request your shipping details and assign the appropriate sales outlet, but you will not need to create a personal account. If you would like to access your user area and your order history, please complete the purchase by registering your account.</Text>
                         <Button variant="primary" onClick={() => setView('address')}>Proceed</Button>
                       </Flex.Col>
                     </Flex.Col>

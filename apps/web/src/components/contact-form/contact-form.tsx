@@ -1,4 +1,4 @@
-import type { INamedEntity } from '@websolute/core';
+import type { IOption } from '@websolute/core';
 import { getClassNames } from '@websolute/core';
 import {
   EmailValidator, FormAsyncValidator, FormGroup, RequiredIfValidator, RequiredTrueValidator,
@@ -78,12 +78,12 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
 
   const onTest = () => {
     setValue({
-      magazine: data.magazines[0].id,
+      magazine: data.magazines[0],
       firstName: 'John',
       lastName: 'Appleseed',
       email: 'jhon.appleseed@gmail.com',
       telephone: '+39 123456789',
-      occupation: data.occupations[0].id,
+      occupation: data.occupations[0],
       printedCopy: false,
       privacy: true,
       newsletter: false,
@@ -126,9 +126,9 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
 }
 
 export type IContactForm = {
-  countries: INamedEntity[];
-  magazines: INamedEntity[];
-  occupations: INamedEntity[];
-  provinces: INamedEntity[];
-  regions: INamedEntity[];
+  countries: IOption[];
+  magazines: IOption[];
+  occupations: IOption[];
+  provinces: IOption[];
+  regions: IOption[];
 }

@@ -1,5 +1,5 @@
 
-import type { IEquatable } from '@websolute/core';
+import type { IEquatable, IOption } from '@websolute/core';
 import { FormControl, stringToValue, useControl, valueToString } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
 import { FocusEvent, useState } from 'react';
@@ -16,11 +16,11 @@ export default function FieldSelect(props: FieldSelectProps) {
 
   const uniqueName = `${props.control.name}-${props.uid}`;
 
-  const [state, setValue, setTouched] = useControl<IEquatable | IEquatable[]>(props.control);
+  const [state, setValue, setTouched] = useControl<IOption | IOption[] | IEquatable | IEquatable[]>(props.control);
 
   const onChange = (value: string | string[]) => {
-    const ids = stringToValue(value, props.control.options);
-    setValue(ids);
+    const valueOrValues = stringToValue(value, props.control.options, props.control.optionsExtra);
+    setValue(valueOrValues);
   }
 
   const [focus, setFocus] = useState(false);

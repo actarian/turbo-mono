@@ -1,27 +1,32 @@
 import { getClassNames } from '@websolute/core';
-import { CheckoutStatus, scrollToY } from '@websolute/hooks';
+import { scrollToY } from '@websolute/hooks';
 import { ICartItem } from '@websolute/models';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Container, Flex, Section } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
+import type { ICheckout } from '../../hooks';
+import { useCheckout } from '../../hooks';
 import CheckoutBasket from './checkout-basket';
 import CheckoutComplete from './checkout-complete';
-import type { ICheckoutDelivery } from './checkout-delivery';
+import type { IDelivery } from './checkout-delivery';
 import CheckoutDelivery from './checkout-delivery';
-import type { ICheckoutInfo } from './checkout-info';
 import CheckoutInfo from './checkout-info';
-import type { ICheckoutPayment } from './checkout-payment';
+import type { IPayment } from './checkout-payment';
 import CheckoutPayment from './checkout-payment';
-import type { ICheckoutReview } from './checkout-review';
+import type { IReview } from './checkout-review';
 import CheckoutReview from './checkout-review';
+import type { IUserInfo } from './checkout-user-info';
 
-export type ICheckout = {
-  items?: ICartItem[];
-  info?: ICheckoutInfo;
-  delivery?: ICheckoutDelivery;
-  review?: ICheckoutReview;
-  payment?: ICheckoutPayment;
+export enum CheckoutStatus {
+  None = -1,
+  Basket = 0,
+  Info = 1,
+  Delivery = 2,
+  Review = 3,
+  Payment = 4,
+  Complete = 5,
+  Error = 6,
 }
 
 const StyledWizard = styled(Flex.Row)`
@@ -57,39 +62,44 @@ const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...props }:
   const setStatus = useCheckout((state) => state.setStatus);
   */
 
+  // const [checkout, setCheckout] = useState<ICheckout>({ items });
+  const checkout = useCheckout((state) => state.checkout);
+  const setCheckout = useCheckout((state) => state.setCheckout);
   const [status, setStatus] = useState<CheckoutStatus>(CheckoutStatus.Basket);
-  const [checkout, setCheckout] = useState<ICheckout>({})
+
+
+  // const [checkout, setCheckout] = useState<ICheckout>({})
 
   // 1.
   const onBasket = (items: ICartItem[]) => {
     console.log('CheckoutWizard.onBasket', items);
-    onCheckout_({ items });
+    onCheckout_({ ...checkout, items });
     setStatus(CheckoutStatus.Info);
   }
 
   // 2.
-  const onInfo = (info: ICheckoutInfo) => {
+  const onInfo = (info: IUserInfo) => {
     console.log('CheckoutWizard.onInfo', info);
     onCheckout_({ ...checkout, info });
     setStatus(CheckoutStatus.Delivery);
   }
 
   // 3.
-  const onDelivery = (delivery: ICheckoutDelivery) => {
+  const onDelivery = (delivery: IDelivery) => {
     console.log('CheckoutWizard.onDelivery', delivery);
     onCheckout_({ ...checkout, delivery });
     setStatus(CheckoutStatus.Review);
   }
 
   // 4.
-  const onReview = (review: ICheckoutReview) => {
+  const onReview = (review: IReview) => {
     console.log('CheckoutWizard.onReview', review);
     onCheckout_({ ...checkout, review });
     setStatus(CheckoutStatus.Payment);
   }
 
   // 5.
-  const onPayment = (payment: ICheckoutPayment) => {
+  const onPayment = (payment: IPayment) => {
     console.log('CheckoutWizard.onPayment', payment);
     onCheckout_({ ...checkout, payment });
     setStatus(CheckoutStatus.Complete);

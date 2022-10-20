@@ -31,8 +31,8 @@ const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBas
   return (
     <>
       <Section>
-        <Container>
-          <Flex.Row gap="2rem" padding="1rem 0">
+        <Container minHeight="50vh">
+          <Flex.Row gap="2rem" padding="1rem 0" fontWeight="700">
             <Text flexGrow="1">Product</Text>
             <Text flexBasis="110px" textAlign="right">Unit price</Text>
             <Text flexBasis="120px" textAlign="center">Quantity</Text>
@@ -44,12 +44,12 @@ const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBas
               <CheckoutBasketItem key={i} item={item} />
             )}
           </Flex.Col>
-          <Flex.Row gap="1rem" padding="1rem 0">
-            <Text flexGrow="1" size="8">Total</Text>
-            <Text flexBasis="110px" textAlign="right" size="8">&nbsp;</Text>
-            <Text flexBasis="120px" textAlign="center" size="8">&nbsp;</Text>
-            <Text flexBasis="80px" textAlign="center" size="8">&nbsp;</Text>
-            <Text flexBasis="110px" textAlign="right" size="8">{totalPrice}</Text>
+          <Flex.Row gap="1rem" padding="1rem 0" fontWeight="700">
+            <Text flexGrow="1">Total</Text>
+            <Text flexBasis="110px" textAlign="right">&nbsp;</Text>
+            <Text flexBasis="120px" textAlign="center">&nbsp;</Text>
+            <Text flexBasis="80px" textAlign="center">&nbsp;</Text>
+            <Text flexBasis="110px" textAlign="right">{totalPrice}</Text>
           </Flex.Row>
           <Flex.Col gap="1rem">
             <Box borderRadius="0.5rem" border="1px solid var(--color-neutral-300)">

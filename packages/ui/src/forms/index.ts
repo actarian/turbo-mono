@@ -10,6 +10,7 @@ export { default as Form } from './form/form';
 export { default as InputGroup } from './input-group/input-group';
 export { default as Input } from './input/input';
 export { default as Label } from './label/label';
+export { default as RadioCard } from './radio-card/radio-card';
 export { default as RadioColor } from './radio-color/radio-color';
 export { default as RadioOption } from './radio-option/radio-option';
 export { default as Radio } from './radio/radio';

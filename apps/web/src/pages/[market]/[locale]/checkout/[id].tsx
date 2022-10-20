@@ -1,17 +1,17 @@
 
 import { asStaticProps, IContextParams } from '@websolute/core';
-import { CheckoutProvider, useCart } from '@websolute/hooks';
+import { useCart } from '@websolute/hooks';
 import type { IUser, PageProps } from '@websolute/models';
 import { getLayout, getPage } from '@websolute/models';
 import { StoreStrategy, storeStrategy } from '@websolute/store';
 import {
-  Breadcrumb, Button, CheckoutWizard, Container, Flex, Footer, Header, Layout, Meta, NavLink, Page, Section, Text
+  Breadcrumb, Button, CheckoutProvider, CheckoutWizard, Container, Flex, Footer, Header, ICheckout, Layout, Meta,
+  NavLink, Page, Section, Text
 } from '@websolute/ui';
-import { ICheckout } from '@websolute/ui/src/sections/checkout/checkout-wizard';
 import { promises as fs } from 'fs';
 import { withIronSessionSsr } from 'iron-session/next';
 import path from 'path';
-import { IronSessionStorage, sessionOptions } from 'src/config/session';
+import { sessionOptions } from 'src/config/session';
 
 export default function Checkout({ layout, page, user, params }: CheckoutProps) {
 
@@ -21,8 +21,10 @@ export default function Checkout({ layout, page, user, params }: CheckoutProps) 
     console.log('Checkout.onCheckout', checkout);
   }
 
+  const storage = typeof window !== 'undefined' ? window.sessionStorage : undefined;
+
   return (
-    <CheckoutProvider storage={IronSessionStorage}>
+    <CheckoutProvider storage={storage}>
       <Layout>
         <Meta />
         <Page>
@@ -35,7 +37,9 @@ export default function Checkout({ layout, page, user, params }: CheckoutProps) 
           </Section>
 
           {items.length ?
+
             <CheckoutWizard onCheckout={onCheckout} /> :
+
             <Section>
               <Container minHeight="50vh">
                 <Flex.Col gap="1rem" alignItems="center" textAlign="center">

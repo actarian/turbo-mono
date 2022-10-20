@@ -1,4 +1,4 @@
-import { IEquatable, INamedEntity } from '@websolute/core';
+import { IEquatable, IOption } from '@websolute/core';
 import { FormErrors, FormValidationError, StateValue } from './types';
 
 export function validValue(value: any) {
@@ -29,28 +29,33 @@ export function deepCopy(source: StateValue): StateValue {
   }
 }
 
-export function valueToString(value: IEquatable | IEquatable[] | null): string | string[] | undefined {
-  function mapValue(value: IEquatable | null): string | undefined {
-    return value != null ? value.toString() : undefined;
+export function valueToString(value: IOption | IOption[] | IEquatable | IEquatable[] | null): string | string[] | undefined {
+  function mapValue(value: IOption | IEquatable | null): string | undefined {
+    const stringValue = value != null ? (
+      typeof value === 'object' ? value.id.toString() : value.toString()
+    ) : undefined;
+    return stringValue;
   }
-  function mapValues(values: IEquatable[]): string[] | undefined {
+  function mapValues(values: IOption[] | IEquatable[]): string[] | undefined {
     const strings = values.map(x => mapValue(x)).filter(x => x !== undefined) as string[];
     return strings.length ? strings : undefined;
   }
   return Array.isArray(value) ? mapValues(value) : mapValue(value);
 }
 
-export function stringToValue(value: string | string[] | undefined, options?: INamedEntity[]): IEquatable | IEquatable[] | null {
-  function findValue(value: string): IEquatable | null {
+export function stringToValue(value: string | string[] | undefined, options?: IOption[], optionsExtra?: { asEquatable: boolean }): IOption | IOption[] | IEquatable | IEquatable[] | null {
+  function findValue(value: string): IOption | IEquatable | null {
     const option = options?.find(x => x.id.toString() === value);
-    return option ? option.id : null;
+    return option ? (
+      optionsExtra?.asEquatable ? option.id : option
+    ) : null;
   }
-  function mapValue(value: string | undefined): IEquatable | null {
+  function mapValue(value: string | undefined): IOption | IEquatable | null {
     return value !== undefined ? findValue(value) : null;
   }
-  function mapValues(values: string[]): IEquatable[] | null {
-    const ids = values.map(x => mapValue(x)).filter(x => x !== null) as IEquatable[];
-    return ids.length ? ids : null;
+  function mapValues(values: string[]): IOption[] | IEquatable[] | null {
+    const mappedValues = values.map(x => mapValue(x)).filter(x => x !== null) as (IOption[] | IEquatable[]);
+    return mappedValues.length ? mappedValues : null;
   }
   return Array.isArray(value) ? mapValues(value) : mapValue(value);
 }

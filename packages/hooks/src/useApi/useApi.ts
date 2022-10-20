@@ -1,9 +1,11 @@
 import type { FetchRequestOptions } from '@websolute/core';
 import { apiFetch } from '@websolute/core';
 import { useHttpFetch } from '../useHttp/useHttp';
+import { useLayout } from '../useLayout/useLayout';
 
 export function useApiFetch<T>(pathname: string, options: FetchRequestOptions = {}) {
-  return useHttpFetch<T>(pathname, { ...options, method: 'GET' }, apiFetch);
+  const layout = useLayout();
+  return useHttpFetch<T>(pathname, options, apiFetch, layout);
 }
 
 export function useApiGet<T>(pathname: string, options: FetchRequestOptions = {}) {

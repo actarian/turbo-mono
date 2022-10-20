@@ -2308,7 +2308,7 @@
       {
         "id": "field.city",
         "text": {
-          "en": "Town",
+          "en": "City",
           "it": "Città"
         },
         "schema": "label"
@@ -2508,49 +2508,49 @@
       },
       {
         "id": 201,
-        "name": "architetto / interior designer",
+        "name": "Architetto / interior designer",
         "listId": 200,
         "schema": "list"
       },
       {
         "id": 202,
-        "name": "rivenditore",
+        "name": "Rivenditore",
         "listId": 200,
         "schema": "list"
       },
       {
         "id": 203,
-        "name": "imprenditore",
+        "name": "Imprenditore",
         "listId": 200,
         "schema": "list"
       },
       {
         "id": 204,
-        "name": "giornalista",
+        "name": "Giornalista",
         "listId": 200,
         "schema": "list"
       },
       {
         "id": 205,
-        "name": "studente",
+        "name": "Studente",
         "listId": 200,
         "schema": "list"
       },
       {
         "id": 206,
-        "name": "utente privato",
+        "name": "Utente privato",
         "listId": 200,
         "schema": "list"
       },
       {
         "id": 207,
-        "name": "altro",
+        "name": "Altro",
         "listId": 200,
         "schema": "list"
       },
       {
         "id": 208,
-        "name": "rivenditore cucine",
+        "name": "Rivenditore cucine",
         "listId": 200,
         "schema": "list"
       },
