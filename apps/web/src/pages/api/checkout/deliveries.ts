@@ -2,7 +2,7 @@ import { apiHandler } from '@websolute/core';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default apiHandler({
-  get: async (request: NextApiRequest, response: NextApiResponse) => {
+  post: async (request: NextApiRequest, response: NextApiResponse) => {
     // const locale: string | undefined = request.query.locale as string;
     const data = {
       deliveries: [

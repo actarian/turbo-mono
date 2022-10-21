@@ -25,8 +25,8 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
   // const exhist: FormAsyncValidator = async (value: any, rootValue: any) => Promise.resolve(value === 'aa@aa.aa' ? { exhist: true } : null);
 
   const requiredIfPrintedCopy = RequiredIfValidator((value, rootValue) => rootValue?.printedCopy === true);
-
-  const requiredIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.shippingInfo?.country === 'it');
+  const hiddenIfNotPrintedCopy = (value: any, rootValue: any) => !(rootValue?.printedCopy === true);
+  const requiredIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.shippingInfo?.country?.id === 'it');
 
   /*
   const hiddenIfNotPrintedCopy = async (value: any, rootValue: any) => new Promise<boolean>((resolve, reject) => {
@@ -38,9 +38,8 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
 
   // const hiddenIfNotPrintedCopy = async (value: any, rootValue: any) => Promise.resolve(!(rootValue?.printedCopy === true));
 
-  const hiddenIfNotPrintedCopy = (value: any, rootValue: any) => !(rootValue?.printedCopy === true);
-
   const [form, setValue, setTouched, reset, group] = useFormBuilder<any, FormGroup>({
+
     firstName: { schema: 'text', label: 'field.firstName', validators: required },
     lastName: { schema: 'text', label: 'field.lastName', validators: required },
     email: { schema: 'text', label: 'field.email', validators: [required, email, exhist] },
@@ -71,9 +70,8 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
     commercial: { schema: 'accept', label: 'field.commercial', validators: required },
     promotion: { schema: 'accept', label: 'field.promotion', validators: required },
     //
-    checkRequest: { schema: 'text', value: 'window.antiforgery', hidden: true }, // todo take antiforgery token from server
     checkField: { schema: 'text', hidden: true }, // check hidden field for antiforgery
-    //
+
   });
 
   const onTest = () => {

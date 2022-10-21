@@ -1,6 +1,6 @@
 
 import type { IStaticContext } from '@websolute/core';
-import { asStaticProps } from '@websolute/core';
+import { asServerProps } from '@websolute/core';
 import { useCart, useCurrency, useDrawer } from '@websolute/hooks';
 import { ProductsRelatedDefaults } from '@websolute/mock';
 import { getLayout, getPage, getPageCategory, getStaticPathsForSchema, IPage, PageProps } from '@websolute/models';
@@ -22,7 +22,7 @@ export default function ShopDetail({ layout, page, category, params }: ShopDetai
     onOpenDrawer('cart');
   }
 
-  const price = useCurrency(page.price);
+  const currency = useCurrency();
 
   return (
     <Layout>
@@ -57,7 +57,7 @@ export default function ShopDetail({ layout, page, category, params }: ShopDetai
                   {page.abstract && <Text size="7" lineHeight="2" dangerouslySetInnerHTML={{ __html: page.abstract }}></Text>}
                   {page.description && <Text size="8" lineHeight="2" dangerouslySetInnerHTML={{ __html: page.description }}></Text>}
                   <Flex.Row justifyContent="space-between">
-                    <Text size="8" marginBottom="1rem">{price}</Text>
+                    <Text size="8" marginBottom="1rem">{currency(page.price)}</Text>
                     <Button variant="primary" type="submit" onClick={onAddToCart}>Add to cart</Button>
                   </Flex.Row>
                 </Flex.Col>
@@ -109,7 +109,7 @@ export async function getStaticProps(context: IStaticContext) {
     };
   }
 
-  const props = asStaticProps({ ...context, layout, page, category });
+  const props = asServerProps({ ...context, layout, page, category });
   // console.log('ShopDetail getStaticProps', props);
   return {
     props,

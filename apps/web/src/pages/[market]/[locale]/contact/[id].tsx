@@ -1,6 +1,6 @@
 
 import type { IStaticContext } from '@websolute/core';
-import { asStaticProps } from '@websolute/core';
+import { asServerProps } from '@websolute/core';
 import { BlogMoreDefaults, BlogPropositionDefaults, ContactDefaults, ContactHeroDefaults, SplitDefaults } from '@websolute/mock';
 import type { PageProps } from '@websolute/models';
 import { getCountries, getLayout, getListByKeys, getPage, getProvinces, getRegions, getStaticPathsForSchema } from '@websolute/models';
@@ -151,8 +151,8 @@ export async function getStaticProps(context: IStaticContext) {
   const provinces = await getProvinces(locale);
   const regions = await getRegions(locale);
   const data = { ...lists, countries, regions, provinces };
-  const props = asStaticProps({ ...context, layout, page, data });
-  // console.log('About getStaticProps', props);
+  const props = asServerProps({ ...context, layout, page, data });
+  // console.log('Contact getStaticProps', props);
   return {
     props,
   };

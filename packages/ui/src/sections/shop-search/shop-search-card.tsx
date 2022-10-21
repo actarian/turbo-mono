@@ -27,6 +27,7 @@ export type ShopSearchItem = {
 export type ShopRelatedCardProps = UIStyledComponentProps<Props>;
 
 const ShopRelatedCard: React.FC<ShopRelatedCardProps> = ({ item, ...props }: ShopRelatedCardProps) => {
+  const currency = useCurrency();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   const add = useCart((state) => state.add);
   // const find = useCart((state) => state.find);
@@ -37,8 +38,6 @@ const ShopRelatedCard: React.FC<ShopRelatedCardProps> = ({ item, ...props }: Sho
     add(item, 1);
     onOpenDrawer('cart');
   }
-  const price = useCurrency(item.price);
-
   return (
     <Card {...props}>
       <Link href={item.href} passHref>
@@ -51,7 +50,7 @@ const ShopRelatedCard: React.FC<ShopRelatedCardProps> = ({ item, ...props }: Sho
         </Link>
         {false && item.abstract && <Text size="10" marginBottom="0.3rem">{item.abstract}</Text>}
         <Flex.Row justifyContent="space-between">
-          <Text size="8" fontWeight="600">{price}</Text>
+          <Text size="8" fontWeight="600">{currency(item.price)}</Text>
           <Button variant="nav" onClick={onAddToCart}>Add to bag</Button>
         </Flex.Row>
       </Card.Content>

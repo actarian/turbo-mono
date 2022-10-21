@@ -41,6 +41,8 @@ export interface CheckoutReviewProps {
 const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }: CheckoutReviewProps) => {
   const label = useLabel();
 
+  const currency = useCurrency();
+
   const checkout = useCheckout((state) => state.checkout);
 
   const { response: options } = useApiPost<IStoreOptions>('/checkout/stores', checkout);
@@ -52,7 +54,9 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
   const required = RequiredValidator();
 
   const [form, setValue, setTouched, reset, group] = useFormBuilder<IReview, FormGroup>({
+
     store: { schema: 'select', label: 'field.store', options: options?.stores, validators: [required] },
+
   }, [options]);
 
   useEffect(() => {
@@ -95,7 +99,7 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
     return p + c.price * c.qty;
   }, deliveryPrice) : deliveryPrice;
 
-  const totalPrice = useCurrency(total);
+  const totalPrice = currency(total);
 
   const onPrevious_ = () => {
     if (typeof onPrevious === 'function') {
@@ -188,7 +192,7 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
                     <Flex.Row key={i} gap="1rem">
                       <Text flexGrow="1">{item.title}</Text>
                       <Text flexBasis="40px" textAlign="right">{item.qty}</Text>
-                      <Text flexBasis="90px" textAlign="right">{item.qty * item.price}</Text>
+                      <Text flexBasis="90px" textAlign="right">{currency(item.qty * item.price)}</Text>
                     </Flex.Row>
                   )}
                 </Flex.Col>
@@ -196,7 +200,7 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
                   <Flex.Row gap="1rem">
                     <Text flexGrow="1">{delivery.name}</Text>
                     <Text flexBasis="40px" textAlign="right">&nbsp;</Text>
-                    <Text flexBasis="90px" textAlign="right">{delivery.price}</Text>
+                    <Text flexBasis="90px" textAlign="right">{currency(delivery.price)}</Text>
                   </Flex.Row>
                 }
                 <Flex.Row gap="1rem" fontWeight="700">

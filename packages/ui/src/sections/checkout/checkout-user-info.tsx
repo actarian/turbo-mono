@@ -35,6 +35,7 @@ export type IUserInfo = {
   email: string;
   shippingInfo: IUserDetailedInfo;
   invoicingInfo?: IUserDetailedInfo;
+  hasInvoice?: boolean;
 }
 
 export interface CheckoutUserInfoProps {
@@ -53,11 +54,15 @@ const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, o
   const required = RequiredValidator();
   const requiredTrue = RequiredTrueValidator();
   const email = EmailValidator();
-  const requiredShippingIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.shippingInfo?.country === 'it');
-  const requiredInvoicingIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.invoicingInfo?.country === 'it');
 
-  const hiddenShippingIfNotItaly = (value: any, rootValue: any) => !(rootValue?.shippingInfo?.country === 'it');
-  const hiddenInvoicingIfNotItaly = (value: any, rootValue: any) => !(rootValue?.shippingInfo?.country === 'it');
+  const shippingRequiredIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.shippingInfo?.country?.id === 'it');
+  const shippingHiddenIfNotItaly = (value: any, rootValue: any) => !(rootValue?.shippingInfo?.country?.id === 'it');
+
+  const requiredIfHasInvoice = RequiredIfValidator((value, rootValue) => rootValue?.hasInvoice === true);
+  const hiddenIfNotHasInvoice = (value: any, rootValue: any) => !(rootValue?.hasInvoice === true);
+
+  const invoicingRequiredIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.invoicingInfo?.country?.id === 'it');
+  const invoicingHiddenIfNotItaly = (value: any, rootValue: any) => !(rootValue?.invoicingInfo?.country?.id === 'it');
 
   const [form, setValue, setTouched, reset, group] = useFormBuilder<IUserInfo, FormGroup>({
 
@@ -75,15 +80,15 @@ const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, o
         country: { schema: 'select', label: 'field.country', options: options?.countries, validators: [required] },
         region: {
           schema: 'select', label: 'field.region', options: options?.regions,
-          validators: requiredShippingIfItaly,
-          disabled: hiddenShippingIfNotItaly,
-          hidden: hiddenShippingIfNotItaly,
+          validators: shippingRequiredIfItaly,
+          disabled: shippingHiddenIfNotItaly,
+          hidden: shippingHiddenIfNotItaly,
         },
         province: {
           schema: 'autocomplete', label: 'field.province', options: options?.provinces,
-          validators: requiredShippingIfItaly,
-          disabled: hiddenShippingIfNotItaly,
-          hidden: hiddenShippingIfNotItaly,
+          validators: shippingRequiredIfItaly,
+          disabled: shippingHiddenIfNotItaly,
+          hidden: shippingHiddenIfNotItaly,
         },
         address: { schema: 'text', label: 'field.address', validators: [required] },
         streetNumber: { schema: 'text', label: 'field.streetNumber', validators: [required] },
@@ -92,7 +97,36 @@ const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, o
       }
     },
 
-    checkRequest: { schema: 'text', value: 'window.antiforgery', hidden: true }, // todo take antiforgery token from server
+    invoicingInfo: {
+      schema: 'group', label: 'field.invoicingInfo', children: {
+        firstName: { schema: 'text', label: 'field.firstName', validators: [required] },
+        lastName: { schema: 'text', label: 'field.lastName', validators: [required] },
+        email: { schema: 'text', label: 'field.email', validators: [required, email] },
+        phoneNumber: { schema: 'text', label: 'field.phoneNumber', validators: [required] },
+        country: { schema: 'select', label: 'field.country', options: options?.countries, validators: [required] },
+        region: {
+          schema: 'select', label: 'field.region', options: options?.regions,
+          validators: invoicingRequiredIfItaly,
+          disabled: invoicingHiddenIfNotItaly,
+          hidden: invoicingHiddenIfNotItaly,
+        },
+        province: {
+          schema: 'autocomplete', label: 'field.province', options: options?.provinces,
+          validators: invoicingRequiredIfItaly,
+          disabled: invoicingHiddenIfNotItaly,
+          hidden: invoicingHiddenIfNotItaly,
+        },
+        address: { schema: 'text', label: 'field.address', validators: [required] },
+        streetNumber: { schema: 'text', label: 'field.streetNumber', validators: [required] },
+        zipCode: { schema: 'text', label: 'field.zipCode', validators: [required] },
+        city: { schema: 'text', label: 'field.city', validators: [required] },
+      },
+      disabled: hiddenIfNotHasInvoice,
+      hidden: hiddenIfNotHasInvoice,
+    },
+
+    hasInvoice: { schema: 'checkbox', label: 'field.hasInvoice' },
+
     checkField: { schema: 'text', hidden: true }, // check hidden field for antiforgery
 
   }, [options]);
@@ -116,12 +150,15 @@ const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, o
         lastName: 'Appleseed',
         email: 'jhon.appleseed@gmail.com',
         phoneNumber: '0721411112',
-        country: { id: 'us', name: 'United States' },
+        country: { id: 'it', name: 'Italy' },
+        region: { id: 10, name: 'Marche' },
+        province: { id: 175, name: 'Pesaro Urbino' },
         address: 'Strada della Campanara',
-        streetNumber: '25',
+        streetNumber: '15',
         zipCode: '61122',
         city: 'Pesaro',
-      }
+      },
+      hasInvoice: false,
     });
   }
 

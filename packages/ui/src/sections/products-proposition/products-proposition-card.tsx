@@ -20,7 +20,7 @@ export type ProductsPropositionItem = {
 export type ProductsPropositionCardProps = UIStyledComponentProps<Props, 'a'>;
 
 const ProductsPropositionCard: React.FC<ProductsPropositionCardProps> = ({ item, ...props }: ProductsPropositionCardProps) => {
-  const price = useCurrency(item.price);
+  const currency = useCurrency();
   return (
     <Link href={item.href} passHref>
       <Card as="a" {...props} hoverable>
@@ -28,7 +28,7 @@ const ProductsPropositionCard: React.FC<ProductsPropositionCardProps> = ({ item,
         <Card.Content>
           <Flex.Row justifyContent="space-between">
             <Text size="8" fontWeight="700">{item.title}</Text>
-            <Text size="8" fontWeight="700">{price}</Text>
+            <Text size="8" fontWeight="700">{currency(item.price)}</Text>
           </Flex.Row>
           <Text size="8">{item.abstract}</Text>
         </Card.Content>

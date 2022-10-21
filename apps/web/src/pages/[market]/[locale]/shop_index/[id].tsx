@@ -1,6 +1,6 @@
 
 import type { IStaticContext } from '@websolute/core';
-import { asStaticProps } from '@websolute/core';
+import { asServerProps } from '@websolute/core';
 import { ShopSearchFeaturesDefaults } from '@websolute/mock';
 import type { IFeatureType, PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
@@ -49,7 +49,7 @@ export async function getStaticProps(context: IStaticContext) {
     });
   });
 
-  const props = asStaticProps({ ...context, layout, page, items, featureTypes });
+  const props = asServerProps({ ...context, layout, page, items, featureTypes });
   // console.log('ShopIndex getStaticProps', props);
   return {
     props,

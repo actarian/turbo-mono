@@ -21,6 +21,7 @@ export type ProductsRelatedItem = {
 export type ProductsRelatedCardProps = UIStyledComponentProps<Props>;
 
 const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...props }: ProductsRelatedCardProps) => {
+  const currency = useCurrency();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   const add = useCart((state) => state.add);
   // const find = useCart((state) => state.find);
@@ -31,15 +32,13 @@ const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...prop
     add(item, 1);
     onOpenDrawer('cart');
   }
-  const price = useCurrency(item.price);
-
   return (
     <Card {...props} hoverable>
       <Link href={item.href} passHref>
         <Media as="a" aspectRatio={1} borderRadius="0.4rem" marginBottom="1rem" overlay>
           <MediaImage {...item.media} />
           <Media.Info padding="1rem" justifyContent="flex-end" alignItems="flex-end">
-            <Text size="8">{price}</Text>
+            <Text size="8">{currency(item.price)}</Text>
           </Media.Info>
         </Media>
       </Link>

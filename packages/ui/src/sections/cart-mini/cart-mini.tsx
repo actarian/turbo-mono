@@ -14,10 +14,11 @@ const CartMini: React.FC<CartMiniProps> = ({ visible, onClose }: CartMiniProps) 
 
   const layout = useLayout();
 
+  const currency = useCurrency();
+
   const items = useCart((state) => state.items);
 
   const totalAmount = items.reduce((p, c) => p + c.price * c.qty, 0);
-  const totalPrice = useCurrency(totalAmount);
 
   /*
   const reduceUI = useUI(state => state.reduce);
@@ -48,7 +49,7 @@ const CartMini: React.FC<CartMiniProps> = ({ visible, onClose }: CartMiniProps) 
           </Flex.Col>
           <Flex.Row justifyContent="space-between" alignItems="center" padding="1rem 0 0.5rem 0">
             <Text fontWeight="700">Subtotal</Text>
-            <Text fontWeight="700">{totalPrice}</Text>
+            <Text fontWeight="700">{currency(totalAmount)}</Text>
           </Flex.Row>
           <Flex.Row justifyContent="space-between" alignItems="center" padding="0.5rem 0 1.5rem 0">
             <Text>Shipping and taxes calculated at checkout</Text>

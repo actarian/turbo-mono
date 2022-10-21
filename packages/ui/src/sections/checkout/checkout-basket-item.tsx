@@ -7,8 +7,9 @@ import { Input } from '../../forms';
 
 const CheckoutBasketItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem }) => {
 
-  const price = useCurrency(item.price);
-  const totalPrice = useCurrency(item.price * item.qty);
+  const currency = useCurrency();
+  const price = currency(item.price);
+  const totalPrice = currency(item.price * item.qty);
 
   const update = useCart(state => state.update);
   const remove = useCart(state => state.remove);

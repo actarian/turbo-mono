@@ -7,7 +7,7 @@ import { Input } from '../../forms';
 
 const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem }) => {
 
-  const price = useCurrency(item.price * item.qty);
+  const currency = useCurrency();
 
   const update = useCart(state => state.update);
   const remove = useCart(state => state.remove);
@@ -57,7 +57,7 @@ const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem
               <Button onClick={() => onSetQty(item.qty - 1)} ><Minus width="20px" height="20px" /></Button>
               <Input width="60px" padding="0.2rem" placeholder="qty" value={item.qty.toString()} onChange={(e) => onSetQty(Number(e.target.value))} />
               <Button size="xs" onClick={() => onSetQty(item.qty + 1)} ><Plus width="20px" height="20px" /></Button>
-              <Text width="80px" textAlign="right">{price}</Text>
+              <Text width="80px" textAlign="right">{currency(item.price * item.qty)}</Text>
               {mounted && <Button onClick={onRemove}><Trash width="20px" height="20px" /></Button>}
             </Flex.Row>
           </Card.Content>

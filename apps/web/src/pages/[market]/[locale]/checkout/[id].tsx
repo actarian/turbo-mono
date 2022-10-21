@@ -1,30 +1,26 @@
 
-import { asStaticProps, IContextParams } from '@websolute/core';
+import type { IStaticContext } from '@websolute/core';
+import { asServerProps } from '@websolute/core';
 import { useCart } from '@websolute/hooks';
-import type { IUser, PageProps } from '@websolute/models';
-import { getLayout, getPage } from '@websolute/models';
-import { StoreStrategy, storeStrategy } from '@websolute/store';
+import type { PageProps } from '@websolute/models';
 import {
-  Breadcrumb, Button, CheckoutProvider, CheckoutWizard, Container, Flex, Footer, Header, ICheckout, Layout, Meta,
-  NavLink, Page, Section, Text
-} from '@websolute/ui';
-import { promises as fs } from 'fs';
-import { withIronSessionSsr } from 'iron-session/next';
-import path from 'path';
-import { sessionOptions } from 'src/config/session';
+  getCountries, getLayout, getListByKeys, getPage, getProvinces, getRegions, getStaticPathsForSchema
+} from '@websolute/models';
+import { Breadcrumb, CheckoutEmpty, CheckoutProvider, CheckoutWizard, Container, Footer, Header, ICheckout, ICheckoutData, Layout, Meta, Page, Section } from '@websolute/ui';
 
-export default function Checkout({ layout, page, user, params }: CheckoutProps) {
+export default function Checkout({ layout, page, data, params }: CheckoutProps) {
 
+  const hydrated = useCart((state) => state.hydrated);
   const items = useCart((state) => state.items);
 
   const onCheckout = (checkout: ICheckout) => {
     console.log('Checkout.onCheckout', checkout);
   }
 
-  const storage = typeof window !== 'undefined' ? window.sessionStorage : undefined;
+  // const storage = typeof window !== 'undefined' ? window.localStorage : undefined;
 
   return (
-    <CheckoutProvider storage={storage}>
+    <CheckoutProvider data={data}>
       <Layout>
         <Meta />
         <Page>
@@ -36,22 +32,8 @@ export default function Checkout({ layout, page, user, params }: CheckoutProps) 
             </Container.Fluid>
           </Section>
 
-          {items.length ?
-
-            <CheckoutWizard onCheckout={onCheckout} /> :
-
-            <Section>
-              <Container minHeight="50vh">
-                <Flex.Col gap="1rem" alignItems="center" textAlign="center">
-                  <Text size="4" fontWeight="700">Your cart is empty.</Text>
-                  <Text size="8" marginBottom="1rem" maxWidth="80ch">All’interno di Hexagon Shop è possibile acquistare i campioni delle collezioni Tiles, 3D Elements e Paints, complementi d’arredo in materiali inediti, elementi decorativi esclusivi e oggettistica legata all’universo del brand.</Text>
-                  <NavLink href={layout.topLevelHrefs.shop_index || ''} passHref>
-                    <Button as="a" variant="primary">Continue shopping</Button>
-                  </NavLink>
-                </Flex.Col>
-              </Container>
-            </Section>
-          }
+          {items.length && <CheckoutWizard onCheckout={onCheckout} />}
+          {hydrated && items.length === 0 && <CheckoutEmpty />}
 
           <Footer />
         </Page>
@@ -61,8 +43,45 @@ export default function Checkout({ layout, page, user, params }: CheckoutProps) 
 }
 
 export interface CheckoutProps extends PageProps {
+  data: ICheckoutData;
+}
+
+export async function getStaticProps(context: IStaticContext) {
+  const id = parseInt(context.params.id);
+  const market = context.params.market;
+  const locale = context.params.locale;
+  const layout = await getLayout(market, locale);
+  const page = await getPage('checkout', id, market, locale);
+  const lists = await getListByKeys(['occupations'], locale);
+  const countries = await getCountries(locale);
+  const provinces = await getProvinces(locale);
+  const regions = await getRegions(locale);
+  const data = { ...lists, countries, regions, provinces };
+  const props = asServerProps({ ...context, layout, page, data });
+  // console.log('About getStaticProps', props);
+  return {
+    props,
+  };
+}
+
+export async function getStaticPaths() {
+  const paths = await getStaticPathsForSchema('checkout');
+  return {
+    paths,
+    fallback: true,
+  };
+}
+
+/*
+
+export interface CheckoutProps extends PageProps {
   user?: IUser;
 }
+
+import { promises as fs } from 'fs';
+import { withIronSessionSsr } from 'iron-session/next';
+import path from 'path';
+import { sessionOptions } from 'src/config/session';
 
 export const getServerSideProps = withIronSessionSsr(async function (context) {
   // !!! hack for vercel lambdas
@@ -85,9 +104,11 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
 
   const user = context.req.session.user;
 
-  const props = asStaticProps({ params, query, layout, page, user });
+  const props = asServerProps({ params, query, layout, page, user });
   // console.log('ProductSearchSSR getStaticProps', props);
   return {
     props,
   };
 }, sessionOptions);
+
+*/

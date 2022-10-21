@@ -1,6 +1,6 @@
 import type { IOption } from '@websolute/core';
 import { FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
-import { useApiGet, useLabel } from '@websolute/hooks';
+import { useApiPost, useCurrency, useLabel } from '@websolute/hooks';
 import { useEffect, useState } from 'react';
 import { Button, Container, Flex, Section, Text } from '../../components';
 import { FieldCard } from '../../fields';
@@ -29,16 +29,20 @@ export interface CheckoutDeliveryProps {
 const CheckoutDelivery: React.FC<CheckoutDeliveryProps> = ({ onPrevious, onDelivery }: CheckoutDeliveryProps) => {
   const label = useLabel();
 
+  const currency = useCurrency();
+
   const checkout = useCheckout((state) => state.checkout);
 
-  const { response: options } = useApiGet<IDeliveryOptions>('/checkout/deliveries');
+  const { response: options } = useApiPost<IDeliveryOptions>('/checkout/deliveries', checkout);
 
   const [error, setError] = useState<Error>();
 
   const required = RequiredValidator();
 
   const [form, setValue, setTouched, reset, group] = useFormBuilder<IDelivery, FormGroup>({
+
     delivery: { schema: 'card', label: 'field.delivery', options: options?.deliveries, validators: [required] },
+
   }, [options]);
 
   useEffect(() => {
@@ -94,6 +98,7 @@ const CheckoutDelivery: React.FC<CheckoutDeliveryProps> = ({ onPrevious, onDeliv
                       <RadioCard key={option.id} value={option.id.toString()}>
                         <RadioCard.Title>{option.name}</RadioCard.Title>
                         {option.abstract && <RadioCard.Abstract dangerouslySetInnerHTML={{ __html: option.abstract }}></RadioCard.Abstract>}
+                        {option.price > 0 && <RadioCard.Extra>{currency(option.price)}</RadioCard.Extra>}
                       </RadioCard>
                     ))}
                   </RadioCard.Group>

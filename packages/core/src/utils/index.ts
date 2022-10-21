@@ -8,7 +8,7 @@ export const isDevelopment = getIsDevelopment();
 
 export const isBrowser = typeof window !== 'undefined';
 
-export function asStaticProps(props: any): any {
+export function asServerProps(props: any): any {
   return JSON.parse(JSON.stringify(props));
 }
 

@@ -5,6 +5,7 @@ import { createStore, useStore } from 'zustand';
 import { persist, StateStorage } from 'zustand/middleware';
 
 interface CartProps {
+  hydrated: boolean;
   items: ICartItem[];
 }
 
@@ -22,9 +23,10 @@ type CartStore = ReturnType<typeof createCartStore>
 
 const createCartStore = ({ storage, ...initialProps }: { storage?: StateStorage } & Partial<CartProps>) => {
   const DEFAULT_PROPS: CartProps = {
+    hydrated: false,
     items: [],
   }
-  return createStore<CartState>()(
+  const useStore = createStore<CartState>()(
     persist(
       (set, get) => ({
         ...DEFAULT_PROPS,
@@ -77,9 +79,14 @@ const createCartStore = ({ storage, ...initialProps }: { storage?: StateStorage 
           // console.log('useCart.getStorage');
           return storage || localStorage;
         },
+        onRehydrateStorage: () => () => {
+          useStore.setState({ hydrated: true });
+          // console.log('onRehydrateStorage', useStore, useStore.getState());
+        }
       }
     )
   )
+  return useStore;
 }
 
 export const CartContext = createContext<CartStore | null>(null);

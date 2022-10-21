@@ -29,11 +29,13 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
   const email = EmailValidator();
 
   const [form, setValue, setTouched, reset, group] = useFormBuilder<IUserLogin, FormGroup>({
+
     email: { schema: 'text', label: 'field.email', validators: [required, email] },
     password: { schema: 'text', label: 'field.password', validators: required },
     rememberMe: { schema: 'checkbox', label: 'field.rememberMe' },
-    checkRequest: { schema: 'text', value: 'window.antiforgery', hidden: true }, // todo take antiforgery token from server
+
     checkField: { schema: 'text', hidden: true }, // check hidden field for antiforgery
+
   });
 
   const onTest = () => {

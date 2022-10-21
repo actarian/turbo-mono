@@ -1,6 +1,6 @@
 
 import type { IStaticContext } from '@websolute/core';
-import { asStaticProps } from '@websolute/core';
+import { asServerProps } from '@websolute/core';
 import { useDateTimeFormat } from '@websolute/hooks';
 import { ChevronLeft } from '@websolute/icons';
 import { MagazineDetailDefaults } from '@websolute/mock';
@@ -88,7 +88,7 @@ export async function getStaticProps(context: IStaticContext) {
     page.related.items = relatedItems;
   }
 
-  const props = asStaticProps({ ...context, layout, page });
+  const props = asServerProps({ ...context, layout, page });
   // console.log('MagazineDetail getStaticProps', props);
   return {
     props,

@@ -25,14 +25,16 @@ const AuthSignUp: React.FC<AuthSignUpProps> = ({ onSignedUp, onNavToLogin }: Aut
   });
 
   const [form, setValue, setTouched, reset, group] = useFormBuilder<IUserRegister, FormGroup>({
+
     firstName: { schema: 'text', label: 'field.firstName', validators: [required] },
     lastName: { schema: 'text', label: 'field.lastName', validators: [required] },
     email: { schema: 'text', label: 'field.email', validators: [required, email] },
     password: { schema: 'text', label: 'field.password', validators: required },
     confirmPassword: { schema: 'text', label: 'field.confirmPassword', validators: [required, match] },
     privacy: { schema: 'checkbox', label: 'field.privacy', validators: [requiredTrue] },
-    checkRequest: { schema: 'text', value: 'window.antiforgery', hidden: true }, // todo take antiforgery token from server
+
     checkField: { schema: 'text', hidden: true }, // check hidden field for antiforgery
+
   });
 
   const onTest = () => {

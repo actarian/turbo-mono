@@ -1,3 +1,4 @@
+import { IOption } from '@websolute/core';
 import { ICartItem } from '@websolute/models';
 import { createContext, useContext, useRef } from 'react';
 import { createStore, useStore } from 'zustand';
@@ -6,6 +7,13 @@ import { IDelivery } from '../../sections/checkout/checkout-delivery';
 import { IPayment } from '../../sections/checkout/checkout-payment';
 import { IReview } from '../../sections/checkout/checkout-review';
 import { IUserInfo } from '../../sections/checkout/checkout-user-info';
+
+export type ICheckoutData = {
+  countries: IOption[];
+  occupations: IOption[];
+  provinces: IOption[];
+  regions: IOption[];
+}
 
 export type ICheckout = {
   items?: ICartItem[];
@@ -16,7 +24,14 @@ export type ICheckout = {
 }
 
 interface CheckoutProps {
+  hydrated: boolean;
+  data: ICheckoutData;
   checkout: ICheckout;
+}
+
+interface CheckoutInitialProps {
+  data: ICheckoutData;
+  checkout?: ICheckout;
 }
 
 interface CheckoutState extends CheckoutProps {
@@ -25,20 +40,19 @@ interface CheckoutState extends CheckoutProps {
 
 type CheckoutStore = ReturnType<typeof createCheckoutStore>
 
-const createCheckoutStore = ({ storage, ...initialProps }: { storage?: StateStorage } & Partial<CheckoutProps>) => {
-  const DEFAULT_PROPS: CheckoutProps = {
+const createCheckoutStore = ({ storage, ...initialProps }: { storage?: StateStorage } & CheckoutInitialProps) => {
+  const DEFAULT_PROPS = {
+    hydrated: false,
     checkout: {},
   }
-  return createStore<CheckoutState>()(
+  const useStore = createStore<CheckoutState>()(
     persist(
       (set, get) => ({
         ...DEFAULT_PROPS,
         ...initialProps,
-
         setCheckout: (checkout: ICheckout) => set(state => {
           return { checkout };
         }),
-
       }),
       {
         name: 'checkout',
@@ -46,14 +60,19 @@ const createCheckoutStore = ({ storage, ...initialProps }: { storage?: StateStor
           // console.log('useCheckout.getStorage');
           return storage || localStorage;
         },
+        onRehydrateStorage: () => () => {
+          useStore.setState({ hydrated: true });
+          // console.log('onRehydrateStorage', useStore, useStore.getState());
+        }
       }
     )
   )
+  return useStore;
 }
 
 export const CheckoutContext = createContext<CheckoutStore | null>(null);
 
-type CheckoutProviderProps = React.PropsWithChildren<{ checkout?: ICheckout, storage?: StateStorage }>;
+type CheckoutProviderProps = React.PropsWithChildren<{ data: ICheckoutData, checkout?: ICheckout, storage?: StateStorage }>;
 
 function CheckoutProvider({ children, ...props }: CheckoutProviderProps) {
   const storeRef = useRef<CheckoutStore>()

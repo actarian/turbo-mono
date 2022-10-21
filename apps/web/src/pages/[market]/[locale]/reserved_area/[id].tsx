@@ -1,5 +1,5 @@
 
-import { asStaticProps, httpGet, IContextParams } from '@websolute/core';
+import { asServerProps, httpGet, IContextParams } from '@websolute/core';
 import type { PageProps } from '@websolute/models';
 import { getLayout, getPage } from '@websolute/models';
 import { StoreStrategy, storeStrategy } from '@websolute/store';
@@ -111,7 +111,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
   // Page
   const page = await getPage('reserved_area', id, market, locale);
 
-  const props = asStaticProps({ params, query, layout, page, user });
+  const props = asServerProps({ params, query, layout, page, user });
   // console.log('ProductSearchSSR getStaticProps', props);
   return {
     props,
@@ -136,7 +136,7 @@ export async function getServerSideProps(context: IServerSideContext): Promise<G
     name: 'Pippo'
   };
 
-  const props = asStaticProps({ params, query, layout, page, user });
+  const props = asServerProps({ params, query, layout, page, user });
   // console.log('ProductSearchSSR getStaticProps', props);
   return {
     props,
@@ -154,7 +154,7 @@ export async function getStaticProps(context: IStaticContext) {
   const user = {
     name: 'Pippo'
   };
-  const props = asStaticProps({ ...context, layout, page, user });
+  const props = asServerProps({ ...context, layout, page, user });
   // console.log('About getStaticProps', props);
   return {
     props,

@@ -9,6 +9,7 @@ export { default as CategoriesProposition } from './categories-proposition/categ
 export { default as CategoriesPropositionCard } from './categories-proposition/categories-proposition-card';
 export { default as CategoryHero } from './category-hero/category-hero';
 export { default as CategoryProposition } from './category-proposition/category-proposition';
+export { default as CheckoutEmpty } from './checkout/checkout-empty';
 export { default as CheckoutWizard } from './checkout/checkout-wizard';
 export { default as Colors } from './colors/colors';
 export { default as ContactCard } from './contact-card/contact-card';

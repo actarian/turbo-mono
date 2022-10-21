@@ -1,6 +1,6 @@
 
 import type { IStaticContext } from '@websolute/core';
-import { asStaticProps } from '@websolute/core';
+import { asServerProps } from '@websolute/core';
 import type { IUser, PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
 import { Auth, Container, Footer, Header, Layout, Meta, Page, Section } from '@websolute/ui';
@@ -39,7 +39,7 @@ export async function getStaticProps(context: IStaticContext) {
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);
   const page = await getPage('login', id, market, locale);
-  const props = asStaticProps({ ...context, layout, page });
+  const props = asServerProps({ ...context, layout, page });
   return {
     props,
   };

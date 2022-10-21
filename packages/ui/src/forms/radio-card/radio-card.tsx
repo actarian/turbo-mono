@@ -1,12 +1,12 @@
 
 import { getClassNames } from '@websolute/core';
-import { ComponentPropsWithRef, forwardRef, ReactNode, SVGProps } from 'react';
+import React, { ComponentPropsWithRef, forwardRef, ReactNode, SVGProps } from 'react';
 import styled from 'styled-components';
 import { Flex, Media, Text } from '../../components';
 import { CssDefault } from '../../components/button/button.css';
 import { FontSize } from '../../components/text/text';
 import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
-import { getCssResponsive } from '../../components/utils';
+import { getChildsByType, getCssResponsive } from '../../components/utils';
 import { RadioIcon } from '../radio/radio-icon';
 import RadioCardGroup from './radio-card-group';
 
@@ -167,7 +167,20 @@ const RadioCardAbstract: TextComponent = forwardRef(({
   );
 });
 
-RadioCardAbstract.displayName = 'RadioCardTitle';
+RadioCardAbstract.displayName = 'RadioCardAbstract';
+
+const RadioCardExtra: TextComponent = forwardRef(({
+  as = 'div',
+  className,
+  ...props
+}, ref) => {
+  const classNames = getClassNames('extra', className);
+  return (
+    <Text className={classNames} ref={ref} {...props} />
+  );
+});
+
+RadioCardExtra.displayName = 'RadioCardExtra';
 
 const RadioCardMedia = styled(Media)`
 
@@ -179,19 +192,32 @@ const RadioCard: RadioCardComponent = forwardRef(({
   className,
   ...props
 }, ref) => {
+
+  const [mediaChildren, withoutMediaChildren] = getChildsByType(children, RadioCardMedia);
+  const hasMedia = mediaChildren && React.Children.count(mediaChildren) > 0;
+
+  const [extraChildren, otherChildren] = getChildsByType(withoutMediaChildren, RadioCardExtra);
+  const hasExtra = extraChildren && React.Children.count(extraChildren) > 0;
+
   const classNames = getClassNames('radio-option', className);
+
   return (
     <StyledRadioCard className={classNames}>
       <StyledRadioCardInput ref={ref} as={as} type='radio' {...props} />
       <StyledRadioCardButton as="button">
-        <Flex.Row gap="1rem" alignItems="flex-start">
-          <Flex>
+        <Flex.Row gap="1rem" alignItems="flex-start" width="100%">
+          <Flex.Col className="radio-option__icon" flexBasis="24px">
             <StyledRadioIcon as={RadioIcon} className="radio-icon" aria-hidden='true' />
-          </Flex>
-          <Flex.Col>
-            {children}
           </Flex.Col>
-          <Flex></Flex>
+          <Flex.Col className="radio-option__description" flexGrow="1">
+            {otherChildren}
+          </Flex.Col>
+          {(hasExtra || hasMedia) &&
+            <Flex className="radio-option__extra" flexBasis="50px">
+              {mediaChildren}
+              {extraChildren}
+            </Flex>
+          }
         </Flex.Row>
       </StyledRadioCardButton>
       <RadioCardDisabled className="line" />
@@ -204,6 +230,7 @@ RadioCard.displayName = 'RadioCard';
 (RadioCard as IRadioCard).Group = RadioCardGroup;
 (RadioCard as IRadioCard).Title = RadioCardTitle;
 (RadioCard as IRadioCard).Abstract = RadioCardAbstract;
+(RadioCard as IRadioCard).Extra = RadioCardExtra;
 (RadioCard as IRadioCard).Media = RadioCardMedia;
 
 export default RadioCard as IRadioCard;
@@ -212,5 +239,6 @@ type IRadioCard = typeof RadioCard & {
   Group: typeof RadioCardGroup;
   Title: typeof RadioCardTitle;
   Abstract: typeof RadioCardAbstract;
+  Extra: typeof RadioCardExtra;
   Media: typeof RadioCardMedia;
 };

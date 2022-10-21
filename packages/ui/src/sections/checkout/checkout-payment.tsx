@@ -38,7 +38,9 @@ const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, onPayment
   const required = RequiredValidator();
 
   const [form, setValue, setTouched, reset, group] = useFormBuilder<IPayment, FormGroup>({
+
     payment: { schema: 'select', label: 'field.payment', options: options?.payments, validators: [required] },
+
   }, [options]);
 
   useEffect(() => {

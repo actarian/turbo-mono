@@ -14,13 +14,15 @@ const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBas
 
   const layout = useLayout();
 
+  const currency = useCurrency();
+
   const items = useCart((state) => state.items);
 
   const total = items.reduce((p, c) => {
     return p + c.price * c.qty;
   }, 0);
 
-  const totalPrice = useCurrency(total);
+  const totalPrice = currency(total);
 
   const onBasket_ = () => {
     if (typeof onBasket === 'function') {
@@ -57,7 +59,7 @@ const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBas
                 <Truck width="2rem" height="2rem" color="var(--color-primary-500)" />
                 <Box marginLeft="0.5rem">
                   <Text size="9" fontWeight="700">The shipping is on us</Text>
-                  <Text size="10">Free, contactless delivery</Text>
+                  <Text size="10">Free, contactless delivery for payments over the minimum fare.</Text>
                 </Box>
               </Flex.Row>
             </Box>

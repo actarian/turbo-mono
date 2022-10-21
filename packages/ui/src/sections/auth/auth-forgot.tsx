@@ -21,9 +21,11 @@ const AuthForgot: React.FC<AuthForgotProps> = ({ onPasswordSent, onNavToLogin, o
   const email = EmailValidator();
 
   const [form, setValue, setTouched, reset, group] = useFormBuilder<IUserForgot, FormGroup>({
+
     email: { schema: 'text', label: 'field.email', validators: [required, email] },
-    checkRequest: { schema: 'text', value: 'window.antiforgery', hidden: true }, // todo take antiforgery token from server
+
     checkField: { schema: 'text', hidden: true }, // check hidden field for antiforgery
+
   });
 
   const onTest = () => {
