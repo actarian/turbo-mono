@@ -24,27 +24,27 @@ export async function apiFetch(pathname: string, options: FetchRequestOptions = 
     url.searchParams.append('market', serviceOptions.market);
   }
   const apiOptions = merge({ ...defaultApiOptions }, options);
-  // console.log('apiFetch', url.href, options);
+  // console.log('apiFetch', url.href, apiOptions);
   const apiResponse = await httpFetch(url.href, apiOptions);
   return apiResponse;
 }
 
-export async function apiGet(url: string, options: FetchRequestOptions = {}): Promise<any> {
-  return await apiFetch(url, { ...options, method: 'GET' });
+export async function apiGet(url: string, options: FetchRequestOptions = {}, serviceOptions?: { locale: string, market: string }): Promise<any> {
+  return await apiFetch(url, { ...options, method: 'GET' }, serviceOptions);
 }
 
-export async function apiPost(url: string, payload: any, options: FetchRequestOptions = {}): Promise<any> {
-  return await apiFetch(url, { ...options, method: 'POST', body: JSON.stringify(payload) });
+export async function apiPost(url: string, payload: any, options: FetchRequestOptions = {}, serviceOptions?: { locale: string, market: string }): Promise<any> {
+  return await apiFetch(url, { ...options, method: 'POST', body: JSON.stringify(payload) }, serviceOptions);
 }
 
-export async function apiPut(url: string, payload: any, options: FetchRequestOptions = {}): Promise<any> {
-  return await apiFetch(url, { ...options, method: 'PUT', body: JSON.stringify(payload) });
+export async function apiPut(url: string, payload: any, options: FetchRequestOptions = {}, serviceOptions?: { locale: string, market: string }): Promise<any> {
+  return await apiFetch(url, { ...options, method: 'PUT', body: JSON.stringify(payload) }, serviceOptions);
 }
 
-export async function apiPatch(url: string, payload: any, options: FetchRequestOptions = {}): Promise<any> {
-  return await apiFetch(url, { ...options, method: 'PATCH', body: JSON.stringify(payload) });
+export async function apiPatch(url: string, payload: any, options: FetchRequestOptions = {}, serviceOptions?: { locale: string, market: string }): Promise<any> {
+  return await apiFetch(url, { ...options, method: 'PATCH', body: JSON.stringify(payload) }, serviceOptions);
 }
 
-export async function apiDelete(url: string, options: FetchRequestOptions = {}): Promise<any> {
-  return await apiFetch(url, { ...options, method: 'DELETE' });
+export async function apiDelete(url: string, options: FetchRequestOptions = {}, serviceOptions?: { locale: string, market: string }): Promise<any> {
+  return await apiFetch(url, { ...options, method: 'DELETE' }, serviceOptions);
 }

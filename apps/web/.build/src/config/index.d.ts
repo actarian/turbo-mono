@@ -14,6 +14,7 @@ export declare const PAGES: {
     login: string;
     reserved_area: string;
     checkout: string;
+    checkout_result: string;
     notfound: string;
 };
 //# sourceMappingURL=index.d.ts.map

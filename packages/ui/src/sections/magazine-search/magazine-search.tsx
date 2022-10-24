@@ -1,6 +1,6 @@
 import { getClassNames, IEquatable } from '@websolute/core';
 import type { IFilterOption } from '@websolute/hooks';
-import { Filter, filtersToParams, useDrawer, useFilters, useInfiniteLoader, useSearchParams } from '@websolute/hooks';
+import { Filter, filtersToParams, useDrawer, useFilters, useInfiniteLoader, useSearchParamsEncoded } from '@websolute/hooks';
 import { Filter as FilterIcon } from '@websolute/icons';
 import type { IFeatureType } from '@websolute/models';
 import { useCallback } from 'react';
@@ -46,7 +46,7 @@ export type MagazineSearchProps = UIStyledComponentProps<Props>;
 const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTypes, categoryId, ...props }: MagazineSearchProps) => {
 
   // deserialize queryString encoded params
-  const { params, replaceParamsSilently } = useSearchParams();
+  const { params, replaceParamsSilently } = useSearchParamsEncoded();
 
   // using item filter callback from service
   const filterItem = useCallback(filterMagazineItem, []);

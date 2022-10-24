@@ -87,7 +87,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     const getUser = async () => {
       try {
         const user = await httpGet('/api/auth/me');
-        console.log('Header.getUser /api/auth/me', user);
+        // console.log('Header.getUser /api/auth/me', user);
         setUser(user);
       } catch (error) {
         console.log('Header.getUser.error', error);

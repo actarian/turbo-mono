@@ -250,5 +250,15 @@
     "categoryId": "homepage",
     "pageSchema": "checkout",
     "pageId": 1
+  },
+  {
+    "id": "checkout_result",
+    "title": {
+      "en": "Order completed",
+      "it": "Ordine completato"
+    },
+    "categoryId": "homepage",
+    "pageSchema": "checkout_result",
+    "pageId": 1
   }
 ]

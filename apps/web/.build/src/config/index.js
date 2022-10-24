@@ -20,5 +20,6 @@ exports.PAGES = {
     login: 'login',
     reserved_area: 'reserved_area',
     checkout: 'checkout',
+    checkout_result: 'checkout_result',
     notfound: 'notfound',
 };

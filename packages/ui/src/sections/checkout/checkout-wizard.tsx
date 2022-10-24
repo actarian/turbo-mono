@@ -1,6 +1,7 @@
-import { getClassNames } from '@websolute/core';
-import { scrollToY } from '@websolute/hooks';
+import { apiPost, getClassNames } from '@websolute/core';
+import { scrollToY, useLayout } from '@websolute/hooks';
 import { ICartItem } from '@websolute/models';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Container, Flex, Section } from '../../components';
@@ -8,7 +9,6 @@ import type { UIStyledComponentProps } from '../../components/types';
 import type { ICheckout } from '../../hooks';
 import { useCheckout } from '../../hooks';
 import CheckoutBasket from './checkout-basket';
-import CheckoutComplete from './checkout-complete';
 import type { IDelivery } from './checkout-delivery';
 import CheckoutDelivery from './checkout-delivery';
 import CheckoutInfo from './checkout-info';
@@ -16,6 +16,7 @@ import type { IPayment } from './checkout-payment';
 import CheckoutPayment from './checkout-payment';
 import type { IReview } from './checkout-review';
 import CheckoutReview from './checkout-review';
+import CheckoutSuccess from './checkout-success';
 import type { IUserInfo } from './checkout-user-info';
 
 export enum CheckoutStatus {
@@ -56,6 +57,9 @@ type Props = {
 export type CheckoutWizardProps = UIStyledComponentProps<Props>;
 
 const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...props }: CheckoutWizardProps) => {
+
+  const layout = useLayout();
+  const router = useRouter();
 
   /*
   const status = useCheckout((state) => state.status);
@@ -99,10 +103,23 @@ const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...props }:
   }
 
   // 5.
-  const onPayment = (payment: IPayment) => {
+  const onPayment = async (payment: IPayment) => {
     console.log('CheckoutWizard.onPayment', payment);
+
+    try {
+      const response = await apiPost('/checkout/payment', { ...checkout, payment }, undefined, layout);
+      // console.log('onPayment.response', response);
+      window.location.href = response.redirectUrl;
+
+    } catch (error) {
+      console.error('onPayment.error', error);
+    }
+
+    /*
     onCheckout_({ ...checkout, payment });
     setStatus(CheckoutStatus.Complete);
+    */
+
   }
 
   const onCheckout_ = (checkout: ICheckout) => {
@@ -131,7 +148,7 @@ const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...props }:
             <Flex className={getClassNames({ active: status === CheckoutStatus.Delivery })}>Delivery</Flex>
             <Flex className={getClassNames({ active: status === CheckoutStatus.Review })}>Review</Flex>
             <Flex className={getClassNames({ active: status === CheckoutStatus.Payment })}>Payment</Flex>
-            <Flex className={getClassNames({ active: status === CheckoutStatus.Complete })}>Complete</Flex>
+            {false && <Flex className={getClassNames({ active: status === CheckoutStatus.Complete })}>Complete</Flex>}
           </StyledWizard>
         </Container>
       </Section>
@@ -140,7 +157,7 @@ const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...props }:
       {status === CheckoutStatus.Delivery && <CheckoutDelivery onDelivery={onDelivery} onPrevious={onPrevious} />}
       {status === CheckoutStatus.Review && <CheckoutReview onReview={onReview} onPrevious={onPrevious} />}
       {status === CheckoutStatus.Payment && <CheckoutPayment onPayment={onPayment} onPrevious={onPrevious} />}
-      {status === CheckoutStatus.Complete && <CheckoutComplete />}
+      {false && status === CheckoutStatus.Complete && <CheckoutSuccess />}
     </>
   )
 }

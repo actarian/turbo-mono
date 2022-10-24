@@ -285,6 +285,17 @@
         "pageSchema": "checkout",
         "pageId": 1,
         "schema": "category"
+      },
+      {
+        "id": "checkout_result",
+        "title": {
+          "en": "Order completed",
+          "it": "Ordine completato"
+        },
+        "categoryId": "homepage",
+        "pageSchema": "checkout_result",
+        "pageId": 1,
+        "schema": "category"
       }
     ]
   },
@@ -313,6 +324,34 @@
           "robots": "all"
         },
         "schema": "checkout"
+      }
+    ]
+  },
+  "checkout_result": {
+    "singularName": "checkout_result",
+    "pluralName": "checkout_results",
+    "displayName": "Checkout_result",
+    "items": [
+      {
+        "categoryId": "checkout_result",
+        "title": {
+          "en": "Order completed",
+          "it": "Ordine completato"
+        },
+        "slug": {
+          "en": "order-completed",
+          "it": "ordine-completato"
+        },
+        "id": 1,
+        "meta": {
+          "title": {
+            "en": "Order completed",
+            "it": "Ordine completato"
+          },
+          "keywords": "keywords",
+          "robots": "all"
+        },
+        "schema": "checkout_result"
       }
     ]
   },
@@ -22582,6 +22621,27 @@
           "robots": "all"
         },
         "schema": "checkout"
+      },
+      {
+        "categoryId": "checkout_result",
+        "title": {
+          "en": "Order completed",
+          "it": "Ordine completato"
+        },
+        "slug": {
+          "en": "order-completed",
+          "it": "ordine-completato"
+        },
+        "id": 1,
+        "meta": {
+          "title": {
+            "en": "Order completed",
+            "it": "Ordine completato"
+          },
+          "keywords": "keywords",
+          "robots": "all"
+        },
+        "schema": "checkout_result"
       }
     ]
   },
@@ -36612,6 +36672,38 @@
         "marketId": "eu",
         "localeId": "en",
         "pageSchema": "checkout",
+        "pageId": 1
+      },
+      {
+        "id": "/ww/en/order-completed",
+        "schema": "route",
+        "marketId": "ww",
+        "localeId": "en",
+        "pageSchema": "checkout_result",
+        "pageId": 1
+      },
+      {
+        "id": "/ww/it/ordine-completato",
+        "schema": "route",
+        "marketId": "ww",
+        "localeId": "it",
+        "pageSchema": "checkout_result",
+        "pageId": 1
+      },
+      {
+        "id": "/eu/it/ordine-completato",
+        "schema": "route",
+        "marketId": "eu",
+        "localeId": "it",
+        "pageSchema": "checkout_result",
+        "pageId": 1
+      },
+      {
+        "id": "/eu/en/order-completed",
+        "schema": "route",
+        "marketId": "eu",
+        "localeId": "en",
+        "pageSchema": "checkout_result",
         "pageId": 1
       }
     ]

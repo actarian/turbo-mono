@@ -1,6 +1,6 @@
 import type { IEquatable } from '@websolute/core';
 import { getClassNames } from '@websolute/core';
-import { Filter, filtersToParams, IFilterOption, scrollToSelector, useDrawer, useFilters, useLabel, usePagination, useSearchParams, useSorting } from '@websolute/hooks';
+import { Filter, filtersToParams, IFilterOption, scrollToSelector, useDrawer, useFilters, useLabel, usePagination, useSearchParamsEncoded, useSorting } from '@websolute/hooks';
 import { ChevronDown, ChevronLeft, ChevronRight, Filter as FilterIcon, Grid as GridIcon, Square } from '@websolute/icons';
 import type { IFeatureType } from '@websolute/models';
 import { useCallback, useState } from 'react';
@@ -63,7 +63,7 @@ export type ShopSearchProps = UIStyledComponentProps<Props>;
 const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, categoryId, ...props }: ShopSearchProps) => {
 
   // deserialize queryString encoded params
-  const { params, replaceParamsSilently } = useSearchParams();
+  const { params, replaceParamsSilently } = useSearchParamsEncoded();
 
   // using item filter callback from service
   const filterItem = useCallback(filterShopItem, []);

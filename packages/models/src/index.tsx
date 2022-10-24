@@ -1,6 +1,7 @@
 export type { ICartAddItem, ICartItem } from './cart/cart';
 export type { ICategorized, ICategory, ICategoryItem } from './category/category';
 export { getCategories, getCategoryTree, resolveCategoryTree } from './category/category.service';
+export { getDeliveries, getInfo, getPayment, getPayments, getStores } from './checkout/checkout.service';
 export { getCountries } from './country/country.service';
 export type { IFeatureType } from './feature_type/feature_type';
 export { getFeatureTypes } from './feature_type/feature_type.service';

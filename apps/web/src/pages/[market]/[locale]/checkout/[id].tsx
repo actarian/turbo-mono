@@ -62,7 +62,6 @@ export async function getStaticProps(context: IStaticContext) {
   const regions = await getRegions(locale);
   const data = { ...lists, countries, regions, provinces };
   const props = asServerProps({ ...context, layout, page, data });
-  // console.log('About getStaticProps', props);
   return {
     props,
   };

@@ -1,6 +1,6 @@
 // import GoogleMap from '../../components/google-map/google-map';
 import type { IEquatable } from '@websolute/core';
-import { Filter, filtersToParams, useDebounceCallback, useFilters, useInfiniteLoader, useSearchParams } from '@websolute/hooks';
+import { Filter, filtersToParams, useDebounceCallback, useFilters, useInfiniteLoader, useSearchParamsEncoded } from '@websolute/hooks';
 import { MapPin } from '@websolute/icons';
 import type { IFeatureType } from '@websolute/models';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
@@ -61,7 +61,7 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   // useDebugChangedProps({ locale, country, item, items, featureTypes });
 
   // deserialize queryString encoded params
-  const { params, replaceParamsSilently } = useSearchParams();
+  const { params, replaceParamsSilently } = useSearchParamsEncoded();
 
   // using item filter callback from service
   const filterItem = filterStoreLocatorItem;

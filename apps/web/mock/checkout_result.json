@@ -1,0 +1,9 @@
+[
+  {
+    "categoryId": "checkout_result",
+    "title": {
+      "en": "Order completed",
+      "it": "Ordine completato"
+    }
+  }
+]
