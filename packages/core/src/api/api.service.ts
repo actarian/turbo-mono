@@ -24,8 +24,8 @@ export async function apiFetch(pathname: string, options: FetchRequestOptions = 
     url.searchParams.append('market', serviceOptions.market);
   }
   const apiOptions = merge({ ...defaultApiOptions }, options);
-  // console.log('apiFetch', url, options);
-  const apiResponse = await httpFetch(url.toString(), apiOptions);
+  // console.log('apiFetch', url.href, options);
+  const apiResponse = await httpFetch(url.href, apiOptions);
   return apiResponse;
 }
 

@@ -176,14 +176,15 @@ const RadioCardExtra: TextComponent = forwardRef(({
 }, ref) => {
   const classNames = getClassNames('extra', className);
   return (
-    <Text className={classNames} ref={ref} {...props} />
+    <Text size="10" whiteSpace="nowrap" className={classNames} ref={ref} {...props} />
   );
 });
 
 RadioCardExtra.displayName = 'RadioCardExtra';
 
 const RadioCardMedia = styled(Media)`
-
+  width: 80px;
+  height: 40px;
 `;
 
 const RadioCard: RadioCardComponent = forwardRef(({

@@ -22,10 +22,9 @@ export default function Meta() {
       <link rel="apple-touch-icon" sizes="180x180" href="/assets/head/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/assets/head/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/assets/head/favicon-16x16.png" />
-      <link rel="icon" type="image/x-icon" href="/assets/head/favicon.ico" />
+      <link rel="shortcut icon" type="image/x-icon" href="/assets/head/favicon.ico" />
       <link rel="manifest" href="/assets/head/site.webmanifest" />
       <link rel="mask-icon" href="/assets/head/safari-pinned-tab.svg" color="#000000" />
-      <link rel="shortcut icon" href="/assets/head/favicon.ico" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/assets/head/browserconfig.xml" />
       <meta name="theme-color" content="#000" />

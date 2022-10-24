@@ -32,6 +32,7 @@ export { LayoutProvider, useLayout } from './useLayout/useLayout';
 export type { ILayoutContext } from './useLayout/useLayout';
 export { useModal } from './useModal/useModal';
 export { useMounted } from './useMounted/useMounted';
+export { useNumber } from './useNumber/useNumber';
 export { PageProvider, usePage } from './usePage/usePage';
 export type { IPageContext } from './usePage/usePage';
 export { getPagedItems, getPaginationInfo } from './usePagination/pagination.service';
@@ -49,6 +50,7 @@ export { useSSR } from './useSSR/useSSR';
 export { useSyncedRef } from './useSyncedRef/useSyncedRef';
 export { useUI } from './useUI/useUI';
 export type { IUIStateValue } from './useUI/useUI';
+export { useUnit } from './useUnit/useUnit';
 export { useUnmountEffect } from './useUnmountEffect/useUnmountEffect';
 export { useWindowSize } from './useWindowSize/useWindowSize';
 

@@ -81,7 +81,7 @@ const createCartStore = ({ storage, ...initialProps }: { storage?: StateStorage 
         },
         onRehydrateStorage: () => () => {
           useStore.setState({ hydrated: true });
-          // console.log('onRehydrateStorage', useStore, useStore.getState());
+          console.log('onRehydrateStorage', useStore, useStore.getState());
         }
       }
     )

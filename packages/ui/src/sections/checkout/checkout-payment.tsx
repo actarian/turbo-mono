@@ -98,7 +98,7 @@ const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, onPayment
                     <RadioCard key={option.id} value={option.id.toString()}>
                       <RadioCard.Title>{option.name}</RadioCard.Title>
                       {option.abstract && <RadioCard.Abstract dangerouslySetInnerHTML={{ __html: option.abstract }}></RadioCard.Abstract>}
-                      {option.media && <RadioCard.Media media={option.media} />}
+                      {option.media && <RadioCard.Media item={option.media} />}
                     </RadioCard>
                   ))}
                 </RadioCard.Group>

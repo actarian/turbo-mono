@@ -1,7 +1,7 @@
 
 import type { IStaticContext } from '@websolute/core';
 import { asServerProps } from '@websolute/core';
-import { useCart } from '@websolute/hooks';
+import { useCart, useMounted } from '@websolute/hooks';
 import type { PageProps } from '@websolute/models';
 import {
   getCountries, getLayout, getListByKeys, getPage, getProvinces, getRegions, getStaticPathsForSchema
@@ -10,7 +10,8 @@ import { Breadcrumb, CheckoutEmpty, CheckoutProvider, CheckoutWizard, Container,
 
 export default function Checkout({ layout, page, data, params }: CheckoutProps) {
 
-  const hydrated = useCart((state) => state.hydrated);
+  const mounted = useMounted();
+
   const items = useCart((state) => state.items);
 
   const onCheckout = (checkout: ICheckout) => {
@@ -32,8 +33,11 @@ export default function Checkout({ layout, page, data, params }: CheckoutProps) 
             </Container.Fluid>
           </Section>
 
-          {items.length && <CheckoutWizard onCheckout={onCheckout} />}
-          {hydrated && items.length === 0 && <CheckoutEmpty />}
+          {mounted && (
+            items.length > 0 ?
+              <CheckoutWizard onCheckout={onCheckout} /> :
+              <CheckoutEmpty />
+          )}
 
           <Footer />
         </Page>

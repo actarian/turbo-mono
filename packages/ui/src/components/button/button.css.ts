@@ -96,6 +96,7 @@ export const CssAfter = css`
   transform: scale(0, 1);
   transform-origin: left;
   transition: transform 500ms cubic-bezier(0,.97,.43,1);
+  will-change: transform;
 }
 
 &:hover,
@@ -119,6 +120,7 @@ export const CssAfterInverted = css`
   transform: scale(1, 1);
   transform-origin: left;
   transition: transform 500ms cubic-bezier(0,.97,.43,1);
+  will-change: transform;
 }
 
 &:hover,

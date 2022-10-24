@@ -1,6 +1,6 @@
 import { IOption } from '@websolute/core';
 import { FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
-import { useApiPost, useCurrency, useLabel } from '@websolute/hooks';
+import { useApiPost, useCurrency, useLabel, useUnit } from '@websolute/hooks';
 import { useEffect, useState } from 'react';
 import { Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { FieldCard } from '../../fields';
@@ -42,6 +42,8 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
   const label = useLabel();
 
   const currency = useCurrency();
+
+  const distance = useUnit('kilometer');
 
   const checkout = useCheckout((state) => state.checkout);
 
@@ -136,7 +138,8 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
                       {store.options?.map(option => (
                         <RadioCard key={option.id} value={option.id.toString()}>
                           <RadioCard.Title>{option.name}</RadioCard.Title>
-                          <RadioCard.Abstract>{option.distance}</RadioCard.Abstract>
+                          {option.category && <RadioCard.Abstract>{option.category.name}</RadioCard.Abstract>}
+                          <RadioCard.Extra>{distance(option.distance)}</RadioCard.Extra>
                         </RadioCard>
                       ))}
                     </RadioCard.Group>
@@ -177,6 +180,8 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
             </Flex>
             <Flex flexBasisMd="375px" alignItemsMd="flex-start">
               <Flex.Col gap="1rem" padding="1rem" borderRadius="0.5em" border="1px solid var(--color-neutral-300)"
+                fontSize="0.9em"
+                lineHeight="1"
                 positionMd="sticky"
                 topMd="200px"
               >

@@ -5,9 +5,15 @@ export const CssTypography = css`
 html,
 body {
   font-family: var(--font-primary-family);
+  line-height: 1.5;
   ${props => eachMedia(props, (key: string) => (
   `font-size: var(--base-font-size-${key});`
 ))}
+}
+
+body {
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-700);
 }
 
 /*

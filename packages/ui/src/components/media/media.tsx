@@ -46,15 +46,18 @@ const StyledMedia = styled.div<MediaProps>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--color-neutral-200);
   // color: var(--color-neutral-100);
 
   ${props => getCssResponsive(props)}
 
   &>:not(.media-info) {
-    object-fit: cover;
     width: 100%;
     height: 100%;
+  }
+
+  &>:not(.media-info):not(.image-svg) {
+    object-fit: cover;
+    background: var(--color-neutral-200);
   }
 
   &>svg {

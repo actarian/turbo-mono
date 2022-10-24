@@ -1,5 +1,5 @@
 import { getClassNames, httpGet, IEquatable } from '@websolute/core';
-import { useCart, useDrawer, useLayout, useModal, useScroll } from '@websolute/hooks';
+import { useCart, useDrawer, useLayout, useModal, useMounted, useScroll } from '@websolute/hooks';
 import { ArrowRight, Hexagon, MapPin, Menu, Phone, ShoppingCart, User } from '@websolute/icons';
 import { IRouteLink } from '@websolute/models';
 import { useEffect, useState } from 'react';
@@ -66,10 +66,9 @@ const StyledAccordion = styled(Accordion)`
 
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const layout = useLayout();
+  const mounted = useMounted();
   const scroll = useScroll();
-
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
-
   const [modal, onOpenModal, onCloseModal] = useModal();
 
   const user = useUser((state) => state.user);
@@ -99,7 +98,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   }, []);
 
   const count = useCart((state) => state.count);
-  const cartItemsCount = count();
+  const cartItemsCount = mounted ? count() : 0;
 
   /*
   const setItems = useCart((state) => state.setItems);

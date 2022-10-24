@@ -1,4 +1,12 @@
+import { useNumber } from '../useNumber/useNumber';
+
+export function useCurrency(currency: string = 'EUR', locale?: string): (value: number) => string {
+  return useNumber({ style: 'currency', currency, minimumFractionDigits: 2, maximumFractionDigits: 2 }, locale);
+}
+
+/*
 import { useMemo } from 'react';
+import { useNumber } from 'src/useNumber/useNumber';
 import { useLayout } from '../useLayout/useLayout';
 
 export function useCurrency(currency: string = 'EUR', locale?: string): (value: number) => string {
@@ -14,6 +22,7 @@ export function useCurrency(currency: string = 'EUR', locale?: string): (value: 
   return formatter;
 }
 
+*/
 
 /*
 

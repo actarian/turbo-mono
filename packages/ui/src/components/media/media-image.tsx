@@ -17,7 +17,7 @@ const StyledMediaImage = styled.img`
 `;
 
 const MediaImage = ({ alt = '', className, type, ...props }: MediaImageProps) => {
-  const classNames = getClassNames(className, 'image');
+  const classNames = getClassNames(className, 'image', { 'image-svg': isSVG(props.src) });
   const imageProps = getImageProps(props);
   return (<StyledMediaImage className={classNames} alt={alt} loading="lazy" {...imageProps} />);
 }
@@ -36,17 +36,27 @@ function getImageProps({ src, ...props }: MediaImageProps & Omit<MediaImageProps
 }
 
 function getImageSrc(src: string, ratio: number, width: number, quality: number = 75): string {
+  if (isSVG(src)) {
+    return src;
+  }
   return ratio !== 0 ?
     `/_next/image?url=${encodeURIComponent(src)}&w=${width}&h=${width / ratio}&q=${quality}` :
     `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=${quality}`;
 }
 
-function getImageSrcset(src: string, ratio: number, widths: number[], quality: number = 75): string {
+function getImageSrcset(src: string, ratio: number, widths: number[], quality: number = 75): string | undefined {
+  if (isSVG(src)) {
+    return undefined;
+  }
   return widths.map(width => getImageSrc(src, ratio, width, quality) + ` ${width}w`).join(', ');
 }
 
 function getImageSizes(widths: number[]): string {
   return widths.map((width, i) => `${i < widths.length - 1 ? `(max-width: ${width}px) ` : ''}${width}px`).join(', ');
+}
+
+function isSVG(src: string): boolean {
+  return src.indexOf('.svg') !== -1;
 }
 
 /*

@@ -1,6 +1,9 @@
 import { apiHandler } from '@websolute/core';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+
+// https://github.com/MultiSafepay/MultiSafepay-icons
+
 export default apiHandler({
   post: async (request: NextApiRequest, response: NextApiResponse) => {
     // const locale: string | undefined = request.query.locale as string;
@@ -11,7 +14,7 @@ export default apiHandler({
           "name": "Alipay",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/alipay.png"
+            "src": "/assets/payment/alipay.svg"
           }
         },
         {
@@ -19,7 +22,7 @@ export default apiHandler({
           "name": "American Express",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/amex.png"
+            "src": "/assets/payment/american-express.svg"
           }
         },
         {
@@ -27,7 +30,7 @@ export default apiHandler({
           "name": "Apple Pay",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/apple-pay.png"
+            "src": "/assets/payment/apple-pay.svg"
           }
         },
         {
@@ -35,7 +38,7 @@ export default apiHandler({
           "name": "Bank Transfer",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/bank-transfer.png"
+            "src": "/assets/payment/bank-transfer.svg"
           }
         },
         {
@@ -43,7 +46,7 @@ export default apiHandler({
           "name": "CBC",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/cbc.png"
+            "src": "/assets/payment/cbc.svg"
           }
         },
         {
@@ -51,7 +54,7 @@ export default apiHandler({
           "name": "Direct Debit",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/direct-debit.png"
+            "src": "/assets/payment/direct-debit.svg"
           }
         },
         {
@@ -59,7 +62,7 @@ export default apiHandler({
           "name": "Google Pay",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/googlepay.png"
+            "src": "/assets/payment/googlepay.svg"
           }
         },
         {
@@ -67,7 +70,7 @@ export default apiHandler({
           "name": "iDEAL",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/ideal.png"
+            "src": "/assets/payment/ideal.svg"
           }
         },
         {
@@ -75,7 +78,7 @@ export default apiHandler({
           "name": "Maestro",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/maestro.png"
+            "src": "/assets/payment/maestro.svg"
           }
         },
         {
@@ -84,7 +87,7 @@ export default apiHandler({
           "abstract": "<p>You can use your Mastercard credit card. The 3DS authentication procedure will be used when the order is concluded, and you will be redirected to the bank's web page. To complete the order, follow the required steps.</p>",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/mastercard.png"
+            "src": "/assets/payment/mastercard.svg"
           }
         },
         {
@@ -92,7 +95,7 @@ export default apiHandler({
           "name": "MyBank",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/mybank.png"
+            "src": "/assets/payment/mybank.svg"
           }
         },
         {
@@ -100,7 +103,7 @@ export default apiHandler({
           "name": "PayPal",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/paypal.png"
+            "src": "/assets/payment/paypal.svg"
           }
         },
         {
@@ -108,7 +111,7 @@ export default apiHandler({
           "name": "Trustly",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/trustly.png"
+            "src": "/assets/payment/trustly.svg"
           }
         },
         {
@@ -117,7 +120,7 @@ export default apiHandler({
           "abstract": "<p>You can use your Visa credit card. The 3DS authentication procedure will be used when the order is concluded, and you will be redirected to the bank's web page. To complete the order, follow the required steps.</p>",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/visa.png"
+            "src": "/assets/payment/visa.svg"
           }
         },
         {
@@ -125,7 +128,7 @@ export default apiHandler({
           "name": "WeChat Pay",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/wechatpay.png"
+            "src": "/assets/payment/wechatpay.svg"
           }
         },
         {
@@ -134,7 +137,7 @@ export default apiHandler({
           "abstract": "<p>The order confirmation will contain a summary of the total amount to be paid and the details of the bank to which the payment is to be made..</p><p> Once the payment has been made, the order will be activated and the delivery terms indicated for the various items ordered will apply. The successful completion of the payment will be communicated by email to the email address indicated during registration.</p>",
           "media": {
             "type": "image",
-            "src": "/assets/checkout/wire-transfer.png"
+            "src": "/assets/payment/wire-transfer.svg"
           }
         }
       ]

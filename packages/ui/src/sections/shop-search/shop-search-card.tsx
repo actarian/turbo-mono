@@ -50,8 +50,10 @@ const ShopRelatedCard: React.FC<ShopRelatedCardProps> = ({ item, ...props }: Sho
         </Link>
         {false && item.abstract && <Text size="10" marginBottom="0.3rem">{item.abstract}</Text>}
         <Flex.Row justifyContent="space-between">
-          <Text size="8" fontWeight="600">{currency(item.price)}</Text>
-          <Button variant="nav" onClick={onAddToCart}>Add to bag</Button>
+          <Text size="10" fontWeight="600">{currency(item.price)}</Text>
+          <Button variant="nav" onClick={onAddToCart}>
+            <Text size="10">Add to bag</Text>
+          </Button>
         </Flex.Row>
       </Card.Content>
     </Card>

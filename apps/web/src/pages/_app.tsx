@@ -4,7 +4,6 @@ import { Breakpoint, GlobalStyle, theme } from '@websolute/ui';
 import Head from 'next/head';
 // import { NextPage } from 'next';
 // import { AppProps } from 'next/app';
-import { IronSessionStorage } from 'src/config/session';
 import { ThemeProvider } from 'styled-components';
 
 export default function Application({ Component, pageProps }: ApplicationProps) {
@@ -27,7 +26,7 @@ export default function Application({ Component, pageProps }: ApplicationProps) 
           <PageProvider page={page}>
             <ThemeProvider theme={theme}>
               <GlobalStyle />
-              <CartProvider storage={IronSessionStorage}>
+              <CartProvider>
                 <Component {...pageProps} />
               </CartProvider>
               <Breakpoint></Breakpoint>

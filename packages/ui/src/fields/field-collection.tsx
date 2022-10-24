@@ -44,7 +44,7 @@ export default function FieldCollection(props: FieldCollectionProps) {
         </Grid>
       }
 
-      {controls.length && controls.map(item => {
+      {controls.length > 0 && controls.map(item => {
         const control = item.control;
         if (!control) {
           return;
