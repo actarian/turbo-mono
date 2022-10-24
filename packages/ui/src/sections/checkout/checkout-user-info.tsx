@@ -1,6 +1,6 @@
 import { IEquatable, IOption } from '@websolute/core';
 import { EmailValidator, FormGroup, RequiredIfValidator, RequiredTrueValidator, RequiredValidator, useFormBuilder } from '@websolute/forms';
-import { useApiGet, useLabel } from '@websolute/hooks';
+import { useApiPost, useLabel } from '@websolute/hooks';
 import { IUser } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import { Button, Container, Flex, Grid, Section, Text } from '../../components';
@@ -49,7 +49,7 @@ const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, o
 
   const checkout = useCheckout((state) => state.checkout);
 
-  const { response: options } = useApiGet<IUserInfoOptions>('/checkout/info');
+  const { response: options } = useApiPost<IUserInfoOptions>('/checkout/info', checkout);
 
   const required = RequiredValidator();
   const requiredTrue = RequiredTrueValidator();

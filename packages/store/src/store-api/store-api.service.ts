@@ -45,7 +45,7 @@ export default class StoreApiService<T extends IEntity> implements IQuerable<IEn
 
   constructor(key: string) {
     if (!key) {
-      throw new Error('ApiService: key is required');
+      throw new Error('StoreApiService: key is required');
     }
     this.key = key;
   }
@@ -53,34 +53,41 @@ export default class StoreApiService<T extends IEntity> implements IQuerable<IEn
   async findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | undefined> {
     const params = toFindParams(idOrParams);
     const search = this.search_(params);
-    // console.log(params, search);
-    const url = `/${this.key}/${encodeURIComponent(params.where.id as string | number)}${search}`;
-    // console.log('ApiService', this.key, 'findOne', url);
+    // const id = params.where.id as string | number;
+    // const url = `/${this.key}${id ? `/${encodeURIComponent(id)}` : ''}${search}`;
+    const url = `/${this.key}${search}`;
+    // console.log('StoreApiService', this.key, 'findOne', url);
     const item = await storeGet(url);
     return this.decorator_(item, params);
   }
 
   async findMany(params: FindParams = {}): Promise<T[]> {
     const search = this.search_(params);
-    // const url = `/${this.key}${search}`;
-    // console.log('ApiService', this.key, 'findMany', url);
-    let items: T[] = await storeGet(`/${this.key}${search}`);
+    const url = `/${this.key}${search}`;
+    // console.log('StoreApiService', this.key, 'findMany', url);
+    let items: T[] = await storeGet(url);
     items = this.where_(items, params);
     return items.map(x => this.decorator_(x, params));
   }
 
   async create(payload: any): Promise<T> {
-    const item = await storePost(`/${this.key}`, payload);
+    const url = `/${this.key}`;
+    // console.log('StoreApiService', this.key, 'create', url);
+    const item = await storePost(url, payload);
     return this.decorator_(item);
   }
 
   async update(payload: T): Promise<T> {
-    const item = await storePut(`/${this.key}`, payload);
+    const url = `/${this.key}`;
+    // console.log('StoreApiService', this.key, 'update', url);
+    const item = await storePut(url, payload);
     return this.decorator_(item);
   }
 
   async delete(id: IEquatable) {
-    const item = await storeDelete(`/${this.key}/${encodeURIComponent(id.toString())}`);
+    const url = `/${this.key}/${encodeURIComponent(id.toString())}`;
+    // console.log('StoreApiService', this.key, 'delete', url);
+    const item = await storeDelete(url);
     return this.decorator_(item);
   }
 

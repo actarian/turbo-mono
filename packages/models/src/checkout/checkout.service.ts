@@ -4,7 +4,7 @@ import { getRegions } from '../region/region.service';
 import { getRoutesForSchemas } from '../route/route.service';
 
 // step 2.
-export async function getInfo(market: string, locale: string): Promise<any> {
+export async function getInfo(checkout: any, market: string, locale: string): Promise<any> {
   const countries = await getCountries(locale);
   const provinces = await getProvinces(locale);
   const regions = await getRegions(locale);
