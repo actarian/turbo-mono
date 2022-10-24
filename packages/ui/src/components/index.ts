@@ -1,4 +1,5 @@
 export { default as Accordion } from './accordion/accordion';
+export { default as Badge } from './badge/badge';
 export { default as Box } from './box/box';
 export { default as Breadcrumb } from './breadcrumb/breadcrumb';
 export { default as Breakpoint } from './breakpoint/breakpoint';

@@ -1,18 +1,8 @@
 import type { IEquatable } from '@websolute/core';
+import type { IFeatureType } from '@websolute/models';
 
 export type FilterParams = { [key: string]: IEquatable[] | null };
 export type FilterValues = IEquatable[][];
-
-export type IFeatureType = {
-  id: string;
-  schema: string;
-  title: string;
-  features?: {
-    id: IEquatable;
-    title: string;
-    [key: string]: unknown;
-  }[];
-};
 
 export enum FilterMode {
   SELECT = 'select',
@@ -111,17 +101,27 @@ export class Filter<T> implements IFilter {
     return this.values.length > 0;
   }
 
+  getCount(): number {
+    return this.options.reduce((p, option) => {
+      return p + (option.count || 0);
+    }, 0);
+  }
+
+  hasResults(): boolean {
+    return this.getCount() > 0;
+  }
+
   has(option: IFilterOption): boolean {
     return this.values.indexOf(option.id) !== -1;
   }
 
   set(option: IFilterOption): void {
+    // console.log(this.mode, FilterMode.SELECT);
     if (this.mode === FilterMode.QUERY) {
       this.values = option ? [option.toString()] : [];
+    } else if (this.mode === FilterMode.SELECT) {
+      this.values = option.id != null ? [option.id] : [];
     } else {
-      if (this.mode === FilterMode.SELECT) {
-        this.values = [];
-      }
       const index = this.values.indexOf(option.id);
       if (index === -1) {
         if (option.id != null) {

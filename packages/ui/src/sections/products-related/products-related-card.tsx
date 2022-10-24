@@ -1,9 +1,8 @@
-import { useCurrency, useDrawer } from '@websolute/hooks';
+import { useCart, useCurrency, useDrawer } from '@websolute/hooks';
 import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import { Button, Card, Flex, Media, MediaImage, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
-import { useCart } from '../../hooks';
 
 type Props = {
   item: ProductsRelatedItem
@@ -22,24 +21,24 @@ export type ProductsRelatedItem = {
 export type ProductsRelatedCardProps = UIStyledComponentProps<Props>;
 
 const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...props }: ProductsRelatedCardProps) => {
+  const currency = useCurrency();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
-  const cart = useCart();
-  // const cartItem = cart.find(item);
+  const add = useCart((state) => state.add);
+  // const find = useCart((state) => state.find);
+  // const cartItem = find(item);
   // const isAddedToCart = cartItem != null;
   // const [qty, setQty] = useState(isAddedToCart ? cartItem.qty : 1);
   function onAddToCart() {
-    cart.add(item, 1);
+    add(item, 1);
     onOpenDrawer('cart');
   }
-  const price = useCurrency(item.price);
-
   return (
     <Card {...props} hoverable>
       <Link href={item.href} passHref>
         <Media as="a" aspectRatio={1} borderRadius="0.4rem" marginBottom="1rem" overlay>
           <MediaImage {...item.media} />
           <Media.Info padding="1rem" justifyContent="flex-end" alignItems="flex-end">
-            <Text size="8">{price}</Text>
+            <Text size="8">{currency(item.price)}</Text>
           </Media.Info>
         </Media>
       </Link>

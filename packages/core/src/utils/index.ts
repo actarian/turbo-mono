@@ -8,7 +8,7 @@ export const isDevelopment = getIsDevelopment();
 
 export const isBrowser = typeof window !== 'undefined';
 
-export function asStaticProps(props: any): any {
+export function asServerProps(props: any): any {
   return JSON.parse(JSON.stringify(props));
 }
 
@@ -58,12 +58,4 @@ export function deepCopy(source: StateValue): StateValue {
   } else {
     return source;
   }
-}
-
-export function className(...args: ({ [key: string]: boolean } | string)[]): string {
-  return args.map(x => (
-    typeof x === 'object' ?
-      Object.keys(x).filter(key => x[key]).join(' ') :
-      x.toString()
-  )).join(' ');
 }

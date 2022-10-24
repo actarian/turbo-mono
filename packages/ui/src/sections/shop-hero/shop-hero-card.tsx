@@ -3,15 +3,14 @@ import Link from 'next/link';
 import { Card, Media, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 
-type Props = {
-  item: CategoriesPropositionItem
-}
-
 export type CategoriesPropositionItem = {
-  id: number;
   href: string;
   title: string;
   media: IMedia;
+}
+
+type Props = {
+  item: CategoriesPropositionItem
 }
 
 export type ShopHeroCardProps = UIStyledComponentProps<Props, 'a'>;

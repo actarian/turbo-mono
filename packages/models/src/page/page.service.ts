@@ -10,7 +10,7 @@ import { getBreadcrumbFromCategoryTree } from '../route/route.service';
 import { IModelStore } from '../store/store';
 import type { IPage } from './page';
 
-export async function getPage<T extends IPage>(schema: string, id: IEquatable, market?: string, locale?: string): Promise<T | null> {
+export async function getPage<T extends IPage>(schema: string, id: IEquatable, market?: string, locale?: string): Promise<T | undefined> {
   const store = await getStore<IModelStore>();
   const page = await store.page.findOne({ where: { schema, id }, market, locale }) as T;
   // console.log(page, market, locale);
@@ -33,7 +33,30 @@ export async function getPage<T extends IPage>(schema: string, id: IEquatable, m
     } as T;
   } else {
     console.log('PageService.getPage.notfound', schema, id, locale);
-    return null;
+    return;
+  }
+}
+
+export async function getPageCategory<T extends IPage>(schema: string, page?: IPage, market?: string, locale?: string): Promise<T | undefined> {
+  if (!page) {
+    return;
+  }
+  const store = await getStore<IModelStore>();
+  const category = await store.page.findOne({ where: { schema, categoryId: page.categoryId }, market, locale }) as T;
+  // console.log(page, market, locale);
+  if (category) {
+    const routes = await store.route.findMany({ where: { pageSchema: schema, pageId: category.id } });
+    const currentRoute = routes.find((x: any) => x.marketId === market && x.localeId === locale);
+    if (!currentRoute) {
+      throw ('No route found for page ' + schema + ':' + category.id + ' in market ' + market + ' and locale ' + locale);
+    }
+    return {
+      ...category,
+      href: currentRoute.id,
+    } as T;
+  } else {
+    console.log('PageService.getPageCategory.notfound', schema, locale);
+    return;
   }
 }
 
@@ -49,7 +72,6 @@ export async function getErrorPageLayout(): Promise<{ layout: ILayout, page: IPa
     href: '',
     alternates: [],
     breadcrumb: [],
-    images: [],
     title,
     abstract,
     meta: {

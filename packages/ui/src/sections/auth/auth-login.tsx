@@ -5,7 +5,7 @@ import { IUser, IUserLogin } from '@websolute/models';
 import { ReactNode, useState } from 'react';
 import { Button, Divider, Flex, Text } from '../../components';
 import { FieldCheckbox, FieldPassword, FieldText } from '../../fields';
-import { Form, FormTester } from '../../forms';
+import { Form, FormError, FormTester } from '../../forms';
 import { useUser } from '../../hooks';
 
 export interface AuthSignInProps {
@@ -29,11 +29,13 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
   const email = EmailValidator();
 
   const [form, setValue, setTouched, reset, group] = useFormBuilder<IUserLogin, FormGroup>({
+
     email: { schema: 'text', label: 'field.email', validators: [required, email] },
     password: { schema: 'text', label: 'field.password', validators: required },
     rememberMe: { schema: 'checkbox', label: 'field.rememberMe' },
-    checkRequest: { schema: 'text', value: 'window.antiforgery', hidden: true }, // todo take antiforgery token from server
+
     checkField: { schema: 'text', hidden: true }, // check hidden field for antiforgery
+
   });
 
   const onTest = () => {
@@ -47,7 +49,7 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
     reset();
   }
 
-  const setUser = useUser((state) => state.update);
+  const setUser = useUser((state) => state.setUser);
 
   const [error, setError] = useState<Error>();
 
@@ -100,17 +102,7 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
             <FieldCheckbox margin="0" control={group.controls.rememberMe}></FieldCheckbox>
             <Button variant="link" onClick={onForgot}>Forgot your password?</Button>
           </Flex.Row>
-          {/* !!! creare componente errore */}
-          {error &&
-            <Text
-              padding="1rem"
-              fontWeight="700"
-              textAlign="center"
-              background="var(--color-danger-100)"
-              color="var(--color-danger-500)"
-            >{label('form.auth.unauthorized')}
-            </Text>
-          }
+          {error && <FormError error={error}>{label('form.auth.unauthorized')}</FormError>}
           <Button type="submit" variant="primary" size="lg" justifyContent="center" margin="1rem 0"><span>Sign In</span></Button>
           {/*
           <Flex.Row justifyContent="flex-end" margin="1rem 0">

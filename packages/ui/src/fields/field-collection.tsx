@@ -26,7 +26,7 @@ export default function FieldCollection(props: FieldCollectionProps) {
     const { control, key } = item;
     ++uid;
     if (control instanceof FormGroup || control instanceof FormArray) {
-      return <FieldCollection collection={control} uid={uid} key={uid} />
+      return <FieldCollection collection={control} uid={uid} key={getFieldUID(uid, control.name)} />
     } else {
       if (control.schema in FIELDS) {
         return FIELDS[control.schema as FieldType](control, uid);
@@ -39,12 +39,12 @@ export default function FieldCollection(props: FieldCollectionProps) {
   return (
     <>
       {props.collection.label &&
-        <Grid key={++uid} xs={12}>
+        <Grid key={getFieldUID(++uid, props.collection.name)} xs={12}>
           <Divider>{label(props.collection.label)}</Divider>
         </Grid>
       }
 
-      {controls.length && controls.map(item => {
+      {controls.length > 0 && controls.map(item => {
         const control = item.control;
         if (!control) {
           return;
@@ -56,11 +56,16 @@ export default function FieldCollection(props: FieldCollectionProps) {
           }
           return resolveField(item);
         } else {
-          return <Grid key={++uid} xs={12} sm={['checkbox', 'accept'].includes(control.schema) ? 12 : 6} style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+          return <Grid key={getFieldUID(++uid, item.key)} xs={12} sm={['checkbox', 'accept'].includes(control.schema) ? 12 : 6} style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
             {resolveField(item)}
           </Grid>
         }
       })}
     </>
   );
+}
+
+function getFieldUID(uid: number, key: string | number = 'none') {
+  const fieldUID = `${++uid}-${key}`;
+  return fieldUID;
 }

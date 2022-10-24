@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const nextTranspileModules = require('next-transpile-modules');
 
 const transpiledModules = nextTranspileModules([
@@ -10,7 +11,12 @@ const transpiledModules = nextTranspileModules([
   '@websolute/ui'
 ], { resolveSymlinks: false });
 
-module.exports = transpiledModules({
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+module.exports = withBundleAnalyzer(transpiledModules({
   reactStrictMode: true,
   images: {
     domains: [
@@ -54,4 +60,4 @@ module.exports = transpiledModules({
   },
   // Docker support: build the project as a standalone app inside the Docker image
   output: 'standalone'
-});
+}));

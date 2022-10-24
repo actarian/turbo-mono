@@ -1,6 +1,6 @@
 
-import type { IEquatable } from '@websolute/core';
-import { FormControl, useControl } from '@websolute/forms';
+import type { IEquatable, IOption } from '@websolute/core';
+import { FormControl, stringToValue, useControl, valueToString } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
 import { FocusEvent, useState } from 'react';
 import { CustomSelect, Field, Label } from '../forms';
@@ -16,22 +16,11 @@ export default function FieldSelect(props: FieldSelectProps) {
 
   const uniqueName = `${props.control.name}-${props.uid}`;
 
-  const [state, setValue, setTouched] = useControl<string>(props.control);
+  const [state, setValue, setTouched] = useControl<IOption | IOption[] | IEquatable | IEquatable[]>(props.control);
 
   const onChange = (value: string | string[]) => {
-    // console.log('FieldSelect', event.target.value);
-    let id: IEquatable | IEquatable[] | null = null;
-    function mapValue(value: string) {
-      const option = props.control.options?.find(x => x.id.toString() === value);
-      return option ? option.id : null;
-    }
-    if (Array.isArray(value)) {
-      id = value.map(x => mapValue(x)).filter(x => x !== null) as IEquatable[];
-    } else {
-      id = mapValue(value);
-    }
-    setValue(id);
-    // props.control.value = event.target.value;
+    const valueOrValues = stringToValue(value, props.control.options, props.control.optionsExtra);
+    setValue(valueOrValues);
   }
 
   const [focus, setFocus] = useState(false);
@@ -47,7 +36,7 @@ export default function FieldSelect(props: FieldSelectProps) {
 
   return (
     state.flags.hidden ? (
-      <input type="hidden" value={state.value || ''} />
+      <input type="hidden" value={valueToString(state.value)} />
     ) : (
       <Field>
         {props.control.label &&
@@ -60,7 +49,7 @@ export default function FieldSelect(props: FieldSelectProps) {
         <CustomSelect
           id={uniqueName}
           placeholder={label(props.control.placeholder || props.control.label || '')}
-          value={state.value ? state.value.toString() : undefined}
+          value={valueToString(state.value)}
           onChange={onChange}
           onBlur={onBlur}
           onFocus={onFocus}
@@ -77,5 +66,3 @@ export default function FieldSelect(props: FieldSelectProps) {
     )
   );
 }
-
-// {JSON.stringify(props.control.errors[key])}

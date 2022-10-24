@@ -1,5 +1,5 @@
 
-import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useState } from 'react';
+import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useEffect, useState } from 'react';
 import { Flex } from '../../components';
 import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import RadioColor, { RadioColorProps } from './radio-color';
@@ -18,10 +18,15 @@ const RadioColorGroup: RadioColorGroupComponent = forwardRef(({
   children,
   className,
   size,
+  initialValue,
   onChange,
   ...props
 }, ref) => {
-  const [value, setValue] = useState(props.initialValue || null);
+  const [value, setValue] = useState(initialValue || null);
+
+  useEffect(() => {
+    setValue(initialValue || null);
+  }, [initialValue])
 
   const onChange_ = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);

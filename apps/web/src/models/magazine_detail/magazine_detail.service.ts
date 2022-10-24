@@ -11,7 +11,7 @@ export async function getMagazineDetails(params: FindParams = {}): Promise<IMaga
   return await awaitAll(items, async (p) => await decorateHref(p, params.market, params.locale));
 }
 
-export async function getMagazineDetail(id: IEquatable, params: FindParams = {}): Promise<IMagazineDetail> {
+export async function getMagazineDetail(id: IEquatable, params: FindParams = {}): Promise<IMagazineDetail | undefined> {
   const store = await getStore<IModelStore>();
   const item = await store.magazine_detail.findOne({ where: { id }, market: params.market, locale: params.locale });
   // console.log('item ->', item);

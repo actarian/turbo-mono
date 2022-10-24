@@ -14,9 +14,10 @@ const defaultOptions: FetchRequestOptions = {
   // body: JSON.stringify(data) // body data type must match 'Content-Type' header
 };
 
-export async function httpFetch(url: string, options: FetchRequestOptions = {}): Promise<any> {
+export async function httpFetch(url: string, options: FetchRequestOptions = {}, serviceOptions?: any): Promise<any> {
   // console.log('httpFetch', url, options);
   const httpOptions = merge({ ...defaultOptions }, options);
+  console.log('httpFetch', url, httpOptions);
   const httpResponse = await fetch(url, httpOptions);
   // console.log('httpResponse', httpResponse);
   if (!httpResponse.ok) {
@@ -93,4 +94,4 @@ export type FetchRequestOptions = {
   // An AbortSignal object instance; allows you to communicate with a fetch request and abort it if desired via an AbortController.
 }
 
-export type FetchService = (url: string, options?: FetchRequestOptions) => Promise<any>;
+export type FetchService<T = any> = (url: string, options?: FetchRequestOptions, serviceOptions?: any) => Promise<T>;

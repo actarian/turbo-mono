@@ -50,7 +50,7 @@ export default class StoreApiService<T extends IEntity> implements IQuerable<IEn
     this.key = key;
   }
 
-  async findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | null> {
+  async findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | undefined> {
     const params = toFindParams(idOrParams);
     const search = this.search_(params);
     // console.log(params, search);

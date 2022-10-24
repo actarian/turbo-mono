@@ -1,6 +1,6 @@
 
 import type { IStaticContext } from '@websolute/core';
-import { asStaticProps } from '@websolute/core';
+import { asServerProps } from '@websolute/core';
 import { useDateTimeFormat } from '@websolute/hooks';
 import { ChevronLeft } from '@websolute/icons';
 import { MagazineDetailDefaults } from '@websolute/mock';
@@ -26,10 +26,10 @@ export default function MagazineDetail({ layout, page, params }: MagazineDetailP
           <Section padding="7rem 0">
             <Container.Fluid>
               <Grid.Row rowGap="1rem">
-                <Grid sm={6}>
+                <Grid md={6}>
                   <Media item={page.media} />
                 </Grid>
-                <Grid sm={6}>
+                <Grid md={6}>
                   <Flex.Col gap="3rem" gapSm="4rem" gapMd="5rem" gapLg="6rem">
                     <Flex.Row justifyContent="space-between">
                       {page.parentRoute && page.parentRoute.href && <NavLink href={page.parentRoute.href} passHref>
@@ -88,7 +88,7 @@ export async function getStaticProps(context: IStaticContext) {
     page.related.items = relatedItems;
   }
 
-  const props = asStaticProps({ ...context, layout, page });
+  const props = asServerProps({ ...context, layout, page });
   // console.log('MagazineDetail getStaticProps', props);
   return {
     props,

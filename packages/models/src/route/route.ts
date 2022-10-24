@@ -11,9 +11,9 @@ export interface IRoute extends IEntity {
 }
 
 export interface IRouteLink {
-  href?: string;
-  title?: string;
-  categoryId?: IEquatable;
+  id: IEquatable;
+  href: string;
+  title: string;
   items?: IRouteLink[];
   media?: IMedia;
 }

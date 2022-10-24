@@ -1,6 +1,6 @@
 
 import type { IStaticContext } from '@websolute/core';
-import { asStaticProps } from '@websolute/core';
+import { asServerProps } from '@websolute/core';
 import { SplitDefaults, StoreLocatorDefaults, StoreLocatorFeaturesDefaults, StoreLocatorSearchDefaults } from '@websolute/mock';
 import type { IFeatureType, PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
@@ -48,7 +48,7 @@ export async function getStaticProps(context: IStaticContext) {
 
   const featureTypes = StoreLocatorFeaturesDefaults;
 
-  const props = asStaticProps({ ...context, layout, page, country, items, featureTypes });
+  const props = asServerProps({ ...context, layout, page, country, items, featureTypes });
   // console.log('StoreLocator getStaticProps', props);
   return {
     props,

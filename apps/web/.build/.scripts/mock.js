@@ -162,6 +162,7 @@ async function buildStore(jsons, PAGES) {
         // types generator disabled !!!
         await awaitAll(collections, async (c) => await addType(c.items, c, collections));
     }
+    // pageKeys.forEach(key => delete store[key]);
     return store;
 }
 function createPageService(store, PAGES) {

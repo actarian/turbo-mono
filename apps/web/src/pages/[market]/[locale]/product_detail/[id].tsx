@@ -1,6 +1,6 @@
 
 import type { IStaticContext } from '@websolute/core';
-import { asStaticProps } from '@websolute/core';
+import { asServerProps } from '@websolute/core';
 import { ChevronLeft } from '@websolute/icons';
 import { ProductsDetailDefaults } from '@websolute/mock';
 import type { PageProps } from '@websolute/models';
@@ -92,7 +92,7 @@ export async function getStaticProps(context: IStaticContext) {
     };
   }
 
-  const props = asStaticProps({ ...context, layout, page });
+  const props = asServerProps({ ...context, layout, page });
   // console.log('ProductDetail getStaticProps', props);
   return {
     props,

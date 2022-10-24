@@ -8,7 +8,6 @@ type Props = {
 }
 
 export type CategoriesPropositionItem = {
-  id: number;
   href: string;
   title: string;
   media: IMedia;

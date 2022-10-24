@@ -8,5 +8,6 @@
     "tsnext.json",
     "tsnode.json",
     "tsreact.json"
-  ]
+  ],
+  "sideEffects": false
 }

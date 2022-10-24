@@ -1,4 +1,4 @@
-import { INamedEntity } from '@websolute/core';
+import { IOption } from '@websolute/core';
 import { EventEmitter } from './event-emitter';
 import type { ControlType, FormActivator, FormCollection, FormOptions, FormValidator, ValidationError } from './types';
 import { isThenable, validValue } from './utils';
@@ -15,7 +15,8 @@ export class FormAbstract extends EventEmitter {
 
   // new
   schema: ControlType = 'text';
-  options?: INamedEntity[];
+  options?: IOption[];
+  optionsExtra?: { asEquatable: boolean };
   protected initialOptions_?: FormOptions;
   private markAsDirty_: boolean = false;
 
@@ -128,6 +129,9 @@ export class FormAbstract extends EventEmitter {
       }
       if (options.options) {
         this.options = options.options;
+      }
+      if (options.optionsExtra) {
+        this.optionsExtra = options.optionsExtra;
       }
       /*
       // !!! todo

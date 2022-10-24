@@ -4,7 +4,7 @@
     "schema": "magazine_detail",
     "href": "/magazine_detail",
     "category": {
-      "href": "/magazine",
+      "href": "/magazine_index",
       "title": "Talks"
     },
     "date": "2022-06-01T12:20:00.000Z",

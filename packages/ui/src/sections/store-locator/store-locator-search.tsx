@@ -1,6 +1,6 @@
 // import GoogleMap from '../../components/google-map/google-map';
 import type { IEquatable } from '@websolute/core';
-import { Filter, filtersToParams, useDebounce, useFilters, useInfiniteLoader, useSearchParams } from '@websolute/hooks';
+import { Filter, filtersToParams, useDebounceCallback, useFilters, useInfiniteLoader, useSearchParams } from '@websolute/hooks';
 import { MapPin } from '@websolute/icons';
 import type { IFeatureType } from '@websolute/models';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
@@ -24,7 +24,7 @@ const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '';
 const USE_CLUSTERER = false;
 const USE_CLUSTERER_PLUS = true;
 
-// this function filters the store locator items by bounds or category
+// this function filters the store locator items by category
 export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, value: IEquatable): boolean {
   switch (key) {
     case 'category':
@@ -281,7 +281,7 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   }, [setBounds, replaceParamsSilently]);
 
   // debounced version of the onBounds callback
-  const onBoundsDebounced = useDebounce(onBounds);
+  const onBoundsDebounced = useDebounceCallback(onBounds);
 
   // fires when user close the google map info windo
   const onInfoWindowClose = () => {

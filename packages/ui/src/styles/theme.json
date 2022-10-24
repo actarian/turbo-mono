@@ -10,7 +10,7 @@
   },
   "font": {
     "primary": {
-      "family": "-apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "family": "Inter, -apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
       "size": [
         "Min(6.25rem, 16vw)",
         "Min(4.5rem, 11.5vw)",
@@ -41,7 +41,7 @@
       ]
     },
     "secondary": {
-      "family": "'Petrona', serif",
+      "family": "Petrona, serif",
       "size": [
         "7.5rem",
         "5.4rem",

@@ -1,5 +1,5 @@
 import type { IStaticContext } from '@websolute/core';
-import { asStaticProps } from '@websolute/core';
+import { asServerProps } from '@websolute/core';
 import { Send } from '@websolute/icons';
 import type { PageProps } from '@websolute/models';
 import { getErrorPageLayout } from '@websolute/models';
@@ -46,7 +46,7 @@ export default function Error404({ layout, page, params }: PageProps) {
 export async function getStaticProps(context: IStaticContext) {
   const { layout, page } = await getErrorPageLayout();
   // console.log('Error404 getStaticProps', props);
-  const props = asStaticProps({ ...context, layout, page });
+  const props = asServerProps({ ...context, layout, page });
   return {
     props,
   };

@@ -2,26 +2,34 @@ import { DependencyList, useCallback, useEffect, useMemo, useState } from 'react
 import { FormArray, FormControl, FormGroup, FormState, mapErrors_ } from '../../forms';
 import { IFormBuilderArraySchema, IFormBuilderControlSchema, IFormBuilderGroupSchema, IFormBuilderGroupValues, IFormBuilderSchema } from '../../forms/types';
 
-export function useFormBuilder<T, U extends (FormGroup | FormArray)>(schema: IFormBuilderSchema, deps: DependencyList = []): [FormState<T>, (value: any) => void, () => void, () => void, U] {
+export function useFormBuilder<T, U extends (FormGroup | FormArray)>(
+  schema: IFormBuilderSchema,
+  deps: DependencyList = []
+): [FormState<T>, (value: Partial<T>) => void, () => void, () => void, U] {
+
   const collection: U = useMemo<U>(() => {
+    // console.log('useFormBuilder.rebuild', schema);
     if (Array.isArray(schema)) {
       return mapArray_(schema) as U;
     } else {
       return mapGroup_(schema) as U;
     }
-    // return mapSchema_(schema) as U;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
-  const setValue = useCallback((value: any) => {
+  const setValue = useCallback((value: Partial<T>) => {
     collection.patch(value);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   const setTouched = useCallback(() => {
     collection.touched = true;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   const reset = useCallback(() => {
     collection.reset();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   const [state, setState] = useState<FormState<T>>({ value: collection.value as T, flags: collection.state, errors: mapErrors_(collection.errors) })
@@ -36,6 +44,7 @@ export function useFormBuilder<T, U extends (FormGroup | FormArray)>(schema: IFo
     collection.validateAndChange_();
     // console.log('subscribe');
     return () => collection.off('change', onChange);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   return [state, setValue, setTouched, reset, collection];

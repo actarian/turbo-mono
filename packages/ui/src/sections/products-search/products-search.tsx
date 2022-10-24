@@ -23,6 +23,7 @@ const SortMenu = () => (
   </Nav.Col>
 )
 
+// this is the actual filtering function of the products
 function filterProductItem(key: string, item: ProductSearchItem, value: IEquatable) {
   switch (key) {
     case 'color':

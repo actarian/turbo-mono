@@ -10,8 +10,6 @@ type Props = {
 }
 
 export type ProductSearchItem = {
-  id: number;
-  schema?: string;
   href: string;
   title: string;
   medias: IMedia[];

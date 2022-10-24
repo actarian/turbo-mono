@@ -2,7 +2,9 @@
   "item": {
     "id": 1,
     "href": "/shop_category",
-    "title": "New Arrivals",
+    "title": "Workspace",
+    "abstract": "Level up your Desk",
+    "description": "Make your desk beautiful and organized. Post a picture to social media and watch it get more likes than life-changing announcements. Reflect on the shallow nature of existence. At least you have a really nice desk setup.",
     "media": {
       "type": "image",
       "src": "https://unsplash.com/photos/RvPDe41lYBA/download?force=true&w=1600"

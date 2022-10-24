@@ -3,6 +3,12 @@ export type IEquatable = number | string;
 
 export type ILocalizedString = { [key: string]: string };
 
+export type IOption = {
+  id: IEquatable;
+  name: string;
+  [key: string]: any;
+}
+
 export interface ISchema {
   id: IEquatable;
   schema: string;
@@ -20,16 +26,12 @@ export interface ITitledEntity extends IEntity {
   title: string | ILocalizedString;
 }
 
-export interface INamedEntity extends IEntity {
-  name: string | ILocalizedString;
-}
-
 export interface IQuerable<T extends IEntity> {
-  findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | null>;
+  findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | undefined>;
   findMany(params?: FindParams): Promise<T[]>;
   create(payload: T): Promise<T>;
   update(payload: T): Promise<T>;
-  delete(id: IEquatable): Promise<T | null>;
+  delete(id: IEquatable): Promise<T | undefined>;
 }
 
 export type FindParams = {

@@ -1,20 +1,27 @@
-import { DependencyList, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { FormAbstract, FormState, mapErrors_ } from '../../forms';
 
-export function useControl<T>(control: FormAbstract, deps: DependencyList = []): [FormState<T>, (value: any) => void, () => void, () => void, FormAbstract] {
-  const setValue = useCallback((value: any) => {
+export function useControl<T>(
+  control: FormAbstract
+): [FormState<T>, (value: T | null) => void, () => void, () => void, FormAbstract] {
+
+  const [state, setState] = useState<FormState<T>>({
+    value: control.value as T,
+    flags: control.state,
+    errors: mapErrors_(control.errors)
+  });
+
+  const setValue = useCallback((value: T | null) => {
     control.patch(value);
-  }, [control, ...deps]);
+  }, [control]);
 
   const setTouched = useCallback(() => {
     control.touched = true;
-  }, [control, ...deps]);
+  }, [control]);
 
   const reset = useCallback(() => {
     control.reset();
-  }, deps);
-
-  const [state, setState] = useState<FormState<T>>({ value: control.value as T, flags: control.state, errors: mapErrors_(control.errors) })
+  }, [control]);
 
   useEffect(() => {
     const onChange = (value: T) => {
@@ -25,7 +32,7 @@ export function useControl<T>(control: FormAbstract, deps: DependencyList = []):
     control.on('change', onChange);
     // control.validateAndChange_();
     return () => control.off('change', onChange);
-  }, deps);
+  }, [control]);
 
   return [state, setValue, setTouched, reset, control];
 }

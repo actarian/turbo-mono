@@ -17,11 +17,15 @@ const defaultApiOptions: FetchRequestOptions = {
 
 // typeof eval === 'function' ? defaultApiOptions.mode = 'cors' : null;
 
-export async function apiFetch(pathname: string, options: FetchRequestOptions = {}): Promise<any> {
-  const url = `${LOCAL_URL}${LOCAL_API_BASE}${pathname}`;
+export async function apiFetch(pathname: string, options: FetchRequestOptions = {}, serviceOptions?: { locale: string, market: string }): Promise<any> {
+  const url = new URL(`${LOCAL_URL}${LOCAL_API_BASE}${pathname}`);
+  if (serviceOptions) {
+    url.searchParams.append('locale', serviceOptions.locale);
+    url.searchParams.append('market', serviceOptions.market);
+  }
   const apiOptions = merge({ ...defaultApiOptions }, options);
-  // console.log('apiFetch', url, options);
-  const apiResponse = await httpFetch(url, apiOptions);
+  // console.log('apiFetch', url.href, options);
+  const apiResponse = await httpFetch(url.href, apiOptions);
   return apiResponse;
 }
 

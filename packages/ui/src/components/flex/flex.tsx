@@ -10,6 +10,8 @@ export type FlexProps = UIStyledComponentProps<Props>;
 
 const Flex = styled.div<FlexProps>`
   display: flex;
+  // flex-direction: column;
+  // justify-content: center;
   align-items: center;
   ${props => getCssResponsive(props)}
 `;

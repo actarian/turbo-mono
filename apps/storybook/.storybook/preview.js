@@ -8,6 +8,8 @@ import { createCustomTheme } from './utils/create-custom-theme';
 
 const themeJson = theme;
 
+// !!! todo add font import to storybook
+
 addDecorator((story) => (
   <>
     <GlobalStyle />

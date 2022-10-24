@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Button, Card, Flex, Media, Text } from '../../components';
 import type { UIStyledComponentProps } from '../../components/types';
 
-export type ProductsDetailRelatedItemItem = {
+export type ProductsDetailRelatedCardItem = {
   id: IEquatable;
   href: string;
   title: string;
@@ -13,7 +13,7 @@ export type ProductsDetailRelatedItemItem = {
 }
 
 type Props = {
-  item: ProductsDetailRelatedItemItem
+  item: ProductsDetailRelatedCardItem
 }
 
 export type ProductsDetailRelatedCardProps = UIStyledComponentProps<Props>;

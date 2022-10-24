@@ -1,5 +1,5 @@
 
-import { asStaticProps, httpGet, IContextParams } from '@websolute/core';
+import { asServerProps, httpGet, IContextParams } from '@websolute/core';
 import type { PageProps } from '@websolute/models';
 import { getLayout, getPage } from '@websolute/models';
 import { StoreStrategy, storeStrategy } from '@websolute/store';
@@ -13,12 +13,12 @@ import { sessionOptions } from 'src/config/session';
 export default function ReservedArea({ layout, page, user, params }: ReservedAreaProps) {
   const router = useRouter();
 
-  const setUser = useUser((state) => state.update);
+  const setUser = useUser((state) => state.setUser);
 
   const onLogout = async () => {
     try {
       await httpGet('/api/auth/logout');
-      setUser(null);
+      setUser();
       router.push('/');
 
     } catch (error) {
@@ -86,7 +86,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
   const locale = params.locale;
   const layout = await getLayout(market, locale);
 
-  // console.log('knownRoutes', layout.knownRoutes);
+  // console.log('topLevelHrefs', layout.topLevelHrefs);
 
   const user = context.req.session.user;
   if (user === undefined) {
@@ -103,7 +103,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
     return {
       redirect: {
         permanent: false,
-        destination: layout.knownRoutes?.login || '/',
+        destination: layout.topLevelHrefs.login || '/',
       },
     }
   }
@@ -111,7 +111,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
   // Page
   const page = await getPage('reserved_area', id, market, locale);
 
-  const props = asStaticProps({ params, query, layout, page, user });
+  const props = asServerProps({ params, query, layout, page, user });
   // console.log('ProductSearchSSR getStaticProps', props);
   return {
     props,
@@ -136,7 +136,7 @@ export async function getServerSideProps(context: IServerSideContext): Promise<G
     name: 'Pippo'
   };
 
-  const props = asStaticProps({ params, query, layout, page, user });
+  const props = asServerProps({ params, query, layout, page, user });
   // console.log('ProductSearchSSR getStaticProps', props);
   return {
     props,
@@ -154,7 +154,7 @@ export async function getStaticProps(context: IStaticContext) {
   const user = {
     name: 'Pippo'
   };
-  const props = asStaticProps({ ...context, layout, page, user });
+  const props = asServerProps({ ...context, layout, page, user });
   // console.log('About getStaticProps', props);
   return {
     props,

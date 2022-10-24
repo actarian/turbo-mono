@@ -42,6 +42,9 @@ export class FormAbstractCollection<T extends FormControls> extends FormAbstract
       if (options.options) {
         this.options = options.options;
       }
+      if (options.optionsExtra) {
+        this.optionsExtra = options.optionsExtra;
+      }
       /*
       // todo
       if (options.required === true) {

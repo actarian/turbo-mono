@@ -1,0 +1,42 @@
+[
+  {
+    "categoryId": "shop_category_tile",
+    "title": "Tiles Samples",
+    "abstract": "Esplora le collezioni ceramiche Hexagon: scopri i pattern, la gamma colori e acquista online il tuo campione in formato ridotto."
+  },
+  {
+    "categoryId": "shop_category_element",
+    "title": "3D Elements Samples",
+    "abstract": "Scopri i moduli tridimensionali, pensati per sviluppare strutture e pareti dal gusto architettonico, e acquista un elemento singolo come campione."
+  },
+  {
+    "categoryId": "shop_category_paint",
+    "title": "Paints Samples",
+    "abstract": "Acquista i campioni di Hexagon Paints, una gamma di pitture sviluppate appositamente per accompagnare le superfici ceramiche del brand."
+  },
+  {
+    "categoryId": "shop_category_woodmetal",
+    "title": "Wood & Metal",
+    "abstract": "All’interno di Hexagon Shop è possibile acquistare i campioni delle collezioni Tiles, 3D Elements e Paints, complementi d’arredo in materiali inediti, elementi decorativi esclusivi e oggettistica legata all’universo del brand."
+  },
+  {
+    "categoryId": "shop_category_furniture",
+    "title": "Furniture",
+    "abstract": "La sezione Furniture ospita una selezione di complementi d’arredo funzionali e versatili, appartenenti alla gamma di prodotti Accents."
+  },
+  {
+    "categoryId": "shop_category_book",
+    "title": "Books",
+    "abstract": "All’interno della sezione Books sono raccolti una selezione di cataloghi Hexagon e alcuni dei volumi dedicati alle mostre di Hexagon for Art."
+  },
+  {
+    "categoryId": "shop_category_gift",
+    "title": "Gifts",
+    "abstract": "La nuova selezione di articoli Hexagon comprende quaderni e matite, shopper e poster legati al mondo e ai progetti dell’azienda."
+  },
+  {
+    "categoryId": "shop_category_edition",
+    "title": "Editions",
+    "abstract": "Le Editions sono collezioni di oggetti in ceramica interamente fatti a mano secondo la tradizione artigianale. Elementi decorativi progettati dai designer e dagli artisti del team Hexagon, realizzati in Italia da abili maestri ceramisti. Ogni pezzo viene timbrato e firmato in maniera sequenziale, per sottolinearne l’esclusività: sono creazioni uniche destinate a durare nel tempo e a raggiungere ogni angolo del mondo, ma solo una per volta."
+  }
+]

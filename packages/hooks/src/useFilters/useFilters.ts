@@ -1,6 +1,7 @@
 import type { IEquatable } from '@websolute/core';
+import type { IFeatureType } from '@websolute/models';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import type { Filter, FilterParams, IFeatureType } from './filter';
+import type { Filter, FilterParams } from './filter';
 import { getFilters, setFilters } from './filter.service';
 
 export function useFilters<T>(items: T[], featureTypes: IFeatureType[], filterItem: (key: string, item: T, value: IEquatable) => boolean, initialValues?: FilterParams | null): UseFiltersResultType<T> {
@@ -9,7 +10,8 @@ export function useFilters<T>(items: T[], featureTypes: IFeatureType[], filterIt
   // creating filters with useMemo because is an heavy operation
   const filters = useMemo(() => {
     return getFilters<T>(items, featureTypes, filterItem, initialValues);
-  }, [items, featureTypes, filterItem, initialValues]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [items, featureTypes, filterItem]);
 
   const [filteredItems, setFilteredItems] = useState<T[]>(() => setFilters(items, filters));
 

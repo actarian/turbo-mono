@@ -37,7 +37,7 @@ const ShopDetail = ({ page, ...props }: Props) => {
           <Section paddingBottom="0">
             <Container>
               <Breadcrumb marginBottom="1rem">
-                <Breadcrumb.Item href="/shop">Shop</Breadcrumb.Item>
+                <Breadcrumb.Item href="/shop_index">Shop</Breadcrumb.Item>
                 <Breadcrumb.Item href="/shop_category">Men</Breadcrumb.Item>
                 <Breadcrumb.Item>Basic Tee 6-Pack</Breadcrumb.Item>
               </Breadcrumb>

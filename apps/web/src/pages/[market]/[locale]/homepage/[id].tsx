@@ -1,6 +1,6 @@
 
 import type { IStaticContext } from '@websolute/core';
-import { asStaticProps } from '@websolute/core';
+import { asServerProps } from '@websolute/core';
 import { BlogMoreDefaults, BlogPropositionDefaults, CategoriesPropositionDefaults, ProductsPropositionDefaults, SplitDefaults, SwiperHeroDefaults } from '@websolute/mock';
 import type { PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
@@ -73,7 +73,7 @@ export async function getStaticProps(context: IStaticContext) {
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);
   const page = await getPage('homepage', id, market, locale);
-  const props = asStaticProps({ ...context, layout, page });
+  const props = asServerProps({ ...context, layout, page });
   // console.log('Homepage getStaticProps', props, context);
   // console.log(layout.tree?.items);
   return {

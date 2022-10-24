@@ -1,10 +1,10 @@
 import { getClassNames, httpGet, IEquatable } from '@websolute/core';
-import { useDrawer, useLayout, useModal, useScroll } from '@websolute/hooks';
-import { ArrowRight, Hexagon, Menu, ShoppingCart, User } from '@websolute/icons';
+import { useCart, useDrawer, useLayout, useModal, useMounted, useScroll } from '@websolute/hooks';
+import { ArrowRight, Hexagon, MapPin, Menu, Phone, ShoppingCart, User } from '@websolute/icons';
 import { IRouteLink } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { Box, Button, Container, Flex, Modal, Nav, NavLink, Text } from '../../components';
+import { Accordion, Badge, Box, Button, Container, Drawer, Flex, Modal, Nav, NavLink, Text } from '../../components';
 import type { UIComponentProps } from '../../components/types';
 import { useUser } from '../../hooks';
 import { CartMini } from '../../sections';
@@ -59,24 +59,21 @@ type Props = {
 
 export type HeaderProps = UIComponentProps<Props>;
 
-const SubMenu = () => (
-  <Nav.Col>
-    <NavLink href="/#link-1">
-      <Button variant="nav" as="a">Link 1</Button>
-    </NavLink>
-    <NavLink href="/#link-2">
-      <Button variant="nav" as="a">Link 2</Button>
-    </NavLink>
-  </Nav.Col>
-)
+const StyledAccordion = styled(Accordion)`
+    padding: 0;
+    border: none;
+`;
 
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const layout = useLayout();
+  const mounted = useMounted();
   const scroll = useScroll();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   const [modal, onOpenModal, onCloseModal] = useModal();
+
   const user = useUser((state) => state.user);
-  const setUser = useUser((state) => state.update);
+  const setUser = useUser((state) => state.setUser);
+
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
 
   const [nav, setNav] = useState<IEquatable | null>(null);
@@ -86,28 +83,44 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     setNav(href !== nav ? href : null);
   }
 
-  /*
-  const [submenu, setSubmenu] = useState<IRouteLink[] | null>(null);
-  const onSubmenu = (item: IRouteLink) => {
-    if (item.items && item.items.length) {
-      setSubmenu(item.items);
-      onOpenDrawer('submenu');
-    }
-  }
-  */
-
   useEffect(() => {
     const getUser = async () => {
       try {
         const user = await httpGet('/api/auth/me');
-        // console.log('Header.getUser', user);
+        console.log('Header.getUser /api/auth/me', user);
         setUser(user);
       } catch (error) {
         console.log('Header.getUser.error', error);
       }
     };
     getUser();
-  }, [setUser]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const count = useCart((state) => state.count);
+  const cartItemsCount = mounted ? count() : 0;
+
+  /*
+  const setItems = useCart((state) => state.setItems);
+
+  useEffect(() => {
+    const getItems = async () => {
+      try {
+        const items = await httpGet('/api/cart/items');
+        console.log('Header.getItems /api/cart/items', items);
+        setItems(items);
+      } catch (error) {
+        console.log('Header.getItems.error', error);
+      }
+    };
+    getItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  */
+
+  // console.log(layout.topLevelRoutes);
+
+  const primaryNavs: IRouteLink[] = (layout.navs.primary || []).filter(x => !['checkout', 'login'].includes(x.id.toString()));
 
   const classNames = getClassNames('header', { fixed: props.fixed, sticky: props.sticky });
 
@@ -115,9 +128,9 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     <>
       <HeaderContainer className={classNames} {...containerProps}>
         <Container.Fluid>
-          <Flex.Row gap="1rem" gapSm="3rem">
+          <Flex.Row gap="1rem" gapMd="2rem" gapLg="3rem">
             <Flex>
-              <NavLink href={layout.knownRoutes?.homepage || '/'} passHref>
+              <NavLink href={layout.topLevelHrefs.homepage || '/'} passHref>
                 <Button as="a">
                   <Hexagon width="3rem" height="3rem" />
                   <Text size="6" padding="0 0.5rem">Hexagon</Text>
@@ -125,55 +138,91 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
               </NavLink>
             </Flex>
             <Flex flex="1" justifyContent="center">
-              {layout.navs.primary && <Nav.Row gap="3rem" display="none" displaySm="flex">
-                {layout.navs.primary.filter(x => !x.categoryId || x.categoryId !== 'login').map((x, i) => (
-                  (x.href && x.items && x.items.length ?
+              {primaryNavs && <Nav.Row gapSm="2rem" gapLg="3rem" display="none" displayMd="flex">
+                {primaryNavs.map((x, i) => (
+                  (['product_index'].includes(x.id.toString()) ?
                     <Box key={i}>
                       <Button variant="nav" onClick={() => onNav(x)}>{x.title}</Button>
                       <HeaderSubmenu item={x as HeaderSubmenuItem} visible={nav === x.href} onSelect={() => onNav()}></HeaderSubmenu>
                     </Box> :
-                    <NavLink key={i} href={x.href || ''} passHref>
+                    <NavLink key={i} href={x.href} passHref>
                       <Button as="a" variant="nav" onClick={() => onNav()}>{x.title}</Button>
                     </NavLink>)
                 ))}
               </Nav.Row>}
-              {/*layout.navs.primary && <Nav.Row gap="3rem" display="none" displaySm="flex">
-                {layout.navs.primary.filter(x => !x.categoryId || x.categoryId !== 'login').map((x, i) => (
-                  (x.items && x.items.length ?
-                    <Button variant="nav" onClick={() => onSubmenu(x)}>{x.title}</Button> :
-                    <NavLink key={i} href={x.href || ''} passHref>
-                      <Button as="a" variant="nav">{x.title}</Button>
-                    </NavLink>)
-                ))}
-                  </Nav.Row>*/}
             </Flex>
-            <Flex gap="1rem">
-              <Box minWidth="38px">
-                {user &&
-                  <NavLink href={layout.knownRoutes?.reserved_area || ''} passHref>
-                    <Button as="a" variant="circle" size="sm" letterSpacing="0.1em">
-                      {getShortName(user)}
-                    </Button>
-                  </NavLink>
-                }
-                {user === null &&
-                  <Button display='none' displaySm='block' onClick={() => onOpenDrawer('auth')}>
-                    <User width="2rem" height="2rem" />
+            <Flex gap="1rem" justifyContentMd="flex-end" minWidthMd="170px">
+              {false && layout.topLevelRoutes.store_index &&
+                <NavLink href={layout.topLevelRoutes.store_index.href} passHref>
+                  <Button as="a" display='none' displaySm='block' title={layout.topLevelRoutes.store_index.title}>
+                    <MapPin width="24px" height="24px" />
                   </Button>
-                }
-              </Box>
-              <Button onClick={() => onOpenDrawer('cart')}>
-                <ShoppingCart width="2rem" height="2rem" />
+                </NavLink>
+              }
+              {false && layout.topLevelRoutes.contact &&
+                <NavLink href={layout.topLevelRoutes.contact.href} passHref>
+                  <Button as="a" display='none' displaySm='block' title={layout.topLevelRoutes.contact.title}>
+                    <Phone width="24px" height="24px" />
+                  </Button>
+                </NavLink>
+              }
+              {user &&
+                <NavLink href={layout.topLevelHrefs.reserved_area} passHref>
+                  <Button as="a" variant="circle" size="sm" letterSpacing="0.1em">
+                    {getShortName(user)}
+                  </Button>
+                </NavLink>
+              }
+              {user === null &&
+                <Button display='none' displaySm='block' onClick={() => onOpenDrawer('auth')}>
+                  <User width="24px" height="24px" />
+                </Button>
+              }
+              <Button position="relative" onClick={() => onOpenDrawer('cart')}>
+                <ShoppingCart width="24px" height="24px" />
+                {cartItemsCount > 0 && <Badge position="absolute" top="-0.4em" right="-0.8em">{cartItemsCount}</Badge>}
               </Button>
-              <Button display='none' displaySm='flex' onClick={() => onOpenDrawer('markets-and-languages')}>
+              <Button display='none' displayMd='flex' onClick={() => onOpenDrawer('markets-and-languages')}>
                 <Text marginRight="0.5rem">{layout.locale.toUpperCase()}</Text> <Menu />
               </Button>
-              <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" /></Button>
+              <Button as="a" displayMd='none' onClick={() => onOpenDrawer('menu')}>
+                <Menu width="24px" height="24px" />
+              </Button>
             </Flex>
           </Flex.Row>
         </Container.Fluid>
         {props.children}
       </HeaderContainer>
+
+      {/* menu mobile */}
+      <Drawer visible={drawer == 'menu'} onClose={onCloseDrawer} placement="right">
+        <Drawer.Title>
+          <span>&nbsp;</span>
+        </Drawer.Title>
+        <Drawer.Content flex="1" width="100vw" maxWidth="Min(calc(100vw - 60px), 640px)">
+          {primaryNavs && <Nav.Col gap="2rem">
+            {primaryNavs.map((x, i) => (
+              (['product_index'].includes(x.id.toString()) ?
+                <StyledAccordion key={i} title={
+                  <Text size="7">{x.title}</Text>
+                }>
+                  <Nav.Col gap="1rem" marginTop="1rem">
+                    {x.items?.map((item, i) => (
+                      <NavLink key={i} href={item.href} passHref>
+                        <Button as="a" variant="nav">{item.title}</Button>
+                      </NavLink>
+                    ))}
+                  </Nav.Col>
+                </StyledAccordion> :
+                <NavLink key={i} href={x.href} passHref>
+                  <Button as="a" variant="nav" onClick={() => onNav()}>
+                    <Text size="7">{x.title}</Text>
+                  </Button>
+                </NavLink>)
+            ))}
+          </Nav.Col>}
+        </Drawer.Content>
+      </Drawer>
 
       <Modal width="30rem" visible={modal == 'foreign-market'} onClose={onCloseModal}>
         <Modal.Title>
@@ -187,9 +236,6 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         <Modal.Button variant="primary"><span>Change to Italy</span> <ArrowRight /></Modal.Button>
       </Modal>
 
-      {/*
-      <HeaderSubmenuDrawer visible={drawer == 'submenu'} submenu={submenu} onClose={onCloseDrawer}></HeaderSubmenuDrawer>
-       */}
       <AuthDrawer visible={drawer == 'auth'} onClose={onCloseDrawer} />
       <CartMini visible={drawer == 'cart'} onClose={onCloseDrawer} />
       <MarketsAndLanguagesDrawer visible={drawer == 'markets-and-languages'} onClose={onCloseDrawer} />

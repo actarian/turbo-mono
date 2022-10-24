@@ -247,19 +247,19 @@ const Select: SelectComponent = forwardRef<SelectRef, React.PropsWithChildren<Se
       }
     };
     const values = Array.isArray(value) ? value : [value];
-    const [optionChildren] = getChildsByType(children, SelectOption);
-    return React.Children.map(optionChildren, (child: any) => { // !!! any
-      const childValue = child.props.value;
-      const childLabel = child.props.children;
-      if (!values.includes(childValue)) {
+    const [options] = getChildsByType(children, SelectOption);
+    return React.Children.map(options, (option: any) => { // !!! any
+      const optionValue = option.props.value;
+      const optionLabel = option.props.children;
+      if (!values.includes(optionValue)) {
         return null;
       }
       if (!multiple) {
-        return childLabel;
+        return optionLabel;
       }
       return (
-        <SelectMultipleValue disabled={disabled} onClear={() => onClear(childValue)}>
-          {childLabel}
+        <SelectMultipleValue disabled={disabled} onClear={() => onClear(optionValue)}>
+          {optionLabel}
         </SelectMultipleValue>
       );
     });
@@ -288,9 +288,10 @@ const Select: SelectComponent = forwardRef<SelectRef, React.PropsWithChildren<Se
             <Ellipsis>{placeholder}</Ellipsis>
           </span>
         )}
-        {value && (multiple ?
-          <Flex.Row flexWrap="wrap" maxWidth="calc(100% - 1.5rem)">{selectedChildren}</Flex.Row> :
-          <span className="value">{selectedChildren}</span>
+        {value && (
+          multiple ?
+            <Flex.Row flexWrap="wrap" maxWidth="calc(100% - 1.5rem)">{selectedChildren}</Flex.Row> :
+            <span className="value">{selectedChildren}</span>
         )}
         <SelectDropdown ref={dropdownRef} className={dropdownClassName} visible={visible} dropdownStyle={dropdownStyle} disableMatchWidth={disableMatchWidth} getPopupContainer={getPopupContainer}>
           {children}

@@ -20,7 +20,6 @@ export type MagazineDetailItem = {
   abstract: string;
   photographer: string;
   media: IMedia;
-  // categoryId: IEquatable;
   category: {
     href: string;
     title: string;

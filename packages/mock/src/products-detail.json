@@ -1,19 +1,19 @@
 {
   "item": {
     "id": 1,
-    "schema": "products_detail",
-    "href": "/products_detail",
+    "schema": "product_detail",
+    "href": "/product_detail",
     "title": "Azulej by Patricia Urquiola",
     "abstract": "<p>Azulej è volta a rivalorizzare la memoria delle antiche maioliche artigianali e del cemento idraulico, sperimentando una tecnica di stampa innovativa orientata verso un prodotto di larga diffusione. Questa tradizione – rivisitata in chiave contemporanea – viene realizzata serialmente in formato 20x20 cm.</p> <p>La composizione riprende le caratteristiche della tecnica patchwork: un mix and match innovativo, volutamente casuale, che abbina disegni astratti e colori non saturi, neutri, appena consumati; colori che si fissano al materiale di supporto in modo naturalmente irregolare.</p>",
     "medias": [],
     "categoryId": "product_category_tile",
     "category": {
       "id": 11,
-      "href": "/products_category",
+      "href": "/product_category",
       "title": "All tiles",
       "name": "tiles",
       "categoryId": "product_index",
-      "pageSchema": "products_category",
+      "pageSchema": "product_category",
       "pageId": 1,
       "schema": "category"
     },
@@ -22,7 +22,7 @@
         "schema": "media-full-1",
         "title": "Azulej by Patricia Urquiola",
         "media": {
-          "src": "/assets/products_detail/hero.jpg",
+          "src": "/assets/product_detail/hero.jpg",
           "type": "image",
           "alt": "Azulej by Patricia Urquiola"
         }
@@ -50,7 +50,7 @@
         "schema": "media-full-2",
         "title": "Azulej Bianco: Cubo, Trevo, Estrela, Flores, Renda",
         "media": {
-          "src": "/assets/products_detail/full.jpg",
+          "src": "/assets/product_detail/full.jpg",
           "type": "image",
           "alt": "Azulej Bianco: Cubo, Trevo, Estrela, Flores, Renda"
         }
@@ -59,7 +59,7 @@
         "schema": "text-media-1",
         "abstract": "In questo modo i pattern di Azulej combinano linguaggi volutamente diversi: memoria, geometrie, pixel, sviluppati sia in senso longitudinale che diagonale. Un risultato unico e sorprendente, che regala libertà compositiva e unicità di disegno, mantenendo intatte le caratteristiche del ‘fatto a mano’, con le prestazioni di un materiale ad alta tecnologia adatto sia a pavimenti che a rivestimenti.",
         "media": {
-          "src": "/assets/products_detail/detail.jpg",
+          "src": "/assets/product_detail/detail.jpg",
           "type": "image",
           "alt": "Azulej Grigio: Combination, Cubo"
         }
@@ -68,7 +68,7 @@
         "schema": "media-full-2",
         "title": "Azulej Bianco: Trama, Trevo, Estrela",
         "media": {
-          "src": "/assets/products_detail/full-02.jpg",
+          "src": "/assets/product_detail/full-02.jpg",
           "type": "image",
           "alt": "Azulej Bianco: Trama, Trevo, Estrela"
         }
@@ -81,7 +81,7 @@
             "title": "Masseria Trullo di Pezza",
             "href": "/projects_detail",
             "media": {
-              "src": "/assets/products_detail/projects-01.jpg",
+              "src": "/assets/product_detail/projects-01.jpg",
               "type": "image"
             }
           },
@@ -89,7 +89,7 @@
             "title": "House in Paris",
             "href": "/projects_detail",
             "media": {
-              "src": "/assets/products_detail/projects-02.jpg",
+              "src": "/assets/product_detail/projects-02.jpg",
               "type": "image"
             }
           },
@@ -97,7 +97,7 @@
             "title": "Architect's Office",
             "href": "/projects_detail",
             "media": {
-              "src": "/assets/products_detail/projects-03.jpg",
+              "src": "/assets/product_detail/projects-03.jpg",
               "type": "image"
             }
           },
@@ -105,7 +105,7 @@
             "title": "Villa Gea",
             "href": "/projects_detail",
             "media": {
-              "src": "/assets/products_detail/projects-04.jpg",
+              "src": "/assets/product_detail/projects-04.jpg",
               "type": "image"
             }
           },
@@ -113,7 +113,7 @@
             "title": "Malesherbes",
             "href": "/projects_detail",
             "media": {
-              "src": "/assets/products_detail/projects-05.jpg",
+              "src": "/assets/product_detail/projects-05.jpg",
               "type": "image"
             }
           },
@@ -121,7 +121,7 @@
             "title": "The Social House",
             "href": "/projects_detail",
             "media": {
-              "src": "/assets/products_detail/projects-06.jpg",
+              "src": "/assets/product_detail/projects-06.jpg",
               "type": "image"
             }
           }
@@ -133,7 +133,7 @@
         "abstract": "Architetta e designer spagnola, ma italiana di adozione, fa parte del team Hexagon dal 2008. Ha disegnato numerose collezioni, tra cui: la serie <a href=\"/it/collection/dechirer-by-patricia-urquiola\">Déchirer</a>, <a href=\"/it/collezioni/bas-relief-by-patricia-urquiola\">Bas-Relief</a>, <a href=\"/it/collezioni/azulej-by-patricia-urquiola\">Azulej</a>, <a href=\"/it/collezioni/tierras-by-patricia-urquiola\">Tierras</a>, <a href=\"/it/collezioni/dechirer-xl-by-patricia-urquiola\">Déchirer XL</a>,&nbsp;<a href=\"/it/3d-elements/celosia-by-patricia-urquiola\">Celosia</a>&nbsp;ed <a href=\"/it/shop/editions/el-lobo-by-patricia-urquiola\">El Lobo</a>.",
         "description": "“Con la collezione Azulej volevamo dare nuovo valore alla memoria del cemento idraulico. Un processo sviluppatosi in modo esponenziale, dove abbiamo voluto abbozzare soltanto le prime combinazioni di una lunga serie. E ora, it’s up to you!”",
         "media": {
-          "src": "/assets/products_detail/designer.jpg",
+          "src": "/assets/product_detail/designer.jpg",
           "type": "image"
         }
       }
@@ -162,15 +162,15 @@
       ],
       "medias": [
         {
-          "src": "/assets/products_detail/version-01.jpg",
+          "src": "/assets/product_detail/version-01.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products_detail/version-02.jpg",
+          "src": "/assets/product_detail/version-02.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products_detail/version-03.jpg",
+          "src": "/assets/product_detail/version-03.jpg",
           "type": "image"
         }
       ]
@@ -220,21 +220,21 @@
       "items": [
         {
           "id": 2,
-          "schema": "products_detail",
-          "href": "/products_detail",
+          "schema": "product_detail",
+          "href": "/product_detail",
           "title": "Déchirer by Patricia Urquiola",
           "media": {
-            "src": "/assets/products_detail/related-01.jpg",
+            "src": "/assets/product_detail/related-01.jpg",
             "type": "image"
           }
         },
         {
           "id": 3,
-          "schema": "products_detail",
-          "href": "/products_detail",
+          "schema": "product_detail",
+          "href": "/product_detail",
           "title": "Puzzle by Barber & Osgerby",
           "media": {
-            "src": "/assets/products_detail/related-02.jpg",
+            "src": "/assets/product_detail/related-02.jpg",
             "type": "image"
           }
         }

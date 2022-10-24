@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2216,
@@ -16,18 +16,18 @@
       "title": "Azulej by Patricia Urquiola",
       "medias": [
         {
-          "src": "/assets/products/181_t_181_t_thumb_compressed.jpg",
+          "src": "/assets/product/181_t_181_t_thumb_compressed.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/127_t_127_t_1---Azulej-Binaco-_-cubo,-trevo,-estrela,-flores,-renda_compressed.jpg",
+          "src": "/assets/product/127_t_127_t_1---Azulej-Binaco-_-cubo,-trevo,-estrela,-flores,-renda_compressed.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         5282,
@@ -41,18 +41,18 @@
       "title": "Bas-Relief by Patricia Urquiola",
       "medias": [
         {
-          "src": "/assets/products/256_t_Bas-Relief_hero.jpg",
+          "src": "/assets/product/256_t_Bas-Relief_hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/257_t_1---Bas-Relief-Code-Cipria.jpg",
+          "src": "/assets/product/257_t_1---Bas-Relief-Code-Cipria.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [],
       "id": 10951,
       "categoryId": 191,
@@ -61,18 +61,18 @@
       "title": "Botanica by Tokujin Yoshioka",
       "medias": [
         {
-          "src": "/assets/products/9939_t_Pic_220901_Mutina67899_POST_880.jpg",
+          "src": "/assets/product/9939_t_Pic_220901_Mutina67899_POST_880.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/9940_t_Pic_220901_Mutina246351_880x550.jpg",
+          "src": "/assets/product/9940_t_Pic_220901_Mutina246351_880x550.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         5282,
@@ -87,18 +87,18 @@
       "title": "Ceramica by Silvia Giacobazzi",
       "medias": [
         {
-          "src": "/assets/products/368_t_ceramica_hero.jpg",
+          "src": "/assets/product/368_t_ceramica_hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/408_t_1---Ceramica-Grigio-Medio,-Ceramica-Grigio-Chiaro.jpg",
+          "src": "/assets/product/408_t_1---Ceramica-Grigio-Medio,-Ceramica-Grigio-Chiaro.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2215
@@ -111,18 +111,18 @@
       "title": "Chymia by Laboratorio Avallone",
       "medias": [
         {
-          "src": "/assets/products/4277_t_listing_1.jpg",
+          "src": "/assets/product/4277_t_listing_1.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/4363_t_Chymia_living_01_880px.jpg",
+          "src": "/assets/product/4363_t_Chymia_living_01_880px.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2216,
@@ -137,18 +137,18 @@
       "title": "Déchirer by Patricia Urquiola",
       "medias": [
         {
-          "src": "/assets/products/436_t_DECHIRER_hero.jpg",
+          "src": "/assets/product/436_t_DECHIRER_hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/463_t_463_t_1---Déchirer-Decor-Nero.jpg",
+          "src": "/assets/product/463_t_463_t_1---Déchirer-Decor-Nero.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2215,
@@ -162,18 +162,18 @@
       "title": "Déchirer XL by Patricia Urquiola",
       "medias": [
         {
-          "src": "/assets/products/482_t_DECHIRER_XL_hero.jpg",
+          "src": "/assets/product/482_t_DECHIRER_XL_hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/483_t_1_DECHIRER_XL_Avana_Grafite_Gesso.jpg",
+          "src": "/assets/product/483_t_1_DECHIRER_XL_Avana_Grafite_Gesso.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5285,
         5293,
@@ -192,18 +192,18 @@
       "title": "Diarama by Hella Jongerius",
       "medias": [
         {
-          "src": "/assets/products/514_t_Diarama_hero.jpg",
+          "src": "/assets/product/514_t_Diarama_hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/528_t_01_Diarama_Dusk_880.jpg",
+          "src": "/assets/product/528_t_01_Diarama_Dusk_880.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2216,
@@ -217,18 +217,18 @@
       "title": "DIN by Konstantin Grcic",
       "medias": [
         {
-          "src": "/assets/products/6867_t_Mutina-DIN_detail_2_880x550.jpg",
+          "src": "/assets/product/6867_t_Mutina-DIN_detail_2_880x550.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/6990_t_01_Din_Bagno_Dark_Blue_880x550.jpg",
+          "src": "/assets/product/6990_t_01_Din_Bagno_Dark_Blue_880x550.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2215,
@@ -243,18 +243,18 @@
       "title": "Flow by Mutina Team",
       "medias": [
         {
-          "src": "/assets/products/545_t_FLOW_hero.jpg",
+          "src": "/assets/product/545_t_FLOW_hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/546_t_1---Flow-White.jpg",
+          "src": "/assets/product/546_t_1---Flow-White.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293
       ],
@@ -266,18 +266,18 @@
       "title": "Folded by Raw Edges",
       "medias": [
         {
-          "src": "/assets/products/594_t_FOLDED_hero.jpg",
+          "src": "/assets/product/594_t_FOLDED_hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/595_t_1---Folded.jpg",
+          "src": "/assets/product/595_t_1---Folded.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293
       ],
@@ -289,18 +289,18 @@
       "title": "Folded XL by Raw Edges",
       "medias": [
         {
-          "src": "/assets/products/621_t_FOLDED_hero.jpg",
+          "src": "/assets/product/621_t_FOLDED_hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/622_t_1---Folded-XL.jpg",
+          "src": "/assets/product/622_t_1---Folded-XL.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [],
       "id": 10921,
       "categoryId": 190,
@@ -309,18 +309,18 @@
       "title": "Kosei by Vincent Van Duysen",
       "medias": [
         {
-          "src": "/assets/products/9835_t_Pic_220901_Mutina67586_LR.jpg",
+          "src": "/assets/product/9835_t_Pic_220901_Mutina67586_LR.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/9836_t_2_LR.jpg",
+          "src": "/assets/product/9836_t_2_LR.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2215,
@@ -336,18 +336,18 @@
       "title": "Lane by Barber & Osgerby",
       "medias": [
         {
-          "src": "/assets/products/638_t_Lane_hero.jpg",
+          "src": "/assets/product/638_t_Lane_hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/652_t_1--Lane-Poly-Black,-Base-Black.jpg",
+          "src": "/assets/product/652_t_1--Lane-Poly-Black,-Base-Black.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2216,
@@ -361,18 +361,18 @@
       "title": "Mattonelle Margherita by Nathalie Du Pasquier",
       "medias": [
         {
-          "src": "/assets/products/5608_t_mattonelle_margherita_cover_880px.jpg",
+          "src": "/assets/product/5608_t_mattonelle_margherita_cover_880px.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/5610_t_5515_t_2_LR.jpg",
+          "src": "/assets/product/5610_t_5515_t_2_LR.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2216,
@@ -386,18 +386,18 @@
       "title": "Mews by Barber & Osgerby",
       "medias": [
         {
-          "src": "/assets/products/671_t_MEWS_Hero.jpg",
+          "src": "/assets/product/671_t_MEWS_Hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/699_t_1---Mews-Soot.jpg",
+          "src": "/assets/product/699_t_1---Mews-Soot.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2215,
@@ -412,18 +412,18 @@
       "title": "Phenomenon by Tokujin Yoshioka",
       "medias": [
         {
-          "src": "/assets/products/773_t_PHENOMENON_Hero.jpg",
+          "src": "/assets/product/773_t_PHENOMENON_Hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/810_t_Pic_220901_Mutina245844 copia_880.jpg",
+          "src": "/assets/product/810_t_Pic_220901_Mutina245844 copia_880.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2216,
@@ -438,18 +438,18 @@
       "title": "Pico by Ronan & Erwan Bouroullec",
       "medias": [
         {
-          "src": "/assets/products/886_t_PICO_Hero.jpg",
+          "src": "/assets/product/886_t_PICO_Hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/887_t_1---Wall- -Pico-Blue-Dots-Gris.-Floor- -Pico-Down-Natural-Gris.jpg",
+          "src": "/assets/product/887_t_1---Wall- -Pico-Blue-Dots-Gris.-Floor- -Pico-Down-Natural-Gris.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5281,
         5293,
@@ -465,18 +465,18 @@
       "title": "Primavera by Barber & Osgerby",
       "medias": [
         {
-          "src": "/assets/products/937_t_PRIMAVERA_Hero.jpg",
+          "src": "/assets/product/937_t_PRIMAVERA_Hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/938_t_6414_t_Miniset_Primavera_60x60_880x550.jpg",
+          "src": "/assets/product/938_t_6414_t_Miniset_Primavera_60x60_880x550.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5284,
         5293,
@@ -493,18 +493,18 @@
       "title": "Punto by Ronan & Erwan Bouroullec",
       "medias": [
         {
-          "src": "/assets/products/7247_t__DSC7158-Modifica_880.jpg",
+          "src": "/assets/product/7247_t__DSC7158-Modifica_880.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/7248_t__DSC7168-Modifica_880.jpg",
+          "src": "/assets/product/7248_t__DSC7168-Modifica_880.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5286,
         5293,
@@ -523,18 +523,18 @@
       "title": "Puzzle by Barber & Osgerby",
       "medias": [
         {
-          "src": "/assets/products/999_t_PUZZLE_Hero.jpg",
+          "src": "/assets/product/999_t_PUZZLE_Hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/1000_t_1---Puzzle-Skye,-Slate,-Edge-Slate.jpg",
+          "src": "/assets/product/1000_t_1---Puzzle-Skye,-Slate,-Edge-Slate.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5284,
         5293,
@@ -551,18 +551,18 @@
       "title": "Rombini by Ronan & Erwan Bouroullec",
       "medias": [
         {
-          "src": "/assets/products/1053_t_Mutina_ph_Delfino_Sisto_Legnani_DSC6840-Modifica_880.jpg",
+          "src": "/assets/product/1053_t_Mutina_ph_Delfino_Sisto_Legnani_DSC6840-Modifica_880.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/1085_t_Immagine_02_880.jpg",
+          "src": "/assets/product/1085_t_Immagine_02_880.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         2216,
         5293,
@@ -581,18 +581,18 @@
       "title": "Tape by Raw Edges",
       "medias": [
         {
-          "src": "/assets/products/1115_t_TAPE_Hero.jpg",
+          "src": "/assets/product/1115_t_TAPE_Hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/1116_t_1HJ6P5~P.jpg",
+          "src": "/assets/product/1116_t_1HJ6P5~P.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5293,
         2215,
@@ -608,18 +608,18 @@
       "title": "Teknotessere by Mutina Team",
       "medias": [
         {
-          "src": "/assets/products/1198_t_TEKNOTESSERE_listing_macro.jpg",
+          "src": "/assets/product/1198_t_TEKNOTESSERE_listing_macro.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/1199_t_1---FS9T6566-6559-6560-6562-6564-6592.jpg",
+          "src": "/assets/product/1199_t_1---FS9T6566-6559-6560-6562-6564-6592.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         5289,
         5293,
@@ -638,18 +638,18 @@
       "title": "Tex by Raw Edges",
       "medias": [
         {
-          "src": "/assets/products/1218_t_TEX_Hero.jpg",
+          "src": "/assets/product/1218_t_TEX_Hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/1234_t_1---Tex-Grey,-Black-19.24.40.jpg",
+          "src": "/assets/product/1234_t_1---Tex-Grey,-Black-19.24.40.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     },
     {
-      "schema": "products_detail",
+      "schema": "product_detail",
       "colors": [
         2215,
         5282,
@@ -666,15 +666,15 @@
       "title": "Tierras by Patricia Urquiola",
       "medias": [
         {
-          "src": "/assets/products/1248_t_TIERRAS_Hero.jpg",
+          "src": "/assets/product/1248_t_TIERRAS_Hero.jpg",
           "type": "image"
         },
         {
-          "src": "/assets/products/1292_t_1---Tierras-Collection.jpg",
+          "src": "/assets/product/1292_t_1---Tierras-Collection.jpg",
           "type": "image"
         }
       ],
-      "href": "/products_detail"
+      "href": "/product_detail"
     }
   ]
 }

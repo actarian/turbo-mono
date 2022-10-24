@@ -1,4 +1,4 @@
-import { INamedEntity } from '@websolute/core';
+import { IEquatable, IOption } from '@websolute/core';
 import { FormAbstract } from './form-abstract';
 import { FormAbstractCollection } from './form-abstract-collection';
 import { FormArray } from './form-array';
@@ -6,6 +6,8 @@ import { FormControl } from './form-control';
 import { FormGroup } from './form-group';
 
 export type IControlParam = { uid: number, control: FormControl };
+
+export type IFormOption = { id: IEquatable, name: string };
 
 export type FormOptions = {
   schema?: ControlType;
@@ -17,7 +19,8 @@ export type FormOptions = {
   hidden?: FormActivator,
   disabled?: FormActivator,
   readonly?: FormActivator,
-  options?: INamedEntity[];
+  options?: IOption[];
+  optionsExtra?: { asEquatable: boolean };
 };
 
 export type ValidationError = {
@@ -53,7 +56,8 @@ export interface IFormBuilderControlSchema {
   hidden?: FormActivator,
   disabled?: FormActivator,
   readonly?: FormActivator,
-  options?: INamedEntity[];
+  options?: IOption[];
+  optionsExtra?: { asEquatable: boolean };
   validators?: FormValidator | FormValidator[];
   children?: IFormBuilderSchema;
 }

@@ -7,11 +7,12 @@
   "navs": {
     "primary": [
       {
+        "id": "product_index",
         "title": "Collections",
         "href": "#collections",
         "items": [
           {
-            "href": "/products_category",
+            "href": "/product_category",
             "title": "Tiles",
             "media": {
               "type": "image",
@@ -19,7 +20,7 @@
             }
           },
           {
-            "href": "/products_category",
+            "href": "/product_category",
             "title": "3D Elements",
             "media": {
               "type": "image",
@@ -27,7 +28,7 @@
             }
           },
           {
-            "href": "/products_category",
+            "href": "/product_category",
             "title": "Paints",
             "media": {
               "type": "image",
@@ -35,15 +36,15 @@
             }
           },
           {
-            "href": "/products_category",
-            "title": "Wood &amp; Metal",
+            "href": "/product_category",
+            "title": "Wood & Metal",
             "media": {
               "type": "image",
               "src": "/assets/header/6368_n_menu_wood_metal.webp"
             }
           },
           {
-            "href": "/products_category",
+            "href": "/product_category",
             "title": "Accessories",
             "media": {
               "type": "image",
@@ -51,7 +52,7 @@
             }
           },
           {
-            "href": "/products_category",
+            "href": "/product_category",
             "title": "Editions",
             "media": {
               "type": "image",
@@ -61,24 +62,29 @@
         ]
       },
       {
+        "id": "magazine_index",
         "title": "Magazine",
-        "href": "/magazine"
+        "href": "/magazine_index"
       },
       {
+        "id": "store_index",
         "title": "Stores",
-        "href": "/store-locator"
+        "href": "/store_index"
       },
       {
+        "id": "contact",
         "title": "Contacts",
-        "href": "/contacts"
+        "href": "/contact"
       },
       {
+        "id": "shop_index",
         "title": "Shop",
-        "href": "/shop"
+        "href": "/shop_index"
       }
     ],
     "secondary": [],
     "footer": []
   },
-  "knownRoutes": {}
+  "topLevelRoutes": {},
+  "topLevelHrefs": {}
 }

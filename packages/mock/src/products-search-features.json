@@ -3,7 +3,7 @@
     "id": "color",
     "schema": "featureType",
     "title": "Color",
-    "mode": "select",
+    "mode": "or",
     "features": [
       {
         "id": 5293,
@@ -71,7 +71,7 @@
     "id": "designer",
     "schema": "featureType",
     "title": "Designer",
-    "mode": "select",
+    "mode": "or",
     "features": [
       {
         "id": 2224,

@@ -4,6 +4,7 @@
   "main": "./src/index.tsx",
   "types": "./src/index.tsx",
   "license": "MIT",
+  "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },

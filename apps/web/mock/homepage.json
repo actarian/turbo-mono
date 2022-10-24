@@ -15,7 +15,10 @@
       "en": "All-Italian tradition and passion: over 30 years of history in the ancient art of producing eyewear",
       "it": "Tradizione e passione tutta italiana: oltre 30 anni di storia nell’arte antica di produrre occhiali"
     },
-    "image": "/assets/homepage/banner.png",
+    "media": {
+      "type": "image",
+      "src": "/assets/homepage/banner.png"
+    },
     "meta": {
       "title": {
         "en": "New Wave",

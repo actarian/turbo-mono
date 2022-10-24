@@ -213,9 +213,7 @@ const CssObj = {
   "verticalAlign": "vertical-align",
   */
   "visibility": "visibility",
-  /*
   "whiteSpace": "white-space",
-  */
   "width": "width",
   /*
   "wordBreak": "word-break",
