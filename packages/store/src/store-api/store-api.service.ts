@@ -85,7 +85,10 @@ export default class StoreApiService<T extends IEntity> implements IQuerable<IEn
   }
 
   async delete(id: IEquatable) {
-    const url = `/${this.key}/${encodeURIComponent(id.toString())}`;
+    const params = toFindParams(id);
+    const search = this.search_(params);
+    const url = `/${this.key}${search}`;
+    // const url = `/${this.key}/${encodeURIComponent(id.toString())}`;
     // console.log('StoreApiService', this.key, 'delete', url);
     const item = await storeDelete(url);
     return this.decorator_(item);
