@@ -1,78 +1,44 @@
-import { IEquatable, IOption } from '@websolute/core';
 import { EmailValidator, FormGroup, RequiredIfValidator, RequiredTrueValidator, RequiredValidator, useFormBuilder } from '@websolute/forms';
-import { useApiPost, useLabel } from '@websolute/hooks';
-import { IUser } from '@websolute/models';
+import { useApi, useApiPost, useCheckout, useLabel } from '@websolute/hooks';
+import type { IAddressOptions, ICheckoutInfo, ICheckoutPartial, IUser } from '@websolute/models';
+import { IUserAddress } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import { Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { FieldCollection } from '../../fields';
 import { Form, FormError, FormTester } from '../../forms';
-import { useCheckout } from '../../hooks';
-
-export type IUserInfoOptions = {
-  countries: IOption[];
-  provinces: IOption[];
-  regions: IOption[];
-}
-
-export type IUserDetailedInfo = {
-  firstName: string;
-  lastName: string;
-  address: string,
-  streetNumber: string,
-  zipCode: string;
-  city: string;
-  country: IOption;
-  region?: IOption,
-  province?: IOption,
-  email: string;
-  phoneNumber: string;
-}
-
-export type IUserInfo = {
-  id?: IEquatable;
-  firstName: string;
-  lastName: string;
-  email: string;
-  shippingInfo: IUserDetailedInfo;
-  invoicingInfo?: IUserDetailedInfo;
-  hasInvoice?: boolean;
-}
 
 export interface CheckoutUserInfoProps {
   user?: IUser;
-  onUserInfo?: (shippingInfo: IUserInfo) => void;
+  onUserInfo?: (userInfo: ICheckoutInfo) => void;
   onNavToPrevious?: () => void;
 }
 
 const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, onNavToPrevious }: CheckoutUserInfoProps) => {
   const label = useLabel();
 
-  const checkout = useCheckout((state) => state.checkout);
+  const api = useApi();
 
-  const { response: options } = useApiPost<IUserInfoOptions>('/checkout/info', checkout);
+  const checkout = useCheckout((state) => state.checkout);
+  const setCheckout = useCheckout((state) => state.setCheckout);
+
+  const [options] = useApiPost<IAddressOptions>('/checkout/info', checkout);
 
   const required = RequiredValidator();
   const requiredTrue = RequiredTrueValidator();
   const email = EmailValidator();
 
-  const shippingRequiredIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.shippingInfo?.country?.id === 'it');
-  const shippingHiddenIfNotItaly = (value: any, rootValue: any) => !(rootValue?.shippingInfo?.country?.id === 'it');
+  const shippingRequiredIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.shippingAddress?.country?.id === 'it');
+  const shippingHiddenIfNotItaly = (value: any, rootValue: any) => !(rootValue?.shippingAddress?.country?.id === 'it');
 
-  const requiredIfHasInvoice = RequiredIfValidator((value, rootValue) => rootValue?.hasInvoice === true);
-  const hiddenIfNotHasInvoice = (value: any, rootValue: any) => !(rootValue?.hasInvoice === true);
+  const billingRequired = RequiredIfValidator((value, rootValue) => rootValue?.hasBilling === true);
+  const billingHidden = (value: any, rootValue: any) => !(rootValue?.hasBilling === true);
+  const billingHiddenIfNotItaly = (value: any, rootValue: any) => !(rootValue?.billingAddress?.country?.id === 'it');
+  // const billingRequiredIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.billingAddress?.country?.id === 'it');
 
-  const invoicingRequiredIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.invoicingInfo?.country?.id === 'it');
-  const invoicingHiddenIfNotItaly = (value: any, rootValue: any) => !(rootValue?.invoicingInfo?.country?.id === 'it');
+  const [form, setValue, setTouched, reset, group] = useFormBuilder<Omit<ICheckoutInfo, 'user'>, FormGroup>({
 
-  const [form, setValue, setTouched, reset, group] = useFormBuilder<IUserInfo, FormGroup>({
-
-    id: { schema: 'text', hidden: true },
-    firstName: { schema: 'text', label: 'field.firstName', validators: [required] },
-    lastName: { schema: 'text', label: 'field.lastName', validators: [required] },
-    email: { schema: 'text', label: 'field.email', validators: [required, email] },
-
-    shippingInfo: {
-      schema: 'group', label: 'field.shippingInfo', children: {
+    shippingAddress: {
+      schema: 'group', label: 'field.shippingAddress', children: {
         firstName: { schema: 'text', label: 'field.firstName', validators: [required] },
         lastName: { schema: 'text', label: 'field.lastName', validators: [required] },
         email: { schema: 'text', label: 'field.email', validators: [required, email] },
@@ -97,55 +63,59 @@ const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, o
       }
     },
 
-    invoicingInfo: {
-      schema: 'group', label: 'field.invoicingInfo', children: {
-        firstName: { schema: 'text', label: 'field.firstName', validators: [required] },
-        lastName: { schema: 'text', label: 'field.lastName', validators: [required] },
-        email: { schema: 'text', label: 'field.email', validators: [required, email] },
-        phoneNumber: { schema: 'text', label: 'field.phoneNumber', validators: [required] },
-        country: { schema: 'select', label: 'field.country', options: options?.countries, validators: [required] },
+    hasInvoice: { schema: 'checkbox', label: 'field.hasInvoice' },
+
+    hasBilling: { schema: 'checkbox', label: 'field.hasBilling' },
+
+    billingAddress: {
+      schema: 'group', label: 'field.billingAddress', children: {
+        firstName: { schema: 'text', label: 'field.firstName', validators: [billingRequired] },
+        lastName: { schema: 'text', label: 'field.lastName', validators: [billingRequired] },
+        email: { schema: 'text', label: 'field.email', validators: [billingRequired, email] },
+        phoneNumber: { schema: 'text', label: 'field.phoneNumber', validators: [billingRequired] },
+        country: { schema: 'select', label: 'field.country', options: options?.countries, validators: [billingRequired] },
         region: {
           schema: 'select', label: 'field.region', options: options?.regions,
-          validators: invoicingRequiredIfItaly,
-          disabled: invoicingHiddenIfNotItaly,
-          hidden: invoicingHiddenIfNotItaly,
+          validators: [billingRequired],
+          disabled: billingHiddenIfNotItaly,
+          hidden: billingHiddenIfNotItaly,
         },
         province: {
           schema: 'autocomplete', label: 'field.province', options: options?.provinces,
-          validators: invoicingRequiredIfItaly,
-          disabled: invoicingHiddenIfNotItaly,
-          hidden: invoicingHiddenIfNotItaly,
+          validators: [billingRequired],
+          disabled: billingHiddenIfNotItaly,
+          hidden: billingHiddenIfNotItaly,
         },
-        address: { schema: 'text', label: 'field.address', validators: [required] },
-        streetNumber: { schema: 'text', label: 'field.streetNumber', validators: [required] },
-        zipCode: { schema: 'text', label: 'field.zipCode', validators: [required] },
-        city: { schema: 'text', label: 'field.city', validators: [required] },
+        address: { schema: 'text', label: 'field.address', validators: [billingRequired] },
+        streetNumber: { schema: 'text', label: 'field.streetNumber', validators: [billingRequired] },
+        zipCode: { schema: 'text', label: 'field.zipCode', validators: [billingRequired] },
+        city: { schema: 'text', label: 'field.city', validators: [billingRequired] },
       },
-      disabled: hiddenIfNotHasInvoice,
-      hidden: hiddenIfNotHasInvoice,
+      disabled: billingHidden,
+      hidden: billingHidden,
     },
-
-    hasInvoice: { schema: 'checkbox', label: 'field.hasInvoice' },
 
     checkField: { schema: 'text', hidden: true }, // check hidden field for antiforgery
 
   }, [options]);
 
   useEffect(() => {
-    if (checkout.info) {
-      setValue(checkout.info);
+    if (checkout.shippingAddress) {
+      setValue({
+        shippingAddress: checkout.shippingAddress,
+        hasInvoice: checkout.hasInvoice,
+        hasBilling: checkout.hasBilling,
+        billingAddress: checkout.billingAddress,
+      });
     } else if (user) {
-      setValue(user);
+      setValue({ shippingAddress: user as Partial<IUserAddress> as any });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [options]);
 
   const onTest = () => {
     setValue({
-      firstName: 'Jhon',
-      lastName: 'Appleseed',
-      email: 'jhon.appleseed@gmail.com',
-      shippingInfo: {
+      shippingAddress: {
         firstName: 'Jhon',
         lastName: 'Appleseed',
         email: 'jhon.appleseed@gmail.com',
@@ -159,6 +129,7 @@ const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, o
         city: 'Pesaro',
       },
       hasInvoice: false,
+      hasBilling: false,
     });
   }
 
@@ -174,8 +145,13 @@ const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, o
       console.log('CheckoutUserInfo.valid', form.value);
       try {
         setError(undefined);
+        const response = await api.post<ICheckoutPartial>('/checkout/update', {
+          action: 'info',
+          checkout: { ...checkout, ...form.value, user },
+        });
+        setCheckout(response);
         if (typeof onUserInfo === 'function') {
-          onUserInfo(form.value);
+          onUserInfo({ ...form.value, user });
         }
       } catch (error) {
         console.log('CheckoutUserInfo.error', error);

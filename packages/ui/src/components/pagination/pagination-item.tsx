@@ -47,7 +47,7 @@ const StyledPaginationItem = styled.div`
     }
 
     &.active {
-      font-weight: bold;
+      font-weight: 700;
       background-color: var(--color-primary-500);
       color: var(--color-neutral-100);
       box-shadow: var(--shadow-xs);

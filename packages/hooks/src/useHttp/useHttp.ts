@@ -1,10 +1,15 @@
 import type { FetchRequestOptions, FetchService } from '@websolute/core';
 import { httpFetch } from '@websolute/core';
-import { useEffect, useState } from 'react';
+import { Dispatch, useEffect, useState } from 'react';
 
-export function useHttpFetch<T>(pathname: string, options: FetchRequestOptions = {}, service: FetchService<T> = httpFetch, serviceOptions?: any) {
+export function useHttpFetch<T = any>(
+  pathname: string,
+  options: FetchRequestOptions = {},
+  service: FetchService<T> = httpFetch,
+  serviceOptions?: any
+): [T | undefined, boolean, any, Dispatch<any>] {
   const [response, setResponse] = useState<T>();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<any>(null);
   useEffect(() => {
     // const source = axios.CancelToken.source();
@@ -24,25 +29,25 @@ export function useHttpFetch<T>(pathname: string, options: FetchRequestOptions =
     fetchData();
     // return () => source.cancel();
   }, [pathname, options.method, options.body]);
-  return { response, loading, error, setError };
+  return [response, loading, error, setError];
 }
 
-export function useHttpGet<T>(pathname: string, options: FetchRequestOptions = {}) {
+export function useHttpGet<T = any>(pathname: string, options: FetchRequestOptions = {}) {
   return useHttpFetch<T>(pathname, { ...options, method: 'GET' });
 }
 
-export function useHttpPost<T>(pathname: string, payload: any, options: FetchRequestOptions = {}) {
+export function useHttpPost<T = any>(pathname: string, payload: any, options: FetchRequestOptions = {}) {
   return useHttpFetch<T>(pathname, { ...options, method: 'POST', body: payload ? JSON.stringify(payload) : undefined });
 }
 
-export function useHttpPut<T>(pathname: string, payload: any, options: FetchRequestOptions = {}) {
+export function useHttpPut<T = any>(pathname: string, payload: any, options: FetchRequestOptions = {}) {
   return useHttpFetch<T>(pathname, { ...options, method: 'PUT', body: payload ? JSON.stringify(payload) : undefined });
 }
 
-export function useHttpPatch<T>(pathname: string, payload: any, options: FetchRequestOptions = {}) {
+export function useHttpPatch<T = any>(pathname: string, payload: any, options: FetchRequestOptions = {}) {
   return useHttpFetch<T>(pathname, { ...options, method: 'PATCH', body: payload ? JSON.stringify(payload) : undefined });
 }
 
-export function useHttpDelete<T>(pathname: string, options: FetchRequestOptions = {}) {
+export function useHttpDelete<T = any>(pathname: string, options: FetchRequestOptions = {}) {
   return useHttpFetch<T>(pathname, { ...options, method: 'DELETE' });
 }

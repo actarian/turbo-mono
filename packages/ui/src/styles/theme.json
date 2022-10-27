@@ -75,7 +75,7 @@
   "grid": {
     "columns": 12,
     "size": "1fr",
-    "columnGap": "Max(4vw, Min(96px, 5vw))",
+    "columnGap": "Max(4vw, Min(96px, calc(100% / 24)))",
     "rowGap": "0"
   },
   "mediaQuery": {

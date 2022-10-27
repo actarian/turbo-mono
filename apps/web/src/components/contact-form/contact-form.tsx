@@ -26,7 +26,7 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
 
   const requiredIfPrintedCopy = RequiredIfValidator((value, rootValue) => rootValue?.printedCopy === true);
   const hiddenIfNotPrintedCopy = (value: any, rootValue: any) => !(rootValue?.printedCopy === true);
-  const requiredIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.shippingInfo?.country?.id === 'it');
+  const requiredIfItaly = RequiredIfValidator((value, rootValue) => rootValue?.shippingAddress?.country?.id === 'it');
 
   /*
   const hiddenIfNotPrintedCopy = async (value: any, rootValue: any) => new Promise<boolean>((resolve, reject) => {
@@ -50,8 +50,8 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
     //
     printedCopy: { schema: 'checkbox', label: 'field.printedCopy' },
     //
-    shippingInfo: {
-      schema: 'group', label: 'field.shippingInfo', children: {
+    shippingAddress: {
+      schema: 'group', label: 'field.shippingAddress', children: {
         country: { schema: 'autocomplete', label: 'field.country', options: data.countries, validators: requiredIfPrintedCopy },
         region: { schema: 'autocomplete', label: 'field.region', options: data.regions, validators: requiredIfItaly },
         province: { schema: 'autocomplete', label: 'field.province', options: data.provinces, validators: requiredIfItaly },

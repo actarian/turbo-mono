@@ -17,13 +17,6 @@ const StyledTitle = styled.h2`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  // text-align: center;
-  // line-height: 1.6;
-  // font-weight: normal;
-  // font-size: 1.5rem;
-  // color: var(--color-neutral-900);
-  // text-transform: capitalize;
-  // word-break: break-word;
 `;
 
 const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps | any>> = ({

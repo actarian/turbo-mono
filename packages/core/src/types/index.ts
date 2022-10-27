@@ -1,6 +1,8 @@
 import { IncomingMessage, ServerResponse } from 'http';
 import { ParsedUrlQuery } from 'querystring';
 
+export type ValueOf<T> = T[keyof T];
+
 export type PreviewData = string | false | object | undefined;
 
 export type IContextParams = { id: string, market: string, locale: string };

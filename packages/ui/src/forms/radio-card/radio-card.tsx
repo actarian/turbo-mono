@@ -131,6 +131,7 @@ const StyledRadioIcon = styled.div`
 `
 
 const StyledRadioCard = styled.div<RadioCardProps>`
+  flex: 1 1 100%;
   position: relative;
   display: flex;
   min-height: 3.8em;
@@ -203,7 +204,7 @@ const RadioCard: RadioCardComponent = forwardRef(({
   const classNames = getClassNames('radio-option', className);
 
   return (
-    <StyledRadioCard className={classNames}>
+    <StyledRadioCard className={classNames} {...props}>
       <StyledRadioCardInput ref={ref} as={as} type='radio' {...props} />
       <StyledRadioCardButton as="button">
         <Flex.Row gap="1rem" alignItems="flex-start" width="100%">

@@ -1,53 +1,30 @@
-import { IOption } from '@websolute/core';
 import { FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
-import { useApiPost, useCurrency, useLabel, useUnit } from '@websolute/hooks';
+import { useApi, useApiPost, useCheckout, useCurrency, useLabel, useUnit } from '@websolute/hooks';
+import type { ICheckoutPartial, ICheckoutStore } from '@websolute/models';
 import { useEffect, useState } from 'react';
-import { Button, Container, Flex, Grid, Section, Text } from '../../components';
+import { Badge, Box, Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { FieldCard } from '../../fields';
 import { Form, FormError, RadioCard } from '../../forms';
-import { useCheckout } from '../../hooks';
-
-export type IStoreOption = IOption & {
-  category?: IOption;
-  address?: string;
-  streetNumber?: string;
-  zipCode?: string;
-  city?: string;
-  country?: IOption;
-  phoneNumber?: string;
-  email?: string;
-  timetable?: string[];
-  position?: {
-    latitude: number;
-    longitude: number;
-  };
-  distance?: number;
-  rank?: number;
-}
-
-export type IStoreOptions = {
-  stores: IStoreOption[];
-}
-
-export type IReview = {
-  store: IStoreOption;
-}
+import CheckoutDiscount from './checkout-discount';
 
 export interface CheckoutReviewProps {
-  onReview?: (data: IReview) => void;
+  onReview?: (store: ICheckoutStore) => void;
   onPrevious?: () => void;
 }
 
 const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }: CheckoutReviewProps) => {
   const label = useLabel();
 
+  const api = useApi();
+
   const currency = useCurrency();
 
   const distance = useUnit('kilometer');
 
   const checkout = useCheckout((state) => state.checkout);
+  const setCheckout = useCheckout((state) => state.setCheckout);
 
-  const { response: options } = useApiPost<IStoreOptions>('/checkout/stores', checkout);
+  const [options] = useApiPost<{ stores: ICheckoutStore[] }>('/checkout/stores', checkout);
 
   // console.log('CheckoutReview', checkout);
 
@@ -55,28 +32,32 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
 
   const required = RequiredValidator();
 
-  const [form, setValue, setTouched, reset, group] = useFormBuilder<IReview, FormGroup>({
+  const [form, setValue, setTouched, reset, group] = useFormBuilder<{ store: ICheckoutStore }, FormGroup>({
 
     store: { schema: 'select', label: 'field.store', options: options?.stores, validators: [required] },
 
   }, [options]);
 
   useEffect(() => {
-    if (checkout.review) {
-      setValue(checkout.review);
+    if (checkout.store || checkout.discounts) {
+      setValue({
+        store: checkout.store,
+      });
     } else if (options) {
       setValue({
-        store: options.stores[0]
+        store: options.stores[0],
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [options]);
 
   const selectedStore = form.value?.store;
-  const shippingInfo = checkout.info?.shippingInfo;
-  const invoicingInfo = checkout.info?.invoicingInfo;
-  const delivery = checkout.delivery?.delivery;
-  const deliveryPrice = delivery?.price || 0;
+  const shippingAddress = checkout.shippingAddress;
+  const billingAddress = checkout.billingAddress;
+  const delivery = checkout.delivery;
+  const subTotal = checkout.subTotal || 0;
+  const taxes = checkout.taxes || 0;
+  const total = checkout.total || 0;
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
@@ -84,8 +65,14 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
       console.log('CheckoutReview.valid', form.value);
       try {
         setError(undefined);
+        const store = form.value.store;
+        const response = await api.post<ICheckoutPartial>('/checkout/update', {
+          action: 'store',
+          checkout: { ...checkout, store },
+        });
+        setCheckout(response);
         if (typeof onReview === 'function') {
-          onReview(form.value);
+          onReview(store);
         }
       } catch (error) {
         console.log('CheckoutReview.error', error);
@@ -96,12 +83,6 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
       setTouched();
     }
   }
-
-  const total = checkout.items ? checkout.items.reduce((p, c) => {
-    return p + c.price * c.qty;
-  }, deliveryPrice) : deliveryPrice;
-
-  const totalPrice = currency(total);
 
   const onPrevious_ = () => {
     if (typeof onPrevious === 'function') {
@@ -119,9 +100,9 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
     <>
       <Section>
         <Container>
-          <Flex.Col gap="var(--grid-column-gap)" flexDirectionMd="row">
-            <Flex flexMd="1" alignItemsMd="flex-start">
-              <Form state={form} onSubmit={onSubmit} maxWidth="60ch">
+          <Flex.Col gap="2rem" flexDirectionMd="row">
+            <Flex flexMd="1 1 calc(100% - 375px - 2rem)" alignItemsMd="flex-start">
+              <Form state={form} onSubmit={onSubmit}>
                 <Flex.Col flex="1" rowGap="2rem">
                   <Text size="4" fontWeight="700">Reference store</Text>
                   <Text size="8" marginBottom="1rem">Your suggested closest sales outlet for self-service pickup.</Text>
@@ -134,7 +115,7 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
                     </Flex.Col>
                   }
                   {true && store &&
-                    <RadioCard.Group initialValue={store.value?.id.toString()} onChange={onStoreChange}>
+                    <RadioCard.Group initialValue={store.value?.id.toString()} onChange={onStoreChange} maxWidth="60ch">
                       {store.options?.map(option => (
                         <RadioCard key={option.id} value={option.id.toString()}>
                           <RadioCard.Title>{option.name}</RadioCard.Title>
@@ -148,29 +129,29 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
                   {error && <FormError error={error}>{label('form.submit.error')}</FormError>}
                   <Grid.Row padding="2em 0">
                     <Grid md={6}>
-                      {shippingInfo &&
+                      {shippingAddress &&
                         <Flex.Col gap="1rem">
-                          <Text size="4" fontWeight="700">Shipping information</Text>
+                          <Text size="4" fontWeight="700">Shipping address</Text>
                           <Flex.Col>
-                            <Text size="7" fontWeight="700">{shippingInfo.firstName} {shippingInfo.lastName}</Text>
-                            <Text>{shippingInfo.address}, {shippingInfo.streetNumber}</Text>
-                            <Text>{shippingInfo.zipCode} {shippingInfo.city} {shippingInfo.country?.name}</Text>
-                            <Text>{shippingInfo.phoneNumber}</Text>
-                            <Text>{shippingInfo.email}</Text>
+                            <Text size="7" fontWeight="700">{shippingAddress.firstName} {shippingAddress.lastName}</Text>
+                            <Text>{shippingAddress.address}, {shippingAddress.streetNumber}</Text>
+                            <Text>{shippingAddress.zipCode} {shippingAddress.city} {shippingAddress.country?.name}</Text>
+                            <Text>{shippingAddress.phoneNumber}</Text>
+                            <Text>{shippingAddress.email}</Text>
                           </Flex.Col>
                         </Flex.Col>
                       }
                     </Grid>
                     <Grid md={6}>
-                      {invoicingInfo &&
+                      {billingAddress &&
                         <Flex.Col gap="1rem">
-                          <Text size="4" fontWeight="700">Invoicing information</Text>
+                          <Text size="4" fontWeight="700">Billing address</Text>
                           <Flex.Col>
-                            <Text size="4" fontWeight="700">{invoicingInfo.firstName} {invoicingInfo.lastName}</Text>
-                            <Text>{invoicingInfo.address}, {invoicingInfo.streetNumber}</Text>
-                            <Text>{invoicingInfo.zipCode} {invoicingInfo.city} {invoicingInfo.country?.name}</Text>
-                            <Text>{invoicingInfo.phoneNumber}</Text>
-                            <Text>{invoicingInfo.email}</Text>
+                            <Text size="7" fontWeight="700">{billingAddress.firstName} {billingAddress.lastName}</Text>
+                            <Text>{billingAddress.address}, {billingAddress.streetNumber}</Text>
+                            <Text>{billingAddress.zipCode} {billingAddress.city} {billingAddress.country?.name}</Text>
+                            <Text>{billingAddress.phoneNumber}</Text>
+                            <Text>{billingAddress.email}</Text>
                           </Flex.Col></Flex.Col>
                       }
                     </Grid>
@@ -178,41 +159,61 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
                 </Flex.Col>
               </Form>
             </Flex>
-            <Flex flexBasisMd="375px" alignItemsMd="flex-start">
-              <Flex.Col gap="1rem" padding="1rem" borderRadius="0.5em" border="1px solid var(--color-neutral-300)"
-                fontSize="0.9em"
-                lineHeight="1"
-                positionMd="sticky"
-                topMd="200px"
-              >
-                <Flex.Row gap="1rem" fontWeight="700">
-                  <Text flexGrow="1">Product</Text>
-                  <Text flexBasis="40px" textAlign="right">Qty</Text>
-                  <Text flexBasis="90px" textAlign="right">Price</Text>
-                </Flex.Row>
-                <Flex.Col flex="1" gap="1rem" padding="1rem 0"
-                  borderTop="1px solid var(--color-neutral-300)"
-                  borderBottom="1px solid var(--color-neutral-300)">
-                  {checkout.items && checkout.items.map((item, i) =>
+            <Flex flexMd="0 0 375px" alignItemsMd="flex-start">
+              <Flex.Col gap="1rem" positionMd="sticky" topMd="200px">
+                <Flex.Col gap="1rem" padding="1rem" borderRadius="0.5em" border="1px solid var(--color-neutral-300)"
+                  fontSize="0.9em" lineHeight="1">
+                  <Flex.Row gap="1rem" fontWeight="700">
+                    <Text flexGrow="1">Product</Text>
+                    <Text flexBasis="40px" textAlign="right">Qty</Text>
+                    <Text flexBasis="90px" textAlign="right">Price</Text>
+                  </Flex.Row>
+                  <Flex.Col flex="1" gap="1rem" padding="1rem 0"
+                    borderTop="1px solid var(--color-neutral-300)"
+                    borderBottom="1px solid var(--color-neutral-300)">
+                    {checkout.items && checkout.items.map((item, i) =>
+                      <Flex.Row key={i} gap="1rem">
+                        <Text flexGrow="1">{item.title}</Text>
+                        <Text flexBasis="40px" textAlign="right">{item.qty}</Text>
+                        <Text flexBasis="90px" textAlign="right">{currency(item.qty * item.price)}</Text>
+                      </Flex.Row>
+                    )}
+                  </Flex.Col>
+                  <Flex.Row gap="1rem">
+                    <Text flexGrow="1">Subtotal</Text>
+                    <Text flexBasis="40px" textAlign="right">&nbsp;</Text>
+                    <Text flexBasis="90px" textAlign="right">{currency(subTotal)}</Text>
+                  </Flex.Row>
+                  {taxes > 0 &&
+                    <Flex.Row gap="1rem">
+                      <Text flexGrow="1">Taxes</Text>
+                      <Text flexBasis="40px" textAlign="right">&nbsp;</Text>
+                      <Text flexBasis="90px" textAlign="right">{currency(taxes)}</Text>
+                    </Flex.Row>
+                  }
+                  {delivery &&
+                    <Flex.Row gap="1rem">
+                      <Text flexGrow="1">{delivery.name}</Text>
+                      <Text flexBasis="40px" textAlign="right">&nbsp;</Text>
+                      <Text flexBasis="90px" textAlign="right">{currency(delivery.price)}</Text>
+                    </Flex.Row>
+                  }
+                  {checkout.discounts && checkout.discounts.map((item, i) =>
                     <Flex.Row key={i} gap="1rem">
-                      <Text flexGrow="1">{item.title}</Text>
-                      <Text flexBasis="40px" textAlign="right">{item.qty}</Text>
-                      <Text flexBasis="90px" textAlign="right">{currency(item.qty * item.price)}</Text>
+                      <Text flexGrow="1">Discount <Badge>{item.name}</Badge></Text>
+                      <Text flexBasis="40px" textAlign="right">{item.abstract}</Text>
+                      <Text flexBasis="90px" textAlign="right">{currency(item.price)}</Text>
                     </Flex.Row>
                   )}
-                </Flex.Col>
-                {delivery &&
-                  <Flex.Row gap="1rem">
-                    <Text flexGrow="1">{delivery.name}</Text>
+                  <Flex.Row gap="1rem" fontWeight="700" marginBottom="1rem">
+                    <Text flexGrow="1">Total</Text>
                     <Text flexBasis="40px" textAlign="right">&nbsp;</Text>
-                    <Text flexBasis="90px" textAlign="right">{currency(delivery.price)}</Text>
+                    <Text flexBasis="90px" textAlign="right">{currency(total)}</Text>
                   </Flex.Row>
-                }
-                <Flex.Row gap="1rem" fontWeight="700">
-                  <Text flexGrow="1">Total</Text>
-                  <Text flexBasis="40px" textAlign="right">&nbsp;</Text>
-                  <Text flexBasis="90px" textAlign="right">{totalPrice}</Text>
-                </Flex.Row>
+                </Flex.Col>
+                <Box padding="1rem" borderRadius="0.5em" border="1px solid var(--color-neutral-300)">
+                  <CheckoutDiscount />
+                </Box>
               </Flex.Col>
             </Flex>
           </Flex.Col>

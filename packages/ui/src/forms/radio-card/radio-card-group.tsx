@@ -1,5 +1,6 @@
 
 import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { Flex } from '../../components';
 import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import RadioCard, { RadioCardProps } from './radio-card';
@@ -12,6 +13,12 @@ interface Props extends ComponentPropsWithRef<'input'> {
 export type RadioCardGroupProps = UIStyledComponentProps<Props, 'input'>;
 
 export type RadioCardGroupComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
+
+const StyledRadioCardGroup = styled(Flex.Row)`
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+`;
 
 const RadioCardGroup: RadioCardGroupComponent = forwardRef(({
   children,
@@ -54,9 +61,9 @@ const RadioCardGroup: RadioCardGroupComponent = forwardRef(({
   // !!! ref to group
 
   return (
-    <Flex.Col gap="2rem" ref={ref} className={className} {...props}>
+    <StyledRadioCardGroup ref={ref} className={className} {...props}>
       {mappedChildren}
-    </Flex.Col>
+    </StyledRadioCardGroup>
   );
 });
 

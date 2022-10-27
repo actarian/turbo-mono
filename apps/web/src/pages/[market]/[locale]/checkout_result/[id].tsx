@@ -1,20 +1,18 @@
 
-import type { IStaticContext } from '@websolute/core';
+import type { IContextParams } from '@websolute/core';
 import { asServerProps } from '@websolute/core';
-import { useMounted, useSearchParams } from '@websolute/hooks';
-import type { PageProps } from '@websolute/models';
-import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
+import { getLayout, getOrder, getPage, IOrder, IOrderStatus, IUser, PageProps } from '@websolute/models';
 import { Breadcrumb, CheckoutError, CheckoutSuccess, Container, Footer, Header, Layout, Meta, Page, Section } from '@websolute/ui';
+import { withIronSessionSsr } from 'iron-session/next';
+import { sessionOptions } from 'src/config/session';
 
-export default function CheckoutResult({ layout, page, params }: CheckoutResultProps) {
 
-  const mounted = useMounted();
+export default function CheckoutResult({ layout, page, user, order, params }: CheckoutResultProps) {
 
+  // const mounted = useMounted();
   // deserialize queryString encoded params
-  const { params: searchParams } = useSearchParams();
-  console.log(searchParams);
-
-  // const storage = typeof window !== 'undefined' ? window.localStorage : undefined;
+  // const { params: searchParams } = useSearchParams();
+  // const [order] = useApiGet<IOrder>(`/order/${params.id}`);
 
   return (
     <Layout>
@@ -22,15 +20,17 @@ export default function CheckoutResult({ layout, page, params }: CheckoutResultP
       <Page>
         <Header sticky />
 
-        <Section>
-          <Container.Fluid>
-            <Breadcrumb.Group items={page.breadcrumb} />
-          </Container.Fluid>
-        </Section>
+        {false && (
+          <Section>
+            <Container.Fluid>
+              <Breadcrumb.Group items={page.breadcrumb} />
+            </Container.Fluid>
+          </Section>
+        )}
 
-        {mounted && (
-          searchParams.status === 'OK' ?
-            <CheckoutSuccess /> :
+        {order && (
+          order.status === IOrderStatus.AwaitingFulfillment ?
+            <CheckoutSuccess order={order} /> :
             <CheckoutError />
         )}
 
@@ -39,6 +39,43 @@ export default function CheckoutResult({ layout, page, params }: CheckoutResultP
     </Layout>
   )
 }
+
+export interface CheckoutResultProps extends PageProps {
+  user?: IUser;
+  order?: IOrder;
+}
+
+export const getServerSideProps = withIronSessionSsr(async function (context) {
+
+  const params = context.params as IContextParams;
+  const query = context.query;
+
+  // Layout
+  const id = parseInt(params.id);
+  const market = params.market;
+  const locale = params.locale;
+  const layout = await getLayout(market, locale);
+
+  const user = context.req.session.user;
+  const order = await getOrder(query.id as string, market, locale);
+
+  if (order.status === IOrderStatus.Pending) {
+    order.status = query.status === 'OK' ? IOrderStatus.AwaitingFulfillment : IOrderStatus.AwaitingPayment;
+  }
+
+  // Page
+  const page = await getPage('checkout_result', id, market, locale);
+  const props = asServerProps({ params, query, layout, page, user, order });
+
+  return {
+    props,
+  };
+}, sessionOptions);
+
+
+/*
+import type { IStaticContext } from '@websolute/core';
+import { getStaticPathsForSchema } from '@websolute/models';
 
 export interface CheckoutResultProps extends PageProps {
 }
@@ -62,3 +99,4 @@ export async function getStaticPaths() {
     fallback: true,
   };
 }
+*/

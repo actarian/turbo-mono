@@ -15,9 +15,8 @@ const defaultOptions: FetchRequestOptions = {
 };
 
 export async function httpFetch(url: string, options: FetchRequestOptions = {}, serviceOptions?: any): Promise<any> {
-  // console.log('httpFetch', url, options);
   const httpOptions = merge({ ...defaultOptions }, options);
-  console.log('httpFetch', url, httpOptions);
+  // console.log('httpFetch', url, options, httpOptions);
   const httpResponse = await fetch(url, httpOptions);
   // console.log('httpResponse', httpResponse);
   if (!httpResponse.ok) {

@@ -1,43 +1,31 @@
-import { IOption } from '@websolute/core';
 import { FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
-import { useApiPost, useLabel } from '@websolute/hooks';
-import { IMedia } from '@websolute/models';
+import { useApi, useApiPost, useCheckout, useLabel } from '@websolute/hooks';
+import { ICheckoutPartial, ICheckoutPayment } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import { Button, Container, Flex, Section, Text } from '../../components';
 import { FieldCard } from '../../fields';
 import { Form, FormError, RadioCard } from '../../forms';
-import { useCheckout } from '../../hooks';
-
-export type IPaymentOption = IOption & {
-  abstract?: string;
-  media?: IMedia;
-}
-
-export type IPaymentOptions = {
-  payments: IPaymentOption[];
-}
-
-export type IPayment = {
-  payment: IPaymentOption;
-}
 
 export interface CheckoutPaymentProps {
-  onPayment?: (data: IPayment) => void;
+  onPayment?: (payment: ICheckoutPayment) => void;
   onPrevious?: () => void;
 }
 
 const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, onPayment }: CheckoutPaymentProps) => {
   const label = useLabel();
 
-  const checkout = useCheckout((state) => state.checkout);
+  const api = useApi();
 
-  const { response: options } = useApiPost<IPaymentOptions>('/checkout/payments', checkout);
+  const checkout = useCheckout((state) => state.checkout);
+  const setCheckout = useCheckout((state) => state.setCheckout);
+
+  const [options] = useApiPost<{ payments: ICheckoutPayment[] }>('/checkout/payments', checkout);
 
   const [error, setError] = useState<Error>();
 
   const required = RequiredValidator();
 
-  const [form, setValue, setTouched, reset, group] = useFormBuilder<IPayment, FormGroup>({
+  const [form, setValue, setTouched, reset, group] = useFormBuilder<{ payment: ICheckoutPayment }, FormGroup>({
 
     payment: { schema: 'select', label: 'field.payment', options: options?.payments, validators: [required] },
 
@@ -45,7 +33,7 @@ const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, onPayment
 
   useEffect(() => {
     if (checkout.payment) {
-      setValue(checkout.payment);
+      setValue({ payment: checkout.payment });
     } else if (options) {
       setValue({
         payment: options.payments[0]
@@ -60,8 +48,14 @@ const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, onPayment
       console.log('CheckoutPayment.valid', form.value);
       try {
         setError(undefined);
+        const payment = form.value.payment;
+        const response = await api.post<ICheckoutPartial>('/checkout/update', {
+          action: 'payment',
+          checkout: { ...checkout, payment },
+        });
+        setCheckout(response);
         if (typeof onPayment === 'function') {
-          onPayment(form.value);
+          onPayment(payment);
         }
       } catch (error) {
         console.log('CheckoutPayment.error', error);
@@ -95,7 +89,7 @@ const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, onPayment
               {true && payment &&
                 <RadioCard.Group initialValue={payment.value?.id.toString()} onChange={onPaymentChange}>
                   {payment.options?.map(option => (
-                    <RadioCard key={option.id} value={option.id.toString()}>
+                    <RadioCard key={option.id} value={option.id.toString()} flex="0 0 calc(50% - 1rem)">
                       <RadioCard.Title>{option.name}</RadioCard.Title>
                       {option.abstract && <RadioCard.Abstract dangerouslySetInnerHTML={{ __html: option.abstract }}></RadioCard.Abstract>}
                       {option.media && <RadioCard.Media item={option.media} />}

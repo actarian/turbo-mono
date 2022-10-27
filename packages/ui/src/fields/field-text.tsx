@@ -1,12 +1,14 @@
 import { FormControl, useControl } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
-import { ChangeEvent, FocusEvent, useState } from 'react';
+import { ChangeEvent, FocusEvent, ReactNode, useState } from 'react';
 import { Field, Input, Label } from '../forms';
 import FieldError from './field-error';
 
 type FieldTextProps = {
   control: FormControl;
   uid?: number | null | undefined;
+  before?: ReactNode;
+  after?: ReactNode;
 }
 
 export default function FieldText(props: FieldTextProps) {
@@ -52,6 +54,8 @@ export default function FieldText(props: FieldTextProps) {
           onFocus={onFocus}
           disabled={state.flags.disabled}
           readOnly={state.flags.readonly}
+          before={props.before}
+          after={props.after}
           width="100%" />
 
         <FieldError state={state} />

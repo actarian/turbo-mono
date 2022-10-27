@@ -4,14 +4,16 @@ import { GlobalStyle, theme } from '@websolute/ui';
 import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 import { ThemeProvider } from 'styled-components';
 // import themeJson from '../src/@styles/theme.json';
+import Head from 'next/head';
 import { createCustomTheme } from './utils/create-custom-theme';
 
 const themeJson = theme;
 
-// !!! todo add font import to storybook
-
 addDecorator((story) => (
   <>
+    <Head>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;700&display=swap" rel="stylesheet"></link>
+    </Head>
     <GlobalStyle />
     { story() }
   </>

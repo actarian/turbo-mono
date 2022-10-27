@@ -1,11 +1,11 @@
 import { useCart, useCurrency } from '@websolute/hooks';
 import { Minus, Plus, Trash } from '@websolute/icons';
-import type { ICartItem } from '@websolute/models';
+import type { ICheckoutItem } from '@websolute/models';
 import NextLink from 'next/link';
 import { Button, Flex, Media, MediaImage, Text } from '../../components';
 import { Input } from '../../forms';
 
-const CheckoutBasketItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem }) => {
+const CheckoutBasketItem: React.FC<{ item: ICheckoutItem }> = ({ item }: { item: ICheckoutItem }) => {
 
   const currency = useCurrency();
   const price = currency(item.price);

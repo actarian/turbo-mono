@@ -1,19 +1,29 @@
+import { IOption } from '@websolute/core';
+import { ICartItem } from '../cart/cart';
 import { getCountries } from '../country/country.service';
 import { getProvinces } from '../province/province.service';
 import { getRegions } from '../region/region.service';
 import { getRoutesForSchemas } from '../route/route.service';
+import { IAddressOptions, IUser } from '../user/user';
+import { ICheckoutDelivery, ICheckoutItem, ICheckoutPartial, ICheckoutPayment, ICheckoutStore } from './checkout';
+
+// step 1.
+export async function getItems(items: ICartItem[], market: string, locale: string, user?: IUser): Promise<ICheckoutItem[]> {
+  // !!! todo calculate user discount price
+  return items.map(x => ({ ...x, fullPrice: x.price }));
+}
 
 // step 2.
-export async function getInfo(checkout: any, market: string, locale: string): Promise<any> {
-  const countries = await getCountries(locale);
-  const provinces = await getProvinces(locale);
-  const regions = await getRegions(locale);
+export async function getInfo(checkout: ICheckoutPartial, market: string, locale: string): Promise<IAddressOptions> {
+  const countries = await getCountries(locale) as IOption[];
+  const provinces = await getProvinces(locale) as IOption[];
+  const regions = await getRegions(locale) as IOption[];
   const data = { countries, regions, provinces };
   return data;
 }
 
 // step 3.
-export async function getDeliveries(checkout: any, market: string, locale: string): Promise<any> {
+export async function getDeliveries(checkout: ICheckoutPartial, market: string, locale: string): Promise<ICheckoutDelivery[]> {
   return [
     {
       "id": 1,
@@ -40,7 +50,7 @@ export async function getDeliveries(checkout: any, market: string, locale: strin
 }
 
 // step 4.
-export async function getStores(checkout: any, market: string, locale: string): Promise<any> {
+export async function getStores(checkout: ICheckoutPartial, market: string, locale: string): Promise<ICheckoutStore[]> {
   return [
     {
       "id": 10366,
@@ -98,7 +108,7 @@ export async function getStores(checkout: any, market: string, locale: string): 
 }
 
 // step 5.
-export async function getPayments(checkout: any, market: string, locale: string): Promise<any> {
+export async function getPayments(checkout: ICheckoutPartial, market: string, locale: string): Promise<ICheckoutPayment[]> {
   return [
     {
       "id": "alipay",
@@ -234,8 +244,91 @@ export async function getPayments(checkout: any, market: string, locale: string)
   ];
 }
 
+// update
+export async function updateCheckout(checkout: ICheckoutPartial, action: string, market: string, locale: string): Promise<ICheckoutPartial> {
+  // generic checkout update
+  /*
+  switch (action) {
+    case 'basket':
+      break;
+    case 'info':
+      break;
+    case 'delivery':
+      break;
+    case 'store':
+      break;
+    case 'discount':
+      break;
+    case 'payment':
+      break;
+  }
+  */
+  // recalculate price
+  const subTotal = checkout.items ? checkout.items.reduce((p, c) => {
+    return p + c.price * c.qty;
+  }, 0) : 0;
+  const totalDiscountPrice = checkout.discounts ? checkout.discounts.reduce((p, c) => {
+    let discountPrice = 0;
+    switch (c.id) {
+      case 'shipping':
+        discountPrice = (checkout.delivery?.price || 0) * -1;
+        break;
+      case 'coupon10':
+        discountPrice = (checkout.items?.reduce((p, c) => p + c.price * c.qty * 0.1, 0) || 0) * -1;
+        break;
+      case 'coupon50':
+        discountPrice = (checkout.items?.reduce((p, c) => p + c.price * c.qty * 0.5, 0) || 0) * -1;
+        break;
+    }
+    c.price = discountPrice;
+    return p + discountPrice;
+  }, 0) : 0;
+  const taxes = subTotal * 0.2;
+  const total = subTotal + totalDiscountPrice + taxes;
+  checkout.subTotal = subTotal;
+  checkout.taxes = taxes;
+  checkout.total = total;
+  return checkout;
+}
+
+// discounts
+export async function setDiscountCode(discountCode: string, checkout: ICheckoutPartial, market: string, locale: string): Promise<ICheckoutPartial> {
+  const discounts = []; // checkout.discounts || [];
+  if (discountCode === 'shipping') {
+    discounts.push({
+      "id": "shipping",
+      "name": "shipping",
+      "abstract": "Free shipping",
+      "price": (checkout.delivery?.price || 0) * -1,
+      "validFrom": new Date(),
+      "validTo": new Date(),
+    })
+  }
+  if (discountCode === 'coupon10') {
+    discounts.push({
+      "id": "coupon10",
+      "name": "coupon10",
+      "abstract": "10%",
+      "price": (checkout.items?.reduce((p, c) => p + c.price * c.qty * 0.1, 0) || 0) * -1,
+      "validFrom": new Date(),
+      "validTo": new Date(),
+    })
+  }
+  if (discountCode === 'coupon50') {
+    discounts.push({
+      "id": "coupon50",
+      "name": "coupon50",
+      "abstract": "50%",
+      "price": (checkout.items?.reduce((p, c) => p + c.price * c.qty * 0.5, 0) || 0) * -1,
+      "validFrom": new Date(),
+      "validTo": new Date(),
+    })
+  }
+  return await updateCheckout({ ...checkout, discounts }, 'discount', market, locale);
+}
+
 // payment
-export async function getPayment(checkout: any, market: string, locale: string): Promise<{ redirectUrl: string }> {
+export async function getPayment(checkout: ICheckoutPartial, market: string, locale: string): Promise<{ redirectUrl: string }> {
   const knownRoutes = await getRoutesForSchemas(['checkout_result'], market, locale);
   // console.log('getPayment.knownRoutes', knownRoutes, checkout, market, locale);
   // !!! todo return payment redirectUrl

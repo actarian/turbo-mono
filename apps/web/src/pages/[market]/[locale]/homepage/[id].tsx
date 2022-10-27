@@ -14,7 +14,7 @@ export default function Homepage({ layout, page, params }: PageProps) {
   // console.log('Homepage.page', page);
 
   /*
-  const { response } = useApiGet('/hello');
+  const [response] = useApiGet('/hello');
   if (response) {
     console.log('response', response);
   }

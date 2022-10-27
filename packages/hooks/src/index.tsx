@@ -1,8 +1,8 @@
-export { useApiDelete, useApiFetch, useApiGet, useApiPatch, useApiPost, useApiPut } from './useApi/useApi';
+export * from './useApi/useApi';
 export { useBodyScroll } from './useBodyScroll/useBodyScroll';
 export { useBreakpoint } from './useBreakpoint/useBreakpoint';
 export { CartProvider, useCart } from './useCart/useCart';
-export { CheckoutProvider, CheckoutStatus, useCheckout } from './useCheckout/useCheckout';
+export { CheckoutProvider, useCheckout } from './useCheckout/useCheckout';
 export { useClickAnyWhere } from './useClickAnyWhere/useClickAnyWhere';
 export { useClickOut } from './useClickOut/useClickOut';
 export { useCurrency } from './useCurrency/useCurrency';
@@ -22,7 +22,6 @@ export { useFilters } from './useFilters/useFilters';
 export { createGenericContext } from './useGenericContext/useGenericContext';
 export * from './useGeolocation/geolocation.service';
 export { useGeolocation } from './useGeolocation/useGeolocation';
-// export { useHttpDelete, useHttpFetch, useHttpGet, useHttpPatch, useHttpPost, useHttpPut } from './useHttp/useHttp';
 export { useInfiniteLoader } from './useInfiniteLoader/useInfiniteLoader';
 export { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect/useIsomorphicLayoutEffect';
 export { KeyCode, useKeyboard } from './useKeyboard/useKeyboard';
@@ -48,11 +47,13 @@ export { getSearchParams, pushSearchParams, replaceSearchParams, replaceSearchPa
 export { decode, getSearchParamsEncoded, pushSearchParamsEncoded, replaceSearchParamsEncoded, replaceSearchParamsEncodedSilently, updateSearchParamsEncoded, useSearchParamsEncoded } from './useSearchParamsEncoded/useSearchParamsEncoded';
 export { useSorting } from './useSorting/useSorting';
 export { useSSR } from './useSSR/useSSR';
+export { useSwiperIndex } from './useSwiperIndex/useSwiperIndex';
 export { useSyncedRef } from './useSyncedRef/useSyncedRef';
 export { useUI } from './useUI/useUI';
 export type { IUIStateValue } from './useUI/useUI';
 export { useUnit } from './useUnit/useUnit';
 export { useUnmountEffect } from './useUnmountEffect/useUnmountEffect';
+export { useUser } from './useUser/useUser';
 export { useWindowSize } from './useWindowSize/useWindowSize';
 
 /**

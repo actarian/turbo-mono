@@ -29,8 +29,8 @@ const AuthSignUp: React.FC<AuthSignUpProps> = ({ onSignedUp, onNavToLogin }: Aut
     firstName: { schema: 'text', label: 'field.firstName', validators: [required] },
     lastName: { schema: 'text', label: 'field.lastName', validators: [required] },
     email: { schema: 'text', label: 'field.email', validators: [required, email] },
-    password: { schema: 'text', label: 'field.password', validators: required },
-    confirmPassword: { schema: 'text', label: 'field.confirmPassword', validators: [required, match] },
+    password: { schema: 'password', label: 'field.password', validators: required },
+    confirmPassword: { schema: 'password', label: 'field.confirmPassword', validators: [required, match] },
     privacy: { schema: 'checkbox', label: 'field.privacy', validators: [requiredTrue] },
 
     checkField: { schema: 'text', hidden: true }, // check hidden field for antiforgery

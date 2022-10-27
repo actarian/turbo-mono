@@ -1,11 +1,11 @@
-import { useCart, useCurrency, useLabel, useLayout } from '@websolute/hooks';
+import { useApi, useApiPost, useCart, useCheckout, useCurrency, useLabel, useLayout } from '@websolute/hooks';
 import { Percent, Truck } from '@websolute/icons';
-import { ICartItem } from '@websolute/models';
+import { ICartItem, ICheckoutItem, ICheckoutPartial } from '@websolute/models';
 import { Box, Button, Container, Flex, NavLink, Section, Text } from '../../components';
 import CheckoutBasketItem from './checkout-basket-item';
 
 export interface CheckoutBasketProps {
-  onBasket?: (items: ICartItem[]) => void;
+  onBasket?: (items: ICheckoutItem[]) => void;
 }
 
 const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBasketProps) => {
@@ -14,9 +14,16 @@ const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBas
 
   const layout = useLayout();
 
+  const api = useApi();
+
   const currency = useCurrency();
 
-  const items = useCart((state) => state.items);
+  const cartItems = useCart((state) => state.items);
+
+  const checkout = useCheckout((state) => state.checkout);
+  const setCheckout = useCheckout((state) => state.setCheckout);
+
+  const [items = []] = useApiPost<ICartItem[]>('/checkout/items', { ...checkout, items: cartItems });
 
   const total = items.reduce((p, c) => {
     return p + c.price * c.qty;
@@ -24,9 +31,18 @@ const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBas
 
   const totalPrice = currency(total);
 
-  const onBasket_ = () => {
-    if (typeof onBasket === 'function') {
-      onBasket(items);
+  const onBasket_ = async () => {
+    try {
+      const response = await api.post<ICheckoutPartial>('/checkout/update', {
+        action: 'basket',
+        checkout: { ...checkout, items },
+      });
+      setCheckout(response);
+      if (typeof onBasket === 'function') {
+        onBasket(items);
+      }
+    } catch (error) {
+      console.error('CheckoutBasket.onBasket_.error', error);
     }
   }
 
@@ -45,14 +61,14 @@ const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBas
             {items && items.map((item, i) =>
               <CheckoutBasketItem key={i} item={item} />
             )}
+            <Flex.Row gap="1rem" fontWeight="700" marginBottom="1rem">
+              <Text flexGrow="1">Total</Text>
+              <Text flexBasis="110px" textAlign="right">&nbsp;</Text>
+              <Text flexBasis="120px" textAlign="center">&nbsp;</Text>
+              <Text flexBasis="80px" textAlign="center">&nbsp;</Text>
+              <Text flexBasis="110px" textAlign="right">{totalPrice}</Text>
+            </Flex.Row>
           </Flex.Col>
-          <Flex.Row gap="1rem" padding="1rem 0" fontWeight="700">
-            <Text flexGrow="1">Total</Text>
-            <Text flexBasis="110px" textAlign="right">&nbsp;</Text>
-            <Text flexBasis="120px" textAlign="center">&nbsp;</Text>
-            <Text flexBasis="80px" textAlign="center">&nbsp;</Text>
-            <Text flexBasis="110px" textAlign="right">{totalPrice}</Text>
-          </Flex.Row>
           <Flex.Col gap="1rem">
             <Box borderRadius="0.5rem" border="1px solid var(--color-neutral-300)">
               <Flex.Row padding="1rem">

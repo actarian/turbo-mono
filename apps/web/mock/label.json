@@ -133,10 +133,31 @@
     }
   },
   {
-    "id": "field.shippingInfo",
+    "id": "field.shippingAddress",
     "text": {
-      "en": "Shipping Info",
-      "it": "Informazioni di spedizione"
+      "en": "Shipping address",
+      "it": "Indirizzo di spedizione"
+    }
+  },
+  {
+    "id": "field.billingAddress",
+    "text": {
+      "en": "Billing address",
+      "it": "Indirizzo di fatturazione"
+    }
+  },
+  {
+    "id": "field.hasInvoice",
+    "text": {
+      "en": "Do you need an invoice?",
+      "it": "Hai bisogno di una fattura?"
+    }
+  },
+  {
+    "id": "field.hasBilling",
+    "text": {
+      "en": "Would you like to use a different billing address?",
+      "it": "Desideri utilizzare un differente indirizzo di fatturazione?"
     }
   },
   {
@@ -210,6 +231,13 @@
     }
   },
   {
+    "id": "field.discountCode",
+    "text": {
+      "en": "Discount code",
+      "it": "Codice sconto"
+    }
+  },
+  {
     "id": "form.accept.true",
     "text": {
       "en": "I agree",
@@ -242,6 +270,13 @@
     "text": {
       "en": "Test",
       "it": "Test"
+    }
+  },
+  {
+    "id": "form.apply",
+    "text": {
+      "en": "Apply",
+      "it": "Applica"
     }
   },
   {

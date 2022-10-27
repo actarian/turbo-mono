@@ -70,6 +70,11 @@ module.exports = withBundleAnalyzer(transpiledModules({
         },
       ],
     });
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      path: false,
+    };
     return config;
   },
   // Docker support: build the project as a standalone app inside the Docker image

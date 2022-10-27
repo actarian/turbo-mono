@@ -1,12 +1,11 @@
 import { getClassNames, httpGet, IEquatable } from '@websolute/core';
-import { useCart, useDrawer, useLayout, useModal, useMounted, useScroll } from '@websolute/hooks';
+import { useCart, useDrawer, useLayout, useModal, useMounted, useScroll, useUser } from '@websolute/hooks';
 import { ArrowRight, Hexagon, MapPin, Menu, Phone, ShoppingCart, User } from '@websolute/icons';
 import { IRouteLink } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { Accordion, Badge, Box, Button, Container, Drawer, Flex, Modal, Nav, NavLink, Text } from '../../components';
 import type { UIComponentProps } from '../../components/types';
-import { useUser } from '../../hooks';
 import { CartMini } from '../../sections';
 import AuthDrawer from '../../sections/auth/auth-drawer';
 import { getShortName } from '../../utils';
@@ -120,7 +119,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
 
   // console.log(layout.topLevelRoutes);
 
-  const primaryNavs: IRouteLink[] = (layout.navs.primary || []).filter(x => !['checkout', 'login'].includes(x.id.toString()));
+  const primaryNavs: IRouteLink[] = (layout.navs.primary || []).filter(x => !['checkout', 'checkout_result', 'reserved_area', 'login'].includes(x.id.toString()));
 
   const classNames = getClassNames('header', { fixed: props.fixed, sticky: props.sticky });
 

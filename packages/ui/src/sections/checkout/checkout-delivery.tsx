@@ -1,28 +1,13 @@
-import type { IOption } from '@websolute/core';
 import { FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
-import { useApiPost, useCurrency, useLabel } from '@websolute/hooks';
+import { useApi, useApiPost, useCheckout, useCurrency, useLabel } from '@websolute/hooks';
+import type { ICheckoutDelivery, ICheckoutPartial } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import { Button, Container, Flex, Section, Text } from '../../components';
 import { FieldCard } from '../../fields';
 import { Form, FormError, RadioCard } from '../../forms';
-import { useCheckout } from '../../hooks';
-
-export type IDeliveryOption = IOption & {
-  abstract: string;
-  price: number;
-  fullPrice: number;
-}
-
-export type IDeliveryOptions = {
-  deliveries: IDeliveryOption[];
-}
-
-export type IDelivery = {
-  delivery: IDeliveryOption;
-}
 
 export interface CheckoutDeliveryProps {
-  onDelivery?: (data: IDelivery) => void;
+  onDelivery?: (delivery: ICheckoutDelivery) => void;
   onPrevious?: () => void;
 }
 
@@ -31,15 +16,18 @@ const CheckoutDelivery: React.FC<CheckoutDeliveryProps> = ({ onPrevious, onDeliv
 
   const currency = useCurrency();
 
-  const checkout = useCheckout((state) => state.checkout);
+  const api = useApi();
 
-  const { response: options } = useApiPost<IDeliveryOptions>('/checkout/deliveries', checkout);
+  const checkout = useCheckout((state) => state.checkout);
+  const setCheckout = useCheckout((state) => state.setCheckout);
+
+  const [options] = useApiPost<{ deliveries: ICheckoutDelivery[] }>('/checkout/deliveries', checkout);
 
   const [error, setError] = useState<Error>();
 
   const required = RequiredValidator();
 
-  const [form, setValue, setTouched, reset, group] = useFormBuilder<IDelivery, FormGroup>({
+  const [form, setValue, setTouched, reset, group] = useFormBuilder<{ delivery: ICheckoutDelivery }, FormGroup>({
 
     delivery: { schema: 'card', label: 'field.delivery', options: options?.deliveries, validators: [required] },
 
@@ -47,7 +35,7 @@ const CheckoutDelivery: React.FC<CheckoutDeliveryProps> = ({ onPrevious, onDeliv
 
   useEffect(() => {
     if (checkout.delivery) {
-      setValue(checkout.delivery);
+      setValue({ delivery: checkout.delivery });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [options]);
@@ -58,8 +46,14 @@ const CheckoutDelivery: React.FC<CheckoutDeliveryProps> = ({ onPrevious, onDeliv
       console.log('CheckoutDelivery.valid', form.value);
       try {
         setError(undefined);
+        const delivery = form.value.delivery;
+        const response: ICheckoutPartial = await api.post<ICheckoutPartial>('/checkout/update', {
+          action: 'delivery',
+          checkout: { ...checkout, delivery },
+        });
+        setCheckout(response);
         if (typeof onDelivery === 'function') {
-          onDelivery(form.value);
+          onDelivery(delivery);
         }
       } catch (error) {
         console.log('CheckoutDelivery.error', error);

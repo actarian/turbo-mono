@@ -60,7 +60,7 @@
   --font-secondary-line-height-11: 1.8;
   --grid-columns: 12;
   --grid-size: 1fr;
-  --grid-column-gap: Max(4vw, Min(96px, 5vw));
+  --grid-column-gap: Max(4vw, Min(96px, calc(100% / 24)));
   --grid-row-gap: 0;
   --media-query-xs: 0;
   --media-query-sm: 768;

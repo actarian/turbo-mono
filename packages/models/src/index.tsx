@@ -1,7 +1,8 @@
 export type { ICartAddItem, ICartItem } from './cart/cart';
 export type { ICategorized, ICategory, ICategoryItem } from './category/category';
 export { getCategories, getCategoryTree, resolveCategoryTree } from './category/category.service';
-export { getDeliveries, getInfo, getPayment, getPayments, getStores } from './checkout/checkout.service';
+export * from './checkout/checkout';
+export * from './checkout/checkout.service';
 export { getCountries } from './country/country.service';
 export type { IFeatureType } from './feature_type/feature_type';
 export { getFeatureTypes } from './feature_type/feature_type.service';
@@ -19,6 +20,8 @@ export { getMarkets } from './market/market.service';
 export type { IMedia, IMediaType } from './media/media';
 export type { IMenu } from './menu/menu';
 export { getMenu, getMenus } from './menu/menu.service';
+export * from './order/order';
+export * from './order/order.service';
 export type { IImage, IMeta, IPage, PageProps } from './page/page';
 export { getErrorPageLayout, getPage, getPageCategory } from './page/page.service';
 export { getProvinces } from './province/province.service';
@@ -28,5 +31,5 @@ export { routeInterceptor } from './route/route.interceptor';
 export { categoryToRouteLink, decorateHref, getBreadcrumbFromCategoryTree, getChildCategories, getRoute, getRouteLinkTree, getRoutes, getRoutesForSchemas, getStaticPathsForSchema, resolveRoute } from './route/route.service';
 export type { StaticPath } from './route/route.service';
 export type { IModelStore } from './store/store';
-export type { IUser, IUserForgot, IUserLogin, IUserRegister } from './user/user';
+export * from './user/user';
 

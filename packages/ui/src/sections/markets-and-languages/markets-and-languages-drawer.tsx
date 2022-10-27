@@ -37,7 +37,7 @@ const MarketsAndLanguagesDrawer: React.FC<MarketsAndLanguagesDrawerProps> = ({ v
       <Drawer.Content flex="1" width="100vw" maxWidth="400px">
         {items && items.map(item => (
           <Nav.Col key={`${item.id}`} marginBottom="2rem" fontSize="0.9rem">
-            <Text size="8" fontWeight="500">{item.title}</Text>
+            <Text size="8" fontWeight="700">{item.title}</Text>
             {item.locales && item.locales.map(locale => (
               <NavLink key={`${locale.id}`} href={getHref(item.id, locale.id, currentMarket, currentLocale)} passHref>
                 <Button as="a" variant="nav" onClick={onClose}>{locale.title}</Button>

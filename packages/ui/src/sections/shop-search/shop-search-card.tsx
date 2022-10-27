@@ -44,13 +44,13 @@ const ShopRelatedCard: React.FC<ShopRelatedCardProps> = ({ item, ...props }: Sho
         <Media as="a" aspectRatio={1} borderRadius="0.4rem" marginBottom="0.5rem" item={item.media} />
       </Link>
       <Card.Content>
-        {item.collection && <Text size="9" fontWeight="600">{item.collection + (item.designer ? ` by ${item.designer}` : '')}</Text>}
+        {item.collection && <Text size="9" fontWeight="700">{item.collection + (item.designer ? ` by ${item.designer}` : '')}</Text>}
         <Link href={item.href} passHref>
           <Button as="a" variant="nav" marginBottom="0.3rem">{item.title}</Button>
         </Link>
         {false && item.abstract && <Text size="10" marginBottom="0.3rem">{item.abstract}</Text>}
         <Flex.Row justifyContent="space-between">
-          <Text size="10" fontWeight="600">{currency(item.price)}</Text>
+          <Text size="10" fontWeight="700">{currency(item.price)}</Text>
           <Button variant="nav" onClick={onAddToCart}>
             <Text size="10">Add to bag</Text>
           </Button>

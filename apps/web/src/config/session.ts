@@ -45,3 +45,24 @@ export const IronSessionStorage: StateStorage = {
     await httpDelete(`/api/session/${name}`);
   },
 };
+
+/*
+import { withIronSessionSsr } from 'iron-session/next';
+
+type IronSessionCallback<P> = (context: GetServerSidePropsContext) => GetServerSidePropsResult<P> | Promise<GetServerSidePropsResult<P>>
+type IronSessionHandlerResult<P> = (context: GetServerSidePropsContext) => Promise<GetServerSidePropsResult<P>>;
+
+export function withIronSession<P extends { [key: string]: unknown; } = { [key: string]: unknown; }>(
+  callback: IronSessionCallback<P>,
+  options: IronSessionOptions,
+): IronSessionHandlerResult<P> {
+  return withIronSessionSsr(async function (context) {
+    // !!! hack for vercel lambdas
+    if (storeStrategy === StoreStrategy.Mock) {
+      const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
+      const data = await fs.readFile(pathname, 'utf8');
+    }
+    return callback(context);
+  }, options);
+}
+*/

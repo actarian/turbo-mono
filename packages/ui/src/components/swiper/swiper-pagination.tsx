@@ -1,8 +1,8 @@
 import { getClassNames } from '@websolute/core';
+import { useSwiperIndex } from '@websolute/hooks';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { Button, Flex } from '../../components';
-import { useSwiperIndex } from '../../hooks';
 
 const Bullet = styled.div`
   position: relative;

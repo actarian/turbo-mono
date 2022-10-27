@@ -1,12 +1,12 @@
 
 import type { IStaticContext } from '@websolute/core';
 import { asServerProps } from '@websolute/core';
-import { useCart, useMounted } from '@websolute/hooks';
-import type { PageProps } from '@websolute/models';
+import { CheckoutProvider, useCart, useMounted } from '@websolute/hooks';
+import type { IAddressOptions, ICheckoutPartial, PageProps } from '@websolute/models';
 import {
   getCountries, getLayout, getListByKeys, getPage, getProvinces, getRegions, getStaticPathsForSchema
 } from '@websolute/models';
-import { Breadcrumb, CheckoutEmpty, CheckoutProvider, CheckoutWizard, Container, Footer, Header, ICheckout, ICheckoutData, Layout, Meta, Page, Section } from '@websolute/ui';
+import { Breadcrumb, CheckoutEmpty, CheckoutWizard, Container, Footer, Header, Layout, Meta, Page, Section } from '@websolute/ui';
 
 export default function Checkout({ layout, page, data, params }: CheckoutProps) {
 
@@ -14,7 +14,7 @@ export default function Checkout({ layout, page, data, params }: CheckoutProps) 
 
   const items = useCart((state) => state.items);
 
-  const onCheckout = (checkout: ICheckout) => {
+  const onCheckout = (checkout: ICheckoutPartial) => {
     console.log('Checkout.onCheckout', checkout);
   }
 
@@ -47,7 +47,7 @@ export default function Checkout({ layout, page, data, params }: CheckoutProps) 
 }
 
 export interface CheckoutProps extends PageProps {
-  data: ICheckoutData;
+  data: IAddressOptions;
 }
 
 export async function getStaticProps(context: IStaticContext) {
@@ -87,11 +87,6 @@ import path from 'path';
 import { sessionOptions } from 'src/config/session';
 
 export const getServerSideProps = withIronSessionSsr(async function (context) {
-  // !!! hack for vercel lambdas
-  if (storeStrategy === StoreStrategy.Mock) {
-    const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
-    const data = await fs.readFile(pathname, 'utf8');
-  }
 
   const params = context.params as IContextParams;
   const query = context.query;
