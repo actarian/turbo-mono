@@ -7,14 +7,14 @@ import { Button, Divider, Flex, Text } from '../../components';
 import { FieldCheckbox, FieldPassword, FieldText } from '../../fields';
 import { Form, FormError, FormTester } from '../../forms';
 
-export interface AuthSignInProps {
+export interface AuthLoginProps {
   children?: ReactNode;
   onSignedIn?: (user: IUser) => void;
   onNavToForgot?: () => void;
   onNavToRegister?: () => void;
 }
 
-const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNavToRegister }: AuthSignInProps) => {
+export const AuthLogin: React.FC<AuthLoginProps> = ({ onSignedIn, onNavToForgot, onNavToRegister }: AuthLoginProps) => {
   const label = useLabel();
 
   const required = RequiredValidator();
@@ -112,5 +112,3 @@ const AuthSignIn: React.FC<AuthSignInProps> = ({ onSignedIn, onNavToForgot, onNa
     </Flex.Col>
   );
 };
-
-export default AuthSignIn;

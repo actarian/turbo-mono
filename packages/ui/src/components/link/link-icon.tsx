@@ -22,6 +22,4 @@ const StyledLinkIcon = styled(LinkIconSvg)`
 
 StyledLinkIcon.displayName = 'LinkIcon';
 
-const LinkIcon = React.memo(StyledLinkIcon);
-
-export default LinkIcon;
+export const LinkIcon = React.memo(StyledLinkIcon);

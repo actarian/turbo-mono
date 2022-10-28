@@ -9,7 +9,7 @@ export interface NavLinkProps extends LinkProps {
   scrollToHash?: boolean;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ children, activeClassName = 'active', ...props }: NavLinkProps) => {
+export const NavLink: React.FC<NavLinkProps> = ({ children, activeClassName = 'active', ...props }: NavLinkProps) => {
   const child = Children.only(children);
   const childClassName = child.props.className || '';
 
@@ -30,11 +30,3 @@ const NavLink: React.FC<NavLinkProps> = ({ children, activeClassName = 'active',
     </Link>
   )
 }
-
-/*
-NavLink.propTypes = {
-  activeClassName: PropTypes.string.isRequired,
-};
-*/
-
-export default NavLink;

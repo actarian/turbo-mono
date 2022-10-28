@@ -1,8 +1,7 @@
 
 import { asServerProps, httpGet, IContextParams } from '@websolute/core';
 import { useUser } from '@websolute/hooks';
-import type { PageProps } from '@websolute/models';
-import { getLayout, getPage } from '@websolute/models';
+import { getLayout, getPage, PageProps } from '@websolute/models';
 import { StoreStrategy, storeStrategy } from '@websolute/store';
 import { Box, Button, Container, Flex, Footer, Header, Layout, Meta, NavLink, Page, Section, Text } from '@websolute/ui';
 import { promises as fs } from 'fs';

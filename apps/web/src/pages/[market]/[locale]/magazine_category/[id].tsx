@@ -1,11 +1,8 @@
 
-import type { IStaticContext } from '@websolute/core';
-import { asServerProps } from '@websolute/core';
+import { asServerProps, IStaticContext } from '@websolute/core';
 import { MagazineSearchFeaturesDefaults } from '@websolute/mock';
-import type { IFeatureType, PageProps } from '@websolute/models';
-import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
-import type { MagazineSearchItem } from '@websolute/ui';
-import { CategoryHero, Footer, Header, Layout, MagazineSearch, Meta, Page } from '@websolute/ui';
+import { getLayout, getPage, getStaticPathsForSchema, IFeatureType, PageProps } from '@websolute/models';
+import { CategoryHero, Footer, Header, Layout, MagazineSearch, MagazineSearchItem, Meta, Page } from '@websolute/ui';
 import { getMagazineDetails } from 'src/models';
 
 export default function MagazineCategory({ layout, page, items = [], featureTypes = [], params }: MagazineCategoryProps) {

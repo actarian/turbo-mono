@@ -1,7 +1,7 @@
 import { Facebook, Github, Hexagon, Instagram, Linkedin, Twitter, Websolute } from '@websolute/icons';
 import Link from 'next/link';
 import { Button, Container, Flex, Grid, Nav, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 
 import styled from 'styled-components';
 
@@ -16,7 +16,7 @@ const FooterContainer = styled.div<FooterProps>`
   color: var(--color-neutral-100);
 `;
 
-const Footer: React.FC<FooterProps> = (props: FooterProps) => {
+export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
   function getYear() {
     return new Date().getFullYear();
   }
@@ -86,5 +86,3 @@ const Footer: React.FC<FooterProps> = (props: FooterProps) => {
     </FooterContainer>
   );
 }
-
-export default Footer;

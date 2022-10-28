@@ -1,6 +1,5 @@
 
-import type { IContextParams } from '@websolute/core';
-import { asServerProps } from '@websolute/core';
+import { asServerProps, IContextParams } from '@websolute/core';
 import { getLayout, getOrder, getPage, IOrder, IOrderStatus, IUser, PageProps } from '@websolute/models';
 import { Breadcrumb, CheckoutError, CheckoutSuccess, Container, Footer, Header, Layout, Meta, Page, Section } from '@websolute/ui';
 import { withIronSessionSsr } from 'iron-session/next';

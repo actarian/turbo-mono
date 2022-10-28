@@ -1,9 +1,9 @@
 import { getClassNames } from '@websolute/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import PaginationItem from './pagination-item';
+import { PaginationItem } from './pagination-item';
 
-interface Props {
+type Props = {
   isBefore?: boolean;
   onClick?: (e: React.MouseEvent) => void;
 }
@@ -20,7 +20,7 @@ const StyledPaginationItem = styled(PaginationItem)`
   }
 `
 
-const PaginationEllipsis: React.FC<Props> = ({ isBefore, onClick }) => {
+export const PaginationEllipsis: React.FC<Props> = ({ isBefore, onClick }) => {
   const [showMore, setShowMore] = useState(false);
   const moreClassNames = getClassNames('more', { before: isBefore });
   return (
@@ -59,5 +59,3 @@ const PaginationEllipsis: React.FC<Props> = ({ isBefore, onClick }) => {
 }
 
 PaginationEllipsis.displayName = 'PaginationEllipsis';
-
-export default PaginationEllipsis;

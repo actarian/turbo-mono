@@ -13,7 +13,7 @@ export interface GoogleMapInfoWindowProps extends google.maps.InfoWindowOptions 
   onClose?: (event: MouseEvent<HTMLElement>) => void;
 }
 
-const GoogleMapInfoWindow: React.FC<GoogleMapInfoWindowProps> = ({
+export const GoogleMapInfoWindow: React.FC<GoogleMapInfoWindowProps> = ({
   position,
   content,
   onClose,
@@ -66,5 +66,3 @@ const GoogleMapInfoWindow: React.FC<GoogleMapInfoWindowProps> = ({
 
   return null;
 };
-
-export default GoogleMapInfoWindow;

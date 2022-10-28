@@ -1,14 +1,14 @@
 
-import { getClassNames } from '@websolute/core';
+import { getClassNames, withSchema } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { Text } from '../../components';
 import { CssDefault } from '../../components/button/button.css';
-import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import RadioColorGroup from './radio-color-group';
+import { RadioColorGroup } from './radio-color-group';
 
-interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
+type Props = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   color?: string;
   size?: SizeVariant;
   children?: ReactNode;
@@ -75,7 +75,7 @@ const StyledRadioColor = styled.div`
   ${props => getCssResponsive(props)}
 `
 
-const RadioColor: RadioColorComponent = forwardRef(({
+const RadioColorBase: RadioColorComponent = forwardRef(({
   as = 'input',
   color = 'white',
   children,
@@ -93,12 +93,8 @@ const RadioColor: RadioColorComponent = forwardRef(({
   );
 });
 
-RadioColor.displayName = 'RadioColor';
+RadioColorBase.displayName = 'RadioColor';
 
-(RadioColor as IRadioColor).Group = RadioColorGroup;
-
-export default RadioColor as IRadioColor;
-
-type IRadioColor = typeof RadioColor & {
-  Group: typeof RadioColorGroup;
-};
+export const RadioColor = withSchema(RadioColorBase, {
+  Group: RadioColorGroup,
+});

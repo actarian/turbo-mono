@@ -4,14 +4,14 @@ import { useLabel } from '@websolute/hooks';
 import { ChangeEvent, FocusEvent, useState } from 'react';
 import { Text } from '../components';
 import { Field, Label, Radio } from '../forms';
-import FieldError from './field-error';
+import { FieldError } from './field-error';
 
 type FieldAcceptProps = {
   control: FormControl;
   uid?: number | null | undefined;
 }
 
-export default function FieldAccept(props: FieldAcceptProps) {
+export function FieldAccept(props: FieldAcceptProps) {
   const label = useLabel();
 
   const [state, setValue, setTouched] = useControl<boolean>(props.control);

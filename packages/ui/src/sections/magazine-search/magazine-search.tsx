@@ -1,15 +1,13 @@
 import { getClassNames, IEquatable } from '@websolute/core';
-import type { IFilterOption } from '@websolute/hooks';
-import { Filter, filtersToParams, useDrawer, useFilters, useInfiniteLoader, useSearchParamsEncoded } from '@websolute/hooks';
+import { Filter, filtersToParams, IFilterOption, useDrawer, useFilters, useInfiniteLoader, useSearchParamsEncoded } from '@websolute/hooks';
 import { Filter as FilterIcon } from '@websolute/icons';
-import type { IFeatureType } from '@websolute/models';
+import { IFeatureType } from '@websolute/models';
 import { useCallback } from 'react';
 import { Box, Button, Container, Flex, InfiniteLoader, Section, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
-import type { MagazineSearchItem } from './magazine-search-card';
-import MagazineSearchCard from './magazine-search-card';
-import MagazineSearchFiltersModal from './magazine-search-filters-modal';
-import MagazineSearchRecap from './magazine-search-recap';
+import { UIStyledComponentProps } from '../../components/types';
+import { MagazineSearchCard, MagazineSearchItem } from './magazine-search-card';
+import { MagazineSearchFiltersModal } from './magazine-search-filters-modal';
+import { MagazineSearchRecap } from './magazine-search-recap';
 
 // this is the actual filtering function of the magazine
 function filterMagazineItem(key: string, item: MagazineSearchItem, value: IEquatable) {
@@ -43,7 +41,7 @@ type Props = {
 
 export type MagazineSearchProps = UIStyledComponentProps<Props>;
 
-const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTypes, categoryId, ...props }: MagazineSearchProps) => {
+export const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTypes, categoryId, ...props }: MagazineSearchProps) => {
 
   // deserialize queryString encoded params
   const { params, replaceParamsSilently } = useSearchParamsEncoded();
@@ -151,5 +149,3 @@ const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTypes, ca
     </>
   )
 }
-
-export default MagazineSearch;

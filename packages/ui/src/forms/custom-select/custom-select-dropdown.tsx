@@ -2,9 +2,9 @@ import { getClassNames } from '@websolute/core';
 import React, { CSSProperties, useImperativeHandle, useRef } from 'react';
 import styled from 'styled-components';
 import { Dropdown } from '../../components';
-import { useSelectContext } from './select-context';
+import { useCustomSelectContext } from './custom-select-context';
 
-interface Props {
+type Props = {
   visible: boolean;
   className?: string;
   dropdownStyle?: CSSProperties;
@@ -14,9 +14,9 @@ interface Props {
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
-export type SelectDropdownProps = Props & NativeAttrs;
+export type CustomSelectDropdownProps = Props & NativeAttrs;
 
-const StyledSelectDropdown = styled.div`
+const StyledCustomSelectDropdown = styled.div`
   max-height: 15rem;
   overflow-y: auto;
   overflow-anchor: none;
@@ -26,18 +26,18 @@ const StyledSelectDropdown = styled.div`
   background-color: var(--color-neutral-100);
 `;
 
-const SelectDropdown = React.forwardRef<HTMLDivElement | null, React.PropsWithChildren<SelectDropdownProps>>(({
+export const CustomSelectDropdown = React.forwardRef<HTMLDivElement | null, React.PropsWithChildren<CustomSelectDropdownProps>>(({
   className = '',
   dropdownStyle = {},
   visible,
   children,
   disableMatchWidth,
   getPopupContainer,
-}: React.PropsWithChildren<SelectDropdownProps>, dropdownRef) => {
+}: React.PropsWithChildren<CustomSelectDropdownProps>, dropdownRef) => {
 
   const internalDropdownRef = useRef<HTMLDivElement | null>(null);
 
-  const { ref } = useSelectContext();
+  const { ref } = useCustomSelectContext();
 
   useImperativeHandle<HTMLDivElement | null, HTMLDivElement | null>(dropdownRef, () => internalDropdownRef.current);
 
@@ -45,13 +45,11 @@ const SelectDropdown = React.forwardRef<HTMLDivElement | null, React.PropsWithCh
 
   return (
     <Dropdown parent={ref} visible={visible} disableMatchWidth={disableMatchWidth} getPopupContainer={getPopupContainer}>
-      <StyledSelectDropdown ref={internalDropdownRef} className={classNames} style={dropdownStyle}>
+      <StyledCustomSelectDropdown ref={internalDropdownRef} className={classNames} style={dropdownStyle}>
         {children}
-      </StyledSelectDropdown>
+      </StyledCustomSelectDropdown>
     </Dropdown>
   );
 });
 
-SelectDropdown.displayName = 'SelectDropdown';
-
-export default SelectDropdown;
+CustomSelectDropdown.displayName = 'CustomSelectDropdown';

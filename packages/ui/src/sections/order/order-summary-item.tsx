@@ -1,9 +1,9 @@
 import { useCurrency } from '@websolute/hooks';
-import type { ICheckoutItem } from '@websolute/models';
+import { ICheckoutItem } from '@websolute/models';
 import NextLink from 'next/link';
 import { Button, Flex, Media, MediaImage, Text } from '../../components';
 
-const OrderSummaryItem: React.FC<{ item: ICheckoutItem }> = ({ item }: { item: ICheckoutItem }) => {
+export const OrderSummaryItem: React.FC<{ item: ICheckoutItem }> = ({ item }: { item: ICheckoutItem }) => {
 
   const currency = useCurrency();
   const price = currency(item.price);
@@ -36,5 +36,3 @@ const OrderSummaryItem: React.FC<{ item: ICheckoutItem }> = ({ item }: { item: I
     </Flex.Row>
   );
 }
-
-export default OrderSummaryItem;

@@ -1,11 +1,11 @@
 import { FormControl } from '@websolute/forms';
-import FieldAccept from './field-accept';
-import FieldAutocomplete from './field-autocomplete';
-import FieldCard from './field-card';
-import FieldCheckbox from './field-checkbox';
-import FieldPassword from './field-password';
-import FieldSelect from './field-select';
-import FieldText from './field-text';
+import { FieldAccept } from './field-accept';
+import { FieldAutocomplete } from './field-autocomplete';
+import { FieldCard } from './field-card';
+import { FieldCheckbox } from './field-checkbox';
+import { FieldPassword } from './field-password';
+import { FieldSelect } from './field-select';
+import { FieldText } from './field-text';
 
 /*
   * Here we define the types of form fields.

@@ -1,9 +1,9 @@
 import { useDateTimeFormat } from '@websolute/hooks';
 import { ArrowRight } from '@websolute/icons';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import { Button, Card, Flex, Media, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: BlogItem
@@ -24,7 +24,7 @@ export type BlogItem = {
 
 export type BlogCardProps = UIStyledComponentProps<Props, 'a'>;
 
-const BlogCard: React.FC<BlogCardProps> = ({ item, ...props }: BlogCardProps) => {
+export const BlogCard: React.FC<BlogCardProps> = ({ item, ...props }: BlogCardProps) => {
   const dateTimeFormat = useDateTimeFormat({
     year: 'numeric',
     month: 'long',
@@ -56,5 +56,3 @@ const BlogCard: React.FC<BlogCardProps> = ({ item, ...props }: BlogCardProps) =>
     </Link>
   )
 }
-
-export default BlogCard;

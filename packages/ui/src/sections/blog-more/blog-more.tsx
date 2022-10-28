@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button, Card, Container, Flex, Grid, Media, MediaImage, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
-import BlogCard, { BlogItem } from './blog-card';
+import { UIComponentProps } from '../../components/types';
+import { BlogCard, BlogItem } from './blog-card';
 
 type Props = {
   items: BlogItem[],
@@ -9,7 +9,7 @@ type Props = {
 
 export type BlogMoreProps = UIComponentProps<Props>;
 
-const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
+export const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
   return (
     <Section padding="3rem 0">
       <Container>
@@ -77,5 +77,3 @@ const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
     </Section>
   )
 }
-
-export default BlogMore;

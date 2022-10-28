@@ -1,14 +1,14 @@
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Code, Flex, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 
 type Props = {
 }
 
 export type ColorsProps = UIComponentProps<Props>;
 
-const Colors: React.FC<ColorsProps> = (props: ColorsProps) => {
+export const Colors: React.FC<ColorsProps> = (props: ColorsProps) => {
   const theme = useContext(ThemeContext);
   const keys = Object.keys(theme.color);
   // const sizes = new Array(9).fill().map((_, i) => (i + 1) * 100);
@@ -37,5 +37,3 @@ const Colors: React.FC<ColorsProps> = (props: ColorsProps) => {
     </Section>
   );
 }
-
-export default Colors;

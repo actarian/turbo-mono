@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import { Container, Section, Text } from '../../components';
-import type { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
+import { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
 export interface NotFoundItem extends ILazyComponent {
   schema: string,
@@ -11,7 +11,7 @@ export interface NotFoundProps extends ILazyComponentProps {
   item: NotFoundItem;
 }
 
-const NotFound: React.FC<NotFoundProps> = ({ item }: NotFoundProps) => {
+export const NotFound: React.FC<NotFoundProps> = ({ item }: NotFoundProps) => {
   return (
     <Section borderBottom="1px solid var(--color-neutral-300)">
       <Container textAlign="center">
@@ -23,8 +23,9 @@ const NotFound: React.FC<NotFoundProps> = ({ item }: NotFoundProps) => {
   );
 }
 
-export default NotFound;
-
 export const NotFoundExport = {
-  'not-found': dynamic<NotFoundProps>(() => import('../not-found/not-found')),
+  'not-found': dynamic<NotFoundProps>(() => import('../not-found/not-found').then(
+    module => module.NotFound
+  )),
 };
+

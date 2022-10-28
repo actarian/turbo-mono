@@ -1,10 +1,10 @@
 import { getClassNames } from '@websolute/core';
-import type { IRouteLink } from '@websolute/models';
+import { IRouteLink } from '@websolute/models';
 import { useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { Container, Grid } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
-import HeaderCard from './header-card';
+import { UIStyledComponentProps } from '../../components/types';
+import { HeaderCard } from './header-card';
 
 type Props = {
   item: HeaderSubmenuItem;
@@ -44,7 +44,7 @@ const StyledHeaderSubmenu = styled.div`
   }
 `
 
-const HeaderSubmenu: React.FC<HeaderSubmenuProps> = ({ item, visible, onSelect, ...props }: HeaderSubmenuProps) => {
+export const HeaderSubmenu: React.FC<HeaderSubmenuProps> = ({ item, visible, onSelect, ...props }: HeaderSubmenuProps) => {
 
   const onSelect_ = (item?: IRouteLink) => {
     onSelect && onSelect(item);
@@ -69,8 +69,6 @@ const HeaderSubmenu: React.FC<HeaderSubmenuProps> = ({ item, visible, onSelect, 
     </StyledHeaderSubmenu>
   )
 }
-
-export default HeaderSubmenu;
 
 function staggerBottom(items: number = 20, delay: number = 0.1, gap: number = .05) {
   return css`

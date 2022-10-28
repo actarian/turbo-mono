@@ -1,8 +1,8 @@
 import { PhoneCall } from '@websolute/icons';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import { Button, Card, Container, Grid, Media, MediaImage, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: SplitItem,
@@ -25,7 +25,7 @@ export type SplitItem = {
 
 export type SplitProps = UIComponentProps<Props>;
 
-const Split: React.FC<SplitProps> = ({ item }: SplitProps) => {
+export const Split: React.FC<SplitProps> = ({ item }: SplitProps) => {
   return (
     <Section>
       <Container.Fluid>
@@ -58,5 +58,3 @@ const Split: React.FC<SplitProps> = ({ item }: SplitProps) => {
     </Section>
   )
 }
-
-export default Split;

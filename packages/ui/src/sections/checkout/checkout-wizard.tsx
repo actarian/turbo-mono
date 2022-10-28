@@ -1,15 +1,15 @@
 import { getClassNames } from '@websolute/core';
 import { scrollToY, useApi, useCheckout } from '@websolute/hooks';
-import type { ICheckoutDelivery, ICheckoutInfo, ICheckoutItem, ICheckoutPartial, ICheckoutPayment, ICheckoutStore } from '@websolute/models';
+import { ICheckoutDelivery, ICheckoutInfo, ICheckoutItem, ICheckoutPartial, ICheckoutPayment, ICheckoutStore } from '@websolute/models';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Container, Flex, Section } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
-import CheckoutBasket from './checkout-basket';
-import CheckoutDelivery from './checkout-delivery';
-import CheckoutInfo from './checkout-info';
-import CheckoutPayment from './checkout-payment';
-import CheckoutReview from './checkout-review';
+import { UIStyledComponentProps } from '../../components/types';
+import { CheckoutBasket } from './checkout-basket';
+import { CheckoutDelivery } from './checkout-delivery';
+import { CheckoutInfo } from './checkout-info';
+import { CheckoutPayment } from './checkout-payment';
+import { CheckoutReview } from './checkout-review';
 
 export enum CheckoutStatus {
   None = -1,
@@ -63,7 +63,7 @@ type Props = {
 
 export type CheckoutWizardProps = UIStyledComponentProps<Props>;
 
-const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...props }: CheckoutWizardProps) => {
+export const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...props }: CheckoutWizardProps) => {
 
   const api = useApi();
 
@@ -155,5 +155,3 @@ const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...props }:
     </>
   )
 }
-
-export default CheckoutWizard;

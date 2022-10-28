@@ -1,16 +1,16 @@
 
-import { getClassNames } from '@websolute/core';
+import { getClassNames, withSchema } from '@websolute/core';
 import React, { ComponentPropsWithRef, forwardRef, ReactNode, SVGProps } from 'react';
 import styled from 'styled-components';
 import { Flex, Media, Text } from '../../components';
 import { CssDefault } from '../../components/button/button.css';
 import { FontSize } from '../../components/text/text';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getChildsByType, getCssResponsive } from '../../components/utils';
 import { RadioIcon } from '../radio/radio-icon';
-import RadioCardGroup from './radio-card-group';
+import { RadioCardGroup } from './radio-card-group';
 
-interface Props extends ComponentPropsWithRef<'input'> {
+type Props = ComponentPropsWithRef<'input'> & {
   children?: ReactNode;
 }
 
@@ -188,7 +188,7 @@ const RadioCardMedia = styled(Media)`
   height: 40px;
 `;
 
-const RadioCard: RadioCardComponent = forwardRef(({
+const RadioCardBase: RadioCardComponent = forwardRef(({
   as = 'input',
   children,
   className,
@@ -227,20 +227,12 @@ const RadioCard: RadioCardComponent = forwardRef(({
   );
 });
 
-RadioCard.displayName = 'RadioCard';
+RadioCardBase.displayName = 'RadioCard';
 
-(RadioCard as IRadioCard).Group = RadioCardGroup;
-(RadioCard as IRadioCard).Title = RadioCardTitle;
-(RadioCard as IRadioCard).Abstract = RadioCardAbstract;
-(RadioCard as IRadioCard).Extra = RadioCardExtra;
-(RadioCard as IRadioCard).Media = RadioCardMedia;
-
-export default RadioCard as IRadioCard;
-
-type IRadioCard = typeof RadioCard & {
-  Group: typeof RadioCardGroup;
-  Title: typeof RadioCardTitle;
-  Abstract: typeof RadioCardAbstract;
-  Extra: typeof RadioCardExtra;
-  Media: typeof RadioCardMedia;
-};
+export const RadioCard = withSchema(RadioCardBase, {
+  Group: RadioCardGroup,
+  Title: RadioCardTitle,
+  Abstract: RadioCardAbstract,
+  Extra: RadioCardExtra,
+  Media: RadioCardMedia,
+});

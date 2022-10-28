@@ -10,7 +10,7 @@ export interface GoogleMapMarkerClustererProps {
   onClick?: (item: IGeoLocalized) => void;
 }
 
-const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
+export const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
   items = [],
   onClick,
 }) => {
@@ -124,5 +124,3 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
 
   return null;
 };
-
-export default GoogleMapMarkerClusterer;

@@ -1,6 +1,6 @@
 import React, { forwardRef, ReactElement, useMemo } from 'react';
 import styled, { css } from 'styled-components';
-import type { UIComponentWithRef, UIStyledComponentProps, Variant, Variants } from '../../components/types';
+import { UIComponentWithRef, UIStyledComponentProps, Variant, Variants } from '../../components/types';
 import { getCssResponsive, getVariant } from '../../components/utils';
 
 const variants: Variants = {
@@ -92,7 +92,7 @@ const StyledButtonGroup = styled.div<ButtonGroupProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const ButtonGroup: ButtonGroupComponent = forwardRef(({ children, as = 'div', ...props }, ref) => {
+export const ButtonGroup: ButtonGroupComponent = forwardRef(({ children, as = 'div', ...props }, ref) => {
   const mappedChildren = useMemo(() => React.Children.map(children as any, (child: ReactElement) =>
     React.cloneElement(child, child.props ? { ...child.props, className: `${child.props.className} btn` } : null)
   ), [children]);
@@ -100,5 +100,3 @@ const ButtonGroup: ButtonGroupComponent = forwardRef(({ children, as = 'div', ..
 });
 
 ButtonGroup.displayName = 'ButtonGroup';
-
-export default ButtonGroup;

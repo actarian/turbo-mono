@@ -1,26 +1,26 @@
-import { getClassNames } from '@websolute/core';
+import { getClassNames, withSchema } from '@websolute/core';
 import { useCurrentState } from '@websolute/hooks';
 import React, { CSSProperties, forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Ellipsis, Flex, getChildsByType } from '../../components';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import { SelectConfig, SelectContext } from './select-context';
-import StyledSelectDivider from './select-divider';
-import SelectDropdown from './select-dropdown';
-import SelectIcon from './select-icon';
-import SelectInput from './select-input';
-import SelectLabel from './select-label';
-import SelectMultipleValue from './select-multiple-value';
-import SelectOption from './select-option';
+import { CustomSelectConfig, CustomSelectContext } from './custom-select-context';
+import { CustomSelectDivider } from './custom-select-divider';
+import { CustomSelectDropdown } from './custom-select-dropdown';
+import { CustomSelectIcon } from './custom-select-icon';
+import { CustomSelectInput } from './custom-select-input';
+import { CustomSelectLabel } from './custom-select-label';
+import { CustomSelectMultipleValue } from './custom-select-multiple-value';
+import { CustomSelectOption } from './custom-select-option';
 
-export type SelectRef = {
+export type CustomSelectRef = {
   focus: () => void;
   blur: () => void;
   scrollTo?: (options?: ScrollToOptions) => void;
 };
 
-interface Props {
+type Props = {
   disabled?: boolean;
   name?: string;
   value?: string | string[];
@@ -41,11 +41,11 @@ interface Props {
   getPopupContainer?: () => HTMLElement | null;
 }
 
-export type SelectProps = UIStyledComponentProps<Props>;
+export type CustomSelectProps = UIStyledComponentProps<Props>;
 
-export type SelectComponent<C extends React.ElementType = 'select'> = UIComponentWithRef<C, Props>;
+export type CustomSelectComponent<C extends React.ElementType = 'select'> = UIComponentWithRef<C, Props>;
 
-const StyledSelect = styled.div<UIStyledComponentProps<{ disabled?: boolean }>>`
+const StyledCustomSelect = styled.div<UIStyledComponentProps<{ disabled?: boolean }>>`
   position: relative;
   display: inline-flex;
   justify-content: space-between;
@@ -128,7 +128,7 @@ const StyledSelect = styled.div<UIStyledComponentProps<{ disabled?: boolean }>>`
   ${props => getCssResponsive(props)}
 `;
 
-const Select: SelectComponent = forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>(({
+const CustomSelectBase: CustomSelectComponent = forwardRef<CustomSelectRef, React.PropsWithChildren<CustomSelectProps>>(({
   disabled = false,
   pure = false,
   multiple = false,
@@ -148,9 +148,9 @@ const Select: SelectComponent = forwardRef<SelectRef, React.PropsWithChildren<Se
   onBlur,
   onFocus,
   ...props
-}: React.PropsWithChildren<SelectProps>, selectRef) => {
+}: React.PropsWithChildren<CustomSelectProps>, selectRef) => {
 
-  const Icon = icon || SelectIcon;
+  const Icon = icon || CustomSelectIcon;
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -200,7 +200,7 @@ const Select: SelectComponent = forwardRef<SelectRef, React.PropsWithChildren<Se
     }
   };
 
-  const initialValue: SelectConfig = useMemo(() => ({
+  const initialValue: CustomSelectConfig = useMemo(() => ({
     disableAll: disabled,
     visible,
     value,
@@ -247,7 +247,7 @@ const Select: SelectComponent = forwardRef<SelectRef, React.PropsWithChildren<Se
       }
     };
     const values = Array.isArray(value) ? value : [value];
-    const [options] = getChildsByType(children, SelectOption);
+    const [options] = getChildsByType(children, CustomSelectOption);
     return React.Children.map(options, (option: any) => { // !!! any
       const optionValue = option.props.value;
       const optionLabel = option.props.children;
@@ -258,9 +258,9 @@ const Select: SelectComponent = forwardRef<SelectRef, React.PropsWithChildren<Se
         return optionLabel;
       }
       return (
-        <SelectMultipleValue disabled={disabled} onClear={() => onClear(optionValue)}>
+        <CustomSelectMultipleValue disabled={disabled} onClear={() => onClear(optionValue)}>
           {optionLabel}
-        </SelectMultipleValue>
+        </CustomSelectMultipleValue>
       );
     });
   })();
@@ -279,10 +279,10 @@ const Select: SelectComponent = forwardRef<SelectRef, React.PropsWithChildren<Se
   const classNames = getClassNames('select', { active: selectFocus || visible, opened: visible, multiple, disabled }, className);
 
   return (
-    <SelectContext.Provider value={initialValue}>
-      <StyledSelect ref={ref} className={classNames} onClick={clickHandler} onMouseDown={mouseDownHandler}
+    <CustomSelectContext.Provider value={initialValue}>
+      <StyledCustomSelect ref={ref} className={classNames} onClick={clickHandler} onMouseDown={mouseDownHandler}
         {...props}>
-        <SelectInput ref={inputRef} name={props.name} visible={visible} onFocus={onFocus_} onBlur={onBlur_} />
+        <CustomSelectInput ref={inputRef} name={props.name} visible={visible} onFocus={onFocus_} onBlur={onBlur_} />
         {isEmpty && (
           <span className="value placeholder">
             <Ellipsis>{placeholder}</Ellipsis>
@@ -293,27 +293,21 @@ const Select: SelectComponent = forwardRef<SelectRef, React.PropsWithChildren<Se
             <Flex.Row flexWrap="wrap" maxWidth="calc(100% - 1.5rem)">{selectedChildren}</Flex.Row> :
             <span className="value">{selectedChildren}</span>
         )}
-        <SelectDropdown ref={dropdownRef} className={dropdownClassName} visible={visible} dropdownStyle={dropdownStyle} disableMatchWidth={disableMatchWidth} getPopupContainer={getPopupContainer}>
+        <CustomSelectDropdown ref={dropdownRef} className={dropdownClassName} visible={visible} dropdownStyle={dropdownStyle} disableMatchWidth={disableMatchWidth} getPopupContainer={getPopupContainer}>
           {children}
-        </SelectDropdown>
+        </CustomSelectDropdown>
         {!pure && (
           <Icon className="icon" />
         )}
-      </StyledSelect>
-    </SelectContext.Provider>
+      </StyledCustomSelect>
+    </CustomSelectContext.Provider>
   );
 });
 
-Select.displayName = 'Select';
+CustomSelectBase.displayName = 'CustomSelect';
 
-(Select as ISelect).Label = SelectLabel;
-(Select as ISelect).Divider = StyledSelectDivider;
-(Select as ISelect).Option = SelectOption;
-
-export default Select as ISelect;
-
-type ISelect = typeof Select & {
-  Label: typeof SelectLabel;
-  Divider: typeof StyledSelectDivider;
-  Option: typeof SelectOption;
-};
+export const CustomSelect = withSchema(CustomSelectBase, {
+  Label: CustomSelectLabel,
+  Divider: CustomSelectDivider,
+  Option: CustomSelectOption,
+});

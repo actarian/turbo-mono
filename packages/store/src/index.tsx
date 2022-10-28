@@ -3,9 +3,9 @@ export { isApiRequest, isExistingApiRoute, isStaticRequest } from './middleware/
 export { parseMockApi, resolveMockApi } from './mock/mock.api';
 // export { MockBuildAndWatch } from './mock/mock.build';
 export { mockInterceptor } from './mock/mock.interceptor';
-export { default as MockService } from './mock/mock.service';
+export * from './mock/mock.service';
 export { getMockStore } from './mock/mock.store';
-export { default as StoreApiService, storeDelete, storeFetch, storeGet, storePatch, storePost, storePut } from './store-api/store-api.service';
+export * from './store-api/store-api.service';
 export { getApiStore } from './store-api/store-api.store';
 export { StoreStrategy, storeStrategy } from './store/store';
 export type { CollectionDescription, SerializedCollection, SerializedStore, Store } from './store/store';

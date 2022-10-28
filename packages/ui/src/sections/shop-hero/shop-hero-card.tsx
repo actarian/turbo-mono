@@ -1,13 +1,7 @@
-import type { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import { Card, Media, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
-
-export type CategoriesPropositionItem = {
-  href: string;
-  title: string;
-  media: IMedia;
-}
+import { UIStyledComponentProps } from '../../components/types';
+import { CategoriesPropositionItem } from '../categories-proposition/categories-proposition-card';
 
 type Props = {
   item: CategoriesPropositionItem
@@ -15,7 +9,7 @@ type Props = {
 
 export type ShopHeroCardProps = UIStyledComponentProps<Props, 'a'>;
 
-const ShopHeroCard: React.FC<ShopHeroCardProps> = ({ item, ...props }: ShopHeroCardProps) => {
+export const ShopHeroCard: React.FC<ShopHeroCardProps> = ({ item, ...props }: ShopHeroCardProps) => {
   return (
     <Link href={item.href} passHref>
       <Card as="a" aspectRatio={2 / 1} {...props} hoverable borderRadius="0.4rem" justifyContent="flex-end">
@@ -30,5 +24,3 @@ const ShopHeroCard: React.FC<ShopHeroCardProps> = ({ item, ...props }: ShopHeroC
     </Link>
   )
 }
-
-export default ShopHeroCard;

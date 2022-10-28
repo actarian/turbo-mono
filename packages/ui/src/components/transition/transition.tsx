@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-interface Props {
+type Props = {
   visible?: boolean;
   enterTime?: number;
   leaveTime?: number;
@@ -20,7 +20,7 @@ const defaultProps = {
 
 export type TransitionProps = Props;
 
-const Transition: React.FC<React.PropsWithChildren<TransitionProps | any>> = ({ children, className, visible, enterTime, leaveTime, clearTime, name, ...props }: React.PropsWithChildren<TransitionProps> & typeof defaultProps) => { // !!! any
+export const Transition: React.FC<React.PropsWithChildren<TransitionProps | any>> = ({ children, className, visible, enterTime, leaveTime, clearTime, name, ...props }: React.PropsWithChildren<TransitionProps> & typeof defaultProps) => { // !!! any
 
   const [classes, setClasses] = useState<string>('');
 
@@ -61,5 +61,3 @@ const Transition: React.FC<React.PropsWithChildren<TransitionProps | any>> = ({ 
 
 Transition.defaultProps = defaultProps;
 Transition.displayName = 'Transition';
-
-export default Transition;

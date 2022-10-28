@@ -11,7 +11,7 @@ type FormTesterProps = {
   onReset: () => void;
 }
 
-export default function FormTester(props: FormTesterProps) {
+export function FormTester(props: FormTesterProps) {
   const label = useLabel();
 
   if (!TESTER_PRODUCTION && !isDevelopment) {

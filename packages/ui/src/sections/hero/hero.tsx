@@ -1,6 +1,6 @@
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import { Card, Container, Grid, Media, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: HeroItem,
@@ -16,7 +16,7 @@ export type HeroItem = {
 
 export type HeroProps = UIComponentProps<Props>;
 
-const Hero: React.FC<HeroProps> = ({ item, ...props }: HeroProps) => {
+export const Hero: React.FC<HeroProps> = ({ item, ...props }: HeroProps) => {
   return (
     <Section padding="0">
       <Card justifyContent="flex-end" height="100vh">
@@ -39,5 +39,3 @@ const Hero: React.FC<HeroProps> = ({ item, ...props }: HeroProps) => {
     </Section>
   )
 }
-
-export default Hero;

@@ -2,7 +2,7 @@ import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
 
-interface Props {
+type Props = {
   active?: boolean;
   disabled?: boolean;
   onClick?: (e: React.MouseEvent) => void;
@@ -69,7 +69,7 @@ const StyledPaginationItem = styled.div`
   }
 `
 
-const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = ({ children, active, disabled, onClick, ...props }) => {
+export const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = ({ children, active, disabled, onClick, ...props }) => {
 
   const onClick_ = (event: React.MouseEvent) => {
     if (disabled) {
@@ -90,5 +90,3 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
 }
 
 PaginationItem.displayName = 'PaginationItem';
-
-export default PaginationItem;

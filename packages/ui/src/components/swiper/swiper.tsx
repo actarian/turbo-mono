@@ -1,14 +1,15 @@
 // Import Swiper React components
+import { withSchema } from '@websolute/core';
 import React, { ReactNode } from 'react';
 // import { Virtual } from 'swiper';
 // import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
 import { SwiperNext, SwiperPrev } from './swiper-navigation';
-import SwiperPagination from './swiper-pagination';
+import { SwiperPagination } from './swiper-pagination';
 
-export type SwiperComponentProps = SwiperProps & { children: ReactNode[] };
+export type SwiperBaseProps = SwiperProps & { children: ReactNode[] };
 
-const SwiperComponent = (props: SwiperComponentProps) => {
+const SwiperBase = (props: SwiperBaseProps) => {
   const defaultProps = {
     // modules: [Virtual],
     // virtual: true,
@@ -36,14 +37,9 @@ const SwiperComponent = (props: SwiperComponentProps) => {
   );
 };
 
-(SwiperComponent as ISwiper).Prev = SwiperPrev;
-(SwiperComponent as ISwiper).Next = SwiperNext;
-(SwiperComponent as ISwiper).Pagination = SwiperPagination;
-
-export default SwiperComponent as ISwiper;
-
-type ISwiper = typeof SwiperComponent & {
-  Prev: typeof SwiperPrev;
-  Next: typeof SwiperNext;
-  Pagination: typeof SwiperPagination;
-};
+export const SwiperComponent = withSchema(SwiperBase, {
+  Prev: SwiperPrev,
+  Next: SwiperNext,
+  Pagination: SwiperPagination,
+  displayName: 'SwiperComponent',
+});

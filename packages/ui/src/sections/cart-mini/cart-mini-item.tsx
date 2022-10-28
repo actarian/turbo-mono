@@ -1,11 +1,11 @@
 import { useCart, useCurrency, useMounted, useUI } from '@websolute/hooks';
 import { Minus, Plus, Trash } from '@websolute/icons';
-import type { ICartItem } from '@websolute/models';
+import { ICartItem } from '@websolute/models';
 import NextLink from 'next/link';
 import { Button, Card, Flex, Media, MediaImage, Text } from '../../components';
 import { Input } from '../../forms';
 
-const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem }) => {
+export const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem }) => {
 
   const currency = useCurrency();
 
@@ -66,5 +66,3 @@ const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem
     </>
   );
 }
-
-export default CartMiniItem;

@@ -3,7 +3,7 @@ import { IMedia, IRouteLink } from '@websolute/models';
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 import { Breadcrumb, Button, Container, Grid, Media, MediaImage, Section, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 
 const ADiv = ({ children }: { children?: ReactNode }) => (<motion.div
   initial={{ position: 'absolute', width: '100%', height: '100vh', top: '-50vh', y: 0 }}
@@ -27,7 +27,7 @@ type Props = {
 
 export type ShopCategoryHeroProps = UIStyledComponentProps<Props>;
 
-const ShopCategoryHero: React.FC<ShopCategoryHeroProps> = ({ item, ...props }: ShopCategoryHeroProps) => {
+export const ShopCategoryHero: React.FC<ShopCategoryHeroProps> = ({ item, ...props }: ShopCategoryHeroProps) => {
   const scrollTo = useScrollTo();
   return (
     <Section overflow="hidden" {...props}>
@@ -69,5 +69,3 @@ const ShopCategoryHero: React.FC<ShopCategoryHeroProps> = ({ item, ...props }: S
     </Section>
   )
 }
-
-export default ShopCategoryHero;

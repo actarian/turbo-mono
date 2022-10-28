@@ -1,6 +1,6 @@
 import { FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
 import { useApi, useCheckout, useLabel } from '@websolute/hooks';
-import type { ICheckoutDiscount } from '@websolute/models';
+import { ICheckoutDiscount } from '@websolute/models';
 import { useState } from 'react';
 import { Button, Flex } from '../../components';
 import { FieldText } from '../../fields';
@@ -9,7 +9,7 @@ export interface CheckoutDiscountProps {
   onDiscount?: (discounts: ICheckoutDiscount[]) => void;
 }
 
-const CheckoutDiscount: React.FC<CheckoutDiscountProps> = ({ onDiscount }: CheckoutDiscountProps) => {
+export const CheckoutDiscount: React.FC<CheckoutDiscountProps> = ({ onDiscount }: CheckoutDiscountProps) => {
   const label = useLabel();
 
   const api = useApi();
@@ -59,5 +59,3 @@ const CheckoutDiscount: React.FC<CheckoutDiscountProps> = ({ onDiscount }: Check
     </>
   );
 };
-
-export default CheckoutDiscount;

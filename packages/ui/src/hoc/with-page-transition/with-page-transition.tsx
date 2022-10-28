@@ -37,7 +37,7 @@ const textVariants = {
   }
 };
 
-const withPageTransition = (OriginalComponent: React.FC<any>) => {
+export const withPageTransition = (OriginalComponent: React.FC<any>) => {
   const Transition = (props: any) => {
     const page = props.page || { title: 'Page Title' };
     return (
@@ -71,5 +71,3 @@ const withPageTransition = (OriginalComponent: React.FC<any>) => {
   };
   return Transition;
 };
-
-export default withPageTransition;

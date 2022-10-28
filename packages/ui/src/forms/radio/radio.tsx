@@ -1,13 +1,13 @@
 
-import { getClassNames } from '@websolute/core';
+import { getClassNames, withSchema } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
-import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import RadioGroup from './radio-group';
+import { RadioGroup } from './radio-group';
 import { RadioIcon } from './radio-icon';
 
-interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
+type Props = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   size?: SizeVariant;
 }
 
@@ -55,7 +55,7 @@ const StyledRadio = styled.div`
   ${props => getCssResponsive(props)}
 `
 
-const Radio: RadioComponent = forwardRef(({ as = 'input', className, ...props }, ref) => {
+const RadioBase: RadioComponent = forwardRef(({ as = 'input', className, ...props }, ref) => {
   const classNames = getClassNames('radio', className);
   return (
     <StyledRadio className={classNames}>
@@ -65,12 +65,8 @@ const Radio: RadioComponent = forwardRef(({ as = 'input', className, ...props },
   );
 });
 
-Radio.displayName = 'Radio';
+RadioBase.displayName = 'Radio';
 
-(Radio as IRadio).Group = RadioGroup;
-
-export default Radio as IRadio;
-
-type IRadio = typeof Radio & {
-  Group: typeof RadioGroup;
-};
+export const Radio = withSchema(RadioBase, {
+  Group: RadioGroup,
+});

@@ -3,14 +3,14 @@ import { useLabel } from '@websolute/hooks';
 import { Eye } from '@websolute/icons';
 import { ChangeEvent, FocusEvent, useState } from 'react';
 import { Field, Input, Label } from '../forms';
-import FieldError from './field-error';
+import { FieldError } from './field-error';
 
 type FieldPasswordProps = {
   control: FormControl;
   uid?: number | null | undefined;
 }
 
-export default function FieldPassword(props: FieldPasswordProps) {
+export function FieldPassword(props: FieldPasswordProps) {
   const label = useLabel();
 
   const uniqueName = `${props.control.name}-${props.uid}`;

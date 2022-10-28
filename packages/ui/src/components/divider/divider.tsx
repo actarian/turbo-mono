@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import type { UIComponent, UIStyledComponentProps } from '../../components/types';
+import { UIComponent, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
@@ -45,12 +45,10 @@ const DividerTitle = styled.span<DividerProps>`
   white-space: nowrap;
 `;
 
-const Divider: DividerComponent = ({ children, as = 'div' as React.ElementType, ...props }) => {
+export const Divider: DividerComponent = ({ children, as = 'div' as React.ElementType, ...props }) => {
   return (
     <DividerContainer as={as} {...props}>
       {children && <DividerTitle {...props}>{children}</DividerTitle>}
     </DividerContainer>
   )
 };
-
-export default Divider;

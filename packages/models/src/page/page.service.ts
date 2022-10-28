@@ -1,14 +1,14 @@
-import type { IEquatable } from '@websolute/core';
+import { IEquatable } from '@websolute/core';
 import { getStore } from '@websolute/store';
-import type { ICategory } from '../category/category';
+import { ICategory } from '../category/category';
 import { getCategoryTree } from '../category/category.service';
 import { resolveLabel } from '../label/label.service';
-import type { ILayout } from '../layout/layout';
+import { ILayout } from '../layout/layout';
 import { getLayout } from '../layout/layout.service';
-import type { IRouteLink, SchemaType } from '../route/route';
+import { IRouteLink, SchemaType } from '../route/route';
 import { getBreadcrumbFromCategoryTree } from '../route/route.service';
 import { IModelStore } from '../store/store';
-import type { IPage } from './page';
+import { IPage } from './page';
 
 export async function getPage<T extends IPage>(schema: string, id: IEquatable, market?: string, locale?: string): Promise<T | undefined> {
   const store = await getStore<IModelStore>();

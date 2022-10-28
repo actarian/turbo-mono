@@ -1,9 +1,8 @@
 import { getClassNames } from '@websolute/core';
 import dynamic from 'next/dynamic';
 import { Container, Grid, Section, Text } from '../../components';
-import type { ILazyComponent, ILazyComponentProps } from '../../lazy/lazy-loader/lazy-loader';
-import type { ProductsDetailRelatedCardItem } from './products-detail-related-card';
-import ProductsDetailRelatedCard from './products-detail-related-card';
+import { ILazyComponent, ILazyComponentProps } from '../../lazy/lazy-loader/lazy-loader';
+import { ProductsDetailRelatedCard, ProductsDetailRelatedCardItem } from './products-detail-related-card';
 
 export interface ProductsDetailRelatedItem extends ILazyComponent {
   schema: string;
@@ -16,7 +15,7 @@ export interface ProductsDetailRelatedProps extends ILazyComponentProps {
   item: ProductsDetailRelatedItem;
 }
 
-const ProductsDetailRelated: React.FC<ProductsDetailRelatedProps> = ({ id, item }: ProductsDetailRelatedProps) => {
+export const ProductsDetailRelated: React.FC<ProductsDetailRelatedProps> = ({ id, item }: ProductsDetailRelatedProps) => {
   const classNames = getClassNames(item.schema);
   return (
     <Section id={id} className={classNames} padding="6rem 0">
@@ -34,8 +33,8 @@ const ProductsDetailRelated: React.FC<ProductsDetailRelatedProps> = ({ id, item 
   );
 }
 
-export default ProductsDetailRelated;
-
 export const ProductsDetailRelatedExport = {
-  'products-detail-related': dynamic<ProductsDetailRelatedProps>(() => import('./products-detail-related')),
+  'products-detail-related': dynamic<ProductsDetailRelatedProps>(() => import('./products-detail-related').then(
+    module => module.ProductsDetailRelated
+  )),
 };

@@ -1,12 +1,13 @@
-import { consoleWarn, getClassNames } from '@websolute/core';
+import { consoleWarn, getClassNames, withSchema } from '@websolute/core';
 import { useCurrentState } from '@websolute/hooks';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Expand } from '../../components';
 import { useAccordionContext } from './accordion-context';
-import AccordionIcon from './accordion-icon';
+import { AccordionGroup } from './accordion-group';
+import { AccordionIcon } from './accordion-icon';
 
-interface Props {
+type Props = {
   title: React.ReactNode | string
   subtitle?: React.ReactNode | string
   initialVisible?: boolean
@@ -77,7 +78,7 @@ const StyledAccordion = styled.div`
   }
 `;
 
-const Accordion: React.FC<React.PropsWithChildren<AccordionProps>> = ({
+const AccordionBase: React.FC<React.PropsWithChildren<AccordionProps>> = ({
   className = '',
   shadow = false,
   initialVisible = false,
@@ -123,17 +124,9 @@ const Accordion: React.FC<React.PropsWithChildren<AccordionProps>> = ({
       <Expand isExpanded={visible}>{children}</Expand>
     </StyledAccordion>
   )
-}
-
-Accordion.displayName = 'Accordion';
-
-(Accordion as IAccordion).Group = AccordionGroup;
-
-export default Accordion as IAccordion;
-
-type IAccordion = typeof Accordion & {
-  Group: typeof AccordionGroup;
 };
 
-import AccordionGroup from './accordion-group';
-
+export const Accordion = withSchema(AccordionBase, {
+  Group: AccordionGroup,
+  displayName: 'Accordion',
+});

@@ -2,16 +2,15 @@
 import { FormControl, useControl } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
 import { ChangeEvent, FocusEvent, useState } from 'react';
-import type { FieldProps } from '../forms';
-import { Checkbox, Field, Label } from '../forms';
-import FieldError from './field-error';
+import { Checkbox, Field, FieldProps, Label } from '../forms';
+import { FieldError } from './field-error';
 
 type FieldCheckboxProps = {
   control: FormControl;
   uid?: number | null | undefined;
 }
 
-export default function FieldCheckbox({
+export function FieldCheckbox({
   uid,
   control,
   ...props

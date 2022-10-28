@@ -6,11 +6,11 @@ import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import { Transition } from '../../components';
 import { getRect } from './tooltip-helper';
-import TooltipIcon from './tooltip-icon';
+import { TooltipIcon } from './tooltip-icon';
 import { defaultTooltipPosition, getPosition, TooltipPosition } from './tooltip-placement';
 import { Placement, SnippetTypes } from './tooltip-props';
 
-interface Props {
+type Props = {
   className?: string;
   hideArrow: boolean;
   iconOffset: TooltipIconOffset;
@@ -54,7 +54,7 @@ const StyledTooltipContent = styled.div<{ rect: TooltipPosition, iconOffset: Too
   }
 `;
 
-const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
+export const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   children,
   parent,
   visible,
@@ -110,5 +110,3 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
     portal,
   )
 }
-
-export default TooltipContent;

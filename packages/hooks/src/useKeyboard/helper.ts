@@ -1,4 +1,4 @@
-import { isBrowser } from '../useSSR/useSSR';
+import { detectIsBrowser } from '../useSSR/useSSR';
 import { KeyMod } from './codes';
 
 export function getCtrlKeysByPlatform(): Record<string, 'metaKey' | 'ctrlKey'> {
@@ -24,7 +24,7 @@ export function getActiveModMap(bindings: number[]): Record<keyof typeof KeyMod,
 }
 
 export function isMac(): boolean {
-  if (!isBrowser()) {
+  if (!detectIsBrowser()) {
     return false;
   }
   return navigator.platform.toUpperCase().indexOf('MAC') >= 0;

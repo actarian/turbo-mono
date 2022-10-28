@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface Props {
+type Props = {
   className?: string;
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
-export type SelectDividerProps = Props & NativeAttrs;
+export type CustomSelectDividerProps = Props & NativeAttrs;
 
-const StyledSelectDivider = styled.div<SelectDividerProps>`
+const StyledCustomSelectDivider = styled.div<CustomSelectDividerProps>`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -23,6 +23,6 @@ const StyledSelectDivider = styled.div<SelectDividerProps>`
   border-top: 1px solid var(--color-neutral-300);
 `
 
-StyledSelectDivider.displayName = 'SelectDivider';
+export const CustomSelectDivider = StyledCustomSelectDivider;
 
-export default StyledSelectDivider;
+CustomSelectDivider.displayName = 'CustomSelectDivider';

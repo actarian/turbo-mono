@@ -3,7 +3,7 @@ import { useEventListener, useIsomorphicLayoutEffect, useScrollTo } from '@webso
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { Box, Button, Container, Flex, Nav } from '..';
-import type { UIComponentProps } from '../types';
+import { UIComponentProps } from '../types';
 
 type ContainerProps = {
   fixed?: boolean;
@@ -46,7 +46,7 @@ type Props = {
 
 export type PageNavProps = UIComponentProps<Props>;
 
-const PageNav: React.FC<PageNavProps> = (props: PageNavProps) => {
+export const PageNav: React.FC<PageNavProps> = (props: PageNavProps) => {
 
   const innerRef = React.createRef<HTMLDivElement>();
 
@@ -116,5 +116,3 @@ const PageNav: React.FC<PageNavProps> = (props: PageNavProps) => {
     </>
   );
 }
-
-export default PageNav;

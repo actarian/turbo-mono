@@ -2,7 +2,7 @@ import { getClassNames } from '@websolute/core';
 import { IMedia } from '@websolute/models';
 import dynamic from 'next/dynamic';
 import { Box, Button, Container, Flex, Grid, Media, Section, Text } from '../../components';
-import type { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
+import { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
 export interface SizesColors1Item extends ILazyComponent {
   schema: 'sizes-colors-1';
@@ -18,7 +18,7 @@ export interface SizesColors1Props extends ILazyComponentProps {
   item: SizesColors1Item;
 }
 
-const SizesColors1: React.FC<SizesColors1Props> = ({ item }: SizesColors1Props) => {
+export const SizesColors1: React.FC<SizesColors1Props> = ({ item }: SizesColors1Props) => {
   const classNames = getClassNames(item.schema);
   return (
     <Section className={classNames} padding="6rem 0">
@@ -47,8 +47,9 @@ const SizesColors1: React.FC<SizesColors1Props> = ({ item }: SizesColors1Props) 
   );
 }
 
-export default SizesColors1;
-
 export const SizesColors1Export = {
-  'sizes-colors-1': dynamic<SizesColors1Props>(() => import('../sizes-colors-1/sizes-colors-1')),
+  'sizes-colors-1': dynamic<SizesColors1Props>(() => import('../sizes-colors-1/sizes-colors-1').then(
+    module => module.SizesColors1
+  )),
 };
+

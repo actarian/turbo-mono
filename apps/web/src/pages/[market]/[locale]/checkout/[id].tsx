@@ -1,11 +1,7 @@
 
-import type { IStaticContext } from '@websolute/core';
-import { asServerProps } from '@websolute/core';
+import { asServerProps, IStaticContext } from '@websolute/core';
 import { CheckoutProvider, useCart, useMounted } from '@websolute/hooks';
-import type { IAddressOptions, ICheckoutPartial, PageProps } from '@websolute/models';
-import {
-  getCountries, getLayout, getListByKeys, getPage, getProvinces, getRegions, getStaticPathsForSchema
-} from '@websolute/models';
+import { getCountries, getLayout, getListByKeys, getPage, getProvinces, getRegions, getStaticPathsForSchema, IAddressOptions, ICheckoutPartial, PageProps } from '@websolute/models';
 import { Breadcrumb, CheckoutEmpty, CheckoutWizard, Container, Footer, Header, Layout, Meta, Page, Section } from '@websolute/ui';
 
 export default function Checkout({ layout, page, data, params }: CheckoutProps) {

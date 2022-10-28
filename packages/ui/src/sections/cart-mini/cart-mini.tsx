@@ -2,7 +2,7 @@ import { useCart, useCurrency, useLayout } from '@websolute/hooks';
 import { ArrowRight, ShoppingCart } from '@websolute/icons';
 import { ReactNode } from 'react';
 import { Button, Divider, Drawer, Flex, NavLink, Text } from '../../components';
-import CartMiniItem from './cart-mini-item';
+import { CartMiniItem } from './cart-mini-item';
 
 export interface CartMiniProps {
   children?: ReactNode;
@@ -10,7 +10,7 @@ export interface CartMiniProps {
   onClose: () => void;
 }
 
-const CartMini: React.FC<CartMiniProps> = ({ visible, onClose }: CartMiniProps) => {
+export const CartMini: React.FC<CartMiniProps> = ({ visible, onClose }: CartMiniProps) => {
 
   const layout = useLayout();
 
@@ -72,5 +72,3 @@ const CartMini: React.FC<CartMiniProps> = ({ visible, onClose }: CartMiniProps) 
     </Drawer>
   );
 };
-
-export default CartMini;

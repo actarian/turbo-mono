@@ -1,6 +1,6 @@
 import { Container, Grid, Section } from '../../components';
-import type { UIComponentProps } from '../../components/types';
-import ProductsPropositionCard, { ProductsPropositionItem } from './products-proposition-card';
+import { UIComponentProps } from '../../components/types';
+import { ProductsPropositionCard, ProductsPropositionItem } from './products-proposition-card';
 
 type Props = {
   items: ProductsPropositionItem[],
@@ -8,7 +8,7 @@ type Props = {
 
 export type ProductsPropositionProps = UIComponentProps<Props>;
 
-const ProductsProposition: React.FC<ProductsPropositionProps> = ({ items }: ProductsPropositionProps) => {
+export const ProductsProposition: React.FC<ProductsPropositionProps> = ({ items }: ProductsPropositionProps) => {
   return (
     <Section padding="3rem 0">
       <Container>
@@ -23,5 +23,3 @@ const ProductsProposition: React.FC<ProductsPropositionProps> = ({ items }: Prod
     </Section>
   )
 }
-
-export default ProductsProposition;

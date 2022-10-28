@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../types';
 
 const defaultProps = {
   className: '',
 };
 
-interface Props {
+type Props = {
   className?: string;
 }
 
@@ -24,7 +24,7 @@ const StyledSubtitle = styled.div`
   color: var(--color-primary-500);
 `;
 
-const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalSubtitleProps> & typeof defaultProps) => { // !!! any
+export const ModalSubtitle: React.FC<React.PropsWithChildren<ModalSubtitleProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalSubtitleProps> & typeof defaultProps) => { // !!! any
 
   return (
     <StyledSubtitle className={className} {...props}>
@@ -33,7 +33,5 @@ const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProp
   )
 }
 
-ModalSubtitleComponent.defaultProps = defaultProps;
-ModalSubtitleComponent.displayName = 'ModalSubtitle';
-
-export default ModalSubtitleComponent;
+ModalSubtitle.defaultProps = defaultProps;
+ModalSubtitle.displayName = 'ModalSubtitle';

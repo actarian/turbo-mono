@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 
 export type BackgroundProps = UIStyledComponentProps<Props>;
 
-const Background = styled.div<BackgroundProps>`
+export const Background = styled.div<BackgroundProps>`
   position: absolute;
   top: 0;
   left: 0;
@@ -33,5 +33,3 @@ const Background = styled.div<BackgroundProps>`
 Background.defaultProps = {
   className: 'background',
 };
-
-export default Background;

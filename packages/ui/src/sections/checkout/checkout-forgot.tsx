@@ -1,5 +1,5 @@
 import { Button, Container, Flex, Section } from '../../components';
-import AuthForgot from '../auth/auth-forgot';
+import { AuthForgot } from '../auth/auth-forgot';
 
 type Props = {
   onPasswordSent?: () => void;
@@ -8,7 +8,7 @@ type Props = {
   onNavToPrevious?: () => void;
 }
 
-const CheckoutForgot: React.FC<Props> = ({ onPasswordSent, onNavToLogin, onNavToRegister, onNavToPrevious }: Props) => {
+export const CheckoutForgot: React.FC<Props> = ({ onPasswordSent, onNavToLogin, onNavToRegister, onNavToPrevious }: Props) => {
 
   const onPasswordSent_ = () => {
     if (typeof onPasswordSent === 'function') {
@@ -53,5 +53,3 @@ const CheckoutForgot: React.FC<Props> = ({ onPasswordSent, onNavToLogin, onNavTo
     </>
   );
 };
-
-export default CheckoutForgot;

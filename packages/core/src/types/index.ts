@@ -1,6 +1,8 @@
 import { IncomingMessage, ServerResponse } from 'http';
 import { ParsedUrlQuery } from 'querystring';
 
+export type Json = string | number | boolean | null | Json[] | { [key: string]: Json };
+
 export type ValueOf<T> = T[keyof T];
 
 export type PreviewData = string | false | object | undefined;

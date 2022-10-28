@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { CustomSelect } from '../../forms';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 
 export type ProductsSearchFiltersProps = UIStyledComponentProps<Props>;
 
-const ProductsSearchFilters: React.FC<ProductsSearchFiltersProps> = ({ ...props }: ProductsSearchFiltersProps) => {
+export const ProductsSearchFilters: React.FC<ProductsSearchFiltersProps> = ({ ...props }: ProductsSearchFiltersProps) => {
   return (
     <Box {...props}>
       <Flex.Row gap="1rem">
@@ -90,5 +90,3 @@ const ProductsSearchFilters: React.FC<ProductsSearchFiltersProps> = ({ ...props 
     </Box>
   )
 }
-
-export default ProductsSearchFilters;

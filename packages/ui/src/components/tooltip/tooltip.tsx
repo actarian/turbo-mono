@@ -2,7 +2,7 @@ import { getClassNames } from '@websolute/core';
 import { useClickOut } from '@websolute/hooks';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import TooltipContent, { TooltipIconOffset } from './tooltip-content';
+import { TooltipContent, TooltipIconOffset } from './tooltip-content';
 import { getRect } from './tooltip-helper';
 import { Placement, SnippetTypes, TriggerTypes } from './tooltip-props';
 
@@ -11,7 +11,7 @@ export type TooltipTypes = SnippetTypes;
 export type TooltipTriggers = TriggerTypes;
 export type TooltipPlacement = Placement;
 
-interface Props {
+type Props = {
   className?: string;
   hideArrow?: boolean;
   initialVisible?: boolean;
@@ -36,7 +36,7 @@ const StyledTooltip = styled.div`
   display: inline-block;
 `;
 
-const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
+export const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   className = '',
   hideArrow = false,
   initialVisible = false,
@@ -126,6 +126,4 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   )
 }
 
-TooltipComponent.displayName = 'Tooltip';
-
-export default TooltipComponent;
+Tooltip.displayName = 'Tooltip';

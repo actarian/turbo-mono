@@ -2,7 +2,7 @@ import { getClassNames } from '@websolute/core';
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { Loading } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
@@ -20,7 +20,7 @@ const StyledSkeleton = styled.div<SkeletonProps>`
   ${props => getCssResponsive(props)}
 `
 
-const Skeleton: React.FC<SkeletonProps> = ({ loading, ...props }) => {
+export const Skeleton: React.FC<SkeletonProps> = ({ loading, ...props }) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const classNames = getClassNames('skeleton');
   return (
@@ -29,5 +29,3 @@ const Skeleton: React.FC<SkeletonProps> = ({ loading, ...props }) => {
     </StyledSkeleton>
   )
 }
-
-export default Skeleton;

@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
-import { getCssResponsive } from '../../components/utils';
+import { UIComponentWithRef, UIStyledComponentProps } from '../types';
+import { getCssResponsive } from '../utils';
 
 type Props = {
 };
@@ -17,10 +17,8 @@ const StyledList = styled.div<ListProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const List: ListComponent = forwardRef(({ children, as = 'div', ...props }, ref) => (
+export const List: ListComponent = forwardRef(({ children, as = 'div', ...props }, ref) => (
   <StyledList ref={ref} as={as} {...props} />
 ));
 
 List.displayName = 'List';
-
-export default List;

@@ -58,7 +58,7 @@ const PaginationContainer = styled.div`
 
 type SwiperPaginationProp = { items: ReactNode[] };
 
-const SwiperPagination: React.FC<SwiperPaginationProp> = (props: SwiperPaginationProp) => {
+export const SwiperPagination: React.FC<SwiperPaginationProp> = (props: SwiperPaginationProp) => {
   const [index, setIndex] = useSwiperIndex();
   // console.log('index', index);
   const onSetSlide = (index: number) => {
@@ -77,5 +77,3 @@ const SwiperPagination: React.FC<SwiperPaginationProp> = (props: SwiperPaginatio
     </PaginationContainer>
   );
 }
-
-export default SwiperPagination;

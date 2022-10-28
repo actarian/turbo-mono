@@ -1,7 +1,6 @@
 import { EmailValidator, FormGroup, RequiredIfValidator, RequiredTrueValidator, RequiredValidator, useFormBuilder } from '@websolute/forms';
 import { useApi, useApiPost, useCheckout, useLabel } from '@websolute/hooks';
-import type { IAddressOptions, ICheckoutInfo, ICheckoutPartial, IUser } from '@websolute/models';
-import { IUserAddress } from '@websolute/models';
+import { IAddressOptions, ICheckoutInfo, ICheckoutPartial, IUser, IUserAddress } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import { Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { FieldCollection } from '../../fields';
@@ -13,7 +12,7 @@ export interface CheckoutUserInfoProps {
   onNavToPrevious?: () => void;
 }
 
-const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, onNavToPrevious }: CheckoutUserInfoProps) => {
+export const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, onNavToPrevious }: CheckoutUserInfoProps) => {
   const label = useLabel();
 
   const api = useApi();
@@ -203,5 +202,3 @@ const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, o
     </>
   );
 };
-
-export default CheckoutUserInfo;

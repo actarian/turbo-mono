@@ -1,11 +1,11 @@
 import { getClassNames } from '@websolute/core';
 import React, { useEffect, useMemo, useRef } from 'react';
 import styled from 'styled-components';
-import Transition from '../../components/transition/transition';
+import { Transition } from '../../components/transition/transition';
 import { isChildElement } from '../../components/utils';
 import { DrawerPlacement, getDrawerTransform } from './helper';
 
-interface Props {
+type Props = {
   className?: string
   visible?: boolean
   placement: DrawerPlacement
@@ -96,7 +96,7 @@ const StyledWrapper = styled.div<{ transform: any }>`
   }
 `;
 
-const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps | any>> = ({
+export const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps | any>> = ({
   className,
   children,
   visible,
@@ -152,4 +152,3 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps | any>>
 
 DrawerWrapper.defaultProps = defaultProps;
 DrawerWrapper.displayName = 'DrawerWrapper';
-export default DrawerWrapper;

@@ -8,6 +8,10 @@ export const isDevelopment = getIsDevelopment();
 
 export const isBrowser = typeof window !== 'undefined';
 
+export function withSchema<Component extends {}, Schema>(component: Component, schema: Schema) {
+  return Object.assign(component, schema) as Component & Schema;
+}
+
 export function asServerProps(props: any): any {
   return JSON.parse(JSON.stringify(props));
 }

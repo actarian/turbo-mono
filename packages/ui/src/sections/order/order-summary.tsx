@@ -1,13 +1,13 @@
 import { useCurrency, useLabel, useLayout } from '@websolute/hooks';
 import { IOrder } from '@websolute/models';
 import { Badge, Container, Flex, Section, Text } from '../../components';
-import OrderSummaryItem from './order-summary-item';
+import { OrderSummaryItem } from './order-summary-item';
 
 export interface OrderSummaryProps {
   order: IOrder;
 }
 
-const OrderSummary: React.FC<OrderSummaryProps> = ({ order }: OrderSummaryProps) => {
+export const OrderSummary: React.FC<OrderSummaryProps> = ({ order }: OrderSummaryProps) => {
 
   const label = useLabel();
 
@@ -70,5 +70,3 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ order }: OrderSummaryProps)
     </>
   );
 };
-
-export default OrderSummary;

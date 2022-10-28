@@ -1,10 +1,10 @@
 
 import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useEffect, useState } from 'react';
 import { Flex } from '../../components';
-import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
-import RadioColor, { RadioColorProps } from './radio-color';
+import { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { RadioColor, RadioColorProps } from './radio-color';
 
-interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
+type Props = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   initialValue?: string;
   size?: SizeVariant;
   children?: ReactNode;
@@ -14,7 +14,7 @@ export type RadioColorGroupProps = UIStyledComponentProps<Props, 'input'>;
 
 export type RadioColorGroupComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
 
-const RadioColorGroup: RadioColorGroupComponent = forwardRef(({
+export const RadioColorGroup: RadioColorGroupComponent = forwardRef(({
   children,
   className,
   size,
@@ -64,5 +64,3 @@ const RadioColorGroup: RadioColorGroupComponent = forwardRef(({
 });
 
 RadioColorGroup.displayName = 'RadioColorGroup';
-
-export default RadioColorGroup;

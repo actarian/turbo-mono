@@ -1,13 +1,13 @@
 
-import { getClassNames } from '@websolute/core';
+import { getClassNames, withSchema } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode, SVGProps } from 'react';
 import styled, { css } from 'styled-components';
 import { CssDefault } from '../../components/button/button.css';
-import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import RadioOptionGroup from './radio-option-group';
+import { RadioOptionGroup } from './radio-option-group';
 
-interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
+type Props = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   size?: SizeVariant;
   children?: ReactNode;
 }
@@ -106,7 +106,7 @@ const StyledRadioOption = styled.div<RadioOptionProps>`
   ${props => getCssResponsive(props)}
 `
 
-const RadioOption: RadioOptionComponent = forwardRef(({
+const RadioOptionBase: RadioOptionComponent = forwardRef(({
   as = 'input',
   children,
   className,
@@ -124,12 +124,8 @@ const RadioOption: RadioOptionComponent = forwardRef(({
   );
 });
 
-RadioOption.displayName = 'RadioOption';
+RadioOptionBase.displayName = 'RadioOption';
 
-(RadioOption as IRadioOption).Group = RadioOptionGroup;
-
-export default RadioOption as IRadioOption;
-
-type IRadioOption = typeof RadioOption & {
-  Group: typeof RadioOptionGroup;
-};
+export const RadioOption = withSchema(RadioOptionBase, {
+  Group: RadioOptionGroup,
+});

@@ -1,6 +1,7 @@
+import { withSchema } from '@websolute/core';
 import styled, { css } from 'styled-components';
-import Background from '../../components/background/background';
-import type { UIStyledComponentProps } from '../../components/types';
+import { Background } from '../../components/background/background';
+import { UIStyledComponentProps } from '../../components/types';
 import { getAspectResponsive, getCssResponsive, hasChildOfType } from '../../components/utils';
 
 type Props = {
@@ -44,7 +45,7 @@ ${props => props.aspect ? css`
 ` : ''};
 */
 
-const Section = (props: SectionProps) => {
+const SectionBase = (props: SectionProps) => {
   return (
     <SectionContainer {...props}>
       {props.children}
@@ -52,13 +53,10 @@ const Section = (props: SectionProps) => {
   );
 }
 
-(Section as ISection).Background = Background;
-
-export default Section as ISection;
-
-type ISection = typeof Section & {
-  Background: typeof Background;
-};
+export const Section = withSchema(SectionBase, {
+  Background: Background,
+  displayName: 'Section',
+});
 
 function hasBackground(props: SectionProps): boolean {
   return hasChildOfType(props.children, Background);

@@ -1,9 +1,9 @@
 import { useScrollTo } from '@websolute/hooks';
 import { Search, Send } from '@websolute/icons';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import { Button, Card, Container, Flex, Grid, Section, Text, Tooltip } from '../../components';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: ContactHeroItem,
@@ -18,7 +18,7 @@ export type ContactHeroItem = {
 
 export type ContactHeroProps = UIComponentProps<Props>;
 
-const ContactHero: React.FC<ContactHeroProps> = ({ item }: ContactHeroProps) => {
+export const ContactHero: React.FC<ContactHeroProps> = ({ item }: ContactHeroProps) => {
   const scrollTo = useScrollTo();
   return (
     <Section>
@@ -52,5 +52,3 @@ const ContactHero: React.FC<ContactHeroProps> = ({ item }: ContactHeroProps) => 
     </Section>
   )
 }
-
-export default ContactHero;

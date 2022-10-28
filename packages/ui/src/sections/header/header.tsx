@@ -5,12 +5,12 @@ import { IRouteLink } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { Accordion, Badge, Box, Button, Container, Drawer, Flex, Modal, Nav, NavLink, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
-import { CartMini } from '../../sections';
-import AuthDrawer from '../../sections/auth/auth-drawer';
+import { UIComponentProps } from '../../components/types';
 import { getShortName } from '../../utils';
-import MarketsAndLanguagesDrawer from '../markets-and-languages/markets-and-languages-drawer';
-import HeaderSubmenu, { HeaderSubmenuItem } from './header-submenu';
+import { AuthDrawer } from '../auth/auth-drawer';
+import { CartMini } from '../cart-mini/cart-mini';
+import { MarketsAndLanguagesDrawer } from '../markets-and-languages/markets-and-languages-drawer';
+import { HeaderSubmenu, HeaderSubmenuItem } from './header-submenu';
 
 type ContainerProps = {
   fixed?: boolean;
@@ -63,7 +63,7 @@ const StyledAccordion = styled(Accordion)`
     border: none;
 `;
 
-const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
+export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const layout = useLayout();
   const mounted = useMounted();
   const scroll = useScroll();
@@ -241,5 +241,3 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     </>
   );
 }
-
-export default Header;

@@ -1,9 +1,10 @@
+import { withSchema } from '@websolute/core';
 import { useCart, useCurrency, useDrawer } from '@websolute/hooks';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import { useState } from 'react';
 import { Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { RadioColor, RadioOption, Rating } from '../../forms';
-import ProductOverviewGallery from './product-overview-gallery';
+import { ProductOverviewGallery } from './product-overview-gallery';
 
 export type ProductItem = {
   id: number;
@@ -19,7 +20,7 @@ type ProductOverviewProps = {
   item: ProductItem
 }
 
-const ProductOverview: React.FC<ProductOverviewProps> = ({ item, ...props }: ProductOverviewProps) => {
+const ProductOverviewBase: React.FC<ProductOverviewProps> = ({ item, ...props }: ProductOverviewProps) => {
 
   const currency = useCurrency();
 
@@ -107,10 +108,6 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ item, ...props }: Pro
   );
 }
 
-(ProductOverview as IProductOverview).Gallery = ProductOverviewGallery;
-
-export default ProductOverview as IProductOverview;
-
-type IProductOverview = typeof ProductOverview & {
-  Gallery: typeof ProductOverviewGallery;
-};
+export const ProductOverview = withSchema(ProductOverviewBase, {
+  Gallery: ProductOverviewGallery,
+});

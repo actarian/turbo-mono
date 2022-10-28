@@ -2,9 +2,9 @@ import { consoleWarn, getClassNames } from '@websolute/core';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { Ellipsis } from '../../components';
-import { useSelectContext } from './select-context';
+import { useCustomSelectContext } from './custom-select-context';
 
-interface Props {
+type Props = {
   disabled?: boolean;
   divider?: boolean;
   label?: boolean;
@@ -15,9 +15,9 @@ interface Props {
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
-export type SelectOptionProps = Props & NativeAttrs;
+export type CustomSelectOptionProps = Props & NativeAttrs;
 
-const StyledSelectOption = styled.div`
+const StyledCustomSelectOption = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -68,7 +68,7 @@ const StyledSelectOption = styled.div`
   }
 `
 
-const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
+export const CustomSelectOption: React.FC<React.PropsWithChildren<CustomSelectOptionProps>> = ({
   disabled = false,
   divider = false,
   label = false,
@@ -77,16 +77,16 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
   value: valueProp,
   children,
   ...props
-}: React.PropsWithChildren<SelectOptionProps>) => {
+}: React.PropsWithChildren<CustomSelectOptionProps>) => {
 
-  const { updateValue, value, disableAll } = useSelectContext();
+  const { updateValue, value, disableAll } = useCustomSelectContext();
 
   const isDisabled = useMemo(() => disabled || disableAll, [disabled, disableAll]);
 
   const isLabel = useMemo(() => label || divider, [label, divider]);
 
   if (!isLabel && valueProp === undefined) {
-    consoleWarn('The props "value" is required.', 'Select Option');
+    consoleWarn('The props "value" is required.', 'CustomSelect Option');
   }
 
   const optionValue: string = valueProp || children as string || '';
@@ -117,12 +117,10 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
   const classNames = getClassNames('option', { divider, label, active }, className);
 
   return (
-    <StyledSelectOption className={classNames} onClick={clickHandler} {...props}>
+    <StyledCustomSelectOption className={classNames} onClick={clickHandler} {...props}>
       <Ellipsis>{children}</Ellipsis>
-    </StyledSelectOption>
+    </StyledCustomSelectOption>
   )
 }
 
-SelectOption.displayName = 'SelectOption';
-
-export default SelectOption;
+CustomSelectOption.displayName = 'CustomSelectOption';

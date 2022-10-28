@@ -32,13 +32,6 @@ export type ThemeProps = {
   className?: string;
 };
 
-export type GridProps = {
-  columns?: string;
-  size?: string;
-  columnGap?: string;
-  rowGap?: string;
-};
-
 // interface ExoticComponentWithDisplayName<P = unknown> extends React.ExoticComponent<P> { defaultProps?: Partial<P>; displayName?: string; }
 
 // export type AnyComponent<P = unknown> = ExoticComponentWithDisplayName<P> | React.ComponentType<P>;
@@ -55,7 +48,7 @@ export type GridProps = {
 
 // export type ComponentCssResponsiveProps<T, U extends NativeElement> = NativeThemeProps<T, U> & CssResponsiveProps;
 
-// export type ComponentGridProps<T, U extends NativeElement> = NativeThemeProps<T, U> & GridProps;
+// export type ComponentGridRowProps<T, U extends NativeElement> = NativeThemeProps<T, U> & GridRowProps;
 
 // props
 // Source: https://github.com/emotion-js/emotion/blob/main/packages/react/types/helper.d.ts

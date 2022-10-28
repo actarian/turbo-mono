@@ -1,13 +1,13 @@
-import { getClassNames } from '@websolute/core';
+import { getClassNames, withSchema } from '@websolute/core';
 import React, { CSSProperties, MouseEvent, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Highlight } from '../../components';
 import { useRect } from '../dropdown/dropdown-layout';
 import { isGeistElement } from '../popover/popover-collections';
 import { TabsConfig, TabsContext, TabsHeaderItem } from './tabs-context';
-import TabsItem from './tabs-item';
+import { TabsItem } from './tabs-item';
 
-interface Props {
+type Props = {
   initialValue?: string;
   value?: string;
   hideDivider?: boolean;
@@ -69,7 +69,7 @@ const StyledTabs = styled.div<Props>`
   }
 `;
 
-const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
+const TabsBase: React.FC<React.PropsWithChildren<TabsProps>> = ({
   className = '',
   hideDivider = false,
   highlight = true,
@@ -162,14 +162,8 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
   );
 }
 
-Tabs.displayName = 'Tabs';
-
-(Tabs as ITabs).Item = TabsItem;
-(Tabs as ITabs).Tab = TabsItem;
-
-export default Tabs as ITabs;
-
-type ITabs = typeof Tabs & {
-  Item: typeof TabsItem;
-  Tab: typeof TabsItem;
-};
+export const Tabs = withSchema(TabsBase, {
+  Item: TabsItem,
+  Tab: TabsItem,
+  displayName: 'Tabs',
+});

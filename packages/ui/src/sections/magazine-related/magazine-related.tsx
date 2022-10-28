@@ -4,8 +4,8 @@ import dynamic from 'next/dynamic';
 import styled from 'styled-components';
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
 import { Card, Container, Section, Text } from '../../components';
-import type { ILazyComponent, ILazyComponentProps } from '../../lazy/lazy-loader/lazy-loader';
-import MagazineSearchCard from '../magazine-search/magazine-search-card';
+import { ILazyComponent, ILazyComponentProps } from '../../lazy/lazy-loader/lazy-loader';
+import { MagazineSearchCard } from '../magazine-search/magazine-search-card';
 
 export type MagazineRelatedSubItem = {
   title: string;
@@ -58,7 +58,7 @@ const StyledCard = styled(Card)`
   }
 `;
 
-const MagazineRelated: React.FC<MagazineRelatedProps & SwiperProps> = ({ item, ...props }: MagazineRelatedProps & SwiperProps) => {
+export const MagazineRelated: React.FC<MagazineRelatedProps & SwiperProps> = ({ item, ...props }: MagazineRelatedProps & SwiperProps) => {
   const items = item.items;
   const classNames = getClassNames(item.schema);
   return (
@@ -77,8 +77,8 @@ const MagazineRelated: React.FC<MagazineRelatedProps & SwiperProps> = ({ item, .
   )
 }
 
-export default MagazineRelated;
-
 export const MagazineRelatedExport = {
-  'magazine-related': dynamic<MagazineRelatedProps>(() => import('../magazine-related/magazine-related')),
+  'magazine-related': dynamic<MagazineRelatedProps>(() => import('../magazine-related/magazine-related').then(
+    module => module.MagazineRelated
+  )),
 };

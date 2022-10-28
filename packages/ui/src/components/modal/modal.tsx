@@ -1,16 +1,17 @@
+import { withSchema } from '@websolute/core';
 import { KeyCode, useBodyScroll, useKeyboard, usePortal } from '@websolute/hooks';
 import React, { MouseEvent, useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
-import type { UIComponentProps } from '../../components/types';
-import { getChildsByType } from '../../components/utils';
-import Backdrop from '../backdrop/backdrop';
-import ModalButton from './modal-button';
-import ModalContent from './modal-content';
+import { Backdrop } from '../backdrop/backdrop';
+import { UIComponentProps } from '../types';
+import { getChildsByType } from '../utils';
+import { ModalButton } from './modal-button';
+import { ModalContent } from './modal-content';
 import { ModalConfig, ModalContext } from './modal-context';
-import ModalFooter from './modal-footer';
-import ModalSubtitle from './modal-subtitle';
-import ModalTitle from './modal-title';
-import ModalWrapper from './modal-wrapper';
+import { ModalFooter } from './modal-footer';
+import { ModalSubtitle } from './modal-subtitle';
+import { ModalTitle } from './modal-title';
+import { ModalWrapper } from './modal-wrapper';
 
 const defaultProps = {
   width: '26rem',
@@ -22,7 +23,7 @@ const defaultProps = {
   keyboard: true,
 };
 
-interface Props {
+type Props = {
   width?: string;
   backdropClassName?: string;
   positionClassName?: string;
@@ -37,7 +38,7 @@ interface Props {
 
 export type ModalProps = UIComponentProps<Props>;
 
-const Modal: React.FC<React.PropsWithChildren<ModalProps | any>> = ({
+const ModalBase: React.FC<React.PropsWithChildren<ModalProps | any>> = ({
   width,
   backdropClassName,
   positionClassName,
@@ -117,23 +118,14 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps | any>> = ({
     , portal);
 };
 
-Modal.defaultProps = defaultProps;
-
-Modal.displayName = 'Modal';
-
-(Modal as IModal).Title = ModalTitle;
-(Modal as IModal).Subtitle = ModalSubtitle;
-(Modal as IModal).Content = ModalContent;
-(Modal as IModal).Button = ModalButton;
-
-export default Modal as IModal;
-
-export type IModal = typeof Modal & {
-  Title: typeof ModalTitle
-  Subtitle: typeof ModalSubtitle
-  Content: typeof ModalContent
-  Button: typeof ModalButton
-};
+export const Modal = withSchema(ModalBase, {
+  Title: ModalTitle,
+  Subtitle: ModalSubtitle,
+  Content: ModalContent,
+  Button: ModalButton,
+  displayName: 'Modal',
+  defaultProps,
+});
 
 export type { ModalButtonProps } from './modal-button';
 export type { ModalContentProps } from './modal-content';

@@ -1,11 +1,9 @@
 
-import type { IStaticContext } from '@websolute/core';
-import { asServerProps } from '@websolute/core';
+import { asServerProps, IStaticContext } from '@websolute/core';
 import { useDateTimeFormat } from '@websolute/hooks';
 import { ChevronLeft } from '@websolute/icons';
 import { MagazineDetailDefaults } from '@websolute/mock';
-import type { PageProps } from '@websolute/models';
-import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
+import { getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/models';
 import { Button, Container, Flex, Footer, Grid, Header, Layout, LazyLoader, MagazineRelated, Media, MediaGallery, Meta, NavLink, Page, Section, Text } from '@websolute/ui';
 import { getMagazineDetails } from 'src/models';
 

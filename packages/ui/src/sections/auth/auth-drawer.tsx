@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Drawer } from '../../components';
-import Auth from './auth';
+import { Auth } from './auth';
 
 export interface AuthDrawerProps {
   children?: ReactNode;
@@ -8,7 +8,7 @@ export interface AuthDrawerProps {
   onClose: () => void;
 }
 
-const AuthDrawer: React.FC<AuthDrawerProps> = ({ visible, onClose }: AuthDrawerProps) => {
+export const AuthDrawer: React.FC<AuthDrawerProps> = ({ visible, onClose }: AuthDrawerProps) => {
   return (
     <Drawer visible={visible} onClose={onClose} placement="right">
       <Drawer.Title>
@@ -20,5 +20,3 @@ const AuthDrawer: React.FC<AuthDrawerProps> = ({ visible, onClose }: AuthDrawerP
     </Drawer>
   );
 };
-
-export default AuthDrawer;

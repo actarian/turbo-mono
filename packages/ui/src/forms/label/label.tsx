@@ -1,7 +1,7 @@
 import { getClassNames } from '@websolute/core';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
@@ -21,7 +21,7 @@ const StyledLabel = styled.div`
   ${props => getCssResponsive(props)}
 `;
 
-const Label: LabelComponent = forwardRef(({ className, as = 'label', ...props }, ref) => {
+export const Label: LabelComponent = forwardRef(({ className, as = 'label', ...props }, ref) => {
   const classNames = getClassNames('label', className);
   return (
     <StyledLabel className={classNames} ref={ref} as={as} {...props} />
@@ -29,5 +29,3 @@ const Label: LabelComponent = forwardRef(({ className, as = 'label', ...props },
 });
 
 Label.displayName = 'Label';
-
-export default Label;

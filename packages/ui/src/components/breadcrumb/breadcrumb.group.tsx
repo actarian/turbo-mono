@@ -1,7 +1,7 @@
-import type { IRouteLink } from '@websolute/models';
+import { IRouteLink } from '@websolute/models';
 import NextLink from 'next/link';
-import type { UIStyledComponentProps } from '../../components/types';
-import Breadcrumb from './breadcrumb';
+import { UIStyledComponentProps } from '../../components/types';
+import { Breadcrumb } from './breadcrumb';
 
 export type Props = {
   items: IRouteLink[];
@@ -9,7 +9,7 @@ export type Props = {
 
 export type BreadcrumbGroupProps = UIStyledComponentProps<Props>;
 
-export default function BreadcrumbGroup({ items, ...props }: BreadcrumbGroupProps) {
+export function BreadcrumbGroup({ items, ...props }: BreadcrumbGroupProps) {
   // console.log('BreadcrumbGroup', items);
   return (
     <>

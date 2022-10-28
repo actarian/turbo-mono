@@ -1,5 +1,6 @@
+import { withSchema } from '@websolute/core';
 import styled, { css } from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { CssButtonNavInverted, CssDefault } from '../button/button.css';
 
@@ -47,7 +48,7 @@ type Props = {
 
 export type TextProps = UIStyledComponentProps<Props>;
 
-const Text = styled.div<TextProps>`
+const TextBase = styled.div<TextProps>`
   font-family: var(--font-primary-family);
   ${({ size }) => {
     if (!size) return '';
@@ -105,14 +106,9 @@ const TextSROnly = styled.div<TextProps>`
   border-width: 0;
 `;
 
-(Text as IText).Primary = Text;
-(Text as IText).Secondary = TextSecondary;
-(Text as IText).SROnly = TextSROnly;
-
-export default Text as IText;
-
-type IText = typeof Text & {
-  Primary: typeof Text;
-  Secondary: typeof TextSecondary;
-  SROnly: typeof TextSROnly;
-};
+export const Text = withSchema(TextBase, {
+  Primary: TextBase,
+  Secondary: TextSecondary,
+  SROnly: TextSROnly,
+  displayName: 'Text',
+});

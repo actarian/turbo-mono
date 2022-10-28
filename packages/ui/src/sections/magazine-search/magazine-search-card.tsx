@@ -1,9 +1,9 @@
 import { IEquatable } from '@websolute/core';
 import { useDateTimeFormat } from '@websolute/hooks';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import { Button, Card, Flex, Media, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: MagazineSearchItem;
@@ -20,7 +20,7 @@ export type MagazineSearchItem = {
 
 export type MagazineSearchCardProps = UIStyledComponentProps<Props>;
 
-const MagazineSearchCard: React.FC<MagazineSearchCardProps> = ({ item, fixedRatio = false, ...props }: MagazineSearchCardProps) => {
+export const MagazineSearchCard: React.FC<MagazineSearchCardProps> = ({ item, fixedRatio = false, ...props }: MagazineSearchCardProps) => {
   const dateTimeFormat = useDateTimeFormat({
     year: 'numeric',
     month: 'short',
@@ -45,5 +45,3 @@ const MagazineSearchCard: React.FC<MagazineSearchCardProps> = ({ item, fixedRati
     </Card>
   )
 }
-
-export default MagazineSearchCard;

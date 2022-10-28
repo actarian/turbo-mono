@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Drawer, Text } from '../../components';
-import ShopSearchFilters from './shop-search-filters';
+import { ShopSearchFilters } from './shop-search-filters';
 
 export interface ShopSearchFiltersModalProps {
   children?: ReactNode;
@@ -8,7 +8,7 @@ export interface ShopSearchFiltersModalProps {
   onClose: () => void;
 }
 
-const ShopSearchFiltersModal: React.FC<ShopSearchFiltersModalProps> = ({ visible, onClose }: ShopSearchFiltersModalProps) => {
+export const ShopSearchFiltersModal: React.FC<ShopSearchFiltersModalProps> = ({ visible, onClose }: ShopSearchFiltersModalProps) => {
   return (
     <Drawer visible={visible} onClose={onClose} placement="right">
       <Drawer.Title>
@@ -20,5 +20,3 @@ const ShopSearchFiltersModal: React.FC<ShopSearchFiltersModalProps> = ({ visible
     </Drawer>
   );
 };
-
-export default ShopSearchFiltersModal;

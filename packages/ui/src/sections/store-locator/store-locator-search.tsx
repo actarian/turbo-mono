@@ -1,24 +1,22 @@
-// import GoogleMap from '../../components/google-map/google-map';
-import type { IEquatable } from '@websolute/core';
+import { IEquatable } from '@websolute/core';
 import { Filter, filtersToParams, useDebounceCallback, useFilters, useInfiniteLoader, useSearchParamsEncoded } from '@websolute/hooks';
 import { MapPin } from '@websolute/icons';
-import type { IFeatureType } from '@websolute/models';
+import { IFeatureType } from '@websolute/models';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Button, Container, Flex, Grid, InfiniteLoader, Section, Text } from '../../components';
-import GoogleMap from '../../components/google-map/google-map';
-import GoogleMapInfoWindow, { InfoWindow } from '../../components/google-map/google-map-info-window';
-import GoogleMapLoader, { GoogleMapLoaderStatus } from '../../components/google-map/google-map-loader';
-import GoogleMapMarker from '../../components/google-map/google-map-marker';
-import GoogleMapMarkerClusterer from '../../components/google-map/google-map-marker-clusterer';
-import GoogleMapMarkerClustererPlus from '../../components/google-map/google-map-marker-clusterer-plus';
-import GoogleMapSkeleton from '../../components/google-map/google-map-skeleton';
+import { GoogleMap } from '../../components/google-map/google-map';
+import { GoogleMapInfoWindow, InfoWindow } from '../../components/google-map/google-map-info-window';
+import { GoogleMapLoader, GoogleMapLoaderStatus } from '../../components/google-map/google-map-loader';
+import { GoogleMapMarker } from '../../components/google-map/google-map-marker';
+import { GoogleMapMarkerClusterer } from '../../components/google-map/google-map-marker-clusterer';
+import { GoogleMapMarkerClustererPlus } from '../../components/google-map/google-map-marker-clusterer-plus';
+import { GoogleMapSkeleton } from '../../components/google-map/google-map-skeleton';
 import { autocompleteSource, calculateDistances, findMe, geocode, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '../../components/google-map/google-map.service';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 import { RadioOption } from '../../forms';
-import Autocomplete from '../../forms/autocomplete/autocomplete';
+import { Autocomplete } from '../../forms/autocomplete/autocomplete';
 import { IAutocompleteItem } from '../../forms/autocomplete/autocomplete-context';
-import ContactCard from '../../sections/contact-card/contact-card';
-// import Dots from './store-locator-dots';
+import { ContactCard } from '../../sections/contact-card/contact-card';
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '';
 const USE_CLUSTERER = false;
@@ -32,6 +30,33 @@ export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, valu
     default:
       return false;
   }
+}
+
+export interface StoreLocatorItem extends IGeoLocalized {
+  id: number;
+  name: string;
+  address: string;
+  zipCode?: string;
+  city?: string;
+  province?: string;
+  country: {
+    id: number;
+    name: string
+  };
+  phoneNumber?: string;
+  faxNumber?: string;
+  contactEmail?: string;
+  website?: string;
+  category: {
+    id: number;
+    name: string
+  };
+  rank: number;
+  distance?: number;
+  related?: {
+    id: number;
+    url: string;
+  };
 }
 
 type Props = {
@@ -50,7 +75,7 @@ export type StoreLocatorHeadItem = {
 
 export type StoreLocatorHeadProps = UIComponentProps<Props>;
 
-const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
+export const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   locale,
   country,
   item,
@@ -378,35 +403,6 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
       </Section>
     </>
   );
-}
-
-export default StoreLocatorSearch;
-
-export interface StoreLocatorItem extends IGeoLocalized {
-  id: number;
-  name: string;
-  address: string;
-  zipCode?: string;
-  city?: string;
-  province?: string;
-  country: {
-    id: number;
-    name: string
-  };
-  phoneNumber?: string;
-  faxNumber?: string;
-  contactEmail?: string;
-  website?: string;
-  category: {
-    id: number;
-    name: string
-  };
-  rank: number;
-  distance?: number;
-  related?: {
-    id: number;
-    url: string;
-  };
 }
 
 /*

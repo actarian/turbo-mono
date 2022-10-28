@@ -1,10 +1,10 @@
 
 import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useEffect, useState } from 'react';
 import { Grid } from '../../components';
-import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
-import RadioOption, { RadioOptionProps } from './radio-option';
+import { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { RadioOption, RadioOptionProps } from './radio-option';
 
-interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
+type Props = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   initialValue?: string;
   size?: SizeVariant;
   children?: ReactNode;
@@ -14,7 +14,7 @@ export type RadioOptionGroupProps = UIStyledComponentProps<Props, 'input'>;
 
 export type RadioOptionGroupComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
 
-const RadioOptionGroup: RadioOptionGroupComponent = forwardRef(({
+export const RadioOptionGroup: RadioOptionGroupComponent = forwardRef(({
   children,
   className,
   size,
@@ -64,5 +64,3 @@ const RadioOptionGroup: RadioOptionGroupComponent = forwardRef(({
 });
 
 RadioOptionGroup.displayName = 'RadioOptionGroup';
-
-export default RadioOptionGroup;

@@ -1,17 +1,18 @@
 import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
-import LinkIcon from './link-icon';
+import { LinkIcon } from './link-icon';
 
-export interface Props {
+type Props = {
   href?: string;
   icon?: boolean;
   underline?: boolean;
   className?: string;
 }
 
-type NativeAttrs = Omit<React.AnchorHTMLAttributes<any>, keyof Props>
-export type LinkProps = Props & NativeAttrs
+type NativeAttrs = Omit<React.AnchorHTMLAttributes<any>, keyof Props>;
+export type LinkProps = Props & NativeAttrs;
+export type LinkBaseProps = Props;
 
 const StyledLink = styled.div`
   display: inline-flex;
@@ -41,7 +42,7 @@ const StyledLink = styled.div`
   }
 `;
 
-const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(({
+export const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(({
   href = '',
   icon = false,
   underline = false,
@@ -60,5 +61,3 @@ const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkPro
 )
 
 Link.displayName = 'Link';
-
-export default Link;

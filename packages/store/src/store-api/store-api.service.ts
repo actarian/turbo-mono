@@ -40,7 +40,7 @@ export async function storeDelete(url: string, options: FetchRequestOptions = {}
   return await storeFetch(url, { ...options, method: 'DELETE' });
 }
 
-export default class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
+export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
   key: string;
 
   constructor(key: string) {

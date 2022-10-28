@@ -27,7 +27,7 @@ const lazyLoadComponent = (component: ILazyComponent): JSX.Element => {
   return (<Component item={component} />);
 }
 
-const LazyLoader = ({ components }: { components: ILazyComponent[] }) => {
+export const LazyLoader = ({ components }: { components: ILazyComponent[] }) => {
   return (
     <>
       {components.map((component, i: number) => (
@@ -39,4 +39,28 @@ const LazyLoader = ({ components }: { components: ILazyComponent[] }) => {
   );
 }
 
-export default LazyLoader;
+/*
+
+// !!! how to import a component
+
+// default
+
+const SomeComponent = React.lazy(
+  () => import('./SomeComponent')
+);
+
+or
+
+// named
+
+const SomeComponent = React.lazy(
+  () => import('./SomeComponent').then(module => ({ default: module.SomeComponent }))
+);
+
+or
+
+const SomeComponent = React.lazy(
+  () => import('./SomeComponent').then(module => module.SomeComponent)
+);
+
+*/

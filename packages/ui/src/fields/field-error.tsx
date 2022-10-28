@@ -6,7 +6,7 @@ type FieldErrorProps = {
   state: FormState<any>;
 }
 
-export default function FieldError({ state, ...props }: FieldErrorProps) {
+export function FieldError({ state, ...props }: FieldErrorProps) {
   const label = useLabel();
   return (
     <>

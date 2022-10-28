@@ -2,13 +2,13 @@ import { useApi, useApiPost, useCart, useCheckout, useCurrency, useLabel, useLay
 import { Percent, Truck } from '@websolute/icons';
 import { ICartItem, ICheckoutItem, ICheckoutPartial } from '@websolute/models';
 import { Box, Button, Container, Flex, NavLink, Section, Text } from '../../components';
-import CheckoutBasketItem from './checkout-basket-item';
+import { CheckoutBasketItem } from './checkout-basket-item';
 
 export interface CheckoutBasketProps {
   onBasket?: (items: ICheckoutItem[]) => void;
 }
 
-const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBasketProps) => {
+export const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBasketProps) => {
 
   const label = useLabel();
 
@@ -108,5 +108,3 @@ const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBas
     </>
   );
 };
-
-export default CheckoutBasket;

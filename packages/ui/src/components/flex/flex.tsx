@@ -1,14 +1,18 @@
+import { withSchema } from '@websolute/core';
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { FlexCol } from './flex-col';
-import FlexFlow from './flex-flow';
+import { FlexFlow } from './flex-flow';
 import { FlexResponsive } from './flex-responsive';
 import { FlexRow } from './flex-row';
 
+type Props = {
+}
+
 export type FlexProps = UIStyledComponentProps<Props>;
 
-const Flex = styled.div<FlexProps>`
+const FlexBase = styled.div<FlexProps>`
   display: flex;
   // flex-direction: column;
   // justify-content: center;
@@ -16,19 +20,10 @@ const Flex = styled.div<FlexProps>`
   ${props => getCssResponsive(props)}
 `;
 
-(Flex as IFlex).Row = FlexRow;
-(Flex as IFlex).Col = FlexCol;
-(Flex as IFlex).Responsive = FlexResponsive;
-(Flex as IFlex).Flow = FlexFlow;
-
-export default Flex as IFlex;
-
-type Props = {
-}
-
-type IFlex = typeof Flex & {
-  Row: typeof FlexRow;
-  Col: typeof FlexCol;
-  Responsive: typeof FlexResponsive;
-  Flow: typeof FlexFlow;
-};
+export const Flex = withSchema(FlexBase, {
+  Row: FlexRow,
+  Col: FlexCol,
+  Responsive: FlexResponsive,
+  Flow: FlexFlow,
+  displayName: 'Flex',
+});

@@ -1,9 +1,9 @@
 import { getClassNames, IEquatable } from '@websolute/core';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import dynamic from 'next/dynamic';
 import { Container, Grid, Section, Text } from '../../components';
-import type { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
-import Related1Card from './related-1-card';
+import { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
+import { Related1Card } from './related-1-card';
 
 export interface Related1Item extends ILazyComponent {
   schema: 'text-media-1';
@@ -20,7 +20,7 @@ export interface Related1Props extends ILazyComponentProps {
   item: Related1Item;
 }
 
-const Related1: React.FC<Related1Props> = ({ item }: Related1Props) => {
+export const Related1: React.FC<Related1Props> = ({ item }: Related1Props) => {
   const classNames = getClassNames(item.schema);
   return (
     <Section className={classNames} padding="6rem 0">
@@ -38,8 +38,8 @@ const Related1: React.FC<Related1Props> = ({ item }: Related1Props) => {
   );
 }
 
-export default Related1;
-
 export const Related1Export = {
-  'related-1': dynamic<Related1Props>(() => import('../related-1/related-1')),
+  'related-1': dynamic<Related1Props>(() => import('../related-1/related-1').then(
+    module => module.Related1
+  )),
 };

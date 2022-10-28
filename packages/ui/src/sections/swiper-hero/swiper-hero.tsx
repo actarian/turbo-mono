@@ -3,7 +3,7 @@ import { ILink, IMedia } from '@websolute/models';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { SwiperProps } from 'swiper/react';
-import { Button, Card, Container, Grid, Media, Swiper, Text } from '../../components';
+import { Button, Card, Container, Grid, Media, SwiperComponent, Text } from '../../components';
 
 const CardHero = styled(Card)`
   .media {
@@ -44,10 +44,10 @@ export type SwiperHeroProps = {
   items: SwiperHeroItem[];
 } & SwiperProps;
 
-const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) => {
+export const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) => {
   const items = props.items;
   return (
-    <Swiper {...props} navigation pagination={{ clickable: true }}>
+    <SwiperComponent {...props} navigation pagination={{ clickable: true }}>
       {items.map((item, i) => (
         <CardHero key={i} justifyContent="flex-end" height="100vh" overflow="hidden">
           <Card.Background>
@@ -71,8 +71,6 @@ const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) => {
           </Card.Content>
         </CardHero>
       ))}
-    </Swiper>
+    </SwiperComponent>
   )
 }
-
-export default SwiperHero;

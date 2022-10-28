@@ -25,8 +25,6 @@ const Rating = styled(RatingSvg)`
   transition: color 200ms ease, transform 200ms ease;
 `;
 
-const RatingIcon = React.memo(Rating);
+export const RatingIcon = React.memo(Rating);
 
 RatingIcon.displayName = 'RatingIcon';
-
-export default RatingIcon;

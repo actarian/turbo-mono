@@ -6,7 +6,7 @@ export interface AuthRegisterSuccessProps {
   onNavToLogin?: () => void;
 }
 
-const AuthRegisterSuccess: React.FC<AuthRegisterSuccessProps> = ({ onNavToLogin }: AuthRegisterSuccessProps) => {
+export const AuthRegisterSuccess: React.FC<AuthRegisterSuccessProps> = ({ onNavToLogin }: AuthRegisterSuccessProps) => {
   const onLogin = () => {
     if (typeof onNavToLogin === 'function') {
       onNavToLogin();
@@ -23,5 +23,3 @@ const AuthRegisterSuccess: React.FC<AuthRegisterSuccessProps> = ({ onNavToLogin 
     </Flex.Col>
   );
 };
-
-export default AuthRegisterSuccess;

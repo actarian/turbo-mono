@@ -1,11 +1,11 @@
-import { getClassNames } from '@websolute/core';
+import { getClassNames, withSchema } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import Input from '../../forms/input/input';
+import { Input } from '../../forms/input/input';
 
-interface Props extends ComponentPropsWithRef<'input'> {
+type Props = ComponentPropsWithRef<'input'> & {
   children?: ReactNode;
 }
 
@@ -54,7 +54,7 @@ const StyledInputGroup = styled.div<InputGroupProps>`
 
 // !!! unused?
 
-const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(({
+const InputGroupBase = forwardRef<HTMLInputElement, InputGroupProps>(({
   children,
   className,
   ...props
@@ -67,12 +67,8 @@ const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(({
   );
 });
 
-InputGroup.displayName = 'InputGroup';
+InputGroupBase.displayName = 'InputGroup';
 
-(InputGroup as IInputGroup).Input = Input;
-
-export default InputGroup as IInputGroup;
-
-type IInputGroup = typeof InputGroup & {
-  Input: typeof Input;
-};
+export const InputGroup = withSchema(InputGroupBase, {
+  Input: Input,
+});

@@ -20,6 +20,4 @@ const Clear = styled(XSvg)`
   }
 `;
 
-const SelectIconClear = React.memo(Clear);
-
-export default SelectIconClear;
+export const CustomSelectIconClear = React.memo(Clear);

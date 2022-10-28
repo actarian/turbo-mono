@@ -1,8 +1,8 @@
 import { useCurrency } from '@websolute/hooks';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import { Card, Flex, Media, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: ProductsPropositionItem
@@ -19,7 +19,7 @@ export type ProductsPropositionItem = {
 
 export type ProductsPropositionCardProps = UIStyledComponentProps<Props, 'a'>;
 
-const ProductsPropositionCard: React.FC<ProductsPropositionCardProps> = ({ item, ...props }: ProductsPropositionCardProps) => {
+export const ProductsPropositionCard: React.FC<ProductsPropositionCardProps> = ({ item, ...props }: ProductsPropositionCardProps) => {
   const currency = useCurrency();
   return (
     <Link href={item.href} passHref>
@@ -36,5 +36,3 @@ const ProductsPropositionCard: React.FC<ProductsPropositionCardProps> = ({ item,
     </Link>
   )
 }
-
-export default ProductsPropositionCard;

@@ -2,10 +2,10 @@ import { getClassNames } from '@websolute/core';
 import { useCurrentState } from '@websolute/hooks';
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
-import type { UIComponentProps } from '../../components/types';
-import Transition from '../transition/transition';
+import { UIComponentProps } from '../../components/types';
+import { Transition } from '../transition/transition';
 
-interface Props {
+type Props = {
   visible?: boolean
   width?: string
   onClick?: (event: MouseEvent<HTMLElement>) => void
@@ -88,7 +88,7 @@ const StyledBackdrop = styled.div`
   }
 `;
 
-const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = React.memo(
+export const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = React.memo(
   ({
     children,
     onClick,
@@ -142,5 +142,3 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = React.m
 
 Backdrop.defaultProps = defaultProps;
 Backdrop.displayName = 'Backdrop';
-
-export default Backdrop;

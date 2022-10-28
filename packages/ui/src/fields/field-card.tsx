@@ -1,17 +1,16 @@
-import type { IOption } from '@websolute/core';
+import { IOption } from '@websolute/core';
 import { FormControl, useControl } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
 import { ChangeEvent, FocusEvent, useState } from 'react';
-import type { FieldProps } from '../forms';
-import { Field, Label, RadioCard } from '../forms';
-import FieldError from './field-error';
+import { Field, FieldProps, Label, RadioCard } from '../forms';
+import { FieldError } from './field-error';
 
 type FieldCardProps = {
   control: FormControl;
   uid?: number | null | undefined;
 }
 
-export default function FieldCard({
+export function FieldCard({
   uid,
   control,
   ...props

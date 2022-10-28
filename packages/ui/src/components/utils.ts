@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
 import { css, FlattenInterpolation } from 'styled-components';
 import { CssMap, CssResponsiveProps } from './css';
-import { GridProps, ThemeProps } from './types';
+import { GridRowBaseProps } from './grid/grid-row';
+import { ThemeProps } from './types';
 
 export const ObjectKeys = Object.keys as <T>(o: T) => (Extract<keyof T, string>)[];
 
@@ -86,7 +87,7 @@ export function getAspectResponsive(props: CssResponsiveProps & ThemeProps, defa
   return rules;
 }
 
-export function getGrid(props: GridProps, defaultValue: GridProps = {}) {
+export function getGrid(props: GridRowBaseProps, defaultValue: GridRowBaseProps = {}) {
   props = { ...defaultValue, ...props };
   return css`
     ${(props.columns) ? css`

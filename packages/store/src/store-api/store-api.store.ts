@@ -1,6 +1,6 @@
 import type { IEntity, IQuerable } from '@websolute/core';
 import type { IStore } from '../store/store';
-import StoreApiService from './store-api.service';
+import { StoreApiService } from './store-api.service';
 
 let STORE_: IStore;
 

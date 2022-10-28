@@ -2,8 +2,7 @@
 import type { IStaticContext } from '@websolute/core';
 import { asServerProps } from '@websolute/core';
 import { BlogMoreDefaults, BlogPropositionDefaults, CategoriesPropositionDefaults, ProductsPropositionDefaults, SplitDefaults, SwiperHeroDefaults } from '@websolute/mock';
-import type { PageProps } from '@websolute/models';
-import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
+import { getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/models';
 import {
   BlogMore, BlogProposition, CategoriesProposition, Container, Flex, Footer, Header, Layout,
   Media, MediaImage, Meta, Page, ProductsProposition, Proposition, Section, Split, SwiperHero, Text

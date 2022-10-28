@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {};
@@ -48,4 +48,4 @@ const StyledLoading = styled.div<LoadingProps>`
   ${props => getCssResponsive(props)}
 `
 
-export default StyledLoading;
+export const Loading = StyledLoading;

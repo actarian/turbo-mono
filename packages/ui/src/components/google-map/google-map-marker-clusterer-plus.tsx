@@ -9,7 +9,7 @@ export interface GoogleMapMarkerClustererPlusProps {
   onClick?: (item: IGeoLocalized) => void;
 }
 
-const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> = ({
+export const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> = ({
   items = [],
   onClick,
 }) => {
@@ -84,8 +84,6 @@ const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> 
 
   return null;
 };
-
-export default GoogleMapMarkerClustererPlus;
 
 function markerDispose(marker: google.maps.Marker) {
   marker.setMap(null);

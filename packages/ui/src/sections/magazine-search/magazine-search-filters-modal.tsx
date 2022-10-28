@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Drawer, Text } from '../../components';
-import MagazineSearchFilters from './magazine-search-filters';
+import { MagazineSearchFilters } from './magazine-search-filters';
 
 export interface MagazineSearchFiltersModalProps {
   children?: ReactNode;
@@ -8,7 +8,7 @@ export interface MagazineSearchFiltersModalProps {
   onClose: () => void;
 }
 
-const MagazineSearchFiltersModal: React.FC<MagazineSearchFiltersModalProps> = ({ visible, onClose }: MagazineSearchFiltersModalProps) => {
+export const MagazineSearchFiltersModal: React.FC<MagazineSearchFiltersModalProps> = ({ visible, onClose }: MagazineSearchFiltersModalProps) => {
   return (
     <Drawer visible={visible} onClose={onClose} placement="right">
       <Drawer.Title>
@@ -20,5 +20,3 @@ const MagazineSearchFiltersModal: React.FC<MagazineSearchFiltersModalProps> = ({
     </Drawer>
   );
 };
-
-export default MagazineSearchFiltersModal;

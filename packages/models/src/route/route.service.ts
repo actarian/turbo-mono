@@ -1,9 +1,8 @@
-import type { FindParams } from '@websolute/core';
-import { isLocalizedString, localizedToString } from '@websolute/core';
+import { FindParams, isLocalizedString, localizedToString } from '@websolute/core';
 import { getStore } from '@websolute/store';
-import type { ICategory } from '../category/category';
+import { ICategory } from '../category/category';
 import { IModelStore } from '../store/store';
-import type { IRoute, IRouteLink } from './route';
+import { IRoute, IRouteLink } from './route';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 
 export async function getRoutes(params: FindParams = {}): Promise<IRoute[]> {

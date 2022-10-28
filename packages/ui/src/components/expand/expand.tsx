@@ -26,7 +26,7 @@ const StyledExpand = styled.div<{ delay: number, height: CSSProperties['height']
   }
 `;
 
-const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
+export const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
   isExpanded = false,
   delay = 200,
   children,
@@ -95,5 +95,3 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
 }
 
 Expand.displayName = 'Expand';
-
-export default Expand;

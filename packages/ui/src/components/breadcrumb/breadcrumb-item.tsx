@@ -1,10 +1,10 @@
 import { getClassNames } from '@websolute/core';
 import React, { ReactNode, useMemo } from 'react';
-import Link, { Props as LinkBasicProps } from '../link/link';
+import { Link, LinkBaseProps } from '../link/link';
 import { pickChild } from '../popover/popover-collections';
-import BreadcrumbSeparator from './breadcrumb-separator';
+import { BreadcrumbSeparator } from './breadcrumb-separator';
 
-interface Props {
+type Props = {
   href?: string
   nextLink?: boolean
   onClick?: (event: React.MouseEvent) => void
@@ -14,11 +14,11 @@ interface Props {
 
 type NativeAttrs = Omit<React.AnchorHTMLAttributes<any>, keyof Props>;
 
-type NativeLinkAttrs = Omit<NativeAttrs, keyof LinkBasicProps>;
+type NativeLinkAttrs = Omit<NativeAttrs, keyof LinkBaseProps>;
 
 export type BreadcrumbItemProps = Props & NativeLinkAttrs;
 
-const BreadcrumbItem = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<BreadcrumbItemProps>>(({
+export const BreadcrumbItem = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<BreadcrumbItemProps>>(({
   nextLink = false,
   className = '',
   href,
@@ -51,5 +51,3 @@ const BreadcrumbItem = React.forwardRef<HTMLAnchorElement, React.PropsWithChildr
 });
 
 BreadcrumbItem.displayName = 'BreadcrumbItem';
-
-export default BreadcrumbItem;

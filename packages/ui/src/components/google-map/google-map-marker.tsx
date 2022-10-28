@@ -6,7 +6,7 @@ export interface GoogleMapMarkerProps extends google.maps.MarkerOptions {
   onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
-const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
+export const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
   onClick,
   ...options
 }) => {
@@ -16,7 +16,7 @@ const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
   const [marker, setMarker] = useState<google.maps.Marker>();
 
   useEffect(() => {
-    let instance:google.maps.Marker;
+    let instance: google.maps.Marker;
     if (!marker && map) {
       const onClick_ = (event: MouseEvent<HTMLElement>) => {
         if (onClick) {
@@ -46,5 +46,3 @@ const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
 
   return null;
 };
-
-export default GoogleMapMarker;

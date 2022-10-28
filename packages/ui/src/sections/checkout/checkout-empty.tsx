@@ -4,7 +4,7 @@ import { Button, Container, Flex, NavLink, Section, Text } from '../../component
 export interface CheckoutEmptyProps {
 }
 
-const CheckoutEmpty: React.FC<CheckoutEmptyProps> = ({ }: CheckoutEmptyProps) => {
+export const CheckoutEmpty: React.FC<CheckoutEmptyProps> = ({ }: CheckoutEmptyProps) => {
 
   const label = useLabel();
 
@@ -26,5 +26,3 @@ const CheckoutEmpty: React.FC<CheckoutEmptyProps> = ({ }: CheckoutEmptyProps) =>
     </>
   );
 };
-
-export default CheckoutEmpty;

@@ -2,7 +2,7 @@ import { getClassNames } from '@websolute/core';
 import React, { SVGProps } from 'react';
 import styled from 'styled-components';
 
-interface Props {
+type Props = {
   active?: boolean;
 }
 
@@ -27,13 +27,11 @@ const DownArrow = styled(DownArrowSvg)`
   }
 `;
 
-const AccordionIcon: React.FC<Props> = ({ active }) => {
+const AccordionIcon_: React.FC<Props> = ({ active }) => {
   const classNames = getClassNames({ active });
   return (
     <DownArrow className={classNames} />
   );
 };
 
-const MemoAccordionIcon = React.memo(AccordionIcon);
-
-export default MemoAccordionIcon;
+export const AccordionIcon = React.memo(AccordionIcon_);

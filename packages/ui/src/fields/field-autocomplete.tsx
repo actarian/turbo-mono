@@ -1,10 +1,10 @@
 
-import type { IEquatable, IOption } from '@websolute/core';
+import { IEquatable, IOption } from '@websolute/core';
 import { FormControl, stringToValue, useControl, valueToString } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
 import { FocusEvent, useMemo, useState } from 'react';
 import { Autocomplete, Field, IAutocompleteItem, Label } from '../forms';
-import FieldError from './field-error';
+import { FieldError } from './field-error';
 
 type FieldAutocompleteProps = {
   control: FormControl;
@@ -13,7 +13,7 @@ type FieldAutocompleteProps = {
 
 // !!! todo
 
-export default function FieldAutocomplete(props: FieldAutocompleteProps) {
+export function FieldAutocomplete(props: FieldAutocompleteProps) {
   const label = useLabel();
 
   const uniqueName = `${props.control.name}-${props.uid}`;

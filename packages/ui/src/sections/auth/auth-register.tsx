@@ -8,13 +8,13 @@ import { FieldCheckbox, FieldPassword, FieldText } from '../../fields';
 import { Form, FormError, FormTester } from '../../forms';
 
 
-export interface AuthSignUpProps {
+export interface AuthRegisterProps {
   children?: ReactNode;
   onSignedUp?: () => void;
   onNavToLogin?: () => void;
 }
 
-const AuthSignUp: React.FC<AuthSignUpProps> = ({ onSignedUp, onNavToLogin }: AuthSignUpProps) => {
+export const AuthRegister: React.FC<AuthRegisterProps> = ({ onSignedUp, onNavToLogin }: AuthRegisterProps) => {
   const label = useLabel();
 
   const required = RequiredValidator();
@@ -106,5 +106,3 @@ const AuthSignUp: React.FC<AuthSignUpProps> = ({ onSignedUp, onNavToLogin }: Aut
     </Flex.Col>
   );
 };
-
-export default AuthSignUp;

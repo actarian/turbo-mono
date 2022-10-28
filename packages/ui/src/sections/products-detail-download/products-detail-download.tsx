@@ -3,7 +3,7 @@ import { Lock } from '@websolute/icons';
 import { ILink } from '@websolute/models';
 import dynamic from 'next/dynamic';
 import { Button, Container, Flex, NavLink, Section, Text } from '../../components';
-import type { ILazyComponent, ILazyComponentProps } from '../../lazy/lazy-loader/lazy-loader';
+import { ILazyComponent, ILazyComponentProps } from '../../lazy/lazy-loader/lazy-loader';
 
 export interface ProductsDetailDownloadItem extends ILazyComponent {
   schema: string;
@@ -16,7 +16,7 @@ export interface ProductsDetailDownloadProps extends ILazyComponentProps {
   item: ProductsDetailDownloadItem;
 }
 
-const ProductsDetailDownload: React.FC<ProductsDetailDownloadProps> = ({ id, item }: ProductsDetailDownloadProps) => {
+export const ProductsDetailDownload: React.FC<ProductsDetailDownloadProps> = ({ id, item }: ProductsDetailDownloadProps) => {
   const classNames = getClassNames(item.schema);
   return (
     <Section id={id} className={classNames} padding="6rem 0">
@@ -40,8 +40,8 @@ const ProductsDetailDownload: React.FC<ProductsDetailDownloadProps> = ({ id, ite
   );
 }
 
-export default ProductsDetailDownload;
-
 export const ProductsDetailDownloadExport = {
-  'products-detail-download': dynamic<ProductsDetailDownloadProps>(() => import('./products-detail-download')),
+  'products-detail-download': dynamic<ProductsDetailDownloadProps>(() => import('./products-detail-download').then(
+    module => module.ProductsDetailDownload
+  )),
 };

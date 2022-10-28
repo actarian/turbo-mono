@@ -1,6 +1,6 @@
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import { Card, Container, Flex, Grid, Media, Section } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   media: IMedia[]
@@ -8,7 +8,7 @@ type Props = {
 
 export type ProductOverviewProps = UIStyledComponentProps<Props>;
 
-const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, ...props }: ProductOverviewProps) => {
+export const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, ...props }: ProductOverviewProps) => {
   return (
     <Section {...props}>
       <Container>
@@ -46,5 +46,3 @@ const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, ...prop
     </Section>
   )
 }
-
-export default ProductOverviewGallery;

@@ -1,6 +1,6 @@
 import { IUser } from '@websolute/models';
 import { Button, Container, Flex, Section } from '../../components';
-import AuthLogin from '../auth/auth-login';
+import { AuthLogin } from '../auth/auth-login';
 
 type Props = {
   onSignedIn?: (user: IUser) => void;
@@ -9,7 +9,7 @@ type Props = {
   onNavToPrevious?: () => void;
 }
 
-const CheckoutLogin: React.FC<Props> = ({ onSignedIn, onNavToForgot, onNavToRegister, onNavToPrevious }: Props) => {
+export const CheckoutLogin: React.FC<Props> = ({ onSignedIn, onNavToForgot, onNavToRegister, onNavToPrevious }: Props) => {
 
   const onSignedIn_ = (user: IUser) => {
     if (typeof onSignedIn === 'function') {
@@ -54,5 +54,3 @@ const CheckoutLogin: React.FC<Props> = ({ onSignedIn, onNavToForgot, onNavToRegi
     </>
   );
 };
-
-export default CheckoutLogin;

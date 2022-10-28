@@ -3,12 +3,11 @@ import { IMedia } from '@websolute/models';
 import { forwardRef, useCallback, useId, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Modal from '../../components/modal/modal';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
-import { getCssResponsive } from '../../components/utils';
-import Media from '../media/media';
-import type { MediaGalleryConfig } from './media-gallery-context';
-import { MediaGalleryContext } from './media-gallery-context';
+import { Media } from '../media/media';
+import { Modal } from '../modal/modal';
+import { UIComponentWithRef, UIStyledComponentProps } from '../types';
+import { getCssResponsive } from '../utils';
+import { MediaGalleryConfig, MediaGalleryContext } from './media-gallery-context';
 
 type Props = {
   children?: React.ReactNode;
@@ -42,7 +41,7 @@ const StyledMedia = styled(Media)`
   }
 `;
 
-const MediaGallery: MediaGalleryComponent = forwardRef(({ children, as = 'div', ...props }, ref) => {
+export const MediaGallery: MediaGalleryComponent = forwardRef(({ children, as = 'div', ...props }, ref) => {
   const [modal, onOpenModal, onCloseModal] = useModal();
 
   const [items, setItems] = useState<IMedia[]>([]);
@@ -91,5 +90,3 @@ const MediaGallery: MediaGalleryComponent = forwardRef(({ children, as = 'div', 
 });
 
 MediaGallery.displayName = 'MediaGallery';
-
-export default MediaGallery;

@@ -1,13 +1,13 @@
 import { Calendar, RefreshCcw, Truck } from '@websolute/icons';
 import { Box, Container, Flex, Grid, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 
 type Props = {
 }
 
 export type ShopIncentiveProps = UIComponentProps<Props>;
 
-const ShopIncentive: React.FC<ShopIncentiveProps> = ({ }: ShopIncentiveProps) => {
+export const ShopIncentive: React.FC<ShopIncentiveProps> = ({ }: ShopIncentiveProps) => {
   return (
     <Section padding="2rem 0">
       <Container>
@@ -44,5 +44,3 @@ const ShopIncentive: React.FC<ShopIncentiveProps> = ({ }: ShopIncentiveProps) =>
     </Section>
   )
 }
-
-export default ShopIncentive;

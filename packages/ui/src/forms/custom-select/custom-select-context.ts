@@ -6,7 +6,7 @@ const defaultContext = {
   value: '',
 };
 
-export interface SelectConfig {
+export interface CustomSelectConfig {
   disableAll?: boolean;
   visible?: boolean;
   value: string | string[];
@@ -15,8 +15,8 @@ export interface SelectConfig {
   updateVisible?: (next: boolean) => unknown;
 }
 
-export const SelectContext = React.createContext<SelectConfig>(defaultContext);
+export const CustomSelectContext = React.createContext<CustomSelectConfig>(defaultContext);
 
-export function useSelectContext(): SelectConfig {
-  return React.useContext<SelectConfig>(SelectContext);
+export function useCustomSelectContext(): CustomSelectConfig {
+  return React.useContext<CustomSelectConfig>(CustomSelectContext);
 }

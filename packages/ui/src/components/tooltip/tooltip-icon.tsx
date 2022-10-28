@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { getIconPosition, TooltipIconPosition } from './tooltip-placement';
 import { Placement } from './tooltip-props';
 
-interface Props {
+type Props = {
   placement: Placement;
   shadow: boolean;
 }
@@ -22,7 +22,7 @@ const StyledTooltipIcon = styled.span<TooltipIconPosition>`
   transform: ${props => props.transform};
 `;
 
-const TooltipIcon: React.FC<Props> = ({ placement, shadow }) => {
+export const TooltipIcon: React.FC<Props> = ({ placement, shadow }) => {
   const props: TooltipIconPosition = useMemo(() => {
     return getIconPosition(placement, 'var(--tooltip-icon-offset-x)', 'var(--tooltip-icon-offset-y)');
   }, [placement]);
@@ -30,5 +30,3 @@ const TooltipIcon: React.FC<Props> = ({ placement, shadow }) => {
     <StyledTooltipIcon {...props} />
   )
 }
-
-export default TooltipIcon;

@@ -12,7 +12,7 @@ export interface OrderRegisterProps {
   onSignedUp?: () => void;
 }
 
-const OrderRegister: React.FC<OrderRegisterProps> = ({ data, onSignedUp }: OrderRegisterProps) => {
+export const OrderRegister: React.FC<OrderRegisterProps> = ({ data, onSignedUp }: OrderRegisterProps) => {
   const label = useLabel();
 
   const [registered, setRegistered] = useState<boolean>(false);
@@ -102,5 +102,3 @@ const OrderRegister: React.FC<OrderRegisterProps> = ({ data, onSignedUp }: Order
     </Section>
   );
 };
-
-export default OrderRegister;

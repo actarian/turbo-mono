@@ -1,6 +1,6 @@
 import { ILink, IMedia } from '@websolute/models';
 import { Card, Container, Flex, Media, Section, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 
 export type CategoryHeroItem = {
   title?: string;
@@ -15,7 +15,7 @@ type Props = {
 
 export type CategoryHeroProps = UIStyledComponentProps<Props>;
 
-const CategoryHero: React.FC<CategoryHeroProps> = ({ item, ...props }: CategoryHeroProps) => {
+export const CategoryHero: React.FC<CategoryHeroProps> = ({ item, ...props }: CategoryHeroProps) => {
   return (
     item.media ?
       <Card justifyContent="center" height="50vh" overflow="hidden">
@@ -44,5 +44,3 @@ const CategoryHero: React.FC<CategoryHeroProps> = ({ item, ...props }: CategoryH
       </Section>
   )
 }
-
-export default CategoryHero;

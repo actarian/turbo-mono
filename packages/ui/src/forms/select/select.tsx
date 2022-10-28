@@ -1,10 +1,10 @@
 import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, SVGProps } from 'react';
 import styled from 'styled-components';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
-interface Props extends ComponentPropsWithRef<'select'> {
+type Props = ComponentPropsWithRef<'select'> & {
 }
 
 export type SelectProps = UIStyledComponentProps<Props, 'select'>;
@@ -73,7 +73,7 @@ const StyledSelect = styled.div`
   ${props => getCssResponsive(props)}
 `
 
-const Select: SelectComponent = forwardRef(({
+export const Select: SelectComponent = forwardRef(({
   as = 'select',
   className,
   ...props
@@ -88,6 +88,3 @@ const Select: SelectComponent = forwardRef(({
 });
 
 Select.displayName = 'Select';
-
-export default Select;
-

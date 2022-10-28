@@ -1,6 +1,6 @@
 import { getClassNames } from '@websolute/core';
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 
 export type Props = {
   src: string;
@@ -16,13 +16,11 @@ const StyledMediaImage = styled.img`
   user-select: none;
 `;
 
-const MediaImage = ({ alt = '', className, type, ...props }: MediaImageProps) => {
+export const MediaImage = ({ alt = '', className, type, ...props }: MediaImageProps) => {
   const classNames = getClassNames(className, 'image', { 'image-svg': isSVG(props.src) });
   const imageProps = getImageProps(props);
   return (<StyledMediaImage className={classNames} alt={alt} loading="lazy" {...imageProps} />);
 }
-
-export default MediaImage;
 
 function getImageProps({ src, ...props }: MediaImageProps & Omit<MediaImageProps, 'type'>) {
   const ratio = props.width && props.height ? (parseInt(props.width.toString()) / parseInt(props.height.toString())) : 0;

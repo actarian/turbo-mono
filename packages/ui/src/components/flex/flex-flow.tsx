@@ -2,7 +2,7 @@ import { getClassNames } from '@websolute/core';
 import React, { forwardRef, useEffect, useImperativeHandle } from 'react';
 import styled, { css } from 'styled-components';
 import { CssResponsiveProps } from '../css';
-import type { ThemeProps, UIComponentWithRef, UIStyledComponentProps } from '../types';
+import { ThemeProps, UIComponentWithRef, UIStyledComponentProps } from '../types';
 import { getCssResponsive } from '../utils';
 
 type Props = {
@@ -69,7 +69,7 @@ const StyledFlexFlow = styled.div<FlexFlowProps>`
   `}
 `;
 
-const FlexFlow: FlexFlowComponent = forwardRef(({ children, className, as = 'div', ...props }, ref) => {
+export const FlexFlow: FlexFlowComponent = forwardRef(({ children, className, as = 'div', ...props }, ref) => {
 
   const innerRef = React.createRef<HTMLElement>();
 
@@ -119,8 +119,6 @@ const FlexFlow: FlexFlowComponent = forwardRef(({ children, className, as = 'div
 });
 
 FlexFlow.displayName = 'FlexFlow';
-
-export default FlexFlow;
 
 function reposChildElements(node: HTMLElement) {
   node.style.height = '';

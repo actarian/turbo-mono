@@ -1,11 +1,11 @@
-import { getClassNames } from '@websolute/core';
-import type { IMedia as IMediaItem } from '@websolute/models';
+import { getClassNames, withSchema } from '@websolute/core';
+import { IMedia as IMediaItem } from '@websolute/models';
 import { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getAspectResponsive, getCssResponsive } from '../../components/utils';
 import { useMediaGalleryContext } from '../media-gallery/media-gallery-context';
-import MediaImage from './media-image';
+import { MediaImage } from './media-image';
 
 const StyledMediaInfo = styled.div`
   position: absolute;
@@ -99,7 +99,7 @@ const StyledMedia = styled.div<MediaProps>`
   `) : ''}
 `;
 
-const Media: MediaComponent = forwardRef(({ children, item, onClick, className, as = 'div', ...props }, ref) => {
+const MediaBase: MediaComponent = forwardRef(({ children, item, onClick, className, as = 'div', ...props }, ref) => {
   const classNames = getClassNames(className, 'media');
 
   const { id, open } = useMediaGalleryContext();
@@ -114,15 +114,11 @@ const Media: MediaComponent = forwardRef(({ children, item, onClick, className, 
   return (<StyledMedia className={classNames} ref={ref} as={as} {...props}>{mediaChildren}</StyledMedia>);
 });
 
-Media.displayName = 'Media';
+MediaBase.displayName = 'Media';
 
-(Media as IMedia).Info = MediaInfo;
-
-export default Media as IMedia;
-
-type IMedia = typeof Media & {
-  Info: typeof MediaInfo;
-};
+export const Media = withSchema(MediaBase, {
+  Info: MediaInfo,
+});
 
 function getMediaItems(itemOrItems: IMediaItem | IMediaItem[], options: {
   aspectRatio?: string | number;

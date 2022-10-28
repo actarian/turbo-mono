@@ -1,6 +1,6 @@
 import { Container, Grid, Section } from '../../components';
-import type { UIComponentProps } from '../../components/types';
-import ShopItemsPropositionCard, { ShopItemsPropositionItem } from './shop-items-proposition-card';
+import { UIComponentProps } from '../../components/types';
+import { ShopItemsPropositionCard, ShopItemsPropositionItem } from './shop-items-proposition-card';
 
 type Props = {
   items: ShopItemsPropositionItem[],
@@ -8,7 +8,7 @@ type Props = {
 
 export type ShopItemsPropositionProps = UIComponentProps<Props>;
 
-const ShopItemsProposition: React.FC<ShopItemsPropositionProps> = ({ items }: ShopItemsPropositionProps) => {
+export const ShopItemsProposition: React.FC<ShopItemsPropositionProps> = ({ items }: ShopItemsPropositionProps) => {
   return (
     <Section padding="3rem 0">
       <Container>
@@ -23,5 +23,3 @@ const ShopItemsProposition: React.FC<ShopItemsPropositionProps> = ({ items }: Sh
     </Section>
   )
 }
-
-export default ShopItemsProposition;

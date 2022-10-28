@@ -1,17 +1,17 @@
 
-import type { IEquatable, IOption } from '@websolute/core';
+import { IEquatable, IOption } from '@websolute/core';
 import { FormControl, stringToValue, useControl, valueToString } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
 import { FocusEvent, useState } from 'react';
 import { CustomSelect, Field, Label } from '../forms';
-import FieldError from './field-error';
+import { FieldError } from './field-error';
 
 type FieldSelectProps = {
   control: FormControl;
   uid?: number | null | undefined;
 }
 
-export default function FieldSelect(props: FieldSelectProps) {
+export function FieldSelect(props: FieldSelectProps) {
   const label = useLabel();
 
   const uniqueName = `${props.control.name}-${props.uid}`;

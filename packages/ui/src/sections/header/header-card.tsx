@@ -1,8 +1,8 @@
 import { IEquatable } from '@websolute/core';
-import type { IMedia, IRouteLink } from '@websolute/models';
+import { IMedia, IRouteLink } from '@websolute/models';
 import Link from 'next/link';
 import { Button, Card, Media, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: HeaderCardItem;
@@ -18,7 +18,7 @@ export type HeaderCardItem = {
 
 export type HeaderCardProps = UIStyledComponentProps<Props, 'a'>;
 
-const HeaderCard: React.FC<HeaderCardProps> = ({ item, onSelect, ...props }: HeaderCardProps) => {
+export const HeaderCard: React.FC<HeaderCardProps> = ({ item, onSelect, ...props }: HeaderCardProps) => {
   const onSelect_ = () => {
     onSelect && onSelect(item);
   }
@@ -35,5 +35,3 @@ const HeaderCard: React.FC<HeaderCardProps> = ({ item, onSelect, ...props }: Hea
     </Link>
   )
 }
-
-export default HeaderCard;

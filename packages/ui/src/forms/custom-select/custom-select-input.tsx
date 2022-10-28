@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithRef, useEffect, useImperativeHandle, useRef } from 'react';
 import styled from 'styled-components';
 
-export interface SelectInputProps extends ComponentPropsWithRef<'input'> {
+export interface CustomSelectInputProps extends ComponentPropsWithRef<'input'> {
   visible: boolean;
   onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
   onFocus: (event: React.FocusEvent<HTMLInputElement>) => void;
@@ -20,7 +20,7 @@ const StyledInput = styled.input`
   border: none;
 `;
 
-const SelectInput = React.forwardRef<HTMLInputElement | null, SelectInputProps>(({
+export const CustomSelectInput = React.forwardRef<HTMLInputElement | null, CustomSelectInputProps>(({
   visible,
   onBlur,
   onFocus
@@ -53,6 +53,4 @@ const SelectInput = React.forwardRef<HTMLInputElement | null, SelectInputProps>(
   );
 });
 
-SelectInput.displayName = 'SelectInput';
-
-export default SelectInput;
+CustomSelectInput.displayName = 'CustomSelectInput';

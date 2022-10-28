@@ -1,14 +1,14 @@
 import { useLabel } from '@websolute/hooks';
 import { IOrder } from '@websolute/models';
 import { Badge, Button, Container, Flex, Grid, Section, Text } from '../../components';
-import OrderRegister from '../order/order-register';
-import OrderSummary from '../order/order-summary';
+import { OrderRegister } from '../order/order-register';
+import { OrderSummary } from '../order/order-summary';
 
 export interface CheckoutSuccessProps {
   order: IOrder;
 }
 
-const CheckoutSuccess: React.FC<CheckoutSuccessProps> = ({ order }: CheckoutSuccessProps) => {
+export const CheckoutSuccess: React.FC<CheckoutSuccessProps> = ({ order }: CheckoutSuccessProps) => {
   const label = useLabel();
 
   // console.log('CheckoutSuccess', order);
@@ -71,5 +71,3 @@ const CheckoutSuccess: React.FC<CheckoutSuccessProps> = ({ order }: CheckoutSucc
     </>
   );
 };
-
-export default CheckoutSuccess;

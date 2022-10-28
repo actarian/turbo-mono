@@ -44,7 +44,7 @@ const StyledHighlight = styled.div<{ position: HighlightPosition, activeOpacity:
   `)}
 `
 
-const Highlight: React.FC<HighlightProps> = ({
+export const Highlight: React.FC<HighlightProps> = ({
   hoverHeightRatio = 1,
   hoverWidthRatio = 1,
   activeOpacity = 0.8,

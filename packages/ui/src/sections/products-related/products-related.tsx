@@ -1,6 +1,6 @@
 import { Container, Flex, Grid, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
-import ProductsRelatedCard, { ProductsRelatedItem } from './products-related-card';
+import { UIComponentProps } from '../../components/types';
+import { ProductsRelatedCard, ProductsRelatedItem } from './products-related-card';
 
 type Props = {
   items: ProductsRelatedItem[],
@@ -8,7 +8,7 @@ type Props = {
 
 export type ProductsRelatedProps = UIComponentProps<Props>;
 
-const ProductsRelated: React.FC<ProductsRelatedProps> = ({ items }: ProductsRelatedProps) => {
+export const ProductsRelated: React.FC<ProductsRelatedProps> = ({ items }: ProductsRelatedProps) => {
   return (
     <Section padding="3rem 0">
       <Container>
@@ -26,5 +26,3 @@ const ProductsRelated: React.FC<ProductsRelatedProps> = ({ items }: ProductsRela
     </Section>
   )
 }
-
-export default ProductsRelated;

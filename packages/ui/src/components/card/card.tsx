@@ -1,8 +1,8 @@
-import { getClassNames } from '@websolute/core';
+import { getClassNames, withSchema } from '@websolute/core';
 import React, { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import Background from '../../components/background/background';
-import type { UIComponentWithRef, UIStyledComponentProps, Variant, Variants } from '../../components/types';
+import { Background } from '../../components/background/background';
+import { UIComponentWithRef, UIStyledComponentProps, Variant, Variants } from '../../components/types';
 import { getAspectResponsive, getCssResponsive, getVariant, hasChildOfType } from '../../components/utils';
 import { CardContent } from './card-content';
 import { CardFooter } from './card-footer';
@@ -83,26 +83,18 @@ const StyledCard = styled.div<CardProps>`
   `: ''}
 `;
 
-const Card: CardComponent = forwardRef(({ children, className, as = 'div', ...props }, ref) => {
+const CardBase: CardComponent = forwardRef(({ children, className, as = 'div', ...props }, ref) => {
   const classNames = getClassNames('card', className);
   return (<StyledCard className={classNames} ref={ref} as={as} {...props}>{children}</StyledCard>);
 });
 
-Card.displayName = 'Card';
+CardBase.displayName = 'Card';
 
-(Card as ICard).Background = Background;
-(Card as ICard).Content = CardContent;
-(Card as ICard).Footer = CardFooter;
-
-export default Card as ICard;
-
-type ICard = typeof Card & {
-  Background: typeof Background;
-  Content: typeof CardContent;
-  Footer: typeof CardFooter;
-};
-
-// utils
+export const Card = withSchema(CardBase, {
+  Background: Background,
+  Content: CardContent,
+  Footer: CardFooter,
+});
 
 function hasBackground(props: CardProps): boolean {
   return hasChildOfType(props.children, Background);

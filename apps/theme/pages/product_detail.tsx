@@ -1,7 +1,7 @@
-import type { IEquatable } from '@websolute/core';
+import { IEquatable } from '@websolute/core';
 import { ChevronLeft } from '@websolute/icons';
 import { ProductsDetailDefaults } from '@websolute/mock';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import {
   Button, Container, Flex, Footer, Header, ILazyComponent, Layout, LazyLoader, MediaGallery, Nav, NavLink,
   Page, PageNav, ProductsDetailDownload, ProductsDetailDownloadItem, ProductsDetailRelated,

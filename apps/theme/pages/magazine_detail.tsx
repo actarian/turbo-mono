@@ -1,13 +1,12 @@
-import type { IEquatable } from '@websolute/core';
+import { IEquatable } from '@websolute/core';
 import { useDateTimeFormat } from '@websolute/hooks';
 import { ChevronLeft } from '@websolute/icons';
 import { MagazineDetailDefaults } from '@websolute/mock';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import {
   Button, Container, Flex, Footer, Grid, Header, ILazyComponent, Layout, LazyLoader, MagazineRelated,
   MagazineRelatedItem, mapChildsByType, Media, MediaGallery, NavLink, Page, Section, Text, withPageTransition
 } from '@websolute/ui';
-
 import Head from 'next/head';
 import React from 'react';
 

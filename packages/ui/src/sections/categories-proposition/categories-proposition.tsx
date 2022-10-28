@@ -1,8 +1,8 @@
 import { ArrowRight } from '@websolute/icons';
 import Link from 'next/link';
 import { Button, Container, Flex, Grid, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
-import CategoriesPropositionCard, { CategoriesPropositionItem } from './categories-proposition-card';
+import { UIComponentProps } from '../../components/types';
+import { CategoriesPropositionCard, CategoriesPropositionItem } from './categories-proposition-card';
 
 type Props = {
   items: CategoriesPropositionItem[],
@@ -10,7 +10,7 @@ type Props = {
 
 export type CategoriesPropositionProps = UIComponentProps<Props>;
 
-const CategoriesProposition: React.FC<CategoriesPropositionProps> = ({ items }: CategoriesPropositionProps) => {
+export const CategoriesProposition: React.FC<CategoriesPropositionProps> = ({ items }: CategoriesPropositionProps) => {
   return (
     <Section padding="3rem 0">
       <Container>
@@ -35,5 +35,3 @@ const CategoriesProposition: React.FC<CategoriesPropositionProps> = ({ items }: 
     </Section>
   )
 }
-
-export default CategoriesProposition;

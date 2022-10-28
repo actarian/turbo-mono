@@ -1,6 +1,6 @@
 import { useBreakpoint } from '@websolute/hooks';
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
@@ -24,11 +24,9 @@ const StyledBreakpoint = styled.div<BreakpointProps>`
   ${props => getCssResponsive(props)}
 ` as typeof Breakpoint;
 
-const Breakpoint = ((props: BreakpointProps) => {
+export const Breakpoint = ((props: BreakpointProps) => {
   const breakpoint = useBreakpoint();
   return breakpoint.max > 0 ? (
     <StyledBreakpoint {...props}>{breakpoint.key} ({breakpoint.min}/{breakpoint.max < 50000 ? breakpoint.max : '∞'})</StyledBreakpoint>
   ) : null;
 });
-
-export default Breakpoint;

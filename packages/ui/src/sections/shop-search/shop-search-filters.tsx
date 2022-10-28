@@ -1,5 +1,5 @@
 import { Accordion, Box, Button, Nav } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { Checkbox, Label } from '../../forms';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 
 export type ShopSearchFiltersProps = UIStyledComponentProps<Props>;
 
-const ShopSearchFilters: React.FC<ShopSearchFiltersProps> = ({ ...props }: ShopSearchFiltersProps) => {
+export const ShopSearchFilters: React.FC<ShopSearchFiltersProps> = ({ ...props }: ShopSearchFiltersProps) => {
   return (
     <Box {...props}>
       <Nav.Col marginBottom="2rem" fontSize="0.9rem">
@@ -51,5 +51,3 @@ const ShopSearchFilters: React.FC<ShopSearchFiltersProps> = ({ ...props }: ShopS
     </Box>
   )
 }
-
-export default ShopSearchFilters;

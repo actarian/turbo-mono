@@ -2,7 +2,7 @@
 import { getClassNames } from '@websolute/core';
 import Image, { ImageProps } from 'next/future/image'; // !!! todo implement this
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../types';
+import { UIStyledComponentProps } from '../types';
 
 export type Props = {
   src: string;

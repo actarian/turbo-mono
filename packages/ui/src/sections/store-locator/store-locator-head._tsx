@@ -1,6 +1,6 @@
 import { Container, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
-import Dots from './store-locator-dots';
+import { UIComponentProps } from '../../components/types';
+import { Dots } from './store-locator-dots';
 
 type Props = {
   item: StoreLocatorHeadItem,

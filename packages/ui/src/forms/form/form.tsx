@@ -2,7 +2,7 @@ import { getClassNames } from '@websolute/core';
 import { FormState } from '@websolute/forms';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
@@ -20,7 +20,7 @@ const StyledForm = styled.div<FormProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Form: FormComponent = forwardRef(({ className, ...props }, ref) => {
+export const Form: FormComponent = forwardRef(({ className, ...props }, ref) => {
   const classNames = getClassNames('form', className, props.state?.flags);
   return (
     <StyledForm ref={ref} className={classNames} as='form' {...props} />
@@ -28,5 +28,3 @@ const Form: FormComponent = forwardRef(({ className, ...props }, ref) => {
 });
 
 Form.displayName = 'Form';
-
-export default Form;

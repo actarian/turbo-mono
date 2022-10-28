@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Dropdown } from '../../components';
 import { useAutocompleteContext } from './autocomplete-context';
 
-interface Props {
+type Props = {
   visible: boolean;
   className?: string;
   dropdownStyle?: CSSProperties;
@@ -26,7 +26,7 @@ const StyledAutocompleteDropdown = styled.div`
   background-color: var(--color-neutral-100);
 `;
 
-const AutocompleteDropdown = React.forwardRef<HTMLDivElement | null, React.PropsWithChildren<AutocompleteDropdownProps>>(({
+export const AutocompleteDropdown = React.forwardRef<HTMLDivElement | null, React.PropsWithChildren<AutocompleteDropdownProps>>(({
   className = '',
   dropdownStyle = {},
   visible,
@@ -53,5 +53,3 @@ const AutocompleteDropdown = React.forwardRef<HTMLDivElement | null, React.Props
 });
 
 AutocompleteDropdown.displayName = 'AutocompleteDropdown';
-
-export default AutocompleteDropdown;

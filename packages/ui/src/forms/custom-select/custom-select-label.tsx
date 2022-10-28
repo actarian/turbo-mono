@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { Ellipsis } from '../../components';
 
-interface Props {
+type Props = {
   className?: string;
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
-export type SelectLabelProps = Props & NativeAttrs;
+export type CustomSelectLabelProps = Props & NativeAttrs;
 
-const StyledSelectLabel = styled.div`
+const StyledCustomSelectLabel = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -25,17 +25,15 @@ const StyledSelectLabel = styled.div`
   text-transform: uppercase;
 `
 
-const SelectLabel: React.FC<React.PropsWithChildren<SelectLabelProps>> = ({
+export const CustomSelectLabel: React.FC<React.PropsWithChildren<CustomSelectLabelProps>> = ({
   children,
   ...props
-}: React.PropsWithChildren<SelectLabelProps>) => {
+}: React.PropsWithChildren<CustomSelectLabelProps>) => {
   return (
-    <StyledSelectLabel {...props}>
+    <StyledCustomSelectLabel {...props}>
       <Ellipsis>{children}</Ellipsis>
-    </StyledSelectLabel>
+    </StyledCustomSelectLabel>
   );
 }
 
-SelectLabel.displayName = 'SelectLabel';
-
-export default SelectLabel;
+CustomSelectLabel.displayName = 'CustomSelectLabel';

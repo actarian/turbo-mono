@@ -1,6 +1,6 @@
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import { Button, Card, Container, Flex, Media, NavLink, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: CategoryPropositionItem,
@@ -16,7 +16,7 @@ export type CategoryPropositionItem = {
 
 export type CategoryPropositionProps = UIComponentProps<Props>;
 
-const CategoryProposition: React.FC<CategoryPropositionProps> = ({ item }) => {
+export const CategoryProposition: React.FC<CategoryPropositionProps> = ({ item }) => {
   return (
     <Section>
       <Container>
@@ -44,5 +44,3 @@ const CategoryProposition: React.FC<CategoryPropositionProps> = ({ item }) => {
     </Section>
   )
 }
-
-export default CategoryProposition;

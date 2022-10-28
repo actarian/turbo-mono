@@ -2,11 +2,11 @@
 import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { CheckboxIcon } from './checkbox-icon';
 
-interface Props extends ComponentPropsWithRef<'input'> {
+type Props = ComponentPropsWithRef<'input'> & {
 }
 
 export type CheckboxProps = UIStyledComponentProps<Props, 'input'>;
@@ -54,7 +54,7 @@ const StyledCheckbox = styled.div<CheckboxProps>`
   ${props => getCssResponsive(props)}
 `
 
-const Checkbox: CheckboxComponent = forwardRef(({ className, ...props }, ref) => {
+export const Checkbox: CheckboxComponent = forwardRef(({ className, ...props }, ref) => {
   const classNames = getClassNames('checkbox', className);
   return (
     <StyledCheckbox className={classNames}>
@@ -65,5 +65,3 @@ const Checkbox: CheckboxComponent = forwardRef(({ className, ...props }, ref) =>
 });
 
 Checkbox.displayName = 'Checkbox';
-
-export default Checkbox;

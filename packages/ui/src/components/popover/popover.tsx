@@ -1,16 +1,17 @@
-import { getClassNames } from '@websolute/core';
+import { getClassNames, withSchema } from '@websolute/core';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
-import Tooltip, { TooltipOnVisibleChange, TooltipProps } from '../tooltip/tooltip';
+import { Tooltip, TooltipOnVisibleChange, TooltipProps } from '../tooltip/tooltip';
 import { Placement, TriggerTypes } from '../tooltip/tooltip-props';
 import { getReactNode } from './popover-collections';
 import { PopoverConfig, PopoverContext } from './popover-context';
+import { PopoverItem } from './popover-item';
 
 export type PopoverTriggerTypes = TriggerTypes;
 
 export type PopoverPlacement = Placement;
 
-interface Props {
+type Props = {
   content?: React.ReactNode | (() => React.ReactNode);
   trigger?: PopoverTriggerTypes;
   placement?: Placement;
@@ -32,7 +33,7 @@ const StyledTooltip = styled(Tooltip)`
   }
 `;
 
-const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
+const PopoverBase: React.FC<React.PropsWithChildren<PopoverProps>> = ({
   className = '',
   hideArrow = false,
   initialVisible = false,
@@ -94,17 +95,8 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
   )
 }
 
-Popover.displayName = 'Popover';
-
-(Popover as IPopover).Item = PopoverItem;
-(Popover as IPopover).Option = PopoverItem;
-
-export default Popover as IPopover;
-
-type IPopover = typeof Popover & {
-  Item: typeof PopoverItem;
-  Option: typeof PopoverItem;
-};
-
-import PopoverItem from './popover-item';
-
+export const Popover = withSchema(PopoverBase, {
+  Item: PopoverItem,
+  Option: PopoverItem,
+  displayName: 'Popover',
+});

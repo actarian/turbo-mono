@@ -2,14 +2,14 @@ import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../../components';
-import SelectIconClear from './select-icon-clear';
+import { CustomSelectIconClear } from './custom-select-icon-clear';
 
-interface Props {
+type Props = {
   disabled: boolean;
   onClear: (() => void) | null;
 }
 
-const StyledSelectMultipleValue = styled.div<{ disabled: boolean }>`
+const StyledCustomSelectMultipleValue = styled.div<{ disabled: boolean }>`
   display: inline-flex;
   align-items: center;
   line-height: 1;
@@ -34,7 +34,7 @@ const StyledSelectMultipleValue = styled.div<{ disabled: boolean }>`
   */
 `;
 
-const SelectMultipleValue: React.FC<React.PropsWithChildren<Props>> = ({
+export const CustomSelectMultipleValue: React.FC<React.PropsWithChildren<Props>> = ({
   disabled,
   onClear,
   children,
@@ -44,18 +44,16 @@ const SelectMultipleValue: React.FC<React.PropsWithChildren<Props>> = ({
     <>
       <Button variant="secondary" size="sm" className={classNames} disabled={disabled}>
         <span>{children}</span>
-        {!!onClear && <SelectIconClear onClick={onClear} />}
+        {!!onClear && <CustomSelectIconClear onClick={onClear} />}
       </Button>
       {false &&
-        <StyledSelectMultipleValue className={classNames} disabled={disabled}>
+        <StyledCustomSelectMultipleValue className={classNames} disabled={disabled}>
           <span>{children}</span>
-          {!!onClear && <SelectIconClear onClick={onClear} />}
-        </StyledSelectMultipleValue>
+          {!!onClear && <CustomSelectIconClear onClick={onClear} />}
+        </StyledCustomSelectMultipleValue>
       }
     </>
   )
 }
 
-SelectMultipleValue.displayName = 'SelectMultipleValue';
-
-export default SelectMultipleValue;
+CustomSelectMultipleValue.displayName = 'CustomSelectMultipleValue';

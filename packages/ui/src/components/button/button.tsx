@@ -1,8 +1,8 @@
 import { getClassNames } from '@websolute/core';
 import { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps, VariantOf } from '../../components/types';
-import { getCssResponsive, getVariant } from '../../components/utils';
+import { SizeVariant, UIComponentWithRef, UIStyledComponentProps, VariantOf } from '../types';
+import { getCssResponsive, getVariant } from '../utils';
 import { CssButtonCircle, CssButtonDefault, CssButtonGhost, CssButtonLink, CssButtonNav, CssButtonOutline, CssButtonPrimary, CssButtonSecondary, CssButtonToggle, CssButtonUnderline, CssDefault } from './button.css';
 
 export type ButtonVariant = 'default' | 'primary' | 'secondary' | 'outline' | 'ghost' | 'link' | 'underline' | 'nav' | 'circle' | 'toggle';
@@ -22,7 +22,7 @@ const variants: ButtonVariants = {
   toggle: CssButtonToggle,
 };
 
-interface Props {
+type Props = {
   variant?: ButtonVariant;
   size?: SizeVariant;
   children?: React.ReactNode;
@@ -40,11 +40,9 @@ const StyledButton = styled.div<ButtonProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Button: ButtonComponent = forwardRef(({ children, className, as = 'button', type = 'button', ...props }, ref) => {
+export const Button: ButtonComponent = forwardRef(({ children, className, as = 'button', type = 'button', ...props }, ref) => {
   const classNames = getClassNames('button', className, { disabled: props.disabled });
   return (<StyledButton className={classNames} ref={ref} as={as} type={type} {...props}>{children}</StyledButton>);
 });
 
 Button.displayName = 'Button';
-
-export default Button;

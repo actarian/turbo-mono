@@ -1,9 +1,9 @@
 import { IEquatable } from '@websolute/core';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Button, Card, Flex, Media, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 
 export type ProductsDetailRelatedCardItem = {
   id: IEquatable;
@@ -42,7 +42,7 @@ const StyledCard = styled(Card)`
   }
 `;
 
-const ProductsDetailRelatedCard: React.FC<ProductsDetailRelatedCardProps> = ({ item, ...props }: ProductsDetailRelatedCardProps) => {
+export const ProductsDetailRelatedCard: React.FC<ProductsDetailRelatedCardProps> = ({ item, ...props }: ProductsDetailRelatedCardProps) => {
   return (
     <StyledCard {...props} hoverable>
       <Link href={item.href} passHref>
@@ -58,5 +58,3 @@ const ProductsDetailRelatedCard: React.FC<ProductsDetailRelatedCardProps> = ({ i
     </StyledCard>
   )
 }
-
-export default ProductsDetailRelatedCard;

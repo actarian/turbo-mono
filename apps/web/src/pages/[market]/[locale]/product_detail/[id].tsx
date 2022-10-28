@@ -1,10 +1,8 @@
 
-import type { IStaticContext } from '@websolute/core';
-import { asServerProps } from '@websolute/core';
+import { asServerProps, IStaticContext } from '@websolute/core';
 import { ChevronLeft } from '@websolute/icons';
 import { ProductsDetailDefaults } from '@websolute/mock';
-import type { PageProps } from '@websolute/models';
-import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
+import { getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/models';
 import { Button, Container, Flex, Footer, Header, Layout, LazyLoader, MediaGallery, Meta, Nav, NavLink, Page, PageNav, ProductsDetailDownload, ProductsDetailRelated, ProductsDetailSizeColor, Section, Text } from '@websolute/ui';
 
 export default function ProductDetail({ layout, page, params }: ProductDetailProps) {

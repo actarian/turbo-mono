@@ -1,16 +1,15 @@
-import type { IEquatable } from '@websolute/core';
-import { getClassNames } from '@websolute/core';
+import { getClassNames, IEquatable } from '@websolute/core';
 import { Filter, filtersToParams, IFilterOption, scrollToSelector, useDrawer, useFilters, useLabel, usePagination, useSearchParamsEncoded, useSorting } from '@websolute/hooks';
 import { ChevronDown, ChevronLeft, ChevronRight, Filter as FilterIcon, Grid as GridIcon, Square } from '@websolute/icons';
-import type { IFeatureType } from '@websolute/models';
+import { IFeatureType } from '@websolute/models';
 import { useCallback, useState } from 'react';
 import { Accordion, Box, Button, Container, Flex, Grid, Nav, Pagination, Popover, Section, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { Checkbox, Label } from '../../forms';
-import ShopSearchCard, { ShopSearchItem } from './shop-search-card';
-import ShopSearchFilters from './shop-search-filters';
-import ShopSearchFiltersModal from './shop-search-filters-modal';
-import ShopSearchRecap from './shop-search-recap';
+import { ShopSearchCard, ShopSearchItem } from './shop-search-card';
+import { ShopSearchFilters } from './shop-search-filters';
+import { ShopSearchFiltersModal } from './shop-search-filters-modal';
+import { ShopSearchRecap } from './shop-search-recap';
 
 // this is the actual filtering function of the shop
 function filterShopItem(key: string, item: ShopSearchItem, value: IEquatable) {
@@ -60,7 +59,7 @@ type Props = {
 
 export type ShopSearchProps = UIStyledComponentProps<Props>;
 
-const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, categoryId, ...props }: ShopSearchProps) => {
+export const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, categoryId, ...props }: ShopSearchProps) => {
 
   // deserialize queryString encoded params
   const { params, replaceParamsSilently } = useSearchParamsEncoded();
@@ -269,5 +268,3 @@ const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, categoryId
     </>
   )
 }
-
-export default ShopSearch;

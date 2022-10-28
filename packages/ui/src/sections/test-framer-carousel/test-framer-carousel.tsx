@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Carousel } from '../../components/carousel/carousel';
-import MediaImage from '../../components/media/media-image';
+import { MediaImage } from '../../components/media/media-image';
 
 const TestFramerCarousel: React.FC<null> = () => {
 

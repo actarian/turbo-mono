@@ -1,6 +1,5 @@
 
-import type { IStaticContext } from '@websolute/core';
-import { asServerProps } from '@websolute/core';
+import { asServerProps, IStaticContext } from '@websolute/core';
 import { useCart, useCurrency, useDrawer } from '@websolute/hooks';
 import { ProductsRelatedDefaults } from '@websolute/mock';
 import { getLayout, getPage, getPageCategory, getStaticPathsForSchema, IPage, PageProps } from '@websolute/models';
@@ -8,8 +7,7 @@ import {
   Breadcrumb, Button, CategoryProposition, Container, Flex, Footer, Grid, Header, Layout, Media, Meta, NavLink,
   Page, ProductsRelated, Section, ShopDetailRelated, ShopIncentive, ShopSearchItem, Text
 } from '@websolute/ui';
-import type { IShopDetail } from 'src/models';
-import { getShopDetails } from 'src/models';
+import { getShopDetails, IShopDetail } from 'src/models';
 
 export default function ShopDetail({ layout, page, category, params }: ShopDetailProps) {
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();

@@ -1,12 +1,12 @@
-import type { ILabel } from '../label/label';
+import { ILabel } from '../label/label';
 import { getLabels } from '../label/label.service';
-import type { ILocale } from '../locale/locale';
+import { ILocale } from '../locale/locale';
 import { getLocales } from '../locale/locale.service';
-import type { IMarket } from '../market/market';
+import { IMarket } from '../market/market';
 import { getMarkets } from '../market/market.service';
-import type { IRouteLink } from '../route/route';
+import { IRouteLink } from '../route/route';
 import { getRouteLinkTree } from '../route/route.service';
-import type { ILayout } from './layout';
+import { ILayout } from './layout';
 
 export async function getLayout(market: string, locale: string): Promise<ILayout> {
   // const store = await getStore<IModelStore>();

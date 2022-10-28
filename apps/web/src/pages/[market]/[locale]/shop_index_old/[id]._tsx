@@ -1,10 +1,10 @@
 
-import type { IStaticContext } from '@websolute/core';
+import { IStaticContext } from '@websolute/core';
 import { asStaticProps } from '@websolute/core';
 import {
   CategoryPropositionDefaults, ShopItemsPropositionDefaults
 } from '@websolute/mock';
-import type { PageProps } from '@websolute/models';
+import { PageProps } from '@websolute/models';
 import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
 import {
   CategoriesProposition, CategoryProposition, Footer, Header, Layout, Meta, Page, ShopHero,

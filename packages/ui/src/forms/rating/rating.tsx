@@ -3,16 +3,16 @@ import { getClassNames } from '@websolute/core';
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { tupleNumber } from '../../components/tooltip/tooltip-props';
-import type { SizeVariant, UIStyledComponentProps } from '../../components/types';
+import { SizeVariant, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import RatingIcon from './rating-icon';
+import { RatingIcon } from './rating-icon';
 
 const ratingCountTuple = tupleNumber(2, 3, 4, 5, 6, 7, 8, 9, 10);
 const ratingValueTuple = tupleNumber(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 export type RatingValue = typeof ratingValueTuple[number];
 export type RatingCount = typeof ratingCountTuple[number];
 
-interface Props {
+type Props = {
   size?: SizeVariant;
   className?: string;
   count?: RatingCount | number;
@@ -63,7 +63,7 @@ const StyledRating = styled.div<RatingProps>`
   ${props => getCssResponsive(props)}
 `
 
-const Rating: React.FC<RatingProps> = ({
+export const Rating: React.FC<RatingProps> = ({
   className = '',
   count = 5 as RatingCount,
   icon = (<RatingIcon />) as JSX.Element,
@@ -124,5 +124,3 @@ const Rating: React.FC<RatingProps> = ({
 }
 
 Rating.displayName = 'Rating';
-
-export default Rating;

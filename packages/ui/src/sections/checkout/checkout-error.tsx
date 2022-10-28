@@ -4,7 +4,7 @@ import { Container, Flex, Section, Text } from '../../components';
 export interface CheckoutErrorProps {
 }
 
-const CheckoutError: React.FC<CheckoutErrorProps> = ({ }: CheckoutErrorProps) => {
+export const CheckoutError: React.FC<CheckoutErrorProps> = ({ }: CheckoutErrorProps) => {
   const label = useLabel();
 
   return (
@@ -20,5 +20,3 @@ const CheckoutError: React.FC<CheckoutErrorProps> = ({ }: CheckoutErrorProps) =>
     </>
   );
 };
-
-export default CheckoutError;

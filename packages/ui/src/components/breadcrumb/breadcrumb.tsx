@@ -1,12 +1,13 @@
+import { withSchema } from '@websolute/core';
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import type { UIComponent, UIStyledComponentProps } from '../../components/types';
+import { UIComponent, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
-import BreadcrumbItem from './breadcrumb-item';
-import BreadcrumbSeparator from './breadcrumb-separator';
-import BreadcrumbGroup from './breadcrumb.group';
+import { BreadcrumbItem } from './breadcrumb-item';
+import { BreadcrumbSeparator } from './breadcrumb-separator';
+import { BreadcrumbGroup } from './breadcrumb.group';
 
-interface Props {
+type Props = {
   separator?: string | ReactNode;
   children?: ReactNode;
 }
@@ -42,7 +43,7 @@ const StyledBreadcrumb = styled.div<BreadcrumbProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Breadcrumb: BreadcrumbComponent = ({ children, as = 'nav' as React.ElementType, separator = '/', className = '', ...props }) => {
+const BreadcrumbBase: BreadcrumbComponent = ({ children, as = 'nav' as React.ElementType, separator = '/', className = '', ...props }) => {
   const childrenArray = React.Children.toArray(children);
   const withSeparatorChildren = childrenArray.map((item, index) => {
     if (!React.isValidElement(item)) {
@@ -68,16 +69,9 @@ const Breadcrumb: BreadcrumbComponent = ({ children, as = 'nav' as React.Element
   );
 }
 
-Breadcrumb.displayName = 'Breadcrumb';
-
-(Breadcrumb as IBreadcrumb).Item = BreadcrumbItem;
-(Breadcrumb as IBreadcrumb).Separator = BreadcrumbSeparator;
-(Breadcrumb as IBreadcrumb).Group = BreadcrumbGroup;
-
-export default Breadcrumb as IBreadcrumb;
-
-type IBreadcrumb = typeof Breadcrumb & {
-  Item: typeof BreadcrumbItem;
-  Separator: typeof BreadcrumbSeparator;
-  Group: typeof BreadcrumbGroup;
-};
+export const Breadcrumb = withSchema(BreadcrumbBase, {
+  Item: BreadcrumbItem,
+  Separator: BreadcrumbSeparator,
+  Group: BreadcrumbGroup,
+  displayName: 'Breadcrumb',
+});

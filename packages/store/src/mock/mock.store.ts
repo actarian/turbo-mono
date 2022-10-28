@@ -1,7 +1,7 @@
 import type { IEntity, IQuerable } from '@websolute/core';
 import { fsReadJson } from '../fs/fs.service';
 import { IStore } from '../store/store';
-import MockService from './mock.service';
+import { MockService } from './mock.service';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');

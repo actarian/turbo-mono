@@ -100,7 +100,7 @@ export function useSearchParamsValue(key: string): IUseSearchParamsValueResult {
 
   const replaceParamsSilently = useCallback((params: IParams) => {
     replaceSearchParamsSilently(params);
-  }, [key]);
+  }, []);
 
   return { params, replaceParamsSilently };
 }

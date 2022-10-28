@@ -9,7 +9,7 @@ type FieldCollectionProps = {
   uid?: number | null | undefined;
 }
 
-export default function FieldCollection(props: FieldCollectionProps) {
+export function FieldCollection(props: FieldCollectionProps) {
   const label = useLabel();
 
   let uid = props.uid || 0;

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import ButtonGroup from '../../components/button-group/button-group';
+import { ButtonGroup } from '../button-group/button-group';
 
 const StyledFooter = styled(ButtonGroup)`
   overflow: hidden;
@@ -13,7 +13,7 @@ const StyledFooter = styled(ButtonGroup)`
   border-top-right-radius: 0;
 `;
 
-const ModalFooterComponent: React.FC<React.PropsWithChildren<unknown>> = ({ children, ...props }) => {
+const ModalFooter_: React.FC<React.PropsWithChildren<unknown>> = ({ children, ...props }) => {
 
   const ref = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number | string>('auto');
@@ -35,8 +35,6 @@ const ModalFooterComponent: React.FC<React.PropsWithChildren<unknown>> = ({ chil
   )
 }
 
-ModalFooterComponent.displayName = 'ModalFooter';
+ModalFooter_.displayName = 'ModalFooter';
 
-const ModalFooter = React.memo(ModalFooterComponent);
-
-export default ModalFooter;
+export const ModalFooter = React.memo(ModalFooter_);

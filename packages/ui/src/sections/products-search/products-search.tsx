@@ -1,17 +1,15 @@
-import type { IEquatable } from '@websolute/core';
-import { getClassNames } from '@websolute/core';
+import { getClassNames, IEquatable } from '@websolute/core';
 import { Filter, filtersToParams, useDrawer, useFilters, useInfiniteLoader, useSearchParamsEncoded } from '@websolute/hooks';
 import { ChevronDown, Filter as FilterIcon, Grid as GridIcon, Square } from '@websolute/icons';
-import type { IFeatureType } from '@websolute/models';
+import { IFeatureType } from '@websolute/models';
 import { useCallback, useState } from 'react';
 import { Box, Button, Container, Flex, Grid, InfiniteLoader, Nav, Popover, Section, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { CustomSelect } from '../../forms';
-import type { ProductSearchItem } from './products-search-card';
-import ProductsSearchCard from './products-search-card';
-import ProductsSearchFilters from './products-search-filters';
-import ProductsSearchFiltersModal from './products-search-filters-modal';
-import ProductsSearchRecap from './products-search-recap';
+import { ProductSearchItem, ProductsSearchCard } from './products-search-card';
+import { ProductsSearchFilters } from './products-search-filters';
+import { ProductsSearchFiltersModal } from './products-search-filters-modal';
+import { ProductsSearchRecap } from './products-search-recap';
 
 const SortMenu = () => (
   <Nav.Col minWidth="150px">
@@ -44,7 +42,7 @@ type Props = {
 
 export type ProductsSearchProps = UIStyledComponentProps<Props>;
 
-const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, featureTypes, ...props }: ProductsSearchProps) => {
+export const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, featureTypes, ...props }: ProductsSearchProps) => {
 
   // deserialize queryString encoded params
   const { params, replaceParamsSilently } = useSearchParamsEncoded();
@@ -162,5 +160,3 @@ const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, featureTypes, ..
     </>
   )
 }
-
-export default ProductsSearch;

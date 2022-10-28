@@ -1,10 +1,10 @@
 import { getClassNames } from '@websolute/core';
 import React, { MouseEvent, useImperativeHandle, useRef } from 'react';
 import styled from 'styled-components';
-import Button, { ButtonProps } from '../../components/button/button';
+import { Button, ButtonProps } from '../button/button';
 import { useModalContext } from './modal-context';
 
-interface Props {
+type Props = {
   className?: string;
   passive?: boolean;
   disabled?: boolean;
@@ -44,7 +44,7 @@ const StyledButton = styled(Button)`
   */
 `;
 
-const ModalButtonComponent = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ModalButtonProps | any> // !!! any
+export const ModalButton = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ModalButtonProps | any> // !!! any
 >(
   (
     { className, children, onClick, passive, disabled, ...props }: React.PropsWithChildren<ModalButtonProps> & typeof defaultProps, ref: React.Ref<HTMLButtonElement | null>) => {
@@ -95,10 +95,8 @@ const ModalButtonComponent = React.forwardRef<HTMLButtonElement, React.PropsWith
   },
 )
 
-ModalButtonComponent.defaultProps = defaultProps;
-ModalButtonComponent.displayName = 'ModalButton';
-
-export default ModalButtonComponent;
+ModalButton.defaultProps = defaultProps;
+ModalButton.displayName = 'ModalButton';
 
 export type ModalButtonEvent = MouseEvent<HTMLButtonElement> & {
   close: () => void

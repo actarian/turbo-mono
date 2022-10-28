@@ -1,10 +1,10 @@
 import { X } from '@websolute/icons';
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from '../../components';
-import type { UIComponentProps } from '../../components/types';
+import { Button } from '../button/button';
+import { UIComponentProps } from '../types';
 
-interface Props {
+type Props = {
   className?: string;
   onClose?: () => void;
 }
@@ -19,7 +19,7 @@ const StyledTitle = styled.h2`
   padding: 1rem;
 `;
 
-const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps | any>> = ({
+export const ModalTitle: React.FC<React.PropsWithChildren<ModalTitleProps | any>> = ({
   className = '',
   onClose = () => { },
   children,
@@ -33,6 +33,4 @@ const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps | an
   )
 }
 
-ModalTitleComponent.displayName = 'ModalTitle';
-
-export default ModalTitleComponent;
+ModalTitle.displayName = 'ModalTitle';

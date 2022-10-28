@@ -11,8 +11,8 @@ const StyledEllipsis = styled.span`
   text-overflow: ellipsis;
 `;
 
-const Ellipsis: React.FC<React.PropsWithChildren<EllipsisProps>> = ({ children }) => {
+const Ellipsis_: React.FC<React.PropsWithChildren<EllipsisProps>> = ({ children }) => {
   return (<StyledEllipsis>{children}</StyledEllipsis>);
 }
 
-export default React.memo(Ellipsis);
+export const Ellipsis = React.memo(Ellipsis_);

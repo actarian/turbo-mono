@@ -1,8 +1,16 @@
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import { Button, Card, Container, Flex, Grid, Media, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
-import ShopHeroCard from './shop-hero-card';
+import { UIComponentProps } from '../../components/types';
+import { ShopHeroCard } from './shop-hero-card';
+
+export type ShopHeroItem = {
+  href: string;
+  title: string;
+  abstract?: string;
+  media: IMedia;
+  items?: ShopHeroItem[];
+}
 
 type Props = {
   item: ShopHeroItem;
@@ -10,7 +18,7 @@ type Props = {
 
 export type ShopHeroProps = UIComponentProps<Props>;
 
-const ShopHero: React.FC<ShopHeroProps> = ({ item }: ShopHeroProps) => {
+export const ShopHero: React.FC<ShopHeroProps> = ({ item }: ShopHeroProps) => {
   return (
     <Section padding="0">
       <Card justifyContent="center" height="90vh">
@@ -41,13 +49,3 @@ const ShopHero: React.FC<ShopHeroProps> = ({ item }: ShopHeroProps) => {
     </Section>
   )
 }
-
-export type ShopHeroItem = {
-  href: string;
-  title: string;
-  abstract?: string;
-  media: IMedia;
-  items?: ShopHeroItem[];
-}
-
-export default ShopHero;

@@ -2,9 +2,9 @@ import { getClassNames } from '@websolute/core';
 import { useEventListener, useIsomorphicLayoutEffect } from '@websolute/hooks';
 import React, { ReactNode, useRef } from 'react';
 import styled from 'styled-components';
-import { Loading } from '../../components';
-import type { UIComponent, UIStyledComponentProps } from '../../components/types';
-import { getCssResponsive } from '../../components/utils';
+import { Loading } from '../loading/loading';
+import { UIComponent, UIStyledComponentProps } from '../types';
+import { getCssResponsive } from '../utils';
 
 type Props = {
   onMore: () => void;
@@ -28,7 +28,7 @@ const StyledInfiniteLoader = styled.div<StyledInfiniteLoaderProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const InfiniteLoader: InfiniteLoaderComponent = ({ children, as = 'div' as React.ElementType, onMore, ...props }) => {
+export const InfiniteLoader: InfiniteLoaderComponent = ({ children, as = 'div' as React.ElementType, onMore, ...props }) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   const onScroll = () => {
@@ -57,5 +57,3 @@ const InfiniteLoader: InfiniteLoaderComponent = ({ children, as = 'div' as React
     </StyledInfiniteLoader>
   )
 }
-
-export default InfiniteLoader;

@@ -1,9 +1,9 @@
 import { IEquatable } from '@websolute/core';
 import { useCart, useCurrency, useDrawer } from '@websolute/hooks';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import { Button, Card, Flex, Media, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: ShopSearchItem
@@ -24,9 +24,9 @@ export type ShopSearchItem = {
   color?: string;
 }
 
-export type ShopRelatedCardProps = UIStyledComponentProps<Props>;
+export type ShopSearchCardProps = UIStyledComponentProps<Props>;
 
-const ShopRelatedCard: React.FC<ShopRelatedCardProps> = ({ item, ...props }: ShopRelatedCardProps) => {
+export const ShopSearchCard: React.FC<ShopSearchCardProps> = ({ item, ...props }: ShopSearchCardProps) => {
   const currency = useCurrency();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   const add = useCart((state) => state.add);
@@ -59,5 +59,3 @@ const ShopRelatedCard: React.FC<ShopRelatedCardProps> = ({ item, ...props }: Sho
     </Card>
   )
 }
-
-export default ShopRelatedCard;

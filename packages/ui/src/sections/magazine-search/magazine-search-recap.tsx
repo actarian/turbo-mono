@@ -1,12 +1,11 @@
 
 import { IEquatable } from '@websolute/core';
-import type { IFilterOption } from '@websolute/hooks';
-import { Filter } from '@websolute/hooks';
+import { Filter, IFilterOption } from '@websolute/hooks';
 import { XCircle } from '@websolute/icons';
 import { Box, Button, Container, Flex, Text } from '../../components';
-import type { MagazineSearchItem } from './magazine-search-card';
+import { MagazineSearchItem } from './magazine-search-card';
 
-export default function MagazineSearchRecap({ filters, onChange }: { filters: Filter<MagazineSearchItem>[], onChange: (filter: Filter<MagazineSearchItem>, values: IEquatable[]) => void }) {
+export function MagazineSearchRecap({ filters, onChange }: { filters: Filter<MagazineSearchItem>[], onChange: (filter: Filter<MagazineSearchItem>, values: IEquatable[]) => void }) {
 
   const selectedFilters = filters.filter(x => x.hasAny());
 

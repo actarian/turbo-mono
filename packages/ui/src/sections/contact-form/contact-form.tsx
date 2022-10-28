@@ -1,7 +1,7 @@
 import { Send } from '@websolute/icons';
 import React from 'react';
 import { Box, Button, Flex, Grid } from '../../components';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 import { Checkbox, CustomSelect, Field, Form, Input, Label, Radio, Select, TextArea } from '../../forms';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 
 export type ContactFormProps = UIComponentProps<Props>;
 
-const ContactForm: React.FC<ContactFormProps> = (props: ContactFormProps) => {
+export const ContactForm: React.FC<ContactFormProps> = (props: ContactFormProps) => {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log('ContactForm', e.target.value);
   }
@@ -105,5 +105,3 @@ const ContactForm: React.FC<ContactFormProps> = (props: ContactFormProps) => {
     </Form>
   );
 }
-
-export default ContactForm;

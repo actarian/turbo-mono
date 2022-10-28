@@ -2,10 +2,10 @@
 import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Flex } from '../../components';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
-import RadioCard, { RadioCardProps } from './radio-card';
+import { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { RadioCard, RadioCardProps } from './radio-card';
 
-interface Props extends ComponentPropsWithRef<'input'> {
+type Props = ComponentPropsWithRef<'input'> & {
   initialValue?: string;
   children?: ReactNode;
 }
@@ -20,7 +20,7 @@ const StyledRadioCardGroup = styled(Flex.Row)`
   align-items: flex-start;
 `;
 
-const RadioCardGroup: RadioCardGroupComponent = forwardRef(({
+export const RadioCardGroup: RadioCardGroupComponent = forwardRef(({
   children,
   className,
   initialValue,
@@ -68,5 +68,3 @@ const RadioCardGroup: RadioCardGroupComponent = forwardRef(({
 });
 
 RadioCardGroup.displayName = 'RadioCardGroup';
-
-export default RadioCardGroup;

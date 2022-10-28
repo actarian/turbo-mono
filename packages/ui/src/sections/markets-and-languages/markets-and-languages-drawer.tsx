@@ -8,7 +8,7 @@ export interface MarketsAndLanguagesDrawerProps {
   onClose: () => void;
 }
 
-const MarketsAndLanguagesDrawer: React.FC<MarketsAndLanguagesDrawerProps> = ({ visible, onClose }: MarketsAndLanguagesDrawerProps) => {
+export const MarketsAndLanguagesDrawer: React.FC<MarketsAndLanguagesDrawerProps> = ({ visible, onClose }: MarketsAndLanguagesDrawerProps) => {
   const { markets, market: currentMarket, locales, locale: currentLocale } = useLayout();
   const { href, alternates } = usePage();
 
@@ -49,5 +49,3 @@ const MarketsAndLanguagesDrawer: React.FC<MarketsAndLanguagesDrawerProps> = ({ v
     </Drawer>
   );
 };
-
-export default MarketsAndLanguagesDrawer;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
@@ -7,9 +7,7 @@ type Props = {
 
 export type PageProps = UIStyledComponentProps<Props>;
 
-const Page = styled.div<PageProps>`
+export const Page = styled.div<PageProps>`
   margin: 0 auto;
   ${props => getCssResponsive(props)}
 `;
-
-export default Page;

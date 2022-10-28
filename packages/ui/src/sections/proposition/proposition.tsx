@@ -1,14 +1,14 @@
 import { useDrawer, useModal } from '@websolute/hooks';
 import Link from 'next/link';
 import { Button, Container, Flex, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 
 type Props = {
 }
 
 export type PropositionProps = UIComponentProps<Props>;
 
-const Proposition: React.FC<PropositionProps> = (props: PropositionProps) => {
+export const Proposition: React.FC<PropositionProps> = (props: PropositionProps) => {
   const [modal, onOpenModal, onCloseModal] = useModal();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   return (
@@ -29,5 +29,3 @@ const Proposition: React.FC<PropositionProps> = (props: PropositionProps) => {
     </>
   )
 }
-
-export default Proposition;

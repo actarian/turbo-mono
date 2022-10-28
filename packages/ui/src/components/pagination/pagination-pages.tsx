@@ -1,15 +1,15 @@
 import React, { Dispatch, SetStateAction, useCallback, useMemo } from 'react';
-import PaginationEllipsis from './pagination-ellipsis';
-import PaginationItem from './pagination-item';
+import { PaginationEllipsis } from './pagination-ellipsis';
+import { PaginationItem } from './pagination-item';
 
-interface Props {
+type Props = {
   limit: number;
   count: number;
   current: number;
   setPage: Dispatch<SetStateAction<number>>;
 }
 
-const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) => {
+export const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) => {
 
   const showPages = useMemo(() => {
     const oddLimit = limit % 2 === 0 ? limit - 1 : limit;
@@ -88,5 +88,3 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
 }
 
 PaginationPages.displayName = 'PaginationPages';
-
-export default PaginationPages;

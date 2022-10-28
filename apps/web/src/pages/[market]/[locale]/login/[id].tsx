@@ -1,8 +1,6 @@
 
-import type { IStaticContext } from '@websolute/core';
-import { asServerProps } from '@websolute/core';
-import type { IUser, PageProps } from '@websolute/models';
-import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
+import { asServerProps, IStaticContext } from '@websolute/core';
+import { getLayout, getPage, getStaticPathsForSchema, IUser, PageProps } from '@websolute/models';
 import { Auth, Container, Footer, Header, Layout, Meta, Page, Section } from '@websolute/ui';
 import { useRouter } from 'next/router';
 

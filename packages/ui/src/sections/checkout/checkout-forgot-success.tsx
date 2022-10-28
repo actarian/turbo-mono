@@ -1,12 +1,12 @@
 import { Button, Container, Flex, Section } from '../../components';
-import AuthForgotSuccess from '../auth/auth-forgot-success';
+import { AuthForgotSuccess } from '../auth/auth-forgot-success';
 
 type Props = {
   onNavToLogin?: () => void;
   onNavToPrevious?: () => void;
 }
 
-const CheckoutForgotSuccess: React.FC<Props> = ({ onNavToLogin, onNavToPrevious }: Props) => {
+export const CheckoutForgotSuccess: React.FC<Props> = ({ onNavToLogin, onNavToPrevious }: Props) => {
 
   const onNavToLogin_ = () => {
     if (typeof onNavToLogin === 'function') {
@@ -39,5 +39,3 @@ const CheckoutForgotSuccess: React.FC<Props> = ({ onNavToLogin, onNavToPrevious 
     </>
   );
 };
-
-export default CheckoutForgotSuccess;

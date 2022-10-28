@@ -1,7 +1,7 @@
-import type { IEntity } from '@websolute/core';
-import type { ILayout } from '../layout/layout';
+import { IEntity } from '@websolute/core';
+import { ILayout } from '../layout/layout';
 import { IMedia } from '../media/media';
-import type { IRoute, IRouteLink, IRouteParams } from '../route/route';
+import { IRoute, IRouteLink, IRouteParams } from '../route/route';
 
 export interface IMeta {
   title?: string;

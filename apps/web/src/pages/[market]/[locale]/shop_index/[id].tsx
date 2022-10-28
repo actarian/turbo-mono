@@ -1,11 +1,8 @@
 
-import type { IStaticContext } from '@websolute/core';
-import { asServerProps } from '@websolute/core';
+import { asServerProps, IStaticContext } from '@websolute/core';
 import { ShopSearchFeaturesDefaults } from '@websolute/mock';
-import type { IFeatureType, PageProps } from '@websolute/models';
-import { getLayout, getPage, getStaticPathsForSchema } from '@websolute/models';
-import type { ShopSearchItem } from '@websolute/ui';
-import { Footer, Header, Layout, Meta, Page, ShopIncentive, ShopSearch } from '@websolute/ui';
+import { getLayout, getPage, getStaticPathsForSchema, IFeatureType, PageProps } from '@websolute/models';
+import { Footer, Header, Layout, Meta, Page, ShopIncentive, ShopSearch, ShopSearchItem } from '@websolute/ui';
 import { getShopDetails } from 'src/models';
 
 export default function ShopIndex({ layout, page, items = [], featureTypes = [], params }: ShopIndexProps) {

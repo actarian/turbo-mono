@@ -1,9 +1,8 @@
 import { NextRouter, useRouter } from 'next/router';
 import { useCallback, useMemo } from 'react';
+import { isBrowser } from '../useSearchParams/useSearchParams';
 
 const USE_ENCRYPTION = true;
-
-export const isBrowser = typeof window !== 'undefined';
 
 function base64ToString(base64: string): string {
   if (!USE_ENCRYPTION) return base64;
@@ -84,13 +83,13 @@ function deserialize_(url: string, key?: string) {
   return decode(encoded, key);
 }
 
-function serialize_(url: string, value: IParams, key?: string): URLSearchParams {
+function serialize_(url: string, value: IParamsEncoded, key?: string): URLSearchParams {
   const params = deserialize_(url);
   const encoded = encode(params, value, key);
   return setURLSearchParams(url, 'params', encoded);
 }
 
-export function decode(encoded: string | null | undefined, key?: string): IParams {
+export function decode(encoded: string | null | undefined, key?: string): IParamsEncoded {
   let decoded = null;
   if (encoded) {
     const json = base64ToString(encoded);
@@ -103,7 +102,7 @@ export function decode(encoded: string | null | undefined, key?: string): IParam
   return decoded || null;
 }
 
-function encode(params: IParams, value: IParams, key?: string) {
+function encode(params: IParamsEncoded, value: IParamsEncoded, key?: string) {
   params = params || {};
   let encoded = null;
   if (typeof key === 'string') {
@@ -136,7 +135,7 @@ export function getSearchParamsEncoded(url: string, key?: string): {} | null {
   return value;
 }
 
-export function updateSearchParamsEncoded(currentPath: string, value: IParams, key?: string): { pathname: string, query: { [key: string]: string } } {
+export function updateSearchParamsEncoded(currentPath: string, value: IParamsEncoded, key?: string): { pathname: string, query: { [key: string]: string } } {
   const components = currentPath.split('?');
   const searchParams = serialize_(components[1] || '', value, key);
   const query = searchParamsToObject_(searchParams);
@@ -145,24 +144,24 @@ export function updateSearchParamsEncoded(currentPath: string, value: IParams, k
   return { pathname, query };
 }
 
-export function replaceSearchParamsEncoded(router: NextRouter, value: IParams, key?: string): void {
+export function replaceSearchParamsEncoded(router: NextRouter, value: IParamsEncoded, key?: string): void {
   const { pathname, query } = updateSearchParamsEncoded(router.asPath, value, key);
   router.replace({ pathname, query });
 }
 
-export function pushSearchParamsEncoded(router: NextRouter, value: IParams, key?: string): void {
+export function pushSearchParamsEncoded(router: NextRouter, value: IParamsEncoded, key?: string): void {
   const { pathname, query } = updateSearchParamsEncoded(router.asPath, value, key);
   router.push({ pathname, query });
 }
 
-export function replaceSearchParamsEncodedSilently(value: IParams, key?: string): void {
+export function replaceSearchParamsEncodedSilently(value: IParamsEncoded, key?: string): void {
   if (isBrowser) {
     const searchParams = serialize_(window.location.search, value, key);
     replace_(searchParams);
   }
 }
 
-export function useSearchParamsEncoded(key?: string): IUseSearchParamsResult {
+export function useSearchParamsEncoded(key?: string): IUseSearchParamsEncodedResult {
   const router = useRouter();
 
   const initialValue = useMemo(() => {
@@ -175,21 +174,21 @@ export function useSearchParamsEncoded(key?: string): IUseSearchParamsResult {
   // const [params, setParams_] = useState(initialValue);
 
   /*
-  const setParams = useCallback((params: IParams) => {
+  const setParams = useCallback((params: IParamsEncoded) => {
     replaceSearchParamsEncoded(router, params, key);
   }, [key, router]);
   */
 
-  const replaceParamsSilently = useCallback((params: IParams) => {
+  const replaceParamsSilently = useCallback((params: IParamsEncoded) => {
     replaceSearchParamsEncodedSilently(params, key);
   }, [key]);
 
   return { params, replaceParamsSilently };
 }
 
-export type IUseSearchParamsResult = { params: IParams, replaceParamsSilently: (params: IParams) => void };
+export type IUseSearchParamsEncodedResult = { params: IParamsEncoded, replaceParamsSilently: (params: IParamsEncoded) => void };
 
-export type IParams = {
+export type IParamsEncoded = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 } | null;

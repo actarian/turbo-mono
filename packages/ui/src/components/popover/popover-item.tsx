@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { usePopoverContext } from './popover-context';
 
-interface Props {
+type Props = {
   line?: boolean;
   title?: boolean;
   disableAutoClose?: boolean;
@@ -49,7 +49,7 @@ const StyledPopoverItem = styled.div<any>`
   }
 `;
 
-const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
+export const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
   className = '',
   line = false,
   title = false,
@@ -77,11 +77,9 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
       <StyledPopoverItem {...props} className={classNames} hasHandler={hasHandler} onClick={clickHandler}>
         {children}
       </StyledPopoverItem>
-      {title && <PopoverItemComponent line title={false} />}
+      {title && <PopoverItem line title={false} />}
     </>
   )
 }
 
-PopoverItemComponent.displayName = 'PopoverItem';
-
-export default PopoverItemComponent;
+PopoverItem.displayName = 'PopoverItem';

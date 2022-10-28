@@ -14,7 +14,7 @@ export interface AuthForgotProps {
   onNavToRegister?: () => void;
 }
 
-const AuthForgot: React.FC<AuthForgotProps> = ({ onPasswordSent, onNavToLogin, onNavToRegister }: AuthForgotProps) => {
+export const AuthForgot: React.FC<AuthForgotProps> = ({ onPasswordSent, onNavToLogin, onNavToRegister }: AuthForgotProps) => {
   const label = useLabel();
 
   const required = RequiredValidator();
@@ -96,5 +96,3 @@ const AuthForgot: React.FC<AuthForgotProps> = ({ onPasswordSent, onNavToLogin, o
     </Flex.Col>
   );
 };
-
-export default AuthForgot;

@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 const origin = process.env.NEXT_PUBLIC_URL;
 
-export default function Meta() {
+export function Meta() {
 
   const page = usePage();
 

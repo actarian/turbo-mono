@@ -1,10 +1,10 @@
 
 import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useEffect, useState } from 'react';
 import { Flex } from '../../components';
-import type { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
-import Radio from './radio';
+import { SizeVariant, UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { Radio } from './radio';
 
-interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
+type Props = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   initialValue?: string;
   size?: SizeVariant;
   children?: ReactNode;
@@ -14,7 +14,7 @@ export type RadioGroupProps = UIStyledComponentProps<Props, 'input'>;
 
 export type RadioGroupComponent<C extends React.ElementType = 'input'> = UIComponentWithRef<C, Props>;
 
-const RadioGroup: RadioGroupComponent = forwardRef(({
+export const RadioGroup: RadioGroupComponent = forwardRef(({
   children,
   className,
   size,
@@ -61,8 +61,6 @@ const RadioGroup: RadioGroupComponent = forwardRef(({
 });
 
 RadioGroup.displayName = 'RadioGroup';
-
-export default RadioGroup;
 
 function recursiveMap(children: React.ReactNode, fn: (child: ReactElement) => ReactElement): ReactElement[] {
   return React.Children.map(children as ReactElement[], child => {

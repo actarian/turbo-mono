@@ -1,12 +1,12 @@
 import { Button, Container, Flex, Section } from '../../components';
-import AuthRegisterSuccess from '../auth/auth-register-success';
+import { AuthRegisterSuccess } from '../auth/auth-register-success';
 
 type Props = {
   onNavToLogin?: () => void;
   onNavToPrevious?: () => void;
 }
 
-const CheckoutRegisterSuccess: React.FC<Props> = ({ onNavToLogin, onNavToPrevious }: Props) => {
+export const CheckoutRegisterSuccess: React.FC<Props> = ({ onNavToLogin, onNavToPrevious }: Props) => {
 
   const onNavToLogin_ = () => {
     if (typeof onNavToLogin === 'function') {
@@ -39,5 +39,3 @@ const CheckoutRegisterSuccess: React.FC<Props> = ({ onNavToLogin, onNavToPreviou
     </>
   );
 };
-
-export default CheckoutRegisterSuccess;

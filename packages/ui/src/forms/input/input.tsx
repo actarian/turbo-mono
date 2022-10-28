@@ -1,10 +1,10 @@
 import { getClassNames } from '@websolute/core';
 import { ComponentPropsWithRef, forwardRef, ReactNode, useState } from 'react';
 import styled from 'styled-components';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
-interface Props extends ComponentPropsWithRef<'input'> {
+type Props = ComponentPropsWithRef<'input'> & {
   before?: ReactNode;
   after?: ReactNode;
 }
@@ -87,7 +87,7 @@ const StyledInput = styled.div<InputProps>`
 
 // !!! as
 
-const Input: InputComponent = forwardRef(({
+export const Input: InputComponent = forwardRef(({
   as = 'input',
   className,
   before,
@@ -121,5 +121,3 @@ const Input: InputComponent = forwardRef(({
 });
 
 Input.displayName = 'Input';
-
-export default Input;

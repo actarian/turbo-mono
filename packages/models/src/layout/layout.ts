@@ -1,7 +1,7 @@
-import type { ILabel } from '../label/label';
-import type { ILocale } from '../locale/locale';
-import type { IMarket } from '../market/market';
-import type { IRouteLink } from '../route/route';
+import { ILabel } from '../label/label';
+import { ILocale } from '../locale/locale';
+import { IMarket } from '../market/market';
+import { IRouteLink } from '../route/route';
 
 export interface ILayout {
   market: string;

@@ -1,9 +1,9 @@
 import { useDateTimeFormat } from '@websolute/hooks';
 import { ArrowRight } from '@websolute/icons';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import { Button, Container, Flex, Grid, Media, Section, Text } from '../../components';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: BlogPropositionItem
@@ -23,7 +23,7 @@ export type BlogPropositionItem = {
 
 export type BlogPropositionProps = UIComponentProps<Props>;
 
-const BlogProposition: React.FC<BlogPropositionProps> = ({ item, ...props }: BlogPropositionProps) => {
+export const BlogProposition: React.FC<BlogPropositionProps> = ({ item, ...props }: BlogPropositionProps) => {
   const dateTimeFormat = useDateTimeFormat({
     year: 'numeric',
     month: 'long',
@@ -56,5 +56,3 @@ const BlogProposition: React.FC<BlogPropositionProps> = ({ item, ...props }: Blo
     </Section>
   )
 }
-
-export default BlogProposition;

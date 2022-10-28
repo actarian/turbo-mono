@@ -2,7 +2,7 @@ import { FormControl, useControl } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
 import { ChangeEvent, FocusEvent, ReactNode, useState } from 'react';
 import { Field, Input, Label } from '../forms';
-import FieldError from './field-error';
+import { FieldError } from './field-error';
 
 type FieldTextProps = {
   control: FormControl;
@@ -11,7 +11,7 @@ type FieldTextProps = {
   after?: ReactNode;
 }
 
-export default function FieldText(props: FieldTextProps) {
+export function FieldText(props: FieldTextProps) {
   const label = useLabel();
 
   const uniqueName = `${props.control.name}-${props.uid}`;

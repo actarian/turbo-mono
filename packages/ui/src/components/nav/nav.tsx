@@ -1,6 +1,7 @@
+import { withSchema } from '@websolute/core';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import type { UIStyledComponentProps, Variant, Variants } from '../../components/types';
+import { UIStyledComponentProps, Variant, Variants } from '../../components/types';
 import { getCssResponsive, getVariant } from '../../components/utils';
 
 const variants: Variants = {
@@ -57,18 +58,14 @@ const NavCol = (props: NavProps) => {
   );
 }
 
-const Nav = (props: NavProps) => {
+export const NavBase = (props: NavProps) => {
   return (
     <NavRow {...props}>{props.children}</NavRow>
   );
 }
 
-(Nav as INav).Row = NavRow;
-(Nav as INav).Col = NavCol;
-
-export default Nav as INav;
-
-type INav = typeof Nav & {
-  Row: typeof NavRow;
-  Col: typeof NavCol;
-};
+export const Nav = withSchema(NavBase, {
+  Row: NavRow,
+  Col: NavCol,
+  displayName: 'Nav',
+});

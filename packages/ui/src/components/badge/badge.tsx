@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../types';
+import { UIStyledComponentProps } from '../types';
 import { getCssResponsive } from '../utils';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 
 export type BadgeProps = UIStyledComponentProps<Props>;
 
-const Badge = styled.div<BadgeProps>`
+export const Badge = styled.div<BadgeProps>`
   display: inline-block;
   line-height: 1;
   padding: 0.3em 0.5em;
@@ -19,5 +19,3 @@ const Badge = styled.div<BadgeProps>`
   color: var(--color-neutral-100);
   ${props => getCssResponsive(props)}
 `;
-
-export default Badge;

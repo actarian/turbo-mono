@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import { TabsInternalCellProps, useTabsContext } from './tabs-context';
 
-interface Props {
+type Props = {
   label: string | React.ReactNode;
   value: string;
   disabled?: boolean;
@@ -98,7 +98,7 @@ const StyledInternalCell = styled.div<{ label: string | React.ReactNode }>`
   }
 `;
 
-const TabsItem: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
+export const TabsItem: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
   disabled = false,
   children,
   value,
@@ -146,6 +146,3 @@ const TabsItem: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
 }
 
 TabsItem.displayName = 'TabsItem';
-
-export default TabsItem;
-/* eslint-enable */

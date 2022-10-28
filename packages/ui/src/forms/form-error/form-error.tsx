@@ -2,7 +2,7 @@ import { getClassNames } from '@websolute/core';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { Text } from '../../components';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
@@ -22,7 +22,7 @@ const StyledFormError = styled(Text)`
   ${props => getCssResponsive(props)}
 `;
 
-const FormError: FormErrorComponent = forwardRef(({ className, ...props }, ref) => {
+export const FormError: FormErrorComponent = forwardRef(({ className, ...props }, ref) => {
   const classNames = getClassNames('form-error', className);
   return (
     <StyledFormError ref={ref} className={classNames} {...props} />
@@ -30,5 +30,3 @@ const FormError: FormErrorComponent = forwardRef(({ className, ...props }, ref) 
 });
 
 FormError.displayName = 'FormError';
-
-export default FormError;

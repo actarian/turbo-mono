@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { Transition } from '../../components';
 import { getRefRect } from './dropdown-layout';
 
-interface Props {
+type Props = {
   parent?: MutableRefObject<HTMLElement | null> | undefined;
   visible: boolean;
   disableMatchWidth?: boolean;
@@ -42,7 +42,7 @@ const StyledDropdown = styled.div<{ rect: ReactiveDomReact }>`
   }
 `;
 
-const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
+export const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
   children,
   parent,
   visible,
@@ -130,5 +130,3 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
 });
 
 Dropdown.displayName = 'Dropdown';
-
-export default Dropdown

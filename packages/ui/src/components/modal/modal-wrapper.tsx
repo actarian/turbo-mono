@@ -1,10 +1,10 @@
 import { getClassNames } from '@websolute/core';
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { isChildElement } from '../../components/utils';
-import Transition from '../transition/transition';
+import { Transition } from '../transition/transition';
+import { isChildElement } from '../utils';
 
-interface Props {
+type Props = {
   className?: string;
   visible?: boolean;
 }
@@ -63,7 +63,7 @@ const StyledWrapper = styled.div`
   }
 `;
 
-const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps | any>> = ({ className, children, visible, ...props }: React.PropsWithChildren<ModalWrapperProps> & typeof defaultProps) => { // !!! any
+export const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps | any>> = ({ className, children, visible, ...props }: React.PropsWithChildren<ModalWrapperProps> & typeof defaultProps) => { // !!! any
 
   const modalContent = useRef<HTMLDivElement>(null);
   const tabStart = useRef<HTMLDivElement>(null);
@@ -113,7 +113,5 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps | any>> =
 
 ModalWrapper.defaultProps = defaultProps;
 ModalWrapper.displayName = 'ModalWrapper';
-
-export default ModalWrapper;
 
 export type ModalWrapperProps = Props;

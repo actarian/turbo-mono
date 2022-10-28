@@ -1,6 +1,6 @@
 import { FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
 import { useApi, useApiPost, useCheckout, useCurrency, useLabel } from '@websolute/hooks';
-import type { ICheckoutDelivery, ICheckoutPartial } from '@websolute/models';
+import { ICheckoutDelivery, ICheckoutPartial } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import { Button, Container, Flex, Section, Text } from '../../components';
 import { FieldCard } from '../../fields';
@@ -11,7 +11,7 @@ export interface CheckoutDeliveryProps {
   onPrevious?: () => void;
 }
 
-const CheckoutDelivery: React.FC<CheckoutDeliveryProps> = ({ onPrevious, onDelivery }: CheckoutDeliveryProps) => {
+export const CheckoutDelivery: React.FC<CheckoutDeliveryProps> = ({ onPrevious, onDelivery }: CheckoutDeliveryProps) => {
   const label = useLabel();
 
   const currency = useCurrency();
@@ -119,5 +119,3 @@ const CheckoutDelivery: React.FC<CheckoutDeliveryProps> = ({ onPrevious, onDeliv
     </>
   );
 };
-
-export default CheckoutDelivery;

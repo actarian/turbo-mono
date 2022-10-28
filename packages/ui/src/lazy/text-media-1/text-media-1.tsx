@@ -1,8 +1,8 @@
 import { getClassNames } from '@websolute/core';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import dynamic from 'next/dynamic';
 import { Container, Flex, Grid, Media, Section, Text } from '../../components';
-import type { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
+import { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
 export interface TextMedia1Item extends ILazyComponent {
   schema: 'text-media-1';
@@ -16,7 +16,7 @@ export interface TextMedia1Props extends ILazyComponentProps {
   item: TextMedia1Item;
 }
 
-const TextMedia1: React.FC<TextMedia1Props> = ({ item }: TextMedia1Props) => {
+export const TextMedia1: React.FC<TextMedia1Props> = ({ item }: TextMedia1Props) => {
   const classNames = getClassNames(item.schema);
   return (
     <Section className={classNames} padding="6rem 0">
@@ -39,8 +39,8 @@ const TextMedia1: React.FC<TextMedia1Props> = ({ item }: TextMedia1Props) => {
   );
 }
 
-export default TextMedia1;
-
 export const TextMedia1Export = {
-  'text-media-1': dynamic<TextMedia1Props>(() => import('../text-media-1/text-media-1')),
+  'text-media-1': dynamic<TextMedia1Props>(() => import('../text-media-1/text-media-1').then(
+    module => module.TextMedia1
+  )),
 };

@@ -1,12 +1,12 @@
 import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
-import { getCssResponsive } from '../../components/utils';
+import { UIStyledComponentProps } from '../types';
+import { getCssResponsive } from '../utils';
 
 // !!!
 
-interface Props {
+type Props = {
   className?: string;
 }
 
@@ -32,7 +32,7 @@ const StyleContent = styled.div`
   ${props => getCssResponsive(props)}
 `;
 
-const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalContentProps> & typeof defaultProps) => { // !!! any
+export const ModalContent: React.FC<React.PropsWithChildren<ModalContentProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalContentProps> & typeof defaultProps) => { // !!! any
   const classNames = getClassNames('content', className);
   return (
     <StyleContent className={classNames} {...props}>
@@ -41,8 +41,6 @@ const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps 
   )
 }
 
-ModalContentComponent.defaultProps = defaultProps;
+ModalContent.defaultProps = defaultProps;
 
-ModalContentComponent.displayName = 'ModalContent';
-
-export default ModalContentComponent;
+ModalContent.displayName = 'ModalContent';

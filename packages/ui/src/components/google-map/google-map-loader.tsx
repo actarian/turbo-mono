@@ -16,7 +16,7 @@ export interface GoogleMapLoaderProps extends LoaderOptions {
 
 // https://github.com/denakol/google-maps-react-suspense/blob/master/src/GoogleMapsLoader.ts
 
-const GoogleMapLoader = ({
+export const GoogleMapLoader = ({
   skeleton,
   onStatus,
   children,
@@ -65,5 +65,3 @@ const GoogleMapLoader = ({
 
   return <></>;
 };
-
-export default GoogleMapLoader;

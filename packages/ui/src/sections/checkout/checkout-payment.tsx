@@ -11,7 +11,7 @@ export interface CheckoutPaymentProps {
   onPrevious?: () => void;
 }
 
-const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, onPayment }: CheckoutPaymentProps) => {
+export const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, onPayment }: CheckoutPaymentProps) => {
   const label = useLabel();
 
   const api = useApi();
@@ -118,5 +118,3 @@ const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, onPayment
     </>
   );
 };
-
-export default CheckoutPayment;

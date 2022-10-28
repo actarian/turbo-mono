@@ -22,6 +22,4 @@ const DownArrow = styled(DownArrowSvg)`
   }
 `;
 
-const SelectIcon = React.memo(DownArrow);
-
-export default SelectIcon;
+export const CustomSelectIcon = React.memo(DownArrow);

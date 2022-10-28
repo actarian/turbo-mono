@@ -1,20 +1,20 @@
 import { scrollToY, useCheckout, useLabel, useUser } from '@websolute/hooks';
-import type { ICheckoutInfo, IUser } from '@websolute/models';
+import { ICheckoutInfo, IUser } from '@websolute/models';
 import { useState } from 'react';
 import { Button, Container, Flex, Grid, Section, Text } from '../../components';
-import CheckoutForgot from './checkout-forgot';
-import CheckoutForgotSuccess from './checkout-forgot-success';
-import CheckoutLogin from './checkout-login';
-import CheckoutRegister from './checkout-register';
-import CheckoutRegisterSuccess from './checkout-register-success';
-import CheckoutUserInfo from './checkout-user-info';
+import { CheckoutForgot } from './checkout-forgot';
+import { CheckoutForgotSuccess } from './checkout-forgot-success';
+import { CheckoutLogin } from './checkout-login';
+import { CheckoutRegister } from './checkout-register';
+import { CheckoutRegisterSuccess } from './checkout-register-success';
+import { CheckoutUserInfo } from './checkout-user-info';
 
 export interface CheckoutInfoProps {
   onInfo?: (info: ICheckoutInfo) => void;
   onPrevious?: () => void;
 }
 
-const CheckoutInfo: React.FC<CheckoutInfoProps> = ({ onPrevious, onInfo }: CheckoutInfoProps) => {
+export const CheckoutInfo: React.FC<CheckoutInfoProps> = ({ onPrevious, onInfo }: CheckoutInfoProps) => {
   const label = useLabel();
 
   const checkout = useCheckout((state) => state.checkout);
@@ -140,5 +140,3 @@ const CheckoutInfo: React.FC<CheckoutInfoProps> = ({ onPrevious, onInfo }: Check
     </>
   );
 };
-
-export default CheckoutInfo;

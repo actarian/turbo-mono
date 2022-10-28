@@ -1,11 +1,11 @@
 import { forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import type { UIStyledComponent, UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponent, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { GoogleMapContext, IGoogleMapContext } from './google-map-context';
 import { GoogleMapStyle } from './google-map.style';
 
-export interface Props extends google.maps.MapOptions {
+type Props = google.maps.MapOptions & {
   onLoad?: (map: google.maps.Map) => void;
   onIdle?: (map: google.maps.Map) => void;
   onBounds?: (map: google.maps.LatLngBounds | undefined) => void;
@@ -30,7 +30,7 @@ const StyledMap: StyledMapComponent = styled.div<StyledMapProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const GoogleMap = forwardRef<google.maps.Map, GoogleMapProps>(({
+export const GoogleMap = forwardRef<google.maps.Map, GoogleMapProps>(({
   onLoad,
   onIdle,
   onBounds,
@@ -134,5 +134,3 @@ const GoogleMap = forwardRef<google.maps.Map, GoogleMapProps>(({
 });
 
 GoogleMap.displayName = 'GoogleMap';
-
-export default GoogleMap;

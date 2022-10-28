@@ -3,79 +3,79 @@ import { lazy } from 'react';
 
 // https://github.com/feathericons/react-feather
 
-export { default as ArrowLeft } from './arrow-left';
-export { default as ArrowRight } from './arrow-right';
-export { default as Calendar } from './calendar';
-export { default as ChevronDown } from './chevron-down';
-export { default as ChevronLeft } from './chevron-left';
-export { default as ChevronRight } from './chevron-right';
-export { default as EyeOff } from './eye-off';
-export { default as Eye } from './eye';
-export { default as Facebook } from './facebook';
-export { default as Filter } from './filter';
-export { default as Github } from './github';
-export { default as Grid } from './grid';
-export { default as Hexagon } from './hexagon';
-export { default as Instagram } from './instagram';
-export { default as Linkedin } from './linkedin';
-export { default as Lock } from './lock';
-export { default as MapPin } from './map-pin';
-export { default as Menu } from './menu';
-export { default as Minus } from './minus';
-export { default as Percent } from './percent';
-export { default as PhoneCall } from './phone-call';
-export { default as Phone } from './phone';
-export { default as Plus } from './plus';
-export { default as RefreshCcw } from './refresh-ccw';
-export { default as Search } from './search';
-export { default as Send } from './send';
-export { default as ShoppingCart } from './shopping-cart';
-export { default as Square } from './square';
-export { default as Trash } from './trash';
-export { default as Truck } from './truck';
-export { default as Twitter } from './twitter';
-export { default as Unlock } from './unlock';
-export { default as User } from './user';
-export { default as Websolute } from './websolute';
-export { default as XCircle } from './x-circle';
-export { default as X } from './x';
+export * from './arrow-left';
+export * from './arrow-right';
+export * from './calendar';
+export * from './chevron-down';
+export * from './chevron-left';
+export * from './chevron-right';
+export * from './eye-off';
+export * from './eye';
+export * from './facebook';
+export * from './filter';
+export * from './github';
+export * from './grid';
+export * from './hexagon';
+export * from './instagram';
+export * from './linkedin';
+export * from './lock';
+export * from './map-pin';
+export * from './menu';
+export * from './minus';
+export * from './percent';
+export * from './phone-call';
+export * from './phone';
+export * from './plus';
+export * from './refresh-ccw';
+export * from './search';
+export * from './send';
+export * from './shopping-cart';
+export * from './square';
+export * from './trash';
+export * from './truck';
+export * from './twitter';
+export * from './unlock';
+export * from './user';
+export * from './websolute';
+export * from './x-circle';
+export * from './x';
 
 export const Icons = {
-  ArrowLeft: lazy(() => import('./arrow-left')),
-  ArrowRight: lazy(() => import('./arrow-right')),
-  Calendar: lazy(() => import('./calendar')),
-  ChevronDown: lazy(() => import('./chevron-down')),
-  ChevronLeft: lazy(() => import('./chevron-left')),
-  ChevronRight: lazy(() => import('./chevron-right')),
-  EyeOff: lazy(() => import('./eye-off')),
-  Eye: lazy(() => import('./eye')),
-  Facebook: lazy(() => import('./facebook')),
-  Filter: lazy(() => import('./filter')),
-  Github: lazy(() => import('./github')),
-  Grid: lazy(() => import('./grid')),
-  Hexagon: lazy(() => import('./hexagon')),
-  Instagram: lazy(() => import('./instagram')),
-  Linkedin: lazy(() => import('./linkedin')),
-  Lock: lazy(() => import('./lock')),
-  MapPin: lazy(() => import('./map-pin')),
-  Menu: lazy(() => import('./menu')),
-  Minus: lazy(() => import('./minus')),
-  Percent: lazy(() => import('./percent')),
-  PhoneCall: lazy(() => import('./phone-call')),
-  Phone: lazy(() => import('./phone')),
-  Plus: lazy(() => import('./plus')),
-  RefreshCcw: lazy(() => import('./refresh-ccw')),
-  Search: lazy(() => import('./search')),
-  Send: lazy(() => import('./send')),
-  ShoppingCart: lazy(() => import('./shopping-cart')),
-  Square: lazy(() => import('./square')),
-  Trash: lazy(() => import('./trash')),
-  Truck: lazy(() => import('./truck')),
-  Twitter: lazy(() => import('./twitter')),
-  Unlock: lazy(() => import('./unlock')),
-  User: lazy(() => import('./user')),
-  Websolute: lazy(() => import('./websolute')),
-  XCircle: lazy(() => import('./x-circle')),
-  X: lazy(() => import('./x'))
+  ArrowLeft: lazy(() => import('./arrow-left').then( module => ({ default: module.ArrowLeft }) )),
+  ArrowRight: lazy(() => import('./arrow-right').then( module => ({ default: module.ArrowRight }) )),
+  Calendar: lazy(() => import('./calendar').then( module => ({ default: module.Calendar }) )),
+  ChevronDown: lazy(() => import('./chevron-down').then( module => ({ default: module.ChevronDown }) )),
+  ChevronLeft: lazy(() => import('./chevron-left').then( module => ({ default: module.ChevronLeft }) )),
+  ChevronRight: lazy(() => import('./chevron-right').then( module => ({ default: module.ChevronRight }) )),
+  EyeOff: lazy(() => import('./eye-off').then( module => ({ default: module.EyeOff }) )),
+  Eye: lazy(() => import('./eye').then( module => ({ default: module.Eye }) )),
+  Facebook: lazy(() => import('./facebook').then( module => ({ default: module.Facebook }) )),
+  Filter: lazy(() => import('./filter').then( module => ({ default: module.Filter }) )),
+  Github: lazy(() => import('./github').then( module => ({ default: module.Github }) )),
+  Grid: lazy(() => import('./grid').then( module => ({ default: module.Grid }) )),
+  Hexagon: lazy(() => import('./hexagon').then( module => ({ default: module.Hexagon }) )),
+  Instagram: lazy(() => import('./instagram').then( module => ({ default: module.Instagram }) )),
+  Linkedin: lazy(() => import('./linkedin').then( module => ({ default: module.Linkedin }) )),
+  Lock: lazy(() => import('./lock').then( module => ({ default: module.Lock }) )),
+  MapPin: lazy(() => import('./map-pin').then( module => ({ default: module.MapPin }) )),
+  Menu: lazy(() => import('./menu').then( module => ({ default: module.Menu }) )),
+  Minus: lazy(() => import('./minus').then( module => ({ default: module.Minus }) )),
+  Percent: lazy(() => import('./percent').then( module => ({ default: module.Percent }) )),
+  PhoneCall: lazy(() => import('./phone-call').then( module => ({ default: module.PhoneCall }) )),
+  Phone: lazy(() => import('./phone').then( module => ({ default: module.Phone }) )),
+  Plus: lazy(() => import('./plus').then( module => ({ default: module.Plus }) )),
+  RefreshCcw: lazy(() => import('./refresh-ccw').then( module => ({ default: module.RefreshCcw }) )),
+  Search: lazy(() => import('./search').then( module => ({ default: module.Search }) )),
+  Send: lazy(() => import('./send').then( module => ({ default: module.Send }) )),
+  ShoppingCart: lazy(() => import('./shopping-cart').then( module => ({ default: module.ShoppingCart }) )),
+  Square: lazy(() => import('./square').then( module => ({ default: module.Square }) )),
+  Trash: lazy(() => import('./trash').then( module => ({ default: module.Trash }) )),
+  Truck: lazy(() => import('./truck').then( module => ({ default: module.Truck }) )),
+  Twitter: lazy(() => import('./twitter').then( module => ({ default: module.Twitter }) )),
+  Unlock: lazy(() => import('./unlock').then( module => ({ default: module.Unlock }) )),
+  User: lazy(() => import('./user').then( module => ({ default: module.User }) )),
+  Websolute: lazy(() => import('./websolute').then( module => ({ default: module.Websolute }) )),
+  XCircle: lazy(() => import('./x-circle').then( module => ({ default: module.XCircle }) )),
+  X: lazy(() => import('./x').then( module => ({ default: module.X }) ))
 }
       

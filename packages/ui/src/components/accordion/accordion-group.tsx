@@ -3,10 +3,10 @@ import { useCurrentState } from '@websolute/hooks';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { setChildrenIndex } from '../popover/popover-collections';
-import Accordion from './accordion';
+import { Accordion } from './accordion';
 import { AccordionConfig, AccordionContext } from './accordion-context';
 
-interface Props {
+type Props = {
   accordion?: boolean;
   className?: string;
 }
@@ -30,7 +30,7 @@ const StyledAccordionGroup = styled.div`
   */
 `;
 
-const AccordionGroup: React.FC<React.PropsWithChildren<AccordionGroupProps>> = ({
+export const AccordionGroup: React.FC<React.PropsWithChildren<AccordionGroupProps>> = ({
   accordion = true,
   className = '',
   children,
@@ -80,5 +80,3 @@ const AccordionGroup: React.FC<React.PropsWithChildren<AccordionGroupProps>> = (
 }
 
 AccordionGroup.displayName = 'AccordionGroup';
-
-export default AccordionGroup

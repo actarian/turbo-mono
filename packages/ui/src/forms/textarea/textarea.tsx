@@ -1,7 +1,7 @@
 import { getClassNames } from '@websolute/core';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
-import type { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
+import { UIComponentWithRef, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
@@ -54,7 +54,7 @@ const StyledTextArea = styled.div`
   ${props => getCssResponsive(props)}
 `;
 
-const TextArea: TextAreaComponent = forwardRef(({
+export const TextArea: TextAreaComponent = forwardRef(({
   as = 'textarea',
   children,
   className,
@@ -69,5 +69,3 @@ const TextArea: TextAreaComponent = forwardRef(({
 });
 
 TextArea.displayName = 'TextArea';
-
-export default TextArea;

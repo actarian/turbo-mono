@@ -2,7 +2,7 @@ import React, { ComponentPropsWithRef, useContext, useEffect, useRef, useState }
 import { ThemeContext } from 'styled-components';
 import { Box, Code, Flex, List, Section, Text } from '../../components';
 import { FontSize } from '../../components/text/text';
-import type { UIComponentProps } from '../../components/types';
+import { UIComponentProps } from '../../components/types';
 import { ITheme } from '../../styles/theme';
 
 type Props = {
@@ -46,7 +46,7 @@ const TypographyItem = (props: { type: string, k: number, size: string, s: numbe
   );
 };
 
-const Typography = (props: TypographyProps) => {
+export const Typography = (props: TypographyProps) => {
   const theme = useContext(ThemeContext) as ITheme;
   return (
     <Section padding="3rem 0">
@@ -61,5 +61,3 @@ const Typography = (props: TypographyProps) => {
     </Section>
   );
 }
-
-export default Typography;

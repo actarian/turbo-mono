@@ -2,15 +2,15 @@ import { getClassNames } from '@websolute/core';
 import React from 'react';
 import styled from 'styled-components';
 
-interface Props {
+type Props = {
   className?: string;
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
-export type BreadcrumbsSeparatorProps = Props & NativeAttrs;
+export type BreadcrumbSeparatorProps = Props & NativeAttrs;
 
-const StyledBreadcrumbsSeparator = styled.div`
+const StyledBreadcrumbSeparator = styled.div`
   display: inline-flex;
   user-select: none;
   pointer-events: none;
@@ -18,18 +18,16 @@ const StyledBreadcrumbsSeparator = styled.div`
   margin: 0 0.5rem;
 `;
 
-const BreadcrumbsSeparator: React.FC<React.PropsWithChildren<BreadcrumbsSeparatorProps>> = ({
+export const BreadcrumbSeparator: React.FC<React.PropsWithChildren<BreadcrumbSeparatorProps>> = ({
   className = '',
   children,
-}: BreadcrumbsSeparatorProps) => {
+}: BreadcrumbSeparatorProps) => {
   const classNames = getClassNames('breadcrumb-separator', className);
   return (
-    <StyledBreadcrumbsSeparator className={classNames}>
+    <StyledBreadcrumbSeparator className={classNames}>
       {children}
-    </StyledBreadcrumbsSeparator>
+    </StyledBreadcrumbSeparator>
   )
 }
 
-BreadcrumbsSeparator.displayName = 'BreadcrumbsSeparator';
-
-export default BreadcrumbsSeparator;
+BreadcrumbSeparator.displayName = 'BreadcrumbSeparator';

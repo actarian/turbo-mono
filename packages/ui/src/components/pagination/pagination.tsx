@@ -1,15 +1,16 @@
+import { withSchema } from '@websolute/core';
 import { useCurrentState } from '@websolute/hooks';
 import React, { useEffect, useMemo } from 'react';
 import styled from 'styled-components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { pickChild } from '../popover/popover-collections';
 import { PaginationConfig, PaginationContext, PaginationUpdateType } from './pagination-context';
-import PaginationNext from './pagination-next';
-import PaginationPages from './pagination-pages';
-import PaginationPrevious from './pagination-previous';
+import { PaginationNext } from './pagination-next';
+import { PaginationPages } from './pagination-pages';
+import { PaginationPrevious } from './pagination-previous';
 
-interface Props {
+type Props = {
   page?: number;
   initialPage?: number;
   count?: number;
@@ -35,7 +36,7 @@ const StyledPagination = styled.div`
   ${props => getCssResponsive(props)}
 `;
 
-const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
+const PaginationBase: React.FC<React.PropsWithChildren<PaginationProps>> = ({
   className = '',
   initialPage = 1,
   count = 1,
@@ -100,14 +101,8 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
   )
 }
 
-Pagination.displayName = 'Pagination';
-
-(Pagination as IPagination).Previous = PaginationPrevious;
-(Pagination as IPagination).Next = PaginationNext;
-
-export default Pagination as IPagination;
-
-type IPagination = typeof Pagination & {
-  Previous: typeof PaginationPrevious;
-  Next: typeof PaginationNext;
-};
+export const Pagination = withSchema(PaginationBase, {
+  Previous: PaginationPrevious,
+  Next: PaginationNext,
+  displayName: 'Pagination',
+});

@@ -1,18 +1,18 @@
 import { FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
 import { useApi, useApiPost, useCheckout, useCurrency, useLabel, useUnit } from '@websolute/hooks';
-import type { ICheckoutPartial, ICheckoutStore } from '@websolute/models';
+import { ICheckoutPartial, ICheckoutStore } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import { Badge, Box, Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { FieldCard } from '../../fields';
 import { Form, FormError, RadioCard } from '../../forms';
-import CheckoutDiscount from './checkout-discount';
+import { CheckoutDiscount } from './checkout-discount';
 
 export interface CheckoutReviewProps {
   onReview?: (store: ICheckoutStore) => void;
   onPrevious?: () => void;
 }
 
-const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }: CheckoutReviewProps) => {
+export const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }: CheckoutReviewProps) => {
   const label = useLabel();
 
   const api = useApi();
@@ -234,5 +234,3 @@ const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }:
     </>
   );
 };
-
-export default CheckoutReview;

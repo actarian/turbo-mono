@@ -1,12 +1,11 @@
 
 import { IEquatable } from '@websolute/core';
-import type { IFilterOption } from '@websolute/hooks';
-import { Filter } from '@websolute/hooks';
+import { Filter, IFilterOption } from '@websolute/hooks';
 import { XCircle } from '@websolute/icons';
 import { Box, Button, Container, Flex, Text } from '../../components';
-import type { ProductSearchItem } from './products-search-card';
+import { ProductSearchItem } from './products-search-card';
 
-export default function ProductsSearchRecap({ filters, onChange }: { filters: Filter<ProductSearchItem>[], onChange: (filter: Filter<ProductSearchItem>, values: IEquatable[]) => void }) {
+export function ProductsSearchRecap({ filters, onChange }: { filters: Filter<ProductSearchItem>[], onChange: (filter: Filter<ProductSearchItem>, values: IEquatable[]) => void }) {
 
   const selectedFilters = filters.filter(x => x.hasAny());
 

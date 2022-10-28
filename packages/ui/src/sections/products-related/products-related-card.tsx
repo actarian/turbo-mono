@@ -1,8 +1,8 @@
 import { useCart, useCurrency, useDrawer } from '@websolute/hooks';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import Link from 'next/link';
 import { Button, Card, Flex, Media, MediaImage, Text } from '../../components';
-import type { UIStyledComponentProps } from '../../components/types';
+import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: ProductsRelatedItem
@@ -20,7 +20,7 @@ export type ProductsRelatedItem = {
 
 export type ProductsRelatedCardProps = UIStyledComponentProps<Props>;
 
-const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...props }: ProductsRelatedCardProps) => {
+export const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...props }: ProductsRelatedCardProps) => {
   const currency = useCurrency();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   const add = useCart((state) => state.add);
@@ -54,5 +54,3 @@ const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...prop
     </Card>
   )
 }
-
-export default ProductsRelatedCard;

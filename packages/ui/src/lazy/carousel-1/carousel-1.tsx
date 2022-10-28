@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
 import { Button, Card, Container, Media, Section, Text } from '../../components';
-import type { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
+import { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
 export type Carousel1SubItem = {
   title: string;
@@ -53,7 +53,7 @@ const StyledCard = styled(Card)`
   }
 `;
 
-const Carousel1: React.FC<Carousel1Props & SwiperProps> = ({ item, ...props }: Carousel1Props & SwiperProps) => {
+export const Carousel1: React.FC<Carousel1Props & SwiperProps> = ({ item, ...props }: Carousel1Props & SwiperProps) => {
   const items = item.items;
   const classNames = getClassNames(item.schema);
   return (
@@ -83,8 +83,8 @@ const Carousel1: React.FC<Carousel1Props & SwiperProps> = ({ item, ...props }: C
   )
 }
 
-export default Carousel1;
-
 export const Carousel1Export = {
-  'carousel-1': dynamic<Carousel1Props>(() => import('../carousel-1/carousel-1')),
+  'carousel-1': dynamic<Carousel1Props>(() => import('../carousel-1/carousel-1').then(
+    module => module.Carousel1
+  )),
 };

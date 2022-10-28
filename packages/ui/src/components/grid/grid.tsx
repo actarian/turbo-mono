@@ -1,10 +1,11 @@
+import { withSchema } from '@websolute/core';
 import styled, { css } from 'styled-components';
-import type { ThemeProps, UIStyledComponentProps } from '../../components/types';
+import { ThemeProps, UIStyledComponentProps } from '../../components/types';
 import { getCssResponsive } from '../../components/utils';
 import { sizes } from '../../styles';
 import { GridRow } from './grid-row';
 
-type Props = {
+type GridBaseProps = {
   xs?: number;
   sm?: number;
   md?: number;
@@ -12,9 +13,9 @@ type Props = {
   xl?: number;
 }
 
-export type GridProps = UIStyledComponentProps<Props>;
+export type GridProps = UIStyledComponentProps<GridBaseProps>;
 
-export const Grid = styled.div<GridProps & ThemeProps>`
+const GridBase = styled.div<GridProps & ThemeProps>`
   // default grid column
   grid-column: span var(--grid-columns);
 
@@ -28,10 +29,15 @@ export const Grid = styled.div<GridProps & ThemeProps>`
   ${props => getCssResponsive(props)}
 `;
 
-function getMediaQueryColumn(props: GridProps & ThemeProps) {
+export const Grid = withSchema(GridBase, {
+  Row: GridRow,
+  displayName: 'Grid',
+});
+
+function getMediaQueryColumn(props: GridBaseProps & ThemeProps) {
   const theme = props.theme;
   return sizes.map(size => {
-    const key = size as keyof GridProps;
+    const key = size as keyof GridBaseProps;
     const columns = props[key];
     if (typeof columns === 'number' && theme.mediaQuery) {
       const width = theme.mediaQuery[key as keyof typeof theme.mediaQuery];
@@ -47,11 +53,3 @@ function getMediaQueryColumn(props: GridProps & ThemeProps) {
     }
   }).join('\n');
 }
-
-(Grid as IGrid).Row = GridRow;
-
-export default Grid as IGrid;
-
-type IGrid = typeof Grid & {
-  Row: typeof GridRow;
-};
