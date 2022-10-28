@@ -7,7 +7,7 @@ import { Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { FieldCollection } from '../../fields';
 import { Form, FormError, FormTester } from '../../forms';
 
-export interface OrderRegisterProps {
+export type OrderRegisterProps = {
   data: Partial<IUser>;
   onSignedUp?: () => void;
 }

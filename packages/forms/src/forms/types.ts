@@ -46,7 +46,7 @@ export type FormState<T> = {
 
 export type ControlType = 'group' | 'array' | string;
 
-export interface IFormBuilderControlSchema {
+export type IFormBuilderControlSchema = {
   schema: ControlType;
   name?: string;
   label?: string;

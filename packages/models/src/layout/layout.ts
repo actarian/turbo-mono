@@ -3,7 +3,7 @@ import { ILocale } from '../locale/locale';
 import { IMarket } from '../market/market';
 import { IRouteLink } from '../route/route';
 
-export interface ILayout {
+export type ILayout = {
   market: string;
   locale: string;
   markets: IMarket[];

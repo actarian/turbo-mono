@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { Carousel } from '../../components/carousel/carousel';
 import { MediaImage } from '../../components/media/media-image';
 
-const TestFramerCarousel: React.FC<null> = () => {
+export const TestFramerCarousel: React.FC<null> = () => {
 
   const items = useMemo(() => [{
     id: 1,
@@ -54,5 +54,3 @@ const TestFramerCarousel: React.FC<null> = () => {
     </div>
   )
 }
-
-export default TestFramerCarousel;

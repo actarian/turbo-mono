@@ -1,19 +1,11 @@
 import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
-
-export type ILazyComponent = {
-  type: string;
-  [key: string]: unknown;
-}
-
-export type ILazyComponentProps = {
-  item: ILazyComponent;
-}
+import { ILazyComponent, ILazyComponentProps } from './lazy-loader';
 
 const lazyLoadComponent = (component: ILazyComponent) => {
   const Component = dynamic<ILazyComponentProps>(() =>
     import(`../${component.type}/${component.type}`).catch(() =>
-      import(`../not-found/not-found`)
+      import(`@websolute/ui/src/lazy/not-found/not-found`)
     )
   );
   return <Component item={component} />
@@ -28,7 +20,7 @@ const lazyLoadComponent__ = (component: string) =>
   );
 */
 
-export default function LazyLoaderClient({ components }: { components: ILazyComponent[] }) {
+export function LazyLoaderClient({ components }: { components: ILazyComponent[] }) {
   const [views, setViews] = useState<JSX.Element[]>([]);
 
   useEffect(() => {

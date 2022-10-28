@@ -42,7 +42,7 @@ export default function Checkout({ layout, page, data, params }: CheckoutProps) 
   )
 }
 
-export interface CheckoutProps extends PageProps {
+export type CheckoutProps = PageProps & {
   data: IAddressOptions;
 }
 
@@ -73,7 +73,7 @@ export async function getStaticPaths() {
 
 /*
 
-export interface CheckoutProps extends PageProps {
+export type CheckoutProps = PageProps & {
   user?: IUser;
 }
 

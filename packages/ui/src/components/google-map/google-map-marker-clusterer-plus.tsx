@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useGoogleMapContext } from "./google-map-context";
 import { IGeoLocalized } from "./google-map.service";
 
-export interface GoogleMapMarkerClustererPlusProps {
+export type GoogleMapMarkerClustererPlusProps = {
   items: IGeoLocalized[];
   map?: google.maps.Map,
   onClick?: (item: IGeoLocalized) => void;

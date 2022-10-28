@@ -6,7 +6,7 @@ import { Button, Container, Flex, Section, Text } from '../../components';
 import { FieldCard } from '../../fields';
 import { Form, FormError, RadioCard } from '../../forms';
 
-export interface CheckoutDeliveryProps {
+export type CheckoutDeliveryProps = {
   onDelivery?: (delivery: ICheckoutDelivery) => void;
   onPrevious?: () => void;
 }

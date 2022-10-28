@@ -4,7 +4,7 @@ import { ICartItem, ICheckoutItem, ICheckoutPartial } from '@websolute/models';
 import { Box, Button, Container, Flex, NavLink, Section, Text } from '../../components';
 import { CheckoutBasketItem } from './checkout-basket-item';
 
-export interface CheckoutBasketProps {
+export type CheckoutBasketProps = {
   onBasket?: (items: ICheckoutItem[]) => void;
 }
 

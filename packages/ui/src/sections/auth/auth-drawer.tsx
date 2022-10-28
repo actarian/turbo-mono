@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Drawer } from '../../components';
 import { Auth } from './auth';
 
-export interface AuthDrawerProps {
+export type AuthDrawerProps = {
   children?: ReactNode;
   visible: boolean;
   onClose: () => void;

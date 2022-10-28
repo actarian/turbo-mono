@@ -32,7 +32,7 @@ export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, valu
   }
 }
 
-export interface StoreLocatorItem extends IGeoLocalized {
+export type StoreLocatorItem = IGeoLocalized & {
   id: number;
   name: string;
   address: string;

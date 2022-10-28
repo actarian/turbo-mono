@@ -1,7 +1,7 @@
 import { IEquatable, ISchema } from "@websolute/core";
 import { IMedia } from "../media/media";
 
-export interface ICartItem extends ISchema {
+export type ICartItem = ISchema & {
   id: IEquatable;
   schema: string;
   media: IMedia;
@@ -15,7 +15,7 @@ export interface ICartItem extends ISchema {
 export type ICartAddItem = Omit<ICartItem, 'qty'>;
 
 /*
-export interface ICartAddItem extends ISchema {
+export type ICartAddItem = ISchema & {
   id: IEquatable;
   schema: string;
   media: IMedia;
@@ -25,7 +25,7 @@ export interface ICartAddItem extends ISchema {
   price: number;
 }
 
-export interface ICartItem extends ICartAddItem {
+export type ICartItem = ICartAddItem & {
   qty: number;
 }
 */

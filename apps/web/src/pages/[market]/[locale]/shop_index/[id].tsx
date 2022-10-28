@@ -22,7 +22,7 @@ export default function ShopIndex({ layout, page, items = [], featureTypes = [],
   )
 }
 
-export interface ShopIndexProps extends PageProps {
+export type ShopIndexProps = PageProps & {
   items: ShopSearchItem[];
   featureTypes: IFeatureType[];
 }

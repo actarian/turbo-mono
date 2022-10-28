@@ -9,7 +9,7 @@ import { CheckoutRegister } from './checkout-register';
 import { CheckoutRegisterSuccess } from './checkout-register-success';
 import { CheckoutUserInfo } from './checkout-user-info';
 
-export interface CheckoutInfoProps {
+export type CheckoutInfoProps = {
   onInfo?: (info: ICheckoutInfo) => void;
   onPrevious?: () => void;
 }

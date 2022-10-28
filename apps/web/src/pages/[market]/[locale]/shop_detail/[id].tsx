@@ -86,7 +86,7 @@ type ShopDetailItem = ShopSearchItem & IPage & {
   }
 };
 
-export interface ShopDetailProps extends PageProps<ShopDetailItem> {
+export type ShopDetailProps = PageProps<ShopDetailItem> & {
   category: IPage;
 }
 

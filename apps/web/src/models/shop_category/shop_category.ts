@@ -1,7 +1,7 @@
 import type { IEntity, IEquatable } from '@websolute/core';
 import { IMedia } from '@websolute/models';
 
-export interface IShopCategory extends IEntity {
+export type IShopCategory = IEntity & {
   categoryId: IEquatable;
   slug: string;
   href: string;

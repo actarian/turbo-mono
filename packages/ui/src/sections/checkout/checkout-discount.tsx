@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Button, Flex } from '../../components';
 import { FieldText } from '../../fields';
 
-export interface CheckoutDiscountProps {
+export type CheckoutDiscountProps = {
   onDiscount?: (discounts: ICheckoutDiscount[]) => void;
 }
 

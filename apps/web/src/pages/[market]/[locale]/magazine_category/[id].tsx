@@ -23,7 +23,7 @@ export default function MagazineCategory({ layout, page, items = [], featureType
   )
 }
 
-export interface MagazineCategoryProps extends PageProps {
+export type MagazineCategoryProps = PageProps & {
   items: MagazineSearchItem[];
   featureTypes: IFeatureType[];
 }

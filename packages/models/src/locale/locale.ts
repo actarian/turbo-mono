@@ -1,6 +1,6 @@
 import { IEntity } from '@websolute/core';
 
-export interface ILocale extends IEntity {
+export type ILocale = IEntity & {
   id: string;
   // schema?: string;
   title?: string;

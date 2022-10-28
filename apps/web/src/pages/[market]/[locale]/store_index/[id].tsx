@@ -22,7 +22,7 @@ export default function StoreLocator({ layout, page, country, items = [], featur
   )
 }
 
-export interface StoreLocatorProps extends PageProps {
+export type StoreLocatorProps = PageProps & {
   country: { id: string, name: string },
   items: StoreLocatorItem[],
   featureTypes: IFeatureType[],

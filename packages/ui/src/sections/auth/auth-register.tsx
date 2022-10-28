@@ -8,7 +8,7 @@ import { FieldCheckbox, FieldPassword, FieldText } from '../../fields';
 import { Form, FormError, FormTester } from '../../forms';
 
 
-export interface AuthRegisterProps {
+export type AuthRegisterProps = {
   children?: ReactNode;
   onSignedUp?: () => void;
   onNavToLogin?: () => void;

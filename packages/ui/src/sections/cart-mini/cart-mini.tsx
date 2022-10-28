@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import { Button, Divider, Drawer, Flex, NavLink, Text } from '../../components';
 import { CartMiniItem } from './cart-mini-item';
 
-export interface CartMiniProps {
+export type CartMiniProps = {
   children?: ReactNode;
   visible: boolean;
   onClose: () => void;

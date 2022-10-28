@@ -24,7 +24,7 @@ export default function ProductCategory({ layout, page, items = [], featureTypes
   )
 }
 
-export interface ProductCategoryProps extends PageProps {
+export type ProductCategoryProps = PageProps & {
   items: ProductSearchItem[];
   featureTypes: IFeatureType[];
 }

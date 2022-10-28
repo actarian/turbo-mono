@@ -4,7 +4,7 @@ const defaultContext = {
   values: [],
 };
 
-export interface AccordionConfig {
+export type AccordionConfig = {
   values: Array<number>;
   updateValues?: (currentIndex: number, nextState: boolean) => unknown;
 }

@@ -13,13 +13,13 @@ export type Carousel1SubItem = {
   media: IMedia;
 }
 
-export interface Carousel1Item extends ILazyComponent {
+export type Carousel1Item = ILazyComponent & {
   schema: 'carousel-1';
   title: string;
   items: Carousel1SubItem[];
 };
 
-export interface Carousel1Props extends ILazyComponentProps {
+export type Carousel1Props = ILazyComponentProps & {
   item: Carousel1Item
 }
 

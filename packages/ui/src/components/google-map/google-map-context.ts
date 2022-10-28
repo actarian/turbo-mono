@@ -4,7 +4,7 @@ const defaultContext = {
   map: undefined,
 };
 
-export interface IGoogleMapContext {
+export type IGoogleMapContext = {
   map: google.maps.Map | undefined;
 }
 

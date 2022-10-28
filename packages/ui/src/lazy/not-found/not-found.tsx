@@ -2,12 +2,12 @@ import dynamic from 'next/dynamic';
 import { Container, Section, Text } from '../../components';
 import { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
-export interface NotFoundItem extends ILazyComponent {
+export type NotFoundItem = ILazyComponent & {
   schema: string,
   title?: string;
 };
 
-export interface NotFoundProps extends ILazyComponentProps {
+export type NotFoundProps = ILazyComponentProps & {
   item: NotFoundItem;
 }
 

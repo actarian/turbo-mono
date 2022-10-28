@@ -4,13 +4,13 @@ import { Container, Grid, Section, Text } from '../../components';
 import { ILazyComponent, ILazyComponentProps } from '../../lazy/lazy-loader/lazy-loader';
 import { ShopDetailRelatedCard, ShopDetailRelatedCardItem } from './shop-detail-related-card';
 
-export interface ShopDetailRelatedItem extends ILazyComponent {
+export type ShopDetailRelatedItem = ILazyComponent & {
   schema: string;
   title?: string;
   items: ShopDetailRelatedCardItem[];
 };
 
-export interface ShopDetailRelatedProps extends ILazyComponentProps {
+export type ShopDetailRelatedProps = ILazyComponentProps & {
   id?: string;
   item: ShopDetailRelatedItem;
 }

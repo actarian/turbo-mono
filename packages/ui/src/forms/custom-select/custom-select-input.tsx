@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithRef, useEffect, useImperativeHandle, useRef } from 'react';
 import styled from 'styled-components';
 
-export interface CustomSelectInputProps extends ComponentPropsWithRef<'input'> {
+export type CustomSelectInputProps = ComponentPropsWithRef<'input'> & {
   visible: boolean;
   onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
   onFocus: (event: React.FocusEvent<HTMLInputElement>) => void;

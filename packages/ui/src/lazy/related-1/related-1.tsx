@@ -5,7 +5,7 @@ import { Container, Grid, Section, Text } from '../../components';
 import { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 import { Related1Card } from './related-1-card';
 
-export interface Related1Item extends ILazyComponent {
+export type Related1Item = ILazyComponent & {
   schema: 'text-media-1';
   title?: string;
   items: {
@@ -16,7 +16,7 @@ export interface Related1Item extends ILazyComponent {
   }[];
 };
 
-export interface Related1Props extends ILazyComponentProps {
+export type Related1Props = ILazyComponentProps & {
   item: Related1Item;
 }
 

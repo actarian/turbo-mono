@@ -4,7 +4,7 @@ import { Badge, Button, Container, Flex, Grid, Section, Text } from '../../compo
 import { OrderRegister } from '../order/order-register';
 import { OrderSummary } from '../order/order-summary';
 
-export interface CheckoutSuccessProps {
+export type CheckoutSuccessProps = {
   order: IOrder;
 }
 

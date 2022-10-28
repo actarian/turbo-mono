@@ -26,7 +26,7 @@ export default function Products({ layout, page, params }: ProductsProps) {
   )
 }
 
-export interface ProductsProps extends PageProps {
+export type ProductsProps = PageProps & {
 }
 
 /*

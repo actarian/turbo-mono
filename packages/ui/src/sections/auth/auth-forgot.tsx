@@ -7,7 +7,7 @@ import { Button, Divider, Flex, Text } from '../../components';
 import { FieldText } from '../../fields';
 import { Form, FormError, FormTester } from '../../forms';
 
-export interface AuthForgotProps {
+export type AuthForgotProps = {
   children?: ReactNode;
   onPasswordSent?: () => void;
   onNavToLogin?: () => void;

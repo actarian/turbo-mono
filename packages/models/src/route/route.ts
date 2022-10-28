@@ -1,7 +1,7 @@
 import type { IEntity, IEquatable } from '@websolute/core';
 import type { IMedia } from '../media/media';
 
-export interface IRoute extends IEntity {
+export type IRoute = IEntity & {
   id: string;
   // schema: string;
   marketId: string;
@@ -10,7 +10,7 @@ export interface IRoute extends IEntity {
   pageId: IEquatable;
 }
 
-export interface IRouteLink {
+export type IRouteLink = {
   id: IEquatable;
   href: string;
   title: string;
@@ -18,7 +18,7 @@ export interface IRouteLink {
   media?: IMedia;
 }
 
-export interface IRouteParams {
+export type IRouteParams = {
   id: IEquatable,
   market: string,
   locale: string,

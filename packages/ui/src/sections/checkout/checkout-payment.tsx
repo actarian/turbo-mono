@@ -6,7 +6,7 @@ import { Button, Container, Flex, Section, Text } from '../../components';
 import { FieldCard } from '../../fields';
 import { Form, FormError, RadioCard } from '../../forms';
 
-export interface CheckoutPaymentProps {
+export type CheckoutPaymentProps = {
   onPayment?: (payment: ICheckoutPayment) => void;
   onPrevious?: () => void;
 }

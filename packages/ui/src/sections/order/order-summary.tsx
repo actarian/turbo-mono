@@ -3,7 +3,7 @@ import { IOrder } from '@websolute/models';
 import { Badge, Container, Flex, Section, Text } from '../../components';
 import { OrderSummaryItem } from './order-summary-item';
 
-export interface OrderSummaryProps {
+export type OrderSummaryProps = {
   order: IOrder;
 }
 

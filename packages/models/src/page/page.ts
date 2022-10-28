@@ -3,14 +3,14 @@ import { ILayout } from '../layout/layout';
 import { IMedia } from '../media/media';
 import { IRoute, IRouteLink, IRouteParams } from '../route/route';
 
-export interface IMeta {
+export type IMeta = {
   title?: string;
   description?: string;
   keywords?: string;
   robots?: string;
 }
 
-export interface IImage {
+export type IImage = {
   url: string;
   type?: string;
   alt?: string;
@@ -20,7 +20,7 @@ export interface IImage {
   height?: number;
 }
 
-export interface IPage extends IEntity {
+export type IPage = IEntity & {
   // id: IEquatable;
   // schema: SchemaType;
   categoryId?: string;
@@ -50,5 +50,5 @@ export type PageProps<T extends IPage = IPage> = {
 };
 
 /*
-export interface IPageLayout extends IPage, ILayout { }
+export type IPageLayout = IPage & ILayout & { }
 */

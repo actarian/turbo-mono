@@ -7,7 +7,7 @@ import { AuthLogin } from './auth-login';
 import { AuthRegister } from './auth-register';
 import { AuthRegisterSuccess } from './auth-register-success';
 
-export interface AuthProps {
+export type AuthProps = {
   onSignedIn?: (user: IUser) => void;
 }
 

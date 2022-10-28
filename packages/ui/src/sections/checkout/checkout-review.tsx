@@ -7,7 +7,7 @@ import { FieldCard } from '../../fields';
 import { Form, FormError, RadioCard } from '../../forms';
 import { CheckoutDiscount } from './checkout-discount';
 
-export interface CheckoutReviewProps {
+export type CheckoutReviewProps = {
   onReview?: (store: ICheckoutStore) => void;
   onPrevious?: () => void;
 }

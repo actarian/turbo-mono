@@ -3,12 +3,12 @@ import dynamic from 'next/dynamic';
 import { Box, Container, Section, Text } from '../../components';
 import { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
-export interface TextText1Item extends ILazyComponent {
+export type TextText1Item = ILazyComponent & {
   schema: 'text-text-1';
   description?: string;
 };
 
-export interface TextText1Props extends ILazyComponentProps {
+export type TextText1Props = ILazyComponentProps & {
   item: TextText1Item;
 }
 

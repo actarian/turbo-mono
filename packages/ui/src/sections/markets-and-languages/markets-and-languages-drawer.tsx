@@ -2,7 +2,7 @@ import { useLayout, usePage } from '@websolute/hooks';
 import { ReactNode, useCallback } from 'react';
 import { Button, Drawer, Nav, NavLink, Text } from '../../components';
 
-export interface MarketsAndLanguagesDrawerProps {
+export type MarketsAndLanguagesDrawerProps = {
   children?: ReactNode;
   visible: boolean;
   onClose: () => void;

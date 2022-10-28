@@ -1,7 +1,7 @@
 import { useLabel, useLayout } from '@websolute/hooks';
 import { Button, Container, Flex, NavLink, Section, Text } from '../../components';
 
-export interface CheckoutEmptyProps {
+export type CheckoutEmptyProps = {
 }
 
 export const CheckoutEmpty: React.FC<CheckoutEmptyProps> = ({ }: CheckoutEmptyProps) => {

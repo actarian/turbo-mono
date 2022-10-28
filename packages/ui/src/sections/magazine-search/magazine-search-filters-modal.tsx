@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Drawer, Text } from '../../components';
 import { MagazineSearchFilters } from './magazine-search-filters';
 
-export interface MagazineSearchFiltersModalProps {
+export type MagazineSearchFiltersModalProps = {
   children?: ReactNode;
   visible: boolean;
   onClose: () => void;

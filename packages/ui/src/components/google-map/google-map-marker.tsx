@@ -1,7 +1,7 @@
 import React, { MouseEvent, useEffect, useState } from 'react';
 import { useGoogleMapContext } from './google-map-context';
 
-export interface GoogleMapMarkerProps extends google.maps.MarkerOptions {
+export type GoogleMapMarkerProps = google.maps.MarkerOptions & {
   map?: google.maps.Map,
   onClick?: (event: MouseEvent<HTMLElement>) => void;
 }

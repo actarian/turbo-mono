@@ -7,7 +7,7 @@ import { Button, Divider, Flex, Text } from '../../components';
 import { FieldCheckbox, FieldPassword, FieldText } from '../../fields';
 import { Form, FormError, FormTester } from '../../forms';
 
-export interface AuthLoginProps {
+export type AuthLoginProps = {
   children?: ReactNode;
   onSignedIn?: (user: IUser) => void;
   onNavToForgot?: () => void;

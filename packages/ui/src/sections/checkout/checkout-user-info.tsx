@@ -6,7 +6,7 @@ import { Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { FieldCollection } from '../../fields';
 import { Form, FormError, FormTester } from '../../forms';
 
-export interface CheckoutUserInfoProps {
+export type CheckoutUserInfoProps = {
   user?: IUser;
   onUserInfo?: (userInfo: ICheckoutInfo) => void;
   onNavToPrevious?: () => void;

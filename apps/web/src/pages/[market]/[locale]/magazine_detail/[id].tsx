@@ -60,7 +60,7 @@ export default function MagazineDetail({ layout, page, params }: MagazineDetailP
   )
 }
 
-export interface MagazineDetailProps extends PageProps {
+export type MagazineDetailProps = PageProps & {
 }
 
 export async function getStaticProps(context: IStaticContext) {

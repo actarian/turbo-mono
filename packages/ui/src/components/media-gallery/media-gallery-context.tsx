@@ -1,7 +1,7 @@
 import { IMedia } from '@websolute/models';
 import { createContext, useContext } from 'react';
 
-export interface MediaGalleryConfig {
+export type MediaGalleryConfig = {
   id?: string;
   open?: (media?: IMedia | IMedia[]) => void;
   close?: () => void;

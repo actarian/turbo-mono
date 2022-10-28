@@ -6,7 +6,7 @@ export type InfoWindow = {
   content: string;
 }
 
-export interface GoogleMapInfoWindowProps extends google.maps.InfoWindowOptions {
+export type GoogleMapInfoWindowProps = google.maps.InfoWindowOptions & {
   map?: google.maps.Map;
   position?: google.maps.LatLng;
   content?: string;

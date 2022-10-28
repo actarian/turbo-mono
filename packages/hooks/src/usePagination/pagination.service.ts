@@ -1,4 +1,4 @@
-export interface IPaginationInfo<T> {
+export type IPaginationInfo<T> = {
   items: T[],
   total: number,
   pages: number,

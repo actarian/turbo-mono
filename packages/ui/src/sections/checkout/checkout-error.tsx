@@ -1,7 +1,7 @@
 import { useLabel } from '@websolute/hooks';
 import { Container, Flex, Section, Text } from '../../components';
 
-export interface CheckoutErrorProps {
+export type CheckoutErrorProps = {
 }
 
 export const CheckoutError: React.FC<CheckoutErrorProps> = ({ }: CheckoutErrorProps) => {

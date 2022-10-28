@@ -9,24 +9,24 @@ export type IOption = {
   [key: string]: any;
 }
 
-export interface ISchema {
+export type ISchema = {
   id: IEquatable;
   schema: string;
 }
 
-export interface IEntity extends ISchema {
+export type IEntity = ISchema & {
   [key: string]: unknown;
 }
 
-export interface INamedEntity extends IEntity {
+export type INamedEntity = IEntity & {
   name: string | ILocalizedString;
 }
 
-export interface ITitledEntity extends IEntity {
+export type ITitledEntity = IEntity & {
   title: string | ILocalizedString;
 }
 
-export interface IQuerable<T extends IEntity> {
+export type IQuerable<T extends IEntity> = {
   findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | undefined>;
   findMany(params?: FindParams): Promise<T[]>;
   create(payload: T): Promise<T>;

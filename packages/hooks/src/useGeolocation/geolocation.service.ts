@@ -4,7 +4,7 @@
  * PositionError been renamed to GeolocationPositionError in typescript 4.1.x and making
  * own compatible interface is most easiest way to avoid errors.
  */
-export interface IGeolocationPositionError {
+export type IGeolocationPositionError = {
   readonly code: number;
   readonly message: string;
   readonly PERMISSION_DENIED: number;
@@ -12,7 +12,7 @@ export interface IGeolocationPositionError {
   readonly TIMEOUT: number;
 }
 
-export interface GeoLocationSensorState {
+export type GeoLocationSensorState = {
   loading: boolean;
   accuracy: number | null;
   altitude: number | null;

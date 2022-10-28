@@ -32,7 +32,7 @@ const StyledDots = styled(Svg)`
   }
 `;
 
-const Dots: React.FC<SvgProps> = ({ className, ...props }: SvgProps) => (
+export const Dots: React.FC<SvgProps> = ({ className, ...props }: SvgProps) => (
   <StyledDots viewBox="0 0 1440 635" className={className} {...props}>
     <path d="M863,4.3c2.8,0,5.1-2.3,5.1-5.1s-2.3-5.1-5.1-5.1s-5.1,2.3-5.1,5.1S860.1,4.3,863,4.3z" />
     <circle cx="833.1" cy="4.5" r="4.9" />
@@ -1313,5 +1313,3 @@ const Dots: React.FC<SvgProps> = ({ className, ...props }: SvgProps) => (
     <circle cx="25.5" cy="571.9" r="0.1" />
   </StyledDots>
 )
-
-export default Dots;

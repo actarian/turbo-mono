@@ -66,7 +66,7 @@ export default function ReservedArea({ layout, page, user, params }: ReservedAre
   )
 }
 
-export interface ReservedAreaProps extends PageProps {
+export type ReservedAreaProps = PageProps & {
   user: { name: string };
 }
 

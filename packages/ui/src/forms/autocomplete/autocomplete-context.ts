@@ -5,12 +5,12 @@ const defaultContext = {
   value: '',
 };
 
-export interface IAutocompleteItem {
+export type IAutocompleteItem = {
   id: any,
   name: string;
 }
 
-export interface IAutocomplete {
+export type IAutocomplete = {
   visible?: boolean;
   value: any;
   ref?: MutableRefObject<HTMLElement | null>;

@@ -49,7 +49,7 @@ const ProductCategory = ({ items = [], featureTypes = [] }) => {
 
 /*
 import type { PageProps } from '@websolute/models';
-export interface ProductsCategoryProps extends PageProps {
+export type ProductsCategoryProps = PageProps & {
   items: ProductSearchItem[];
   featureTypes: IFeatureType[];
 }

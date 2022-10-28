@@ -5,7 +5,7 @@ const paginationUpdateTypes = tuple('prev', 'next', 'click');
 
 export type PaginationUpdateType = typeof paginationUpdateTypes[number];
 
-export interface PaginationConfig {
+export type PaginationConfig = {
   isFirst?: boolean;
   isLast?: boolean;
   update?: (type: PaginationUpdateType) => void;

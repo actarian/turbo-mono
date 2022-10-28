@@ -10,12 +10,12 @@ export type TabsInternalCellProps = {
 
 export type TabsInternalCell = React.FC<TabsInternalCellProps>;
 
-export interface TabsHeaderItem {
+export type TabsHeaderItem = {
   value: string;
   cell: TabsInternalCell;
 }
 
-export interface TabsConfig {
+export type TabsConfig = {
   register?: (item: TabsHeaderItem) => void;
   currentValue?: string;
   inGroup: boolean;

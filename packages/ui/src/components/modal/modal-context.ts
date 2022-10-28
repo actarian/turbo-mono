@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-export interface ModalConfig {
+export type ModalConfig = {
   close?: () => void;
 }
 

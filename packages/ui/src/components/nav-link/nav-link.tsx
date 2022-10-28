@@ -3,7 +3,7 @@ import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
 import React, { Children } from 'react';
 
-export interface NavLinkProps extends LinkProps {
+export type NavLinkProps = LinkProps & {
   children: React.ReactElement;
   activeClassName?: string;
   scrollToHash?: boolean;

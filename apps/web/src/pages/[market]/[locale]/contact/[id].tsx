@@ -133,7 +133,7 @@ export default function Contact({ layout, page, data, params }: ContactProps) {
   )
 }
 
-export interface ContactProps extends PageProps {
+export type ContactProps = PageProps & {
   data: IContactForm;
 }
 

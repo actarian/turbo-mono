@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Button, Flex, Text } from '../../components';
 
-export interface AuthRegisterSuccessProps {
+export type AuthRegisterSuccessProps = {
   children?: ReactNode;
   onNavToLogin?: () => void;
 }

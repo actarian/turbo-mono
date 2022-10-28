@@ -1,6 +1,6 @@
 import type { IEntity, IEquatable } from '@websolute/core';
 
-export interface IProductDetail extends IEntity {
+export type IProductDetail = IEntity & {
   slug: string;
   title?: string;
   abstract?: string;

@@ -1,6 +1,6 @@
 import { MutableRefObject } from 'react';
 
-export interface ReactiveDomReact {
+export type ReactiveDomReact = {
   top: number;
   bottom: number;
   left: number;

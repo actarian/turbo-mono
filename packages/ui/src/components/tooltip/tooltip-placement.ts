@@ -9,7 +9,7 @@ interface ParentDomRect {
   height: number
 }
 
-export interface TooltipPosition {
+export type TooltipPosition = {
   top: string
   left: string
   transform: string
@@ -21,7 +21,7 @@ export const defaultTooltipPosition = {
   transform: 'none',
 }
 
-export interface TooltipIconPosition {
+export type TooltipIconPosition = {
   top: string
   left: string
   right: string

@@ -11,14 +11,14 @@ export enum FilterMode {
   QUERY = 'query',
 }
 
-export interface IFilterOption {
+export type IFilterOption = {
   id: IEquatable;
   title: string;
   count?: number;
   disabled?: boolean;
 }
 
-export interface IFilter {
+export type IFilter = {
   id?: string;
   title?: string;
   mode?: FilterMode;

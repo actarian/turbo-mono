@@ -67,7 +67,7 @@ export default function ProductDetail({ layout, page, params }: ProductDetailPro
   )
 }
 
-export interface ProductDetailProps extends PageProps {
+export type ProductDetailProps = PageProps & {
 
 }
 

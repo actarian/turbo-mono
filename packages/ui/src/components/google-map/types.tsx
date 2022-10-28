@@ -1,5 +1,5 @@
 /* globals google */
-export interface ClusterIconInfo {
+export type ClusterIconInfo = {
   text: string
   index: number
   title: string
@@ -11,7 +11,7 @@ export type MarkerExtended = google.maps.Marker & {
 
 export type TCalculator = (markers: MarkerExtended[], num: number) => ClusterIconInfo
 
-export interface ClusterIconStyle {
+export type ClusterIconStyle = {
   url: string
   className?: string
   height: number
@@ -27,7 +27,7 @@ export interface ClusterIconStyle {
   backgroundPosition?: string
 }
 
-export interface ClustererOptions {
+export type ClustererOptions = {
   gridSize?: number
   maxZoom?: number
   zoomOnClick?: boolean

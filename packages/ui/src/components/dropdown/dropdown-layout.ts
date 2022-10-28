@@ -9,7 +9,7 @@ const defaultRect: ReactiveDomReact = {
   elementTop: -1000,
 };
 
-export interface ReactiveDomReact {
+export type ReactiveDomReact = {
   top: number;
   left: number;
   right: number;

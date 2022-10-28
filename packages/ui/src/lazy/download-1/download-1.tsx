@@ -5,13 +5,13 @@ import dynamic from 'next/dynamic';
 import { Button, Container, Flex, NavLink, Section, Text } from '../../components';
 import { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
-export interface Download1Item extends ILazyComponent {
+export type Download1Item = ILazyComponent & {
   schema: 'download-1';
   title: string;
   links: ILink[];
 };
 
-export interface Download1Props extends ILazyComponentProps {
+export type Download1Props = ILazyComponentProps & {
   item: Download1Item;
 }
 

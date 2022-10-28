@@ -6,7 +6,7 @@ const defaultContext = {
   value: '',
 };
 
-export interface CustomSelectConfig {
+export type CustomSelectConfig = {
   disableAll?: boolean;
   visible?: boolean;
   value: string | string[];

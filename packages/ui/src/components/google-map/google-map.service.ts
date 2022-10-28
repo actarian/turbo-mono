@@ -80,7 +80,7 @@ export function getPlacesService(map: google.maps.Map): google.maps.places.Place
   return placeService_;
 }
 
-export interface IAutocompleteResult extends IAutocompleteItem {
+export type IAutocompleteResult = IAutocompleteItem & {
   id: string;
   name: string;
   description: string;

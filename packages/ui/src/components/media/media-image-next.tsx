@@ -18,7 +18,7 @@ const StyledMediaImageNext = styled(Image)`
   position: relative !important;
 `;
 
-const MediaImageNext = ({ alt = '', className, ...props }: MediaImageNextProps) => {
+export const MediaImageNext = ({ alt = '', className, ...props }: MediaImageNextProps) => {
   // return (<StyledMediaImageNext {...props} alt={alt} layout="fill" objectFit={'cover'} />);
   const classNames = getClassNames(className, 'image');
   return (<StyledMediaImageNext className={classNames} {...props} fill alt={alt} />);
@@ -41,5 +41,3 @@ const MediaImageNext = ({ alt = '', className, ...props }: MediaImageNextProps) 
   style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
 >
 */
-
-export default MediaImageNext;

@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { Box, Button, Container, Flex, Grid, Media, Section, Text } from '../../components';
 import { ILazyComponent, ILazyComponentProps } from '../../lazy/lazy-loader/lazy-loader';
 
-export interface ProductsDetailSizeColorItem extends ILazyComponent {
+export type ProductsDetailSizeColorItem = ILazyComponent & {
   schema: string;
   title: string;
   list: {
@@ -14,7 +14,7 @@ export interface ProductsDetailSizeColorItem extends ILazyComponent {
   medias: IMedia[];
 };
 
-export interface ProductsDetailSizeColorProps extends ILazyComponentProps {
+export type ProductsDetailSizeColorProps = ILazyComponentProps & {
   id?: string;
   item: ProductsDetailSizeColorItem;
 }

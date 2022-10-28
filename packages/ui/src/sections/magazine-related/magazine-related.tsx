@@ -14,13 +14,13 @@ export type MagazineRelatedSubItem = {
   date: Date | string;
 }
 
-export interface MagazineRelatedItem extends ILazyComponent {
+export type MagazineRelatedItem = ILazyComponent & {
   schema: string;
   title: string;
   items: MagazineRelatedSubItem[];
 };
 
-export interface MagazineRelatedProps extends ILazyComponentProps {
+export type MagazineRelatedProps = ILazyComponentProps & {
   item: MagazineRelatedItem
 }
 

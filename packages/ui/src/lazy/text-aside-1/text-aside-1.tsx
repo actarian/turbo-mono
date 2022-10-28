@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { Container, Flex, Grid, Section, Text } from '../../components';
 import { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
-export interface TextAside1Item extends ILazyComponent {
+export type TextAside1Item = ILazyComponent & {
   schema: 'text-aside-1';
   description: string;
   aside: {
@@ -12,7 +12,7 @@ export interface TextAside1Item extends ILazyComponent {
   }[];
 };
 
-export interface TextAside1Props extends ILazyComponentProps {
+export type TextAside1Props = ILazyComponentProps & {
   item: TextAside1Item;
 }
 

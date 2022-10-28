@@ -1,6 +1,6 @@
 import { IEntity } from '@websolute/core';
 
-export interface IMarket extends IEntity {
+export type IMarket = IEntity & {
   id: string;
   // schema?: string;
   title?: string;

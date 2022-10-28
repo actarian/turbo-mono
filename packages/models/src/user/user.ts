@@ -19,7 +19,7 @@ export type IUserForgot = {
   email: string;
 }
 
-export interface IUser extends ISchema {
+export type IUser = ISchema & {
   id: IEquatable;
   firstName: string;
   lastName: string;

@@ -77,5 +77,3 @@ export const Highlight: React.FC<HighlightProps> = ({
     </StyledHighlight>
   )
 }
-
-export default Highlight;

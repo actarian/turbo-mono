@@ -39,7 +39,7 @@ export default function CheckoutResult({ layout, page, user, order, params }: Ch
   )
 }
 
-export interface CheckoutResultProps extends PageProps {
+export type CheckoutResultProps = PageProps & {
   user?: IUser;
   order?: IOrder;
 }
@@ -76,7 +76,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
 import type { IStaticContext } from '@websolute/core';
 import { getStaticPathsForSchema } from '@websolute/models';
 
-export interface CheckoutResultProps extends PageProps {
+export type CheckoutResultProps = PageProps & {
 }
 
 export async function getStaticProps(context: IStaticContext) {

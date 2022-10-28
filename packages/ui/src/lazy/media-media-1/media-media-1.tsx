@@ -4,12 +4,12 @@ import dynamic from 'next/dynamic';
 import { Container, Grid, Media, Section, Text } from '../../components';
 import { ILazyComponent, ILazyComponentProps } from '../lazy-loader/lazy-loader';
 
-export interface MediaMedia1Item extends ILazyComponent {
+export type MediaMedia1Item = ILazyComponent & {
   schema: 'media-media-1';
   medias: IMedia[];
 };
 
-export interface MediaMedia1Props extends ILazyComponentProps {
+export type MediaMedia1Props = ILazyComponentProps & {
   item: MediaMedia1Item;
 }
 
