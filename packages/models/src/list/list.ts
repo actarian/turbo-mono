@@ -1,4 +1,4 @@
-import type { IEquatable, INamedEntity } from '@websolute/core';
+import { IEquatable, INamedEntity } from '@websolute/core';
 
 export type IList = INamedEntity & {
   key?: string;

@@ -4,7 +4,7 @@ import { Slide } from './slide';
 
 const range = [-1, 0, 1];
 
-interface CarouselProps {
+type CarouselProps = {
   children: (props: { index: number }) => JSX.Element;
 }
 

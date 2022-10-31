@@ -1,5 +1,4 @@
-import type { FetchRequestOptions, FindParams, FindWhereParams, IEntity, IEquatable, IQuerable } from '@websolute/core';
-import { httpFetch, merge, toFindParams } from '@websolute/core';
+import { FetchRequestOptions, FindParams, FindWhereParams, httpFetch, IEntity, IEquatable, IQuerable, merge, toFindParams } from '@websolute/core';
 
 // !!! these keys are server-side only
 const STORE_API_URL = process.env.STORE_URL;

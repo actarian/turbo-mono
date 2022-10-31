@@ -1,4 +1,4 @@
-import type { IEntity, IEquatable } from '@websolute/core';
+import { IEntity, IEquatable } from '@websolute/core';
 
 export type IMenu = IEntity & {
   id: IEquatable;

@@ -1,7 +1,7 @@
-import type { IEquatable } from '@websolute/core';
-import type { IFeatureType } from '@websolute/models';
+import { IEquatable } from '@websolute/core';
+import { IFeatureType } from '@websolute/models';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import type { Filter, FilterParams } from './filter';
+import { Filter, FilterParams } from './filter';
 import { getFilters, setFilters } from './filter.service';
 
 export function useFilters<T>(items: T[], featureTypes: IFeatureType[], filterItem: (key: string, item: T, value: IEquatable) => boolean, initialValues?: FilterParams | null): UseFiltersResultType<T> {

@@ -1,4 +1,4 @@
-import type { IEntity, IEquatable } from '@websolute/core';
+import { IEntity, IEquatable } from '@websolute/core';
 
 export type IProductDetail = IEntity & {
   slug: string;

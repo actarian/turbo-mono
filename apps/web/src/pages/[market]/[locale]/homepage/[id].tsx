@@ -1,6 +1,5 @@
 
-import type { IStaticContext } from '@websolute/core';
-import { asServerProps } from '@websolute/core';
+import { asServerProps, IStaticContext } from '@websolute/core';
 import { BlogMoreDefaults, BlogPropositionDefaults, CategoriesPropositionDefaults, ProductsPropositionDefaults, SplitDefaults, SwiperHeroDefaults } from '@websolute/mock';
 import { getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/models';
 import {

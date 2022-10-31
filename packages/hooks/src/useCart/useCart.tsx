@@ -4,12 +4,12 @@ import { createContext, useContext, useRef } from 'react';
 import { createStore, useStore } from 'zustand';
 import { persist, StateStorage } from 'zustand/middleware';
 
-interface CartProps {
+type CartProps = {
   hydrated: boolean;
   items: ICartItem[];
 }
 
-interface CartState extends CartProps {
+type CartState = CartProps & {
   count(): number;
   has(item: ISchema): boolean;
   find(item: ISchema): ICartItem | undefined;
@@ -19,7 +19,7 @@ interface CartState extends CartProps {
   clear(): void;
 }
 
-type CartStore = ReturnType<typeof createCartStore>
+type CartStore = ReturnType<typeof createCartStore>;
 
 const createCartStore = ({ storage, ...initialProps }: { storage?: StateStorage } & Partial<CartProps>) => {
   const DEFAULT_PROPS: CartProps = {

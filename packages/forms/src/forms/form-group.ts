@@ -1,6 +1,6 @@
 import { FormAbstract } from './form-abstract';
 import { FormAbstractCollection } from './form-abstract-collection';
-import type { FormOptions, FormValidator } from './types';
+import { FormOptions, FormValidator } from './types';
 
 export class FormGroup extends FormAbstractCollection<{ [key: string]: FormAbstract }> {
   constructor(controls: { [key: string]: FormAbstract | any } = {}, validators?: FormValidator | FormValidator[], initialOptions?: FormOptions) {

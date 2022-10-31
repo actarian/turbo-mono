@@ -36,6 +36,14 @@ export const OrderSummary: React.FC<OrderSummaryProps> = ({ order }: OrderSummar
               <Text flexBasis="120px" textAlign="center">&nbsp;</Text>
               <Text flexBasis="90px" textAlign="right">{currency(order.subTotal)}</Text>
             </Flex.Row>
+            {order.discounts.map((item, i) =>
+              <Flex.Row key={i} gap="1rem">
+                <Text flexGrow="1">Discount <Badge>{item.name}</Badge></Text>
+                <Text flexBasis="110px" textAlign="right">&nbsp;</Text>
+                <Text flexBasis="120px" textAlign="center">{item.abstract}</Text>
+                <Text flexBasis="90px" textAlign="right">{currency(item.price)}</Text>
+              </Flex.Row>
+            )}
             {order.taxes > 0 &&
               <Flex.Row gap="1rem">
                 <Text flexGrow="1">Taxes</Text>
@@ -50,14 +58,6 @@ export const OrderSummary: React.FC<OrderSummaryProps> = ({ order }: OrderSummar
               <Text flexBasis="120px" textAlign="center">&nbsp;</Text>
               <Text flexBasis="110px" textAlign="right">{currency(order.delivery.price)}</Text>
             </Flex.Row>
-            {order.discounts.map((item, i) =>
-              <Flex.Row key={i} gap="1rem">
-                <Text flexGrow="1">Discount <Badge>{item.name}</Badge></Text>
-                <Text flexBasis="110px" textAlign="right">&nbsp;</Text>
-                <Text flexBasis="120px" textAlign="center">{item.abstract}</Text>
-                <Text flexBasis="90px" textAlign="right">{currency(item.price)}</Text>
-              </Flex.Row>
-            )}
             <Flex.Row gap="1rem" fontWeight="700" marginBottom="1rem">
               <Text flexGrow="1">Total</Text>
               <Text flexBasis="110px" textAlign="right">&nbsp;</Text>

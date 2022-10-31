@@ -1,4 +1,4 @@
-import type { IEntity, IEquatable } from '@websolute/core';
+import { IEntity, IEquatable } from '@websolute/core';
 import { IMedia } from '@websolute/models';
 
 export type IShopCategory = IEntity & {

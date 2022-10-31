@@ -1,7 +1,7 @@
-import type { FindParams } from '@websolute/core';
+import { FindParams } from '@websolute/core';
 import { getStore } from '@websolute/store';
 import { IModelStore } from '../store/store';
-import type { ICategorized, ICategory } from './category';
+import { ICategorized, ICategory } from './category';
 
 export async function getCategories(params: FindParams = {}): Promise<ICategory[]> {
   const store = await getStore<IModelStore>();

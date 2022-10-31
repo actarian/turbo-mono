@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import { useEventListener } from '../useEventListener/useEventListener';
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect/useIsomorphicLayoutEffect';
 
-interface Size {
+type Size = {
   width: number;
   height: number;
 }

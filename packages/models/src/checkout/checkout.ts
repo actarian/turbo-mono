@@ -15,6 +15,7 @@ export type ICheckout = {
   discounts: ICheckoutDiscount[];
   payment: ICheckoutPayment;
   subTotal: number;
+  subTotalFull: number;
   taxes: number;
   total: number;
 }
@@ -22,7 +23,7 @@ export type ICheckout = {
 export type ICheckoutPartial = Partial<ICheckout>;
 
 export type ICheckoutItem = ICartItem & {
-  fullPrice?: number;
+  fullPrice: number;
 }
 
 export type ICheckoutInfo = {

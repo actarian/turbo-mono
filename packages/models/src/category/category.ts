@@ -1,4 +1,4 @@
-import type { IEntity, IEquatable, ILocalizedString } from '@websolute/core';
+import { IEntity, IEquatable, ILocalizedString } from '@websolute/core';
 import { IMedia } from '../media/media';
 
 export type ICategory = IEntity & {

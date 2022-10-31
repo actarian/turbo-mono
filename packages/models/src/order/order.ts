@@ -1,5 +1,5 @@
-import type { IEquatable, ValueOf } from '@websolute/core';
-import type { ICheckout } from '../checkout/checkout';
+import { IEquatable, ValueOf } from '@websolute/core';
+import { ICheckout } from '../checkout/checkout';
 
 export const IOrderStatus = {
   Pending: 'pending', // Customer started the checkout process but did not complete it. Incomplete orders are assigned a "Pending" status and can be found under the More tab in the View Orders screen.

@@ -1,5 +1,5 @@
-import type { IEquatable } from '@websolute/core';
-import type { IFeatureType } from '@websolute/models';
+import { IEquatable } from '@websolute/core';
+import { IFeatureType } from '@websolute/models';
 
 export type FilterParams = { [key: string]: IEquatable[] | null };
 export type FilterValues = IEquatable[][];

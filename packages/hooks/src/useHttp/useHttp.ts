@@ -1,5 +1,4 @@
-import type { FetchRequestOptions, FetchService } from '@websolute/core';
-import { httpFetch } from '@websolute/core';
+import { FetchRequestOptions, FetchService, httpFetch } from '@websolute/core';
 import { Dispatch, useEffect, useState } from 'react';
 
 export function useHttpFetch<T = any>(

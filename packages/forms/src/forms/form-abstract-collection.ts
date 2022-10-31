@@ -1,6 +1,6 @@
 import { FormAbstract } from './form-abstract';
 import { FormControl } from './form-control';
-import type { FormActivator, FormCollection, FormControls, FormOptions, FormValidator } from './types';
+import { FormActivator, FormCollection, FormControls, FormOptions, FormValidator } from './types';
 import { isThenable } from './utils';
 
 export class FormAbstractCollection<T extends FormControls> extends FormAbstract {

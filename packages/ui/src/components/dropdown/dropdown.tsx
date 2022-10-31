@@ -14,7 +14,7 @@ type Props = {
   getPopupContainer?: () => HTMLElement | null;
 }
 
-interface ReactiveDomReact {
+type ReactiveDomReact = {
   top: number;
   left: number;
   right: number;

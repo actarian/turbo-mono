@@ -1,9 +1,6 @@
 import { MagazineHeroDefaults, MagazineSearchDefaults, MagazineSearchFeaturesDefaults } from '@websolute/mock';
-import type { IFeatureType } from '@websolute/models';
-import type { MagazineSearchItem } from '@websolute/ui';
-import {
-  CategoryHero, Footer, Header, Layout, MagazineSearch, Page, withPageTransition
-} from '@websolute/ui';
+import { IFeatureType } from '@websolute/models';
+import { CategoryHero, Footer, Header, Layout, MagazineSearch, MagazineSearchItem, Page, withPageTransition } from '@websolute/ui';
 import Head from 'next/head';
 
 const MagazineIndex = ({ items = [], featureTypes = [] }) => {

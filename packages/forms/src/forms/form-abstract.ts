@@ -1,6 +1,6 @@
 import { IOption } from '@websolute/core';
 import { EventEmitter } from './event-emitter';
-import type { ControlType, FormActivator, FormCollection, FormOptions, FormValidator, ValidationError } from './types';
+import { ControlType, FormActivator, FormCollection, FormOptions, FormValidator, ValidationError } from './types';
 import { isThenable, validValue } from './utils';
 
 export class FormAbstract extends EventEmitter {

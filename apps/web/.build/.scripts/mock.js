@@ -340,7 +340,7 @@ async function addType(items, c, collections) {
     }
     // console.log(types);
     const type = `
-import type { IEquatable, ILocalizedString } from '@websolute/core';
+import { IEquatable, ILocalizedString } from '@websolute/core';
 
 export type I${c.displayName} = {
   ${keys.map(key => `${key}${optionalKeys.indexOf(key) !== -1 ? '?' : ''}: ${types[key].join(' | ')};`).join('\n  ')}

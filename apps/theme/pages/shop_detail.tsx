@@ -1,5 +1,5 @@
 import { CategoryPropositionDefaults, ProductDefaults, ProductsRelatedDefaults } from '@websolute/mock';
-import type { IMedia } from '@websolute/models';
+import { IMedia } from '@websolute/models';
 import {
   Breadcrumb, CategoryProposition, Container, Footer, Header, Layout, Page,
   ProductOverview, ProductsRelated, Section, ShopIncentive, withPageTransition

@@ -1,4 +1,4 @@
-import type { IPage } from '@websolute/models';
+import { IPage } from '@websolute/models';
 import React from 'react';
 import { createGenericContext } from '../useGenericContext/useGenericContext';
 

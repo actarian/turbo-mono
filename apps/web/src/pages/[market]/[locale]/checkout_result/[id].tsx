@@ -73,7 +73,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
 
 
 /*
-import type { IStaticContext } from '@websolute/core';
+import { IStaticContext } from '@websolute/core';
 import { getStaticPathsForSchema } from '@websolute/models';
 
 export type CheckoutResultProps = PageProps & {

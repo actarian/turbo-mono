@@ -1,7 +1,6 @@
-import type { IEquatable } from '@websolute/core';
-import type { IFeatureType } from '@websolute/models';
-import type { FilterParams } from './filter';
-import { Filter, FilterMode } from './filter';
+import { IEquatable } from '@websolute/core';
+import { IFeatureType } from '@websolute/models';
+import { Filter, FilterMode, FilterParams } from './filter';
 
 export function getFilters<T>(items: T[], featureTypes: IFeatureType[], filterMap: (key: string, item: T, value: IEquatable) => boolean, params?: FilterParams | null): Filter<T>[] {
   return featureTypes.map(featureType => {

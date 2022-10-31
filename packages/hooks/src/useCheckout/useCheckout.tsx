@@ -1,20 +1,20 @@
-import type { IAddressOptions, ICheckoutPartial } from '@websolute/models';
+import { IAddressOptions, ICheckoutPartial } from '@websolute/models';
 import { createContext, useContext, useRef } from 'react';
 import { createStore, useStore } from 'zustand';
 import { persist, StateStorage } from 'zustand/middleware';
 
-interface CheckoutProps {
+type CheckoutProps = {
   hydrated: boolean;
   data: IAddressOptions;
   checkout: ICheckoutPartial;
 }
 
-interface CheckoutInitialProps {
+type CheckoutInitialProps = {
   data: IAddressOptions;
   checkout?: ICheckoutPartial;
 }
 
-interface CheckoutState extends CheckoutProps {
+type CheckoutState = CheckoutProps & {
   setCheckout(checkout: ICheckoutPartial): void;
 }
 

@@ -1,5 +1,4 @@
-import type { IOption } from '@websolute/core';
-import { getClassNames } from '@websolute/core';
+import { getClassNames, IOption } from '@websolute/core';
 import {
   EmailValidator, FormAsyncValidator, FormGroup, RequiredIfValidator, RequiredTrueValidator,
   RequiredValidator, useFormBuilder, ValidationError

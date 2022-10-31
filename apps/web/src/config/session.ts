@@ -1,7 +1,7 @@
 // this file is a wrapper with defaults to be used in both API routes and `getServerSideProps` functions
 import { httpDelete, httpGet, httpPost } from '@websolute/core';
-import type { IUser } from '@websolute/models';
-import type { IronSessionOptions } from 'iron-session';
+import { IUser } from '@websolute/models';
+import { IronSessionOptions } from 'iron-session';
 import { StateStorage } from 'zustand/middleware';
 
 export const sessionOptions: IronSessionOptions = {

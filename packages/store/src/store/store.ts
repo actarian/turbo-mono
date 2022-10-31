@@ -1,4 +1,4 @@
-import type { IEntity, IQuerable } from '@websolute/core';
+import { IEntity, IQuerable } from '@websolute/core';
 
 export type Store = {
   [key: string]: IQuerable<IEntity>;

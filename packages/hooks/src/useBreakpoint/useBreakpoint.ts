@@ -4,7 +4,7 @@ import { useWindowSize } from '../useWindowSize/useWindowSize';
 
 type BreakpointType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
-interface Breakpoint {
+type Breakpoint = {
   key: BreakpointType;
   min: number;
   max: number;

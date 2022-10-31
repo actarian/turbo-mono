@@ -1,5 +1,5 @@
-import type { IEntity, IEquatable } from '@websolute/core';
-import type { IMedia } from '../media/media';
+import { IEntity, IEquatable } from '@websolute/core';
+import { IMedia } from '../media/media';
 
 export type IRoute = IEntity & {
   id: string;

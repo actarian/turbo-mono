@@ -1,10 +1,6 @@
 import { CategoryPropositionDefaults, ProductsCategoryHeroDefaults, ProductsSearchDefaults, ProductsSearchFeaturesDefaults } from '@websolute/mock';
-import type { IFeatureType } from '@websolute/models';
-import type { ProductSearchItem } from '@websolute/ui';
-import {
-  Breadcrumb, CategoryHero, CategoryProposition, Container, Footer, Header, Layout, Page,
-  ProductsSearch, Section, withPageTransition
-} from '@websolute/ui';
+import { IFeatureType } from '@websolute/models';
+import { Breadcrumb, CategoryHero, CategoryProposition, Container, Footer, Header, Layout, Page, ProductSearchItem, ProductsSearch, Section, withPageTransition } from '@websolute/ui';
 import Head from 'next/head';
 
 const ProductCategory = ({ items = [], featureTypes = [] }) => {
@@ -48,7 +44,7 @@ const ProductCategory = ({ items = [], featureTypes = [] }) => {
 }
 
 /*
-import type { PageProps } from '@websolute/models';
+import { PageProps } from '@websolute/models';
 export type ProductsCategoryProps = PageProps & {
   items: ProductSearchItem[];
   featureTypes: IFeatureType[];

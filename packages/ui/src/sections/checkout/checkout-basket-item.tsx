@@ -8,8 +8,6 @@ import { Input } from '../../forms';
 export const CheckoutBasketItem: React.FC<{ item: ICheckoutItem }> = ({ item }: { item: ICheckoutItem }) => {
 
   const currency = useCurrency();
-  const price = currency(item.price);
-  const totalPrice = currency(item.price * item.qty);
 
   const update = useCart(state => state.update);
   const remove = useCart(state => state.remove);
@@ -29,7 +27,7 @@ export const CheckoutBasketItem: React.FC<{ item: ICheckoutItem }> = ({ item }: 
 
   return (
     <Flex.Row gap="2rem" paddingBottom="1rem" borderBottom="1px solid var(--color-neutral-300)">
-      <Flex flexGrow="1">
+      <Flex flex="0 1 calc(100% - 420px)">
         <Flex.Row gap="2rem">
           <Media aspectRatio={1} width="120px" height="120px" flex="0 0 120px" rounded>
             <MediaImage width="120px" height="120px" src={item.media.src} draggable={false} title={item.title} />
@@ -44,9 +42,10 @@ export const CheckoutBasketItem: React.FC<{ item: ICheckoutItem }> = ({ item }: 
           </Flex.Col>
         </Flex.Row>
       </Flex>
-      <Flex flexBasis="110px" justifyContent="flex-end">
-        <Text>{price}</Text>
-      </Flex>
+      <Flex.Col flexBasis="110px" alignItems="flex-end">
+        <Text>{currency(item.price)}</Text>
+        {item.fullPrice > item.price && <Text size="11" textDecoration="line-through" color="var(--color-neutral-400)">{currency(item.fullPrice)}</Text>}
+      </Flex.Col>
       <Flex flexBasis="120px" justifyContent="center">
         <Flex.Row>
           <Button onClick={() => onSetQty(item.qty - 1)} ><Minus width="20px" height="20px" /></Button>
@@ -57,9 +56,10 @@ export const CheckoutBasketItem: React.FC<{ item: ICheckoutItem }> = ({ item }: 
       <Flex flexBasis="80px" justifyContent="center">
         <Button onClick={onRemove}><Trash width="20px" height="20px" /></Button>
       </Flex>
-      <Flex flexBasis="110px" justifyContent="flex-end">
-        <Text>{totalPrice}</Text>
-      </Flex>
+      <Flex.Col flexBasis="110px" alignItems="flex-end">
+        <Text>{currency(item.price * item.qty)}</Text>
+        {item.fullPrice > item.price && <Text size="11" textDecoration="line-through" color="var(--color-neutral-400)">{currency(item.fullPrice * item.qty)}</Text>}
+      </Flex.Col>
     </Flex.Row>
   );
 }

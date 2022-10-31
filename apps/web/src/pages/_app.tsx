@@ -1,5 +1,5 @@
 import { CartProvider, LabelProvider, LayoutProvider, PageProvider } from '@websolute/hooks';
-import type { ILayout, IPage, IRouteParams } from '@websolute/models';
+import { ILayout, IPage, IRouteParams } from '@websolute/models';
 import { Breakpoint, GlobalStyle, theme } from '@websolute/ui';
 // import { NextPage } from 'next';
 // import { AppProps } from 'next/app';

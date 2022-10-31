@@ -1,7 +1,7 @@
 import { motion, MotionStyle, MotionValue, PanInfo } from 'framer-motion';
 import React from 'react';
 
-interface SlideProps {
+type SlideProps = {
   index: number;
   renderSlide: (props: { index: number }) => JSX.Element;
   x: MotionValue;

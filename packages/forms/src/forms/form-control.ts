@@ -1,5 +1,5 @@
 import { FormAbstract } from './form-abstract';
-import type { FormOptions, FormValidator } from './types';
+import { FormOptions, FormValidator } from './types';
 
 export class FormControl extends FormAbstract {
   constructor(value: any = null, validators?: FormValidator | FormValidator[], initialOptions?: FormOptions) {

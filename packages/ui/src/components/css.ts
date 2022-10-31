@@ -188,7 +188,9 @@ const CssObj = {
   "textAlign": "text-align",
   /*
   "textAlignLast": "text-align-last",
+  */
   "textDecoration": "text-decoration",
+  /*
   "textDecorationColor": "text-decoration-color",
   "textDecorationLine": "text-decoration-line",
   "textDecorationStyle": "text-decoration-style",

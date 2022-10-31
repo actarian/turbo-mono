@@ -1,9 +1,8 @@
 import { CategoryPropositionDefaults, ShopCategoryDefaults, ShopSearchDefaults, ShopSearchFeaturesDefaults } from '@websolute/mock';
-import type { IFeatureType } from '@websolute/models';
-import type { ShopCategoryHeroItem, ShopSearchItem } from '@websolute/ui';
+import { IFeatureType } from '@websolute/models';
 import {
-  CategoryHero, CategoryProposition, Footer, Header, Layout, Page, ShopIncentive,
-  ShopSearch, withPageTransition
+  CategoryHero, CategoryProposition, Footer, Header, Layout, Page, ShopCategoryHeroItem, ShopIncentive,
+  ShopSearch, ShopSearchItem, withPageTransition
 } from '@websolute/ui';
 import Head from 'next/head';
 

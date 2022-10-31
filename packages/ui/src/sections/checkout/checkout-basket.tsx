@@ -1,6 +1,6 @@
 import { useApi, useApiPost, useCart, useCheckout, useCurrency, useLabel, useLayout } from '@websolute/hooks';
 import { Percent, Truck } from '@websolute/icons';
-import { ICartItem, ICheckoutItem, ICheckoutPartial } from '@websolute/models';
+import { ICheckoutItem, ICheckoutPartial } from '@websolute/models';
 import { Box, Button, Container, Flex, NavLink, Section, Text } from '../../components';
 import { CheckoutBasketItem } from './checkout-basket-item';
 
@@ -23,13 +23,15 @@ export const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: Chec
   const checkout = useCheckout((state) => state.checkout);
   const setCheckout = useCheckout((state) => state.setCheckout);
 
-  const [items = []] = useApiPost<ICartItem[]>('/checkout/items', { ...checkout, items: cartItems });
+  const [items = []] = useApiPost<ICheckoutItem[]>('/checkout/items', { ...checkout, items: cartItems });
 
-  const total = items.reduce((p, c) => {
+  const subTotal = items.reduce((p, c) => {
     return p + c.price * c.qty;
   }, 0);
 
-  const totalPrice = currency(total);
+  const subTotalFull = items.reduce((p, c) => {
+    return p + c.fullPrice * c.qty;
+  }, 0);
 
   const onBasket_ = async () => {
     try {
@@ -51,7 +53,7 @@ export const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: Chec
       <Section>
         <Container minHeight="50vh">
           <Flex.Row gap="2rem" padding="1rem 0" fontWeight="700">
-            <Text flexGrow="1">Product</Text>
+            <Text flex="0 1 calc(100% - 420px)">Product</Text>
             <Text flexBasis="110px" textAlign="right">Unit price</Text>
             <Text flexBasis="120px" textAlign="center">Quantity</Text>
             <Text flexBasis="80px" textAlign="center">&nbsp;</Text>
@@ -62,11 +64,14 @@ export const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: Chec
               <CheckoutBasketItem key={i} item={item} />
             )}
             <Flex.Row gap="1rem" fontWeight="700" marginBottom="1rem">
-              <Text flexGrow="1">Total</Text>
+              <Text flex="0 1 calc(100% - 420px)">Subtotal</Text>
               <Text flexBasis="110px" textAlign="right">&nbsp;</Text>
               <Text flexBasis="120px" textAlign="center">&nbsp;</Text>
               <Text flexBasis="80px" textAlign="center">&nbsp;</Text>
-              <Text flexBasis="110px" textAlign="right">{totalPrice}</Text>
+              <Flex.Col flexBasis="110px" alignItems="flex-end" textAlign="right">
+                <Text>{currency(subTotal)}</Text>
+                {subTotalFull > subTotal && <Text size="11" textDecoration="line-through" color="var(--color-neutral-400)">{currency(subTotalFull)}</Text>}
+              </Flex.Col>
             </Flex.Row>
           </Flex.Col>
           <Flex.Col gap="1rem">

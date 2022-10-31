@@ -1,6 +1,6 @@
 import { FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
 import { useApi, useApiPost, useCheckout, useCurrency, useLabel, useUnit } from '@websolute/hooks';
-import { ICheckoutPartial, ICheckoutStore } from '@websolute/models';
+import { ICheckoutItem, ICheckoutPartial, ICheckoutStore } from '@websolute/models';
 import { useEffect, useState } from 'react';
 import { Badge, Box, Button, Container, Flex, Grid, Section, Text } from '../../components';
 import { FieldCard } from '../../fields';
@@ -56,6 +56,7 @@ export const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onRe
   const billingAddress = checkout.billingAddress;
   const delivery = checkout.delivery;
   const subTotal = checkout.subTotal || 0;
+  const subTotalFull = checkout.subTotalFull || 0;
   const taxes = checkout.taxes || 0;
   const total = checkout.total || 0;
 
@@ -171,19 +172,32 @@ export const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onRe
                   <Flex.Col flex="1" gap="1rem" padding="1rem 0"
                     borderTop="1px solid var(--color-neutral-300)"
                     borderBottom="1px solid var(--color-neutral-300)">
-                    {checkout.items && checkout.items.map((item, i) =>
+                    {checkout.items && checkout.items.map((item: ICheckoutItem, i: number) =>
                       <Flex.Row key={i} gap="1rem">
                         <Text flexGrow="1">{item.title}</Text>
                         <Text flexBasis="40px" textAlign="right">{item.qty}</Text>
-                        <Text flexBasis="90px" textAlign="right">{currency(item.qty * item.price)}</Text>
+                        <Flex.Col flexBasis="90px" alignItems="flex-end" textAlign="right">
+                          <Text>{currency(item.qty * item.price)}</Text>
+                          {item.fullPrice > item.price && <Text size="11" textDecoration="line-through" color="var(--color-neutral-400)">{currency(item.fullPrice * item.qty)}</Text>}
+                        </Flex.Col>
                       </Flex.Row>
                     )}
                   </Flex.Col>
                   <Flex.Row gap="1rem">
                     <Text flexGrow="1">Subtotal</Text>
                     <Text flexBasis="40px" textAlign="right">&nbsp;</Text>
-                    <Text flexBasis="90px" textAlign="right">{currency(subTotal)}</Text>
+                    <Flex.Col flexBasis="90px" alignItems="flex-end" textAlign="right">
+                      <Text>{currency(subTotal)}</Text>
+                      {subTotalFull > subTotal && <Text size="11" textDecoration="line-through" color="var(--color-neutral-400)">{currency(subTotalFull)}</Text>}
+                    </Flex.Col>
                   </Flex.Row>
+                  {checkout.discounts && checkout.discounts.map((item, i) =>
+                    <Flex.Row key={i} gap="1rem">
+                      <Text flexGrow="1">Discount <Badge>{item.name}</Badge></Text>
+                      <Text flexBasis="40px" textAlign="right">{item.abstract}</Text>
+                      <Text flexBasis="90px" textAlign="right">{currency(item.price)}</Text>
+                    </Flex.Row>
+                  )}
                   {taxes > 0 &&
                     <Flex.Row gap="1rem">
                       <Text flexGrow="1">Taxes</Text>
@@ -198,13 +212,6 @@ export const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onRe
                       <Text flexBasis="90px" textAlign="right">{currency(delivery.price)}</Text>
                     </Flex.Row>
                   }
-                  {checkout.discounts && checkout.discounts.map((item, i) =>
-                    <Flex.Row key={i} gap="1rem">
-                      <Text flexGrow="1">Discount <Badge>{item.name}</Badge></Text>
-                      <Text flexBasis="40px" textAlign="right">{item.abstract}</Text>
-                      <Text flexBasis="90px" textAlign="right">{currency(item.price)}</Text>
-                    </Flex.Row>
-                  )}
                   <Flex.Row gap="1rem" fontWeight="700" marginBottom="1rem">
                     <Text flexGrow="1">Total</Text>
                     <Text flexBasis="40px" textAlign="right">&nbsp;</Text>

@@ -1,4 +1,4 @@
-import type { IEntity, IQuerable } from '@websolute/core';
+import { IEntity, IQuerable } from '@websolute/core';
 import { fsReadJson } from '../fs/fs.service';
 import { IStore } from '../store/store';
 import { MockService } from './mock.service';

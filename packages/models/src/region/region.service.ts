@@ -1,4 +1,4 @@
-import type { INamedEntity } from '@websolute/core';
+import { INamedEntity } from '@websolute/core';
 import { getStore } from '@websolute/store';
 import { IModelStore } from '../store/store';
 

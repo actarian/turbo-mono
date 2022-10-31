@@ -1,6 +1,6 @@
 import { FormAbstract } from './form-abstract';
 import { FormAbstractCollection } from './form-abstract-collection';
-import type { FormOptions, FormValidator } from './types';
+import { FormOptions, FormValidator } from './types';
 
 export class FormArray extends FormAbstractCollection<FormAbstract[]> {
 

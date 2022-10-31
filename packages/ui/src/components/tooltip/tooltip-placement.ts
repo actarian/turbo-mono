@@ -1,32 +1,32 @@
 import { Placement } from './tooltip-props';
 
-interface ParentDomRect {
-  top: number
-  left: number
-  right: number
-  bottom: number
-  width: number
-  height: number
+type ParentDomRect = {
+  top: number;
+  left: number;
+  right: number;
+  bottom: number;
+  width: number;
+  height: number;
 }
 
 export type TooltipPosition = {
-  top: string
-  left: string
-  transform: string
+  top: string;
+  left: string;
+  transform: string;
+}
+
+export type TooltipIconPosition = {
+  top: string;
+  left: string;
+  right: string;
+  bottom: string;
+  transform: string;
 }
 
 export const defaultTooltipPosition = {
   top: '-1000px',
   left: '-1000px',
   transform: 'none',
-}
-
-export type TooltipIconPosition = {
-  top: string
-  left: string
-  right: string
-  bottom: string
-  transform: string
 }
 
 export const getPosition = (

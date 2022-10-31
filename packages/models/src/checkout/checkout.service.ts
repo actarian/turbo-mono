@@ -10,7 +10,7 @@ import { ICheckoutDelivery, ICheckoutItem, ICheckoutPartial, ICheckoutPayment, I
 // step 1.
 export async function getItems(items: ICartItem[], market: string, locale: string, user?: IUser): Promise<ICheckoutItem[]> {
   // !!! todo calculate user discount price
-  return items.map(x => ({ ...x, fullPrice: x.price }));
+  return items.map(x => ({ ...x, fullPrice: x.price, price: x.price * 0.9 }));
 }
 
 // step 2.
@@ -267,25 +267,39 @@ export async function updateCheckout(checkout: ICheckoutPartial, action: string,
   const subTotal = checkout.items ? checkout.items.reduce((p, c) => {
     return p + c.price * c.qty;
   }, 0) : 0;
-  const totalDiscountPrice = checkout.discounts ? checkout.discounts.reduce((p, c) => {
-    let discountPrice = 0;
+  const subTotalFull = checkout.items ? checkout.items.reduce((p, c) => {
+    return p + c.fullPrice * c.qty;
+  }, 0) : 0;
+  const subTotalDiscountPrice = checkout.discounts ? checkout.discounts.reduce((p, c) => {
+    let value = 0;
     switch (c.id) {
-      case 'shipping':
-        discountPrice = (checkout.delivery?.price || 0) * -1;
-        break;
       case 'coupon10':
-        discountPrice = (checkout.items?.reduce((p, c) => p + c.price * c.qty * 0.1, 0) || 0) * -1;
+        value = subTotal * 0.1 * -1;
+        c.price = value;
         break;
       case 'coupon50':
-        discountPrice = (checkout.items?.reduce((p, c) => p + c.price * c.qty * 0.5, 0) || 0) * -1;
+        value = subTotal * 0.5 * -1;
+        c.price = value;
         break;
     }
-    c.price = discountPrice;
-    return p + discountPrice;
+    return p + value;
   }, 0) : 0;
-  const taxes = subTotal * 0.2;
-  const total = subTotal + totalDiscountPrice + taxes;
+  const deliveryPrice = checkout.delivery?.price || 0;
+  const afterTaxesDiscountPrice = checkout.discounts ? checkout.discounts.reduce((p, c) => {
+    let value = 0;
+    switch (c.id) {
+      case 'shipping':
+        value = deliveryPrice * -1;
+        c.price = value;
+        break;
+    }
+    return p + value;
+  }, 0) : 0;
+  // const totalDiscountPrice = subTotalDiscountPrice + afterTaxesDiscountPrice;
+  const taxes = (subTotal + subTotalDiscountPrice) * 0.2;
+  const total = subTotal + subTotalDiscountPrice + taxes + deliveryPrice + afterTaxesDiscountPrice;
   checkout.subTotal = subTotal;
+  checkout.subTotalFull = subTotalFull;
   checkout.taxes = taxes;
   checkout.total = total;
   return checkout;

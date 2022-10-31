@@ -1,7 +1,7 @@
-import type { FindParams } from '@websolute/core';
+import { FindParams } from '@websolute/core';
 import { getStore } from '@websolute/store';
 import { IModelStore } from '../store/store';
-import type { ILabel } from './label';
+import { ILabel } from './label';
 
 export async function getLabels(params: FindParams = {}): Promise<ILabel[]> {
   const store = await getStore<IModelStore>();

@@ -1,5 +1,4 @@
-import type { FindParams, IEntity } from '@websolute/core';
-import { JsonService, localizeItem } from '@websolute/core';
+import { FindParams, IEntity, JsonService, localizeItem } from '@websolute/core';
 
 export class MockService<T extends IEntity> extends JsonService<T> {
 

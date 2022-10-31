@@ -1,5 +1,4 @@
-import type { NextFetchEvent, NextRequest } from 'next/server';
-import { NextResponse } from 'next/server';
+import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 import { isExistingApiRoute } from '../middleware/middleware.service';
 import { StoreStrategy, storeStrategy } from '../store/store';
 

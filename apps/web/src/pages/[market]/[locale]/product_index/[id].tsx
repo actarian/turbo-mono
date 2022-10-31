@@ -32,7 +32,7 @@ export type ProductsProps = PageProps & {
 /*
 import { ParsedUrlQuery } from 'querystring'
 
-interface IParams extends ParsedUrlQuery {
+type IParams = ParsedUrlQuery & {
   params: {
     id: string;
     market: string;

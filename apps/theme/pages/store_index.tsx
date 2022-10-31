@@ -1,5 +1,5 @@
 import { SplitDefaults, StoreLocatorDefaults, StoreLocatorFeaturesDefaults, StoreLocatorSearchDefaults } from '@websolute/mock';
-import type { IFeatureType } from '@websolute/models';
+import { IFeatureType } from '@websolute/models';
 import { Footer, Header, Layout, Page, Split, StoreLocatorItem, StoreLocatorSearch, withPageTransition } from '@websolute/ui';
 import Head from 'next/head';
 

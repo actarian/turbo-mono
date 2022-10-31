@@ -1,8 +1,7 @@
-import type { FindParams, IEquatable } from '@websolute/core';
-import { awaitAll } from '@websolute/core';
+import { awaitAll, FindParams, IEquatable } from '@websolute/core';
 import { decorateHref, IModelStore } from '@websolute/models';
 import { getStore } from '@websolute/store';
-import type { IShopCategory } from './shop_category';
+import { IShopCategory } from './shop_category';
 
 export async function getShopCategories(params: FindParams = {}): Promise<IShopCategory[]> {
   const store = await getStore<IModelStore>();

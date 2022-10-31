@@ -10,8 +10,11 @@ type Props = {
 
 export type TypographyProps = UIComponentProps<Props>;
 
-interface TypographyTextProps extends ComponentPropsWithRef<'div'> {
-  type: string, k: number, size: string, s: number
+type TypographyTextProps = ComponentPropsWithRef<'div'> & {
+  type: string;
+  k: number;
+  size: string;
+  s: number;
 }
 
 const TypographyText: React.FC<TypographyTextProps> = React.forwardRef<HTMLDivElement, TypographyTextProps>(({ type, k, size, s }: TypographyTextProps, ref?: React.Ref<HTMLDivElement>) => {

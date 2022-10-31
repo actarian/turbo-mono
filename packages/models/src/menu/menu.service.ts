@@ -1,7 +1,7 @@
-import type { IEquatable } from '@websolute/core';
+import { IEquatable } from '@websolute/core';
 import { getStore } from '@websolute/store';
 import { IModelStore } from '../store/store';
-import type { IMenu } from './menu';
+import { IMenu } from './menu';
 
 export async function getMenu(id: IEquatable): Promise<IMenu | undefined> {
   const store = await getStore<IModelStore>();
