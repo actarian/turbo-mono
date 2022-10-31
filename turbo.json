@@ -26,19 +26,19 @@
       "cache": false
     }
   },
-  "globalDependencies": [
-    "$NODE_ENV",
-    "$IMAGE_DOMAIN",
-    "$SECRET_COOKIE_PASSWORD",
-    "$STORE_STRATEGY",
-    "$STORE_URL",
-    "$STORE_API",
-    "$STORE_BEARER",
-    "$HOOKS_SECRET",
-    "$NEXT_PUBLIC_URL",
-    "$NEXT_PUBLIC_MOCK_FALLBACK_URL",
-    "$NEXT_PUBLIC_API",
-    "$NEXT_PUBLIC_GOOGLE_MAP_API_KEY",
-    "$ANALYZE"
+  "globalEnv": [
+    "NODE_ENV",
+    "IMAGE_DOMAIN",
+    "SECRET_COOKIE_PASSWORD",
+    "STORE_STRATEGY",
+    "STORE_URL",
+    "STORE_API",
+    "STORE_BEARER",
+    "HOOKS_SECRET",
+    "NEXT_PUBLIC_URL",
+    "NEXT_PUBLIC_MOCK_FALLBACK_URL",
+    "NEXT_PUBLIC_API",
+    "NEXT_PUBLIC_GOOGLE_MAP_API_KEY",
+    "ANALYZE"
   ]
 }
