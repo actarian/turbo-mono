@@ -5,6 +5,7 @@ import { lazy } from 'react';
 
 export * from './arrow-left';
 export * from './arrow-right';
+export * from './box';
 export * from './calendar';
 export * from './chevron-down';
 export * from './chevron-left';
@@ -19,6 +20,8 @@ export * from './hexagon';
 export * from './instagram';
 export * from './linkedin';
 export * from './lock';
+export * from './log-in';
+export * from './log-out';
 export * from './map-pin';
 export * from './menu';
 export * from './minus';
@@ -43,6 +46,7 @@ export * from './x';
 export const Icons = {
   ArrowLeft: lazy(() => import('./arrow-left').then( module => ({ default: module.ArrowLeft }) )),
   ArrowRight: lazy(() => import('./arrow-right').then( module => ({ default: module.ArrowRight }) )),
+  Box: lazy(() => import('./box').then( module => ({ default: module.Box }) )),
   Calendar: lazy(() => import('./calendar').then( module => ({ default: module.Calendar }) )),
   ChevronDown: lazy(() => import('./chevron-down').then( module => ({ default: module.ChevronDown }) )),
   ChevronLeft: lazy(() => import('./chevron-left').then( module => ({ default: module.ChevronLeft }) )),
@@ -57,6 +61,8 @@ export const Icons = {
   Instagram: lazy(() => import('./instagram').then( module => ({ default: module.Instagram }) )),
   Linkedin: lazy(() => import('./linkedin').then( module => ({ default: module.Linkedin }) )),
   Lock: lazy(() => import('./lock').then( module => ({ default: module.Lock }) )),
+  LogIn: lazy(() => import('./log-in').then( module => ({ default: module.LogIn }) )),
+  LogOut: lazy(() => import('./log-out').then( module => ({ default: module.LogOut }) )),
   MapPin: lazy(() => import('./map-pin').then( module => ({ default: module.MapPin }) )),
   Menu: lazy(() => import('./menu').then( module => ({ default: module.Menu }) )),
   Minus: lazy(() => import('./minus').then( module => ({ default: module.Minus }) )),

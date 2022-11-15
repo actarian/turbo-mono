@@ -5,5 +5,29 @@
       "en": "Reserved area",
       "it": "Area riservata"
     }
+  },
+  {
+    "categoryId": "reserved_area_order_index",
+    "template": "reserved_area_order_index",
+    "title": {
+      "en": "My orders",
+      "it": "I miei ordini"
+    }
+  },
+  {
+    "categoryId": "reserved_area_order_detail",
+    "template": "reserved_area_order_detail",
+    "title": {
+      "en": "Order detail",
+      "it": "Dettaglio ordine"
+    }
+  },
+  {
+    "categoryId": "reserved_area_account",
+    "template": "reserved_area_account",
+    "title": {
+      "en": "Account settings",
+      "it": "Impostazioni account"
+    }
   }
 ]

@@ -195,14 +195,15 @@ function titleToSlug(title) {
         .replace(/^-+/, '') //trim starting dash
         .replace(/-+$/, ''); //trim ending dash
 }
-function getRoute(href, marketId, localeId, pageSchema, pageId) {
+function createRoute(href, marketId, localeId, pageId, pageSchema, pageTemplate) {
     return {
         id: href,
         schema: 'route',
         marketId,
         localeId,
-        pageSchema,
         pageId,
+        pageSchema,
+        pageTemplate,
     };
 }
 function createRouteService(store, PAGES) {
@@ -235,14 +236,14 @@ function createRouteService(store, PAGES) {
                             return slug === '/' ? '' : slug;
                         }, '');
                         // console.log('href', href);
-                        const route = getRoute(`/${m.id}/${l}${href}`, m.id, l, key, item.id);
+                        const route = createRoute(`/${m.id}/${l}${href}`, m.id, l, item.id, key, item.template);
                         routes.push(route);
                     });
                 });
                 if (key === 'homepage') {
                     const defaultMarket = markets[0].id;
                     const defaultLocale = markets[0].languages ? markets[0].languages[0] : languages[0];
-                    const route = getRoute(`/`, defaultMarket, defaultLocale, key, item.id);
+                    const route = createRoute(`/`, defaultMarket, defaultLocale, item.id, key, item.template);
                     routes.push(route);
                 }
             }

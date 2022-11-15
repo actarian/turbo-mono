@@ -55,7 +55,7 @@ const StyledMedia = styled.div<MediaProps>`
     height: 100%;
   }
 
-  &>:not(.media-info):not(.image-svg) {
+  &>:not(.media-info):not(.image-svg):not(svg) {
     object-fit: cover;
     background: var(--color-neutral-200);
   }

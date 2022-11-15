@@ -17,7 +17,7 @@ const StyledList = styled.div<ListProps>`
   ${props => getCssResponsive(props)}
 `;
 
-export const List: ListComponent = forwardRef(({ children, as = 'div', ...props }, ref) => (
+export const List: ListComponent = forwardRef(({ as = 'div', ...props }, ref) => (
   <StyledList ref={ref} as={as} {...props} />
 ));
 

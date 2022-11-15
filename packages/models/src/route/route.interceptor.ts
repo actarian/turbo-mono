@@ -21,7 +21,7 @@ export async function routeInterceptor(request: NextRequest, next: NextFetchEven
   // console.log('routeInterceptor.route.found', url.pathname, '->', route);
   url = request.nextUrl.clone();
   const resolvedPathname = resolveRoute(route, PAGES);
-  // console.log('resolvedPathname', resolvedPathname);
+  console.log('resolvedPathname', resolvedPathname);
   url.pathname = resolvedPathname;
   // console.log('routeInterceptor.route', route.pageSchema, route.pageId, route.marketId, route.localeId);
   const response = NextResponse.rewrite(url);

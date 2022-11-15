@@ -6,8 +6,9 @@ export type IRoute = IEntity & {
   // schema: string;
   marketId: string;
   localeId: string;
-  pageSchema: string;
   pageId: IEquatable;
+  pageSchema: string;
+  pageTemplate?: string;
 }
 
 export type IRouteLink = {

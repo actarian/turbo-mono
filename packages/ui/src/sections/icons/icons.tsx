@@ -19,7 +19,7 @@ export const Icons: React.FC<IconsProps> = (props: IconsProps) => {
   const [icon, setIcon] = useState<IIcon | null>(null);
   const onSetIcon = (icon: IIcon | null = null) => {
     const visible = icon !== null;
-    console.log('onSetIcon', icon, visible);
+    // console.log('onSetIcon', icon, visible);
     setShowModal(visible);
     if (visible) {
       setIcon(icon);

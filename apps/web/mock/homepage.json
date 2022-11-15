@@ -2,6 +2,7 @@
   {
     "id": 1,
     "categoryId": "homepage",
+    "template": "homepage",
     "slug": "",
     "title": {
       "en": "New Wave",

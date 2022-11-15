@@ -209,14 +209,15 @@ function titleToSlug(title: string): string {
     .replace(/-+$/, ''); //trim ending dash
 }
 
-function getRoute(href: string, marketId: string, localeId: string, pageSchema: string, pageId: string): IRoute {
+function createRoute(href: string, marketId: string, localeId: string, pageId: string, pageSchema: string, pageTemplate?: string): IRoute {
   return {
     id: href,
     schema: 'route',
     marketId,
     localeId,
-    pageSchema,
     pageId,
+    pageSchema,
+    pageTemplate,
   }
 }
 
@@ -250,14 +251,14 @@ function createRouteService(store: SerializedStore, PAGES: { [key: string]: stri
               return slug === '/' ? '' : slug;
             }, '');
             // console.log('href', href);
-            const route = getRoute(`/${m.id}/${l}${href}`, m.id, l, key, item.id);
+            const route = createRoute(`/${m.id}/${l}${href}`, m.id, l, item.id, key, item.template);
             routes.push(route);
           });
         });
         if (key === 'homepage') {
           const defaultMarket = markets[0].id;
           const defaultLocale = markets[0].languages ? markets[0].languages[0] : languages[0];
-          const route = getRoute(`/`, defaultMarket, defaultLocale, key, item.id);
+          const route = createRoute(`/`, defaultMarket, defaultLocale, item.id, key, item.template);
           routes.push(route);
         }
       }

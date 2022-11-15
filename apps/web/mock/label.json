@@ -91,6 +91,27 @@
     }
   },
   {
+    "id": "field.oldPassword",
+    "text": {
+      "en": "Old password",
+      "it": "Password precedente"
+    }
+  },
+  {
+    "id": "field.newPassword",
+    "text": {
+      "en": "New password",
+      "it": "Nuova password"
+    }
+  },
+  {
+    "id": "field.confirmNewPassword",
+    "text": {
+      "en": "Confirm new password",
+      "it": "Conferma nuova password"
+    }
+  },
+  {
     "id": "field.rememberMe",
     "text": {
       "en": "Remember me",
@@ -238,6 +259,104 @@
     }
   },
   {
+    "id": "order.status.pending",
+    "text": {
+      "en": "Pending",
+      "it": "In attesa"
+    }
+  },
+  {
+    "id": "order.status.awaitingPayment",
+    "text": {
+      "en": "Awaiting Payment",
+      "it": "In attesa del pagamento"
+    }
+  },
+  {
+    "id": "order.status.awaitingFulfillment",
+    "text": {
+      "en": "Awaiting Fulfillment",
+      "it": "In gestione"
+    }
+  },
+  {
+    "id": "order.status.awaitingShipment",
+    "text": {
+      "en": "Awaiting Shipment",
+      "it": "In spedizione"
+    }
+  },
+  {
+    "id": "order.status.awaitingPickup",
+    "text": {
+      "en": "Awaiting Pickup",
+      "it": "Da ritirare"
+    }
+  },
+  {
+    "id": "order.status.partiallyShipped",
+    "text": {
+      "en": "Partially Shipped",
+      "it": "Spedizione parziale"
+    }
+  },
+  {
+    "id": "order.status.completed",
+    "text": {
+      "en": "Completed",
+      "it": "Completato"
+    }
+  },
+  {
+    "id": "order.status.shipped",
+    "text": {
+      "en": "Shipped",
+      "it": "Spedito"
+    }
+  },
+  {
+    "id": "order.status.cancelled",
+    "text": {
+      "en": "Cancelled",
+      "it": "Cancellato"
+    }
+  },
+  {
+    "id": "order.status.declined",
+    "text": {
+      "en": "Declined",
+      "it": "Rifiutato"
+    }
+  },
+  {
+    "id": "order.status.refunded",
+    "text": {
+      "en": "Refunded",
+      "it": "Rimborsato"
+    }
+  },
+  {
+    "id": "order.status.disputed",
+    "text": {
+      "en": "Disputed",
+      "it": "Contestato"
+    }
+  },
+  {
+    "id": "order.status.manualVerificationRequired",
+    "text": {
+      "en": "Manual Verification Required",
+      "it": "Verifica manuale richiesta"
+    }
+  },
+  {
+    "id": "order.status.partiallyRefunded",
+    "text": {
+      "en": "Partially Refunded",
+      "it": "Parzialmente rimborsato"
+    }
+  },
+  {
     "id": "form.accept.true",
     "text": {
       "en": "I agree",
@@ -287,10 +406,17 @@
     }
   },
   {
-    "id": "form.auth.unauthorized",
+    "id": "form.submit.loginError",
     "text": {
       "en": "Invalid username or password",
       "it": "Nome utente o password non valida"
+    }
+  },
+  {
+    "id": "form.submit.changePasswordError",
+    "text": {
+      "en": "Invalid password",
+      "it": "Password non valida"
     }
   },
   {

@@ -64,9 +64,15 @@ export function isStaticRequest(request: NextRequest) {
   return isStatic;
 }
 
+export function isNextRequest(request: NextRequest) {
+  const url = request.nextUrl;
+  const isNext = url.pathname.indexOf('/_next/') === 0;
+  return isNext;
+}
+
 export function isApiRequest(request: NextRequest) {
   const url = request.nextUrl;
-  const isApi = url.pathname.indexOf('/api') === 0 || url.pathname.indexOf('/_next/image') === 0;
+  const isApi = url.pathname.indexOf('/api') === 0;
   return isApi;
 }
 

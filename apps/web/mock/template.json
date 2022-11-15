@@ -1,0 +1,112 @@
+[
+  {
+    "id": "store_index",
+    "name": "Store Index",
+    "collections": [
+      "store_index"
+    ]
+  },
+  {
+    "id": "shop_index",
+    "name": "Shop Index",
+    "collections": [
+      "shop_index"
+    ]
+  },
+  {
+    "id": "shop_detail",
+    "name": "Shop Detail",
+    "collections": [
+      "shop_detail"
+    ]
+  },
+  {
+    "id": "shop_category",
+    "name": "Shop Category",
+    "collections": [
+      "shop_category"
+    ]
+  },
+  {
+    "id": "reserved_area",
+    "name": "Reserved Area",
+    "collections": [
+      "reserved_area"
+    ]
+  },
+  {
+    "id": "magazine_index",
+    "name": "Magazine Index",
+    "collections": [
+      "magazine_index"
+    ]
+  },
+  {
+    "id": "magazine_detail",
+    "name": "Magazine Detail",
+    "collections": [
+      "magazine_detail"
+    ]
+  },
+  {
+    "id": "magazine_category",
+    "name": "Magazine Category",
+    "collections": [
+      "magazine_category"
+    ]
+  },
+  {
+    "id": "login",
+    "name": "Login",
+    "collections": [
+      "login"
+    ]
+  },
+  {
+    "id": "contact",
+    "name": "Contacts",
+    "collections": [
+      "contact"
+    ]
+  },
+  {
+    "id": "checkout",
+    "name": "Checkout",
+    "collections": [
+      "checkout"
+    ]
+  },
+  {
+    "id": "generic_page",
+    "name": "Generic Page",
+    "collections": null
+  },
+  {
+    "id": "product_index",
+    "name": "Product Index",
+    "collections": [
+      "product_index"
+    ]
+  },
+  {
+    "id": "product_detail",
+    "name": "Product Detail",
+    "collections": [
+      "product_detail"
+    ]
+  },
+  {
+    "id": "product_category",
+    "name": "Product Category",
+    "collections": [
+      "product_category"
+    ]
+  },
+  {
+    "id": "homepage",
+    "name": "Homepage",
+    "collections": [
+      "homepage"
+    ]
+  }
+]

@@ -94,7 +94,7 @@ export const AuthLogin: React.FC<AuthLoginProps> = ({ onSignedIn, onNavToForgot,
             <FieldCheckbox margin="0" control={group.controls.rememberMe}></FieldCheckbox>
             <Button variant="link" onClick={onForgot}>Forgot your password?</Button>
           </Flex.Row>
-          {error && <FormError error={error}>{label('form.auth.unauthorized')}</FormError>}
+          {error && <FormError error={error}>{label('form.submit.loginError')}</FormError>}
           <Button type="submit" variant="primary" size="lg" justifyContent="center" margin="1rem 0"><span>Sign In</span></Button>
           {/*
           <Flex.Row justifyContent="flex-end" margin="1rem 0">

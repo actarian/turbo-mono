@@ -356,7 +356,7 @@ export class FormAbstract extends EventEmitter {
 
   private placeholder_?: string;
   get placeholder(): string {
-    return this.placeholder_ || this.name?.toString() || '';
+    return this.placeholder_ || this.label || '';
   }
   set placeholder(placeholder: string) {
     this.placeholder_ = placeholder;

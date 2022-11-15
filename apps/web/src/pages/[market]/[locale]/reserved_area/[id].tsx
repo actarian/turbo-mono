@@ -1,16 +1,18 @@
 
 import { asServerProps, httpGet, IContextParams } from '@websolute/core';
 import { useUser } from '@websolute/hooks';
-import { getLayout, getPage, PageProps } from '@websolute/models';
+import { LogOut } from '@websolute/icons';
+import { getLayout, getPage, IUser, PageProps } from '@websolute/models';
 import { StoreStrategy, storeStrategy } from '@websolute/store';
-import { Box, Button, Container, Flex, Footer, Header, Layout, Meta, NavLink, Page, Section, Text } from '@websolute/ui';
+import { Box, Button, Flex, Footer, Header, Layout, Meta, Page, ReservedArea, Text } from '@websolute/ui';
 import { promises as fs } from 'fs';
 import { withIronSessionSsr } from 'iron-session/next';
 import { useRouter } from 'next/router';
 import path from 'path';
 import { sessionOptions } from 'src/config/session';
 
-export default function ReservedArea({ layout, page, user, params }: ReservedAreaProps) {
+export default function ReservedAreaPage({ layout, page, user, params }: ReservedAreaProps) {
+
   const router = useRouter();
 
   const setUser = useUser((state) => state.setUser);
@@ -32,8 +34,20 @@ export default function ReservedArea({ layout, page, user, params }: ReservedAre
       <Page>
         <Header sticky />
 
-        <Section>
-          <Container>
+        <ReservedArea layout={layout} page={page}>
+          <Flex.Col gap="1rem" maxWidth="60ch">
+            <Text size="6" fontWeight="700">{page.title}</Text>
+            <Text size="7">Hi {user.firstName} {user.lastName}</Text>
+            <Flex.Row>
+              <Text size="8" lineHeight="2">Aren't you {user.firstName} {user.lastName}?</Text>
+              <Button variant="nav" as="a" onClick={() => onLogout()}>
+                <LogOut />
+                <span>Logout</span>
+              </Button>
+            </Flex.Row>
+            <Text size="8" lineHeight="2">From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and change your password and account details.</Text>
+          </Flex.Col>
+          {false && (
             <Flex.Col minHeight="60vh" justifyContent="center" alignItems="center">
               <Flex.Row alignItems="flex-start">
                 <Box padding="0 1rem" borderRight="1px solid var(--color-neutral-300)">
@@ -48,17 +62,11 @@ export default function ReservedArea({ layout, page, user, params }: ReservedAre
                       ))}
                     </ul>
                   </Text>
-                  <Flex.Responsive>
-                    <NavLink href="/">
-                      <Button variant="primary" onClick={() => onLogout()}><span>Logout</span></Button>
-                    </NavLink>
-                  </Flex.Responsive>
                 </Box>
               </Flex.Row>
             </Flex.Col>
-          </Container>
-        </Section>
-
+          )}
+        </ReservedArea>
 
         <Footer />
       </Page>
@@ -67,7 +75,7 @@ export default function ReservedArea({ layout, page, user, params }: ReservedAre
 }
 
 export type ReservedAreaProps = PageProps & {
-  user: { name: string };
+  user: IUser;
 }
 
 export const getServerSideProps = withIronSessionSsr(async function (context) {
@@ -112,7 +120,6 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
   const page = await getPage('reserved_area', id, market, locale);
 
   const props = asServerProps({ params, query, layout, page, user });
-  // console.log('ProductSearchSSR getStaticProps', props);
   return {
     props,
   };

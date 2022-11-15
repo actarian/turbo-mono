@@ -27,11 +27,10 @@ export default function CheckoutResult({ layout, page, user, order, params }: Ch
           </Section>
         )}
 
-        {order && (
-          order.status === IOrderStatus.AwaitingFulfillment ?
-            <CheckoutSuccess order={order} /> :
-            <CheckoutError />
-        )}
+        {!order || order.status === IOrderStatus.AwaitingPayment ?
+          <CheckoutError order={order} /> :
+          <CheckoutSuccess order={order} />
+        }
 
         <Footer />
       </Page>
@@ -56,9 +55,9 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
   const layout = await getLayout(market, locale);
 
   const user = context.req.session.user;
-  const order = await getOrder(query.id as string, market, locale);
+  const order = await getOrder(query.orderId as string, market, locale);
 
-  if (order.status === IOrderStatus.Pending) {
+  if (order && order.status === IOrderStatus.Pending) {
     order.status = query.status === 'OK' ? IOrderStatus.AwaitingFulfillment : IOrderStatus.AwaitingPayment;
   }
 

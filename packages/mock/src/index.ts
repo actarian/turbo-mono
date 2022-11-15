@@ -15,6 +15,7 @@ export { default as MagazineDetailDefaults } from './magazine-detail.json';
 export { default as MagazineHeroDefaults } from './magazine-hero.json';
 export { default as MagazineSearchFeaturesDefaults } from './magazine-search-features.json';
 export { default as MagazineSearchDefaults } from './magazine-search.json';
+export { default as OrderDefaults } from './order.json';
 export { default as PageDefaults } from './page.json';
 export { default as ProductOverviewGalleryDefaults } from './product-overview-gallery.json';
 export { default as ProductOverviewDefaults } from './product-overview.json';
@@ -44,3 +45,4 @@ export { default as StoreLocatorFeaturesDefaults } from './store-locator-feature
 export { default as StoreLocatorSearchDefaults } from './store-locator-search.json';
 export { default as StoreLocatorDefaults } from './store-locator.json';
 export { default as SwiperHeroDefaults } from './swiper-hero.json';
+

@@ -346,6 +346,6 @@ export async function getPayment(checkout: ICheckoutPartial, market: string, loc
   const knownRoutes = await getRoutesForSchemas(['checkout_result'], market, locale);
   // console.log('getPayment.knownRoutes', knownRoutes, checkout, market, locale);
   // !!! todo return payment redirectUrl
-  const redirectUrl = `${knownRoutes.checkout_result}?order=1&status=OK`;
+  const redirectUrl = `${knownRoutes.checkout_result}?orderId=1&status=OK`;
   return { redirectUrl };
 }

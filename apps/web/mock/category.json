@@ -242,6 +242,36 @@
     "pageId": 1
   },
   {
+    "id": "reserved_area_order_index",
+    "title": {
+      "en": "My orders",
+      "it": "I miei ordini"
+    },
+    "categoryId": "reserved_area",
+    "pageSchema": "reserved_area",
+    "pageId": 2
+  },
+  {
+    "id": "reserved_area_order_detail",
+    "title": {
+      "en": "Order detail",
+      "it": "Dettaglio ordine"
+    },
+    "categoryId": "reserved_area_order_index",
+    "pageSchema": "reserved_area",
+    "pageId": 3
+  },
+  {
+    "id": "reserved_area_account",
+    "title": {
+      "en": "Account settings",
+      "it": "Impostazioni account"
+    },
+    "categoryId": "reserved_area",
+    "pageSchema": "reserved_area",
+    "pageId": 4
+  },
+  {
     "id": "checkout",
     "title": {
       "en": "Checkout",

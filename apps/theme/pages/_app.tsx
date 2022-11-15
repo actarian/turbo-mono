@@ -19,23 +19,21 @@ export default function Application({ Component, pageProps, router }: Applicatio
   // console.log('layout', layout, 'page', page);
 
   return (
-    <>
-      <LayoutProvider layout={layout}>
-        <LabelProvider>
-          <PageProvider page={page}>
-            <ThemeProvider theme={theme}>
-              <GlobalStyle />
-              <CartProvider>
-                <AnimatePresence mode="wait">
-                  <Component {...pageProps} key={router.route} />
-                </AnimatePresence>
-              </CartProvider>
-              <Breakpoint></Breakpoint>
-            </ThemeProvider>
-          </PageProvider>
-        </LabelProvider>
-      </LayoutProvider>
-    </>
+    <LayoutProvider layout={layout}>
+      <LabelProvider>
+        <PageProvider page={page}>
+          <ThemeProvider theme={theme}>
+            <GlobalStyle />
+            <CartProvider>
+              <AnimatePresence mode="wait">
+                <Component {...pageProps} key={router.route} />
+              </AnimatePresence>
+            </CartProvider>
+            <Breakpoint></Breakpoint>
+          </ThemeProvider>
+        </PageProvider>
+      </LabelProvider>
+    </LayoutProvider>
   )
 }
 

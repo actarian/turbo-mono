@@ -1,5 +1,7 @@
 // import { themes } from '@storybook/theming';
 import { addDecorator } from '@storybook/react';
+import { CartProvider, LabelProvider, LayoutProvider, PageProvider } from '@websolute/hooks';
+import { LayoutDefaults, PageDefaults } from '@websolute/mock';
 import { GlobalStyle, theme } from '@websolute/ui';
 import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 import { ThemeProvider } from 'styled-components';
@@ -9,13 +11,25 @@ import { createCustomTheme } from './utils/create-custom-theme';
 
 const themeJson = theme;
 
+const layout = LayoutDefaults;
+
+const page = PageDefaults;
+
 addDecorator((story) => (
   <>
-    <Head>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;700&display=swap" rel="stylesheet"></link>
-    </Head>
-    <GlobalStyle />
-    { story() }
+    <LayoutProvider layout={ layout }>
+      <LabelProvider>
+        <PageProvider page={ page }>
+          <Head>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;700&display=swap" rel="stylesheet"></link>
+          </Head>
+          <GlobalStyle />
+          <CartProvider>
+            { story() }
+          </CartProvider>
+        </PageProvider>
+      </LabelProvider>
+    </LayoutProvider>
   </>
 ));
 

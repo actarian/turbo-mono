@@ -34,6 +34,24 @@ export async function getRoutesForSchemas(schemas: string[], market?: string, lo
   return pageSchemas;
 }
 
+export async function getRoutesForTemplates(templates: string[], market?: string, locale?: string): Promise<{ [key: string]: string; }> {
+  const store = await getStore<IModelStore>();
+  const routes = await store.route.findMany({
+    where: {
+      pageTemplate: templates, marketId: market, localeId: locale
+    }, market, locale
+  });
+  const pageTemplates: {
+    [key: string]: string;
+  } = {};
+  routes.forEach(route => {
+    if (route.pageTemplate) {
+      pageTemplates[route.pageTemplate] = route.id;
+    }
+  });
+  return pageTemplates;
+}
+
 export async function getStaticPathsForSchema(schema: string): Promise<StaticPath[]> {
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany({ where: { pageSchema: schema } });
@@ -115,9 +133,15 @@ export function categoryToRouteLink(routes: IRoute[], categories: ICategory[], c
   };
 }
 
+// !!! remove PAGES ?
 export function resolveRoute(route: IRoute, PAGES: { [key: string]: string }) {
   // console.log('resolveRoute', route.pageSchema);
-  const routepath: string = PAGES[route.pageSchema];
+  const routepath: string = route.pageTemplate ? route.pageTemplate : route.pageSchema;
+  /*
+  // !!! skipping cms key mapping -> route mapping
+  const pageKey: string = route.pageTemplate ? route.pageTemplate : route.pageSchema;
+  const routepath: string = PAGES[pageKey];
+  */
   return `/${route.marketId}/${route.localeId}/${routepath}/${route.pageId}`;
   /*
   routepath = routepath.replace(/:([^\/]*)/g, (match, p1) => {

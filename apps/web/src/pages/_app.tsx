@@ -15,21 +15,19 @@ export default function Application({ Component, pageProps }: ApplicationProps) 
   }
 
   return (
-    <>
-      <LayoutProvider layout={layout}>
-        <LabelProvider>
-          <PageProvider page={page}>
-            <ThemeProvider theme={theme}>
-              <GlobalStyle />
-              <CartProvider>
-                <Component {...pageProps} />
-              </CartProvider>
-              <Breakpoint></Breakpoint>
-            </ThemeProvider>
-          </PageProvider>
-        </LabelProvider>
-      </LayoutProvider>
-    </>
+    <LayoutProvider layout={layout}>
+      <LabelProvider>
+        <PageProvider page={page}>
+          <ThemeProvider theme={theme}>
+            <GlobalStyle />
+            <CartProvider>
+              <Component {...pageProps} />
+            </CartProvider>
+            <Breakpoint></Breakpoint>
+          </ThemeProvider>
+        </PageProvider>
+      </LabelProvider>
+    </LayoutProvider>
   )
 }
 

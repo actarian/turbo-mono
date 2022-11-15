@@ -25,3 +25,7 @@ export type IOrder = ICheckout & {
   date: Date | string;
   status: IOrderStatusValue;
 }
+
+export type IOrderDetail = IOrder & {
+  href: string;
+}
