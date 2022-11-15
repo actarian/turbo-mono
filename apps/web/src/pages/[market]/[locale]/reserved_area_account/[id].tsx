@@ -29,6 +29,10 @@ export default function ReservedAreaAccount({ layout, page, user: initialUser, p
     setView('view');
   }
 
+  const onCancel = () => {
+    setView('view');
+  }
+
   return (
     <Layout>
       <Meta />
@@ -55,11 +59,11 @@ export default function ReservedAreaAccount({ layout, page, user: initialUser, p
             )}
 
             {view === 'edit' && (
-              <AuthUpdate user={user} onUpdate={onUpdate} />
+              <AuthUpdate user={user} onUpdate={onUpdate} onCancel={onCancel} />
             )}
 
             {view === 'change-password' && (
-              <AuthChangePassword onPasswordChanged={onPasswordChanged} />
+              <AuthChangePassword onPasswordChanged={onPasswordChanged} onCancel={onCancel} />
             )}
 
           </Flex.Col>

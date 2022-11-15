@@ -1,5 +1,5 @@
 import { httpPost } from '@websolute/core';
-import { EmailValidator, FormGroup, MatchValidator, RequiredTrueValidator, RequiredValidator, useFormBuilder } from '@websolute/forms';
+import { EmailValidator, FormGroup, RequiredValidator, useFormBuilder } from '@websolute/forms';
 import { useLabel } from '@websolute/hooks';
 import { IUser, IUserRegister } from '@websolute/models';
 import { useState } from 'react';
@@ -10,17 +10,14 @@ import { Form, FormError, FormTester } from '../../forms';
 export type AuthUpdateProps = {
   user: IUser;
   onUpdate?: (user: IUser) => void;
+  onCancel?: () => void;
 }
 
-export const AuthUpdate: React.FC<AuthUpdateProps> = ({ user, onUpdate }: AuthUpdateProps) => {
+export const AuthUpdate: React.FC<AuthUpdateProps> = ({ user, onUpdate, onCancel }: AuthUpdateProps) => {
   const label = useLabel();
 
   const required = RequiredValidator();
-  const requiredTrue = RequiredTrueValidator();
   const email = EmailValidator();
-  const match = MatchValidator((value, rootValue, control, root) => {
-    return rootValue?.password;
-  });
 
   const [form, setValue, setTouched, reset, group] = useFormBuilder<IUserRegister, FormGroup>({
 
@@ -67,6 +64,12 @@ export const AuthUpdate: React.FC<AuthUpdateProps> = ({ user, onUpdate }: AuthUp
     }
   }
 
+  const onCancel_ = () => {
+    if (typeof onCancel === 'function') {
+      onCancel();
+    }
+  }
+
   return (
     <Flex.Col justifyContent="space-between">
       <Form state={form} onSubmit={onSubmit}>
@@ -76,7 +79,10 @@ export const AuthUpdate: React.FC<AuthUpdateProps> = ({ user, onUpdate }: AuthUp
           <FieldText control={group.controls.lastName}></FieldText>
           <FieldText control={group.controls.email}></FieldText>
           {error && <FormError error={error}>{label('form.submit.error')}</FormError>}
-          <Button type="submit" variant="primary" size="lg" justifyContent="center" margin="1rem 0"><span>Update</span></Button>
+          <Flex.Row justifyContent="space-between">
+            <Button variant="underline" onClick={onCancel_}><span>Cancel</span></Button>
+            <Button type="submit" variant="primary" justifyContent="center" margin="1rem 0"><span>Update</span></Button>
+          </Flex.Row>
           <FormTester form={form} onTest={onTest} onReset={onReset}></FormTester>
         </Flex.Col>
       </Form>

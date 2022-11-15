@@ -9,9 +9,10 @@ import { Form, FormError, FormTester } from '../../forms';
 
 export type AuthChangePasswordProps = {
   onPasswordChanged?: () => void;
+  onCancel?: () => void;
 }
 
-export const AuthChangePassword: React.FC<AuthChangePasswordProps> = ({ onPasswordChanged }: AuthChangePasswordProps) => {
+export const AuthChangePassword: React.FC<AuthChangePasswordProps> = ({ onPasswordChanged, onCancel }: AuthChangePasswordProps) => {
   const label = useLabel();
 
   const required = RequiredValidator();
@@ -63,6 +64,12 @@ export const AuthChangePassword: React.FC<AuthChangePasswordProps> = ({ onPasswo
     }
   }
 
+  const onCancel_ = () => {
+    if (typeof onCancel === 'function') {
+      onCancel();
+    }
+  }
+
   return (
     <Flex.Col justifyContent="space-between">
       <Form state={form} onSubmit={onSubmit}>
@@ -71,7 +78,10 @@ export const AuthChangePassword: React.FC<AuthChangePasswordProps> = ({ onPasswo
           <FieldPassword control={group.controls.newPassword}></FieldPassword>
           <FieldPassword control={group.controls.confirmNewPassword}></FieldPassword>
           {error && <FormError error={error}>{label('form.submit.changePasswordError')}</FormError>}
-          <Button type="submit" variant="primary" size="lg" justifyContent="center" margin="1rem 0"><span>Change password</span></Button>
+          <Flex.Row justifyContent="space-between">
+            <Button variant="underline" onClick={onCancel_}><span>Cancel</span></Button>
+            <Button type="submit" variant="primary" justifyContent="center" margin="1rem 0"><span>Change password</span></Button>
+          </Flex.Row>
           <FormTester form={form} onTest={onTest} onReset={onReset}></FormTester>
         </Flex.Col>
       </Form>
