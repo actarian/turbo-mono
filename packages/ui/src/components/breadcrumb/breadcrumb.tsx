@@ -10,7 +10,7 @@ import { BreadcrumbGroup } from './breadcrumb.group';
 type Props = {
   separator?: string | ReactNode;
   children?: ReactNode;
-}
+};
 
 export type BreadcrumbProps = UIStyledComponentProps<Props>;
 
@@ -58,7 +58,7 @@ const BreadcrumbBase: BreadcrumbComponent = ({ children, as = 'nav' as React.Ele
           <BreadcrumbSeparator>{separator}</BreadcrumbSeparator>
           {item}
         </React.Fragment>
-      )
+      );
     }
     return item;
   });
@@ -67,7 +67,7 @@ const BreadcrumbBase: BreadcrumbComponent = ({ children, as = 'nav' as React.Ele
       {withSeparatorChildren}
     </StyledBreadcrumb>
   );
-}
+};
 
 export const Breadcrumb = withSchema(BreadcrumbBase, {
   Item: BreadcrumbItem,

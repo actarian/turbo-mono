@@ -4,7 +4,7 @@ import { AuthRegisterSuccess } from '../auth/auth-register-success';
 type Props = {
   onNavToLogin?: () => void;
   onNavToPrevious?: () => void;
-}
+};
 
 export const CheckoutRegisterSuccess: React.FC<Props> = ({ onNavToLogin, onNavToPrevious }: Props) => {
 
@@ -12,13 +12,13 @@ export const CheckoutRegisterSuccess: React.FC<Props> = ({ onNavToLogin, onNavTo
     if (typeof onNavToLogin === 'function') {
       onNavToLogin();
     }
-  }
+  };
 
   const onNavToPrevious_ = () => {
     if (typeof onNavToPrevious === 'function') {
       onNavToPrevious();
     }
-  }
+  };
 
   return (
     <>

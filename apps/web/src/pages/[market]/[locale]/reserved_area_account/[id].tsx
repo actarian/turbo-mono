@@ -14,24 +14,24 @@ export default function ReservedAreaAccount({ layout, page, user: initialUser, p
 
   const onEdit = () => {
     setView('edit');
-  }
+  };
 
   const onUpdate = (user: IUser) => {
     setUser(user);
     setView('view');
-  }
+  };
 
   const onChangePassword = () => {
     setView('change-password');
-  }
+  };
 
   const onPasswordChanged = () => {
     setView('view');
-  }
+  };
 
   const onCancel = () => {
     setView('view');
-  }
+  };
 
   return (
     <Layout>
@@ -72,12 +72,12 @@ export default function ReservedAreaAccount({ layout, page, user: initialUser, p
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type ReservedAreaProps = PageProps & {
   user: IUser;
-}
+};
 
 export const getServerSideProps = withIronSessionSsr(async function (context) {
   const params = context.params as IContextParams;
@@ -108,7 +108,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
         permanent: false,
         destination: layout.topLevelHrefs.login || '/',
       },
-    }
+    };
   }
 
   // Page

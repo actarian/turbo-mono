@@ -9,7 +9,7 @@ import { FieldError } from './field-error';
 type FieldSelectProps = {
   control: FormControl;
   uid?: number | null | undefined;
-}
+};
 
 export function FieldSelect(props: FieldSelectProps) {
   const label = useLabel();
@@ -21,18 +21,18 @@ export function FieldSelect(props: FieldSelectProps) {
   const onChange = (value: string | string[]) => {
     const valueOrValues = stringToValue(value, props.control.options, props.control.optionsExtra);
     setValue(valueOrValues);
-  }
+  };
 
   const [focus, setFocus] = useState(false);
 
   const onBlur = (_: FocusEvent<HTMLInputElement>) => {
     setTouched();
     setFocus(false);
-  }
+  };
 
   const onFocus = (_: FocusEvent<HTMLInputElement>) => {
     setFocus(true);
-  }
+  };
 
   return (
     state.flags.hidden ? (

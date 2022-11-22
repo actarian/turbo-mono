@@ -25,13 +25,13 @@ const MagazineIndex = ({ items = [], featureTypes = [] }) => {
         </Page>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export type MagazineIndexProps = {
   items: MagazineSearchItem[];
   featureTypes: IFeatureType[];
-}
+};
 
 export async function getStaticProps(): Promise<{ props: MagazineIndexProps }> {
   const props = {

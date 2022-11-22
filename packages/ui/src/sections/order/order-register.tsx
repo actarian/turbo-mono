@@ -8,11 +8,12 @@ import { FieldCollection } from '../../fields';
 import { Form, FormError, FormTester } from '../../forms';
 
 export type OrderRegisterProps = {
+  className?: string;
   data: Partial<IUser>;
   onSignedUp?: () => void;
-}
+};
 
-export const OrderRegister: React.FC<OrderRegisterProps> = ({ data, onSignedUp }: OrderRegisterProps) => {
+export const OrderRegister: React.FC<OrderRegisterProps> = ({ className, data, onSignedUp }: OrderRegisterProps) => {
   const label = useLabel();
 
   const [registered, setRegistered] = useState<boolean>(false);
@@ -46,11 +47,11 @@ export const OrderRegister: React.FC<OrderRegisterProps> = ({ data, onSignedUp }
       confirmPassword: '123456',
       privacy: true,
     });
-  }
+  };
 
   const onReset = () => {
     reset();
-  }
+  };
 
   const [error, setError] = useState<Error>();
 
@@ -73,10 +74,10 @@ export const OrderRegister: React.FC<OrderRegisterProps> = ({ data, onSignedUp }
       console.log('AuthRegister.invalid');
       setTouched();
     }
-  }
+  };
 
   return (
-    <Section>
+    <Section className={className}>
       <Container>
         <Flex.Col gap="1rem" padding="1.5rem 1rem" borderRadius="0.5em" border="1px solid var(--color-warning-500)">
           {registered ?

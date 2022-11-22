@@ -35,13 +35,13 @@ export default function CheckoutResult({ layout, page, user, order, params }: Ch
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type CheckoutResultProps = PageProps & {
   user?: IUser;
   order?: IOrder;
-}
+};
 
 export const getServerSideProps = withIronSessionSsr(async function (context) {
 

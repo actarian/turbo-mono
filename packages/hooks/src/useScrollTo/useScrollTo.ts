@@ -11,7 +11,7 @@ export function useScrollTo(): (event: React.MouseEvent<HTMLElement>) => void {
       // console.log('NavLink.onClick', event.currentTarget.getAttribute('href'), hashId);
       scrollToSelector(hashId);
     }
-  }
+  };
   return scrollToHash;
 }
 

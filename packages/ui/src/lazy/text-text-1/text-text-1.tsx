@@ -10,7 +10,7 @@ export type TextText1Item = ILazyComponent & {
 
 export type TextText1Props = ILazyComponentProps & {
   item: TextText1Item;
-}
+};
 
 export const TextText1: React.FC<TextText1Props> = ({ item }: TextText1Props) => {
   const classNames = getClassNames(item.schema);
@@ -23,7 +23,7 @@ export const TextText1: React.FC<TextText1Props> = ({ item }: TextText1Props) =>
       </Container>
     </Section>
   );
-}
+};
 
 export const TextText1Export = {
   'text-text-1': dynamic<TextText1Props>(() => import('../text-text-1/text-text-1').then(

@@ -6,7 +6,7 @@ export type MarketsAndLanguagesDrawerProps = {
   children?: ReactNode;
   visible: boolean;
   onClose: () => void;
-}
+};
 
 export const MarketsAndLanguagesDrawer: React.FC<MarketsAndLanguagesDrawerProps> = ({ visible, onClose }: MarketsAndLanguagesDrawerProps) => {
   const { markets, market: currentMarket, locales, locale: currentLocale } = useLayout();

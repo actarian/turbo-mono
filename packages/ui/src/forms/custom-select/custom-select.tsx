@@ -39,7 +39,7 @@ type Props = {
   disableMatchWidth?: boolean;
   onDropdownVisibleChange?: (visible: boolean) => void;
   getPopupContainer?: () => HTMLElement | null;
-}
+};
 
 export type CustomSelectProps = UIStyledComponentProps<Props>;
 
@@ -268,13 +268,13 @@ const CustomSelectBase: CustomSelectComponent = forwardRef<CustomSelectRef, Reac
   const onFocus_ = (event: React.FocusEvent<HTMLInputElement>) => {
     onFocus && onFocus(event);
     setSelectFocus(true);
-  }
+  };
 
   const onBlur_ = (event: React.FocusEvent<HTMLInputElement>) => {
     onBlur && onBlur(event);
     updateVisible(false);
     setSelectFocus(false);
-  }
+  };
 
   const classNames = getClassNames('select', { active: selectFocus || visible, opened: visible, multiple, disabled }, className);
 

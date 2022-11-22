@@ -26,7 +26,7 @@ export type ProductDetailItem = {
   sizeColor: ProductsDetailSizeColorItem;
   download: ProductsDetailDownloadItem;
   related: ProductsDetailRelatedItem;
-}
+};
 
 const ProductDetail = ({ page }: ProductDetailProps) => {
   const pageNavItems = [{
@@ -94,12 +94,12 @@ const ProductDetail = ({ page }: ProductDetailProps) => {
         </Page>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export type ProductDetailProps = {
   page: ProductDetailItem;
-}
+};
 
 export async function getStaticProps(): Promise<{ props: ProductDetailProps }> {
   const props = {

@@ -7,7 +7,7 @@ import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: ProductSearchItem
-}
+};
 
 export type ProductSearchItem = {
   href: string;
@@ -15,7 +15,7 @@ export type ProductSearchItem = {
   medias: IMedia[];
   designer?: IEquatable;
   colors: IEquatable[];
-}
+};
 
 export type ProductsSearchCardProps = UIStyledComponentProps<Props>;
 
@@ -57,5 +57,5 @@ export const ProductsSearchCard: React.FC<ProductsSearchCardProps> = ({ item, ..
         </Flex.Row>
       </Card.Content>
     </StyledCard>
-  )
-}
+  );
+};

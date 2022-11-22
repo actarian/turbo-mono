@@ -11,14 +11,14 @@ export type MediaFull1Item = ILazyComponent & {
 
 export type MediaFull1Props = ILazyComponentProps & {
   item: MediaFull1Item;
-}
+};
 
 export const MediaFull1: React.FC<MediaFull1Props> = ({ item }: MediaFull1Props) => {
   const classNames = getClassNames('media', item.schema);
   return (
     <Media className={classNames} aspectRatio={16 / 10} item={item.media} />
   );
-}
+};
 
 export const MediaFull1Export = {
   'media-full-1': dynamic<MediaFull1Props>(() => import('../media-full-1/media-full-1').then(

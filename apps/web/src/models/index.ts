@@ -6,3 +6,4 @@ export type { IShopCategory } from './shop_category/shop_category';
 export { getShopCategories, getShopCategory } from './shop_category/shop_category.service';
 export type { IShopDetail } from './shop_detail/shop_detail';
 export { getShopDetail, getShopDetails } from './shop_detail/shop_detail.service';
+

@@ -11,7 +11,7 @@ export type AuthUpdateProps = {
   user: IUser;
   onUpdate?: (user: IUser) => void;
   onCancel?: () => void;
-}
+};
 
 export const AuthUpdate: React.FC<AuthUpdateProps> = ({ user, onUpdate, onCancel }: AuthUpdateProps) => {
   const label = useLabel();
@@ -36,11 +36,11 @@ export const AuthUpdate: React.FC<AuthUpdateProps> = ({ user, onUpdate, onCancel
       email: 'jhon.appleseed@gmail.com',
       privacy: true,
     });
-  }
+  };
 
   const onReset = () => {
     reset();
-  }
+  };
 
   const [error, setError] = useState<Error>();
 
@@ -62,13 +62,13 @@ export const AuthUpdate: React.FC<AuthUpdateProps> = ({ user, onUpdate, onCancel
       console.log('AuthUpdate.invalid');
       setTouched();
     }
-  }
+  };
 
   const onCancel_ = () => {
     if (typeof onCancel === 'function') {
       onCancel();
     }
-  }
+  };
 
   return (
     <Flex.Col justifyContent="space-between">

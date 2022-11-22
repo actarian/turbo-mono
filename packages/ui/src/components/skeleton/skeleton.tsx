@@ -7,7 +7,7 @@ import { getCssResponsive } from '../../components/utils';
 
 type Props = {
   loading?: boolean;
-}
+};
 
 export type SkeletonProps = UIStyledComponentProps<Props>;
 
@@ -18,7 +18,7 @@ const StyledSkeleton = styled.div<SkeletonProps>`
   align-items: center;
   background-color: var(--color-primary-100);
   ${props => getCssResponsive(props)}
-`
+`;
 
 export const Skeleton: React.FC<SkeletonProps> = ({ loading, ...props }) => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -27,5 +27,5 @@ export const Skeleton: React.FC<SkeletonProps> = ({ loading, ...props }) => {
     <StyledSkeleton ref={ref} className={classNames} {...props}>
       {loading && <Loading></Loading>}
     </StyledSkeleton>
-  )
-}
+  );
+};

@@ -11,7 +11,7 @@ type GridBaseProps = {
   md?: number;
   lg?: number;
   xl?: number;
-}
+};
 
 export type GridProps = UIStyledComponentProps<GridBaseProps>;
 

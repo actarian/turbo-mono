@@ -18,7 +18,7 @@ export type Related1Item = ILazyComponent & {
 
 export type Related1Props = ILazyComponentProps & {
   item: Related1Item;
-}
+};
 
 export const Related1: React.FC<Related1Props> = ({ item }: Related1Props) => {
   const classNames = getClassNames(item.schema);
@@ -36,7 +36,7 @@ export const Related1: React.FC<Related1Props> = ({ item }: Related1Props) => {
       </Container>
     </Section>
   );
-}
+};
 
 export const Related1Export = {
   'related-1': dynamic<Related1Props>(() => import('../related-1/related-1').then(

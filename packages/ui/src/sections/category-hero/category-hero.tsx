@@ -7,11 +7,11 @@ export type CategoryHeroItem = {
   abstract?: string;
   media?: IMedia;
   link?: ILink;
-}
+};
 
 type Props = {
   item: CategoryHeroItem;
-}
+};
 
 export type CategoryHeroProps = UIStyledComponentProps<Props>;
 
@@ -42,5 +42,5 @@ export const CategoryHero: React.FC<CategoryHeroProps> = ({ item, ...props }: Ca
           </Flex.Col>
         </Container>
       </Section>
-  )
-}
+  );
+};

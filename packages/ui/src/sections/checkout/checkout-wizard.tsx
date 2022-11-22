@@ -59,7 +59,7 @@ const StyledWizard = styled(Flex.Row)`
 
 type Props = {
   onCheckout?: (checkout: ICheckoutPartial) => void;
-}
+};
 
 export type CheckoutWizardProps = UIStyledComponentProps<Props>;
 
@@ -68,36 +68,44 @@ export const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...p
   const api = useApi();
 
   const checkout = useCheckout((state) => state.checkout);
-  const setCheckout = useCheckout((state) => state.setCheckout);
+  const { setCheckout } = useCheckout((state) => state.actions);
   const [status, setStatus] = useState<CheckoutStatus>(CheckoutStatus.Basket);
+
+  const onCheckout_ = (checkout: ICheckoutPartial) => {
+    // setCheckout(checkout);
+    if (typeof onCheckout === 'function') {
+      onCheckout(checkout);
+    }
+    scrollToY(0);
+  };
 
   // 1.
   const onBasket = (items: ICheckoutItem[]) => {
     console.log('CheckoutWizard.onBasket', items);
     onCheckout_({ ...checkout, items });
     setStatus(CheckoutStatus.Info);
-  }
+  };
 
   // 2.
   const onInfo = (info: ICheckoutInfo) => {
     console.log('CheckoutWizard.onInfo', info);
     onCheckout_({ ...checkout, ...info });
     setStatus(CheckoutStatus.Delivery);
-  }
+  };
 
   // 3.
   const onDelivery = (delivery: ICheckoutDelivery) => {
     console.log('CheckoutWizard.onDelivery', delivery);
     onCheckout_({ ...checkout, delivery });
     setStatus(CheckoutStatus.Review);
-  }
+  };
 
   // 4.
   const onReview = (store: ICheckoutStore) => {
     console.log('CheckoutWizard.onReview', store);
     onCheckout_({ ...checkout, store });
     setStatus(CheckoutStatus.Payment);
-  }
+  };
 
   // 5.
   const onPayment = async (payment: ICheckoutPayment) => {
@@ -115,15 +123,7 @@ export const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...p
     setStatus(CheckoutStatus.Complete);
     */
 
-  }
-
-  const onCheckout_ = (checkout: ICheckoutPartial) => {
-    // setCheckout(checkout);
-    if (typeof onCheckout === 'function') {
-      onCheckout(checkout);
-    }
-    scrollToY(0);
-  }
+  };
 
   const onPrevious = () => {
     console.log('CheckoutWizard.onPrevious');
@@ -131,7 +131,7 @@ export const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...p
       setStatus(status - 1);
     }
     scrollToY(0);
-  }
+  };
 
   return (
     <>
@@ -153,5 +153,5 @@ export const CheckoutWizard: React.FC<CheckoutWizardProps> = ({ onCheckout, ...p
       {status === CheckoutStatus.Review && <CheckoutReview onReview={onReview} onPrevious={onPrevious} />}
       {status === CheckoutStatus.Payment && <CheckoutPayment onPayment={onPayment} onPrevious={onPrevious} />}
     </>
-  )
-}
+  );
+};

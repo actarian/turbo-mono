@@ -29,14 +29,14 @@ const ShopCategory = ({ page, items = [], featureTypes = [] }: ShopCategoryProps
         </Page>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export type ShopCategoryProps = {
   page: ShopCategoryHeroItem;
   items: ShopSearchItem[];
   featureTypes: IFeatureType[];
-}
+};
 
 export async function getStaticProps(): Promise<{ props: ShopCategoryProps }> {
   const props = {

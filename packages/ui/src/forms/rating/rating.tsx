@@ -22,7 +22,7 @@ type Props = {
   value?: RatingValue | number;
   onValueChange?: (value: number) => void;
   onLockedChange?: (locked: boolean) => void;
-}
+};
 
 export type RatingProps = UIStyledComponentProps<Props>;
 
@@ -61,7 +61,7 @@ const StyledRating = styled.div<RatingProps>`
 
   ${props => (css`font-size: var(--button-size-${props.size || 'md'});`)}
   ${props => getCssResponsive(props)}
-`
+`;
 
 export const Rating: React.FC<RatingProps> = ({
   className = '',
@@ -82,25 +82,25 @@ export const Rating: React.FC<RatingProps> = ({
   const onSetLocked = (next: boolean) => {
     setLocked(next);
     onLockedChange && onLockedChange(next);
-  }
+  };
   const onSetValue = (next: number) => {
     setValue(next);
     const emitValue = next > count ? count : next;
     onValueChange && onValueChange(emitValue);
-  }
+  };
   const onClick = (index: number) => {
     if (locked) {
       return onSetLocked(false);
     }
     onSetValue(index);
     onSetLocked(true);
-  }
+  };
   const onMouseEnter = (index: number) => {
     if (locked) {
       return;
     }
     onSetValue(index);
-  }
+  };
 
   useEffect(() => {
     if (typeof customValue === 'undefined') {
@@ -120,7 +120,7 @@ export const Rating: React.FC<RatingProps> = ({
         </div>
       ))}
     </StyledRating>
-  )
-}
+  );
+};
 
 Rating.displayName = 'Rating';

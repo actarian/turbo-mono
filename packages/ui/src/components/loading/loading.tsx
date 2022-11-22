@@ -46,6 +46,6 @@ const StyledLoading = styled.div<LoadingProps>`
     }
   }
   ${props => getCssResponsive(props)}
-`
+`;
 
 export const Loading = StyledLoading;

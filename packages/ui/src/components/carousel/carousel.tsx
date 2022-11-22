@@ -6,7 +6,7 @@ const range = [-1, 0, 1];
 
 type CarouselProps = {
   children: (props: { index: number }) => JSX.Element;
-}
+};
 
 const containerStyle: MotionStyle = {
   position: 'relative',

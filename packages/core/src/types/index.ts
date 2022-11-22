@@ -19,7 +19,7 @@ export type StaticPropsContext<
   locale?: string
   locales?: string[]
   defaultLocale?: string
-}
+};
 
 export type IStaticContext = StaticPropsContext<IContextParams>;
 
@@ -43,7 +43,7 @@ export type ServerSidePropsContext<
   locale?: string
   locales?: string[]
   defaultLocale?: string
-}
+};
 
 export type IServerSideContext = ServerSidePropsContext<IContextParams>;
 

@@ -57,11 +57,11 @@ export default function MagazineDetail({ layout, page, params }: MagazineDetailP
 
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type MagazineDetailProps = PageProps & {
-}
+};
 
 export async function getStaticProps(context: IStaticContext) {
   const id = parseInt(context.params.id);
@@ -75,7 +75,7 @@ export async function getStaticProps(context: IStaticContext) {
     pick first 10 related items of the same category
     */
     let relatedItems = await getMagazineDetails({ where: { categoryId: page.categoryId }, market, locale });
-    relatedItems = relatedItems.filter(x => x.id !== page.id).slice(0, Math.min(relatedItems.length, 10))
+    relatedItems = relatedItems.filter(x => x.id !== page.id).slice(0, Math.min(relatedItems.length, 10));
 
     // fake data
     const item = MagazineDetailDefaults.item;

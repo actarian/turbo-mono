@@ -6,25 +6,25 @@ export type TabsInternalCellProps = {
   activeClassName?: string;
   activeStyle?: CSSProperties;
   hideBorder?: boolean;
-}
+};
 
 export type TabsInternalCell = React.FC<TabsInternalCellProps>;
 
 export type TabsHeaderItem = {
   value: string;
   cell: TabsInternalCell;
-}
+};
 
 export type TabsConfig = {
   register?: (item: TabsHeaderItem) => void;
   currentValue?: string;
   inGroup: boolean;
   leftSpace?: CSSProperties['marginLeft'];
-}
+};
 
 const defaultContext = {
   inGroup: false,
-}
+};
 
 export const TabsContext = React.createContext<TabsConfig>(defaultContext);
 

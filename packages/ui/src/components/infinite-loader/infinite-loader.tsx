@@ -9,7 +9,7 @@ import { getCssResponsive } from '../utils';
 type Props = {
   onMore: () => void;
   children?: ReactNode;
-}
+};
 
 export type InfiniteLoaderProps = UIStyledComponentProps<Props>;
 
@@ -55,5 +55,5 @@ export const InfiniteLoader: InfiniteLoaderComponent = ({ children, as = 'div' a
     <StyledInfiniteLoader as={as} ref={ref} className={classNames} {...props}>
       <Loading></Loading>
     </StyledInfiniteLoader>
-  )
-}
+  );
+};

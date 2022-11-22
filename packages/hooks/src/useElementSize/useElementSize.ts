@@ -5,7 +5,7 @@ import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect/useIsomo
 type Size = {
   width: number;
   height: number;
-}
+};
 
 export function useElementSize<T extends HTMLElement = HTMLDivElement>(): [(node: T | null) => void, Size] {
   // Mutable values like 'ref.current' aren't valid dependencies

@@ -23,11 +23,11 @@ export default function Products({ layout, page, params }: ProductsProps) {
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type ProductsProps = PageProps & {
-}
+};
 
 /*
 import { ParsedUrlQuery } from 'querystring'

@@ -8,7 +8,7 @@ import { RadioCard, RadioCardProps } from './radio-card';
 type Props = ComponentPropsWithRef<'input'> & {
   initialValue?: string;
   children?: ReactNode;
-}
+};
 
 export type RadioCardGroupProps = UIStyledComponentProps<Props, 'input'>;
 
@@ -31,7 +31,7 @@ export const RadioCardGroup: RadioCardGroupComponent = forwardRef(({
 
   useEffect(() => {
     setValue(initialValue || null);
-  }, [initialValue])
+  }, [initialValue]);
 
   const onChange_ = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);

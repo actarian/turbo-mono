@@ -34,7 +34,7 @@ const ShopIndex = () => {
         </Page>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export default withPageTransition(ShopIndex);

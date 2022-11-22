@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 type Props = {
   className?: string;
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
@@ -21,7 +21,7 @@ const StyledCustomSelectDivider = styled.div<CustomSelectDividerProps>`
   user-select: none;
   line-height: 0;
   border-top: 1px solid var(--color-neutral-300);
-`
+`;
 
 export const CustomSelectDivider = StyledCustomSelectDivider;
 

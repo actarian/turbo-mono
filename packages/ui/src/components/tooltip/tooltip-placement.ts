@@ -7,13 +7,13 @@ type ParentDomRect = {
   bottom: number;
   width: number;
   height: number;
-}
+};
 
 export type TooltipPosition = {
   top: string;
   left: string;
   transform: string;
-}
+};
 
 export type TooltipIconPosition = {
   top: string;
@@ -21,13 +21,13 @@ export type TooltipIconPosition = {
   right: string;
   bottom: string;
   transform: string;
-}
+};
 
 export const defaultTooltipPosition = {
   top: '-1000px',
   left: '-1000px',
   transform: 'none',
-}
+};
 
 export const getPosition = (
   placement: Placement,
@@ -95,9 +95,9 @@ export const getPosition = (
       left: `${rect.right + offset}px`,
       transform: 'translate(0, -100%)',
     },
-  }
-  return positions[placement] || (positions.top as TooltipPosition)
-}
+  };
+  return positions[placement] || (positions.top as TooltipPosition);
+};
 
 export const getIconPosition = (
   placement: Placement,
@@ -190,7 +190,7 @@ export const getIconPosition = (
       bottom: `${offsetY}`,
       transform: 'translate(-100%, 50%) rotate(0deg)',
     },
-  }
+  };
 
-  return positions[placement] || (positions.top as TooltipIconPosition)
-}
+  return positions[placement] || (positions.top as TooltipIconPosition);
+};

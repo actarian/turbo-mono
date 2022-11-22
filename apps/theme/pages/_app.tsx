@@ -2,8 +2,6 @@ import { CartProvider, LabelProvider, LayoutProvider, PageProvider } from '@webs
 import { LayoutDefaults, PageDefaults } from '@websolute/mock';
 import { ILayout, IPage, IRouteParams } from '@websolute/models';
 import { Breakpoint, GlobalStyle, theme } from '@websolute/ui';
-// import { NextPage } from 'next';
-// import { AppProps } from 'next/app';
 import { AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
 
@@ -34,7 +32,7 @@ export default function Application({ Component, pageProps, router }: Applicatio
         </PageProvider>
       </LabelProvider>
     </LayoutProvider>
-  )
+  );
 }
 
 export type ApplicationProps = {
@@ -46,4 +44,4 @@ export type ApplicationProps = {
     params: IRouteParams,
     [key: string]: any
   };
-}
+};

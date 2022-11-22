@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 type FieldErrorProps = {
   state: FormState<any>;
-}
+};
 
 const StyledFieldError = styled.div`
   margin: 0.5em 0;

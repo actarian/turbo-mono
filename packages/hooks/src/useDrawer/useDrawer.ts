@@ -1,15 +1,16 @@
-import { IUIStateValue, useUI } from '../useUI/useUI';
+import { UIValue, useUI } from '../useUI/useUI';
 
-export function useDrawer(): [drawer: IUIStateValue, open: (value?: string) => void, close: () => void] {
-  const [drawer, reduceUI] = useUI(state => [state.drawer, state.reduce]);
-  function onSetDrawer(value?: string | number) {
-    reduceUI((state) => ({ drawer: value }));
+export function useDrawer(): [drawer: UIValue, open: (value?: string) => void, close: () => void] {
+  const drawer = useUI(state => state.views.drawer);
+  const reduce = useUI(state => state.actions.reduce);
+  function setDrawer(value?: string | number) {
+    reduce('drawer', (views) => value);
   }
-  function onOpenDrawer(value?: string | number) {
-    return onSetDrawer(value);
+  function openDrawer(value?: string | number) {
+    return setDrawer(value);
   }
-  function onCloseDrawer() {
-    return onSetDrawer();
+  function closeDrawer() {
+    return setDrawer();
   }
-  return [drawer, onOpenDrawer, onCloseDrawer];
+  return [drawer, openDrawer, closeDrawer];
 }

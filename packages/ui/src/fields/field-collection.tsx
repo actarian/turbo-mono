@@ -7,7 +7,7 @@ import { FIELDS, FieldType } from './fields';
 type FieldCollectionProps = {
   collection: FormGroup | FormArray;
   uid?: number | null | undefined;
-}
+};
 
 export function FieldCollection(props: FieldCollectionProps) {
   const label = useLabel();
@@ -26,7 +26,7 @@ export function FieldCollection(props: FieldCollectionProps) {
     const { control, key } = item;
     ++uid;
     if (control instanceof FormGroup || control instanceof FormArray) {
-      return <FieldCollection collection={control} uid={uid} key={getFieldUID(uid, control.name)} />
+      return <FieldCollection collection={control} uid={uid} key={getFieldUID(uid, control.name)} />;
     } else {
       if (control.schema in FIELDS) {
         return FIELDS[control.schema as FieldType](control, uid);
@@ -58,7 +58,7 @@ export function FieldCollection(props: FieldCollectionProps) {
         } else {
           return <Grid key={getFieldUID(++uid, item.key)} xs={12} sm={['checkbox', 'accept'].includes(control.schema) ? 12 : 6} style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
             {resolveField(item)}
-          </Grid>
+          </Grid>;
         }
       })}
     </>

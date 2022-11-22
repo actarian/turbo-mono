@@ -1,14 +1,14 @@
 // import MarkerClusterer from '@googlemaps/markerclustererplus';
-import { MarkerClusterer } from "@googlemaps/markerclusterer";
+import { MarkerClusterer } from '@googlemaps/markerclusterer';
 import React, { useEffect, useState } from 'react';
-import { useGoogleMapContext } from "./google-map-context";
-import { IGeoLocalized } from "./google-map.service";
+import { useGoogleMapContext } from './google-map-context';
+import { IGeoLocalized } from './google-map.service';
 
 export type GoogleMapMarkerClustererProps = {
   items: IGeoLocalized[];
   map?: google.maps.Map,
   onClick?: (item: IGeoLocalized) => void;
-}
+};
 
 export const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
   items = [],
@@ -28,10 +28,10 @@ export const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> =
       if (onClick) {
         onClick(item);
       }
-    }
+    };
     markers_ = items.map(item => {
       const icon = {
-        url: `/map/marker-sm.png`,
+        url: '/map/marker-sm.png',
         size: new google.maps.Size(24, 32),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(12, 32),

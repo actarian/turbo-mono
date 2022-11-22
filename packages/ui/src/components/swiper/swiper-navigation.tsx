@@ -11,20 +11,18 @@ const SwiperButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1em;
-  line-height: 1;
-  margin-top: -1.5rem;
+  position: absolute;
+  top: 50%;
   width: 4rem;
   height: 4rem;
+  margin-top: -2rem;
+  font-size: 2rem;
+  line-height: 1;
   border-radius: 50%;
   border: 2px solid transparent;
   color: var(--color-neutral-100);
-  position: absolute;
-  top: 50%;
-  right: 2rem;
   cursor: pointer;
   z-index: 1;
-  font-size: 2rem;
   transition: all ease-in-out 250ms;
 
   svg {
@@ -48,12 +46,12 @@ const SwiperButtonNext = styled(SwiperButton)`
 export const SwiperNext: React.FC<{}> = () => {
   const swiper = useSwiper();
   return (
-    <SwiperButtonNext onClick={() => swiper.slideNext()}>
+    <SwiperButtonNext className="btn--navigation btn--navigation-next" onClick={() => swiper.slideNext()}>
       <span>next</span>
       <ArrowRight />
     </SwiperButtonNext>
   );
-}
+};
 
 const SwiperButtonPrev = styled(SwiperButton)`
   left: var(--grid-column-gap);
@@ -62,9 +60,9 @@ const SwiperButtonPrev = styled(SwiperButton)`
 export const SwiperPrev: React.FC<{}> = () => {
   const swiper = useSwiper();
   return (
-    <SwiperButtonPrev onClick={() => swiper.slidePrev()}>
+    <SwiperButtonPrev className="btn--navigation btn--navigation-prev" onClick={() => swiper.slidePrev()}>
       <span>next</span>
       <ArrowLeft />
     </SwiperButtonPrev>
   );
-}
+};

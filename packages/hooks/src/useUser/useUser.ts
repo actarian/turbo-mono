@@ -1,11 +1,20 @@
 import { IUser } from '@websolute/models';
 import create from 'zustand';
 
-type IUserStore = {
+type UserState = {
   user?: IUser;
-  setUser: (user?: IUser) => void;
-}
+};
 
-export const useUser = create<IUserStore>((set) => ({
-  setUser: (user?: IUser) => set((state) => ({ user })),
+type UserActions = {
+  setUser: (user?: IUser) => void;
+};
+
+type UserStore = UserState & {
+  actions: UserActions;
+};
+
+export const useUser = create<UserStore>((set) => ({
+  actions: {
+    setUser: (user?: IUser) => set((state) => ({ user })),
+  },
 }));

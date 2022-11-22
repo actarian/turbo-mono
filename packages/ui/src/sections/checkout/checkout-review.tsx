@@ -10,7 +10,7 @@ import { CheckoutDiscount } from './checkout-discount';
 export type CheckoutReviewProps = {
   onReview?: (store: ICheckoutStore) => void;
   onPrevious?: () => void;
-}
+};
 
 export const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onReview }: CheckoutReviewProps) => {
   const label = useLabel();
@@ -22,7 +22,7 @@ export const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onRe
   const distance = useUnit('kilometer');
 
   const checkout = useCheckout((state) => state.checkout);
-  const setCheckout = useCheckout((state) => state.setCheckout);
+  const { setCheckout } = useCheckout((state) => state.actions);
 
   const [options] = useApiPost<{ stores: ICheckoutStore[] }>('/checkout/stores', checkout);
 
@@ -83,19 +83,19 @@ export const CheckoutReview: React.FC<CheckoutReviewProps> = ({ onPrevious, onRe
       console.log('CheckoutReview.invalid');
       setTouched();
     }
-  }
+  };
 
   const onPrevious_ = () => {
     if (typeof onPrevious === 'function') {
       onPrevious();
     }
-  }
+  };
 
   const store = group.controls.store;
 
   const onStoreChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     group.controls.store.value = store?.options?.find(x => x.id.toString() === event.target.value);
-  }
+  };
 
   return (
     <>

@@ -11,7 +11,7 @@ export type MediaMedia1Item = ILazyComponent & {
 
 export type MediaMedia1Props = ILazyComponentProps & {
   item: MediaMedia1Item;
-}
+};
 
 export const MediaMedia1: React.FC<MediaMedia1Props> = ({ item }: MediaMedia1Props) => {
   const classNames = getClassNames(item.schema);
@@ -29,7 +29,7 @@ export const MediaMedia1: React.FC<MediaMedia1Props> = ({ item }: MediaMedia1Pro
       </Container.Fluid>
     </Section>
   );
-}
+};
 
 export const MediaMedia1Export = {
   'media-media-1': dynamic<MediaMedia1Props>(() => import('../media-media-1/media-media-1').then(

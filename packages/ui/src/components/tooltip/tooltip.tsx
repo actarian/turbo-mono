@@ -25,7 +25,7 @@ type Props = {
   visible?: boolean;
   onVisibleChange?: TooltipOnVisibleChange;
   text: string | React.ReactNode;
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
@@ -80,7 +80,7 @@ export const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
       setVisible(nextState);
       onVisibleChange(nextState);
       clear();
-    }
+    };
     clear();
     if (nextState) {
       timer.current = window.setTimeout(() => handler(true), enterDelay);
@@ -95,7 +95,7 @@ export const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
       return;
     }
     changeVisible(customVisible);
-  }, [changeVisible, customVisible])
+  }, [changeVisible, customVisible]);
 
   const onEnterLeave = (enter: boolean) => trigger === 'hover' && changeVisible(enter);
 
@@ -123,7 +123,7 @@ export const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
       {children}
       <TooltipContent {...contentProps}>{text}</TooltipContent>
     </StyledTooltip>
-  )
-}
+  );
+};
 
 Tooltip.displayName = 'Tooltip';

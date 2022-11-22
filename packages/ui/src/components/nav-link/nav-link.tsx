@@ -7,7 +7,7 @@ export type NavLinkProps = LinkProps & {
   children: React.ReactElement;
   activeClassName?: string;
   scrollToHash?: boolean;
-}
+};
 
 export const NavLink: React.FC<NavLinkProps> = ({ children, activeClassName = 'active', ...props }: NavLinkProps) => {
   const child = Children.only(children);
@@ -28,5 +28,5 @@ export const NavLink: React.FC<NavLinkProps> = ({ children, activeClassName = 'a
         className: className || null,
       }) : children}
     </Link>
-  )
-}
+  );
+};

@@ -13,7 +13,7 @@ export function useSwiperIndex(): [number, (index: number) => void] {
 
   const onSlideChange = (swiper: Swiper) => {
     setIndex(swiper.realIndex);
-  }
+  };
 
   useEffect(() => {
     if (swiper) {

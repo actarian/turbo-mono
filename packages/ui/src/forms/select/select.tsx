@@ -5,7 +5,7 @@ import { UIComponentWithRef, UIStyledComponentProps } from '../../components/typ
 import { getCssResponsive } from '../../components/utils';
 
 type Props = ComponentPropsWithRef<'select'> & {
-}
+};
 
 export type SelectProps = UIStyledComponentProps<Props, 'select'>;
 
@@ -71,7 +71,7 @@ const StyledSelect = styled.div`
   display: flex;
   align-items: center;
   ${props => getCssResponsive(props)}
-`
+`;
 
 export const Select: SelectComponent = forwardRef(({
   as = 'select',

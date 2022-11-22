@@ -21,7 +21,7 @@ export default function ReservedAreaOrderDetail({ layout, page, user, order, par
           <Box position="sticky" top="80px" padding="1rem 0" zIndex="800" background="var(--color-neutral-100)" borderBottom="1px solid var(--color-neutral-300)">
             <Flex.Row justifyContent="space-between">
               <Text size="8" fontWeight="700">Order #{order.id} <Badge>{label(`order.status.${order.status}`)}</Badge></Text>
-              <Button variant="primary">Print</Button>
+              <Button className="print-none" variant="primary" onClick={() => window.print()}>Print</Button>
             </Flex.Row>
           </Box>
 
@@ -45,13 +45,13 @@ export default function ReservedAreaOrderDetail({ layout, page, user, order, par
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type ReservedAreaProps = PageProps & {
   user: IUser;
   order: IOrderDetail;
-}
+};
 
 export const getServerSideProps = withIronSessionSsr(async function (context) {
   const params = context.params as IContextParams;
@@ -82,7 +82,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
         permanent: false,
         destination: layout.topLevelHrefs.login || '/',
       },
-    }
+    };
   }
   const order = await getOrder(query.orderId as string, market, locale);
 

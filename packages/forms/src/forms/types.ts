@@ -25,7 +25,7 @@ export type FormOptions = {
 
 export type ValidationError = {
   [key: string]: any
-}
+};
 
 export type FormControls = { [key: string]: FormAbstract } | FormAbstract[];
 export type FormCollection = FormAbstractCollection<FormControls>;
@@ -42,7 +42,7 @@ export type FormState<T> = {
   value: T | null,
   flags: FormFlags,
   errors: FormValidationErrors,
-}
+};
 
 export type ControlType = 'group' | 'array' | string;
 
@@ -60,7 +60,7 @@ export type IFormBuilderControlSchema = {
   optionsExtra?: { asEquatable: boolean };
   validators?: FormValidator | FormValidator[];
   children?: IFormBuilderSchema;
-}
+};
 
 export type IFormBuilderGroupSchema = { [key: string]: IFormBuilderControlSchema };
 export type IFormBuilderArraySchema = IFormBuilderControlSchema[];

@@ -4,4 +4,4 @@ export type ILink = {
   title: string;
   type?: string;
   secure?: boolean;
-}
+};

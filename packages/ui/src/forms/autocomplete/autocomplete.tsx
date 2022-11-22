@@ -14,7 +14,7 @@ type Props = ComponentPropsWithRef<'input'> & {
   source: (query: string) => Promise<IAutocompleteItem[]>;
   onAutocomplete?: (value: IAutocompleteItem) => void;
   onDropdownVisibleChange?: (visible: boolean) => void;
-}
+};
 
 export type AutocompleteProps = UIStyledComponentProps<Props, 'input'>;
 
@@ -193,14 +193,14 @@ export const Autocomplete: AutocompleteComponent = forwardRef(({
     if (innerRef.current) {
       innerRef.current.value = value;
     }
-  }
+  };
 
   const onFocus_ = (event: React.FocusEvent<HTMLInputElement>) => {
     onFocus && onFocus(event);
     setFocus(true);
     setInnerValue('');
     console.log('Autocomplete.onFocus_');
-  }
+  };
 
   const onBlur_ = (event: React.FocusEvent<HTMLInputElement>) => {
     onBlur && onBlur(event);
@@ -209,7 +209,7 @@ export const Autocomplete: AutocompleteComponent = forwardRef(({
     setItems([]);
     setInnerValue(value ? value.name : '');
     console.log('Autocomplete.onBlur_');
-  }
+  };
 
   const onChange_ = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value.toLowerCase();
@@ -217,7 +217,7 @@ export const Autocomplete: AutocompleteComponent = forwardRef(({
     const items = await source(query);
     setItems(items);
     console.log('Autocomplete.onChange_');
-  }
+  };
 
   const onAutocomplete_ = (item: IAutocompleteItem) => {
     setValue(item);
@@ -261,7 +261,7 @@ export const Autocomplete: AutocompleteComponent = forwardRef(({
       <AutocompleteContext.Provider value={context}>
         <StyledAutocompleteContainer className={classNames} {...props}>
           {before}
-          <StyledAutocomplete ref={innerRef} as='input' type='text' onFocus={onFocus_} onBlur={onBlur_} onChange={onChange_} {...props} />
+          <StyledAutocomplete ref={innerRef} as="input" type="text" onFocus={onFocus_} onBlur={onBlur_} onChange={onChange_} {...props} />
           {after}
         </StyledAutocompleteContainer>
         <AutocompleteDropdown ref={dropdownRef} visible={items.length > 0}>

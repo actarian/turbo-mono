@@ -10,5 +10,5 @@ export function MinValidator(min: number): FormValidator {
     }
     value = parseFloat(value);
     return !isNaN(value) && value < min ? { min: { min: min, actual: value } } : null;
-  }
+  };
 }

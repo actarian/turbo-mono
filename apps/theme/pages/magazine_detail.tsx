@@ -25,7 +25,7 @@ export type MagazineDetailItem = {
   };
   components: ILazyComponent[];
   related: MagazineRelatedItem;
-}
+};
 
 const MagazineDetail = ({ page }: MagazineDetailProps) => {
   const dateTimeFormat = useDateTimeFormat({
@@ -84,12 +84,12 @@ const MagazineDetail = ({ page }: MagazineDetailProps) => {
         </Page>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export type MagazineDetailProps = {
   page: MagazineDetailItem;
-}
+};
 
 export async function getStaticProps(): Promise<{ props: MagazineDetailProps }> {
   const props = {
@@ -112,5 +112,5 @@ function ImageGallery({ children }: React.PropsWithChildren) {
   // console.log(mappedChildren);
   return <>
     {children}
-  </>
+  </>;
 }

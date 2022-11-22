@@ -10,13 +10,13 @@ type Props = {
   item: HeaderSubmenuItem;
   visible: boolean;
   onSelect?: (item?: IRouteLink) => void;
-}
+};
 
 export type HeaderSubmenuItem = {
   href: string;
   title: string;
   items: IRouteLink[];
-}
+};
 
 export type HeaderSubmenuProps = UIStyledComponentProps<Props>;
 
@@ -42,13 +42,13 @@ const StyledHeaderSubmenu = styled.div`
   .header-submenu__items {
     ${staggerBottom()}
   }
-`
+`;
 
 export const HeaderSubmenu: React.FC<HeaderSubmenuProps> = ({ item, visible, onSelect, ...props }: HeaderSubmenuProps) => {
 
   const onSelect_ = (item?: IRouteLink) => {
     onSelect && onSelect(item);
-  }
+  };
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -58,7 +58,7 @@ export const HeaderSubmenu: React.FC<HeaderSubmenuProps> = ({ item, visible, onS
   return (
     <StyledHeaderSubmenu className={classNames} ref={ref}>
       <Container.Fluid>
-        <Grid.Row className='header-submenu__items' columnGap="2rem" rowGap="2rem">
+        <Grid.Row className="header-submenu__items" columnGap="2rem" rowGap="2rem">
           {item.items.map((item, i) => (
             <Grid xs={6} sm={4} md={3} lg={2} key={i}>
               <HeaderCard item={item} onSelect={onSelect_}></HeaderCard>
@@ -67,8 +67,8 @@ export const HeaderSubmenu: React.FC<HeaderSubmenuProps> = ({ item, visible, onS
         </Grid.Row>
       </Container.Fluid>
     </StyledHeaderSubmenu>
-  )
-}
+  );
+};
 
 function staggerBottom(items: number = 20, delay: number = 0.1, gap: number = .05) {
   return css`

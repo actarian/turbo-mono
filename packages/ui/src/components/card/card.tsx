@@ -63,7 +63,7 @@ const StyledCard = styled.div<CardProps>`
     &:hover {
       .media {
         &>:not(.media-info) {
-          transform: scale(1.1);
+          transform: scale(1.05);
         }
       }
       .button {

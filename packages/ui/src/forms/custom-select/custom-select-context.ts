@@ -13,7 +13,7 @@ export type CustomSelectConfig = {
   ref?: MutableRefObject<HTMLElement | null>;
   updateValue?: (next: string) => unknown;
   updateVisible?: (next: boolean) => unknown;
-}
+};
 
 export const CustomSelectContext = React.createContext<CustomSelectConfig>(defaultContext);
 

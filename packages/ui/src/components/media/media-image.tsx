@@ -20,7 +20,7 @@ export const MediaImage = ({ alt = '', className, type, ...props }: MediaImagePr
   const classNames = getClassNames(className, 'image', { 'image-svg': isSVG(props.src) });
   const imageProps = getImageProps(props);
   return (<StyledMediaImage className={classNames} alt={alt} loading="lazy" {...imageProps} />);
-}
+};
 
 function getImageProps({ src, ...props }: MediaImageProps & Omit<MediaImageProps, 'type'>) {
   const ratio = props.width && props.height ? (parseInt(props.width.toString()) / parseInt(props.height.toString())) : 0;
@@ -30,7 +30,7 @@ function getImageProps({ src, ...props }: MediaImageProps & Omit<MediaImageProps
     srcSet: getImageSrcset(src, ratio, sizes),
     sizes: ratio !== 0 ? getImageSizes(sizes) : '100vw',
     ...props,
-  }
+  };
 }
 
 function getImageSrc(src: string, ratio: number, width: number, quality: number = 75): string {

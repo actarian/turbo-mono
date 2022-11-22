@@ -6,7 +6,7 @@ type Props = {
   onNavToLogin?: () => void;
   onNavToRegister?: () => void;
   onNavToPrevious?: () => void;
-}
+};
 
 export const CheckoutForgot: React.FC<Props> = ({ onPasswordSent, onNavToLogin, onNavToRegister, onNavToPrevious }: Props) => {
 
@@ -14,25 +14,25 @@ export const CheckoutForgot: React.FC<Props> = ({ onPasswordSent, onNavToLogin, 
     if (typeof onPasswordSent === 'function') {
       onPasswordSent();
     }
-  }
+  };
 
   const onNavToLogin_ = () => {
     if (typeof onNavToLogin === 'function') {
       onNavToLogin();
     }
-  }
+  };
 
   const onNavToRegister_ = () => {
     if (typeof onNavToRegister === 'function') {
       onNavToRegister();
     }
-  }
+  };
 
   const onNavToPrevious_ = () => {
     if (typeof onNavToPrevious === 'function') {
       onNavToPrevious();
     }
-  }
+  };
 
   return (
     <>

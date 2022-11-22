@@ -8,7 +8,7 @@ export async function routeInterceptor(request: NextRequest, next: NextFetchEven
   let route: IRoute;
   // console.log('url', url.pathname, PAGES);
   try {
-    route = await apiPost(`/route`, { pathname: url.pathname });
+    route = await apiPost('/route', { pathname: url.pathname });
     // console.log('route', route);
     if (!route) {
       console.log('routeInterceptor.route.notfound', url.pathname);

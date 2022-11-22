@@ -9,7 +9,7 @@ import { FieldError } from './field-error';
 type FieldAutocompleteProps = {
   control: FormControl;
   uid?: number | null | undefined;
-}
+};
 
 // !!! todo
 
@@ -23,18 +23,18 @@ export function FieldAutocomplete(props: FieldAutocompleteProps) {
   const onChange = (value: string | string[]) => {
     const valueOrValues = stringToValue(value, props.control.options);
     setValue(valueOrValues);
-  }
+  };
 
   const [focus, setFocus] = useState(false);
 
   const onBlur = (_: FocusEvent<HTMLInputElement>) => {
     setTouched();
     setFocus(false);
-  }
+  };
 
   const onFocus = (_: FocusEvent<HTMLInputElement>) => {
     setFocus(true);
-  }
+  };
 
   // fires when user select a google autocomplete result
   async function onAutocomplete(item: IAutocompleteItem) {
@@ -57,7 +57,7 @@ export function FieldAutocomplete(props: FieldAutocompleteProps) {
         return {
           id: x.id,
           name: x.name.toString(),
-        }
+        };
       });
       resolve(options);
     });
@@ -74,7 +74,7 @@ export function FieldAutocomplete(props: FieldAutocompleteProps) {
         return {
           id: option.id,
           name: option.name.toString(),
-        }
+        };
       } else {
         return undefined;
       }

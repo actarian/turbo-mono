@@ -14,7 +14,7 @@ type Props = {
   shadow?: boolean
   className?: string
   index?: number
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
@@ -123,7 +123,7 @@ const AccordionBase: React.FC<React.PropsWithChildren<AccordionProps>> = ({
       </div>
       <Expand isExpanded={visible}>{children}</Expand>
     </StyledAccordion>
-  )
+  );
 };
 
 export const Accordion = withSchema(AccordionBase, {

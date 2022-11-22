@@ -4,7 +4,7 @@ import { Ellipsis } from '../../components';
 
 type Props = {
   className?: string;
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
@@ -23,7 +23,7 @@ const StyledCustomSelectLabel = styled.div`
   font-size: 0.875em;
   font-weight: 500;
   text-transform: uppercase;
-`
+`;
 
 export const CustomSelectLabel: React.FC<React.PropsWithChildren<CustomSelectLabelProps>> = ({
   children,
@@ -34,6 +34,6 @@ export const CustomSelectLabel: React.FC<React.PropsWithChildren<CustomSelectLab
       <Ellipsis>{children}</Ellipsis>
     </StyledCustomSelectLabel>
   );
-}
+};
 
 CustomSelectLabel.displayName = 'CustomSelectLabel';

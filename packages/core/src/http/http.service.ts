@@ -91,6 +91,6 @@ export type FetchRequestOptions = {
   // The keepalive option can be used to allow the request to outlive the page. Fetch with the keepalive flag is a replacement for the Navigator.sendBeacon() API.
   signal?: AbortSignal;
   // An AbortSignal object instance; allows you to communicate with a fetch request and abort it if desired via an AbortController.
-}
+};
 
 export type FetchService<T = any> = (url: string, options?: FetchRequestOptions, serviceOptions?: any) => Promise<T>;

@@ -10,7 +10,7 @@ import { UIComponentProps } from '../../components/types';
 
 type Props = {
   items: IRouteLink[],
-}
+};
 
 export type ReservedAreaMenuProps = UIComponentProps<Props>;
 
@@ -18,7 +18,7 @@ export const ReservedAreaMenu: React.FC<ReservedAreaMenuProps> = (props: Reserve
 
   const router = useRouter();
 
-  const setUser = useUser((state) => state.setUser);
+  const { setUser } = useUser((state) => state.actions);
 
   const onLogout = async () => {
     try {
@@ -36,7 +36,7 @@ export const ReservedAreaMenu: React.FC<ReservedAreaMenuProps> = (props: Reserve
     // console.log('onNav', item);
     const href = item?.href || null;
     setNav(href !== nav ? href : null);
-  }
+  };
 
   const getIconById = (id: IEquatable) => {
     switch (id) {
@@ -65,5 +65,5 @@ export const ReservedAreaMenu: React.FC<ReservedAreaMenuProps> = (props: Reserve
         </Button>
       </Nav.Col>
     </Box>
-  )
-}
+  );
+};

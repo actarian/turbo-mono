@@ -21,6 +21,7 @@ export * from './useFilters/useFilters';
 export * from './useGenericContext/useGenericContext';
 export * from './useGeolocation/geolocation.service';
 export * from './useGeolocation/useGeolocation';
+export * from './useIdle/useIdle';
 export * from './useInfiniteLoader/useInfiniteLoader';
 export * from './useIsomorphicLayoutEffect/useIsomorphicLayoutEffect';
 export * from './useKeyboard/useKeyboard';

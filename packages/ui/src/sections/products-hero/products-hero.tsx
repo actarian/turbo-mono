@@ -9,11 +9,11 @@ export type ProductHeroItem = {
   href: string;
   title: string;
   media: IMedia;
-}
+};
 
 type Props = {
   items: ProductHeroItem[],
-}
+};
 
 export type ProductsHeroProps = UIComponentProps<Props>;
 
@@ -48,5 +48,5 @@ export const ProductsHero: React.FC<ProductsHeroProps> = ({ items }: ProductsHer
         </Grid.Row>
       </Container>
     </Section>
-  )
-}
+  );
+};

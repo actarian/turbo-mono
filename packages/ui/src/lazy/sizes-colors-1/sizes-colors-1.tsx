@@ -16,7 +16,7 @@ export type SizesColors1Item = ILazyComponent & {
 
 export type SizesColors1Props = ILazyComponentProps & {
   item: SizesColors1Item;
-}
+};
 
 export const SizesColors1: React.FC<SizesColors1Props> = ({ item }: SizesColors1Props) => {
   const classNames = getClassNames(item.schema);
@@ -45,7 +45,7 @@ export const SizesColors1: React.FC<SizesColors1Props> = ({ item }: SizesColors1
       </Container>
     </Section>
   );
-}
+};
 
 export const SizesColors1Export = {
   'sizes-colors-1': dynamic<SizesColors1Props>(() => import('../sizes-colors-1/sizes-colors-1').then(

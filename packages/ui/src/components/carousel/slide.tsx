@@ -6,7 +6,7 @@ type SlideProps = {
   renderSlide: (props: { index: number }) => JSX.Element;
   x: MotionValue;
   onDragEnd(event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo): void;
-}
+};
 
 const pageStyle: MotionStyle = {
   position: 'absolute',
@@ -19,7 +19,7 @@ export const Slide: React.FC<SlideProps> = ({ index, renderSlide, x, onDragEnd }
   return (
     <motion.div
       style={{ ...pageStyle, x, left: `${index * 100}%`, right: `${index * 100}%` }}
-      draggable drag='x' dragElastic={1} onDragEnd={onDragEnd}>
+      draggable drag="x" dragElastic={1} onDragEnd={onDragEnd}>
       {child}
     </motion.div>
   );

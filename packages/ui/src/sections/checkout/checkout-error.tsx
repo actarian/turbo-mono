@@ -4,7 +4,7 @@ import { Container, Flex, Section, Text } from '../../components';
 
 export type CheckoutErrorProps = {
   order?: IOrder;
-}
+};
 
 export const CheckoutError: React.FC<CheckoutErrorProps> = ({ order }: CheckoutErrorProps) => {
   const label = useLabel();

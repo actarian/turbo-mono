@@ -28,7 +28,7 @@ export default function Login({ layout, page, params }: PageProps) {
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps(context: IStaticContext) {

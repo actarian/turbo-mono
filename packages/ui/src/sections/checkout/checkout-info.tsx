@@ -12,68 +12,68 @@ import { CheckoutUserInfo } from './checkout-user-info';
 export type CheckoutInfoProps = {
   onInfo?: (info: ICheckoutInfo) => void;
   onPrevious?: () => void;
-}
+};
 
 export const CheckoutInfo: React.FC<CheckoutInfoProps> = ({ onPrevious, onInfo }: CheckoutInfoProps) => {
   const label = useLabel();
 
   const checkout = useCheckout((state) => state.checkout);
   const user = useUser((state) => state.user);
-  const setUser = useUser((state) => state.setUser);
+  const { setUser } = useUser((state) => state.actions);
 
   const [view, setView] = useState((checkout.shippingAddress || user) ? 'address' : 'choose');
 
   // const [user, setUser] = useState<IUser>();
 
+  const onView = (view: string) => {
+    setView(view);
+    scrollToY(0);
+  };
+
   const onUserInfo = (info: ICheckoutInfo) => {
     if (typeof onInfo === 'function') {
       onInfo(info);
     }
-  }
+  };
 
   const onSignedIn = (user: IUser) => {
     console.log('onSignedIn');
     setUser(user);
     onView('address');
-  }
+  };
 
   const onSignedUp = () => {
     console.log('onSignedUp');
     onView('register-success');
-  }
+  };
 
   const onPasswordSent = () => {
     console.log('onPasswordSent');
     onView('forgot-success');
-  }
+  };
 
   const onNavToLogin = () => {
     onView('login');
-  }
+  };
 
   const onNavToRegister = () => {
     onView('register');
-  }
+  };
 
   const onNavToForgot = () => {
     onView('forgot');
-  }
+  };
 
   const onNavToPrevious = () => {
     onView('choose');
-  }
-
-  const onView = (view: string) => {
-    setView(view);
-    scrollToY(0);
-  }
+  };
 
   const onPrevious_ = () => {
     if (typeof onPrevious === 'function') {
       onPrevious();
     }
     scrollToY(0);
-  }
+  };
 
   const getView = () => {
     switch (view) {
@@ -117,9 +117,9 @@ export const CheckoutInfo: React.FC<CheckoutInfoProps> = ({ onPrevious, onInfo }
               </Container>
             </Section>
           </>
-        )
+        );
       case 'address':
-        return (<CheckoutUserInfo user={user} onUserInfo={onUserInfo} onNavToPrevious={onNavToPrevious} />)
+        return (<CheckoutUserInfo user={user} onUserInfo={onUserInfo} onNavToPrevious={onNavToPrevious} />);
       case 'login':
         return (<CheckoutLogin onSignedIn={onSignedIn} onNavToForgot={onNavToForgot} onNavToRegister={onNavToRegister} onNavToPrevious={onNavToPrevious} />);
       case 'register':
@@ -133,7 +133,7 @@ export const CheckoutInfo: React.FC<CheckoutInfoProps> = ({ onPrevious, onInfo }
       default:
         return null;
     }
-  }
+  };
   return (
     <>
       {getView()}

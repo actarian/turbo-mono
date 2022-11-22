@@ -8,7 +8,7 @@ import { FlexResponsive } from './flex-responsive';
 import { FlexRow } from './flex-row';
 
 type Props = {
-}
+};
 
 export type FlexProps = UIStyledComponentProps<Props>;
 

@@ -9,7 +9,7 @@ export async function getOrders(market: string, locale: string): Promise<IOrderD
     const orderDetail: IOrderDetail = {
       ...x,
       href: `${knownRoutes.reserved_area_order_detail}?orderId=${x.id}`,
-    }
+    };
     return orderDetail;
   });
 }
@@ -21,7 +21,7 @@ export async function getOrder(id: IEquatable, market: string, locale: string): 
     const orderDetail: IOrderDetail = {
       ...order,
       href: `${knownRoutes.reserved_area_order_detail}?orderId=${order.id}`,
-    }
+    };
     return orderDetail;
   }
   return order;

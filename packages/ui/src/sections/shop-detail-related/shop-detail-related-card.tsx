@@ -10,11 +10,11 @@ export type ShopDetailRelatedCardItem = {
   href?: string;
   title?: string;
   media?: IMedia;
-}
+};
 
 type Props = {
   item: ShopDetailRelatedCardItem
-}
+};
 
 export type ShopDetailRelatedCardProps = UIStyledComponentProps<Props>;
 
@@ -56,5 +56,5 @@ export const ShopDetailRelatedCard: React.FC<ShopDetailRelatedCardProps> = ({ it
         </Flex.Row>
       </Card.Content>
     </StyledCard>
-  )
-}
+  );
+};

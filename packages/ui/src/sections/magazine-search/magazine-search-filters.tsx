@@ -3,7 +3,7 @@ import { UIStyledComponentProps } from '../../components/types';
 import { CustomSelect } from '../../forms';
 
 type Props = {
-}
+};
 
 export type MagazineSearchFiltersProps = UIStyledComponentProps<Props>;
 
@@ -12,7 +12,7 @@ export const MagazineSearchFilters: React.FC<MagazineSearchFiltersProps> = ({ ..
     <Box {...props}>
       <Flex.Row gap="1rem">
         <Text size="11" fontWeight="700" textTransform="uppercase">Filter By</Text>
-        <CustomSelect name='color' id='color' placeholder="Color" minWidth="200px">
+        <CustomSelect name="color" id="color" placeholder="Color" minWidth="200px">
           <CustomSelect.Label>Color</CustomSelect.Label>
           <CustomSelect.Option value="white">Bianco</CustomSelect.Option>
           <CustomSelect.Option value="gray">Grigio</CustomSelect.Option>
@@ -27,7 +27,7 @@ export const MagazineSearchFilters: React.FC<MagazineSearchFiltersProps> = ({ ..
           <CustomSelect.Option value="azure">Azzurro</CustomSelect.Option>
           <CustomSelect.Option value="pink">rosa</CustomSelect.Option>
         </CustomSelect>
-        <CustomSelect name='designer' id='designer' placeholder="Designer" minWidth="200px">
+        <CustomSelect name="designer" id="designer" placeholder="Designer" minWidth="200px">
           <CustomSelect.Label>Designer</CustomSelect.Label>
           <CustomSelect.Option value="1">Patricia Urquiola</CustomSelect.Option>
           <CustomSelect.Option value="2">Hella Jongerius</CustomSelect.Option>
@@ -44,5 +44,5 @@ export const MagazineSearchFilters: React.FC<MagazineSearchFiltersProps> = ({ ..
         </CustomSelect>
       </Flex.Row>
     </Box>
-  )
-}
+  );
+};

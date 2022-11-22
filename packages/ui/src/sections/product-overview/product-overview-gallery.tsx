@@ -4,7 +4,7 @@ import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   media: IMedia[]
-}
+};
 
 export type ProductOverviewProps = UIStyledComponentProps<Props>;
 
@@ -14,14 +14,14 @@ export const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, 
       <Container>
         <Grid.Row columnGap="2rem" rowGap="2rem">
           <Grid sm={4} orderSm={4}>
-            <Card aspectRatio={0.8} aspectRatioSm='auto' heightSm='100%' hoverable borderRadius="0.4rem">
+            <Card aspectRatio={0.8} aspectRatioSm="auto" heightSm="100%" hoverable borderRadius="0.4rem">
               <Card.Background>
                 <Media rounded item={media[0]} />
               </Card.Background>
             </Card>
           </Grid>
           <Grid sm={4}>
-            <Card aspectRatio={0.8} aspectRatioSm='auto' heightSm='100%' hoverable>
+            <Card aspectRatio={0.8} aspectRatioSm="auto" heightSm="100%" hoverable>
               <Card.Background>
                 <Media rounded item={media[1]} />
               </Card.Background>
@@ -44,5 +44,5 @@ export const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, 
         </Grid.Row>
       </Container>
     </Section>
-  )
-}
+  );
+};

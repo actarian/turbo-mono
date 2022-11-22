@@ -8,7 +8,7 @@ import { FieldError } from './field-error';
 type FieldCheckboxProps = {
   control: FormControl;
   uid?: number | null | undefined;
-}
+};
 
 export function FieldCheckbox({
   uid,
@@ -24,18 +24,18 @@ export function FieldCheckbox({
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     // console.log('onChange', event.target.checked);
     setValue(event.target.checked);
-  }
+  };
 
   const [focus, setFocus] = useState(false);
 
   const onBlur = (_: FocusEvent<HTMLInputElement>) => {
     setTouched();
     setFocus(false);
-  }
+  };
 
   const onFocus = (_: FocusEvent<HTMLInputElement>) => {
     setFocus(true);
-  }
+  };
 
   return (
     state.flags.hidden ? (

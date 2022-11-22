@@ -10,4 +10,4 @@ export type IShopDetail = IEntity & {
   description: string;
   media: IMedia;
   price: number;
-}
+};

@@ -9,4 +9,4 @@ export type IShopCategory = IEntity & {
   abstract: string;
   description: string;
   media: IMedia;
-}
+};

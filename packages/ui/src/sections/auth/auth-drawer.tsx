@@ -6,7 +6,7 @@ export type AuthDrawerProps = {
   children?: ReactNode;
   visible: boolean;
   onClose: () => void;
-}
+};
 
 export const AuthDrawer: React.FC<AuthDrawerProps> = ({ visible, onClose }: AuthDrawerProps) => {
   return (

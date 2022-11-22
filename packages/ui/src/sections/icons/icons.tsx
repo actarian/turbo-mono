@@ -5,12 +5,12 @@ import { UIComponentProps } from '../../components/types';
 import { Input } from '../../forms';
 
 type Props = {
-}
+};
 
 export type IIcon = {
   key: string;
   component: FunctionComponent<unknown>;
-}
+};
 
 export type IconsProps = UIComponentProps<Props>;
 
@@ -24,7 +24,7 @@ export const Icons: React.FC<IconsProps> = (props: IconsProps) => {
     if (visible) {
       setIcon(icon);
     }
-  }
+  };
   const iconsList = useMemo<IIcon[]>(() => {
     return Object.keys(IconList).map((key) => {
       return { key, component: IconList[key as keyof typeof IconList] as unknown as FunctionComponent<unknown> };
@@ -71,4 +71,4 @@ export const Icons: React.FC<IconsProps> = (props: IconsProps) => {
       </Modal>
     </>
   );
-}
+};

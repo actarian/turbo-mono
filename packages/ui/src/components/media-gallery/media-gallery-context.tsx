@@ -5,7 +5,7 @@ export type MediaGalleryConfig = {
   id?: string;
   open?: (media?: IMedia | IMedia[]) => void;
   close?: () => void;
-}
+};
 
 export const MediaGalleryContext = createContext<MediaGalleryConfig>({});
 

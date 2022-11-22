@@ -9,7 +9,7 @@ import { Form, FormError, RadioCard } from '../../forms';
 export type CheckoutDeliveryProps = {
   onDelivery?: (delivery: ICheckoutDelivery) => void;
   onPrevious?: () => void;
-}
+};
 
 export const CheckoutDelivery: React.FC<CheckoutDeliveryProps> = ({ onPrevious, onDelivery }: CheckoutDeliveryProps) => {
   const label = useLabel();
@@ -19,7 +19,7 @@ export const CheckoutDelivery: React.FC<CheckoutDeliveryProps> = ({ onPrevious, 
   const api = useApi();
 
   const checkout = useCheckout((state) => state.checkout);
-  const setCheckout = useCheckout((state) => state.setCheckout);
+  const { setCheckout } = useCheckout((state) => state.actions);
 
   const [options] = useApiPost<{ deliveries: ICheckoutDelivery[] }>('/checkout/deliveries', checkout);
 
@@ -63,19 +63,19 @@ export const CheckoutDelivery: React.FC<CheckoutDeliveryProps> = ({ onPrevious, 
       console.log('CheckoutDelivery.invalid');
       setTouched();
     }
-  }
+  };
 
   const onPrevious_ = () => {
     if (typeof onPrevious === 'function') {
       onPrevious();
     }
-  }
+  };
 
   const delivery = group.controls.delivery;
 
   const onDeliveryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     group.controls.delivery.value = delivery?.options?.find(x => x.id.toString() === event.target.value);
-  }
+  };
 
   return (
     <>

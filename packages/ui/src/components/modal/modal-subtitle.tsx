@@ -8,7 +8,7 @@ const defaultProps = {
 
 type Props = {
   className?: string;
-}
+};
 
 export type ModalSubtitleProps = UIComponentProps<Props>;
 
@@ -25,13 +25,12 @@ const StyledSubtitle = styled.div`
 `;
 
 export const ModalSubtitle: React.FC<React.PropsWithChildren<ModalSubtitleProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalSubtitleProps> & typeof defaultProps) => { // !!! any
-
   return (
     <StyledSubtitle className={className} {...props}>
       {children}
     </StyledSubtitle>
-  )
-}
+  );
+};
 
 ModalSubtitle.defaultProps = defaultProps;
 ModalSubtitle.displayName = 'ModalSubtitle';

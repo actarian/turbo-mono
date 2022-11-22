@@ -32,7 +32,7 @@ const ProductIndex = () => {
         </Page>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export default withPageTransition(ProductIndex);

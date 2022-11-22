@@ -5,7 +5,7 @@ import { CategoriesPropositionItem } from '../categories-proposition/categories-
 
 type Props = {
   item: CategoriesPropositionItem
-}
+};
 
 export type ProductsHeroCardProps = UIStyledComponentProps<Props, 'a'>;
 
@@ -22,5 +22,5 @@ export const ProductsHeroCard: React.FC<ProductsHeroCardProps> = ({ item, ...pro
         </Card.Content>
       </Card>
     </Link>
-  )
-}
+  );
+};

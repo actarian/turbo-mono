@@ -10,7 +10,7 @@ type Props = {
   onClick?: (event: React.MouseEvent) => void
   className?: string,
   children?: ReactNode,
-}
+};
 
 type NativeAttrs = Omit<React.AnchorHTMLAttributes<any>, keyof Props>;
 

@@ -13,7 +13,7 @@ type Props = {
   backdropClassName?: string
   positionClassName?: string
   layerClassName?: string
-}
+};
 
 export type BackdropProps = UIComponentProps<Props>;
 
@@ -24,7 +24,7 @@ const defaultProps = {
   backdropClassName: '',
   positionClassName: '',
   layerClassName: '',
-}
+};
 
 const StyledBackdrop = styled.div`
   box-sizing: border-box;
@@ -54,6 +54,18 @@ const StyledBackdrop = styled.div`
     margin: 20px auto;
     vertical-align: middle;
     display: inline-block;
+  }
+
+  .position--full {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
   }
 
   .layer {
@@ -110,7 +122,7 @@ export const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = 
       if (onClick) {
         onClick(event);
       }
-    }
+    };
 
     const mouseUpHandler = () => {
       if (!IsContentMouseDownRef.current) return;
@@ -118,7 +130,7 @@ export const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = 
         setIsContentMouseDown(false);
         clearTimeout(timer);
       }, 0);
-    }
+    };
 
     const backdropClassNames = getClassNames('backdrop', backdropClassName);
     const layerClassNames = getClassNames('layer', layerClassName);
@@ -136,9 +148,9 @@ export const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = 
           </div>
         </StyledBackdrop>
       </Transition>
-    )
+    );
   },
-)
+);
 
 Backdrop.defaultProps = defaultProps;
 Backdrop.displayName = 'Backdrop';

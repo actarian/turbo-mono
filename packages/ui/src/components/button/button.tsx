@@ -27,7 +27,7 @@ type Props = {
   size?: SizeVariant;
   children?: React.ReactNode;
   type?: string;
-}
+};
 
 export type ButtonProps = UIStyledComponentProps<Props>;
 

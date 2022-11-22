@@ -1312,4 +1312,4 @@ export const Dots: React.FC<SvgProps> = ({ className, ...props }: SvgProps) => (
     <circle cx="6.4" cy="534.4" r="0.2" />
     <circle cx="25.5" cy="571.9" r="0.1" />
   </StyledDots>
-)
+);

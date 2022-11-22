@@ -7,11 +7,11 @@ export type CategoriesPropositionItem = {
   href: string;
   title: string;
   media: IMedia;
-}
+};
 
 type Props = {
   item: CategoriesPropositionItem
-}
+};
 
 export type CategoriesPropositionCardProps = UIStyledComponentProps<Props, 'a'>;
 
@@ -28,5 +28,5 @@ export const CategoriesPropositionCard: React.FC<CategoriesPropositionCardProps>
         </Card.Content>
       </Card>
     </Link>
-  )
-}
+  );
+};

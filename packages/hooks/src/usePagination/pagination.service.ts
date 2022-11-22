@@ -4,7 +4,7 @@ export type IPaginationInfo<T> = {
   pages: number,
   page: number,
   perPage: number,
-}
+};
 
 export function getPagedItems<T>(items: T[], page: number, perPage: number): T[] {
   const from = (page - 1) * perPage;

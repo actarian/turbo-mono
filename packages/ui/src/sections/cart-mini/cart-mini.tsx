@@ -8,7 +8,7 @@ export type CartMiniProps = {
   children?: ReactNode;
   visible: boolean;
   onClose: () => void;
-}
+};
 
 export const CartMini: React.FC<CartMiniProps> = ({ visible, onClose }: CartMiniProps) => {
 

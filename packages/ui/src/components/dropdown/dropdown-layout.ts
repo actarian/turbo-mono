@@ -16,7 +16,7 @@ export type ReactiveDomReact = {
   width: number;
   height: number;
   elementTop: number;
-}
+};
 
 export function getElementOffset(element?: HTMLElement | null | undefined) {
   if (!element) {
@@ -63,7 +63,7 @@ export function useRect(initialState?: ReactiveDomReact | (() => ReactiveDomReac
       return setRect(getRefRect(eventOrRef, getContainer));
     }
     setRect(getEventRect(eventOrRef, getContainer));
-  }
+  };
 
   return { rect, setRect: updateRect };
 }

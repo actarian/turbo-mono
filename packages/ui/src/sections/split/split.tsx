@@ -6,12 +6,12 @@ import { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: SplitItem,
-}
+};
 
 export type SplitItemLink = {
   href: string;
   label: string;
-}
+};
 
 export type SplitItem = {
   id: number;
@@ -21,7 +21,7 @@ export type SplitItem = {
   abstract: string;
   link: SplitItemLink;
   media: IMedia;
-}
+};
 
 export type SplitProps = UIComponentProps<Props>;
 
@@ -56,5 +56,5 @@ export const Split: React.FC<SplitProps> = ({ item }: SplitProps) => {
         </Card>
       </Container.Fluid>
     </Section>
-  )
-}
+  );
+};

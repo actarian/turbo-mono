@@ -7,21 +7,21 @@ import { UIStyledComponentProps } from '../../components/types';
 type Props = {
   item: HeaderCardItem;
   onSelect?: (item: IRouteLink) => void;
-}
+};
 
 export type HeaderCardItem = {
   id: IEquatable;
   href: string;
   title: string;
   media?: IMedia;
-}
+};
 
 export type HeaderCardProps = UIStyledComponentProps<Props, 'a'>;
 
 export const HeaderCard: React.FC<HeaderCardProps> = ({ item, onSelect, ...props }: HeaderCardProps) => {
   const onSelect_ = () => {
     onSelect && onSelect(item);
-  }
+  };
   return (
     <Link href={item.href} passHref>
       <Card as="a" height="100%" hoverable onClick={onSelect_} {...props}>
@@ -33,5 +33,5 @@ export const HeaderCard: React.FC<HeaderCardProps> = ({ item, onSelect, ...props
         </Card.Content>
       </Card>
     </Link>
-  )
-}
+  );
+};

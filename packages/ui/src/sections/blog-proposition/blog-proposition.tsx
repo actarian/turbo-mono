@@ -7,7 +7,7 @@ import { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: BlogPropositionItem
-}
+};
 
 export type BlogPropositionItem = {
   id: number;
@@ -19,7 +19,7 @@ export type BlogPropositionItem = {
     fullName: string;
     media: IMedia;
   };
-}
+};
 
 export type BlogPropositionProps = UIComponentProps<Props>;
 
@@ -54,5 +54,5 @@ export const BlogProposition: React.FC<BlogPropositionProps> = ({ item, ...props
         </Grid.Row>
       </Container>
     </Section>
-  )
-}
+  );
+};

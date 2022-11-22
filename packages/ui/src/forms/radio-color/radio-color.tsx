@@ -12,7 +12,7 @@ type Props = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   color?: string;
   size?: SizeVariant;
   children?: ReactNode;
-}
+};
 
 export type RadioColorProps = UIStyledComponentProps<Props, 'input'>;
 
@@ -29,7 +29,7 @@ const StyledRadioColorInput = styled.div`
   &:disabled {
     cursor: not-allowed;
   }
-`
+`;
 
 const StyledRadioColorButton = styled.div<RadioColorProps>`
   ${CssDefault}
@@ -66,14 +66,14 @@ const StyledRadioColorButton = styled.div<RadioColorProps>`
 
   ${props => (css`font-size: var(--button-size-${props.size || 'md'});`)}
   ${props => getCssResponsive(props)}
-`
+`;
 
 const StyledRadioColor = styled.div`
   position: relative;
   font-size: 0;
   line-height: 1;
   ${props => getCssResponsive(props)}
-`
+`;
 
 const RadioColorBase: RadioColorComponent = forwardRef(({
   as = 'input',
@@ -85,7 +85,7 @@ const RadioColorBase: RadioColorComponent = forwardRef(({
   const classNames = getClassNames('radio-color', className);
   return (
     <StyledRadioColor className={classNames}>
-      <StyledRadioColorInput ref={ref} as={as} type='radio' {...props} />
+      <StyledRadioColorInput ref={ref} as={as} type="radio" {...props} />
       <StyledRadioColorButton as="button" backgroundColor={color} size={props.size}>
         <Text.SROnly>{children}</Text.SROnly>
       </StyledRadioColorButton>

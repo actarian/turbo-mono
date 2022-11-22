@@ -85,7 +85,7 @@ export async function getBreadcrumbFromCategoryTree(categoryTree: ICategory[], m
       title: title,
       href,
       items: [],
-    }
+    };
   });
   return tree;
 }

@@ -6,7 +6,7 @@ import { PaginationItem } from './pagination-item';
 type Props = {
   isBefore?: boolean;
   onClick?: (e: React.MouseEvent) => void;
-}
+};
 
 const StyledPaginationItem = styled(PaginationItem)`
   svg {
@@ -18,7 +18,7 @@ const StyledPaginationItem = styled(PaginationItem)`
   .more.before {
     transform: rotate(180deg);
   }
-`
+`;
 
 export const PaginationEllipsis: React.FC<Props> = ({ isBefore, onClick }) => {
   const [showMore, setShowMore] = useState(false);
@@ -56,6 +56,6 @@ export const PaginationEllipsis: React.FC<Props> = ({ isBefore, onClick }) => {
       )}
     </StyledPaginationItem>
   );
-}
+};
 
 PaginationEllipsis.displayName = 'PaginationEllipsis';

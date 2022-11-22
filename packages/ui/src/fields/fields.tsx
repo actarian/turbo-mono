@@ -28,4 +28,4 @@ export const FIELDS: IFields = {
 
 export type IFields = {
   [key in FieldType]: (control: FormControl, uid?: number) => JSX.Element;
-}
+};

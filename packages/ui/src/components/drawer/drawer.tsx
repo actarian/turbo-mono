@@ -18,7 +18,7 @@ type Props = {
   onContentClick?: (event: MouseEvent<HTMLElement>) => void;
   wrapClassName?: string;
   placement?: DrawerPlacement;
-}
+};
 
 export type DrawerProps = UIComponentProps<Props>;
 
@@ -55,7 +55,7 @@ const DrawerBase: React.FC<React.PropsWithChildren<DrawerProps | any>> = ({
     }
     setVisible(false);
     setBodyHidden(false);
-  }
+  };
 
   useEffect(() => {
     if (typeof customVisible === 'undefined') {
@@ -76,7 +76,7 @@ const DrawerBase: React.FC<React.PropsWithChildren<DrawerProps | any>> = ({
       return;
     }
     closeDrawer();
-  }
+  };
 
   if (!portal) {
     return null;
@@ -95,8 +95,8 @@ const DrawerBase: React.FC<React.PropsWithChildren<DrawerProps | any>> = ({
       </DrawerWrapper>
     </Backdrop>,
     portal,
-  )
-}
+  );
+};
 
 export const Drawer = withSchema(DrawerBase, {
   Title: ModalTitle,

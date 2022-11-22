@@ -6,7 +6,7 @@ export type ProductsSearchFiltersModalProps = {
   children?: ReactNode;
   visible: boolean;
   onClose: () => void;
-}
+};
 
 export const ProductsSearchFiltersModal: React.FC<ProductsSearchFiltersModalProps> = ({ visible, onClose }: ProductsSearchFiltersModalProps) => {
   return (

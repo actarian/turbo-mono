@@ -9,7 +9,7 @@ type Props = {
   passive?: boolean;
   disabled?: boolean;
   onClick?: (event: ModalButtonEvent) => void;
-}
+};
 
 const defaultProps = {
   className: '',
@@ -17,7 +17,7 @@ const defaultProps = {
   disabled: false,
 };
 
-export type ModalButtonProps = Props & Omit<ButtonProps, keyof Props>
+export type ModalButtonProps = Props & Omit<ButtonProps, keyof Props>;
 
 const StyledButton = styled(Button)`
   /*
@@ -66,7 +66,7 @@ export const ModalButton = React.forwardRef<HTMLButtonElement, React.PropsWithCh
       if (onClick) {
         onClick(actionEvent);
       }
-    }
+    };
 
     /*
     const color = useMemo(() => {
@@ -91,13 +91,13 @@ export const ModalButton = React.forwardRef<HTMLButtonElement, React.PropsWithCh
       >
         {children}
       </StyledButton>
-    )
+    );
   },
-)
+);
 
 ModalButton.defaultProps = defaultProps;
 ModalButton.displayName = 'ModalButton';
 
 export type ModalButtonEvent = MouseEvent<HTMLButtonElement> & {
   close: () => void
-}
+};

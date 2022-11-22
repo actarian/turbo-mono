@@ -6,7 +6,7 @@ export type IGeoPosition = { lat: number, lng: number };
 export type IGeoLocalized = {
   position: IGeoPosition;
   distance?: number;
-}
+};
 
 export function calculateDistances(items: IGeoLocalized[], center: IGeoPosition): IGeoLocalized[] {
   if (items) {
@@ -85,7 +85,7 @@ export type IAutocompleteResult = IAutocompleteItem & {
   name: string;
   description: string;
   getDetails: (map: google.maps.Map) => Promise<IAutocompleteResultDetail>;
-}
+};
 
 export type IAutocompleteResultDetail = {
   streetNumber: string;
@@ -99,7 +99,7 @@ export type IAutocompleteResultDetail = {
   latitude: number | null;
   longitude: number | null;
   geometry: google.maps.places.PlaceGeometry | undefined,
-}
+};
 
 export type IAutocompleteResultWithDetail = IAutocompleteResult & IAutocompleteResultDetail;
 
@@ -202,7 +202,7 @@ export type IFindMeResult = {
   name: string;
   location: google.maps.LatLngLiteral;
   geometry?: google.maps.GeocoderGeometry;
-}
+};
 
 export async function findMe(options?: PositionOptions, type = 'administrative_area_level_3'): Promise<IFindMeResult | null> {
   if (!hasMaps()) {
@@ -224,7 +224,7 @@ export async function findMe(options?: PositionOptions, type = 'administrative_a
         name: address ? address.long_name : 'current location',
         location,
         geometry: place.geometry,
-      }
+      };
     }
   }
   // console.log('StoreLocatorComponent.onGeolocation', place);

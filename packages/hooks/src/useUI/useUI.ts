@@ -1,33 +1,36 @@
-import create, { StateCreator } from 'zustand';
+import create from 'zustand';
 
-export type IStateCreator<T extends object> = StateCreator<T, any, [], T>;
+export type UIValue = string | number | boolean | undefined;
 
-export type IUIStateSetter = (reducer: IUIStateReducer) => void;
-
-export type IUIStateReducer = (state: IUIStore) => IUIStore | IUIState | void;
-
-export type IUIState = {
-  [key: string]: IUIStateValue;
+type UIViews = {
+  [key: string]: UIValue;
 };
 
-export type IUIStateValue = string | number | boolean | undefined | IUIState | IUIStateSetter;
+export type UIReducer = (state: UIViews) => UIValue;
 
-export type IUIStore = {
-  [key: string]: IUIStateValue;
-  reduce(reducer: IUIStateReducer): void;
+type UIActions = {
+  reduce(key: string, reducer: UIReducer): void;
 };
 
-const uiStore: IStateCreator<IUIStore> = (set, get) => ({
-  reduce: (reducer: IUIStateReducer) => {
-    const newState = { ...get() };
-    const state = reducer(newState);
-    if (state) {
-      set({ ...newState, ...state });
-    }
+type UIStore = {
+  views: UIViews;
+  actions: UIActions;
+};
+
+export const useUI = create<UIStore>((set, get) => ({
+  views: {},
+  actions: {
+    reduce: (key: string, reducer: UIReducer) => {
+      const views = { ...get().views };
+      const newViews = { ...views };
+      const value = reducer(views);
+      newViews[key] = value;
+      set({
+        views: newViews,
+      });
+    },
   },
-});
-
-export const useUI = create<IUIStore>(uiStore as StateCreator<any>);
+}));
 
 /*
 const PERSIST = false;

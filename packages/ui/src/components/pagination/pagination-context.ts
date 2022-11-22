@@ -9,7 +9,7 @@ export type PaginationConfig = {
   isFirst?: boolean;
   isLast?: boolean;
   update?: (type: PaginationUpdateType) => void;
-}
+};
 
 const defaultContext = {};
 

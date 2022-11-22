@@ -20,13 +20,13 @@ export default function MagazineIndex({ layout, page, items = [], featureTypes =
 
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type MagazineIndexProps = PageProps & {
   items: MagazineSearchItem[];
   featureTypes: IFeatureType[];
-}
+};
 
 export async function getStaticProps(context: IStaticContext) {
   const id = parseInt(context.params.id);

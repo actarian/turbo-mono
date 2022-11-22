@@ -5,7 +5,7 @@ export type ICrudMethod = 'get' | 'post' | 'put' | 'delete';
 
 export type IApiHandler = {
   [key: string]: (request: NextApiRequest, response: NextApiResponse) => Promise<any>;
-}
+};
 
 export function apiHandler(handler: IApiHandler): any {
   return async (request: NextApiRequest, response: NextApiResponse): Promise<any> => {
@@ -24,7 +24,7 @@ export function apiHandler(handler: IApiHandler): any {
       // global error handler
       return errorHandler(error, response);
     }
-  }
+  };
 }
 
 export function errorHandler(error: any, response: NextApiResponse): Promise<any> | void {

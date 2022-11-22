@@ -7,7 +7,7 @@ import { FieldText } from '../../fields';
 
 export type CheckoutDiscountProps = {
   onDiscount?: (discounts: ICheckoutDiscount[]) => void;
-}
+};
 
 export const CheckoutDiscount: React.FC<CheckoutDiscountProps> = ({ onDiscount }: CheckoutDiscountProps) => {
   const label = useLabel();
@@ -15,7 +15,7 @@ export const CheckoutDiscount: React.FC<CheckoutDiscountProps> = ({ onDiscount }
   const api = useApi();
 
   const checkout = useCheckout((state) => state.checkout);
-  const setCheckout = useCheckout((state) => state.setCheckout);
+  const { setCheckout } = useCheckout((state) => state.actions);
 
   // console.log('CheckoutDiscount', checkout);
 
@@ -49,7 +49,7 @@ export const CheckoutDiscount: React.FC<CheckoutDiscountProps> = ({ onDiscount }
       console.log('CheckoutDiscount.invalid');
       setTouched();
     }
-  }
+  };
 
   return (
     <>

@@ -14,12 +14,12 @@ export function useDomObserver(ref: MutableRefObject<HTMLElement | null> | undef
         return;
       }
       callback(...params);
-    }
+    };
     const observer = new MutationObserver(done);
     observer.observe(ref.current, config);
     return () => {
       unmount = true;
       observer.disconnect();
-    }
+    };
   }, [ref]);
 }

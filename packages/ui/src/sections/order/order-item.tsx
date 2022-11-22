@@ -52,4 +52,4 @@ export const OrderItem: React.FC<OrderItemProps> = ({ item }) => {
       </Box>
     </Flex.Row>
   );
-}
+};

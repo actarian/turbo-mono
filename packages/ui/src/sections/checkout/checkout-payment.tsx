@@ -9,7 +9,7 @@ import { Form, FormError, RadioCard } from '../../forms';
 export type CheckoutPaymentProps = {
   onPayment?: (payment: ICheckoutPayment) => void;
   onPrevious?: () => void;
-}
+};
 
 export const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, onPayment }: CheckoutPaymentProps) => {
   const label = useLabel();
@@ -17,7 +17,7 @@ export const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, on
   const api = useApi();
 
   const checkout = useCheckout((state) => state.checkout);
-  const setCheckout = useCheckout((state) => state.setCheckout);
+  const { setCheckout } = useCheckout((state) => state.actions);
 
   const [options] = useApiPost<{ payments: ICheckoutPayment[] }>('/checkout/payments', checkout);
 
@@ -65,19 +65,19 @@ export const CheckoutPayment: React.FC<CheckoutPaymentProps> = ({ onPrevious, on
       console.log('CheckoutPayment.invalid');
       setTouched();
     }
-  }
+  };
 
   const onPrevious_ = () => {
     if (typeof onPrevious === 'function') {
       onPrevious();
     }
-  }
+  };
 
   const payment = group.controls.payment;
 
   const onPaymentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     group.controls.payment.value = payment?.options?.find(x => x.id.toString() === event.target.value);
-  }
+  };
 
   return (
     <>

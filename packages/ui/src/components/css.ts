@@ -1,7 +1,7 @@
 const CssObj = {
-  "alignContent": "align-content",
-  "alignItems": "align-items",
-  "alignSelf": "align-self",
+  'alignContent': 'align-content',
+  'alignItems': 'align-items',
+  'alignSelf': 'align-self',
   /*
   "animation": "animation",
   "animationDelay": "animation-delay",
@@ -13,16 +13,16 @@ const CssObj = {
   "animationPlayState": "animation-play-state",
   "animationTimingFunction": "animation-timing-function",
   */
-  "aspectRatio": "aspect-ratio",
+  'aspectRatio': 'aspect-ratio',
   /*
   "backfaceVisibility": "backface-visibility",
   */
-  "background": "background",
+  'background': 'background',
   /*
   "backgroundAttachment": "background-attachment",
   "backgroundClip": "background-clip",
   */
-  "backgroundColor": "background-color",
+  'backgroundColor': 'background-color',
   /*
   "backgroundImage": "background-image",
   "backgroundOrigin": "background-origin",
@@ -30,8 +30,8 @@ const CssObj = {
   "backgroundRepeat": "background-repeat",
   "backgroundSize": "background-size",
   */
-  "border": "border",
-  "borderBottom": "border-bottom",
+  'border': 'border',
+  'borderBottom': 'border-bottom',
   /*
   "borderBottomColor": "border-bottom-color",
   "borderBottomLeftRadius": "border-bottom-left-radius",
@@ -47,14 +47,14 @@ const CssObj = {
   "borderImageSource": "border-image-source",
   "borderImageWidth": "border-image-width",
   */
-  "borderLeft": "border-left",
+  'borderLeft': 'border-left',
   /*
    "borderLeftColor": "border-left-color",
    "borderLeftStyle": "border-left-style",
    "borderLeftWidth": "border-left-width",
    */
-  "borderRadius": "border-radius",
-  "borderRight": "border-right",
+  'borderRadius': 'border-radius',
+  'borderRight': 'border-right',
   /*
   "borderRightColor": "border-right-color",
   "borderRightStyle": "border-right-style",
@@ -62,7 +62,7 @@ const CssObj = {
   "borderSpacing": "border-spacing",
   "borderStyle": "border-style",
   */
-  "borderTop": "border-top",
+  'borderTop': 'border-top',
   /*
   "borderTopColor": "border-top-color",
   "borderTopLeftRadius": "border-top-left-radius",
@@ -71,102 +71,102 @@ const CssObj = {
   "borderTopWidth": "border-top-width",
   "borderWidth": "border-width",
   */
-  "bottom": "bottom",
-  "boxShadow": "box-shadow",
+  'bottom': 'bottom',
+  'boxShadow': 'box-shadow',
   /*
   "boxSizing": "box-sizing",
   "captionSide": "caption-side",
   "clear": "clear",
   */
-  "clip": "clip",
-  "color": "color",
-  "columnCount": "column-count",
-  "columnFill": "column-fill",
-  "columnGap": "column-gap",
-  "columnRule": "column-rule",
+  'clip': 'clip',
+  'color': 'color',
+  'columnCount': 'column-count',
+  'columnFill': 'column-fill',
+  'columnGap': 'column-gap',
+  'columnRule': 'column-rule',
   /*
   "columnRuleColor": "column-rule-color",
   "columnRuleStyle": "column-rule-style",
   "columnRuleWidth": "column-rule-width",
   */
-  "columnSpan": "column-span",
-  "columnWidth": "column-width",
-  "columns": "columns",
-  "content": "content",
+  'columnSpan': 'column-span',
+  'columnWidth': 'column-width',
+  'columns': 'columns',
+  'content': 'content',
   /*
   "counterIncrement": "counter-increment",
   "counterReset": "counter-reset",
   */
-  "cursor": "cursor",
-  "direction": "direction",
-  "display": "display",
+  'cursor': 'cursor',
+  'direction': 'direction',
+  'display': 'display',
   /*
   "emptyCells": "empty-cells",
   */
-  "flex": "flex",
-  "flexBasis": "flex-basis",
-  "flexDirection": "flex-direction",
-  "flexFlow": "flex-flow",
-  "flexGrow": "flex-grow",
-  "flexShrink": "flex-shrink",
-  "flexWrap": "flex-wrap",
-  "float": "float",
+  'flex': 'flex',
+  'flexBasis': 'flex-basis',
+  'flexDirection': 'flex-direction',
+  'flexFlow': 'flex-flow',
+  'flexGrow': 'flex-grow',
+  'flexShrink': 'flex-shrink',
+  'flexWrap': 'flex-wrap',
+  'float': 'float',
   /*
   "font": "font",
   "fontFamily": "font-family",
   */
-  "fontSize": "font-size",
+  'fontSize': 'font-size',
   /*
   "fontSizeAdjust": "font-size-adjust",
   "fontStretch": "font-stretch",
   "fontStyle": "font-style",
   "fontVariant": "font-variant",
   */
-  "fontWeight": "font-weight",
-  "gap": "gap",
-  "gridTemplateColumns": "grid-template-columns",
-  "gridAutoColumns": "grid-auto-columns",
-  "grid": "grid",
-  "gridTemplate": "grid-template",
-  "height": "height",
-  "justifyContent": "justify-content",
-  "left": "left",
-  "letterSpacing": "letter-spacing",
-  "lineHeight": "line-height",
+  'fontWeight': 'font-weight',
+  'gap': 'gap',
+  'gridTemplateColumns': 'grid-template-columns',
+  'gridAutoColumns': 'grid-auto-columns',
+  'grid': 'grid',
+  'gridTemplate': 'grid-template',
+  'height': 'height',
+  'justifyContent': 'justify-content',
+  'left': 'left',
+  'letterSpacing': 'letter-spacing',
+  'lineHeight': 'line-height',
   /*
   "listStyle": "list-style",
   "listStyleImage": "list-style-image",
   "listStylePosition": "list-style-position",
   "listStyleType": "list-style-type",
   */
-  "margin": "margin",
-  "marginBottom": "margin-bottom",
-  "marginLeft": "margin-left",
-  "marginRight": "margin-right",
-  "marginTop": "margin-top",
-  "maxHeight": "max-height",
-  "maxWidth": "max-width",
-  "minHeight": "min-height",
-  "minWidth": "min-width",
-  "opacity": "opacity",
-  "order": "order",
-  "outline": "outline",
+  'margin': 'margin',
+  'marginBottom': 'margin-bottom',
+  'marginLeft': 'margin-left',
+  'marginRight': 'margin-right',
+  'marginTop': 'margin-top',
+  'maxHeight': 'max-height',
+  'maxWidth': 'max-width',
+  'minHeight': 'min-height',
+  'minWidth': 'min-width',
+  'opacity': 'opacity',
+  'order': 'order',
+  'outline': 'outline',
   /*
   "outlineColor": "outline-color",
   "outlineOffset": "outline-offset",
   "outlineStyle": "outline-style",
   "outlineWidth": "outline-width",
   */
-  "overflow": "overflow",
+  'overflow': 'overflow',
   /*
   "overflowX": "overflow-x",
    "overflowY": "overflow-y",
    */
-  "padding": "padding",
-  "paddingBottom": "padding-bottom",
-  "paddingLeft": "padding-left",
-  "paddingRight": "padding-right",
-  "paddingTop": "padding-top",
+  'padding': 'padding',
+  'paddingBottom': 'padding-bottom',
+  'paddingLeft': 'padding-left',
+  'paddingRight': 'padding-right',
+  'paddingTop': 'padding-top',
   /*
   "pageBreakAfter": "page-break-after",
   "pageBreakBefore": "page-break-before",
@@ -174,22 +174,22 @@ const CssObj = {
   "perspective": "perspective",
   "perspectiveOrigin": "perspective-origin",
   */
-  "position": "position",
+  'position': 'position',
   /*
   "quotes": "quotes",
   "resize": "resize",
   */
-  "right": "right",
-  "rowGap": "row-gap",
+  'right': 'right',
+  'rowGap': 'row-gap',
   /*
   "tabSize": "tab-size",
   "tableLayout": "table-layout",
   */
-  "textAlign": "text-align",
+  'textAlign': 'text-align',
   /*
   "textAlignLast": "text-align-last",
   */
-  "textDecoration": "text-decoration",
+  'textDecoration': 'text-decoration',
   /*
   "textDecorationColor": "text-decoration-color",
   "textDecorationLine": "text-decoration-line",
@@ -199,14 +199,14 @@ const CssObj = {
   "textOverflow": "text-overflow",
   "textShadow": "text-shadow",
   */
-  "textTransform": "text-transform",
-  "top": "top",
-  "transform": "transform",
+  'textTransform': 'text-transform',
+  'top': 'top',
+  'transform': 'transform',
   /*
   "transformOrigin": "transform-origin",
   "transformStyle": "transform-style",
   */
-  "transition": "transition",
+  'transition': 'transition',
   /*
   "transitionDelay": "transition-delay",
   "transitionDuration": "transition-duration",
@@ -214,15 +214,15 @@ const CssObj = {
   "transitionTimingFunction": "transition-timing-function",
   "verticalAlign": "vertical-align",
   */
-  "visibility": "visibility",
-  "whiteSpace": "white-space",
-  "width": "width",
+  'visibility': 'visibility',
+  'whiteSpace': 'white-space',
+  'width': 'width',
   /*
   "wordBreak": "word-break",
   "wordSpacing": "word-spacing",
   "wordWrap": "word-wrap",
   */
-  "zIndex": "z-index"
+  'zIndex': 'z-index'
 } as const;
 
 export const CssMap = new Map(Object.entries(CssObj));

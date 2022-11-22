@@ -114,10 +114,10 @@ const Contact = () => {
           <Section aspectRatio={4 / 3} aspectRatioSm={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
             <Section.Background>
               <Media overlay>
-                <MediaImage draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' />
+                <MediaImage draggable={false} src="https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600" />
               </Media>
             </Section.Background>
-            <Container textAlign='center'>
+            <Container textAlign="center">
               <Text size="1" fontWeight="700">Workbench.</Text>
             </Container>
           </Section>
@@ -127,7 +127,7 @@ const Contact = () => {
         </Page>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export default withPageTransition(Contact);

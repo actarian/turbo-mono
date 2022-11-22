@@ -12,14 +12,14 @@ type Props = {
   visible: boolean;
   disableMatchWidth?: boolean;
   getPopupContainer?: () => HTMLElement | null;
-}
+};
 
 type ReactiveDomReact = {
   top: number;
   left: number;
   right: number;
   width: number;
-}
+};
 
 const defaultRect: ReactiveDomReact = {
   top: -1000,
@@ -72,7 +72,7 @@ export const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
   const updateRect = () => {
     const { top, left, right, width: nativeWidth } = getRefRect(parent, getPopupContainer);
     setRect({ top, left, right, width: nativeWidth });
-  }
+  };
 
   useResize(updateRect);
 

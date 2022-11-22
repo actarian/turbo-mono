@@ -19,7 +19,7 @@ const SortMenu = () => (
     <Button variant="nav" as="a">Price: Low to High</Button>
     <Button variant="nav" as="a">Price: High to Low</Button>
   </Nav.Col>
-)
+);
 
 // this is the actual filtering function of the products
 function filterProductItem(key: string, item: ProductSearchItem, value: IEquatable) {
@@ -61,7 +61,7 @@ export const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, featureTy
     // serializing querystring filter
     const filterParams = filtersToParams(filters);
     replaceParamsSilently({ filter: filterParams, pagination: { page: 1 } });
-  }
+  };
 
   const onCustomSelectChange = (value: string | string[], filter: Filter<ProductSearchItem>) => {
     const ids = Array.isArray(value) ? value : [value];
@@ -73,12 +73,12 @@ export const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, featureTy
       onFilterChange(filter, filter.values);
     }
     console.log('onCustomSelectChange', filter, option, value);
-  }
+  };
 
   // visible results paged by the infinite scroll or button loader
   const [visibleItems, onMore, hasMore] = useInfiniteLoader(filteredItems);
 
-  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
+  const [drawer, openDrawer, closeDrawer] = useDrawer();
   const [large, setLarge] = useState<boolean>(false);
 
   return (
@@ -122,9 +122,9 @@ export const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, featureTy
               </Flex.Row>
 
             </Flex.Row>
-            <Button variant="nav" display="block" displaySm="none" onClick={() => onOpenDrawer('filters')}><FilterIcon /></Button>
+            <Button variant="nav" display="block" displaySm="none" onClick={() => openDrawer('filters')}><FilterIcon /></Button>
 
-            <ProductsSearchFiltersModal visible={drawer == 'filters'} onClose={onCloseDrawer} />
+            <ProductsSearchFiltersModal visible={drawer == 'filters'} onClose={closeDrawer} />
 
           </Flex.Row>
         </Container>
@@ -158,5 +158,5 @@ export const ProductsSearch: React.FC<ProductsSearchProps> = ({ items, featureTy
         </Container>
       </Section>
     </>
-  )
-}
+  );
+};

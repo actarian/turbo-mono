@@ -26,7 +26,7 @@ export type MediaInfoProps = UIStyledComponentProps;
 const MediaInfo = ({ children, className, ...props }: MediaInfoProps) => {
   const classNames = getClassNames(className, 'media-info');
   return (<StyledMediaInfo className={classNames} {...props}>{children}</StyledMediaInfo>);
-}
+};
 
 type Props = {
   circle?: boolean;
@@ -55,13 +55,34 @@ const StyledMedia = styled.div<MediaProps>`
     height: 100%;
   }
 
-  &>:not(.media-info):not(.image-svg):not(svg) {
+  &>.image:not(.image-svg),
+  &>video,
+  &>.video {
     object-fit: cover;
     background: var(--color-neutral-200);
   }
 
   &>svg {
     height: 100%;
+  }
+
+  &.media--gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+
+    &>:not(.media-info) {
+      transition: ease-in-out 200ms;
+      transition-property: transform, opacity;
+    }
+
+    &:hover {
+      &>:not(.media-info) {
+        transform: scale(1.05);
+      }
+    }
   }
 
   ${props => props.circle ? css`
@@ -100,9 +121,9 @@ const StyledMedia = styled.div<MediaProps>`
 `;
 
 const MediaBase: MediaComponent = forwardRef(({ children, item, onClick, className, as = 'div', ...props }, ref) => {
-  const classNames = getClassNames(className, 'media');
-
   const { id, open } = useMediaGalleryContext();
+
+  const classNames = getClassNames(className, 'media', { 'media--gallery': id });
 
   const mediaChildren = (item && !children) ? getMediaItems(item, {
     aspectRatio: props.aspectRatio,
@@ -155,7 +176,7 @@ function getMediaItems(itemOrItems: IMediaItem | IMediaItem[], options: {
       }
     }
     return props;
-  }
+  };
   return (
     items.map((media, m) => media.type === 'video' ?
       (<video key={m} playsInline={true} autoPlay={true} muted={true} loop={true} {...getMediaItemProps(media)}>

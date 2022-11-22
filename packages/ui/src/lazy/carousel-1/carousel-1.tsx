@@ -11,7 +11,7 @@ export type Carousel1SubItem = {
   title: string;
   href: string;
   media: IMedia;
-}
+};
 
 export type Carousel1Item = ILazyComponent & {
   schema: 'carousel-1';
@@ -21,14 +21,14 @@ export type Carousel1Item = ILazyComponent & {
 
 export type Carousel1Props = ILazyComponentProps & {
   item: Carousel1Item
-}
+};
 
 const StyledSection = styled(Section)`
   .swiper-slide {
     width: 60vw;
     overflow: hidden;
   }
-`
+`;
 
 const StyledCard = styled(Card)`
   .media>.image {
@@ -80,8 +80,8 @@ export const Carousel1: React.FC<Carousel1Props & SwiperProps> = ({ item, ...pro
         ))}
       </Swiper>
     </StyledSection>
-  )
-}
+  );
+};
 
 export const Carousel1Export = {
   'carousel-1': dynamic<Carousel1Props>(() => import('../carousel-1/carousel-1').then(

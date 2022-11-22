@@ -5,7 +5,7 @@ export type CustomSelectInputProps = ComponentPropsWithRef<'input'> & {
   visible: boolean;
   onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
   onFocus: (event: React.FocusEvent<HTMLInputElement>) => void;
-}
+};
 
 const StyledInput = styled.input`
   position: fixed;

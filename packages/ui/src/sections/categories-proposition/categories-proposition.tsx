@@ -6,7 +6,7 @@ import { CategoriesPropositionCard, CategoriesPropositionItem } from './categori
 
 type Props = {
   items: CategoriesPropositionItem[],
-}
+};
 
 export type CategoriesPropositionProps = UIComponentProps<Props>;
 
@@ -22,7 +22,7 @@ export const CategoriesProposition: React.FC<CategoriesPropositionProps> = ({ it
         </Flex.Row>
         <Grid.Row columnGap="1rem" rowGap="1rem">
           <Grid sm={6}>
-            <CategoriesPropositionCard aspectRatio={1} aspectRatioSm='auto' heightSm='100%' item={items[0]}></CategoriesPropositionCard>
+            <CategoriesPropositionCard aspectRatio={1} aspectRatioSm="auto" heightSm="100%" item={items[0]}></CategoriesPropositionCard>
           </Grid>
           <Grid sm={6}>
             <Flex.Col rowGap="1rem">
@@ -33,5 +33,5 @@ export const CategoriesProposition: React.FC<CategoriesPropositionProps> = ({ it
         </Grid.Row>
       </Container>
     </Section>
-  )
-}
+  );
+};

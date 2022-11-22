@@ -30,7 +30,7 @@ export const useKeyboard: UseKeyboard = (handler, keyBindings, options = {}) => 
       event.preventDefault();
     }
     handler && handler(event);
-  }
+  };
 
   useEffect(() => {
     if (!disableGlobalEvent) {
@@ -38,7 +38,7 @@ export const useKeyboard: UseKeyboard = (handler, keyBindings, options = {}) => 
     }
     return () => {
       document.removeEventListener(event, eventHandler);
-    }
+    };
   }, [disableGlobalEvent]);
 
   const elementBindingHandler = (
@@ -48,7 +48,7 @@ export const useKeyboard: UseKeyboard = (handler, keyBindings, options = {}) => 
     if (elementEventType !== event) return () => { };
     if (isCapture !== capture) return () => { };
     return (e: React.KeyboardEvent) => eventHandler(e);
-  }
+  };
   return {
     bindings: {
       onKeyDown: elementBindingHandler('keydown'),
@@ -59,7 +59,7 @@ export const useKeyboard: UseKeyboard = (handler, keyBindings, options = {}) => 
       onKeyUpCapture: elementBindingHandler('keyup', true),
     },
   };
-}
+};
 
 export { KeyMod, KeyCode };
 
@@ -69,7 +69,7 @@ export type KeyboardOptions = {
   preventDefault?: boolean
   capture?: boolean
   event?: 'keydown' | 'keypress' | 'keyup'
-}
+};
 
 export type KeyboardResult = {
   bindings: {
@@ -80,9 +80,9 @@ export type KeyboardResult = {
     onKeyUp: React.KeyboardEventHandler
     onKeyUpCapture: React.KeyboardEventHandler
   }
-}
+};
 
-export type UseKeyboardHandler = (event: React.KeyboardEvent | KeyboardEvent) => void
+export type UseKeyboardHandler = (event: React.KeyboardEvent | KeyboardEvent) => void;
 
 export type UseKeyboard = (
   handler: UseKeyboardHandler,

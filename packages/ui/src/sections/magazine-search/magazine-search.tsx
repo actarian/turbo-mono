@@ -60,7 +60,7 @@ export const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTy
     // serializing querystring filter
     const filterParams = filtersToParams(filters);
     replaceParamsSilently({ filter: filterParams, pagination: { page: 1 } });
-  }
+  };
 
   const onFilterOptionToggle = (filter: Filter<MagazineSearchItem>, option?: IFilterOption) => {
     if (option) {
@@ -69,12 +69,12 @@ export const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTy
       filter.clear();
     }
     onFilterChange(filter, filter.values);
-  }
+  };
 
   // visible results paged by the infinite scroll or button loader
   const [visibleItems, onMore, hasMore] = useInfiniteLoader(filteredItems);
 
-  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
+  const [drawer, openDrawer, closeDrawer] = useDrawer();
 
   const categoryFilter = filters.find(x => x.id === 'category');
 
@@ -106,9 +106,9 @@ export const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTy
                 )}
               </Flex.Row>
 
-              <Button variant="nav" display="block" displaySm="none" onClick={() => onOpenDrawer('filters')}><FilterIcon /></Button>
+              <Button variant="nav" display="block" displaySm="none" onClick={() => openDrawer('filters')}><FilterIcon /></Button>
 
-              <MagazineSearchFiltersModal visible={drawer == 'filters'} onClose={onCloseDrawer} />
+              <MagazineSearchFiltersModal visible={drawer == 'filters'} onClose={closeDrawer} />
             </Flex.Row>
           </Container>
         </Box>
@@ -147,5 +147,5 @@ export const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTy
         </Container.Fluid>
       </Section>
     </>
-  )
-}
+  );
+};

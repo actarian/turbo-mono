@@ -8,7 +8,7 @@ export type IMeta = {
   description?: string;
   keywords?: string;
   robots?: string;
-}
+};
 
 export type IImage = {
   url: string;
@@ -18,7 +18,7 @@ export type IImage = {
   caption?: string;
   width?: number;
   height?: number;
-}
+};
 
 export type IPage = IEntity & {
   // id: IEquatable;
@@ -38,7 +38,7 @@ export type IPage = IEntity & {
   meta?: IMeta;
   media?: IMedia;
   [key: string]: any;
-}
+};
 
 export type PageProps<T extends IPage = IPage> = {
   layout: ILayout;

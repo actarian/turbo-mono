@@ -14,19 +14,19 @@ export type ProductItem = {
   abstract: string;
   price: number;
   media: IMedia[];
-}
+};
 
 type ProductOverviewProps = {
   item: ProductItem
-}
+};
 
 const ProductOverviewBase: React.FC<ProductOverviewProps> = ({ item, ...props }: ProductOverviewProps) => {
 
   const currency = useCurrency();
 
-  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
+  const [drawer, openDrawer, closeDrawer] = useDrawer();
 
-  const add = useCart((state) => state.add);
+  const { add } = useCart((state) => state.actions);
 
   const [state, setState] = useState({ color: 'white', size: 'M' });
 
@@ -41,7 +41,7 @@ const ProductOverviewBase: React.FC<ProductOverviewProps> = ({ item, ...props }:
   function onAddToCart() {
     const cartItem = { ...item, id: `${item.id}-${state.color}-${state.size}`, abstract: `${state.color} size ${state.size}`, media: item.media[0] } as any;
     add(cartItem, 1);
-    onOpenDrawer('cart');
+    openDrawer('cart');
   }
 
   return (
@@ -106,7 +106,7 @@ const ProductOverviewBase: React.FC<ProductOverviewProps> = ({ item, ...props }:
       </Container>
     </Section>
   );
-}
+};
 
 export const ProductOverview = withSchema(ProductOverviewBase, {
   Gallery: ProductOverviewGallery,

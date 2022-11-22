@@ -17,7 +17,7 @@ export type ProductsDetailSizeColorItem = ILazyComponent & {
 export type ProductsDetailSizeColorProps = ILazyComponentProps & {
   id?: string;
   item: ProductsDetailSizeColorItem;
-}
+};
 
 export const ProductsDetailSizeColor: React.FC<ProductsDetailSizeColorProps> = ({ id, item }: ProductsDetailSizeColorProps) => {
   const classNames = getClassNames(item.schema);
@@ -46,7 +46,7 @@ export const ProductsDetailSizeColor: React.FC<ProductsDetailSizeColorProps> = (
       </Container>
     </Section>
   );
-}
+};
 
 export const ProductsDetailSizeColorExport = {
   'products-detail-size-color': dynamic<ProductsDetailSizeColorProps>(() => import('./products-detail-size-color').then(

@@ -10,7 +10,7 @@ export type CheckoutUserInfoProps = {
   user?: IUser;
   onUserInfo?: (userInfo: ICheckoutInfo) => void;
   onNavToPrevious?: () => void;
-}
+};
 
 export const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUserInfo, onNavToPrevious }: CheckoutUserInfoProps) => {
   const label = useLabel();
@@ -18,7 +18,7 @@ export const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUser
   const api = useApi();
 
   const checkout = useCheckout((state) => state.checkout);
-  const setCheckout = useCheckout((state) => state.setCheckout);
+  const { setCheckout } = useCheckout((state) => state.actions);
 
   const [options] = useApiPost<IAddressOptions>('/checkout/info', checkout);
 
@@ -130,11 +130,11 @@ export const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUser
       hasInvoice: false,
       hasBilling: false,
     });
-  }
+  };
 
   const onReset = () => {
     reset();
-  }
+  };
 
   const [error, setError] = useState<Error>();
 
@@ -160,13 +160,13 @@ export const CheckoutUserInfo: React.FC<CheckoutUserInfoProps> = ({ user, onUser
       console.log('CheckoutUserInfo.invalid');
       setTouched();
     }
-  }
+  };
 
   const onNavToPrevious_ = () => {
     if (typeof onNavToPrevious === 'function') {
       onNavToPrevious();
     }
-  }
+  };
 
   return (
     <>

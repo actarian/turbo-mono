@@ -14,7 +14,7 @@ export type ProductsDetailDownloadItem = ILazyComponent & {
 export type ProductsDetailDownloadProps = ILazyComponentProps & {
   id?: string;
   item: ProductsDetailDownloadItem;
-}
+};
 
 export const ProductsDetailDownload: React.FC<ProductsDetailDownloadProps> = ({ id, item }: ProductsDetailDownloadProps) => {
   const classNames = getClassNames(item.schema);
@@ -38,7 +38,7 @@ export const ProductsDetailDownload: React.FC<ProductsDetailDownloadProps> = ({ 
       </Container>
     </Section>
   );
-}
+};
 
 export const ProductsDetailDownloadExport = {
   'products-detail-download': dynamic<ProductsDetailDownloadProps>(() => import('./products-detail-download').then(

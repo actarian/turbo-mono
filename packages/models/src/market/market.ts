@@ -7,4 +7,4 @@ export type IMarket = IEntity & {
   isDefault?: boolean;
   countries?: string[];
   languages?: string[];
-}
+};

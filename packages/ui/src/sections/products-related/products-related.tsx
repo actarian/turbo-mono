@@ -4,7 +4,7 @@ import { ProductsRelatedCard, ProductsRelatedItem } from './products-related-car
 
 type Props = {
   items: ProductsRelatedItem[],
-}
+};
 
 export type ProductsRelatedProps = UIComponentProps<Props>;
 
@@ -24,5 +24,5 @@ export const ProductsRelated: React.FC<ProductsRelatedProps> = ({ items }: Produ
         </Grid.Row>
       </Container>
     </Section>
-  )
-}
+  );
+};

@@ -9,7 +9,7 @@ export type NotFoundItem = ILazyComponent & {
 
 export type NotFoundProps = ILazyComponentProps & {
   item: NotFoundItem;
-}
+};
 
 export const NotFound: React.FC<NotFoundProps> = ({ item }: NotFoundProps) => {
   return (
@@ -21,7 +21,7 @@ export const NotFound: React.FC<NotFoundProps> = ({ item }: NotFoundProps) => {
       </Container>
     </Section>
   );
-}
+};
 
 export const NotFoundExport = {
   'not-found': dynamic<NotFoundProps>(() => import('../not-found/not-found').then(

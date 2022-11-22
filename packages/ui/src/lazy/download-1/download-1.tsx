@@ -13,7 +13,7 @@ export type Download1Item = ILazyComponent & {
 
 export type Download1Props = ILazyComponentProps & {
   item: Download1Item;
-}
+};
 
 export const Download1: React.FC<Download1Props> = ({ item }: Download1Props) => {
   const classNames = getClassNames(item.schema);
@@ -37,7 +37,7 @@ export const Download1: React.FC<Download1Props> = ({ item }: Download1Props) =>
       </Container>
     </Section>
   );
-}
+};
 
 export const Download1Export = {
   'download-1': dynamic<Download1Props>(() => import('../download-1/download-1').then(

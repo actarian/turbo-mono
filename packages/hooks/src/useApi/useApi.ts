@@ -27,13 +27,15 @@ export function useApiDelete<T = any>(pathname: string, options: FetchRequestOpt
   return useApiFetch<T>(pathname, { ...options, method: 'DELETE' });
 }
 
-export function useApi(): {
+type Api = {
   get: <T = any>(pathname: string, options?: FetchRequestOptions) => Promise<T>;
   post: <T = any>(pathname: string, payload?: unknown, options?: FetchRequestOptions) => Promise<T>;
   put: <T = any>(pathname: string, payload?: unknown, options?: FetchRequestOptions) => Promise<T>;
   patch: <T = any>(pathname: string, payload?: unknown, options?: FetchRequestOptions) => Promise<T>;
   delete: <T = any>(pathname: string, options?: FetchRequestOptions) => Promise<T>;
-} {
+};
+
+export function useApi(): Api {
   const layout = useLayout();
   return {
     get: async <T = any>(pathname: string, options: FetchRequestOptions = {}) => {
@@ -51,5 +53,5 @@ export function useApi(): {
     delete: async <T = any>(pathname: string, options: FetchRequestOptions = {}) => {
       return apiDelete<T>(pathname, options, layout);
     },
-  }
+  };
 }

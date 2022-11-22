@@ -5,7 +5,7 @@ import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect/useIsomo
 type Scroll = {
   left: number;
   top: number;
-}
+};
 
 export function useScroll(): Scroll {
   const [scroll, setScroll] = useState<Scroll>({ left: 0, top: 0 });

@@ -5,7 +5,7 @@ type Props = {
   onSignedUp?: () => void;
   onNavToLogin?: () => void;
   onNavToPrevious?: () => void;
-}
+};
 
 export const CheckoutRegister: React.FC<Props> = ({ onSignedUp, onNavToLogin, onNavToPrevious }: Props) => {
 
@@ -13,19 +13,19 @@ export const CheckoutRegister: React.FC<Props> = ({ onSignedUp, onNavToLogin, on
     if (typeof onSignedUp === 'function') {
       onSignedUp();
     }
-  }
+  };
 
   const onNavToLogin_ = () => {
     if (typeof onNavToLogin === 'function') {
       onNavToLogin();
     }
-  }
+  };
 
   const onNavToPrevious_ = () => {
     if (typeof onNavToPrevious === 'function') {
       onNavToPrevious();
     }
-  }
+  };
 
   return (
     <>

@@ -10,11 +10,11 @@ export type ShopHeroItem = {
   abstract?: string;
   media: IMedia;
   items?: ShopHeroItem[];
-}
+};
 
 type Props = {
   item: ShopHeroItem;
-}
+};
 
 export type ShopHeroProps = UIComponentProps<Props>;
 
@@ -47,5 +47,5 @@ export const ShopHero: React.FC<ShopHeroProps> = ({ item }: ShopHeroProps) => {
         </Grid.Row>
       </Container>
     </Section>
-  )
-}
+  );
+};

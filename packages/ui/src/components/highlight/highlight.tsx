@@ -10,7 +10,7 @@ type Props = {
   hoverHeightRatio?: number;
   hoverWidthRatio?: number;
   activeOpacity?: number;
-}
+};
 
 type HighlightPosition = {
   width: string;
@@ -18,7 +18,7 @@ type HighlightPosition = {
   height: string;
   top: string;
   transition: string;
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
@@ -42,7 +42,7 @@ const StyledHighlight = styled.div<{ position: HighlightPosition, activeOpacity:
       opacity: ${props.activeOpacity};
     }
   `)}
-`
+`;
 
 export const Highlight: React.FC<HighlightProps> = ({
   hoverHeightRatio = 1,
@@ -66,7 +66,7 @@ export const Highlight: React.FC<HighlightProps> = ({
       height: `${height}px`,
       top: `${rect.elementTop + (rect.height - height) / 2}px`,
       transition: isFirstVisible ? 'opacity' : 'opacity, width, left, top',
-    }
+    };
   }, [rect, hoverWidthRatio, hoverHeightRatio, isFirstVisible]);
 
   const classNames = getClassNames('highlight', { active: visible }, className);
@@ -75,5 +75,5 @@ export const Highlight: React.FC<HighlightProps> = ({
     <StyledHighlight ref={ref} className={classNames}
       position={position} activeOpacity={activeOpacity} {...props}>
     </StyledHighlight>
-  )
-}
+  );
+};

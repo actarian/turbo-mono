@@ -10,5 +10,5 @@ export function MaxValidator(max: number): FormValidator {
     }
     value = parseFloat(value);
     return !isNaN(value) && value > max ? { max: { max: max, actual: value } } : null;
-  }
+  };
 }

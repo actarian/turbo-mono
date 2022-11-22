@@ -7,7 +7,7 @@ import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: ShopSearchItem
-}
+};
 
 export type ShopSearchItem = {
   id: IEquatable;
@@ -22,21 +22,21 @@ export type ShopSearchItem = {
   collection?: string;
   designer?: string;
   color?: string;
-}
+};
 
 export type ShopSearchCardProps = UIStyledComponentProps<Props>;
 
 export const ShopSearchCard: React.FC<ShopSearchCardProps> = ({ item, ...props }: ShopSearchCardProps) => {
   const currency = useCurrency();
-  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
-  const add = useCart((state) => state.add);
+  const [drawer, openDrawer, closeDrawer] = useDrawer();
+  const { add } = useCart((state) => state.actions);
   // const find = useCart((state) => state.find);
   // const cartItem = find(item);
   // const isAddedToCart = cartItem != null;
   // const [qty, setQty] = useState(isAddedToCart ? cartItem.qty : 1);
   function onAddToCart() {
     add(item, 1);
-    onOpenDrawer('cart');
+    openDrawer('cart');
   }
   return (
     <Card {...props}>
@@ -57,5 +57,5 @@ export const ShopSearchCard: React.FC<ShopSearchCardProps> = ({ item, ...props }
         </Flex.Row>
       </Card.Content>
     </Card>
-  )
-}
+  );
+};

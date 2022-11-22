@@ -80,7 +80,7 @@ export const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
       clearTimeout(entryTimer.current);
       clearTimeout(leaveTimer.current);
       clearTimeout(resetTimer.current);
-    }
+    };
   }, [isExpanded]);
 
   const classNames = getClassNames('container', { expanded: selfExpanded, visible });
@@ -91,7 +91,7 @@ export const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
         {children}
       </div>
     </StyledExpand>
-  )
-}
+  );
+};
 
 Expand.displayName = 'Expand';

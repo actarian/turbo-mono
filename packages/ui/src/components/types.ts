@@ -54,7 +54,7 @@ export type ThemeProps = {
 // Source: https://github.com/emotion-js/emotion/blob/main/packages/react/types/helper.d.ts
 // A more precise version of just React.ComponentPropsWithoutRef on its own
 export type PropsOf<C extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>>
-  = JSX.LibraryManagedAttributes<C, React.ComponentPropsWithoutRef<C>>
+  = JSX.LibraryManagedAttributes<C, React.ComponentPropsWithoutRef<C>>;
 // see
 // https://www.benmvp.com/blog/polymorphic-react-components-typescript/
 // https://www.benmvp.com/blog/forwarding-refs-polymorphic-react-component-typescript/

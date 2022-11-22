@@ -32,8 +32,8 @@ const ModalFooter_: React.FC<React.PropsWithChildren<unknown>> = ({ children, ..
         {children}
       </StyledFooter>
     </>
-  )
-}
+  );
+};
 
 ModalFooter_.displayName = 'ModalFooter';
 

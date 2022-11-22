@@ -19,7 +19,7 @@ const variants: Variants = {
 
 type Props = {
   type?: Variant;
-}
+};
 
 export type NavProps = UIStyledComponentProps<Props, 'ul'>;
 
@@ -45,7 +45,7 @@ const NavRow = (props: NavProps) => {
       ))}
     </NavUl>
   );
-}
+};
 
 const NavCol = (props: NavProps) => {
   const navProps = { flexDirection: 'column', ...props };
@@ -56,13 +56,13 @@ const NavCol = (props: NavProps) => {
       ))}
     </NavUl>
   );
-}
+};
 
 export const NavBase = (props: NavProps) => {
   return (
     <NavRow {...props}>{props.children}</NavRow>
   );
-}
+};
 
 export const Nav = withSchema(NavBase, {
   Row: NavRow,

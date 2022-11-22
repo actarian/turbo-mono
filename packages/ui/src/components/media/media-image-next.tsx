@@ -22,7 +22,7 @@ export const MediaImageNext = ({ alt = '', className, ...props }: MediaImageNext
   // return (<StyledMediaImageNext {...props} alt={alt} layout="fill" objectFit={'cover'} />);
   const classNames = getClassNames(className, 'image');
   return (<StyledMediaImageNext className={classNames} {...props} fill alt={alt} />);
-}
+};
 
 /*
 /_next/image?url={urlEncodedSrc}&w={width}&q={quality=75}

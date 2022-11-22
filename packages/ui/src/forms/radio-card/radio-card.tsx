@@ -12,7 +12,7 @@ import { RadioCardGroup } from './radio-card-group';
 
 type Props = ComponentPropsWithRef<'input'> & {
   children?: ReactNode;
-}
+};
 
 export type RadioCardProps = UIStyledComponentProps<Props, 'input'>;
 
@@ -52,7 +52,7 @@ const StyledRadioCardInput = styled.div`
   &:disabled {
     cursor: not-allowed;
   }
-`
+`;
 
 const StyledRadioCardButton = styled.div<RadioCardProps>`
   ${CssDefault}
@@ -118,7 +118,7 @@ input:focus ~ & {
 }
 
   ${props => getCssResponsive(props)}
-`
+`;
 
 const StyledRadioIcon = styled.div`
   border-radius: 50%;
@@ -128,7 +128,7 @@ const StyledRadioIcon = styled.div`
   outline-offset: 2px;
   transition: outline-color 150ms ease-in 0s, color 200ms ease-out 0s;
   margin: 8px 0;
-`
+`;
 
 const StyledRadioCard = styled.div<RadioCardProps>`
   flex: 1 1 100%;
@@ -137,7 +137,7 @@ const StyledRadioCard = styled.div<RadioCardProps>`
   min-height: 3.8em;
   line-height: 1;
   ${props => getCssResponsive(props)}
-`
+`;
 
 export type TextComponent<C extends React.ElementType = 'div'> = UIComponentWithRef<C, {
   size?: FontSize;
@@ -205,11 +205,11 @@ const RadioCardBase: RadioCardComponent = forwardRef(({
 
   return (
     <StyledRadioCard className={classNames} {...props}>
-      <StyledRadioCardInput ref={ref} as={as} type='radio' {...props} />
+      <StyledRadioCardInput ref={ref} as={as} type="radio" {...props} />
       <StyledRadioCardButton as="button">
         <Flex.Row gap="1rem" alignItems="flex-start" width="100%">
           <Flex.Col className="radio-option__icon" flexBasis="24px">
-            <StyledRadioIcon as={RadioIcon} className="radio-icon" aria-hidden='true' />
+            <StyledRadioIcon as={RadioIcon} className="radio-icon" aria-hidden="true" />
           </Flex.Col>
           <Flex.Col className="radio-option__description" flexGrow="1">
             {otherChildren}

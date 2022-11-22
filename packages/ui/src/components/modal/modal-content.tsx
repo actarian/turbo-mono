@@ -8,7 +8,7 @@ import { getCssResponsive } from '../utils';
 
 type Props = {
   className?: string;
-}
+};
 
 const defaultProps = {
   className: '',
@@ -38,8 +38,8 @@ export const ModalContent: React.FC<React.PropsWithChildren<ModalContentProps | 
     <StyleContent className={classNames} {...props}>
       {children}
     </StyleContent>
-  )
-}
+  );
+};
 
 ModalContent.defaultProps = defaultProps;
 

@@ -19,4 +19,4 @@ export const OrderAddress: React.FC<OrderAddressProps> = ({ item, title }) => {
       </Flex.Col>
     </Flex.Col>
   );
-}
+};

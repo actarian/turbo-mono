@@ -7,7 +7,7 @@ type Props = {
   children?: React.ReactNode;
   layout: ILayout;
   page: IPage,
-}
+};
 
 export type ReservedAreaProps = UIComponentProps<Props>;
 
@@ -17,7 +17,7 @@ export const ReservedArea: React.FC<ReservedAreaProps> = ({ children, layout, pa
 
   return (
     <>
-      <Section>
+      <Section className="print-none">
         <Container>
           <Breadcrumb.Group items={page.breadcrumb} />
         </Container>
@@ -26,7 +26,7 @@ export const ReservedArea: React.FC<ReservedAreaProps> = ({ children, layout, pa
         <Container minHeight="50vh">
           <Grid.Row>
             {/* Left menu sticky column */}
-            <Grid display="none" displaySm="block" sm={4} md={3}>
+            <Grid className="print-none" display="none" displaySm="block" sm={4} md={3}>
               {menu && <ReservedAreaMenu items={menu} />}
             </Grid>
             {/* Right main content */}
@@ -47,5 +47,5 @@ export const ReservedArea: React.FC<ReservedAreaProps> = ({ children, layout, pa
         </Container>
       </Section>
     </>
-  )
-}
+  );
+};

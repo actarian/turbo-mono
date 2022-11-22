@@ -7,7 +7,7 @@ import { getContainer, getCssResponsive } from '../../components/utils';
 type Props = {
   fluid?: boolean;
   children?: React.ReactNode;
-}
+};
 
 export type ContainerProps = UIStyledComponentProps<Props>;
 
@@ -21,7 +21,7 @@ export const ContainerBase = styled.div<ContainerProps>`
 `;
 
 export const ContainerFluid: ContainerComponent = forwardRef(({ children, as = 'div', ...props }, ref) => {
-  return (<Container ref={ref} as={as} {...props} fluid>{children}</Container>);
+  return (<ContainerBase ref={ref} as={as} {...props} fluid>{children}</ContainerBase>);
 });
 
 ContainerFluid.displayName = 'ContainerFluid';

@@ -16,7 +16,7 @@ export function useForm<T, U extends (FormGroup | FormArray)>(factory: () => U, 
     collection.reset();
   }, deps);
 
-  const [state, setState] = useState<FormState<T>>({ value: collection.value as T, flags: collection.state, errors: mapErrors_(collection.errors) })
+  const [state, setState] = useState<FormState<T>>({ value: collection.value as T, flags: collection.state, errors: mapErrors_(collection.errors) });
 
   useEffect(() => {
     const onChange = (value: T) => {

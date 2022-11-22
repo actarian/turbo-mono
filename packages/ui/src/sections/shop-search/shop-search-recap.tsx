@@ -21,7 +21,7 @@ export function ShopSearchRecap({ filters, onChange }: { filters: Filter<ShopSea
       // console.log('onRemove', filter.id, option.id, values);
       onChange(filter, values);
     }
-  }
+  };
 
   return (
     <>
@@ -41,5 +41,5 @@ export function ShopSearchRecap({ filters, onChange }: { filters: Filter<ShopSea
         </Box>
       ))}
     </>
-  )
+  );
 }

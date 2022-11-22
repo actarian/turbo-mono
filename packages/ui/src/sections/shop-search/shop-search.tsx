@@ -49,13 +49,13 @@ const SortMenu = ({ sort, onSort }: { sort: IEquatable | undefined, onSort: (sor
     <Button variant="nav" as="a" className={getClassNames({ active: sort === 2 })} onClick={() => onSort(2)}>Price: Low to High</Button>
     <Button variant="nav" as="a" className={getClassNames({ active: sort === 3 })} onClick={() => onSort(3)}>Price: High to Low</Button>
   </Nav.Col>
-)
+);
 
 type Props = {
   items: ShopSearchItem[];
   featureTypes: IFeatureType[];
   categoryId?: IEquatable;
-}
+};
 
 export type ShopSearchProps = UIStyledComponentProps<Props>;
 
@@ -100,7 +100,7 @@ export const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, cat
     // serializing querystring filter
     const filterParams = filtersToParams(filters);
     replaceParamsSilently({ filter: filterParams, pagination: { page: 1 } });
-  }
+  };
 
   // fires when user toggle an option
   const onFilterOptionToggle = (filter: Filter<ShopSearchItem>, option?: IFilterOption) => {
@@ -111,7 +111,7 @@ export const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, cat
     }
     onFilterChange(filter, filter.values);
     scrollToSelector('#serp', -80);
-  }
+  };
 
   // fires when user make a change on sort
   function onSortChange(sort: IEquatable) {
@@ -134,7 +134,7 @@ export const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, cat
   // visible results paged by the infinite scroll or button loader
   // const [visibleItems, onMore, hasMore] = useInfiniteLoader(filteredItems);
 
-  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
+  const [drawer, openDrawer, closeDrawer] = useDrawer();
   const [large, setLarge] = useState<boolean>(true);
 
   const categoryFilter = filters.find(x => x.id === 'category');
@@ -152,7 +152,7 @@ export const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, cat
       onFilterChange();
       scrollToSelector('#serp', -80);
     }
-  }
+  };
 
   const label = useLabel();
 
@@ -178,8 +178,8 @@ export const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, cat
                   </Flex.Row>
                 )}
               </Flex.Row>
-              <Button variant="nav" display="block" displaySm="none" onClick={() => onOpenDrawer('filters')}><FilterIcon /></Button>
-              <ShopSearchFiltersModal visible={drawer == 'filters'} onClose={onCloseDrawer} />
+              <Button variant="nav" display="block" displaySm="none" onClick={() => openDrawer('filters')}><FilterIcon /></Button>
+              <ShopSearchFiltersModal visible={drawer == 'filters'} onClose={closeDrawer} />
             </Flex.Row>
 
             <Flex.Row justifyContent="flex-end" gap="2rem">
@@ -197,8 +197,8 @@ export const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, cat
                 </Button>
               </Popover>
 
-              <Button variant="nav" display="block" displaySm="none" onClick={() => onOpenDrawer('filters')}><FilterIcon /></Button>
-              <ShopSearchFiltersModal visible={drawer == 'filters'} onClose={onCloseDrawer} />
+              <Button variant="nav" display="block" displaySm="none" onClick={() => openDrawer('filters')}><FilterIcon /></Button>
+              <ShopSearchFiltersModal visible={drawer == 'filters'} onClose={closeDrawer} />
             </Flex.Row>
           </Flex.Row>
         </Container.Fluid>
@@ -266,5 +266,5 @@ export const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, cat
         </Container.Fluid>
       </Section>
     </>
-  )
-}
+  );
+};

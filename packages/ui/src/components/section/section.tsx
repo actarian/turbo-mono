@@ -51,7 +51,7 @@ const SectionBase = (props: SectionProps) => {
       {props.children}
     </SectionContainer>
   );
-}
+};
 
 export const Section = withSchema(SectionBase, {
   Background: Background,

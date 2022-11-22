@@ -8,7 +8,7 @@ type Props = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   initialValue?: string;
   size?: SizeVariant;
   children?: ReactNode;
-}
+};
 
 export type RadioColorGroupProps = UIStyledComponentProps<Props, 'input'>;
 
@@ -26,7 +26,7 @@ export const RadioColorGroup: RadioColorGroupComponent = forwardRef(({
 
   useEffect(() => {
     setValue(initialValue || null);
-  }, [initialValue])
+  }, [initialValue]);
 
   const onChange_ = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);

@@ -20,7 +20,7 @@ const classNameCollectionToString = (className: IClassNameCollection) => {
     classNames = classNames ? `${classNames} ${String(key)}` : String(key);
   }
   return classNames;
-}
+};
 
 export function getClassNames(...props: Array<IClassName>): string {
   const total = props.length;

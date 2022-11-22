@@ -6,7 +6,7 @@ export type MagazineSearchFiltersModalProps = {
   children?: ReactNode;
   visible: boolean;
   onClose: () => void;
-}
+};
 
 export const MagazineSearchFiltersModal: React.FC<MagazineSearchFiltersModalProps> = ({ visible, onClose }: MagazineSearchFiltersModalProps) => {
   return (

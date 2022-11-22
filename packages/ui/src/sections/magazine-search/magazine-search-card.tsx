@@ -8,7 +8,7 @@ import { UIStyledComponentProps } from '../../components/types';
 type Props = {
   item: MagazineSearchItem;
   fixedRatio?: boolean;
-}
+};
 
 export type MagazineSearchItem = {
   href: string;
@@ -16,7 +16,7 @@ export type MagazineSearchItem = {
   title: string;
   media: IMedia;
   categoryId?: IEquatable;
-}
+};
 
 export type MagazineSearchCardProps = UIStyledComponentProps<Props>;
 
@@ -43,5 +43,5 @@ export const MagazineSearchCard: React.FC<MagazineSearchCardProps> = ({ item, fi
         </Flex.Row>
       </Card.Content>
     </Card>
-  )
-}
+  );
+};

@@ -5,18 +5,18 @@ import { UIComponentProps } from '../../components/types';
 import { Checkbox, CustomSelect, Field, Form, Input, Label, Radio, Select, TextArea } from '../../forms';
 
 type Props = {
-}
+};
 
 export type ContactFormProps = UIComponentProps<Props>;
 
 export const ContactForm: React.FC<ContactFormProps> = (props: ContactFormProps) => {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log('ContactForm', e.target.value);
-  }
+  };
   return (
     <Form>
-      <Box padding='var(--grid-column-gap)' boxShadow='0 2rem 3rem #00000022' borderRadius='var(--border-radius)'>
-        <Grid.Row rowGap='1rem'>
+      <Box padding="var(--grid-column-gap)" boxShadow="0 2rem 3rem #00000022" borderRadius="var(--border-radius)">
+        <Grid.Row rowGap="1rem">
           <Grid md={6}>
             <Field>
               <Label>Name</Label>
@@ -38,7 +38,7 @@ export const ContactForm: React.FC<ContactFormProps> = (props: ContactFormProps)
           <Grid md={6}>
             <Field>
               <Label>Country</Label>
-              <Select name='country' id='country' defaultValue='Italia'>
+              <Select name="country" id="country" defaultValue="Italia">
                 <option>Italia</option>
                 <option>Canada</option>
                 <option>Francia</option>
@@ -50,7 +50,7 @@ export const ContactForm: React.FC<ContactFormProps> = (props: ContactFormProps)
           <Grid md={6}>
             <Field>
               <Label>CustomSelect</Label>
-              <CustomSelect name='country' id='country' defaultValue='Italia' placeholder="select a value..">
+              <CustomSelect name="country" id="country" defaultValue="Italia" placeholder="select a value..">
                 <CustomSelect.Label>Country</CustomSelect.Label>
                 <CustomSelect.Option value="it">Italia</CustomSelect.Option>
                 <CustomSelect.Option value="ca">Canada</CustomSelect.Option>
@@ -85,14 +85,14 @@ export const ContactForm: React.FC<ContactFormProps> = (props: ContactFormProps)
           </Grid>
           <Grid>
             <Field>
-              <Label><Radio name='color' id='red' value='red' /> Red</Label>
-              <Label><Radio name='color' id='green' value='green' /> Green</Label>
-              <Label><Radio name='color' id='blue' value='blue' /> Blue</Label>
+              <Label><Radio name="color" id="red" value="red" /> Red</Label>
+              <Label><Radio name="color" id="green" value="green" /> Green</Label>
+              <Label><Radio name="color" id="blue" value="blue" /> Blue</Label>
             </Field>
           </Grid>
           <Grid>
             <Field>
-              <Label><Checkbox name='privacy' id='privacy' /> Privacy</Label>
+              <Label><Checkbox name="privacy" id="privacy" /> Privacy</Label>
             </Field>
           </Grid>
           <Grid>
@@ -104,4 +104,4 @@ export const ContactForm: React.FC<ContactFormProps> = (props: ContactFormProps)
       </Box>
     </Form>
   );
-}
+};

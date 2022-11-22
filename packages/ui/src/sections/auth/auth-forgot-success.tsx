@@ -4,14 +4,14 @@ import { Button, Flex, Text } from '../../components';
 export type AuthForgotSuccessProps = {
   children?: ReactNode;
   onNavToLogin?: () => void;
-}
+};
 
 export const AuthForgotSuccess: React.FC<AuthForgotSuccessProps> = ({ onNavToLogin }: AuthForgotSuccessProps) => {
   const onLogin = () => {
     if (typeof onNavToLogin === 'function') {
       onNavToLogin();
     }
-  }
+  };
   return (
     <Flex.Col justifyContent="space-between">
       <Flex.Col flex="1" rowGap="1rem">

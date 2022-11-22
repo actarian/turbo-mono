@@ -8,7 +8,7 @@ import { FieldError } from './field-error';
 type FieldPasswordProps = {
   control: FormControl;
   uid?: number | null | undefined;
-}
+};
 
 export function FieldPassword(props: FieldPasswordProps) {
   const label = useLabel();
@@ -21,7 +21,7 @@ export function FieldPassword(props: FieldPasswordProps) {
     // console.log('FieldPassword', event.target.value);
     setValue(event.target.value);
     // props.control.value = event.target.value;
-  }
+  };
 
   const [focus, setFocus] = useState(false);
 
@@ -30,15 +30,15 @@ export function FieldPassword(props: FieldPasswordProps) {
   const onBlur = (_: FocusEvent<HTMLInputElement>) => {
     setTouched();
     setFocus(false);
-  }
+  };
 
   const onFocus = (_: FocusEvent<HTMLInputElement>) => {
     setFocus(true);
-  }
+  };
 
   const onToggle = () => {
     setType(type === 'password' ? 'text' : 'password');
-  }
+  };
 
   return (
     state.flags.hidden ? (

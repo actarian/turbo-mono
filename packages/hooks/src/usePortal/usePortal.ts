@@ -12,7 +12,7 @@ export function usePortal(name: string = getUID(), getContainer?: () => HTMLElem
 
   useEffect(() => {
     const container = typeof getContainer === 'function' ? getContainer() : null;
-    const parentElement = container || document.body
+    const parentElement = container || document.body;
     const element = parentElement.querySelector<HTMLElement>(`#${id}`) || createElementWithId(id);
     if (!element.parentElement) {
       parentElement.appendChild(element);

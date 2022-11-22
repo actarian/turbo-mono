@@ -7,7 +7,7 @@ type Props = {
   label: string | React.ReactNode;
   value: string;
   disabled?: boolean;
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
@@ -135,14 +135,14 @@ export const TabsItem: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
           onMouseOver={onMouseOver} onClick={clickHandler}>
           {label}
         </StyledInternalCell>
-      )
-    }
+      );
+    };
     TabsInternalCell.displayName = 'TabsInternalCell';
     register && register({ value, cell: TabsInternalCell });
   }, [value, label, disabled, register]);
 
   /* eslint-disable react/jsx-no-useless-fragment */
   return isActive ? <>{children}</> : null;
-}
+};
 
 TabsItem.displayName = 'TabsItem';

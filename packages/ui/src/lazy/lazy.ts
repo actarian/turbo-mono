@@ -24,4 +24,4 @@ export const LAZY_MODULES = {
   ...TextAside1Export,
   ...TextMedia1Export,
   ...TextText1Export,
-}
+};

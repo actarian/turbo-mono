@@ -7,7 +7,7 @@ import { getCssResponsive } from '../../components/utils';
 type Props = ComponentPropsWithRef<'input'> & {
   before?: ReactNode;
   after?: ReactNode;
-}
+};
 
 export type InputProps = UIStyledComponentProps<Props, 'input'>;
 
@@ -100,11 +100,11 @@ export const Input: InputComponent = forwardRef(({
   const onFocus_ = (event: React.FocusEvent<HTMLInputElement>) => {
     onFocus && onFocus(event);
     setFocus(true);
-  }
+  };
   const onBlur_ = (event: React.FocusEvent<HTMLInputElement>) => {
     onBlur && onBlur(event);
     setFocus(false);
-  }
+  };
   const classNames = getClassNames('input', {
     focus,
     disabled: props.disabled,

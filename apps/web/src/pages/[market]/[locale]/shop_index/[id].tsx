@@ -19,13 +19,13 @@ export default function ShopIndex({ layout, page, items = [], featureTypes = [],
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type ShopIndexProps = PageProps & {
   items: ShopSearchItem[];
   featureTypes: IFeatureType[];
-}
+};
 
 export async function getStaticProps(context: IStaticContext) {
   const id = parseInt(context.params.id);

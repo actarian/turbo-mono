@@ -10,5 +10,5 @@ export function MatchValidator(getOtherValue: (value: any, rootValue: any, contr
     let otherValue = getOtherValue(value, rootValue, control, root);
     otherValue = validValue(otherValue);
     return value !== otherValue ? { match: { value: value, match: otherValue } } : null;
-  }
+  };
 }

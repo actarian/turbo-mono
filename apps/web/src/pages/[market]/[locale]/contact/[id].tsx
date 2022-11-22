@@ -19,7 +19,7 @@ export default function Contact({ layout, page, data, params }: ContactProps) {
 
   const onSubmit = (value: any) => {
     setSubmitted(true);
-  }
+  };
 
   return (
     <Layout>
@@ -119,10 +119,10 @@ export default function Contact({ layout, page, data, params }: ContactProps) {
         <Section aspectRatio={4 / 3} aspectRatioSm={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
           <Section.Background>
             <Media overlay>
-              <MediaImage draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' />
+              <MediaImage draggable={false} src="https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600" />
             </Media>
           </Section.Background>
-          <Container textAlign='center'>
+          <Container textAlign="center">
             <Text size="1" fontWeight="700">Workbench.</Text>
           </Container>
         </Section>
@@ -130,12 +130,12 @@ export default function Contact({ layout, page, data, params }: ContactProps) {
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type ContactProps = PageProps & {
   data: IContactForm;
-}
+};
 
 export async function getStaticProps(context: IStaticContext) {
   const id = parseInt(context.params.id);

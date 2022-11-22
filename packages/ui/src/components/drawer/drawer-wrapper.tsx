@@ -9,14 +9,14 @@ type Props = {
   className?: string
   visible?: boolean
   placement: DrawerPlacement
-}
+};
 
 const defaultProps = {
   className: '',
   visible: false,
-}
+};
 
-export type DrawerWrapperProps = Props
+export type DrawerWrapperProps = Props;
 
 const StyledWrapper = styled.div<{ transform: any }>`
   position: fixed;
@@ -135,7 +135,7 @@ export const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps 
         tabStart.current && tabStart.current.focus();
       }
     }
-  }
+  };
 
   const classNames = getClassNames('wrapper', placement, className);
 
@@ -147,8 +147,8 @@ export const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps 
         <div tabIndex={0} className="hide-tab end" aria-hidden="true" ref={tabEnd} />
       </StyledWrapper>
     </Transition>
-  )
-}
+  );
+};
 
 DrawerWrapper.defaultProps = defaultProps;
 DrawerWrapper.displayName = 'DrawerWrapper';

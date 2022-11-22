@@ -10,5 +10,5 @@ export function MinLengthValidator(minlength: number): FormValidator {
     }
     const length = value ? value.length : 0;
     return length < minlength ? { minlength: { requiredLength: minlength, actualLength: length } } : null;
-  }
+  };
 }

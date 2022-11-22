@@ -1,15 +1,16 @@
-import { IUIStateValue, useUI } from '../useUI/useUI';
+import { UIValue, useUI } from '../useUI/useUI';
 
-export function useModal(): [modal: IUIStateValue, open: (value?: string) => void, close: () => void] {
-  const [modal, reduceUI] = useUI(state => [state.modal, state.reduce]);
-  function onSetModal(value?: string | number) {
-    reduceUI((state) => ({ modal: value }));
+export function useModal(): [modal: UIValue, open: (value?: string) => void, close: () => void] {
+  const modal = useUI(state => state.views.modal);
+  const reduce = useUI(state => state.actions.reduce);
+  function setModal(value?: string | number) {
+    reduce('modal', (views) => value);
   }
-  function onOpenModal(value?: string | number) {
-    return onSetModal(value);
+  function openModal(value?: string | number) {
+    return setModal(value);
   }
-  function onCloseModal() {
-    return onSetModal();
+  function closeModal() {
+    return setModal();
   }
-  return [modal, onOpenModal, onCloseModal];
+  return [modal, openModal, closeModal];
 }

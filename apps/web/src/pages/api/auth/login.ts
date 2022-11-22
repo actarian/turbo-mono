@@ -17,7 +17,7 @@ async function loginPost(request: NextApiRequest, response: NextApiResponse<IUse
     };
   }
   console.log('loginPost.user', user);
-  request.session.user = user
+  request.session.user = user;
   await request.session.save();
   if (user) {
     response.status(200).json(user);

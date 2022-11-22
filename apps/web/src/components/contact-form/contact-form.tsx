@@ -19,7 +19,7 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
         resolve(value === 'aa@aa.aa' ? { exhist: true } : null);
       }, 500);
     });
-  }
+  };
 
   // const exhist: FormAsyncValidator = async (value: any, rootValue: any) => Promise.resolve(value === 'aa@aa.aa' ? { exhist: true } : null);
 
@@ -87,12 +87,12 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
       commercial: false,
       promotion: false,
     });
-  }
+  };
 
   const onReset = () => {
     console.log('ContactForm.onReset');
     reset();
-  }
+  };
 
   const onValidate = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -104,7 +104,7 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
       console.log('ContactForm.onSubmit.invalid');
       setTouched();
     }
-  }
+  };
 
   const classNames = getClassNames('form', form.flags);
 
@@ -119,7 +119,7 @@ export default function ContactForm({ data, onSubmit }: { data: IContactForm, on
       </Flex.Row>
       <FormTester form={form} onTest={onTest} onReset={onReset}></FormTester>
     </form>
-  )
+  );
 }
 
 export type IContactForm = {
@@ -128,4 +128,4 @@ export type IContactForm = {
   occupations: IOption[];
   provinces: IOption[];
   regions: IOption[];
-}
+};

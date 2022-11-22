@@ -7,4 +7,4 @@ export type IProductDetail = IEntity & {
   description?: string;
   categoryId: IEquatable;
   href?: string;
-}
+};

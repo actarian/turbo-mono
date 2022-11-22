@@ -19,7 +19,7 @@ type Props = {
   placement: Placement;
   type: SnippetTypes;
   visible: boolean;
-}
+};
 
 export type TooltipIconOffset = {
   x: string;
@@ -83,7 +83,7 @@ export const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
 
   useEffect(() => {
     updateRect();
-  }, [updateRect, visible])
+  }, [updateRect, visible]);
 
   const preventHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
@@ -108,5 +108,5 @@ export const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
       </StyledTooltipContent>
     </Transition>,
     portal,
-  )
-}
+  );
+};

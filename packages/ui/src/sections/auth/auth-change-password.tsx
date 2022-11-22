@@ -10,7 +10,7 @@ import { Form, FormError, FormTester } from '../../forms';
 export type AuthChangePasswordProps = {
   onPasswordChanged?: () => void;
   onCancel?: () => void;
-}
+};
 
 export const AuthChangePassword: React.FC<AuthChangePasswordProps> = ({ onPasswordChanged, onCancel }: AuthChangePasswordProps) => {
   const label = useLabel();
@@ -36,11 +36,11 @@ export const AuthChangePassword: React.FC<AuthChangePasswordProps> = ({ onPasswo
       newPassword: '654321',
       confirmNewPassword: '654321',
     });
-  }
+  };
 
   const onReset = () => {
     reset();
-  }
+  };
 
   const [error, setError] = useState<Error>();
 
@@ -62,13 +62,13 @@ export const AuthChangePassword: React.FC<AuthChangePasswordProps> = ({ onPasswo
       console.log('AuthChangePassword.invalid');
       setTouched();
     }
-  }
+  };
 
   const onCancel_ = () => {
     if (typeof onCancel === 'function') {
       onCancel();
     }
-  }
+  };
 
   return (
     <Flex.Col justifyContent="space-between">

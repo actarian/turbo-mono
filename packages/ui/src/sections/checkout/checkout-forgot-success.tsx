@@ -4,7 +4,7 @@ import { AuthForgotSuccess } from '../auth/auth-forgot-success';
 type Props = {
   onNavToLogin?: () => void;
   onNavToPrevious?: () => void;
-}
+};
 
 export const CheckoutForgotSuccess: React.FC<Props> = ({ onNavToLogin, onNavToPrevious }: Props) => {
 
@@ -12,13 +12,13 @@ export const CheckoutForgotSuccess: React.FC<Props> = ({ onNavToLogin, onNavToPr
     if (typeof onNavToLogin === 'function') {
       onNavToLogin();
     }
-  }
+  };
 
   const onNavToPrevious_ = () => {
     if (typeof onNavToPrevious === 'function') {
       onNavToPrevious();
     }
-  }
+  };
 
   return (
     <>

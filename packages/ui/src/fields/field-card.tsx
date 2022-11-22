@@ -8,7 +8,7 @@ import { FieldError } from './field-error';
 type FieldCardProps = {
   control: FormControl;
   uid?: number | null | undefined;
-}
+};
 
 export function FieldCard({
   uid,
@@ -25,18 +25,18 @@ export function FieldCard({
     // console.log('onChange', event.target.value);
     const option = control.options?.find(x => x.id.toString() === event.target.value);
     setValue(option || null);
-  }
+  };
 
   const [focus, setFocus] = useState(false);
 
   const onBlur = (_: FocusEvent<HTMLInputElement>) => {
     setTouched();
     setFocus(false);
-  }
+  };
 
   const onFocus = (_: FocusEvent<HTMLInputElement>) => {
     setFocus(true);
-  }
+  };
 
   return (
     state.flags.hidden ? (

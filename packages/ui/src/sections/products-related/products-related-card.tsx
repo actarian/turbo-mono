@@ -6,7 +6,7 @@ import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: ProductsRelatedItem
-}
+};
 
 export type ProductsRelatedItem = {
   id: number;
@@ -16,21 +16,21 @@ export type ProductsRelatedItem = {
   abstract: string;
   price: number;
   media: IMedia;
-}
+};
 
 export type ProductsRelatedCardProps = UIStyledComponentProps<Props>;
 
 export const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...props }: ProductsRelatedCardProps) => {
   const currency = useCurrency();
-  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
-  const add = useCart((state) => state.add);
+  const [drawer, openDrawer, closeDrawer] = useDrawer();
+  const { add } = useCart((state) => state.actions);
   // const find = useCart((state) => state.find);
   // const cartItem = find(item);
   // const isAddedToCart = cartItem != null;
   // const [qty, setQty] = useState(isAddedToCart ? cartItem.qty : 1);
   function onAddToCart() {
     add(item, 1);
-    onOpenDrawer('cart');
+    openDrawer('cart');
   }
   return (
     <Card {...props} hoverable>
@@ -52,5 +52,5 @@ export const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, 
         <Button variant="secondary" width="100%" justifyContent="center" onClick={onAddToCart}>Add to bag</Button>
       </Card.Content>
     </Card>
-  )
-}
+  );
+};

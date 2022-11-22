@@ -10,5 +10,5 @@ export function EmailValidator(): FormValidator {
       return null;
     }
     return regex.test(value) ? null : { email: true };
-  }
+  };
 }

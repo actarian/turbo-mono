@@ -29,5 +29,5 @@ export function Meta() {
       <meta name="msapplication-config" content="/assets/head/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
     </Head>
-  )
+  );
 }

@@ -19,14 +19,14 @@ export default function StoreLocator({ layout, page, country, items = [], featur
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type StoreLocatorProps = PageProps & {
   country: { id: string, name: string },
   items: StoreLocatorItem[],
   featureTypes: IFeatureType[],
-}
+};
 
 export async function getStaticProps(context: IStaticContext) {
   const id = parseInt(context.params.id);

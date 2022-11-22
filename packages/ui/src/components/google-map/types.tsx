@@ -3,13 +3,13 @@ export type ClusterIconInfo = {
   text: string
   index: number
   title: string
-}
+};
 
 export type MarkerExtended = google.maps.Marker & {
   isAdded?: boolean
-}
+};
 
-export type TCalculator = (markers: MarkerExtended[], num: number) => ClusterIconInfo
+export type TCalculator = (markers: MarkerExtended[], num: number) => ClusterIconInfo;
 
 export type ClusterIconStyle = {
   url: string
@@ -25,7 +25,7 @@ export type ClusterIconStyle = {
   fontStyle?: string
   fontFamily?: string
   backgroundPosition?: string
-}
+};
 
 export type ClustererOptions = {
   gridSize?: number
@@ -44,4 +44,4 @@ export type ClustererOptions = {
   imagePath?: string
   imageExtension?: string
   imageSizes?: number[]
-}
+};

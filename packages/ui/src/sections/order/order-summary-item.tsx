@@ -35,4 +35,4 @@ export const OrderSummaryItem: React.FC<{ item: ICheckoutItem }> = ({ item }: { 
       </Flex>
     </Flex.Row>
   );
-}
+};

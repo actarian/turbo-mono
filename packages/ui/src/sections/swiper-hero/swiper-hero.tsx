@@ -38,7 +38,7 @@ export type SwiperHeroItem = {
   abstract: string;
   link: ILink;
   media: IMedia;
-}
+};
 
 export type SwiperHeroProps = {
   items: SwiperHeroItem[];
@@ -56,10 +56,10 @@ export const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) =>
           <Card.Content>
             <Container.Fluid>
               <Grid.Row>
-                <Grid className='left' md={6} padding="3rem 0 6rem 0">
+                <Grid className="left" md={6} padding="3rem 0 6rem 0">
                   <Text size="2" fontWeight="700">{item.title}</Text>
                 </Grid>
-                <Grid className='right' md={6} padding="3rem 0 6rem 0">
+                <Grid className="right" md={6} padding="3rem 0 6rem 0">
                   <Text size="6" marginBottom="1rem">{item.abstract}</Text>
                   {item.link &&
                     <Link href={item.link.href} passHref>
@@ -72,5 +72,5 @@ export const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) =>
         </CardHero>
       ))}
     </SwiperComponent>
-  )
-}
+  );
+};

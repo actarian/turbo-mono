@@ -21,7 +21,7 @@ type Props = {
   activeStyle?: CSSProperties;
   leftSpace?: CSSProperties['marginLeft'];
   align?: CSSProperties['justifyContent'];
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
@@ -111,7 +111,7 @@ const TabsBase: React.FC<React.PropsWithChildren<TabsProps>> = ({
           ...next,
         };
       });
-    })
+    });
   };
 
   const initialValue = useMemo<TabsConfig>(() => ({
@@ -160,7 +160,7 @@ const TabsBase: React.FC<React.PropsWithChildren<TabsProps>> = ({
       </StyledTabs>
     </TabsContext.Provider>
   );
-}
+};
 
 export const Tabs = withSchema(TabsBase, {
   Item: TabsItem,

@@ -4,8 +4,8 @@ export type IList = INamedEntity & {
   key?: string;
   listId?: IEquatable;
   items?: IList[];
-}
+};
 
 export type IKeyedList = IList & {
   key: string;
-}
+};

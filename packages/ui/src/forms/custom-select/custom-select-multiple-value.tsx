@@ -7,7 +7,7 @@ import { CustomSelectIconClear } from './custom-select-icon-clear';
 type Props = {
   disabled: boolean;
   onClear: (() => void) | null;
-}
+};
 
 const StyledCustomSelectMultipleValue = styled.div<{ disabled: boolean }>`
   display: inline-flex;
@@ -53,7 +53,7 @@ export const CustomSelectMultipleValue: React.FC<React.PropsWithChildren<Props>>
         </StyledCustomSelectMultipleValue>
       }
     </>
-  )
-}
+  );
+};
 
 CustomSelectMultipleValue.displayName = 'CustomSelectMultipleValue';

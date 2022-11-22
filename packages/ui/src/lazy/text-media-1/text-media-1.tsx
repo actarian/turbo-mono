@@ -14,7 +14,7 @@ export type TextMedia1Item = ILazyComponent & {
 
 export type TextMedia1Props = ILazyComponentProps & {
   item: TextMedia1Item;
-}
+};
 
 export const TextMedia1: React.FC<TextMedia1Props> = ({ item }: TextMedia1Props) => {
   const classNames = getClassNames(item.schema);
@@ -37,7 +37,7 @@ export const TextMedia1: React.FC<TextMedia1Props> = ({ item }: TextMedia1Props)
       </Container.Fluid>
     </Section>
   );
-}
+};
 
 export const TextMedia1Export = {
   'text-media-1': dynamic<TextMedia1Props>(() => import('../text-media-1/text-media-1').then(

@@ -9,7 +9,7 @@ const LinkIconSvg: React.FC<unknown> = () => {
       <path d="M10 14L21 3" />
     </svg>
   );
-}
+};
 
 const StyledLinkIcon = styled(LinkIconSvg)`
   width: 0.9375em;

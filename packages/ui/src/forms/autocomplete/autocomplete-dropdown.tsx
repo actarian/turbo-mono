@@ -10,7 +10,7 @@ type Props = {
   dropdownStyle?: CSSProperties;
   disableMatchWidth?: boolean;
   getPopupContainer?: () => HTMLElement | null;
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 

@@ -12,7 +12,7 @@ export type GoogleMapLoaderProps = LoaderOptions & {
   skeleton?: (status: GoogleMapLoaderStatus) => ReactElement;
   onStatus?: (status: GoogleMapLoaderStatus, loader: Loader) => void;
   children?: ReactNode;
-}
+};
 
 // https://github.com/denakol/google-maps-react-suspense/blob/master/src/GoogleMapsLoader.ts
 

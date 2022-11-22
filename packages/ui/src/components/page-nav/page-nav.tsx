@@ -9,7 +9,7 @@ type ContainerProps = {
   fixed?: boolean;
   sticky?: boolean;
   scrolled?: boolean;
-}
+};
 
 export type PageNavContainerProps = UIComponentProps<ContainerProps>;
 
@@ -37,12 +37,12 @@ const PageNavInner = styled.div<PageNavContainerProps>`
   `}
 `;
 
-type PageNavItem = { href: string, title: string }
+type PageNavItem = { href: string, title: string };
 
 type Props = {
   items: PageNavItem[];
   // !!! todo fixed / sticky boolean
-}
+};
 
 export type PageNavProps = UIComponentProps<Props>;
 
@@ -115,4 +115,4 @@ export const PageNav: React.FC<PageNavProps> = (props: PageNavProps) => {
       </PageNavContainer>
     </>
   );
-}
+};

@@ -12,7 +12,7 @@ export type MagazineRelatedSubItem = {
   href: string;
   media: IMedia;
   date: Date | string;
-}
+};
 
 export type MagazineRelatedItem = ILazyComponent & {
   schema: string;
@@ -22,7 +22,7 @@ export type MagazineRelatedItem = ILazyComponent & {
 
 export type MagazineRelatedProps = ILazyComponentProps & {
   item: MagazineRelatedItem
-}
+};
 
 const StyledSection = styled(Section)`
   .swiper-slide {
@@ -33,7 +33,7 @@ const StyledSection = styled(Section)`
       width: calc(100% - 40px);
     }
   }
-`
+`;
 
 const StyledCard = styled(Card)`
   .media>.image {
@@ -74,8 +74,8 @@ export const MagazineRelated: React.FC<MagazineRelatedProps & SwiperProps> = ({ 
         ))}
       </Swiper>
     </StyledSection>
-  )
-}
+  );
+};
 
 export const MagazineRelatedExport = {
   'magazine-related': dynamic<MagazineRelatedProps>(() => import('../magazine-related/magazine-related').then(

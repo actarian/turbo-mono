@@ -11,7 +11,7 @@ export default apiHandler({
     const bearer = authorization && authorization.replace('Bearer ', '');
     // Check for secret to confirm this is a valid request
     if (bearer !== process.env.HOOKS_SECRET) {
-      return response.status(401).json({ message: 'Invalid token' })
+      return response.status(401).json({ message: 'Invalid token' });
     }
     try {
       /*
@@ -26,7 +26,7 @@ export default apiHandler({
       // console.log('route.found', route);
       const resolvedRoute = resolveRoute(route, PAGES);
       await response.revalidate(resolvedRoute);
-      return response.json({ revalidated: true })
+      return response.json({ revalidated: true });
     } catch (error) {
       // If there was an error, Next.js will continue
       // to show the last successfully generated page

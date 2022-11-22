@@ -101,7 +101,7 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
         return keys.reduce<boolean>((p, c) => {
           return p && (x[c] === where[c]);
         }, true);
-      })
+      });
     }
     return items;
   }

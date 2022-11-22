@@ -6,7 +6,7 @@ import { ThemeProps, UIComponentWithRef, UIStyledComponentProps } from '../types
 import { getCssResponsive } from '../utils';
 
 type Props = {
-}
+};
 
 export type FlexFlowProps = UIStyledComponentProps<Props>;
 
@@ -15,7 +15,7 @@ export type FlexFlowComponent<C extends React.ElementType = 'div'> = UIComponent
 function getFlexColumn(columns: string | number = 2) {
   const cols: number = parseInt(columns.toString());
   if (cols === 1) {
-    return `width: 100%;`;
+    return 'width: 100%;';
   }
   const calc = `calc(${(100 / cols)}% - (var(--grid-column-gap) * ${cols - 1} / ${cols}))`;
   return `
@@ -103,14 +103,14 @@ export const FlexFlow: FlexFlowComponent = forwardRef(({ children, className, as
 
     const onResize = () => {
       reposChildElements(element);
-    }
+    };
 
     window.addEventListener('resize', onResize);
 
     // Remove event listener on cleanup
     return () => {
       window.removeEventListener('resize', onResize);
-    }
+    };
   }, [children]);
 
   const classNames = getClassNames('flex-flow', className);

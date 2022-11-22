@@ -5,4 +5,4 @@ export type ILocale = IEntity & {
   // schema?: string;
   title?: string;
   isDefault?: boolean;
-}
+};

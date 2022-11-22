@@ -10,14 +10,14 @@ import {
 import { getShopDetails, IShopDetail } from 'src/models';
 
 export default function ShopDetail({ layout, page, category, params }: ShopDetailProps) {
-  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
+  const [drawer, openDrawer, closeDrawer] = useDrawer();
 
-  const add = useCart(state => state.add);
+  const { add } = useCart(state => state.actions);
 
   function onAddToCart() {
     const cartItem = { ...page };
     add(cartItem, 1);
-    onOpenDrawer('cart');
+    openDrawer('cart');
   }
 
   const currency = useCurrency();
@@ -75,7 +75,7 @@ export default function ShopDetail({ layout, page, category, params }: ShopDetai
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 type ShopDetailItem = ShopSearchItem & IPage & {
@@ -88,7 +88,7 @@ type ShopDetailItem = ShopSearchItem & IPage & {
 
 export type ShopDetailProps = PageProps<ShopDetailItem> & {
   category: IPage;
-}
+};
 
 export async function getStaticProps(context: IStaticContext) {
   const id = parseInt(context.params.id);

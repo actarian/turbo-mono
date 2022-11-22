@@ -7,7 +7,7 @@ export async function fsExists(pathname: string): Promise<boolean> {
     await fs.promises.access(pathname);
     return true;
   } catch {
-    return false
+    return false;
   }
 }
 

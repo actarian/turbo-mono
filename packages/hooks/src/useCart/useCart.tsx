@@ -7,9 +7,9 @@ import { persist, StateStorage } from 'zustand/middleware';
 type CartProps = {
   hydrated: boolean;
   items: ICartItem[];
-}
+};
 
-type CartState = CartProps & {
+type CartActions = {
   count(): number;
   has(item: ISchema): boolean;
   find(item: ISchema): ICartItem | undefined;
@@ -17,7 +17,11 @@ type CartState = CartProps & {
   remove(item: ISchema): number;
   update(item: ICartItem): void;
   clear(): void;
-}
+};
+
+type CartState = CartProps & {
+  actions: CartActions;
+};
 
 type CartStore = ReturnType<typeof createCartStore>;
 
@@ -25,53 +29,53 @@ const createCartStore = ({ storage, ...initialProps }: { storage?: StateStorage 
   const DEFAULT_PROPS: CartProps = {
     hydrated: false,
     items: [],
-  }
+  };
   const useStore = createStore<CartState>()(
     persist(
       (set, get) => ({
         ...DEFAULT_PROPS,
         ...initialProps,
-
-        count: () => {
-          return get().items.length;
-        },
-        has: (item: ISchema) => {
-          return get().items.find(x => x.schema === item.schema && x.id === item.id) != null;
-        },
-        find: (item: ISchema) => {
-          return get().items.find(x => x.schema === item.schema && x.id === item.id);
-        },
-        add: (item: ICartItem, qty: number = 1) => set(state => {
-          const items = state.items.slice();
-          const index = items.reduce((p, c, i) => (c.schema === item.schema && c.id === item.id) ? i : p, -1);
-          if (index === -1) {
-            items.push({ ...item, qty });
-          }
-          return { items };
-        }),
-        remove: (item: ISchema) => {
-          let count = 0;
-          set(state => {
+        actions: {
+          count: () => {
+            return get().items.length;
+          },
+          has: (item: ISchema) => {
+            return get().items.find(x => x.schema === item.schema && x.id === item.id) != null;
+          },
+          find: (item: ISchema) => {
+            return get().items.find(x => x.schema === item.schema && x.id === item.id);
+          },
+          add: (item: ICartItem, qty: number = 1) => set(state => {
+            const items = state.items.slice();
+            const index = items.reduce((p, c, i) => (c.schema === item.schema && c.id === item.id) ? i : p, -1);
+            if (index === -1) {
+              items.push({ ...item, qty });
+            }
+            return { items };
+          }),
+          remove: (item: ISchema) => {
+            let count = 0;
+            set(state => {
+              const items = state.items.slice();
+              const index = items.reduce((p, c, i) => (c.schema === item.schema && c.id === item.id) ? i : p, -1);
+              if (index !== -1) {
+                items.splice(index, 1);
+              }
+              count = items.length;
+              return { items };
+            });
+            return count;
+          },
+          update: (item: ICartItem) => set(state => {
             const items = state.items.slice();
             const index = items.reduce((p, c, i) => (c.schema === item.schema && c.id === item.id) ? i : p, -1);
             if (index !== -1) {
-              items.splice(index, 1);
+              items[index] = item;
             }
-            count = items.length;
             return { items };
-          });
-          return count;
+          }),
+          clear: () => set(state => ({ items: [] })),
         },
-        update: (item: ICartItem) => set(state => {
-          const items = state.items.slice();
-          const index = items.reduce((p, c, i) => (c.schema === item.schema && c.id === item.id) ? i : p, -1);
-          if (index !== -1) {
-            items[index] = item;
-          }
-          return { items };
-        }),
-        clear: () => set(state => ({ items: [] })),
-
       }),
       {
         name: 'cart',
@@ -81,20 +85,27 @@ const createCartStore = ({ storage, ...initialProps }: { storage?: StateStorage 
         },
         onRehydrateStorage: () => () => {
           useStore.setState({ hydrated: true });
-          console.log('onRehydrateStorage', useStore, useStore.getState());
-        }
+          // console.log('onRehydrateStorage', useStore, useStore.getState());
+        },
+        merge: (persistedState: any, currentState: CartState) => {
+          if (persistedState.items && Array.isArray(persistedState.items)) {
+            currentState.items = [...persistedState.items];
+          }
+          currentState.hydrated = true;
+          return currentState;
+        },
       }
     )
-  )
+  );
   return useStore;
-}
+};
 
 export const CartContext = createContext<CartStore | null>(null);
 
 type CartProviderProps = React.PropsWithChildren<{ items?: ICartItem[], storage?: StateStorage }>;
 
 function CartProvider({ children, ...props }: CartProviderProps) {
-  const storeRef = useRef<CartStore>()
+  const storeRef = useRef<CartStore>();
   if (!storeRef.current) {
     storeRef.current = createCartStore(props);
   }
@@ -102,7 +113,7 @@ function CartProvider({ children, ...props }: CartProviderProps) {
     <CartContext.Provider value={storeRef.current}>
       {children}
     </CartContext.Provider>
-  )
+  );
 }
 
 function useCart<T>(

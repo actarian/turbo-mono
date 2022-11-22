@@ -6,7 +6,7 @@ type Props = {
   active?: boolean;
   disabled?: boolean;
   onClick?: (e: React.MouseEvent) => void;
-}
+};
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>;
 export type PaginationItemProps = Props & NativeAttrs;
@@ -67,7 +67,7 @@ const StyledPaginationItem = styled.div`
       background-color: var(--color-neutral-200);
     }
   }
-`
+`;
 
 export const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = ({ children, active, disabled, onClick, ...props }) => {
 
@@ -87,6 +87,6 @@ export const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProp
       </button>
     </StyledPaginationItem>
   );
-}
+};
 
 PaginationItem.displayName = 'PaginationItem';

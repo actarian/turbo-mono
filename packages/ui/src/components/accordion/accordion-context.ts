@@ -7,7 +7,7 @@ const defaultContext = {
 export type AccordionConfig = {
   values: Array<number>;
   updateValues?: (currentIndex: number, nextState: boolean) => unknown;
-}
+};
 
 export const AccordionContext = React.createContext<AccordionConfig>(defaultContext);
 

@@ -10,11 +10,11 @@ export type Related1ItemItem = {
   href: string;
   title: string;
   media: IMedia;
-}
+};
 
 type Props = {
   item: Related1ItemItem
-}
+};
 
 export type Related1CardProps = UIStyledComponentProps<Props>;
 
@@ -56,5 +56,5 @@ export const Related1Card: React.FC<Related1CardProps> = ({ item, ...props }: Re
         </Flex.Row>
       </Card.Content>
     </StyledCard>
-  )
-}
+  );
+};

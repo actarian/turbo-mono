@@ -18,13 +18,13 @@ export type ICheckout = {
   subTotalFull: number;
   taxes: number;
   total: number;
-}
+};
 
 export type ICheckoutPartial = Partial<ICheckout>;
 
 export type ICheckoutItem = ICartItem & {
   fullPrice: number;
-}
+};
 
 export type ICheckoutInfo = {
   user?: Partial<IUser>;
@@ -32,13 +32,13 @@ export type ICheckoutInfo = {
   hasInvoice?: boolean;
   hasBilling?: boolean;
   billingAddress?: IUserAddress;
-}
+};
 
 export type ICheckoutDelivery = IOption & {
   abstract: string;
   price: number;
   fullPrice: number;
-}
+};
 
 export type ICheckoutStore = Partial<ICompanyAddress> & IOption & {
   category?: IOption;
@@ -49,17 +49,17 @@ export type ICheckoutStore = Partial<ICompanyAddress> & IOption & {
   };
   distance?: number;
   rank?: number;
-}
+};
 
 export type ICheckoutDiscount = IOption & {
   abstract?: string;
   price: number;
   validFrom: Date | string;
   validTo: Date | string;
-}
+};
 
 export type ICheckoutPayment = IOption & {
   abstract?: string;
   media?: IMedia;
-}
+};
 

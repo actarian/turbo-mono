@@ -1,4 +1,4 @@
-import { useCart, useCurrency, useMounted, useUI } from '@websolute/hooks';
+import { useCart, useCurrency, useDrawer, useMounted } from '@websolute/hooks';
 import { Minus, Plus, Trash } from '@websolute/icons';
 import { ICartItem } from '@websolute/models';
 import NextLink from 'next/link';
@@ -9,8 +9,8 @@ export const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: IC
 
   const currency = useCurrency();
 
-  const update = useCart(state => state.update);
-  const remove = useCart(state => state.remove);
+  const [drawer, openDrawer, closeDrawer] = useDrawer();
+  const { update, remove } = useCart(state => state.actions);
 
   function onSetQty(qty: number) {
     if (qty > 0) {
@@ -27,16 +27,6 @@ export const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: IC
       closeDrawer();
     }
   }
-
-  const reduceUI = useUI(state => state.reduce);
-
-  function onSetDrawer(value?: string) {
-    reduceUI((state) => ({ drawer: value }));
-  }
-
-  const closeDrawer = () => {
-    return onSetDrawer();
-  };
 
   const mounted = useMounted();
   return (
@@ -65,4 +55,4 @@ export const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: IC
       </Card>
     </>
   );
-}
+};

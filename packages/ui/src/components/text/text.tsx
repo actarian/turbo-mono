@@ -44,7 +44,7 @@ export type FontSize = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10
 type Props = {
   size?: FontSize;
   gradient?: boolean;
-}
+};
 
 export type TextProps = UIStyledComponentProps<Props>;
 

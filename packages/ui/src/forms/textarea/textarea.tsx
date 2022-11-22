@@ -5,7 +5,7 @@ import { UIComponentWithRef, UIStyledComponentProps } from '../../components/typ
 import { getCssResponsive } from '../../components/utils';
 
 type Props = {
-}
+};
 
 export type TextAreaProps = UIStyledComponentProps<Props, 'textarea'>;
 

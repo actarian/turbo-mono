@@ -41,4 +41,4 @@ export type UseFiltersResultType<T> = {
   filters: Filter<T>[];
   setFilter: (filter?: Filter<T>, values?: IEquatable[]) => void;
   itemsWithOmittedKeys: (...keys: string[]) => T[];
-}
+};

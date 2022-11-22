@@ -9,7 +9,7 @@ import { AccordionConfig, AccordionContext } from './accordion-context';
 type Props = {
   accordion?: boolean;
   className?: string;
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
@@ -59,7 +59,7 @@ export const AccordionGroup: React.FC<React.PropsWithChildren<AccordionGroupProp
       return setState([...stateRef.current, index]);
     }
     setState(stateRef.current.filter(item => item !== index));
-  }
+  };
 
   const initialValue = useMemo<AccordionConfig>(() => ({
     values: state,
@@ -76,7 +76,7 @@ export const AccordionGroup: React.FC<React.PropsWithChildren<AccordionGroupProp
         {indexedChildren}
       </StyledAccordionGroup>
     </AccordionContext.Provider>
-  )
-}
+  );
+};
 
 AccordionGroup.displayName = 'AccordionGroup';

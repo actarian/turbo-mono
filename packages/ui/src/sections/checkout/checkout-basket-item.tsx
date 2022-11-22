@@ -9,8 +9,7 @@ export const CheckoutBasketItem: React.FC<{ item: ICheckoutItem }> = ({ item }: 
 
   const currency = useCurrency();
 
-  const update = useCart(state => state.update);
-  const remove = useCart(state => state.remove);
+  const { update, remove } = useCart(state => state.actions);
 
   function onSetQty(qty: number) {
     if (qty > 0) {
@@ -62,4 +61,4 @@ export const CheckoutBasketItem: React.FC<{ item: ICheckoutItem }> = ({ item }: 
       </Flex.Col>
     </Flex.Row>
   );
-}
+};

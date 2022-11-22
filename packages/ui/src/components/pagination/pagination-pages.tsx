@@ -7,7 +7,7 @@ type Props = {
   count: number;
   current: number;
   setPage: Dispatch<SetStateAction<number>>;
-}
+};
 
 export const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) => {
 
@@ -85,6 +85,6 @@ export const PaginationPages: React.FC<Props> = ({ limit, count, current, setPag
       {renderItem(count, current)}
     </>
   );
-}
+};
 
 PaginationPages.displayName = 'PaginationPages';

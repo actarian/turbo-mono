@@ -23,7 +23,7 @@ export type ContactCardItem = {
   note?: string;
   evidence?: boolean;
   href?: string;
-}
+};
 
 export type ContactCardProps = UIComponentProps<Props>;
 
@@ -43,16 +43,16 @@ export const ContactCard: React.FC<ContactCardProps> = ({ item, ...props }: Cont
       a.push(item.country.name);
     }
     return a.join(', ');
-  }
+  };
   const getTelLink = (value: string): string => {
     return `tel:${value.replace(/D/g, '')}`;
-  }
+  };
   const getFaxLink = (value: string): string => {
     return `fax:${value.replace(/D/g, '')}`;
-  }
+  };
   const getMailToLink = (value: string): string => {
     return `mailto:${value.trim()}`;
-  }
+  };
   const addressLine2 = getAddressLine2();
   return (
     <Card borderTop="2px solid var(--color-primary-100)" {...props}>
@@ -100,5 +100,5 @@ export const ContactCard: React.FC<ContactCardProps> = ({ item, ...props }: Cont
         </>}
       </Card.Content>
     </Card>
-  )
-}
+  );
+};

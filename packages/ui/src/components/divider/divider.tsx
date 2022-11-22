@@ -4,7 +4,7 @@ import { getCssResponsive } from '../../components/utils';
 
 type Props = {
   children?: React.ReactNode;
-}
+};
 
 export type DividerProps = UIStyledComponentProps<Props>;
 
@@ -50,5 +50,5 @@ export const Divider: DividerComponent = ({ children, as = 'div' as React.Elemen
     <DividerContainer as={as} {...props}>
       {children && <DividerTitle {...props}>{children}</DividerTitle>}
     </DividerContainer>
-  )
+  );
 };

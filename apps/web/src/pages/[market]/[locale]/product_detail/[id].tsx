@@ -64,12 +64,12 @@ export default function ProductDetail({ layout, page, params }: ProductDetailPro
 
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type ProductDetailProps = PageProps & {
 
-}
+};
 
 export async function getStaticProps(context: IStaticContext) {
   const id = parseInt(context.params.id);

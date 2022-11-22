@@ -4,7 +4,7 @@ import { ProductsPropositionCard, ProductsPropositionItem } from './products-pro
 
 type Props = {
   items: ProductsPropositionItem[],
-}
+};
 
 export type ProductsPropositionProps = UIComponentProps<Props>;
 
@@ -21,5 +21,5 @@ export const ProductsProposition: React.FC<ProductsPropositionProps> = ({ items 
         </Grid.Row>
       </Container>
     </Section>
-  )
-}
+  );
+};

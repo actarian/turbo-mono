@@ -11,7 +11,7 @@ export type MediaFull2Item = ILazyComponent & {
 
 export type MediaFull2Props = ILazyComponentProps & {
   item: MediaFull2Item;
-}
+};
 
 export const MediaFull2: React.FC<MediaFull2Props> = ({ item }: MediaFull2Props) => {
   const classNames = getClassNames(item.schema);
@@ -23,7 +23,7 @@ export const MediaFull2: React.FC<MediaFull2Props> = ({ item }: MediaFull2Props)
       </Container.Fluid>
     </Section>
   );
-}
+};
 
 export const MediaFull2Export = {
   'media-full-2': dynamic<MediaFull2Props>(() => import('../media-full-2/media-full-2').then(

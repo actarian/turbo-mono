@@ -24,8 +24,8 @@ export type IOrder = ICheckout & {
   id: IEquatable;
   date: Date | string;
   status: IOrderStatusValue;
-}
+};
 
 export type IOrderDetail = IOrder & {
   href: string;
-}
+};

@@ -15,7 +15,7 @@ export default function ReservedAreaPage({ layout, page, user, params }: Reserve
 
   const router = useRouter();
 
-  const setUser = useUser((state) => state.setUser);
+  const { setUser } = useUser((state) => state.actions);
 
   const onLogout = async () => {
     try {
@@ -71,12 +71,12 @@ export default function ReservedAreaPage({ layout, page, user, params }: Reserve
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type ReservedAreaProps = PageProps & {
   user: IUser;
-}
+};
 
 export const getServerSideProps = withIronSessionSsr(async function (context) {
   // !!! hack for vercel lambdas (put it in one page only)
@@ -113,7 +113,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
         permanent: false,
         destination: layout.topLevelHrefs.login || '/',
       },
-    }
+    };
   }
 
   // Page

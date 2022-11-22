@@ -6,7 +6,7 @@ import { Placement } from './tooltip-props';
 type Props = {
   placement: Placement;
   shadow: boolean;
-}
+};
 
 const StyledTooltipIcon = styled.span<TooltipIconPosition>`
   width: 0;
@@ -28,5 +28,5 @@ export const TooltipIcon: React.FC<Props> = ({ placement, shadow }) => {
   }, [placement]);
   return (
     <StyledTooltipIcon {...props} />
-  )
-}
+  );
+};

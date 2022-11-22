@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 type Props = {
   className?: string;
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
@@ -27,7 +27,7 @@ export const BreadcrumbSeparator: React.FC<React.PropsWithChildren<BreadcrumbSep
     <StyledBreadcrumbSeparator className={classNames}>
       {children}
     </StyledBreadcrumbSeparator>
-  )
-}
+  );
+};
 
 BreadcrumbSeparator.displayName = 'BreadcrumbSeparator';

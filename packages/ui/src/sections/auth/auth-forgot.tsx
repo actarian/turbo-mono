@@ -12,7 +12,7 @@ export type AuthForgotProps = {
   onPasswordSent?: () => void;
   onNavToLogin?: () => void;
   onNavToRegister?: () => void;
-}
+};
 
 export const AuthForgot: React.FC<AuthForgotProps> = ({ onPasswordSent, onNavToLogin, onNavToRegister }: AuthForgotProps) => {
   const label = useLabel();
@@ -32,11 +32,11 @@ export const AuthForgot: React.FC<AuthForgotProps> = ({ onPasswordSent, onNavToL
     setValue({
       email: 'jhon.appleseed@gmail.com',
     });
-  }
+  };
 
   const onReset = () => {
     reset();
-  }
+  };
 
   const [error, setError] = useState<Error>();
 
@@ -58,19 +58,19 @@ export const AuthForgot: React.FC<AuthForgotProps> = ({ onPasswordSent, onNavToL
       console.log('AuthForgot.invalid');
       setTouched();
     }
-  }
+  };
 
   const onLogin = () => {
     if (typeof onNavToLogin === 'function') {
       onNavToLogin();
     }
-  }
+  };
 
   const onRegister = () => {
     if (typeof onNavToRegister === 'function') {
       onNavToRegister();
     }
-  }
+  };
 
   return (
     <Flex.Col justifyContent="space-between">

@@ -16,7 +16,7 @@ export type IFilterOption = {
   title: string;
   count?: number;
   disabled?: boolean;
-}
+};
 
 export type IFilter = {
   id?: string;
@@ -24,7 +24,7 @@ export type IFilter = {
   mode?: FilterMode;
   options?: IFilterOption[];
   values?: IEquatable[];
-}
+};
 
 export class Filter<T> implements IFilter {
   id: string = 'filter';

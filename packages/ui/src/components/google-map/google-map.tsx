@@ -11,7 +11,7 @@ type Props = google.maps.MapOptions & {
   onBounds?: (map: google.maps.LatLngBounds | undefined) => void;
   onClick?: (e: google.maps.MapMouseEvent) => void;
   children?: ReactNode;
-}
+};
 
 export type GoogleMapProps = UIStyledComponentProps<Props>;
 
@@ -107,7 +107,7 @@ export const GoogleMap = forwardRef<google.maps.Map, GoogleMapProps>(({
         map.unbindAll();
       }
       */
-    }
+    };
   }, [mapRef, onLoad, onIdle, onClick, onBounds]);
 
   return (

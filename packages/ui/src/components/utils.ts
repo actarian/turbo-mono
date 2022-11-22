@@ -20,7 +20,7 @@ export function getContainer(props: ThemeProps, fluid?: boolean) {
 @media(min-width: ${value}px) {
   max-width: ${theme.container.maxWidth[key]};
 }
-`
+`;
       }).join('\n');
     } else {
       return '';

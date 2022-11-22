@@ -4,7 +4,7 @@ export type DrawerTranslateItem = {
   initial: string
   hidden: string
   visible: string
-}
+};
 
 export const getDrawerTransform = (placement: DrawerPlacement): DrawerTranslateItem => {
   const translates: Record<DrawerPlacement, DrawerTranslateItem> = {
@@ -28,6 +28,6 @@ export const getDrawerTransform = (placement: DrawerPlacement): DrawerTranslateI
       hidden: 'translate3d(100%, 0, 0)',
       visible: 'translate3d(0, 0, 0)',
     },
-  }
+  };
   return translates[placement];
-}
+};

@@ -21,13 +21,13 @@ export default function ProductCategory({ layout, page, items = [], featureTypes
 
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type ProductCategoryProps = PageProps & {
   items: ProductSearchItem[];
   featureTypes: IFeatureType[];
-}
+};
 
 export async function getStaticProps(context: IStaticContext) {
   const id = parseInt(context.params.id);

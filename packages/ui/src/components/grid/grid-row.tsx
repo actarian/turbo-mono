@@ -7,7 +7,7 @@ export type GridRowBaseProps = {
   size?: string;
   columnGap?: string;
   rowGap?: string;
-}
+};
 
 export type GridRowProps = UIStyledComponentProps<GridRowBaseProps>;
 

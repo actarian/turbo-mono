@@ -9,7 +9,7 @@ export type IRoute = IEntity & {
   pageId: IEquatable;
   pageSchema: string;
   pageTemplate?: string;
-}
+};
 
 export type IRouteLink = {
   id: IEquatable;
@@ -17,13 +17,13 @@ export type IRouteLink = {
   title: string;
   items?: IRouteLink[];
   media?: IMedia;
-}
+};
 
 export type IRouteParams = {
   id: IEquatable,
   market: string,
   locale: string,
   [key: string]: any,
-}
+};
 
 export type SchemaType = string;

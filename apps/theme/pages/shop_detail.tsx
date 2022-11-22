@@ -15,11 +15,11 @@ export type ShopDetailItem = {
   price: number;
   date: string | Date;
   media: IMedia[];
-}
+};
 
 type Props = {
   page: ShopDetailItem
-}
+};
 
 const ShopDetail = ({ page, ...props }: Props) => {
   return (
@@ -59,8 +59,8 @@ const ShopDetail = ({ page, ...props }: Props) => {
         </Page>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 ShopDetail.defaultProps = {
   page: ProductDefaults.item

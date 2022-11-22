@@ -5,7 +5,7 @@ import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect/useIsomo
 type WindowSize = {
   width: number;
   height: number;
-}
+};
 
 export function useWindowSize(): WindowSize {
 

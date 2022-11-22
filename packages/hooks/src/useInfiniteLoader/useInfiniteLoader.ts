@@ -23,7 +23,7 @@ export function useInfiniteLoader(items: any[], perPage: number = 12, delayInMs 
 
   const loadMore = () => {
     setMore(more + 1);
-  }
+  };
 
   useEffect(() => {
     // console.log('useInfiniteLoader', hasMore, more, total, position);

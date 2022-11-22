@@ -11,6 +11,6 @@ export const PaginationNext: React.FC<React.PropsWithChildren<PaginationNextProp
       {children}
     </PaginationItem>
   );
-}
+};
 
 PaginationNext.displayName = 'PaginationNext';

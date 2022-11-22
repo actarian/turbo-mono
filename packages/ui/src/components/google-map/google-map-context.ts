@@ -6,7 +6,7 @@ const defaultContext = {
 
 export type IGoogleMapContext = {
   map: google.maps.Map | undefined;
-}
+};
 
 export const GoogleMapContext = React.createContext<IGoogleMapContext>(defaultContext);
 

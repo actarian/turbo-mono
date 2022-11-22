@@ -57,7 +57,7 @@ export type StoreLocatorItem = IGeoLocalized & {
     id: number;
     url: string;
   };
-}
+};
 
 type Props = {
   locale: string;
@@ -65,13 +65,13 @@ type Props = {
   item: StoreLocatorHeadItem;
   items: StoreLocatorItem[];
   featureTypes: IFeatureType[];
-}
+};
 
 export type StoreLocatorHeadItem = {
   category: string;
   title: string;
   abstract: string;
-}
+};
 
 export type StoreLocatorHeadProps = UIComponentProps<Props>;
 
@@ -160,9 +160,9 @@ export const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
             // console.log('setCenter', place);
           }
         }
-      }
+      };
       fetchResults().catch(error => {
-        console.log('StoreLocatorSearch.onFindMe.error', error)
+        console.log('StoreLocatorSearch.onFindMe.error', error);
       });
     }
   }, [country, map, params?.bounds]);
@@ -342,7 +342,7 @@ export const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
       map.setCenter(item.position);
       map.setZoom(11);
     }
-  }
+  };
 
   // when user click on the map (unused)
   /*
@@ -362,7 +362,7 @@ export const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
           <Text size="2" marginBottom="1rem" fontWeight="700">{item.title}</Text>
           <Text size="8" margin="0 auto 2rem auto" maxWidth="70ch" dangerouslySetInnerHTML={{ __html: item.abstract }}></Text>
           {filters && filters.map((filter, f) => (
-            <RadioOption.Group key={f} size="sm" marginBottom="1rem" initialValue={filter.values.length ? filter.values[0].toString() : "0"} onChange={(event) => onSetFilter(filter, [event.target.value])}>
+            <RadioOption.Group key={f} size="sm" marginBottom="1rem" initialValue={filter.values.length ? filter.values[0].toString() : '0'} onChange={(event) => onSetFilter(filter, [event.target.value])}>
               <RadioOption value="0">All</RadioOption>
               {filter.options && filter.options.map((option, o) => (
                 <RadioOption key={o} value={option.id.toString()} disabled={option.count === 0}>{option.title}</RadioOption>
@@ -384,7 +384,7 @@ export const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
             USE_CLUSTERER_PLUS ?
               <GoogleMapMarkerClustererPlus items={filteredItems} onClick={onMarkerClick} /> :
               filteredItems.map((item, i) => (
-                <GoogleMapMarker key={i} position={item.position} icon={"/map/marker-sm.png"} onClick={() => onMarkerClick(item)} />
+                <GoogleMapMarker key={i} position={item.position} icon={'/map/marker-sm.png'} onClick={() => onMarkerClick(item)} />
               ))}
           <GoogleMapInfoWindow {...infoWindow} onClose={onInfoWindowClose} />
         </GoogleMap>
@@ -403,7 +403,7 @@ export const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
       </Section>
     </>
   );
-}
+};
 
 /*
 ,

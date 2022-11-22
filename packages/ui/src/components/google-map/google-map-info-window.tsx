@@ -4,14 +4,14 @@ import { useGoogleMapContext } from './google-map-context';
 export type InfoWindow = {
   position: google.maps.LatLng;
   content: string;
-}
+};
 
 export type GoogleMapInfoWindowProps = google.maps.InfoWindowOptions & {
   map?: google.maps.Map;
   position?: google.maps.LatLng;
   content?: string;
   onClose?: (event: MouseEvent<HTMLElement>) => void;
-}
+};
 
 export const GoogleMapInfoWindow: React.FC<GoogleMapInfoWindowProps> = ({
   position,
@@ -36,7 +36,7 @@ export const GoogleMapInfoWindow: React.FC<GoogleMapInfoWindowProps> = ({
     };
     if (!infoWindow) {
       const instance = new google.maps.InfoWindow(options);
-      instance.addListener('closeclick', onClose_)
+      instance.addListener('closeclick', onClose_);
       setInfoWindow(instance);
     } else {
       if (position) {

@@ -25,15 +25,15 @@ const StoreIndex: React.FC<StoreIndexProps> = ({ locale, country, items = [], fe
         </Page>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 type StoreIndexProps = {
   locale: string;
   country: { id: string, name: string },
   items: StoreLocatorItem[];
   featureTypes: IFeatureType[];
-}
+};
 
 export async function getStaticProps(): Promise<{ props: StoreIndexProps }> {
   const props = {

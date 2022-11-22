@@ -78,7 +78,7 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
           // console.log('key', c, 'value', x[c], 'shouldMatch', shouldMatch);
           return p && (shouldMatch.indexOf(x[c]) !== -1);
         }, true);
-      })
+      });
     }
     return items;
   }

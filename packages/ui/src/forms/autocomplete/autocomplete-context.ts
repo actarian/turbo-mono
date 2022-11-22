@@ -8,7 +8,7 @@ const defaultContext = {
 export type IAutocompleteItem = {
   id: any,
   name: string;
-}
+};
 
 export type IAutocomplete = {
   visible?: boolean;
@@ -16,7 +16,7 @@ export type IAutocomplete = {
   ref?: MutableRefObject<HTMLElement | null>;
   updateValue?: (next: IAutocompleteItem) => unknown;
   updateVisible?: (next: boolean) => unknown;
-}
+};
 
 export const AutocompleteContext = createContext<IAutocomplete>(defaultContext);
 

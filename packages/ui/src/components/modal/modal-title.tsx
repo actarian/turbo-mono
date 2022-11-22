@@ -7,7 +7,7 @@ import { UIComponentProps } from '../types';
 type Props = {
   className?: string;
   onClose?: () => void;
-}
+};
 
 export type ModalTitleProps = UIComponentProps<Props>;
 
@@ -30,7 +30,7 @@ export const ModalTitle: React.FC<React.PropsWithChildren<ModalTitleProps | any>
       {children}
       <Button onClick={onClose}><X /></Button>
     </StyledTitle>
-  )
-}
+  );
+};
 
 ModalTitle.displayName = 'ModalTitle';

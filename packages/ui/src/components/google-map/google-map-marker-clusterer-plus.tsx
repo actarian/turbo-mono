@@ -1,13 +1,13 @@
 import MarkerClustererPlus, { ClusterIconStyle } from '@googlemaps/markerclustererplus';
 import React, { useEffect, useState } from 'react';
-import { useGoogleMapContext } from "./google-map-context";
-import { IGeoLocalized } from "./google-map.service";
+import { useGoogleMapContext } from './google-map-context';
+import { IGeoLocalized } from './google-map.service';
 
 export type GoogleMapMarkerClustererPlusProps = {
   items: IGeoLocalized[];
   map?: google.maps.Map,
   onClick?: (item: IGeoLocalized) => void;
-}
+};
 
 export const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> = ({
   items = [],
@@ -27,12 +27,12 @@ export const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlus
       if (onClick) {
         onClick(item);
       }
-    }
+    };
     // markersDispose(markers);
     if (items.length) {
       markers_ = items.map(item => {
         const icon = {
-          url: `/assets/map/marker-sm.png`,
+          url: '/assets/map/marker-sm.png',
           size: new google.maps.Size(24, 32),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(12, 32),
@@ -61,7 +61,7 @@ export const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlus
     if (map && markers) {
       console.log('clusterer init');
       clusterer = new MarkerClustererPlus(map, markers, {
-        imagePath: `/assets/map/cluster-`,
+        imagePath: '/assets/map/cluster-',
       });
       const styles = clusterer.getStyles();
       const sizes = [48, 56, 64, 72, 80];

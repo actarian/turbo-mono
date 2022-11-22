@@ -7,7 +7,7 @@ import { getCssResponsive } from '../../components/utils';
 import { CheckboxIcon } from './checkbox-icon';
 
 type Props = ComponentPropsWithRef<'input'> & {
-}
+};
 
 export type CheckboxProps = UIStyledComponentProps<Props, 'input'>;
 
@@ -26,7 +26,7 @@ const StyledCheckboxInput = styled.input`
   }
 
   ${props => getCssResponsive(props)}
-`
+`;
 
 const StyledCheckboxIcon = styled.div`
   margin-right: 0.5rem;
@@ -47,19 +47,19 @@ const StyledCheckboxIcon = styled.div`
   input:focus ~ & {
     outline-color: var(--color-primary-200);
   }
-`
+`;
 
 const StyledCheckbox = styled.div<CheckboxProps>`
   position: relative;
   ${props => getCssResponsive(props)}
-`
+`;
 
 export const Checkbox: CheckboxComponent = forwardRef(({ className, ...props }, ref) => {
   const classNames = getClassNames('checkbox', className);
   return (
     <StyledCheckbox className={classNames}>
-      <StyledCheckboxInput ref={ref} as='input' type='checkbox' {...props} />
-      <StyledCheckboxIcon as={CheckboxIcon} aria-hidden='true' />
+      <StyledCheckboxInput ref={ref} as="input" type="checkbox" {...props} />
+      <StyledCheckboxIcon as={CheckboxIcon} aria-hidden="true" />
     </StyledCheckbox>
   );
 });

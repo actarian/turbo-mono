@@ -9,7 +9,7 @@ type FieldTextProps = {
   uid?: number | null | undefined;
   before?: ReactNode;
   after?: ReactNode;
-}
+};
 
 export function FieldText(props: FieldTextProps) {
   const label = useLabel();
@@ -22,18 +22,18 @@ export function FieldText(props: FieldTextProps) {
     // console.log('FieldText', event.target.value);
     setValue(event.target.value);
     // props.control.value = event.target.value;
-  }
+  };
 
   const [focus, setFocus] = useState(false);
 
   const onBlur = (_: FocusEvent<HTMLInputElement>) => {
     setTouched();
     setFocus(false);
-  }
+  };
 
   const onFocus = (_: FocusEvent<HTMLInputElement>) => {
     setFocus(true);
-  }
+  };
 
   return (
     state.flags.hidden ? (

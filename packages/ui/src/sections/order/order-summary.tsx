@@ -5,7 +5,7 @@ import { OrderSummaryItem } from './order-summary-item';
 
 export type OrderSummaryProps = {
   order: IOrder;
-}
+};
 
 export const OrderSummary: React.FC<OrderSummaryProps> = ({ order }: OrderSummaryProps) => {
 

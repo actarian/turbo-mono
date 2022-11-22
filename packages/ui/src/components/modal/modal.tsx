@@ -6,6 +6,7 @@ import { Backdrop } from '../backdrop/backdrop';
 import { UIComponentProps } from '../types';
 import { getChildsByType } from '../utils';
 import { ModalButton } from './modal-button';
+import { ModalClose } from './modal-close';
 import { ModalContent } from './modal-content';
 import { ModalConfig, ModalContext } from './modal-context';
 import { ModalFooter } from './modal-footer';
@@ -34,7 +35,7 @@ type Props = {
   keyboard?: boolean;
   onClose?: () => void;
   onContentClick?: (event: MouseEvent<HTMLElement>) => void;
-}
+};
 
 export type ModalProps = UIComponentProps<Props>;
 
@@ -58,9 +59,11 @@ const ModalBase: React.FC<React.PropsWithChildren<ModalProps | any>> = ({
 
   const [, setBodyHidden] = useBodyScroll(null, { delayReset: 300 });
 
-  const [buttonChildren, otherChildren] = getChildsByType(children, ModalButton);
-
+  const [buttonChildren, noButtonChildren] = getChildsByType(children, ModalButton);
   const hasButtons = buttonChildren && React.Children.count(buttonChildren) > 0;
+
+  const [closeChildren, otherChildren] = getChildsByType(noButtonChildren, ModalClose);
+  const hasClose = closeChildren && React.Children.count(closeChildren) > 0;
 
   const close = useCallback(() => {
     if (onClose) {
@@ -88,7 +91,7 @@ const ModalBase: React.FC<React.PropsWithChildren<ModalProps | any>> = ({
     if (!disableBackdropClick) {
       close();
     }
-  }
+  };
 
   const modalContextValue: ModalConfig = useMemo(() => ({ close }), [close]);
 
@@ -96,14 +99,13 @@ const ModalBase: React.FC<React.PropsWithChildren<ModalProps | any>> = ({
     return null;
   }
 
-  return createPortal(
+  return createPortal((
     <ModalContext.Provider value={modalContextValue}>
       <Backdrop width={width}
         positionClassName={positionClassName} backdropClassName={backdropClassName} layerClassName={layerClassName}
         visible={visible} onClick={onBackdropClick} onContentClick={onContentClick}
         {...bindings}>
         <ModalWrapper className={wrapClassName} visible={visible}>
-          {false && otherChildren}
           {(React.Children.map(otherChildren, child => {
             if (React.isValidElement(child) && child.type === ModalTitle) {
               return React.cloneElement(child, { ...child.props, onClose: child.props.onClose || onBackdropClick });
@@ -112,10 +114,11 @@ const ModalBase: React.FC<React.PropsWithChildren<ModalProps | any>> = ({
             }
           }))}
           {hasButtons && <ModalFooter>{buttonChildren}</ModalFooter>}
+          {hasClose && closeChildren}
         </ModalWrapper>
       </Backdrop>
     </ModalContext.Provider>
-    , portal);
+  ), portal);
 };
 
 export const Modal = withSchema(ModalBase, {
@@ -123,6 +126,7 @@ export const Modal = withSchema(ModalBase, {
   Subtitle: ModalSubtitle,
   Content: ModalContent,
   Button: ModalButton,
+  Close: ModalClose,
   displayName: 'Modal',
   defaultProps,
 });

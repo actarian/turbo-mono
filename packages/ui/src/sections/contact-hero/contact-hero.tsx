@@ -7,14 +7,14 @@ import { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: ContactHeroItem,
-}
+};
 
 export type ContactHeroItem = {
   id: number;
   href: string;
   title: string;
   media: IMedia;
-}
+};
 
 export type ContactHeroProps = UIComponentProps<Props>;
 
@@ -50,5 +50,5 @@ export const ContactHero: React.FC<ContactHeroProps> = ({ item }: ContactHeroPro
         </Grid.Row>
       </Container.Fluid>
     </Section>
-  )
-}
+  );
+};

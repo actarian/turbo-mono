@@ -17,7 +17,7 @@ function useEventListener_<KW extends keyof WindowEventMap, KH extends keyof HTM
   const savedHandler = useRef(handler);
 
   useIsomorphicLayoutEffect(() => {
-    savedHandler.current = handler
+    savedHandler.current = handler;
   }, [handler]);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function useEventListener_<KW extends keyof WindowEventMap, KH extends keyof HTM
     // Remove event listener on cleanup
     return () => {
       targetElement.removeEventListener(eventName, eventListener);
-    }
+    };
   }, [eventName, element, options]);
 }
 

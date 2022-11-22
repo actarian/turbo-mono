@@ -16,7 +16,7 @@ type Props = {
   trigger?: PopoverTriggerTypes;
   placement?: Placement;
   disableItemsAutoClose?: boolean;
-}
+};
 
 type ExcludeTooltipProps = {
   type: any;
@@ -25,7 +25,7 @@ type ExcludeTooltipProps = {
   placement: any;
 };
 
-export type PopoverProps = Props & Omit<TooltipProps, keyof ExcludeTooltipProps>
+export type PopoverProps = Props & Omit<TooltipProps, keyof ExcludeTooltipProps>;
 
 const StyledTooltip = styled(Tooltip)`
   :global(.tooltip-content.popover > .inner) {
@@ -92,8 +92,8 @@ const PopoverBase: React.FC<React.PropsWithChildren<PopoverProps>> = ({
         {children}
       </StyledTooltip>
     </PopoverContext.Provider>
-  )
-}
+  );
+};
 
 export const Popover = withSchema(PopoverBase, {
   Item: PopoverItem,

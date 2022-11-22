@@ -27,7 +27,7 @@ const StyledField = styled.div<FieldProps>`
 export const Field: FieldComponent = forwardRef(({ className, ...props }, ref) => {
   const classNames = getClassNames('input', className);
   return (
-    <StyledField ref={ref} className={classNames} as='div' {...props} />
+    <StyledField ref={ref} className={classNames} as="div" {...props} />
   );
 });
 

@@ -13,7 +13,7 @@ export type ShopDetailRelatedItem = ILazyComponent & {
 export type ShopDetailRelatedProps = ILazyComponentProps & {
   id?: string;
   item: ShopDetailRelatedItem;
-}
+};
 
 export const ShopDetailRelated: React.FC<ShopDetailRelatedProps> = ({ id, item }: ShopDetailRelatedProps) => {
   const classNames = getClassNames(item.schema);
@@ -31,7 +31,7 @@ export const ShopDetailRelated: React.FC<ShopDetailRelatedProps> = ({ id, item }
       </Container.Fluid>
     </Section>
   );
-}
+};
 
 export const ShopDetailRelatedExport = {
   'shop-detail-related': dynamic<ShopDetailRelatedProps>(() => import('./shop-detail-related').then(

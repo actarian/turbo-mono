@@ -1,10 +1,10 @@
-import { IEquatable, IOption, ISchema } from "@websolute/core";
+import { IEquatable, IOption, ISchema } from '@websolute/core';
 
 export type IUserLogin = {
   email: string;
   password: string;
   rememberMe: boolean;
-}
+};
 
 export type IUserRegister = {
   firstName: string;
@@ -13,24 +13,24 @@ export type IUserRegister = {
   password: string;
   confirmPassword: string;
   privacy: boolean;
-}
+};
 
 export type IUserForgot = {
   email: string;
-}
+};
 
 export type IUserChangePassword = {
   oldPassword: string;
   newPassword: string;
   confirmNewPassword: string;
-}
+};
 
 export type IUser = ISchema & {
   id: IEquatable;
   firstName: string;
   lastName: string;
   email: string;
-}
+};
 
 export type IAddress = {
   name: string;
@@ -45,13 +45,13 @@ export type IAddress = {
   province?: IOption,
   email: string;
   phoneNumber: string;
-}
+};
 
 export type IAddressOptions = {
   countries: IOption[];
   regions: IOption[];
   provinces: IOption[];
-}
+};
 
 export type IUserAddress = Omit<IAddress, 'name'>;
 export type ICompanyAddress = Omit<IAddress, 'firstName' | 'lastName'>;

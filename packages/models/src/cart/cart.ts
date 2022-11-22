@@ -1,5 +1,5 @@
-import { IEquatable, ISchema } from "@websolute/core";
-import { IMedia } from "../media/media";
+import { IEquatable, ISchema } from '@websolute/core';
+import { IMedia } from '../media/media';
 
 export type ICartItem = ISchema & {
   id: IEquatable;
@@ -10,7 +10,7 @@ export type ICartItem = ISchema & {
   href: string;
   price: number;
   qty: number;
-}
+};
 
 export type ICartAddItem = Omit<ICartItem, 'qty'>;
 

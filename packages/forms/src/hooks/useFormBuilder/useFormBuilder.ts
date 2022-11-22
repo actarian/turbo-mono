@@ -32,7 +32,7 @@ export function useFormBuilder<T, U extends (FormGroup | FormArray)>(
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
-  const [state, setState] = useState<FormState<T>>({ value: collection.value as T, flags: collection.state, errors: mapErrors_(collection.errors) })
+  const [state, setState] = useState<FormState<T>>({ value: collection.value as T, flags: collection.state, errors: mapErrors_(collection.errors) });
 
   useEffect(() => {
     const onChange = (value: T) => {

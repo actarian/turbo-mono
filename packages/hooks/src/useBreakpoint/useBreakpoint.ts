@@ -8,7 +8,7 @@ type Breakpoint = {
   key: BreakpointType;
   min: number;
   max: number;
-}
+};
 
 export function useBreakpoint(): Breakpoint {
   // todo

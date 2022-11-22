@@ -12,7 +12,7 @@ export default function Checkout({ layout, page, data, params }: CheckoutProps) 
 
   const onCheckout = (checkout: ICheckoutPartial) => {
     console.log('Checkout.onCheckout', checkout);
-  }
+  };
 
   // const storage = typeof window !== 'undefined' ? window.localStorage : undefined;
 
@@ -39,12 +39,12 @@ export default function Checkout({ layout, page, data, params }: CheckoutProps) 
         </Page>
       </Layout>
     </CheckoutProvider>
-  )
+  );
 }
 
 export type CheckoutProps = PageProps & {
   data: IAddressOptions;
-}
+};
 
 export async function getStaticProps(context: IStaticContext) {
   const id = parseInt(context.params.id);

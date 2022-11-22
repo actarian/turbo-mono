@@ -4,7 +4,7 @@ import { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: HeroItem,
-}
+};
 
 export type HeroItem = {
   id: number;
@@ -12,7 +12,7 @@ export type HeroItem = {
   title: string;
   abstract: string;
   media: IMedia;
-}
+};
 
 export type HeroProps = UIComponentProps<Props>;
 
@@ -37,5 +37,5 @@ export const Hero: React.FC<HeroProps> = ({ item, ...props }: HeroProps) => {
         </Card.Content>
       </Card>
     </Section>
-  )
-}
+  );
+};

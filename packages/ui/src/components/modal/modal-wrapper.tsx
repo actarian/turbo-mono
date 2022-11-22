@@ -7,7 +7,7 @@ import { isChildElement } from '../utils';
 type Props = {
   className?: string;
   visible?: boolean;
-}
+};
 
 const defaultProps = {
   className: '',
@@ -28,11 +28,13 @@ const StyledWrapper = styled.div`
   transform: translate3d(0px, -30px, 0px);
   transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
   transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-
-  border-radius: var(--border-radius);
-  box-shadow: var(-shadow-lg);
   background-color: var(--color-neutral-100);
   color: var(--color-neutral-900);
+
+  &:not(.wrapper--full) {
+    border-radius: var(--border-radius);
+    box-shadow: var(-shadow-lg);
+  }
 
   &.wrapper-enter {
     opacity: 0;
@@ -84,7 +86,7 @@ export const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps | 
   const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     const isTabDown = event.keyCode === 9;
     if (!visible || !isTabDown) {
-      return
+      return;
     }
     const activeElement = document.activeElement;
     if (event.shiftKey) {
@@ -108,8 +110,8 @@ export const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps | 
         <div tabIndex={0} className="hide-tab" aria-hidden="true" ref={tabEnd} />
       </StyledWrapper>
     </Transition>
-  )
-}
+  );
+};
 
 ModalWrapper.defaultProps = defaultProps;
 ModalWrapper.displayName = 'ModalWrapper';

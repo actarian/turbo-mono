@@ -13,6 +13,6 @@ const StyledEllipsis = styled.span`
 
 const Ellipsis_: React.FC<React.PropsWithChildren<EllipsisProps>> = ({ children }) => {
   return (<StyledEllipsis>{children}</StyledEllipsis>);
-}
+};
 
 export const Ellipsis = React.memo(Ellipsis_);

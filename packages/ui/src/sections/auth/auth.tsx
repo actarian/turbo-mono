@@ -9,14 +9,14 @@ import { AuthRegisterSuccess } from './auth-register-success';
 
 export type AuthProps = {
   onSignedIn?: (user: IUser) => void;
-}
+};
 
 export const Auth: React.FC<AuthProps> = (props: AuthProps) => {
-  const [, , onCloseDrawer] = useDrawer();
+  const [drawer, openDrawer, closeDrawer] = useDrawer();
   const [view, setView] = useState('login');
   const onSignedIn = (user: IUser) => {
     console.log('onSignedIn');
-    onCloseDrawer();
+    closeDrawer();
     if (typeof props.onSignedIn === 'function') {
       props.onSignedIn(user);
     }

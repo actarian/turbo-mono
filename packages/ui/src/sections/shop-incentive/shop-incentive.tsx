@@ -3,7 +3,7 @@ import { Box, Container, Flex, Grid, Section, Text } from '../../components';
 import { UIComponentProps } from '../../components/types';
 
 type Props = {
-}
+};
 
 export type ShopIncentiveProps = UIComponentProps<Props>;
 
@@ -42,5 +42,5 @@ export const ShopIncentive: React.FC<ShopIncentiveProps> = ({ }: ShopIncentivePr
         </Grid.Row>
       </Container>
     </Section>
-  )
-}
+  );
+};

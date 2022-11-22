@@ -16,7 +16,7 @@ type ContainerProps = {
   fixed?: boolean;
   sticky?: boolean;
   scrolled?: boolean;
-}
+};
 
 export type HeaderContainerProps = UIComponentProps<ContainerProps>;
 
@@ -54,7 +54,7 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
 type Props = {
   fixed?: boolean;
   sticky?: boolean;
-}
+};
 
 export type HeaderProps = UIComponentProps<Props>;
 
@@ -67,11 +67,11 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const layout = useLayout();
   const mounted = useMounted();
   const scroll = useScroll();
-  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
-  const [modal, onOpenModal, onCloseModal] = useModal();
+  const [drawer, openDrawer, closeDrawer] = useDrawer();
+  const [modal, openModal, closeModal] = useModal();
 
   const user = useUser((state) => state.user);
-  const setUser = useUser((state) => state.setUser);
+  const { setUser } = useUser((state) => state.actions);
 
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
 
@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     // console.log('onNav', item);
     const href = item?.href || null;
     setNav(href !== nav ? href : null);
-  }
+  };
 
   useEffect(() => {
     const getUser = async () => {
@@ -96,7 +96,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const count = useCart((state) => state.count);
+  const { count } = useCart((state) => state.actions);
   const cartItemsCount = mounted ? count() : 0;
 
   /*
@@ -136,7 +136,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                 </Button>
               </NavLink>
             </Flex>
-            <Flex flex="1" justifyContent="center">
+            <Flex className="print-none" flex="1" justifyContent="center">
               {primaryNavs && <Nav.Row gapSm="2rem" gapLg="3rem" display="none" displayMd="flex">
                 {primaryNavs.map((x, i) => (
                   (['product_index'].includes(x.id.toString()) ?
@@ -150,17 +150,17 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                 ))}
               </Nav.Row>}
             </Flex>
-            <Flex gap="1rem" justifyContentMd="flex-end" minWidthMd="170px">
+            <Flex className="print-none" gap="1rem" justifyContentMd="flex-end" minWidthMd="170px">
               {false && layout.topLevelRoutes.store_index &&
                 <NavLink href={layout.topLevelRoutes.store_index.href} passHref>
-                  <Button as="a" display='none' displaySm='block' title={layout.topLevelRoutes.store_index.title}>
+                  <Button as="a" display="none" displaySm="block" title={layout.topLevelRoutes.store_index.title}>
                     <MapPin width="24px" height="24px" />
                   </Button>
                 </NavLink>
               }
               {false && layout.topLevelRoutes.contact &&
                 <NavLink href={layout.topLevelRoutes.contact.href} passHref>
-                  <Button as="a" display='none' displaySm='block' title={layout.topLevelRoutes.contact.title}>
+                  <Button as="a" display="none" displaySm="block" title={layout.topLevelRoutes.contact.title}>
                     <Phone width="24px" height="24px" />
                   </Button>
                 </NavLink>
@@ -173,18 +173,18 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                 </NavLink>
               }
               {user === null &&
-                <Button display='none' displaySm='block' onClick={() => onOpenDrawer('auth')}>
+                <Button display="none" displaySm="block" onClick={() => openDrawer('auth')}>
                   <User width="24px" height="24px" />
                 </Button>
               }
-              <Button position="relative" onClick={() => onOpenDrawer('cart')}>
+              <Button position="relative" onClick={() => openDrawer('cart')}>
                 <ShoppingCart width="24px" height="24px" />
                 {cartItemsCount > 0 && <Badge position="absolute" top="-0.4em" right="-0.8em">{cartItemsCount}</Badge>}
               </Button>
-              <Button display='none' displayMd='flex' onClick={() => onOpenDrawer('markets-and-languages')}>
+              <Button display="none" displayMd="flex" onClick={() => openDrawer('markets-and-languages')}>
                 <Text marginRight="0.5rem">{layout.locale.toUpperCase()}</Text> <Menu />
               </Button>
-              <Button as="a" displayMd='none' onClick={() => onOpenDrawer('menu')}>
+              <Button as="a" displayMd="none" onClick={() => openDrawer('menu')}>
                 <Menu width="24px" height="24px" />
               </Button>
             </Flex>
@@ -194,7 +194,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
       </HeaderContainer>
 
       {/* menu mobile */}
-      <Drawer visible={drawer == 'menu'} onClose={onCloseDrawer} placement="right">
+      <Drawer visible={drawer == 'menu'} onClose={closeDrawer} placement="right">
         <Drawer.Title>
           <span>&nbsp;</span>
         </Drawer.Title>
@@ -223,7 +223,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         </Drawer.Content>
       </Drawer>
 
-      <Modal width="30rem" visible={modal == 'foreign-market'} onClose={onCloseModal}>
+      <Modal width="30rem" visible={modal == 'foreign-market'} onClose={closeModal}>
         <Modal.Title>
           <Text size="7" fontWeight="700">Foreign Market detected</Text>
         </Modal.Title>
@@ -231,13 +231,13 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         <Modal.Content>
           <p>You seem to be browsing a different market than yours.</p>
         </Modal.Content>
-        <Modal.Button variant="default" passive onClick={onCloseModal}>Proceed</Modal.Button>
+        <Modal.Button variant="default" passive onClick={closeModal}>Proceed</Modal.Button>
         <Modal.Button variant="primary"><span>Change to Italy</span> <ArrowRight /></Modal.Button>
       </Modal>
 
-      <AuthDrawer visible={drawer == 'auth'} onClose={onCloseDrawer} />
-      <CartMini visible={drawer == 'cart'} onClose={onCloseDrawer} />
-      <MarketsAndLanguagesDrawer visible={drawer == 'markets-and-languages'} onClose={onCloseDrawer} />
+      <AuthDrawer visible={drawer == 'auth'} onClose={closeDrawer} />
+      <CartMini visible={drawer == 'cart'} onClose={closeDrawer} />
+      <MarketsAndLanguagesDrawer visible={drawer == 'markets-and-languages'} onClose={closeDrawer} />
     </>
   );
-}
+};

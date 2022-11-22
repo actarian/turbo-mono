@@ -7,7 +7,7 @@ export type ReactiveDomReact = {
   right: number;
   width: number;
   height: number;
-}
+};
 
 const defaultRect: ReactiveDomReact = {
   top: -1000,

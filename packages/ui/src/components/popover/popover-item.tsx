@@ -8,7 +8,7 @@ type Props = {
   title?: boolean;
   disableAutoClose?: boolean;
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
@@ -79,7 +79,7 @@ export const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = 
       </StyledPopoverItem>
       {title && <PopoverItem line title={false} />}
     </>
-  )
-}
+  );
+};
 
 PopoverItem.displayName = 'PopoverItem';

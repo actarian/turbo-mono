@@ -54,7 +54,7 @@ const PaginationContainer = styled.div`
   left: 0;
   bottom: 1.5rem;
   z-index: 1;
-`
+`;
 
 type SwiperPaginationProp = { items: ReactNode[] };
 
@@ -66,14 +66,14 @@ export const SwiperPagination: React.FC<SwiperPaginationProp> = (props: SwiperPa
   };
   const getClassName = (i: number) => getClassNames({ active: index === i });
   return (
-    <PaginationContainer>
-      <Flex.Row justifyContent='center' gap='1rem'>
+    <PaginationContainer className="pagination">
+      <Flex.Row justifyContent="center" gap="1rem">
         {props.items.map((_, i) => (
-          <Button key={i} title={i.toString()} onClick={() => onSetSlide((i + 1))}>
+          <Button className="btn--pagination" key={i} title={i.toString()} onClick={() => onSetSlide((i + 1))}>
             <Bullet className={getClassName(i)} />
           </Button>
         ))}
       </Flex.Row>
     </PaginationContainer>
   );
-}
+};

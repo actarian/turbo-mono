@@ -29,13 +29,13 @@ export default function ReservedAreaOrderIndex({ layout, page, user, orders, par
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 export type ReservedAreaProps = PageProps & {
   user: IUser;
   orders: IOrderDetail[];
-}
+};
 
 export const getServerSideProps = withIronSessionSsr(async function (context) {
   const params = context.params as IContextParams;
@@ -66,7 +66,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
         permanent: false,
         destination: layout.topLevelHrefs.login || '/',
       },
-    }
+    };
   }
   const orders = await getOrders(market, locale);
 

@@ -48,9 +48,9 @@ export const TestFramerCarousel: React.FC<null> = () => {
         const modulo = index % items.length;
         const imageIndex = modulo < 0 ? items.length + modulo : modulo;
         return (
-          <MediaImage {...items[imageIndex].media} alt="Mountain" style={{ width: "100%" }} draggable={false} />
+          <MediaImage {...items[imageIndex].media} alt="Mountain" style={{ width: '100%' }} draggable={false} />
         );
       }}</Carousel>
     </div>
-  )
-}
+  );
+};

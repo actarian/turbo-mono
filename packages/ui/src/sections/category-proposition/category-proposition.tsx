@@ -4,7 +4,7 @@ import { UIComponentProps } from '../../components/types';
 
 type Props = {
   item: CategoryPropositionItem,
-}
+};
 
 export type CategoryPropositionItem = {
   href: string;
@@ -12,7 +12,7 @@ export type CategoryPropositionItem = {
   abstract?: string;
   description?: string;
   media?: IMedia;
-}
+};
 
 export type CategoryPropositionProps = UIComponentProps<Props>;
 
@@ -42,5 +42,5 @@ export const CategoryProposition: React.FC<CategoryPropositionProps> = ({ item }
         </Card>
       </Container>
     </Section>
-  )
-}
+  );
+};

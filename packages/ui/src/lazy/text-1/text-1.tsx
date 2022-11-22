@@ -10,7 +10,7 @@ export type Text1Item = ILazyComponent & {
 
 export type Text1Props = ILazyComponentProps & {
   item: Text1Item;
-}
+};
 
 export const Text1: React.FC<Text1Props> = ({ item }: Text1Props) => {
   // !!! Container.Small
@@ -24,7 +24,7 @@ export const Text1: React.FC<Text1Props> = ({ item }: Text1Props) => {
       </Container>
     </Section>
   );
-}
+};
 
 export const Text1Export = {
   'text-1': dynamic<Text1Props>(() => import('../text-1/text-1').then(

@@ -38,7 +38,7 @@ export default function Error404({ layout, page, params }: PageProps) {
         <Footer />
       </Page>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps(context: IStaticContext) {

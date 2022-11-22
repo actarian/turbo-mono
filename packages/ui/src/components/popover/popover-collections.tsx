@@ -2,20 +2,20 @@ import React, { ReactNode } from 'react';
 
 export const getId = (): string => {
   return Math.random().toString(32).slice(2, 10);
-}
+};
 
 export const capitalize = (str: string | symbol | number | undefined | null): string => {
   const safeStr = String(str).trim();
   return safeStr.charAt(0).toUpperCase() + safeStr.slice(1);
-}
+};
 
 export const hasChild = (children: ReactNode | undefined, child: React.ElementType): boolean => {
   const types = React.Children.map(children, item => {
-    if (!React.isValidElement(item)) return null
+    if (!React.isValidElement(item)) return null;
     return item.type;
   });
   return (types || []).includes(child);
-}
+};
 
 export const pickChild = (children: ReactNode | undefined, targetChild: React.ElementType): [ReactNode | undefined, ReactNode | undefined] => {
   const target: ReactNode[] = [];
@@ -31,7 +31,7 @@ export const pickChild = (children: ReactNode | undefined, targetChild: React.El
   });
   const targetChildren = target.length >= 0 ? target : undefined;
   return [withoutTargetChildren, targetChildren];
-}
+};
 
 export const pickChildByProps = (children: ReactNode | undefined, key: string, value: any): [ReactNode | undefined, ReactNode | undefined] => {
   const target: ReactNode[] = [];
@@ -58,11 +58,11 @@ export const pickChildByProps = (children: ReactNode | undefined, key: string, v
   });
   const targetChildren = target.length >= 0 ? target : undefined;
   return [withoutPropChildren, targetChildren];
-}
+};
 
 export const pickChildrenFirst = (children: ReactNode | undefined): ReactNode | undefined => {
   return React.Children.toArray(children)[0];
-}
+};
 
 export const setChildrenProps = (children: ReactNode | undefined, props: Record<string, unknown>, targetComponents: Array<React.ElementType> = []): ReactNode | undefined => {
   if (React.Children.count(children) === 0) {
@@ -83,7 +83,7 @@ export const setChildrenProps = (children: ReactNode | undefined, props: Record<
     }
     return item;
   });
-}
+};
 
 export const setChildrenIndex = (children: ReactNode | undefined, targetComponents: Array<React.ElementType> = []): ReactNode | undefined => {
   if (React.Children.count(children) === 0) {
@@ -107,7 +107,7 @@ export const setChildrenIndex = (children: ReactNode | undefined, targetComponen
     index = index - 1;
     return item;
   });
-}
+};
 
 export const getReactNode = (node?: React.ReactNode | (() => React.ReactNode)): React.ReactNode => {
   if (!node) {
@@ -117,7 +117,7 @@ export const getReactNode = (node?: React.ReactNode | (() => React.ReactNode)): 
     return node;
   }
   return (node as () => React.ReactNode)();
-}
+};
 
 export const isChildElement = (parent: Element | null | undefined, child: Element | null | undefined): boolean => {
   if (!parent || !child) {
@@ -131,19 +131,19 @@ export const isChildElement = (parent: Element | null | undefined, child: Elemen
     node = node.parentNode;
   }
   return false;
-}
+};
 
 export const isBrowser = (): boolean => {
   return Boolean(typeof window !== 'undefined' && window.document && window.document.createElement);
-}
+};
 
 export const isMac = (): boolean => {
   return isBrowser() && navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-}
+};
 
 export const isCSSNumberValue = (value?: string | number): boolean => {
   return value !== undefined && !Number.isNaN(+value);
-}
+};
 
 export const isGeistElement = (element?: HTMLElement): boolean => {
   if (!element) {
@@ -154,4 +154,4 @@ export const isGeistElement = (element?: HTMLElement): boolean => {
   }
   element.attributes.getNamedItem('data-geist');
   return !!element.attributes.getNamedItem('data-geist');
-}
+};

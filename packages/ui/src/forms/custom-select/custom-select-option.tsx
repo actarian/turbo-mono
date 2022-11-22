@@ -11,7 +11,7 @@ type Props = {
   className?: string;
   preventAllEvents?: boolean;
   value: string;
-}
+};
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
@@ -66,7 +66,7 @@ const StyledCustomSelectOption = styled.div`
     text-transform: uppercase;
     cursor: default;
   }
-`
+`;
 
 export const CustomSelectOption: React.FC<React.PropsWithChildren<CustomSelectOptionProps>> = ({
   disabled = false,
@@ -120,7 +120,7 @@ export const CustomSelectOption: React.FC<React.PropsWithChildren<CustomSelectOp
     <StyledCustomSelectOption className={classNames} onClick={clickHandler} {...props}>
       <Ellipsis>{children}</Ellipsis>
     </StyledCustomSelectOption>
-  )
-}
+  );
+};
 
 CustomSelectOption.displayName = 'CustomSelectOption';

@@ -6,7 +6,7 @@ import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: ShopItemsPropositionItem
-}
+};
 
 export type ShopItemsPropositionItem = {
   id: number;
@@ -15,7 +15,7 @@ export type ShopItemsPropositionItem = {
   abstract: string;
   price: number;
   media: IMedia;
-}
+};
 
 export type ShopItemsPropositionCardProps = UIStyledComponentProps<Props, 'a'>;
 
@@ -34,5 +34,5 @@ export const ShopItemsPropositionCard: React.FC<ShopItemsPropositionCardProps> =
         </Card.Content>
       </Card>
     </Link>
-  )
-}
+  );
+};

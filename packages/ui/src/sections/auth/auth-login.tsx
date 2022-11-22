@@ -12,7 +12,7 @@ export type AuthLoginProps = {
   onSignedIn?: (user: IUser) => void;
   onNavToForgot?: () => void;
   onNavToRegister?: () => void;
-}
+};
 
 export const AuthLogin: React.FC<AuthLoginProps> = ({ onSignedIn, onNavToForgot, onNavToRegister }: AuthLoginProps) => {
   const label = useLabel();
@@ -35,13 +35,13 @@ export const AuthLogin: React.FC<AuthLoginProps> = ({ onSignedIn, onNavToForgot,
       email: 'jhon.appleseed@gmail.com',
       password: '123456',
     });
-  }
+  };
 
   const onReset = () => {
     reset();
-  }
+  };
 
-  const setUser = useUser((state) => state.setUser);
+  const { setUser } = useUser((state) => state.actions);
 
   const [error, setError] = useState<Error>();
 
@@ -68,19 +68,19 @@ export const AuthLogin: React.FC<AuthLoginProps> = ({ onSignedIn, onNavToForgot,
       console.log('AuthLogin.invalid');
       setTouched();
     }
-  }
+  };
 
   const onForgot = () => {
     if (typeof onNavToForgot === 'function') {
       onNavToForgot();
     }
-  }
+  };
 
   const onRegister = () => {
     if (typeof onNavToRegister === 'function') {
       onNavToRegister();
     }
-  }
+  };
 
   return (
     <Flex.Col justifyContent="space-between">

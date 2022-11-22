@@ -10,7 +10,7 @@ export function PatternValidator(pattern: string | RegExp): FormValidator {
     }
     const regex = patternToRegEx(pattern);
     return regex.test(value) ? null : { pattern: { requiredPattern: regex.toString(), actualValue: value } };
-  }
+  };
 }
 
 function patternToRegEx(pattern: string | RegExp) {

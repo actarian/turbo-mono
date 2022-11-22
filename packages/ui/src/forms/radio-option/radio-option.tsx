@@ -10,7 +10,7 @@ import { RadioOptionGroup } from './radio-option-group';
 type Props = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   size?: SizeVariant;
   children?: ReactNode;
-}
+};
 
 export type RadioOptionProps = UIStyledComponentProps<Props, 'input'>;
 
@@ -50,7 +50,7 @@ const StyledRadioOptionInput = styled.div`
   &:disabled {
     cursor: not-allowed;
   }
-`
+`;
 
 const StyledRadioOptionButton = styled.div<RadioOptionProps>`
   ${CssDefault}
@@ -90,7 +90,7 @@ const StyledRadioOptionButton = styled.div<RadioOptionProps>`
 
   ${props => (css`font-size: var(--button-size-${props.size || 'md'});`)}
   ${props => getCssResponsive(props)}
-`
+`;
 
 const StyledRadioOption = styled.div<RadioOptionProps>`
   position: relative;
@@ -104,7 +104,7 @@ const StyledRadioOption = styled.div<RadioOptionProps>`
   }
   `)}
   ${props => getCssResponsive(props)}
-`
+`;
 
 const RadioOptionBase: RadioOptionComponent = forwardRef(({
   as = 'input',
@@ -115,7 +115,7 @@ const RadioOptionBase: RadioOptionComponent = forwardRef(({
   const classNames = getClassNames('radio-option', className);
   return (
     <StyledRadioOption size={props.size} className={classNames}>
-      <StyledRadioOptionInput ref={ref} as={as} type='radio' {...props} />
+      <StyledRadioOptionInput ref={ref} as={as} type="radio" {...props} />
       <StyledRadioOptionButton as="button" size={props.size}>
         <span>{children}</span>
       </StyledRadioOptionButton>

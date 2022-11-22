@@ -9,7 +9,7 @@ type FormTesterProps = {
   form: FormState<any>;
   onTest: () => void;
   onReset: () => void;
-}
+};
 
 export function FormTester(props: FormTesterProps) {
   const label = useLabel();

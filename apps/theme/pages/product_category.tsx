@@ -40,8 +40,8 @@ const ProductCategory = ({ items = [], featureTypes = [] }) => {
         </Page>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 /*
 import { PageProps } from '@websolute/models';
@@ -54,7 +54,7 @@ export type ProductsCategoryProps = PageProps & {
 export type ProductsCategoryProps = {
   items: ProductSearchItem[];
   featureTypes: IFeatureType[];
-}
+};
 
 export async function getStaticProps(): Promise<{ props: ProductsCategoryProps }> {
   const props = {

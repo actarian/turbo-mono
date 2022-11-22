@@ -8,7 +8,7 @@ type Props = {
   icon?: boolean;
   underline?: boolean;
   className?: string;
-}
+};
 
 type NativeAttrs = Omit<React.AnchorHTMLAttributes<any>, keyof Props>;
 export type LinkProps = Props & NativeAttrs;
@@ -56,8 +56,8 @@ export const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<
       {children}
       {icon && <LinkIcon />}
     </StyledLink>
-  )
+  );
 },
-)
+);
 
 Link.displayName = 'Link';

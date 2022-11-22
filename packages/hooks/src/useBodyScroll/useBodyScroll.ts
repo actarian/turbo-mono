@@ -55,7 +55,7 @@ export function useBodyScroll(elementRef?: RefObject<HTMLElement> | null, option
       element.style.overflow = store.overflow;
       element.style.paddingRight = store.paddingRight;
       elementStack.delete(element);
-    }
+    };
 
     const timer = window.setTimeout(() => {
       reset(elementRef!.current!);

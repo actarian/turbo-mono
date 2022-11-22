@@ -4,7 +4,7 @@ import { useGoogleMapContext } from './google-map-context';
 export type GoogleMapMarkerProps = google.maps.MarkerOptions & {
   map?: google.maps.Map,
   onClick?: (event: MouseEvent<HTMLElement>) => void;
-}
+};
 
 export const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
   onClick,
@@ -25,7 +25,7 @@ export const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
       };
       instance = new google.maps.Marker();
       instance.setMap(map);
-      instance.addListener('click', onClick_)
+      instance.addListener('click', onClick_);
       setMarker(instance);
     } else if (marker && map) {
       marker.setMap(map);
@@ -33,7 +33,7 @@ export const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
     return () => {
       if (instance) {
         instance.setMap(null);
-        instance.unbindAll()
+        instance.unbindAll();
       }
     };
   }, [marker, map, onClick]);

@@ -7,7 +7,7 @@ import { UIStyledComponentProps } from '../../components/types';
 
 type Props = {
   item: BlogItem
-}
+};
 
 export type BlogItem = {
   id: number;
@@ -20,7 +20,7 @@ export type BlogItem = {
     fullName: string;
     media: IMedia;
   };
-}
+};
 
 export type BlogCardProps = UIStyledComponentProps<Props, 'a'>;
 
@@ -54,5 +54,5 @@ export const BlogCard: React.FC<BlogCardProps> = ({ item, ...props }: BlogCardPr
         </Card.Footer>
       </Card>
     </Link>
-  )
-}
+  );
+};

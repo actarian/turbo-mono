@@ -7,7 +7,7 @@ import { OrderSummary } from '../order/order-summary';
 
 export type CheckoutSuccessProps = {
   order: IOrder;
-}
+};
 
 export const CheckoutSuccess: React.FC<CheckoutSuccessProps> = ({ order }: CheckoutSuccessProps) => {
   const label = useLabel();
@@ -20,11 +20,11 @@ export const CheckoutSuccess: React.FC<CheckoutSuccessProps> = ({ order }: Check
         <Container.Fluid>
           <Flex.Row justifyContent="space-between">
             <Text size="8" fontWeight="700">Order #{order.id} <Badge>{label(`order.status.${order.status}`)}</Badge></Text>
-            <Button variant="primary">Print</Button>
+            <Button className="print-none" variant="primary" onClick={() => window.print()}>Print</Button>
           </Flex.Row>
         </Container.Fluid>
       </Section>
-      <Section>
+      <Section className="print-none">
         <Container>
           <Flex.Col gap="1rem" alignItems="center" textAlign="center">
             <Text size="4" fontWeight="700">Thank you for your order, {order.user ? order.user.firstName : order.shippingAddress.firstName}</Text>
@@ -33,7 +33,7 @@ export const CheckoutSuccess: React.FC<CheckoutSuccessProps> = ({ order }: Check
         </Container>
       </Section>
       {!order.user && (
-        <OrderRegister data={order.shippingAddress} />
+        <OrderRegister className="print-none" data={order.shippingAddress} />
       )}
       <OrderSummary order={order} />
       <Section>

@@ -7,7 +7,7 @@ import { Input } from '../../forms/input/input';
 
 type Props = ComponentPropsWithRef<'input'> & {
   children?: ReactNode;
-}
+};
 
 export type InputGroupProps = UIStyledComponentProps<Props, 'input'>;
 

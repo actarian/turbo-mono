@@ -9,11 +9,11 @@ export type ICategory = IEntity & {
   pageSchema?: string;
   pageId?: IEquatable;
   categoryId?: IEquatable;
-}
+};
 
 export type ICategoryItem = ICategory & {
   items: ICategory[];
-}
+};
 
 export type ICategorized = {
   id: IEquatable;
@@ -22,4 +22,4 @@ export type ICategorized = {
   title?: ILocalizedString | string;
   media?: IMedia;
   categoryId?: IEquatable;
-}
+};

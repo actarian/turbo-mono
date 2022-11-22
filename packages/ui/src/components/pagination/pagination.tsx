@@ -17,7 +17,7 @@ type Props = {
   limit?: number;
   onChange?: (val: number) => void;
   className?: string;
-}
+};
 
 export type PaginationProps = UIStyledComponentProps<Props>;
 
@@ -68,7 +68,7 @@ const PaginationBase: React.FC<React.PropsWithChildren<PaginationProps>> = ({
     if (type === 'next' && pageRef.current < count) {
       setPage(last => last + 1);
     }
-  }
+  };
   const values = useMemo<PaginationConfig>(() => {
     return {
       isFirst: page <= 1,
@@ -98,8 +98,8 @@ const PaginationBase: React.FC<React.PropsWithChildren<PaginationProps>> = ({
         {nextItem}
       </StyledPagination>
     </PaginationContext.Provider>
-  )
-}
+  );
+};
 
 export const Pagination = withSchema(PaginationBase, {
   Previous: PaginationPrevious,

@@ -4,4 +4,4 @@ export type ILabel = IEntity & {
   id: IEquatable;
   // schema?: string;
   text?: string | ILocalizedString;
-}
+};

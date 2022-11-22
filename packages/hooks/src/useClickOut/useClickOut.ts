@@ -17,7 +17,7 @@ export function useClickOut(ref: MutableRefObject<HTMLElement | null>, handler: 
         return;
       }
       handlerRef.current(event);
-    }
+    };
     document.addEventListener('click', callback);
     return () => document.removeEventListener('click', callback);
   }, [ref]);

@@ -7,12 +7,11 @@ import { Button, Divider, Flex, Text } from '../../components';
 import { FieldCheckbox, FieldPassword, FieldText } from '../../fields';
 import { Form, FormError, FormTester } from '../../forms';
 
-
 export type AuthRegisterProps = {
   children?: ReactNode;
   onSignedUp?: () => void;
   onNavToLogin?: () => void;
-}
+};
 
 export const AuthRegister: React.FC<AuthRegisterProps> = ({ onSignedUp, onNavToLogin }: AuthRegisterProps) => {
   const label = useLabel();
@@ -46,11 +45,11 @@ export const AuthRegister: React.FC<AuthRegisterProps> = ({ onSignedUp, onNavToL
       confirmPassword: '123456',
       privacy: true,
     });
-  }
+  };
 
   const onReset = () => {
     reset();
-  }
+  };
 
   const [error, setError] = useState<Error>();
 
@@ -72,13 +71,13 @@ export const AuthRegister: React.FC<AuthRegisterProps> = ({ onSignedUp, onNavToL
       console.log('AuthRegister.invalid');
       setTouched();
     }
-  }
+  };
 
   const onLogin = () => {
     if (typeof onNavToLogin === 'function') {
       onNavToLogin();
     }
-  }
+  };
 
   return (
     <Flex.Col justifyContent="space-between">

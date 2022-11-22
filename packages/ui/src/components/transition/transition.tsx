@@ -7,7 +7,7 @@ type Props = {
   clearTime?: number;
   className?: string;
   name?: string;
-}
+};
 
 const defaultProps = {
   visible: false,
@@ -49,7 +49,7 @@ export const Transition: React.FC<React.PropsWithChildren<TransitionProps | any>
     return () => {
       clearTimeout(timer);
       clearTimeout(clearClassesTimer);
-    }
+    };
   }, [visible, renderable, enterTime, leaveTime, name, clearTime]);
 
   if (!React.isValidElement(children) || !renderable) {
@@ -57,7 +57,7 @@ export const Transition: React.FC<React.PropsWithChildren<TransitionProps | any>
   }
 
   return React.cloneElement(children as React.ReactElement<{ className?: string }>, { ...props, className: `${children.props.className} ${className} ${classes}` });
-}
+};
 
 Transition.defaultProps = defaultProps;
 Transition.displayName = 'Transition';

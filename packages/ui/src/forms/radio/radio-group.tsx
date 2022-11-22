@@ -8,7 +8,7 @@ type Props = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   initialValue?: string;
   size?: SizeVariant;
   children?: ReactNode;
-}
+};
 
 export type RadioGroupProps = UIStyledComponentProps<Props, 'input'>;
 
@@ -26,7 +26,7 @@ export const RadioGroup: RadioGroupComponent = forwardRef(({
 
   useEffect(() => {
     setValue(initialValue || null);
-  }, [initialValue])
+  }, [initialValue]);
 
   const onChange_ = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -70,7 +70,7 @@ function recursiveMap(children: React.ReactNode, fn: (child: ReactElement) => Re
     if ((child as ReactElement).props.children) {
       const props = {
         children: recursiveMap((child as ReactElement).props.children, fn)
-      }
+      };
       child = React.cloneElement(child, props);
     }
     return fn(child);

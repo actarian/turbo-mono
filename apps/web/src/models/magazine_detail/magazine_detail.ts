@@ -7,4 +7,4 @@ export type IMagazineDetail = IEntity & {
   description?: string;
   categoryId: IEquatable;
   href?: string;
-}
+};

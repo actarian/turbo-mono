@@ -6,7 +6,7 @@ import { UIComponentProps } from '../../components/types';
 import { ITheme } from '../../styles/theme';
 
 type Props = {
-}
+};
 
 export type TypographyProps = UIComponentProps<Props>;
 
@@ -14,7 +14,7 @@ type TypographyTextProps = ComponentPropsWithRef<'div'> & {
   type: string;
   size: string;
   s: number;
-}
+};
 
 const TypographyText: React.FC<TypographyTextProps> = React.forwardRef<HTMLDivElement, TypographyTextProps>(({ type, size, s }: TypographyTextProps, ref?: React.Ref<HTMLDivElement>) => {
   switch (type) {
@@ -62,4 +62,4 @@ export const Typography = (props: TypographyProps) => {
       ))}
     </Section>
   );
-}
+};

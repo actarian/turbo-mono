@@ -23,7 +23,7 @@ const StyledForm = styled.div<FormProps>`
 export const Form: FormComponent = forwardRef(({ className, ...props }, ref) => {
   const classNames = getClassNames('form', className, props.state?.flags);
   return (
-    <StyledForm ref={ref} className={classNames} as='form' {...props} />
+    <StyledForm ref={ref} className={classNames} as="form" {...props} />
   );
 });
 

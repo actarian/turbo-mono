@@ -22,7 +22,7 @@ export function useDebounceCallback<T extends (...args: any[]) => any>(callback:
     timeout.current = setTimeout(later, msec);
   }, [callback, msec]);
 
-};
+}
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /*

@@ -10,7 +10,7 @@ export type IGeolocationPositionError = {
   readonly PERMISSION_DENIED: number;
   readonly POSITION_UNAVAILABLE: number;
   readonly TIMEOUT: number;
-}
+};
 
 export type GeoLocationSensorState = {
   loading: boolean;
@@ -23,7 +23,7 @@ export type GeoLocationSensorState = {
   speed: number | null;
   timestamp: number | null;
   error?: Error | IGeolocationPositionError;
-}
+};
 
 export function getCurrentPosition(options?: PositionOptions): Promise<GeoLocationSensorState> {
   return new Promise<GeoLocationSensorState>((resolve, reject) => {
@@ -55,7 +55,7 @@ export function getCurrentPosition(options?: PositionOptions): Promise<GeoLocati
         longitude: null,
         speed: null,
         timestamp: Date.now(),
-      }
+      };
       reject(sensorError);
     }, options);
   });

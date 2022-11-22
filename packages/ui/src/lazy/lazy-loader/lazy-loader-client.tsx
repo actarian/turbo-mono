@@ -2,14 +2,16 @@ import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
 import { ILazyComponent, ILazyComponentProps } from './lazy-loader';
 
-const lazyLoadComponent = (component: ILazyComponent) => {
+const lazyLoadComponent = (component: ILazyComponent): React.ReactElement => {
   const Component = dynamic<ILazyComponentProps>(() =>
     import(`../${component.type}/${component.type}`).catch(() =>
-      import(`@websolute/ui/src/lazy/not-found/not-found`)
+      import('@websolute/ui/src/lazy/not-found/not-found')
     )
   );
-  return <Component item={component} />
-}
+  return (
+    <Component item={component} />
+  );
+};
 
 /*
 const lazyLoadComponent__ = (component: string) =>
@@ -26,8 +28,10 @@ export function LazyLoaderClient({ components }: { components: ILazyComponent[] 
   useEffect(() => {
     async function loadViews() {
       const componentPromises = components.map(async (component, i: number) => {
-        const View = await lazyLoadComponent(component);
-        return <View key={i} />;
+        const View: any = await lazyLoadComponent(component);
+        return (
+          <View key={i} />
+        );
       });
       Promise.all(componentPromises).then(views => setViews(views));
     }
@@ -35,7 +39,7 @@ export function LazyLoaderClient({ components }: { components: ILazyComponent[] 
   }, [components]);
 
   return (
-    <React.Suspense fallback='Loading views...'>
+    <React.Suspense fallback="Loading views...">
       {views}
     </React.Suspense>
   );

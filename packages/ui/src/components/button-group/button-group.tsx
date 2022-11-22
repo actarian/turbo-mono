@@ -28,7 +28,7 @@ const variants: Variants = {
 type Props = {
   type?: Variant;
   vertical?: boolean;
-}
+};
 
 export type ButtonGroupProps = UIStyledComponentProps<Props>;
 

@@ -9,7 +9,7 @@ import { RadioIcon } from './radio-icon';
 
 type Props = Omit<ComponentPropsWithRef<'input'>, 'size'> & {
   size?: SizeVariant;
-}
+};
 
 export type RadioProps = UIStyledComponentProps<Props, 'input'>;
 
@@ -26,7 +26,7 @@ const StyledRadioInput = styled.div`
   &:disabled {
     cursor: not-allowed;
   }
-`
+`;
 
 const StyledRadioIcon = styled.div`
   border-radius: 50%;
@@ -48,19 +48,19 @@ const StyledRadioIcon = styled.div`
   input:focus ~ & {
     outline-color: var(--color-primary-200);
   }
-`
+`;
 
 const StyledRadio = styled.div`
   position: relative;
   ${props => getCssResponsive(props)}
-`
+`;
 
 const RadioBase: RadioComponent = forwardRef(({ as = 'input', className, ...props }, ref) => {
   const classNames = getClassNames('radio', className);
   return (
     <StyledRadio className={classNames}>
-      <StyledRadioInput ref={ref} as={as} type='radio' {...props} />
-      <StyledRadioIcon as={RadioIcon} aria-hidden='true' />
+      <StyledRadioInput ref={ref} as={as} type="radio" {...props} />
+      <StyledRadioIcon as={RadioIcon} aria-hidden="true" />
     </StyledRadio>
   );
 });

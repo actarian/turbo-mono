@@ -21,7 +21,7 @@ export function ProductsSearchRecap({ filters, onChange }: { filters: Filter<Pro
       // console.log('onRemove', filter.id, option.id, values);
       onChange(filter, values);
     }
-  }
+  };
 
   return (
     <Box padding="1rem 0" borderBottom="2px solid var(--color-neutral-200)">
@@ -51,5 +51,5 @@ export function ProductsSearchRecap({ filters, onChange }: { filters: Filter<Pro
         </Flex.Row>
       </Container>
     </Box>
-  )
+  );
 }

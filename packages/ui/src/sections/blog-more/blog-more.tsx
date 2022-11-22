@@ -5,7 +5,7 @@ import { BlogCard, BlogItem } from './blog-card';
 
 type Props = {
   items: BlogItem[],
-}
+};
 
 export type BlogMoreProps = UIComponentProps<Props>;
 
@@ -14,7 +14,7 @@ export const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
     <Section padding="3rem 0">
       <Container>
         <Text size="2" fontWeight="700" marginBottom="3rem">More Stories</Text>
-        <Grid.Row rowGap='3rem'>
+        <Grid.Row rowGap="3rem">
           {items.map((item, i) => (
             <Grid sm={6} key={i}>
               <BlogCard item={item}></BlogCard>
@@ -22,7 +22,7 @@ export const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
           ))}
         </Grid.Row>
         {false &&
-          <Grid.Row rowGap='3rem'>
+          <Grid.Row rowGap="3rem">
             <Grid sm={6}>
               <Card>
                 <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} marginBottom="1rem">
@@ -75,5 +75,5 @@ export const BlogMore: React.FC<BlogMoreProps> = ({ items }: BlogMoreProps) => {
         }
       </Container>
     </Section>
-  )
-}
+  );
+};

@@ -39,4 +39,4 @@ export const storeStrategy: StoreStrategy = getStoreStrategy();
 
 export type IStore = {
   [key: string]: IQuerable<IEntity>;
-}
+};

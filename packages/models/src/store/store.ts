@@ -23,4 +23,4 @@ export type IModelStore = {
   region: IQuerable<INamedEntity>;
   route: IQuerable<IRoute>;
   [key: string]: IQuerable<IEntity>;
-}
+};

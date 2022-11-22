@@ -24,4 +24,4 @@ export type ILayout = {
     [key: string]: string;
   };
   */
-}
+};

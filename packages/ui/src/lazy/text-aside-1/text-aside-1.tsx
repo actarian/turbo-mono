@@ -14,7 +14,7 @@ export type TextAside1Item = ILazyComponent & {
 
 export type TextAside1Props = ILazyComponentProps & {
   item: TextAside1Item;
-}
+};
 
 export const TextAside1: React.FC<TextAside1Props> = ({ item }: TextAside1Props) => {
   const classNames = getClassNames(item.schema);
@@ -43,7 +43,7 @@ export const TextAside1: React.FC<TextAside1Props> = ({ item }: TextAside1Props)
       </Container>
     </Section>
   );
-}
+};
 
 export const TextAside1Export = {
   'text-aside-1': dynamic<TextAside1Props>(() => import('../text-aside-1/text-aside-1').then(

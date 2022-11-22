@@ -6,7 +6,7 @@ import { CheckoutBasketItem } from './checkout-basket-item';
 
 export type CheckoutBasketProps = {
   onBasket?: (items: ICheckoutItem[]) => void;
-}
+};
 
 export const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: CheckoutBasketProps) => {
 
@@ -21,7 +21,7 @@ export const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: Chec
   const cartItems = useCart((state) => state.items);
 
   const checkout = useCheckout((state) => state.checkout);
-  const setCheckout = useCheckout((state) => state.setCheckout);
+  const { setCheckout } = useCheckout((state) => state.actions);
 
   const [items = []] = useApiPost<ICheckoutItem[]>('/checkout/items', { ...checkout, items: cartItems });
 
@@ -46,7 +46,7 @@ export const CheckoutBasket: React.FC<CheckoutBasketProps> = ({ onBasket }: Chec
     } catch (error) {
       console.error('CheckoutBasket.onBasket_.error', error);
     }
-  }
+  };
 
   return (
     <>
