@@ -1,7 +1,11 @@
 import { CartProvider, LabelProvider, LayoutProvider, PageProvider } from '@websolute/hooks';
 import { ILayout, IPage, IRouteParams } from '@websolute/models';
+import { registerStorePages } from '@websolute/store';
 import { Breakpoint, GlobalStyle, theme } from '@websolute/ui';
+import { PAGES } from 'src/config';
 import { ThemeProvider } from 'styled-components';
+
+registerStorePages(PAGES);
 
 export default function Application({ Component, pageProps }: ApplicationProps) {
   // const Application: NextPage<AppProps<{ [key: string]: any }>> = ({ Component, pageProps }) => {

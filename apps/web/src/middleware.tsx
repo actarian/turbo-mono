@@ -1,11 +1,12 @@
 
 import { routeInterceptor } from '@websolute/models';
-import { isApiRequest, isStaticRequest } from '@websolute/store';
-import { isNextRequest } from '@websolute/store/src/middleware/middleware.service';
+import { isApiRequest, isNextRequest, isStaticRequest, registerStorePages } from '@websolute/store';
 import { NextFetchEvent, NextRequest } from 'next/server';
 import { PAGES } from 'src/config';
 
 export async function middleware(request: NextRequest, next: NextFetchEvent) {
+
+  registerStorePages(PAGES);
 
   /*
    * Skipping static requests

@@ -11,7 +11,7 @@ export async function getCategories(params: FindParams = {}): Promise<ICategory[
 
 export async function getCategoryTree(item: ICategorized, params: FindParams = {}): Promise<ICategory[]> {
   const categories: ICategory[] = await getCategories(params);
-  const store = await getStore();
+  const store = await getStore<IModelStore>();
   const pages = await store.page.findMany(params);
   return resolveCategoryTree(item, pages, categories);
 }
