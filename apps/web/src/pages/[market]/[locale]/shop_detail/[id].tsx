@@ -99,7 +99,13 @@ export async function getStaticProps(context: IStaticContext) {
   const category = await getPageCategory('shop_category', page, market, locale);
 
   if (page) {
-    const related = await getShopDetails({ where: { categoryId: page.categoryId }, market, locale });
+    const related = await getShopDetails({
+      where: {
+        categoryId: {
+          equals: page.categoryId,
+        },
+      }, market, locale
+    });
     page.related = {
       title: 'You may also like',
       schema: 'related',

@@ -1,18 +1,24 @@
-import { awaitAll, FindParams, IEquatable } from '@websolute/core';
+import { awaitAll, IEquatable, QueryParams } from '@websolute/core';
 import { decorateHref, IModelStore } from '@websolute/models';
 import { getStore } from '@websolute/store';
 import { IProductDetail } from './product_detail';
 
-export async function getProductDetails(params: FindParams = {}): Promise<IProductDetail[]> {
+export async function getProductDetails(params: QueryParams = {}): Promise<IProductDetail[]> {
   const store = await getStore<IModelStore>();
   const items = await store.product_detail.findMany(params);
   // console.log('items ->', items.length);
   return await awaitAll(items, async (p) => await decorateHref(p, params.market, params.locale));
 }
 
-export async function getProductDetail(id: IEquatable, params: FindParams = {}): Promise<IProductDetail | undefined> {
+export async function getProductDetail(id: IEquatable, params: QueryParams = {}): Promise<IProductDetail | undefined> {
   const store = await getStore<IModelStore>();
-  const item = await store.product_detail.findOne({ where: { id }, market: params.market, locale: params.locale });
+  const item = await store.product_detail.findOne({
+    where: {
+      id: {
+        equals: id,
+      }
+    }, market: params.market, locale: params.locale
+  });
   // console.log('item ->', item);
   return await decorateHref(item, params.market, params.locale);
 }

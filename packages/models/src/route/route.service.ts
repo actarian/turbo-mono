@@ -1,11 +1,11 @@
-import { FindParams, isLocalizedString, localizedToString } from '@websolute/core';
+import { isLocalizedString, localizedToString, QueryParams } from '@websolute/core';
 import { getStore } from '@websolute/store';
 import { ICategory } from '../category/category';
 import { IModelStore } from '../store/store';
 import { IRoute, IRouteLink } from './route';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 
-export async function getRoutes(params: FindParams = {}): Promise<IRoute[]> {
+export async function getRoutes(params: QueryParams = {}): Promise<IRoute[]> {
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany(params);
   return routes;
@@ -13,7 +13,13 @@ export async function getRoutes(params: FindParams = {}): Promise<IRoute[]> {
 
 export async function getRoute(id: string): Promise<IRoute | undefined> {
   const store = await getStore<IModelStore>();
-  const route = await store.route.findOne(id);
+  const route = await store.route.findOne({
+    where: {
+      id: {
+        equals: id,
+      }
+    }
+  });
   // console.log('getRoute', id, '->', route);
   return route;
 }
@@ -22,7 +28,15 @@ export async function getRoutesForSchemas(schemas: string[], market?: string, lo
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany({
     where: {
-      pageSchema: schemas, marketId: market, localeId: locale
+      pageSchema: {
+        in: schemas,
+      },
+      marketId: {
+        equals: market,
+      },
+      localeId: {
+        equals: locale,
+      },
     }, market, locale
   });
   const pageSchemas: {
@@ -38,7 +52,15 @@ export async function getRoutesForTemplates(templates: string[], market?: string
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany({
     where: {
-      pageTemplate: templates, marketId: market, localeId: locale
+      pageTemplate: {
+        in: templates,
+      },
+      marketId: {
+        equals: market,
+      },
+      localeId: {
+        equals: locale,
+      },
     }, market, locale
   });
   const pageTemplates: {
@@ -54,18 +76,48 @@ export async function getRoutesForTemplates(templates: string[], market?: string
 
 export async function getStaticPathsForSchema(schema: string): Promise<StaticPath[]> {
   const store = await getStore<IModelStore>();
-  const routes = await store.route.findMany({ where: { pageSchema: schema } });
+  const routes = await store.route.findMany({
+    where: {
+      pageSchema: {
+        equals: schema
+      }
+    }
+  });
   return routes.map((x: any) => ({ params: { id: x.pageId.toString(), market: x.marketId, locale: x.localeId } }));
 }
 
 export async function decorateHref(item: any, market: string = 'ww', locale: string = 'en'): Promise<any> {
-  const routes = await getRoutes({ where: { pageSchema: item.schema, pageId: item.id, marketId: market, localeId: locale } });
+  const routes = await getRoutes({
+    where: {
+      pageSchema: {
+        equals: item.schema
+      },
+      pageId: {
+        equals: item.id
+      },
+      marketId: {
+        equals: market
+      },
+      localeId: {
+        equals: locale
+      },
+    }
+  });
   const href = routes.length ? routes[0].id : null;
   return { ...item, href };
 }
 
 export async function getBreadcrumbFromCategoryTree(categoryTree: ICategory[], market: string = 'ww', locale: string = 'en'): Promise<IRouteLink[]> {
-  const routes: IRoute[] = await getRoutes({ where: { marketId: market, localeId: locale } });
+  const routes: IRoute[] = await getRoutes({
+    where: {
+      marketId: {
+        equals: market
+      },
+      localeId: {
+        equals: locale
+      },
+    }
+  });
   const tree: IRouteLink[] = categoryTree.map(category => {
     const route = category.pageSchema && category.pageId ? routes.find(r =>
       r.pageSchema === category.pageSchema &&

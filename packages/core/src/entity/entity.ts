@@ -27,8 +27,8 @@ export type ITitledEntity = IEntity & {
 };
 
 export type IQuerable<T extends IEntity> = {
-  findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | undefined>;
-  findMany(params?: FindParams): Promise<T[]>;
+  findOne(params?: QueryParams): Promise<T | undefined>;
+  findMany(params?: QueryParams): Promise<T[]>;
   create(payload: T): Promise<T>;
   update(payload: T): Promise<T>;
   delete(id: IEquatable): Promise<T | undefined>;

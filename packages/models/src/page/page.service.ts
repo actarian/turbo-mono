@@ -12,10 +12,28 @@ import { IPage } from './page';
 
 export async function getPage<T extends IPage>(schema: string, id: IEquatable, market?: string, locale?: string): Promise<T | undefined> {
   const store = await getStore<IModelStore>();
-  const page = await store.page.findOne({ where: { schema, id }, market, locale }) as T;
+  const page = await store.page.findOne({
+    where: {
+      id: {
+        equals: id,
+      },
+      schema: {
+        equals: schema,
+      }
+    }, market, locale
+  }) as T;
   // console.log(page, market, locale);
   if (page) {
-    const routes = await store.route.findMany({ where: { pageSchema: schema, pageId: id } });
+    const routes = await store.route.findMany({
+      where: {
+        pageId: {
+          equals: id,
+        },
+        pageSchema: {
+          equals: schema,
+        },
+      }
+    });
     const currentRoute = routes.find((x: any) => x.marketId === market && x.localeId === locale);
     if (!currentRoute) {
       throw ('No route found for page ' + schema + ':' + id + ' in market ' + market + ' and locale ' + locale);
@@ -42,10 +60,28 @@ export async function getPageCategory<T extends IPage>(schema: string, page?: IP
     return;
   }
   const store = await getStore<IModelStore>();
-  const category = await store.page.findOne({ where: { schema, categoryId: page.categoryId }, market, locale }) as T;
+  const category = await store.page.findOne({
+    where: {
+      schema: {
+        equals: schema,
+      },
+      categoryId: {
+        equals: page.categoryId,
+      }
+    }, market, locale
+  }) as T;
   // console.log(page, market, locale);
   if (category) {
-    const routes = await store.route.findMany({ where: { pageSchema: schema, pageId: category.id } });
+    const routes = await store.route.findMany({
+      where: {
+        pageSchema: {
+          equals: schema,
+        },
+        pageId: {
+          equals: category.id,
+        },
+      }
+    });
     const currentRoute = routes.find((x: any) => x.marketId === market && x.localeId === locale);
     if (!currentRoute) {
       throw ('No route found for page ' + schema + ':' + category.id + ' in market ' + market + ' and locale ' + locale);

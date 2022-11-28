@@ -1,9 +1,9 @@
-import { FindParams } from '@websolute/core';
+import { QueryParams } from '@websolute/core';
 import { getStore } from '@websolute/store';
 import { IModelStore } from '../store/store';
 import { ILabel } from './label';
 
-export async function getLabels(params: FindParams = {}): Promise<ILabel[]> {
+export async function getLabels(params: QueryParams = {}): Promise<ILabel[]> {
   const store = await getStore<IModelStore>();
   const items = await store.label.findMany(params);
   return items;

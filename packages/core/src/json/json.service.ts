@@ -1,4 +1,4 @@
-import { FindParams, FindWhereParams, IEntity, IEquatable, IQuerable, toFindParams, Where } from '../entity/entity';
+import { IEntity, IEquatable, IQuerable, QueryParams, Where } from '../entity/entity';
 
 export default class JsonService<T extends IEntity> implements IQuerable<IEntity> {
   items: T[];
@@ -7,10 +7,11 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
     this.items = items;
   }
 
-  findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | undefined> {
+  // !!! todo accept QueryParams with where
+  findOne(params: QueryParams): Promise<T | undefined> {
     return new Promise<T | undefined>((resolve, reject) => {
-      const params = toFindParams(idOrParams);
-      const items = this.where_(this.items, params);
+      // const params = toFindParams(idOrParams);
+      const items = this.whereItems_(this.items, params.where);
       if (items.length > 0) {
         resolve(this.decorator_(items[0], params));
       } else {
@@ -19,10 +20,10 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
     });
   }
 
-  findMany(params: FindParams = {}): Promise<T[]> {
+  findMany(params: QueryParams = {}): Promise<T[]> {
     return new Promise<T[]>((resolve, reject) => {
       let items = this.items;
-      items = this.where_(items, params);
+      items = this.whereItems_(items, params.where);
       resolve(items.map(x => this.decorator_(x, params)));
     });
   }
@@ -67,7 +68,7 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
     });
   }
 
-  protected decorator_(item: any, params: FindParams = {}): any {
+  protected decorator_(item: any, params: QueryParams = {}): any {
     return item;
   }
 
@@ -77,6 +78,7 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
 
   // old where
 
+  /*
   protected where_(items: any[], params: FindParams): any[] {
     const where = params.where;
     if (where) {
@@ -92,6 +94,7 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
     }
     return items;
   }
+  */
 
   // where
 

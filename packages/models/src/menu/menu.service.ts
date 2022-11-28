@@ -5,7 +5,13 @@ import { IMenu } from './menu';
 
 export async function getMenu(id: IEquatable): Promise<IMenu | undefined> {
   const store = await getStore<IModelStore>();
-  const item = await store.menu.findOne(id);
+  const item = await store.menu.findOne({
+    where: {
+      id: {
+        equals: id,
+      }
+    },
+  });
   return item;
 }
 

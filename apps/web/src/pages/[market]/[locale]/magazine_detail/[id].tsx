@@ -74,7 +74,13 @@ export async function getStaticProps(context: IStaticContext) {
     /*
     pick first 10 related items of the same category
     */
-    let relatedItems = await getMagazineDetails({ where: { categoryId: page.categoryId }, market, locale });
+    let relatedItems = await getMagazineDetails({
+      where: {
+        categoryId: {
+          equals: page.categoryId,
+        },
+      }, market, locale
+    });
     relatedItems = relatedItems.filter(x => x.id !== page.id).slice(0, Math.min(relatedItems.length, 10));
 
     // fake data

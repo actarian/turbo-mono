@@ -1,4 +1,5 @@
-import { FetchRequestOptions, FindParams, FindWhereParams, httpFetch, IEntity, IEquatable, IQuerable, merge, toFindParams } from '@websolute/core';
+import { FetchRequestOptions, httpFetch, IEntity, IEquatable, IQuerable, merge, QueryParams } from '@websolute/core';
+import qs from 'qs';
 
 // !!! these keys are server-side only
 const STORE_API_URL = process.env.STORE_URL;
@@ -50,9 +51,11 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
     this.key = key;
   }
 
-  async findOne(idOrParams: IEquatable | FindWhereParams): Promise<T | undefined> {
-    const params = toFindParams(idOrParams);
-    const search = this.search_(params);
+  async findOne(params: QueryParams = {}): Promise<T | undefined> {
+    // const params = toFindParams(idOrParams);
+    // const search = this.search_(params);
+    const query = qs.stringify(params);
+    const search = query ? `?${query}` : '';
     // const id = params.where.id as string | number;
     // const url = `/${this.key}${id ? `/${encodeURIComponent(id)}` : ''}${search}`;
     const url = `/${this.key}${search}`;
@@ -61,12 +64,14 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
     return this.decorator_(item, params);
   }
 
-  async findMany(params: FindParams = {}): Promise<T[]> {
-    const search = this.search_(params);
+  async findMany(params: QueryParams = {}): Promise<T[]> {
+    // const search = this.search_(params);
+    const query = qs.stringify(params);
+    const search = query ? `?${query}` : '';
     const url = `/${this.key}${search}`;
     // console.log('StoreApiService', this.key, 'findMany', url);
-    let items: T[] = await storeGet(url);
-    items = this.where_(items, params);
+    const items: T[] = await storeGet(url);
+    // items = this.where_(items, params);
     return items.map(x => this.decorator_(x, params));
   }
 
@@ -85,8 +90,17 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
   }
 
   async delete(id: IEquatable) {
-    const params = toFindParams(id);
-    const search = this.search_(params);
+    // const params = toFindParams(id);
+    const params = {
+      where: {
+        id: {
+          equals: id,
+        }
+      },
+    };
+    const query = qs.stringify(params);
+    const search = query ? `?${query}` : '';
+    // const search = this.search_(params);
     const url = `/${this.key}${search}`;
     // const url = `/${this.key}/${encodeURIComponent(id.toString())}`;
     // console.log('StoreApiService', this.key, 'delete', url);
@@ -94,6 +108,7 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
     return this.decorator_(item);
   }
 
+  /*
   protected where_(items: any[], params: FindParams): any[] {
     const where = params.where;
     if (where) {
@@ -106,12 +121,14 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
     }
     return items;
   }
+  */
 
-  protected decorator_(item: any, params: FindParams = {}): any {
+  protected decorator_(item: any, params: QueryParams = {}): any {
     return item;
   }
 
-  protected search_(params: FindParams): string {
+  /*
+  protected search_(params: QueryParams): string {
     const search: { [key: string]: string; } = {};
     Object.entries(params).forEach(([key, value]) => {
       if (typeof value !== 'object') {
@@ -125,5 +142,5 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
     });
     return Object.keys(search).length ? '?' + new URLSearchParams(search).toString() : '';
   }
-
+  */
 }

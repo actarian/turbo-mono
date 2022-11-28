@@ -1,15 +1,15 @@
-import { FindParams } from '@websolute/core';
+import { QueryParams } from '@websolute/core';
 import { getStore } from '@websolute/store';
 import { IModelStore } from '../store/store';
 import { ICategorized, ICategory } from './category';
 
-export async function getCategories(params: FindParams = {}): Promise<ICategory[]> {
+export async function getCategories(params: QueryParams = {}): Promise<ICategory[]> {
   const store = await getStore<IModelStore>();
   const categories = await store.category.findMany(params);
   return categories;
 }
 
-export async function getCategoryTree(item: ICategorized, params: FindParams = {}): Promise<ICategory[]> {
+export async function getCategoryTree(item: ICategorized, params: QueryParams = {}): Promise<ICategory[]> {
   const categories: ICategory[] = await getCategories(params);
   const store = await getStore<IModelStore>();
   const pages = await store.page.findMany(params);
