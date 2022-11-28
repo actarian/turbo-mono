@@ -40,6 +40,10 @@ export async function getStaticProps(context: IStaticContext) {
   const props = asServerProps({ ...context, layout, page });
   return {
     props,
+    /*
+    * Next.js will attempt to re-generate the page when a request comes in at most once every 60 seconds
+    */
+    revalidate: 60,
   };
 }
 
@@ -47,6 +51,10 @@ export async function getStaticPaths() {
   const paths = await getStaticPathsForSchema('login');
   return {
     paths,
-    fallback: true,
+    /*
+    * getStaticProps runs in the background when using fallback: true
+    * getStaticProps is called before initial render when using fallback: blocking
+    */
+    fallback: 'blocking',
   };
 }

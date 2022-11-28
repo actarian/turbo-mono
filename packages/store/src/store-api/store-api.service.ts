@@ -14,7 +14,7 @@ const defaultStoreOptions: FetchRequestOptions = {
 
 export async function storeFetch(pathname: string, options: FetchRequestOptions = {}): Promise<any> {
   const url = `${STORE_API_URL}${STORE_API_BASE}${pathname}`;
-  console.log('storeFetch', url, options.method);
+  // console.log('ApiStore.storeFetch', url, options.method);
   const apiOptions = merge({ ...defaultStoreOptions }, options);
   const apiResponse = await httpFetch(url, apiOptions);
   return apiResponse;

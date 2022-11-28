@@ -14,7 +14,7 @@ export async function getMockStore<T extends IStore>(): Promise<T> {
   if (STORE_) {
     return STORE_ as T;
   }
-  // console.log('getMockStore');
+  console.count('MockStore.getMockStore');
   const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
   // console.log('getMockStore.pathname', pathname);
   const json = await fsReadJson(pathname);

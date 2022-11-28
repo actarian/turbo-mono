@@ -1,4 +1,4 @@
-import { FindParams, FindWhereParams, IEntity, IEquatable, IQuerable, toFindParams } from '../entity/entity';
+import { FindParams, FindWhereParams, IEntity, IEquatable, IQuerable, toFindParams, Where } from '../entity/entity';
 
 export default class JsonService<T extends IEntity> implements IQuerable<IEntity> {
   items: T[];
@@ -67,6 +67,16 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
     });
   }
 
+  protected decorator_(item: any, params: FindParams = {}): any {
+    return item;
+  }
+
+  protected newUUID_() {
+    return new Date().getTime();
+  }
+
+  // old where
+
   protected where_(items: any[], params: FindParams): any[] {
     const where = params.where;
     if (where) {
@@ -83,11 +93,91 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
     return items;
   }
 
-  protected decorator_(item: any, params: FindParams = {}): any {
-    return item;
+  // where
+
+  protected existsClause_(value: unknown, exists?: boolean): boolean {
+    // console.log('existsClause_', value, exists);
+    if (typeof exists === 'boolean') {
+      return (value != null) === exists;
+    }
+    return true;
   }
 
-  protected newUUID_() {
-    return new Date().getTime();
+  protected equalsClause_(value: unknown, equals?: unknown): boolean {
+    // console.log('equalsClause_', value, equals);
+    if (typeof equals !== 'undefined') {
+      return value === equals;
+    }
+    return true;
   }
+
+  protected inClause_(value: unknown, values?: unknown[]): boolean {
+    // console.log('inClause_', value, values);
+    if (Array.isArray(values)) {
+      return values.indexOf(value) !== -1;
+    }
+    return true;
+  }
+
+  protected notInClause_(value: unknown, values?: unknown[]): boolean {
+    // console.log('notInClause_', value, values);
+    if (Array.isArray(values)) {
+      return values.indexOf(value) === -1;
+    }
+    return true;
+  }
+
+  protected likeClause_(value: unknown, query?: string): boolean {
+    // console.log('likeClause_', value, query);
+    if (typeof query === 'string') {
+      return String(value).toLowerCase().indexOf(query.toLowerCase()) !== -1;
+    }
+    return true;
+  }
+
+  protected whereItem_(item: any, where?: Where): boolean {
+    let has = true;
+    if (typeof where === 'object') {
+      Object.entries(where).forEach(([k, v]) => {
+        switch (k) {
+          case 'and':
+            if (Array.isArray(v)) {
+              has = v.reduce((p, c) => {
+                return p && this.whereItem_(item, c);
+              }, has);
+            }
+            break;
+          case 'or':
+            if (Array.isArray(v)) {
+              has = has && v.reduce((p, c) => {
+                return p || this.whereItem_(item, c);
+              }, false);
+            }
+            break;
+          default:
+            if (Array.isArray(v)) {
+              // !!! todo handle Where[];
+            } else if (typeof v === 'object') {
+              const value = item[k];
+              has = has && this.existsClause_(value, v.exists as (boolean | undefined));
+              has = has && this.equalsClause_(value, v.equals);
+              has = has && this.inClause_(value, v.in as (unknown[] | undefined));
+              has = has && this.notInClause_(value, v.not_in as (unknown[] | undefined));
+              has = has && this.likeClause_(value, v.like as (string | undefined));
+            }
+        }
+      });
+    }
+    return has;
+  }
+
+  protected whereItems_(items: any[], where?: Where): any[] {
+    if (typeof where === 'object') {
+      items = items.filter(item => this.whereItem_(item, where));
+    }
+    return items;
+  }
+
+  // ^ where
+
 }

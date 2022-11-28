@@ -20,3 +20,19 @@ export const PAGES = {
   checkout_result: 'checkout_result',
   notfound: 'notfound',
 };
+
+export const COLLECTIONS = [
+  ...Object.keys(PAGES),
+  'category',
+  'country',
+  'feature_type',
+  'label',
+  'list',
+  'locale',
+  'market',
+  'page',
+  'province',
+  'region',
+  'route',
+  'template',
+];

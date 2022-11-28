@@ -5,6 +5,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 export default apiHandler({
   get: async (request: NextApiRequest, response: NextApiResponse) => {
+    console.log('api/route.get', request.query);
+    console.count('api/route.get');
     const data = await getRoutes();
     if (data) {
       response.status(200).json(data);
@@ -13,6 +15,8 @@ export default apiHandler({
     }
   },
   post: async (request: NextApiRequest, response: NextApiResponse) => {
+    console.log('api/route.post', request.query);
+    console.count('api/route.post');
     const { pathname } = request.body;
     // console.log('route.apiHandler', pathname);
     const data = await getRoute(pathname);

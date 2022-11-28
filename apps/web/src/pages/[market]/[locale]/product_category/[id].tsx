@@ -43,6 +43,10 @@ export async function getStaticProps(context: IStaticContext) {
   // console.log('ProductCategory getStaticProps', props);
   return {
     props,
+    /*
+    * Next.js will attempt to re-generate the page when a request comes in at most once every 60 seconds
+    */
+    revalidate: 60,
   };
 }
 
@@ -50,6 +54,10 @@ export async function getStaticPaths() {
   const paths = await getStaticPathsForSchema('product_category');
   return {
     paths,
-    fallback: true,
+    /*
+    * getStaticProps runs in the background when using fallback: true
+    * getStaticProps is called before initial render when using fallback: blocking
+    */
+    fallback: 'blocking',
   };
 }

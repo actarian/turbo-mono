@@ -53,3 +53,44 @@ export function toFindParams(idOrParams: IEquatable | FindWhereParams): FindWher
     return idOrParams;
   }
 }
+
+export type Operator =
+  | 'equals'
+  | 'contains'
+  | 'not_equals'
+  | 'in'
+  | 'not_in'
+  | 'exists'
+  | 'greater_than'
+  | 'greater_than_equal'
+  | 'less_than'
+  | 'less_than_equal'
+  | 'like'
+  | 'near';
+
+export type WhereField = {
+  [key in Operator]?: unknown
+};
+
+export type WhereBase = {
+  [key: string]: WhereField | Where[];
+};
+
+export type WhereAndOr = {
+  or?: Where[];
+  and?: Where[];
+};
+
+export type Where = WhereBase & WhereAndOr;
+
+export type QueryParams = {
+  where?: Where;
+  locale?: string;
+  market?: string;
+  sort?: string;
+  page?: number;
+  limit?: number;
+  depth?: number;
+  draft?: boolean;
+  // 'fallback-locale'?: string;
+};

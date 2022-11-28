@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PAGES = void 0;
+exports.COLLECTIONS = exports.PAGES = void 0;
 /*
   * Here we define the mapping of the entities types to the physical templates in the pages/[market]/[locale] folder.
 */
@@ -23,3 +23,18 @@ exports.PAGES = {
     checkout_result: 'checkout_result',
     notfound: 'notfound',
 };
+exports.COLLECTIONS = [
+    ...Object.keys(exports.PAGES),
+    'category',
+    'country',
+    'feature_type',
+    'label',
+    'list',
+    'locale',
+    'market',
+    'page',
+    'province',
+    'region',
+    'route',
+    'template',
+];

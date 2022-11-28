@@ -17,4 +17,5 @@ export declare const PAGES: {
     checkout_result: string;
     notfound: string;
 };
+export declare const COLLECTIONS: string[];
 //# sourceMappingURL=index.d.ts.map

@@ -25,5 +25,6 @@ export async function routeInterceptor(request: NextRequest, next: NextFetchEven
   url.pathname = resolvedPathname;
   // console.log('routeInterceptor.route', route.pageSchema, route.pageId, route.marketId, route.localeId);
   const response = NextResponse.rewrite(url);
+  // const response = NextResponse.redirect(url);
   return response;
 }
