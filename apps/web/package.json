@@ -41,6 +41,7 @@
     "@types/react": "^18.0.18",
     "@websolute/tsconfig": "*",
     "copyfiles": "^2.4.1",
+    "dotenv": "^16.0.3",
     "eslint-config-websolute": "*",
     "eslint": "^8.23.0",
     "next-transpile-modules": "9.0.0",

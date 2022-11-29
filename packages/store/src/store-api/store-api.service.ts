@@ -1,5 +1,4 @@
-import { FetchRequestOptions, httpFetch, IEntity, IEquatable, IQuerable, merge, QueryParams } from '@websolute/core';
-import qs from 'qs';
+import { FetchRequestOptions, httpFetch, IEntity, IEquatable, IQuerable, merge, qsSerialize, QueryParams } from '@websolute/core';
 
 // !!! these keys are server-side only
 const STORE_API_URL = process.env.STORE_URL;
@@ -54,7 +53,7 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
   async findOne(params: QueryParams = {}): Promise<T | undefined> {
     // const params = toFindParams(idOrParams);
     // const search = this.search_(params);
-    const query = qs.stringify(params);
+    const query = qsSerialize(params);
     const search = query ? `?${query}` : '';
     // const id = params.where.id as string | number;
     // const url = `/${this.key}${id ? `/${encodeURIComponent(id)}` : ''}${search}`;
@@ -66,7 +65,7 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
 
   async findMany(params: QueryParams = {}): Promise<T[]> {
     // const search = this.search_(params);
-    const query = qs.stringify(params);
+    const query = qsSerialize(params);
     const search = query ? `?${query}` : '';
     const url = `/${this.key}${search}`;
     // console.log('StoreApiService', this.key, 'findMany', url);
@@ -98,7 +97,7 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
         }
       },
     };
-    const query = qs.stringify(params);
+    const query = qsSerialize(params);
     const search = query ? `?${query}` : '';
     // const search = this.search_(params);
     const url = `/${this.key}${search}`;

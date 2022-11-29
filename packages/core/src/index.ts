@@ -7,5 +7,6 @@ export { httpDelete, httpFetch, httpGet, httpPatch, httpPost, httpPut } from './
 export type { FetchRequestOptions, FetchService } from './http/http.service';
 export { default as JsonService } from './json/json.service';
 export { isLocalizedString, localizedToString, localizeItem, localizeValue } from './localized/localized';
+export * from './qs/qs';
 export * from './types';
 export * from './utils';

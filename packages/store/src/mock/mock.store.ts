@@ -14,16 +14,17 @@ export async function getMockStore<T extends IStore>(): Promise<T> {
   if (STORE_) {
     return STORE_ as T;
   }
-  console.count('MockStore.getMockStore');
   const pathname = path.join(process.cwd(), '.mock', 'store', 'store.json');
   // console.log('getMockStore.pathname', pathname);
   const json = await fsReadJson(pathname);
   const store: { [key: string]: IQuerable<IEntity> } = {};
   if (json != null) {
     Object.keys(json).forEach(key => {
-      store[key] = new MockService<any>(json[key].items);
+      store[key] = new MockService(json[key].items);
     });
   }
+  // console.count('MockStore.getMockStore');
+  console.log('MockStore.getMockStore', Object.keys(store));
   STORE_ = store;
   return STORE_ as T;
 }

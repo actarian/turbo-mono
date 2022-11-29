@@ -1,8 +1,8 @@
 
+import { qsDeserialize } from '@websolute/core';
 import { routeInterceptor } from '@websolute/models';
 import { isApiRequest, isNextRequest, isStaticRequest, registerCollections } from '@websolute/store';
 import { NextFetchEvent, NextResponse } from 'next/server';
-// import qs from 'qs';
 import { COLLECTIONS, PAGES } from 'src/config';
 
 export async function middleware(request: NextRequest, next: NextFetchEvent) {
@@ -26,12 +26,10 @@ export async function middleware(request: NextRequest, next: NextFetchEvent) {
   }
 
   if (isApiRequest(request)) {
-    /*
     const url = request.nextUrl.clone();
-    request.query = qs.parse(url.search, { depth: 10, arrayLimit: 1000 });
+    request.query = qsDeserialize(url.search, { depth: 10, arrayLimit: 1000 });
     console.log('request.query', url.search, request.query);
     NextResponse.next();
-    */
     return;
     /*
      * Checking for mock interceptor for api requests
