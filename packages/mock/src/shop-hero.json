@@ -1,6 +1,6 @@
 {
   "item": {
-    "categoryId": "shop_category_sale",
+    "category": "shop_category_sale",
     "title": "Mid-Season Sale",
     "media": {
       "type": "image",
@@ -9,7 +9,7 @@
     "href": "/shop_category",
     "items": [
       {
-        "categoryId": "shop_category_women",
+        "category": "shop_category_women",
         "title": "Women's",
         "media": {
           "type": "image",
@@ -18,7 +18,7 @@
         "href": "/shop_category"
       },
       {
-        "categoryId": "shop_category_men",
+        "category": "shop_category_men",
         "title": "Men's",
         "media": {
           "type": "image",
@@ -27,7 +27,7 @@
         "href": "/shop_category"
       },
       {
-        "categoryId": "shop_category_desk",
+        "category": "shop_category_desk",
         "title": "Desk accessories",
         "media": {
           "type": "image",

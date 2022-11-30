@@ -9,45 +9,35 @@ export async function getCategories(params: QueryParams = {}): Promise<ICategory
   return categories;
 }
 
-export async function getCategoryTree(item: ICategorized, params: QueryParams = {}): Promise<ICategory[]> {
+export async function getSegments(item: ICategorized, params: QueryParams = {}): Promise<ICategory[]> {
   const categories: ICategory[] = await getCategories(params);
-  const store = await getStore<IModelStore>();
-  const pages = await store.page.findMany(params);
-  return resolveCategoryTree(item, pages, categories);
+  return getRouteSegments(item.schema, item, categories);
 }
 
-export function resolveCategoryTree(item: ICategorized, pages: ICategorized[], categories: ICategory[]): ICategory[] {
-  const categoryTree: ICategory[] = [];
-  let categoryId = item.categoryId || null;
-  let skipLast = false;
-  while (categoryId != null) { // !!! loose
-    const c = categories.find(c => c.id === categoryId);
-    if (c) {
-      const b = { ...c };
-      categoryTree.unshift(b);
-      categoryId = b.categoryId || null;
-      if (b.pageSchema) {
-        const page = pages.find(p => p.schema === b.pageSchema && p.id === b.pageId);
-        if (page) {
-          b.slug = page.slug;
-        }
+export function getRouteSegments(schema: string, item: ICategorized, categories: ICategory[]): ICategory[] {
+  const segments: ICategory[] = [];
+  let parentId = item.category || null;
+  while (parentId != null) { // !!! loose
+    const parentCategory = categories.find(c => c.id === parentId);
+    if (parentCategory) {
+      if (parentCategory.slug) {
+        const segment = { ...parentCategory };
+        segments.unshift(segment);
       }
-      if (b.pageSchema === item.schema && b.pageId === item.id) {
-        skipLast = true;
-      }
+      parentId = parentCategory.category || null;
     } else {
-      categoryId = null;
+      parentId = null;
     }
   }
-  if (!skipLast) {
-    categoryTree.push({
+  if (item.isDefault !== true) {
+    segments.push({
       id: item.id,
-      schema: 'category',
-      slug: item.slug,
       title: item.title,
-      pageSchema: item.schema,
-      pageId: item.id,
+      slug: item.slug,
+      schema: schema,
+      page: item.id,
+      media: item.media,
     });
   }
-  return categoryTree;
+  return segments;
 }

@@ -1,14 +1,13 @@
-import { IEntity, IEquatable } from '@websolute/core';
+import { IEquatable } from '@websolute/core';
 import { IMedia } from '../media/media';
 
-export type IRoute = IEntity & {
+export type IRoute = {
   id: string;
-  // schema: string;
-  marketId: string;
-  localeId: string;
-  pageId: IEquatable;
-  pageSchema: string;
-  pageTemplate?: string;
+  market: string;
+  locale: string;
+  page: IEquatable;
+  schema: string;
+  template?: string;
 };
 
 export type IRouteLink = {

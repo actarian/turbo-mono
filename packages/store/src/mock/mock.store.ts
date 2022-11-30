@@ -20,11 +20,11 @@ export async function getMockStore<T extends IStore>(): Promise<T> {
   const store: { [key: string]: IQuerable<IEntity> } = {};
   if (json != null) {
     Object.keys(json).forEach(key => {
-      store[key] = new MockService(json[key].items);
+      store[key] = new MockService(json[key]);
     });
   }
   // console.count('MockStore.getMockStore');
-  console.log('MockStore.getMockStore', Object.keys(store));
+  // console.log('MockStore.getMockStore', Object.keys(store));
   STORE_ = store;
   return STORE_ as T;
 }

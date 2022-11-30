@@ -1,6 +1,7 @@
 [
   {
-    "categoryId": "login",
+    "category": "login",
+    "isDefault": true,
     "title": {
       "en": "Login",
       "it": "Accedi"

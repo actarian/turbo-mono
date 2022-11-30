@@ -1,5 +1,5 @@
 
-import { asServerProps, IStaticContext } from '@websolute/core';
+import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { getLayout, getPage, getStaticPathsForSchema, IUser, PageProps } from '@websolute/models';
 import { Auth, Container, Footer, Header, Layout, Meta, Page, Section } from '@websolute/ui';
 import { useRouter } from 'next/router';
@@ -32,7 +32,7 @@ export default function Login({ layout, page, params }: PageProps) {
 }
 
 export async function getStaticProps(context: IStaticContext) {
-  const id = parseInt(context.params.id);
+  const id = deserializeValue(context.params.id);
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);

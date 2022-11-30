@@ -1,5 +1,5 @@
 
-import { asServerProps, httpGet, IContextParams } from '@websolute/core';
+import { asServerProps, deserializeValue, httpGet, IContextParams } from '@websolute/core';
 import { useUser } from '@websolute/hooks';
 import { LogOut } from '@websolute/icons';
 import { getLayout, getPage, IUser, PageProps } from '@websolute/models';
@@ -89,7 +89,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
   const query = context.query;
 
   // Layout
-  const id = parseInt(params.id);
+  const id = deserializeValue(params.id);
   const market = params.market;
   const locale = params.locale;
   const layout = await getLayout(market, locale);
@@ -131,7 +131,7 @@ export async function getServerSideProps(context: IServerSideContext): Promise<G
   const query = context.query;
 
   // Layout
-  const id = parseInt(params.id);
+  const id = deserializeValue(params.id);
   const market = params.market;
   const locale = params.locale;
   const layout = await getLayout(market, locale);
@@ -153,7 +153,7 @@ export async function getServerSideProps(context: IServerSideContext): Promise<G
 
 /*
 export async function getStaticProps(context: IStaticContext) {
-  const id = parseInt(context.params.id);
+  const id = deserializeValue(context.params.id);
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);

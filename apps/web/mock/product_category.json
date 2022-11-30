@@ -1,6 +1,7 @@
 [
   {
-    "categoryId": "product_category_tile",
+    "category": "product_category_tile",
+    "isDefault": true,
     "title": "Our tiles collection",
     "media": {
       "type": "image",
@@ -8,7 +9,8 @@
     }
   },
   {
-    "categoryId": "product_category_element",
+    "category": "product_category_element",
+    "isDefault": true,
     "title": "3D Elements",
     "media": {
       "type": "image",
@@ -16,7 +18,8 @@
     }
   },
   {
-    "categoryId": "product_category_paint",
+    "category": "product_category_paint",
+    "isDefault": true,
     "title": "Paints",
     "media": {
       "type": "image",
@@ -24,7 +27,8 @@
     }
   },
   {
-    "categoryId": "product_category_woodmetal",
+    "category": "product_category_woodmetal",
+    "isDefault": true,
     "title": "Wood & Metal",
     "media": {
       "type": "image",
@@ -32,7 +36,8 @@
     }
   },
   {
-    "categoryId": "product_category_accessory",
+    "category": "product_category_accessory",
+    "isDefault": true,
     "title": "Accessories",
     "media": {
       "type": "image",
@@ -40,7 +45,8 @@
     }
   },
   {
-    "categoryId": "product_category_edition",
+    "category": "product_category_edition",
+    "isDefault": true,
     "title": "Editions",
     "media": {
       "type": "image",

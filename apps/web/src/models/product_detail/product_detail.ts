@@ -5,6 +5,6 @@ export type IProductDetail = IEntity & {
   title?: string;
   abstract?: string;
   description?: string;
-  categoryId: IEquatable;
+  category: IEquatable;
   href?: string;
 };

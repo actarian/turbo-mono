@@ -1,5 +1,5 @@
 
-import { asServerProps, IStaticContext } from '@websolute/core';
+import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { BlogMoreDefaults, BlogPropositionDefaults, CategoriesPropositionDefaults, ProductsPropositionDefaults, SplitDefaults, SwiperHeroDefaults } from '@websolute/mock';
 import { getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/models';
 import {
@@ -10,16 +10,6 @@ import {
 export default function Homepage({ layout, page, params }: PageProps) {
   // console.log('Homepage.layout', layout);
   // console.log('Homepage.page', page);
-
-  /*
-  const [response] = useApiGet('/hello');
-  if (response) {
-    console.log('response', response);
-  }
-  */
-
-  // console.log('layout.tree', JSON.stringify(layout.tree));
-
   return (
     <Layout>
       <Meta />
@@ -66,7 +56,7 @@ export default function Homepage({ layout, page, params }: PageProps) {
 }
 
 export async function getStaticProps(context: IStaticContext) {
-  const id = parseInt(context.params.id);
+  const id = deserializeValue(context.params.id);
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);

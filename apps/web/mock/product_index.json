@@ -1,6 +1,7 @@
 [
   {
-    "categoryId": "product_index",
+    "category": "product_index",
+    "isDefault": true,
     "title": {
       "en": "Collections",
       "it": "Collezioni"

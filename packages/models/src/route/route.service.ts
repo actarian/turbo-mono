@@ -28,77 +28,77 @@ export async function getRoutesForSchemas(schemas: string[], market?: string, lo
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany({
     where: {
-      pageSchema: {
+      schema: {
         in: schemas,
       },
-      marketId: {
+      market: {
         equals: market,
       },
-      localeId: {
+      locale: {
         equals: locale,
       },
     }, market, locale
   });
-  const pageSchemas: {
+  const items: {
     [key: string]: string;
   } = {};
   routes.forEach(route => {
-    pageSchemas[route.pageSchema] = route.id;
+    items[route.schema] = route.id;
   });
-  return pageSchemas;
+  return items;
 }
 
 export async function getRoutesForTemplates(templates: string[], market?: string, locale?: string): Promise<{ [key: string]: string; }> {
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany({
     where: {
-      pageTemplate: {
+      template: {
         in: templates,
       },
-      marketId: {
+      market: {
         equals: market,
       },
-      localeId: {
+      locale: {
         equals: locale,
       },
     }, market, locale
   });
-  const pageTemplates: {
+  const items: {
     [key: string]: string;
   } = {};
   routes.forEach(route => {
-    if (route.pageTemplate) {
-      pageTemplates[route.pageTemplate] = route.id;
+    if (route.template) {
+      items[route.template] = route.id;
     }
   });
-  return pageTemplates;
+  return items;
 }
 
 export async function getStaticPathsForSchema(schema: string): Promise<StaticPath[]> {
   const store = await getStore<IModelStore>();
   const routes = await store.route.findMany({
     where: {
-      pageSchema: {
+      schema: {
         equals: schema
       }
     }
   });
-  return routes.map((x: any) => ({ params: { id: x.pageId.toString(), market: x.marketId, locale: x.localeId } }));
+  return routes.map((x: any) => ({ params: { id: x.page.toString(), market: x.market, locale: x.locale } }));
 }
 
 export async function decorateHref(item: any, market: string = 'ww', locale: string = 'en'): Promise<any> {
   const routes = await getRoutes({
     where: {
-      pageSchema: {
+      schema: {
         equals: item.schema
       },
-      pageId: {
+      page: {
         equals: item.id
       },
-      marketId: {
+      market: {
         equals: market
       },
-      localeId: {
+      locale: {
         equals: locale
       },
     }
@@ -107,33 +107,33 @@ export async function decorateHref(item: any, market: string = 'ww', locale: str
   return { ...item, href };
 }
 
-export async function getBreadcrumbFromCategoryTree(categoryTree: ICategory[], market: string = 'ww', locale: string = 'en'): Promise<IRouteLink[]> {
+export async function getBreadcrumbFromSegments(segments: ICategory[], market: string = 'ww', locale: string = 'en'): Promise<IRouteLink[]> {
   const routes: IRoute[] = await getRoutes({
     where: {
-      marketId: {
+      market: {
         equals: market
       },
-      localeId: {
+      locale: {
         equals: locale
       },
     }
   });
-  const tree: IRouteLink[] = categoryTree.map(category => {
-    const route = category.pageSchema && category.pageId ? routes.find(r =>
-      r.pageSchema === category.pageSchema &&
-      r.pageId === category.pageId
+  const tree: IRouteLink[] = segments.map(segment => {
+    const route = segment.schema && segment.page ? routes.find(r =>
+      r.schema === segment.schema &&
+      r.page === segment.page
     ) : undefined;
     const href = route ? route.id.toString() : '/#';
-    return { category, href };
+    return { segment, href };
   }).map(x => {
-    const category: ICategory = x.category;
+    const segment: ICategory = x.segment;
     const href: string = x.href;
-    let title = category.title || 'untitled';
+    let title = segment.title || 'untitled';
     if (isLocalizedString(title)) {
       title = localizedToString(title, locale);
     }
     return {
-      id: category.id,
+      id: segment.id,
       title: title,
       href,
       items: [],
@@ -151,7 +151,7 @@ export async function getRouteLinkTree(market: string = 'ww', locale: string = '
   const routes: Route[] = await getRoutes();
   const categories = await getCategories();
   */
-  const homeCategory = categories.find(x => x.pageSchema === 'homepage');
+  const homeCategory = categories.find(x => x.schema === 'homepage');
   if (homeCategory) {
     const root = categoryToRouteLink(routes, categories, homeCategory, market, locale);
     // console.log('getRouteLinkTree', root);
@@ -161,15 +161,15 @@ export async function getRouteLinkTree(market: string = 'ww', locale: string = '
 }
 
 export function getChildCategories(routes: IRoute[], categories: ICategory[], category: ICategory, market: string = 'ww', locale: string = 'en'): IRouteLink[] {
-  return categories.filter(x => x.categoryId === category.id).map(x => categoryToRouteLink(routes, categories, x, market, locale));
+  return categories.filter(x => x.category === category.id).map(x => categoryToRouteLink(routes, categories, x, market, locale));
 }
 
 export function categoryToRouteLink(routes: IRoute[], categories: ICategory[], category: ICategory, market: string = 'ww', locale: string = 'en'): IRouteLink {
-  const route = category.pageSchema && category.pageId ? routes.find(r =>
-    r.pageSchema === category.pageSchema &&
-    r.pageId === category.pageId &&
-    r.marketId === market &&
-    r.localeId === locale
+  const route = category.schema && category.page ? routes.find(r =>
+    r.schema === category.schema &&
+    r.page === category.page &&
+    r.market === market &&
+    r.locale === locale
   ) : null;
   const href = route ? route.id.toString() : '/#';
   let title = category.title || 'untitled';
@@ -185,22 +185,11 @@ export function categoryToRouteLink(routes: IRoute[], categories: ICategory[], c
   };
 }
 
-// !!! remove PAGES ?
-export function resolveRoute(route: IRoute, PAGES: { [key: string]: string }) {
-  // console.log('resolveRoute', route.pageSchema);
-  const routepath: string = route.pageTemplate ? route.pageTemplate : route.pageSchema;
-  /*
-  // !!! skipping cms key mapping -> route mapping
-  const pageKey: string = route.pageTemplate ? route.pageTemplate : route.pageSchema;
-  const routepath: string = PAGES[pageKey];
-  */
-  return `/${route.marketId}/${route.localeId}/${routepath}/${route.pageId}`;
-  /*
-  routepath = routepath.replace(/:([^\/]*)/g, (match, p1) => {
-    return route[p1];
-  });
-  return routepath;
-  */
+export function resolveRoute(route: IRoute) {
+  const routepath: string = route.template ? route.template : route.schema;
+  const resolvedPathname = `/${route.market}/${route.locale}/${routepath}/${route.page}`;
+  // console.log('resolveRoute', route.schema, resolvedPathname);
+  return resolvedPathname;
 }
 
 export type StaticPath = { params: { [key: string]: string } };

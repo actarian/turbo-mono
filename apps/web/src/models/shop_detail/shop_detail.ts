@@ -2,7 +2,7 @@ import { IEntity, IEquatable } from '@websolute/core';
 import { IMedia } from '@websolute/models';
 
 export type IShopDetail = IEntity & {
-  categoryId: IEquatable;
+  category: IEquatable;
   slug: string;
   href?: string;
   title: string;

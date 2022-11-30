@@ -1,5 +1,5 @@
 
-import { asServerProps, IStaticContext } from '@websolute/core';
+import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { CategoryPropositionDefaults, ShopSearchFeaturesDefaults } from '@websolute/mock';
 import { getLayout, getPage, getStaticPathsForSchema, IFeatureType, PageProps } from '@websolute/models';
 import { CategoryHero, CategoryProposition, Footer, Header, Layout, Meta, Page, ShopIncentive, ShopSearch, ShopSearchItem } from '@websolute/ui';
@@ -14,7 +14,7 @@ export default function ShopCategory({ layout, page, items = [], featureTypes = 
 
         <CategoryHero item={page} />
 
-        <ShopSearch id="serp" padding="3rem 0" items={items} featureTypes={featureTypes} categoryId={page.categoryId}></ShopSearch>
+        <ShopSearch id="serp" padding="3rem 0" items={items} featureTypes={featureTypes} category={page.category}></ShopSearch>
 
         <CategoryProposition item={CategoryPropositionDefaults.item} />
 
@@ -32,7 +32,7 @@ export type ShopCategoryProps = PageProps & {
 };
 
 export async function getStaticProps(context: IStaticContext) {
-  const id = parseInt(context.params.id);
+  const id = deserializeValue(context.params.id);
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);

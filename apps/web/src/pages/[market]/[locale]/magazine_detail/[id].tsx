@@ -1,5 +1,5 @@
 
-import { asServerProps, IStaticContext } from '@websolute/core';
+import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { useDateTimeFormat } from '@websolute/hooks';
 import { ChevronLeft } from '@websolute/icons';
 import { MagazineDetailDefaults } from '@websolute/mock';
@@ -64,7 +64,7 @@ export type MagazineDetailProps = PageProps & {
 };
 
 export async function getStaticProps(context: IStaticContext) {
-  const id = parseInt(context.params.id);
+  const id = deserializeValue(context.params.id);
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);
@@ -76,8 +76,8 @@ export async function getStaticProps(context: IStaticContext) {
     */
     let relatedItems = await getMagazineDetails({
       where: {
-        categoryId: {
-          equals: page.categoryId,
+        category: {
+          equals: page.category,
         },
       }, market, locale
     });

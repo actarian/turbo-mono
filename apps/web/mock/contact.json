@@ -1,6 +1,7 @@
 [
   {
-    "categoryId": "contact",
+    "category": "contact",
+    "isDefault": true,
     "title": {
       "en": "Contact us",
       "it": "Contattaci"

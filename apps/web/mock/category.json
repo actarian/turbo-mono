@@ -1,10 +1,10 @@
 [
   {
     "id": "homepage",
+    "slug": "",
     "title": "Home",
-    "categoryId": null,
-    "pageSchema": "homepage",
-    "pageId": 1
+    "schema": "homepage",
+    "page": 1
   },
   {
     "id": "product_index",
@@ -12,16 +12,16 @@
       "en": "Collections",
       "it": "Collezioni"
     },
-    "categoryId": "homepage",
-    "pageSchema": "product_index",
-    "pageId": 1
+    "category": "homepage",
+    "schema": "product_index",
+    "page": 1
   },
   {
     "id": "product_category_tile",
     "title": "Tiles",
-    "categoryId": "product_index",
-    "pageSchema": "product_category",
-    "pageId": 1,
+    "category": "product_index",
+    "schema": "product_category",
+    "page": 1,
     "media": {
       "type": "image",
       "src": "/assets/header/6366_n_tiles.jpg"
@@ -30,9 +30,9 @@
   {
     "id": "product_category_element",
     "title": "3D Elements",
-    "categoryId": "product_index",
-    "pageSchema": "product_category",
-    "pageId": 2,
+    "category": "product_index",
+    "schema": "product_category",
+    "page": 2,
     "media": {
       "type": "image",
       "src": "/assets/header/6369_n_3d_elements_menu_cover.webp"
@@ -41,9 +41,9 @@
   {
     "id": "product_category_paint",
     "title": "Paints",
-    "categoryId": "product_index",
-    "pageSchema": "product_category",
-    "pageId": 3,
+    "category": "product_index",
+    "schema": "product_category",
+    "page": 3,
     "media": {
       "type": "image",
       "src": "/assets/header/6367_n_paints.jpg"
@@ -52,9 +52,9 @@
   {
     "id": "product_category_woodmetal",
     "title": "Wood & Metal",
-    "categoryId": "product_index",
-    "pageSchema": "product_category",
-    "pageId": 4,
+    "category": "product_index",
+    "schema": "product_category",
+    "page": 4,
     "media": {
       "type": "image",
       "src": "/assets/header/6368_n_menu_wood_metal.webp"
@@ -63,9 +63,9 @@
   {
     "id": "product_category_accessory",
     "title": "Accessories",
-    "categoryId": "product_index",
-    "pageSchema": "product_category",
-    "pageId": 5,
+    "category": "product_index",
+    "schema": "product_category",
+    "page": 5,
     "media": {
       "type": "image",
       "src": "/assets/header/6371_n_accessories.jpg"
@@ -74,9 +74,9 @@
   {
     "id": "product_category_edition",
     "title": "Editions",
-    "categoryId": "product_index",
-    "pageSchema": "product_category",
-    "pageId": 6,
+    "category": "product_index",
+    "schema": "product_category",
+    "page": 6,
     "media": {
       "type": "image",
       "src": "/assets/header/7858_n_Menu.webp"
@@ -85,65 +85,65 @@
   {
     "id": "magazine_index",
     "title": "Magazine",
-    "categoryId": "homepage",
-    "pageSchema": "magazine_index",
-    "pageId": 1
+    "category": "homepage",
+    "schema": "magazine_index",
+    "page": 1
   },
   {
     "id": "magazine_category_art",
     "title": "Art",
-    "categoryId": "magazine_index",
-    "pageSchema": "magazine_category",
-    "pageId": 1
+    "category": "magazine_index",
+    "schema": "magazine_category",
+    "page": 1
   },
   {
     "id": "magazine_category_diary",
     "title": "Diary",
-    "categoryId": "magazine_index",
-    "pageSchema": "magazine_category",
-    "pageId": 2
+    "category": "magazine_index",
+    "schema": "magazine_category",
+    "page": 2
   },
   {
     "id": "magazine_category_event",
     "title": "Events",
-    "categoryId": "magazine_index",
-    "pageSchema": "magazine_category",
-    "pageId": 3
+    "category": "magazine_index",
+    "schema": "magazine_category",
+    "page": 3
   },
   {
     "id": "magazine_category_inside",
     "title": "Inside",
-    "categoryId": "magazine_index",
-    "pageSchema": "magazine_category",
-    "pageId": 4
+    "category": "magazine_index",
+    "schema": "magazine_category",
+    "page": 4
   },
   {
     "id": "magazine_category_library",
     "title": "Library",
-    "categoryId": "magazine_index",
-    "pageSchema": "magazine_category",
-    "pageId": 5
+    "category": "magazine_index",
+    "schema": "magazine_category",
+    "page": 5
   },
   {
     "id": "magazine_category_place",
     "title": "Places",
-    "categoryId": "magazine_index",
-    "pageSchema": "magazine_category",
-    "pageId": 6
+    "category": "magazine_index",
+    "schema": "magazine_category",
+    "page": 6
   },
   {
     "id": "magazine_category_talk",
     "title": "Talks",
-    "categoryId": "magazine_index",
-    "pageSchema": "magazine_category",
-    "pageId": 7
+    "category": "magazine_index",
+    "schema": "magazine_category",
+    "page": 7
   },
   {
     "id": "store_index",
     "title": "Stores",
-    "categoryId": "homepage",
-    "pageSchema": "store_index",
-    "pageId": 1
+    "category": "homepage",
+    "schema": "store_index",
+    "page": 1
   },
   {
     "id": "contact",
@@ -151,9 +151,9 @@
       "en": "Contact us",
       "it": "Contattaci"
     },
-    "categoryId": "homepage",
-    "pageSchema": "contact",
-    "pageId": 1
+    "category": "homepage",
+    "schema": "contact",
+    "page": 1
   },
   {
     "id": "shop_index",
@@ -161,65 +161,65 @@
       "en": "Shop",
       "it": "Shop"
     },
-    "categoryId": "homepage",
-    "pageSchema": "shop_index",
-    "pageId": 1
+    "category": "homepage",
+    "schema": "shop_index",
+    "page": 1
   },
   {
     "id": "shop_category_tile",
     "title": "Tiles Samples",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 1
+    "category": "shop_index",
+    "schema": "shop_category",
+    "page": 1
   },
   {
     "id": "shop_category_element",
     "title": "3D Elements Samples",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 2
+    "category": "shop_index",
+    "schema": "shop_category",
+    "page": 2
   },
   {
     "id": "shop_category_paint",
     "title": "Paints Samples",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 3
+    "category": "shop_index",
+    "schema": "shop_category",
+    "page": 3
   },
   {
     "id": "shop_category_woodmetal",
     "title": "Wood & Metal",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 4
+    "category": "shop_index",
+    "schema": "shop_category",
+    "page": 4
   },
   {
     "id": "shop_category_furniture",
     "title": "Furniture",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 5
+    "category": "shop_index",
+    "schema": "shop_category",
+    "page": 5
   },
   {
     "id": "shop_category_book",
     "title": "Books",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 6
+    "category": "shop_index",
+    "schema": "shop_category",
+    "page": 6
   },
   {
     "id": "shop_category_gift",
     "title": "Gifts",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 7
+    "category": "shop_index",
+    "schema": "shop_category",
+    "page": 7
   },
   {
     "id": "shop_category_edition",
     "title": "Editions",
-    "categoryId": "shop_index",
-    "pageSchema": "shop_category",
-    "pageId": 8
+    "category": "shop_index",
+    "schema": "shop_category",
+    "page": 8
   },
   {
     "id": "login",
@@ -227,9 +227,9 @@
       "en": "Login",
       "it": "Accedi"
     },
-    "categoryId": "homepage",
-    "pageSchema": "login",
-    "pageId": 1
+    "category": "homepage",
+    "schema": "login",
+    "page": 1
   },
   {
     "id": "reserved_area",
@@ -237,9 +237,9 @@
       "en": "Reserved area",
       "it": "Area riservata"
     },
-    "categoryId": "homepage",
-    "pageSchema": "reserved_area",
-    "pageId": 1
+    "category": "homepage",
+    "schema": "reserved_area",
+    "page": 1
   },
   {
     "id": "reserved_area_order_index",
@@ -247,9 +247,9 @@
       "en": "My orders",
       "it": "I miei ordini"
     },
-    "categoryId": "reserved_area",
-    "pageSchema": "reserved_area",
-    "pageId": 2
+    "category": "reserved_area",
+    "schema": "reserved_area",
+    "page": 2
   },
   {
     "id": "reserved_area_order_detail",
@@ -257,9 +257,9 @@
       "en": "Order detail",
       "it": "Dettaglio ordine"
     },
-    "categoryId": "reserved_area_order_index",
-    "pageSchema": "reserved_area",
-    "pageId": 3
+    "category": "reserved_area_order_index",
+    "schema": "reserved_area",
+    "page": 3
   },
   {
     "id": "reserved_area_account",
@@ -267,9 +267,9 @@
       "en": "Account settings",
       "it": "Impostazioni account"
     },
-    "categoryId": "reserved_area",
-    "pageSchema": "reserved_area",
-    "pageId": 4
+    "category": "reserved_area",
+    "schema": "reserved_area",
+    "page": 4
   },
   {
     "id": "checkout",
@@ -277,9 +277,9 @@
       "en": "Checkout",
       "it": "Checkout"
     },
-    "categoryId": "homepage",
-    "pageSchema": "checkout",
-    "pageId": 1
+    "category": "homepage",
+    "schema": "checkout",
+    "page": 1
   },
   {
     "id": "checkout_result",
@@ -287,8 +287,8 @@
       "en": "Order completed",
       "it": "Ordine completato"
     },
-    "categoryId": "homepage",
-    "pageSchema": "checkout_result",
-    "pageId": 1
+    "category": "homepage",
+    "schema": "checkout_result",
+    "page": 1
   }
 ]

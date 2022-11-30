@@ -1,6 +1,7 @@
 [
   {
-    "categoryId": "magazine_index",
+    "category": "magazine_index",
+    "isDefault": true,
     "title": "Magazine",
     "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura."
   }

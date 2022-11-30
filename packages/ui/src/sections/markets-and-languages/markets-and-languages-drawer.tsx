@@ -19,13 +19,13 @@ export const MarketsAndLanguagesDrawer: React.FC<MarketsAndLanguagesDrawerProps>
 
   const getHref = useCallback((market: string, locale: string, currentMarket: string, currentLocale: string) => {
     const items = alternates || [];
-    const alternateItem = items.find((x: any) => x.marketId === market && x.localeId === locale);
+    const alternateItem = items.find((x: any) => x.market === market && x.locale === locale);
     if (alternateItem) {
       return alternateItem.id.toString();
     } else if (market === currentMarket && locale === currentLocale && href) {
       return href;
     } else {
-      return `/${market}/${locale}`;
+      return `/${locale}-${market}`;
     }
   }, [alternates, href]);
 

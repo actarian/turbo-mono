@@ -15,7 +15,7 @@ export type MagazineSearchItem = {
   date: Date | string;
   title: string;
   media: IMedia;
-  categoryId?: IEquatable;
+  category?: IEquatable;
 };
 
 export type MagazineSearchCardProps = UIStyledComponentProps<Props>;

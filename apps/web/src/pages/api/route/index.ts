@@ -1,12 +1,16 @@
 
 import { apiHandler } from '@websolute/core';
 import { getRoute, getRoutes } from '@websolute/models';
+import { registerCollections } from '@websolute/store';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { COLLECTIONS } from 'src/config';
+
+registerCollections(COLLECTIONS);
 
 export default apiHandler({
   get: async (request: NextApiRequest, response: NextApiResponse) => {
-    console.log('api/route.get', request.query);
-    console.count('api/route.get');
+    // console.log('api/route.get', request.query);
+    // console.count('api/route.get');
     const data = await getRoutes();
     if (data) {
       response.status(200).json(data);
@@ -15,8 +19,8 @@ export default apiHandler({
     }
   },
   post: async (request: NextApiRequest, response: NextApiResponse) => {
-    console.log('api/route.post', request.query);
-    console.count('api/route.post');
+    // console.log('api/route.post', request.query);
+    // console.count('api/route.post');
     const { pathname } = request.body;
     // console.log('route.apiHandler', pathname);
     const data = await getRoute(pathname);

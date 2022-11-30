@@ -12,7 +12,7 @@ const ADiv = ({ children }: { children?: ReactNode }) => (<motion.div
 >{children}</motion.div>);
 
 export type ShopCategoryHeroItem = {
-  categoryId?: string;
+  category?: string;
   href: string;
   breadcrumb: IRouteLink[];
   title?: string;

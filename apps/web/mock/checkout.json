@@ -1,6 +1,7 @@
 [
   {
-    "categoryId": "checkout",
+    "category": "checkout",
+    "isDefault": true,
     "title": {
       "en": "Checkout",
       "it": "Checkout"

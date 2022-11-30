@@ -12,7 +12,7 @@ type Props = {
 export type ShopSearchItem = {
   id: IEquatable;
   schema: string;
-  categoryId: IEquatable;
+  category: IEquatable;
   href: string;
   title: string;
   price: number;

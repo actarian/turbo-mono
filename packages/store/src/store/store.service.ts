@@ -8,8 +8,9 @@ const CONFIG_: {
   COLLECTIONS: []
 };
 
-export function registerCollections(pages: string[] = []): void {
-  CONFIG_.COLLECTIONS = pages;
+export function registerCollections(collections: string[] = []): void {
+  CONFIG_.COLLECTIONS = collections;
+  // console.log('registerCollections', collections);
 }
 
 export async function getStore<T extends IStore>(): Promise<T> {

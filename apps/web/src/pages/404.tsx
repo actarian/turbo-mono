@@ -1,7 +1,11 @@
 import { asServerProps, IStaticContext } from '@websolute/core';
 import { Send } from '@websolute/icons';
 import { getErrorPageLayout, PageProps } from '@websolute/models';
+import { registerCollections } from '@websolute/store';
 import { Box, Button, Container, Flex, Footer, Header, Layout, Meta, NavLink, Page, Section, Text } from '@websolute/ui';
+import { COLLECTIONS } from 'src/config';
+
+registerCollections(COLLECTIONS);
 
 export default function Error404({ layout, page, params }: PageProps) {
   // console.log('Error404.params', page, params);

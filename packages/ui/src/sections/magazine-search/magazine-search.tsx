@@ -13,7 +13,7 @@ import { MagazineSearchRecap } from './magazine-search-recap';
 function filterMagazineItem(key: string, item: MagazineSearchItem, value: IEquatable) {
   switch (key) {
     case 'category':
-      return item.categoryId === value;
+      return item.category === value;
     case 'title':
       return item.title.toLowerCase().includes(value.toString().toLowerCase());
     default:
@@ -21,13 +21,13 @@ function filterMagazineItem(key: string, item: MagazineSearchItem, value: IEquat
   }
 }
 
-function getDefaultFilterParams(filter?: { [key: string]: IEquatable[] }, categoryId?: IEquatable): { [key: string]: IEquatable[] } | undefined {
+function getDefaultFilterParams(filter?: { [key: string]: IEquatable[] }, category?: IEquatable): { [key: string]: IEquatable[] } | undefined {
   if (filter) {
     return filter;
   }
-  if (categoryId) {
+  if (category) {
     return {
-      category: [categoryId]
+      category: [category]
     };
   }
   return undefined;
@@ -36,12 +36,12 @@ function getDefaultFilterParams(filter?: { [key: string]: IEquatable[] }, catego
 type Props = {
   items: MagazineSearchItem[];
   featureTypes: IFeatureType[];
-  categoryId?: IEquatable;
+  category?: IEquatable;
 };
 
 export type MagazineSearchProps = UIStyledComponentProps<Props>;
 
-export const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTypes, categoryId, ...props }: MagazineSearchProps) => {
+export const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTypes, category, ...props }: MagazineSearchProps) => {
 
   // deserialize queryString encoded params
   const { params, replaceParamsSilently } = useSearchParamsEncoded();
@@ -50,7 +50,7 @@ export const MagazineSearch: React.FC<MagazineSearchProps> = ({ items, featureTy
   const filterItem = useCallback(filterMagazineItem, []);
 
   // initialize filters with items, featureTypes and queryString params
-  const { filteredItems, filters, setFilter } = useFilters<MagazineSearchItem>(items, featureTypes, filterItem, getDefaultFilterParams(params?.filter, categoryId));
+  const { filteredItems, filters, setFilter } = useFilters<MagazineSearchItem>(items, featureTypes, filterItem, getDefaultFilterParams(params?.filter, category));
 
   // fires when user make a change on filters
   const onFilterChange = (filter: Filter<MagazineSearchItem>, values?: IEquatable[]) => {

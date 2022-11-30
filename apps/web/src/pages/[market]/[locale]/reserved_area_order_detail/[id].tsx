@@ -1,5 +1,5 @@
 
-import { asServerProps, IContextParams } from '@websolute/core';
+import { asServerProps, deserializeValue, IContextParams } from '@websolute/core';
 import { useLabel } from '@websolute/hooks';
 import { getLayout, getOrder, getPage, IOrderDetail, IUser, PageProps } from '@websolute/models';
 import { Badge, Box, Button, Flex, Footer, Grid, Header, Layout, Meta, OrderAddress, OrderSummary, Page, ReservedArea, Text } from '@websolute/ui';
@@ -58,7 +58,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
   const query = context.query;
 
   // Layout
-  const id = parseInt(params.id);
+  const id = deserializeValue(params.id);
   const market = params.market;
   const locale = params.locale;
   const layout = await getLayout(market, locale);

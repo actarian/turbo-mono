@@ -4,6 +4,6 @@ import { IModelStore } from '../store/store';
 
 export async function getRegions(locale?: string): Promise<INamedEntity[]> {
   const store = await getStore<IModelStore>();
-  const items = await store.region.findMany({ locale });
+  const items = await store.i18n_region.findMany({ locale });
   return items;
 }

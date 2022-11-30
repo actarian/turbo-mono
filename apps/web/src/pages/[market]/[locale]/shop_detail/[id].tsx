@@ -1,5 +1,5 @@
 
-import { asServerProps, IStaticContext } from '@websolute/core';
+import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { useCart, useCurrency, useDrawer } from '@websolute/hooks';
 import { ProductsRelatedDefaults } from '@websolute/mock';
 import { getLayout, getPage, getPageCategory, getStaticPathsForSchema, IPage, PageProps } from '@websolute/models';
@@ -91,7 +91,7 @@ export type ShopDetailProps = PageProps<ShopDetailItem> & {
 };
 
 export async function getStaticProps(context: IStaticContext) {
-  const id = parseInt(context.params.id);
+  const id = deserializeValue(context.params.id);
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);
@@ -101,8 +101,8 @@ export async function getStaticProps(context: IStaticContext) {
   if (page) {
     const related = await getShopDetails({
       where: {
-        categoryId: {
-          equals: page.categoryId,
+        category: {
+          equals: page.category,
         },
       }, market, locale
     });

@@ -15,7 +15,7 @@ export function Meta() {
       <meta name="robots" content={page.meta?.robots} />
       {page.href && <link rel="canonical" href={origin + page.href} />}
       {page.alternates && page.alternates.map((alternate: any) => (
-        <link key={`${alternate.marketId}-${alternate.localeId}`} rel="alternate" href={origin + alternate.id} />
+        <link key={`${alternate.locale}-${alternate.market}`} rel="alternate" href={origin + alternate.id} />
       ))}
       {page.media && <meta property="og:image" content={origin + page.media.src} />}
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />

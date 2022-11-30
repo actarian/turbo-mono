@@ -17,7 +17,6 @@ export type ProductDetailItem = {
   title: string;
   abstract: string;
   medias: IMedia[];
-  categoryId: IEquatable;
   category: {
     href: string;
     title: string;

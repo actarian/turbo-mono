@@ -1,5 +1,5 @@
 
-import { asServerProps, IStaticContext } from '@websolute/core';
+import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { CheckoutProvider, useCart, useMounted } from '@websolute/hooks';
 import { getCountries, getLayout, getListByKeys, getPage, getProvinces, getRegions, getStaticPathsForSchema, IAddressOptions, ICheckoutPartial, PageProps } from '@websolute/models';
 import { Breadcrumb, CheckoutEmpty, CheckoutWizard, Container, Footer, Header, Layout, Meta, Page, Section } from '@websolute/ui';
@@ -47,7 +47,7 @@ export type CheckoutProps = PageProps & {
 };
 
 export async function getStaticProps(context: IStaticContext) {
-  const id = parseInt(context.params.id);
+  const id = deserializeValue(context.params.id);
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);
@@ -96,7 +96,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
   const query = context.query;
 
   // Layout
-  const id = parseInt(params.id);
+  const id = deserializeValue(params.id);
   const market = params.market;
   const locale = params.locale;
   const layout = await getLayout(market, locale);

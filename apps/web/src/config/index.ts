@@ -24,15 +24,15 @@ export const PAGES = {
 export const COLLECTIONS = [
   ...Object.keys(PAGES),
   'category',
-  'country',
   'feature_type',
   'label',
   'list',
   'locale',
   'market',
   'page',
-  'province',
-  'region',
   'route',
   'template',
+  'i18n_country',
+  'i18n_province',
+  'i18n_region',
 ];

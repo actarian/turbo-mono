@@ -15,7 +15,7 @@ import { ShopSearchRecap } from './shop-search-recap';
 function filterShopItem(key: string, item: ShopSearchItem, value: IEquatable) {
   switch (key) {
     case 'category':
-      return item.categoryId === value;
+      return item.category === value;
     case 'collection':
       return item.collection === value;
     case 'designer':
@@ -31,13 +31,13 @@ function filterShopItem(key: string, item: ShopSearchItem, value: IEquatable) {
   }
 }
 
-function getDefaultFilterParams(filter?: { [key: string]: IEquatable[] }, categoryId?: IEquatable): { [key: string]: IEquatable[] } | undefined {
+function getDefaultFilterParams(filter?: { [key: string]: IEquatable[] }, category?: IEquatable): { [key: string]: IEquatable[] } | undefined {
   if (filter) {
     return filter;
   }
-  if (categoryId) {
+  if (category) {
     return {
-      category: [categoryId]
+      category: [category]
     };
   }
   return undefined;
@@ -54,12 +54,12 @@ const SortMenu = ({ sort, onSort }: { sort: IEquatable | undefined, onSort: (sor
 type Props = {
   items: ShopSearchItem[];
   featureTypes: IFeatureType[];
-  categoryId?: IEquatable;
+  category?: IEquatable;
 };
 
 export type ShopSearchProps = UIStyledComponentProps<Props>;
 
-export const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, categoryId, ...props }: ShopSearchProps) => {
+export const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, category, ...props }: ShopSearchProps) => {
 
   // deserialize queryString encoded params
   const { params, replaceParamsSilently } = useSearchParamsEncoded();
@@ -68,7 +68,7 @@ export const ShopSearch: React.FC<ShopSearchProps> = ({ items, featureTypes, cat
   const filterItem = useCallback(filterShopItem, []);
 
   // initialize filters with items, featureTypes and queryString params
-  const { filteredItems, filters, setFilter } = useFilters<ShopSearchItem>(items, featureTypes, filterItem, getDefaultFilterParams(params?.filter, categoryId));
+  const { filteredItems, filters, setFilter } = useFilters<ShopSearchItem>(items, featureTypes, filterItem, getDefaultFilterParams(params?.filter, category));
 
   // initialize sort with filteredItems and queryString params
   const sortParams = (params && params.sorting) || {};

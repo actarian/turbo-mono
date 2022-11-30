@@ -36,6 +36,7 @@ function serializeParams(params: {}, serializedParams: { key: string, value: unk
 export function qsSerialize(queryParams: QueryParams = {}): string {
   const params = serializeParams(queryParams);
   if (params.length) {
+    // console.log(params.map(x => `${x.key}=${x.value}`).join('&'));
     return params.map(x => `${x.key}=${x.value}`).join('&');
   }
   return '';
@@ -44,8 +45,8 @@ export function qsSerialize(queryParams: QueryParams = {}): string {
 // deserialize
 
 
-function deserializeValue(value: string): string | number {
-  return parseInt(value) === Number(value) ? Number(value) : value;
+export function deserializeValue(value: string): string | number {
+  return String(parseInt(value)) === value ? Number(value) : value;
 }
 
 function deserializeKey(key: string): (string | number)[] {

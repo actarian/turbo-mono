@@ -2,7 +2,6 @@
 import { apiHandler } from '@websolute/core';
 import { getRoute, resolveRoute } from '@websolute/models';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { PAGES } from 'src/config';
 
 export default apiHandler({
   post: async (request: NextApiRequest, response: NextApiResponse) => {
@@ -24,7 +23,7 @@ export default apiHandler({
         return response.status(404).send('Route not found');
       }
       // console.log('route.found', route);
-      const resolvedRoute = resolveRoute(route, PAGES);
+      const resolvedRoute = resolveRoute(route);
       await response.revalidate(resolvedRoute);
       return response.json({ revalidated: true });
     } catch (error) {

@@ -59,8 +59,13 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
     // const url = `/${this.key}${id ? `/${encodeURIComponent(id)}` : ''}${search}`;
     const url = `/${this.key}${search}`;
     // console.log('StoreApiService', this.key, 'findOne', url);
-    const item = await storeGet(url);
-    return this.decorator_(item, params);
+    const response = await storeGet(url);
+    const items: T[] = Array.isArray(response.docs) ? response.docs : response;
+    // console.log('StoreApiService.findOne', url, items);
+    if (items.length) {
+      return this.decorator_(items[0], params);
+    }
+    return;
   }
 
   async findMany(params: QueryParams = {}): Promise<T[]> {
@@ -68,8 +73,9 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
     const query = qsSerialize(params);
     const search = query ? `?${query}` : '';
     const url = `/${this.key}${search}`;
-    // console.log('StoreApiService', this.key, 'findMany', url);
-    const items: T[] = await storeGet(url);
+    const response = await storeGet(url);
+    const items: T[] = Array.isArray(response.docs) ? response.docs : response;
+    // console.log('StoreApiService.findMany', url, items);
     // items = this.where_(items, params);
     return items.map(x => this.decorator_(x, params));
   }

@@ -1,8 +1,9 @@
 [
   {
     "id": 1,
-    "categoryId": "homepage",
+    "category": "homepage",
     "template": "homepage",
+    "isDefault": true,
     "slug": "",
     "title": {
       "en": "New Wave",

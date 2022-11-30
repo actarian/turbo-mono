@@ -1,37 +1,44 @@
 [
   {
+    "category": "magazine_category_art",
+    "isDefault": true,
     "title": "Art",
-    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
-    "categoryId": "magazine_category_art"
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura."
   },
   {
+    "category": "magazine_category_diary",
+    "isDefault": true,
     "title": "Diary",
-    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
-    "categoryId": "magazine_category_diary"
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura."
   },
   {
+    "category": "magazine_category_event",
+    "isDefault": true,
     "title": "Events",
-    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
-    "categoryId": "magazine_category_event"
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura."
   },
   {
+    "category": "magazine_category_inside",
+    "isDefault": true,
     "title": "Inside",
-    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
-    "categoryId": "magazine_category_inside"
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura."
   },
   {
+    "category": "magazine_category_library",
+    "isDefault": true,
     "title": "Library",
-    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
-    "categoryId": "magazine_category_library"
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura."
   },
   {
+    "category": "magazine_category_place",
+    "isDefault": true,
     "title": "Places",
-    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
-    "categoryId": "magazine_category_place"
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura."
   },
   {
+    "category": "magazine_category_talk",
+    "isDefault": true,
     "title": "Talks",
-    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura.",
-    "categoryId": "magazine_category_talk"
+    "abstract": "Hexagon Magazine è una finestra sul nostro mondo, un progetto editoriale legato all’azienda attraverso l’approfondimento di temi ad essa strettamente legati: arte e design, architettura, cultura e letteratura."
   }
 ]

@@ -5,13 +5,14 @@ const dotenv = require('dotenv');
 const path = require('path');
 const pluralize = require('pluralize');
 const fs = require('fs');
-const EXPORT_TYPES = false;
 if (process.env && process.env.NODE_ENV) {
     dotenv.config({ path: '.env.' + process.env.NODE_ENV });
 }
 else {
     dotenv.config({ path: '.env.development' });
 }
+// !!! types generator disabled
+const EXPORT_TYPES = false;
 async function awaitAll(array, callback) {
     const promises = array.map(callback);
     return await Promise.all(promises);
@@ -98,42 +99,33 @@ function localizedToString(json, locale = 'en', defaultLocale = 'en') {
     const localizedString = json[locale] || json[defaultLocale] || Object.values(json)[0];
     return localizedString;
 }
-function resolveCategoryTree(item, items, categories) {
-    const categoryTree = [];
-    let categoryId = item.categoryId || null;
-    let skipLast = false;
-    while (categoryId != null) { // !!! loose
-        const c = categories.find(c => c.id === categoryId);
-        if (c) {
-            const b = { ...c };
-            categoryTree.unshift(b);
-            categoryId = b.categoryId || null;
-            if (b.pageSchema) {
-                const page = items.find(p => p.schema === b.pageSchema && p.id === b.pageId);
-                if (page) {
-                    b.slug = page.slug;
-                }
+function getRouteSegments(schema, item, categories) {
+    const segments = [];
+    let parentId = item.category || null;
+    while (parentId != null) { // !!! loose
+        const parentCategory = categories.find(c => c.id === parentId);
+        if (parentCategory) {
+            if (parentCategory.slug) {
+                const segment = { ...parentCategory };
+                segments.unshift(segment);
             }
-            if (b.pageSchema === item.schema && b.pageId === item.id) {
-                skipLast = true;
-            }
+            parentId = parentCategory.category || null;
         }
         else {
-            categoryId = null;
+            parentId = null;
         }
     }
-    if (!skipLast) {
-        categoryTree.push({
+    if (item.isDefault !== true) {
+        segments.push({
             id: item.id,
-            schema: 'category',
             title: item.title,
-            media: item.media,
             slug: item.slug,
-            pageSchema: item.schema,
-            pageId: item.id,
+            schema: schema,
+            page: item.id,
+            media: item.media,
         });
     }
-    return categoryTree;
+    return segments;
 }
 async function rebuildStore(pathname, PAGES) {
     console.log('MockBuild.rebuildStore', pathname);
@@ -150,20 +142,33 @@ async function buildStore(jsons, PAGES) {
     const pageKeys = Object.keys(PAGES);
     let collections = jsons.map(json => getCollectionNames(json.name));
     collections.forEach((c, i) => {
-        store[c.singularName] = toServiceSchema(c, jsons[i].data, pageKeys.includes(c.singularName));
+        let collectionService;
+        if (c.singularName === 'category') {
+            collectionService = toCategorySchema(c, jsons[i].data);
+        }
+        else if (pageKeys.includes(c.singularName)) {
+            collectionService = toPageSchema(c, jsons[i].data);
+        }
+        else {
+            collectionService = toDataSchema(c, jsons[i].data);
+        }
+        store[c.singularName] = collectionService;
     });
+    /*
     const pageService = createPageService(store, PAGES);
-    store['page'] = pageService;
+    store.page = pageService;
+    */
     const routeService = createRouteService(store, PAGES);
-    store['route'] = routeService;
-    // Object.keys(store).forEach(key => console.log((store[key] as MockService<any>).collection));
+    store.route = routeService;
     collections = Object.keys(store).map(key => store[key]);
     if (EXPORT_TYPES) {
-        // types generator disabled !!!
         await awaitAll(collections, async (c) => await addType(c.items, c, collections));
     }
-    // pageKeys.forEach(key => delete store[key]);
-    return store;
+    const mockStore = {};
+    Object.keys(store).forEach(key => {
+        mockStore[key] = store[key].items;
+    });
+    return mockStore;
 }
 function createPageService(store, PAGES) {
     const keys = Object.keys(PAGES);
@@ -195,38 +200,29 @@ function titleToSlug(title) {
         .replace(/^-+/, '') //trim starting dash
         .replace(/-+$/, ''); //trim ending dash
 }
-function createRoute(href, marketId, localeId, pageId, pageSchema, pageTemplate) {
-    return {
-        id: href,
-        schema: 'route',
-        marketId,
-        localeId,
-        pageId,
-        pageSchema,
-        pageTemplate,
-    };
-}
 function createRouteService(store, PAGES) {
-    const keys = Object.keys(PAGES);
-    // console.log('createRouteService', keys);
     const routes = [];
+    const locales = store.locale.items;
+    const languages = locales.map(x => x.id);
+    const markets = store.market.items.map(x => ({
+        schema: 'market',
+        id: x.id,
+        languages: x.languages || languages,
+    }));
+    const categories = store.category.items;
+    // console.log(categories[0]);
+    const keys = Object.keys(PAGES);
     for (const key of keys) {
-        const languages = store.locale.items.map(x => x.id);
-        const markets = store.market.items.map(x => ({
-            id: x.id,
-            schema: 'market',
-            languages: x.languages || languages,
-        }));
         const collection = store[key];
         if (collection) {
             const items = collection.items;
             // console.log('createRouteService', key, items.length);
             for (const item of items) {
-                const categoryTree = resolveCategoryTree(item, store.page.items, store.category.items);
+                const segments = getRouteSegments(key, item, categories);
                 const availableMarkets = item.markets ? markets.filter(x => item.markets.indexOf(x.id) !== -1) : markets;
                 availableMarkets.forEach(m => {
                     (m.languages || languages).forEach(l => {
-                        const href = categoryTree.reduce((p, c, i) => {
+                        const href = segments.reduce((p, c, i) => {
                             // !!! page.slug || category.slug
                             let slug = c.slug;
                             if (isLocalizedString(slug)) {
@@ -236,14 +232,36 @@ function createRouteService(store, PAGES) {
                             return slug === '/' ? '' : slug;
                         }, '');
                         // console.log('href', href);
-                        const route = createRoute(`/${m.id}/${l}${href}`, m.id, l, item.id, key, item.template);
+                        let prefix = '';
+                        if (languages.length > 1 || markets.length > 1) {
+                            prefix = `/${l}`;
+                        }
+                        if (markets.length > 1) {
+                            prefix = `${prefix}-${m.id}`;
+                        }
+                        const route = {
+                            id: `${prefix}${href}`,
+                            market: m.id,
+                            locale: l,
+                            page: item.id,
+                            schema: key,
+                            template: item.template,
+                        };
                         routes.push(route);
                     });
                 });
                 if (key === 'homepage') {
-                    const defaultMarket = markets[0].id;
-                    const defaultLocale = markets[0].languages ? markets[0].languages[0] : languages[0];
-                    const route = createRoute(`/`, defaultMarket, defaultLocale, item.id, key, item.template);
+                    const defaultLanguage = locales.find(x => x.isDefault);
+                    const defaultMarket = markets.find(x => x.isDefault) || markets[0];
+                    const defaultMarketLanguage = defaultMarket && defaultMarket.defaultLanguage ? defaultMarket.defaultLanguage : defaultLanguage.id;
+                    const route = {
+                        id: `/`,
+                        market: defaultMarket.id,
+                        locale: defaultMarketLanguage,
+                        page: item.id,
+                        schema: key,
+                        template: item.template,
+                    };
                     routes.push(route);
                 }
             }
@@ -267,7 +285,39 @@ function getCollectionNames(key) {
         displayName: key.charAt(0).toUpperCase() + key.substring(1, key.length).toLowerCase(),
     };
 }
-function toServiceSchema(c, collection, isPage) {
+function toCategorySchema(c, collection) {
+    if (c.singularName === c.pluralName) {
+        throw `MOCK > collection error: invalid plural key ${c.singularName}`;
+    }
+    const mapToCategory = (x, i) => {
+        if (typeof x.slug !== 'string') {
+            if (x.title != null) {
+                if (typeof x.title === 'string') {
+                    x.slug = titleToSlug(x.title);
+                }
+                else {
+                    const slug = { ...x.title };
+                    Object.keys(slug).forEach((key) => {
+                        slug[key] = titleToSlug(slug[key]);
+                    });
+                    x.slug = slug;
+                }
+            }
+        }
+        const data = {
+            ...x,
+        };
+        if (!data.schema) {
+            data.schema = c.singularName;
+        }
+        return data;
+    };
+    return {
+        ...c,
+        items: collection.map((x, i) => mapToCategory(x, i)),
+    };
+}
+function toPageSchema(c, collection) {
     if (c.singularName === c.pluralName) {
         throw `MOCK > collection error: invalid plural key ${c.singularName}`;
     }
@@ -299,20 +349,35 @@ function toServiceSchema(c, collection, isPage) {
         meta.keywords = meta.keywords || 'keywords';
         meta.robots = meta.robots || 'all';
         x.meta = meta;
-        return ({
+        const page = {
             ...x,
-            schema: c.singularName
-        });
-    };
-    const mapToData = (x, i) => {
-        return ({
-            ...x,
-            schema: c.singularName
-        });
+        };
+        if (!page.schema) {
+            page.schema = c.singularName;
+        }
+        return page;
     };
     return {
         ...c,
-        items: collection.map((x, i) => isPage ? mapToPage(x, i) : mapToData(x, i)),
+        items: collection.map((x, i) => mapToPage(x, i)),
+    };
+}
+function toDataSchema(c, collection) {
+    if (c.singularName === c.pluralName) {
+        throw `MOCK > collection error: invalid plural key ${c.singularName}`;
+    }
+    const mapToData = (x, i) => {
+        const data = {
+            ...x,
+        };
+        if (!data.schema) {
+            data.schema = c.singularName;
+        }
+        return data;
+    };
+    return {
+        ...c,
+        items: collection.map((x, i) => mapToData(x, i)),
     };
 }
 async function addType(items, c, collections) {

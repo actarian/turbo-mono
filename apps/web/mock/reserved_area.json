@@ -1,30 +1,34 @@
 [
   {
-    "categoryId": "reserved_area",
+    "category": "reserved_area",
+    "isDefault": true,
     "title": {
       "en": "Reserved area",
       "it": "Area riservata"
     }
   },
   {
-    "categoryId": "reserved_area_order_index",
+    "category": "reserved_area_order_index",
     "template": "reserved_area_order_index",
+    "isDefault": true,
     "title": {
       "en": "My orders",
       "it": "I miei ordini"
     }
   },
   {
-    "categoryId": "reserved_area_order_detail",
+    "category": "reserved_area_order_detail",
     "template": "reserved_area_order_detail",
+    "isDefault": true,
     "title": {
       "en": "Order detail",
       "it": "Dettaglio ordine"
     }
   },
   {
-    "categoryId": "reserved_area_account",
+    "category": "reserved_area_account",
     "template": "reserved_area_account",
+    "isDefault": true,
     "title": {
       "en": "Account settings",
       "it": "Impostazioni account"

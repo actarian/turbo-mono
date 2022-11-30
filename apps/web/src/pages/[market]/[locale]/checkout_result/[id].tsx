@@ -1,5 +1,5 @@
 
-import { asServerProps, IContextParams } from '@websolute/core';
+import { asServerProps, deserializeValue, IContextParams } from '@websolute/core';
 import { getLayout, getOrder, getPage, IOrder, IOrderStatus, IUser, PageProps } from '@websolute/models';
 import { Breadcrumb, CheckoutError, CheckoutSuccess, Container, Footer, Header, Layout, Meta, Page, Section } from '@websolute/ui';
 import { withIronSessionSsr } from 'iron-session/next';
@@ -49,7 +49,7 @@ export const getServerSideProps = withIronSessionSsr(async function (context) {
   const query = context.query;
 
   // Layout
-  const id = parseInt(params.id);
+  const id = deserializeValue(params.id);
   const market = params.market;
   const locale = params.locale;
   const layout = await getLayout(market, locale);
@@ -79,7 +79,7 @@ export type CheckoutResultProps = PageProps & {
 }
 
 export async function getStaticProps(context: IStaticContext) {
-  const id = parseInt(context.params.id);
+  const id = deserializeValue(context.params.id);
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);

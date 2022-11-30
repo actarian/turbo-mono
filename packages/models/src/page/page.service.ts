@@ -1,46 +1,58 @@
-import { IEquatable } from '@websolute/core';
+import { IEquatable, QueryParams } from '@websolute/core';
 import { getStore } from '@websolute/store';
 import { ICategory } from '../category/category';
-import { getCategoryTree } from '../category/category.service';
+import { getSegments } from '../category/category.service';
 import { resolveLabel } from '../label/label.service';
 import { ILayout } from '../layout/layout';
 import { getLayout } from '../layout/layout.service';
 import { IRouteLink, SchemaType } from '../route/route';
-import { getBreadcrumbFromCategoryTree } from '../route/route.service';
+import { getBreadcrumbFromSegments } from '../route/route.service';
 import { IModelStore } from '../store/store';
 import { IPage } from './page';
 
+export async function findPage<T extends IPage>(schema: string, params?: QueryParams): Promise<T | undefined> {
+  const store = await getStore<IModelStore>();
+  const collection = store[schema];
+  if (!collection) {
+    throw `PageService.findPage: Collection not found [${schema}]`;
+  }
+  const page = await collection.findOne(params) as T;
+  if (page) {
+    return page;
+  } else {
+    console.log('PageService.getPage.notfound', schema, params);
+    return;
+  }
+}
+
 export async function getPage<T extends IPage>(schema: string, id: IEquatable, market?: string, locale?: string): Promise<T | undefined> {
   const store = await getStore<IModelStore>();
-  const page = await store.page.findOne({
+  const page = await findPage(schema, {
     where: {
       id: {
         equals: id,
       },
-      schema: {
-        equals: schema,
-      }
     }, market, locale
   }) as T;
   // console.log(page, market, locale);
   if (page) {
     const routes = await store.route.findMany({
       where: {
-        pageId: {
+        page: {
           equals: id,
         },
-        pageSchema: {
+        schema: {
           equals: schema,
         },
       }
     });
-    const currentRoute = routes.find((x: any) => x.marketId === market && x.localeId === locale);
+    const currentRoute = routes.find((x: any) => x.market === market && x.locale === locale);
     if (!currentRoute) {
       throw ('No route found for page ' + schema + ':' + id + ' in market ' + market + ' and locale ' + locale);
     }
-    const alternates = routes.filter((x: any) => x.marketId !== market || x.localeId !== locale);
-    const categoryTree: ICategory[] = await getCategoryTree(page);
-    const breadcrumb: IRouteLink[] = await getBreadcrumbFromCategoryTree(categoryTree, market, locale);
+    const alternates = routes.filter((x: any) => x.market !== market || x.locale !== locale);
+    const segments: ICategory[] = await getSegments(page);
+    const breadcrumb: IRouteLink[] = await getBreadcrumbFromSegments(segments, market, locale);
     const parentRoute: IRouteLink | undefined = breadcrumb.length > 1 ? breadcrumb[breadcrumb.length - 2] : undefined;
     return {
       ...page,
@@ -60,13 +72,10 @@ export async function getPageCategory<T extends IPage>(schema: string, page?: IP
     return;
   }
   const store = await getStore<IModelStore>();
-  const category = await store.page.findOne({
+  const category = await findPage(schema, {
     where: {
-      schema: {
-        equals: schema,
-      },
-      categoryId: {
-        equals: page.categoryId,
+      category: {
+        equals: page.category,
       }
     }, market, locale
   }) as T;
@@ -74,15 +83,15 @@ export async function getPageCategory<T extends IPage>(schema: string, page?: IP
   if (category) {
     const routes = await store.route.findMany({
       where: {
-        pageSchema: {
+        schema: {
           equals: schema,
         },
-        pageId: {
+        page: {
           equals: category.id,
         },
       }
     });
-    const currentRoute = routes.find((x: any) => x.marketId === market && x.localeId === locale);
+    const currentRoute = routes.find((x: any) => x.market === market && x.locale === locale);
     if (!currentRoute) {
       throw ('No route found for page ' + schema + ':' + category.id + ' in market ' + market + ' and locale ' + locale);
     }
@@ -120,17 +129,3 @@ export async function getErrorPageLayout(): Promise<{ layout: ILayout, page: IPa
   return { layout, page };
 }
 
-/*
-export async function getPageLayout(schema: string, id: IEquatable, market?: string, locale?: string): Promise<IPageLayout | null> {
-  const page = await getPage(schema, id, market, locale);
-  if (page) {
-    const layout = await getLayout(market, locale);
-    return {
-      ...page,
-      ...layout,
-    };
-  } else {
-    return null;
-  }
-}
-*/

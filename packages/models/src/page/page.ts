@@ -21,9 +21,7 @@ export type IImage = {
 };
 
 export type IPage = IEntity & {
-  // id: IEquatable;
-  // schema: SchemaType;
-  categoryId?: string;
+  category?: string;
   slug?: string;
   href: string;
   alternates: IRoute[];

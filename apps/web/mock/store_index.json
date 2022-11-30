@@ -1,6 +1,7 @@
 [
   {
-    "categoryId": "store_index",
+    "category": "store_index",
+    "isDefault": true,
     "title": "Stores"
   }
 ]

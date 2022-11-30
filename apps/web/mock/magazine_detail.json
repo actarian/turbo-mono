@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "A talk with Vincent Van Duysen",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Ph. Fred Debrock",
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "title": "below above",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "title": "Raw-Edges’ London House",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "title": "Lincoln Pavilion",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -46,7 +46,7 @@
   {
     "id": 5,
     "title": "EDIDA 2022",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -60,7 +60,7 @@
     "title": "A talk with Maria Cristina Didero",
     "abstract": "Curatrice, consulente e autrice indipendente di design, Maria Cristina Didero è stata nominata Curatorial Director di Design Miami 2022. Durante il nostro incontro, ci ha parlato di come si è sviluppata la sua passione per il design e del suo approccio personale, positivamente influenzato da un percorso di studi in ambito umanistico. Abbiamo parlato anche della nuova edizione della fiera, delle sezioni maggiormente significative e del ruolo ricoperto dell’esperienza digitale.",
     "photographer": "Fotografie di Piergiorgio Sorgetti",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "A talk with Maria Cristina Didero",
@@ -231,7 +231,7 @@
   {
     "id": 7,
     "title": "Elementi per paesaggi",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -242,7 +242,7 @@
   {
     "id": 8,
     "title": "Campo di Marte",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -253,7 +253,7 @@
   {
     "id": 9,
     "title": "Rombini Vases alla galleria Giorgio Mastinu",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -264,7 +264,7 @@
   {
     "id": 10,
     "title": "A talk with Nicola Ricciardi",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -275,7 +275,7 @@
   {
     "id": 11,
     "title": "A talk with Chiara Rusconi",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -286,7 +286,7 @@
   {
     "id": 12,
     "title": "Mind the gap",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -297,7 +297,7 @@
   {
     "id": 13,
     "title": "A talk with Ginevra Bocini",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -308,7 +308,7 @@
   {
     "id": 14,
     "title": "A talk with Shirana Shahbazi",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -319,7 +319,7 @@
   {
     "id": 15,
     "title": "Hives",
-    "categoryId": "magazine_category_inside",
+    "category": "magazine_category_inside",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -330,7 +330,7 @@
   {
     "id": 16,
     "title": "MUT 7",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -341,7 +341,7 @@
   {
     "id": 17,
     "title": "Buon Natale!",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -352,7 +352,7 @@
   {
     "id": 18,
     "title": "This Is Not a Prize 2021",
-    "categoryId": "magazine_category_art",
+    "category": "magazine_category_art",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -363,7 +363,7 @@
   {
     "id": 19,
     "title": "A talk with Jack Hinton",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -374,7 +374,7 @@
   {
     "id": 20,
     "title": "The opening of MUT 7",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -385,7 +385,7 @@
   {
     "id": 21,
     "title": "A talk with Nicolas Trembley",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -396,7 +396,7 @@
   {
     "id": 22,
     "title": "Ronan Bouroullec – The Sound of My Left Hand",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -407,7 +407,7 @@
   {
     "id": 23,
     "title": "HAY House 2.0",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -418,7 +418,7 @@
   {
     "id": 24,
     "title": "Cersaie 2021",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -429,7 +429,7 @@
   {
     "id": 25,
     "title": "Ensemble",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -440,7 +440,7 @@
   {
     "id": 26,
     "title": "Ensemble Preview",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -451,7 +451,7 @@
   {
     "id": 27,
     "title": "DIN by Konstantin Grcic meets Luigi Ghirri – Between the Lines",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -462,7 +462,7 @@
   {
     "id": 28,
     "title": "Diarama Collection",
-    "categoryId": "magazine_category_inside",
+    "category": "magazine_category_inside",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -473,7 +473,7 @@
   {
     "id": 29,
     "title": "A talk with Jean-Baptiste Fastrez",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -484,7 +484,7 @@
   {
     "id": 30,
     "title": "Woven Cosmos",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -495,7 +495,7 @@
   {
     "id": 31,
     "title": "A talk with Rolf Fehlbaum",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -506,7 +506,7 @@
   {
     "id": 32,
     "title": "Luigi Ghirri – Between the Lines",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -517,7 +517,7 @@
   {
     "id": 33,
     "title": "DIN by Konstantin Grcic",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -528,7 +528,7 @@
   {
     "id": 34,
     "title": "Monocle Design Awards 2021",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -539,7 +539,7 @@
   {
     "id": 35,
     "title": "A talk with Yvon Lambert",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -550,7 +550,7 @@
   {
     "id": 36,
     "title": "Kadeau Restaurant",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -561,7 +561,7 @@
   {
     "id": 37,
     "title": "Casa Mutina Milano",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -572,7 +572,7 @@
   {
     "id": 38,
     "title": "A talk with Lotta Agaton",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -583,7 +583,7 @@
   {
     "id": 39,
     "title": "Primavera Collection",
-    "categoryId": "magazine_category_inside",
+    "category": "magazine_category_inside",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -594,7 +594,7 @@
   {
     "id": 40,
     "title": "A talk with Silke Otto-Knapp",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -605,7 +605,7 @@
   {
     "id": 41,
     "title": "Casa Mutina Modena",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -616,7 +616,7 @@
   {
     "id": 42,
     "title": "A talk with Luca Lo Pinto",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -627,7 +627,7 @@
   {
     "id": 43,
     "title": "A Brief Moment",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -638,7 +638,7 @@
   {
     "id": 44,
     "title": "A talk with Jonathan Frantini",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -649,7 +649,7 @@
   {
     "id": 45,
     "title": "Residenza privata a Guarda",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -660,7 +660,7 @@
   {
     "id": 46,
     "title": "A talk with Guido Costa",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -671,7 +671,7 @@
   {
     "id": 47,
     "title": "Buon Natale!",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -682,7 +682,7 @@
   {
     "id": 48,
     "title": "Hija de Sanchez Cantina",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -693,7 +693,7 @@
   {
     "id": 49,
     "title": "Mutina Tales N.8 – An Expert Eye",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -704,7 +704,7 @@
   {
     "id": 50,
     "title": "A talk with Florence Bonnefous",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -715,7 +715,7 @@
   {
     "id": 51,
     "title": "Monograph Hotel and Lounge",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -726,7 +726,7 @@
   {
     "id": 52,
     "title": "A talk with RNDSQR",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -737,7 +737,7 @@
   {
     "id": 53,
     "title": "Quadriennale di Roma: a talk with Sarah Cosulich",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -748,7 +748,7 @@
   {
     "id": 54,
     "title": "Mutina Tales N.7 – The End of The Second Cycle",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -759,7 +759,7 @@
   {
     "id": 55,
     "title": "Ristorante Cantera",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -770,7 +770,7 @@
   {
     "id": 56,
     "title": "A talk with Benedetta Tagliabue",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -781,7 +781,7 @@
   {
     "id": 57,
     "title": "PLEASE WAIT to be SEATED",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -792,7 +792,7 @@
   {
     "id": 58,
     "title": "Mutina Tales N.6 – In Reverse",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -803,7 +803,7 @@
   {
     "id": 59,
     "title": "Mattonelle Margherita",
-    "categoryId": "magazine_category_inside",
+    "category": "magazine_category_inside",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -814,7 +814,7 @@
   {
     "id": 60,
     "title": "Mutina presenta Mattonelle Margherita",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -825,7 +825,7 @@
   {
     "id": 61,
     "title": "Stay tuned for Mattonelle Margherita",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -836,7 +836,7 @@
   {
     "id": 62,
     "title": "A talk with Jaime Derringer",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -847,7 +847,7 @@
   {
     "id": 63,
     "title": "Torre Numero Uno",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -858,7 +858,7 @@
   {
     "id": 64,
     "title": "The first tiles collection by Nathalie Du Pasquier",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -869,7 +869,7 @@
   {
     "id": 65,
     "title": "Mutina Tales N.5 – Perfection Lies Within Imperfection",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -880,7 +880,7 @@
   {
     "id": 66,
     "title": "Chymia Collection",
-    "categoryId": "magazine_category_inside",
+    "category": "magazine_category_inside",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -891,7 +891,7 @@
   {
     "id": 67,
     "title": "Casa Mutina Milano",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -902,7 +902,7 @@
   {
     "id": 68,
     "title": "A Manifesto",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -913,7 +913,7 @@
   {
     "id": 69,
     "title": "Mutina Tales N.4 – Love at First Sight",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -924,7 +924,7 @@
   {
     "id": 70,
     "title": "Seascape Suites Santorini",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -935,7 +935,7 @@
   {
     "id": 71,
     "title": "A talk with Damien Florébert Cuypers",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -946,7 +946,7 @@
   {
     "id": 72,
     "title": "Mutina Tales N.3 – Never Hug a Japanese",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -957,7 +957,7 @@
   {
     "id": 73,
     "title": "Bistro Offices a Budapest",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -968,7 +968,7 @@
   {
     "id": 74,
     "title": "Mutina Tales N.2 – First Time Lucky",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -979,7 +979,7 @@
   {
     "id": 75,
     "title": "Essential Eames: Words &amp;amp; Pictures",
-    "categoryId": "magazine_category_library",
+    "category": "magazine_category_library",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -990,7 +990,7 @@
   {
     "id": 76,
     "title": "Mutina Tales N.1 – Something Magic",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1001,7 +1001,7 @@
   {
     "id": 77,
     "title": "Off-White",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1012,7 +1012,7 @@
   {
     "id": 78,
     "title": "Robby Müller: Polaroid",
-    "categoryId": "magazine_category_library",
+    "category": "magazine_category_library",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1023,7 +1023,7 @@
   {
     "id": 79,
     "title": "A talk with Bart Van Der Heide",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1034,7 +1034,7 @@
   {
     "id": 80,
     "title": "A letter from our home to yours",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1045,7 +1045,7 @@
   {
     "id": 81,
     "title": "Nochka",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1056,7 +1056,7 @@
   {
     "id": 82,
     "title": "Luigi Ghirri",
-    "categoryId": "magazine_category_library",
+    "category": "magazine_category_library",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1067,7 +1067,7 @@
   {
     "id": 83,
     "title": "A talk with Frama",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1078,7 +1078,7 @@
   {
     "id": 84,
     "title": "Every Other Space",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1089,7 +1089,7 @@
   {
     "id": 85,
     "title": "Nature Morte Vivante",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1100,7 +1100,7 @@
   {
     "id": 86,
     "title": "Adjectives",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1111,7 +1111,7 @@
   {
     "id": 87,
     "title": "The opening of MUT 5",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1122,7 +1122,7 @@
   {
     "id": 88,
     "title": "A talk with Falken Reynolds",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1133,7 +1133,7 @@
   {
     "id": 89,
     "title": "Raw-Edges Design Studio vince AW Designer of the Year 2020",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1144,7 +1144,7 @@
   {
     "id": 90,
     "title": "Buon Natale!",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1155,7 +1155,7 @@
   {
     "id": 91,
     "title": "This Is Not a Prize 2019",
-    "categoryId": "magazine_category_art",
+    "category": "magazine_category_art",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1166,7 +1166,7 @@
   {
     "id": 92,
     "title": "Bistro Bacchus",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1177,7 +1177,7 @@
   {
     "id": 93,
     "title": "A talk with Stones &amp;amp; Walls",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1188,7 +1188,7 @@
   {
     "id": 94,
     "title": "Penthouse facing the sea",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1199,7 +1199,7 @@
   {
     "id": 95,
     "title": "A talk with Collective Studio",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1210,7 +1210,7 @@
   {
     "id": 96,
     "title": "Chymia",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1221,7 +1221,7 @@
   {
     "id": 97,
     "title": "Yarra Valley House",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1232,7 +1232,7 @@
   {
     "id": 98,
     "title": "The Cylinder Glass",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1243,7 +1243,7 @@
   {
     "id": 99,
     "title": "A Talk with Nathalie Du Pasquier",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1254,7 +1254,7 @@
   {
     "id": 100,
     "title": "Alphabet + Chymia",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1265,7 +1265,7 @@
   {
     "id": 101,
     "title": "MUT 4 Opening",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1276,7 +1276,7 @@
   {
     "id": 102,
     "title": "Cersaie 2019",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1287,7 +1287,7 @@
   {
     "id": 103,
     "title": "Nathalie Du Pasquier, BRIC",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1298,7 +1298,7 @@
   {
     "id": 104,
     "title": "29th Apartment",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1309,7 +1309,7 @@
   {
     "id": 105,
     "title": "A talk with Gianluigi Ricuperati",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1320,7 +1320,7 @@
   {
     "id": 106,
     "title": "Interlace",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1331,7 +1331,7 @@
   {
     "id": 107,
     "title": "Glass Tea House – KOU-AN",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1342,7 +1342,7 @@
   {
     "id": 108,
     "title": "A talk with Daniel Baumann",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1353,7 +1353,7 @@
   {
     "id": 109,
     "title": "Zeen",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1364,7 +1364,7 @@
   {
     "id": 110,
     "title": "Les Fontaines des Champs-Élysée",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1375,7 +1375,7 @@
   {
     "id": 111,
     "title": "Libreria Rizzoli",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1386,7 +1386,7 @@
   {
     "id": 112,
     "title": "A talk with Neri&amp;amp;Hu",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1397,7 +1397,7 @@
   {
     "id": 113,
     "title": "Ronan &amp;amp; Erwan Bouroullec at Galerie Kreo",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1408,7 +1408,7 @@
   {
     "id": 114,
     "title": "A talk with AGi Architects",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1419,7 +1419,7 @@
   {
     "id": 115,
     "title": "Stockholm Furniture Fair 2019",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1430,7 +1430,7 @@
   {
     "id": 116,
     "title": "Ellsworth Kelly: Photographs",
-    "categoryId": "magazine_category_library",
+    "category": "magazine_category_library",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1441,7 +1441,7 @@
   {
     "id": 117,
     "title": "FIAC 2018",
-    "categoryId": "magazine_category_art",
+    "category": "magazine_category_art",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1452,7 +1452,7 @@
   {
     "id": 118,
     "title": "Elle Decor Grand Hotel",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1463,7 +1463,7 @@
   {
     "id": 119,
     "title": "Inedito",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1474,7 +1474,7 @@
   {
     "id": 120,
     "title": "Passaggio della Vittoria",
-    "categoryId": "magazine_category_art",
+    "category": "magazine_category_art",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1485,7 +1485,7 @@
   {
     "id": 121,
     "title": "Paul Thorel",
-    "categoryId": "magazine_category_art",
+    "category": "magazine_category_art",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1496,7 +1496,7 @@
   {
     "id": 122,
     "title": "Monceau",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1507,7 +1507,7 @@
   {
     "id": 123,
     "title": "Salone del Mobile 2018",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1518,7 +1518,7 @@
   {
     "id": 124,
     "title": "A talk with Cecilia Alemani",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1529,7 +1529,7 @@
   {
     "id": 125,
     "title": "VitraHaus Loft",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1540,7 +1540,7 @@
   {
     "id": 126,
     "title": "Sticks’n’Sushi",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1551,7 +1551,7 @@
   {
     "id": 127,
     "title": "Stockholm Furniture Fair 2018",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1562,7 +1562,7 @@
   {
     "id": 128,
     "title": "A talk with Sharis Alexandrian",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1573,7 +1573,7 @@
   {
     "id": 129,
     "title": "La Rinascente",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1584,7 +1584,7 @@
   {
     "id": 130,
     "title": "403030 Healthy Kitchen",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1595,7 +1595,7 @@
   {
     "id": 131,
     "title": "FIAC 2017",
-    "categoryId": "magazine_category_art",
+    "category": "magazine_category_art",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1606,7 +1606,7 @@
   {
     "id": 132,
     "title": "Mutina alla Biennale",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1617,7 +1617,7 @@
   {
     "id": 133,
     "title": "Mutina Unveils",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1628,7 +1628,7 @@
   {
     "id": 134,
     "title": "Design Parade Hyères 2017",
-    "categoryId": "magazine_category_diary",
+    "category": "magazine_category_diary",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1639,7 +1639,7 @@
   {
     "id": 135,
     "title": "Donald Judd: Writings",
-    "categoryId": "magazine_category_library",
+    "category": "magazine_category_library",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1650,7 +1650,7 @@
   {
     "id": 136,
     "title": "Camini a Los Angeles",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1661,7 +1661,7 @@
   {
     "id": 137,
     "title": "Food for soul",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1672,7 +1672,7 @@
   {
     "id": 138,
     "title": "Mutina alla Biennale di Venezia",
-    "categoryId": "magazine_category_art",
+    "category": "magazine_category_art",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1683,7 +1683,7 @@
   {
     "id": 139,
     "title": "A new perspective on tiles 2017",
-    "categoryId": "magazine_category_art",
+    "category": "magazine_category_art",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1694,7 +1694,7 @@
   {
     "id": 140,
     "title": "William Eggleston",
-    "categoryId": "magazine_category_library",
+    "category": "magazine_category_library",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1705,7 +1705,7 @@
   {
     "id": 141,
     "title": "Morris Louis",
-    "categoryId": "magazine_category_library",
+    "category": "magazine_category_library",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1716,7 +1716,7 @@
   {
     "id": 142,
     "title": "A talk with OEO Studio",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1727,7 +1727,7 @@
   {
     "id": 143,
     "title": "Drawings",
-    "categoryId": "magazine_category_library",
+    "category": "magazine_category_library",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1738,7 +1738,7 @@
   {
     "id": 144,
     "title": "Liberamensa",
-    "categoryId": "magazine_category_place",
+    "category": "magazine_category_place",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1749,7 +1749,7 @@
   {
     "id": 145,
     "title": "A talk with Pepi Marchetti Franchi",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1760,7 +1760,7 @@
   {
     "id": 146,
     "title": "How to work better",
-    "categoryId": "magazine_category_library",
+    "category": "magazine_category_library",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1771,7 +1771,7 @@
   {
     "id": 147,
     "title": "Artissima 2016",
-    "categoryId": "magazine_category_art",
+    "category": "magazine_category_art",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1782,7 +1782,7 @@
   {
     "id": 148,
     "title": "A talk with Sarah Cosulich",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1793,7 +1793,7 @@
   {
     "id": 149,
     "title": "Minimum",
-    "categoryId": "magazine_category_library",
+    "category": "magazine_category_library",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1804,7 +1804,7 @@
   {
     "id": 150,
     "title": "On Kawara",
-    "categoryId": "magazine_category_library",
+    "category": "magazine_category_library",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1815,7 +1815,7 @@
   {
     "id": 151,
     "title": "Ronan &amp;amp; Erwan Bouroullec 17 Screens",
-    "categoryId": "magazine_category_art",
+    "category": "magazine_category_art",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1826,7 +1826,7 @@
   {
     "id": 152,
     "title": "Ten years of Mutina",
-    "categoryId": "magazine_category_event",
+    "category": "magazine_category_event",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1837,7 +1837,7 @@
   {
     "id": 153,
     "title": "A talk with Rolf Fehlbaum",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",
@@ -1848,7 +1848,7 @@
   {
     "id": 154,
     "title": "A talk with Massimo Bottura",
-    "categoryId": "magazine_category_talk",
+    "category": "magazine_category_talk",
     "media": {
       "type": "image",
       "alt": "Journal",

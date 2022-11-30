@@ -6,15 +6,13 @@
       "en": "<p>Azulej è volta a rivalorizzare la memoria delle antiche maioliche artigianali e del cemento idraulico, sperimentando una tecnica di stampa innovativa orientata verso un prodotto di larga diffusione. Questa tradizione – rivisitata in chiave contemporanea – viene realizzata serialmente in formato 20x20 cm.</p> <p>La composizione riprende le caratteristiche della tecnica patchwork: un mix and match innovativo, volutamente casuale, che abbina disegni astratti e colori non saturi, neutri, appena consumati; colori che si fissano al materiale di supporto in modo naturalmente irregolare.</p>",
       "it": "<p>Azulej è volta a rivalorizzare la memoria delle antiche maioliche artigianali e del cemento idraulico, sperimentando una tecnica di stampa innovativa orientata verso un prodotto di larga diffusione. Questa tradizione – rivisitata in chiave contemporanea – viene realizzata serialmente in formato 20x20 cm.</p> <p>La composizione riprende le caratteristiche della tecnica patchwork: un mix and match innovativo, volutamente casuale, che abbina disegni astratti e colori non saturi, neutri, appena consumati; colori che si fissano al materiale di supporto in modo naturalmente irregolare.</p>"
     },
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "components": [
       {
@@ -263,15 +261,13 @@
     ],
     "designer": 2224,
     "id": 2293,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BQ",
     "title": "Bas-Relief by Patricia Urquiola",
@@ -289,15 +285,13 @@
   {
     "colors": [],
     "id": 10951,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BZG",
     "title": "Botanica by Tokujin Yoshioka",
@@ -321,15 +315,13 @@
     ],
     "designer": 2667,
     "id": 2356,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BS",
     "title": "Ceramica by Silvia Giacobazzi",
@@ -351,15 +343,13 @@
     ],
     "designer": 6352,
     "id": 5339,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BJ",
     "title": "Chymia by Laboratorio Avallone",
@@ -383,15 +373,13 @@
     ],
     "designer": 2224,
     "id": 2380,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BU",
     "title": "Déchirer by Patricia Urquiola",
@@ -414,15 +402,13 @@
     ],
     "designer": 2224,
     "id": 2392,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BV",
     "title": "Déchirer XL by Patricia Urquiola",
@@ -450,15 +436,13 @@
     ],
     "designer": 2228,
     "id": 2404,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BW",
     "title": "Diarama by Hella Jongerius",
@@ -481,15 +465,13 @@
     ],
     "designer": 5982,
     "id": 8268,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BZB",
     "title": "DIN by Konstantin Grcic",
@@ -513,15 +495,13 @@
     ],
     "designer": 2667,
     "id": 2416,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BX",
     "title": "Flow by Mutina Team",
@@ -542,15 +522,13 @@
     ],
     "designer": 2948,
     "id": 2428,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BY",
     "title": "Folded by Raw Edges",
@@ -571,15 +549,13 @@
     ],
     "designer": 2948,
     "id": 2440,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BZ",
     "title": "Folded XL by Raw Edges",
@@ -597,15 +573,13 @@
   {
     "colors": [],
     "id": 10921,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BZF",
     "title": "Kosei by Vincent Van Duysen",
@@ -630,15 +604,13 @@
     ],
     "designer": 2891,
     "id": 2452,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "B[",
     "title": "Lane by Barber & Osgerby",
@@ -661,15 +633,13 @@
     ],
     "designer": 5982,
     "id": 6607,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BZA",
     "title": "Mattonelle Margherita by Nathalie Du Pasquier",
@@ -692,15 +662,13 @@
     ],
     "designer": 2891,
     "id": 2464,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "B\\",
     "title": "Mews by Barber & Osgerby",
@@ -724,15 +692,13 @@
     ],
     "designer": 2925,
     "id": 2500,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BB",
     "title": "Phenomenon by Tokujin Yoshioka",
@@ -756,15 +722,13 @@
     ],
     "designer": 2937,
     "id": 2525,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BD",
     "title": "Pico by Ronan & Erwan Bouroullec",
@@ -789,15 +753,13 @@
     ],
     "designer": 2891,
     "id": 2537,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BE",
     "title": "Primavera by Barber & Osgerby",
@@ -823,15 +785,13 @@
     ],
     "designer": 2937,
     "id": 8733,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BZE",
     "title": "Punto by Ronan & Erwan Bouroullec",
@@ -859,15 +819,13 @@
     ],
     "designer": 2891,
     "id": 2554,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BF",
     "title": "Puzzle by Barber & Osgerby",
@@ -893,15 +851,13 @@
     ],
     "designer": 2937,
     "id": 2569,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BG",
     "title": "Rombini by Ronan & Erwan Bouroullec",
@@ -929,15 +885,13 @@
     ],
     "designer": 2948,
     "id": 2581,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BH",
     "title": "Tape by Raw Edges",
@@ -962,15 +916,13 @@
     ],
     "designer": 2667,
     "id": 2605,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BL",
     "title": "Teknotessere by Mutina Team",
@@ -998,15 +950,13 @@
     ],
     "designer": 2948,
     "id": 2617,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BM",
     "title": "Tex by Raw Edges",
@@ -1032,15 +982,13 @@
     ],
     "designer": 2224,
     "id": 2629,
-    "categoryId": "product_category_tile",
     "category": {
       "id": "product_category_tile",
       "href": "/ww/en/collections/tiles",
       "title": "All tiles",
-      "categoryId": "product_index",
-      "pageSchema": "product_category",
-      "pageId": 1,
-      "schema": "category"
+      "category": "product_index",
+      "schema": "product_category",
+      "page": 1
     },
     "code": "BN",
     "title": "Tierras by Patricia Urquiola",
