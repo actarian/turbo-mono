@@ -14,7 +14,7 @@ export const MarketsAndLanguagesDrawer: React.FC<MarketsAndLanguagesDrawerProps>
 
   const items = markets.map(x => ({
     ...x,
-    locales: x.languages ? locales.filter(l => x.languages ? x.languages.includes(l.id) : true) : locales,
+    locales: (x.languages && x.languages.length) ? locales.filter(l => x.languages ? x.languages.includes(l.id) : true) : locales,
   }));
 
   const getHref = useCallback((market: string, locale: string, currentMarket: string, currentLocale: string) => {

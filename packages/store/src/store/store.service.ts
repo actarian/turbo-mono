@@ -1,5 +1,5 @@
+import { getApiStore } from '../api/api.store';
 import { getMockStore } from '../mock/mock.store';
-import { getApiStore } from '../store-api/store-api.store';
 import { IStore, StoreStrategy, storeStrategy } from './store';
 
 const CONFIG_: {

@@ -98,6 +98,14 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
 
   // where
 
+  protected evaluateValue_(value: unknown): unknown {
+    if (typeof value === 'object' && value) {
+      return (value as any).id;
+    } else {
+      return value;
+    }
+  }
+
   protected existsClause_(value: unknown, exists?: boolean): boolean {
     // console.log('existsClause_', value, exists);
     if (typeof exists === 'boolean') {
@@ -109,7 +117,7 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
   protected equalsClause_(value: unknown, equals?: unknown): boolean {
     // console.log('equalsClause_', value, equals);
     if (typeof equals !== 'undefined') {
-      return value === equals;
+      return this.evaluateValue_(value) === equals;
     }
     return true;
   }
@@ -117,7 +125,7 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
   protected inClause_(value: unknown, values?: unknown[]): boolean {
     // console.log('inClause_', value, values);
     if (Array.isArray(values)) {
-      return values.indexOf(value) !== -1;
+      return values.indexOf(this.evaluateValue_(value)) !== -1;
     }
     return true;
   }
@@ -125,7 +133,7 @@ export default class JsonService<T extends IEntity> implements IQuerable<IEntity
   protected notInClause_(value: unknown, values?: unknown[]): boolean {
     // console.log('notInClause_', value, values);
     if (Array.isArray(values)) {
-      return values.indexOf(value) === -1;
+      return values.indexOf(this.evaluateValue_(value)) === -1;
     }
     return true;
   }

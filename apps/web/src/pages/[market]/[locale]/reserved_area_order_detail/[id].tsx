@@ -1,4 +1,3 @@
-
 import { asServerProps, deserializeValue, IContextParams } from '@websolute/core';
 import { useLabel } from '@websolute/hooks';
 import { getLayout, getOrder, getPage, IOrderDetail, IUser, PageProps } from '@websolute/models';

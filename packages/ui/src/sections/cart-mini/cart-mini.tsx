@@ -42,11 +42,13 @@ export const CartMini: React.FC<CartMiniProps> = ({ visible, onClose }: CartMini
       </Drawer.Subtitle>
       <Drawer.Content flex="1" display="flex" width="100vw" maxWidth="400px">
         <Flex.Col justifyContent="space-between">
-          <Flex.Col flex="1">
-            {items && items.map((item, i) =>
-              <CartMiniItem key={i} item={item} />
-            )}
-          </Flex.Col>
+          {items && (
+            <Flex.Col flex="1">
+              {items.map((item, i) =>
+                <CartMiniItem key={i} item={item} />
+              )}
+            </Flex.Col>
+          )}
           <Flex.Row justifyContent="space-between" alignItems="center" padding="1rem 0 0.5rem 0">
             <Text fontWeight="700">Subtotal</Text>
             <Text fontWeight="700">{currency(totalAmount)}</Text>

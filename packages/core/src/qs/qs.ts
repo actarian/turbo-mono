@@ -44,7 +44,6 @@ export function qsSerialize(queryParams: QueryParams = {}): string {
 
 // deserialize
 
-
 export function deserializeValue(value: string): string | number {
   return String(parseInt(value)) === value ? Number(value) : value;
 }

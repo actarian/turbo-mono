@@ -99,13 +99,15 @@ export const PageNav: React.FC<PageNavProps> = (props: PageNavProps) => {
         <PageNavInner {...innerProps}>
           <Container.Fluid>
             <Flex.Row justifyContent="space-between">
-              <Nav.Row gap="3rem" display="none" displaySm="flex">
-                {props.items.map((item, i) => (
-                  <Box key={i}>
-                    <Button className={getClassNames({ active: item.href === `#${id}` })} as="a" variant="nav" href={item.href} onClick={scrollTo}>{item.title}</Button>
-                  </Box>
-                ))}
-              </Nav.Row>
+              {props.items && (
+                <Nav.Row gap="3rem" display="none" displaySm="flex">
+                  {props.items.map((item, i) => (
+                    <Box key={i}>
+                      <Button className={getClassNames({ active: item.href === `#${id}` })} as="a" variant="nav" href={item.href} onClick={scrollTo}>{item.title}</Button>
+                    </Box>
+                  ))}
+                </Nav.Row>
+              )}
               <Flex>
                 {props.children}
               </Flex>

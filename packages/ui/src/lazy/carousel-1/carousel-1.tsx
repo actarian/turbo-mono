@@ -61,24 +61,26 @@ export const Carousel1: React.FC<Carousel1Props & SwiperProps> = ({ item, ...pro
       <Container textAlign="center">
         {item.title && <Text size="2" marginBottom="4rem">{item.title}</Text>}
       </Container>
-      <Swiper {...props} spaceBetween={60} slidesPerView={'auto'} centeredSlides style={{ width: '100%' }}>
-        {items.map((item, i) => (
-          <SwiperSlide key={i} virtualIndex={i} style={{ width: '60vw' }}>
-            <StyledCard width="60vw" hoverable>
-              <Link href={item.href} passHref>
-                <Media as="a" aspectRatio={16 / 9} item={item.media} />
-              </Link>
-              {item.title &&
-                <Card.Content>
-                  <Button variant="nav">
-                    <Text size="8" marginTop="1rem" dangerouslySetInnerHTML={{ __html: item.title }}></Text>
-                  </Button>
-                </Card.Content>
-              }
-            </StyledCard>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {items && (
+        <Swiper {...props} spaceBetween={60} slidesPerView={'auto'} centeredSlides style={{ width: '100%' }}>
+          {items.map((item, i) => (
+            <SwiperSlide key={i} virtualIndex={i} style={{ width: '60vw' }}>
+              <StyledCard width="60vw" hoverable>
+                <Link href={item.href} passHref>
+                  <Media as="a" aspectRatio={16 / 9} item={item.media} />
+                </Link>
+                {item.title &&
+                  <Card.Content>
+                    <Button variant="nav">
+                      <Text size="8" marginTop="1rem" dangerouslySetInnerHTML={{ __html: item.title }}></Text>
+                    </Button>
+                  </Card.Content>
+                }
+              </StyledCard>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
     </StyledSection>
   );
 };

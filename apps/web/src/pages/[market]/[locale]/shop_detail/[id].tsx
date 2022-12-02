@@ -102,7 +102,7 @@ export async function getStaticProps(context: IStaticContext) {
     const related = await getShopDetails({
       where: {
         category: {
-          equals: page.category,
+          equals: typeof page.category === 'object' ? page.category.id : page.category,
         },
       }, market, locale
     });

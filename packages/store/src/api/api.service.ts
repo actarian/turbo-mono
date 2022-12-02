@@ -12,40 +12,40 @@ const defaultStoreOptions: FetchRequestOptions = {
   },
 };
 
-export async function storeFetch(pathname: string, options: FetchRequestOptions = {}): Promise<any> {
+export async function apiFetch(pathname: string, options: FetchRequestOptions = {}): Promise<any> {
   const url = `${STORE_API_URL}${STORE_API_BASE}${pathname}`;
-  // console.log('ApiStore.storeFetch', url, options.method);
+  // console.log('ApiStore.apiFetch', url, options.method);
   const apiOptions = merge({ ...defaultStoreOptions }, options);
   const apiResponse = await httpFetch(url, apiOptions);
   return apiResponse;
 }
 
-export async function storeGet(url: string, options: FetchRequestOptions = {}): Promise<any> {
-  return await storeFetch(url, { ...options, method: 'GET' });
+export async function apiGet(url: string, options: FetchRequestOptions = {}): Promise<any> {
+  return await apiFetch(url, { ...options, method: 'GET' });
 }
 
-export async function storePost(url: string, payload: any, options: FetchRequestOptions = {}): Promise<any> {
-  return await storeFetch(url, { ...options, method: 'POST', body: JSON.stringify(payload) });
+export async function apiPost(url: string, payload: any, options: FetchRequestOptions = {}): Promise<any> {
+  return await apiFetch(url, { ...options, method: 'POST', body: JSON.stringify(payload) });
 }
 
-export async function storePut(url: string, payload: any, options: FetchRequestOptions = {}): Promise<any> {
-  return await storeFetch(url, { ...options, method: 'PUT', body: JSON.stringify(payload) });
+export async function apiPut(url: string, payload: any, options: FetchRequestOptions = {}): Promise<any> {
+  return await apiFetch(url, { ...options, method: 'PUT', body: JSON.stringify(payload) });
 }
 
-export async function storePatch(url: string, payload: any, options: FetchRequestOptions = {}): Promise<any> {
-  return await storeFetch(url, { ...options, method: 'PATCH', body: JSON.stringify(payload) });
+export async function apiPatch(url: string, payload: any, options: FetchRequestOptions = {}): Promise<any> {
+  return await apiFetch(url, { ...options, method: 'PATCH', body: JSON.stringify(payload) });
 }
 
-export async function storeDelete(url: string, options: FetchRequestOptions = {}): Promise<any> {
-  return await storeFetch(url, { ...options, method: 'DELETE' });
+export async function apiDelete(url: string, options: FetchRequestOptions = {}): Promise<any> {
+  return await apiFetch(url, { ...options, method: 'DELETE' });
 }
 
-export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
+export class ApiService<T extends IEntity> implements IQuerable<IEntity> {
   key: string;
 
   constructor(key: string) {
     if (!key) {
-      throw new Error('StoreApiService: key is required');
+      throw new Error('ApiService: key is required');
     }
     this.key = key;
   }
@@ -53,44 +53,51 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
   async findOne(params: QueryParams = {}): Promise<T | undefined> {
     // const params = toFindParams(idOrParams);
     // const search = this.search_(params);
+    params.pagination = params.pagination || false;
+    params.richText = params.richText || false;
     const query = qsSerialize(params);
     const search = query ? `?${query}` : '';
     // const id = params.where.id as string | number;
     // const url = `/${this.key}${id ? `/${encodeURIComponent(id)}` : ''}${search}`;
     const url = `/${this.key}${search}`;
-    // console.log('StoreApiService', this.key, 'findOne', url);
-    const response = await storeGet(url);
+    // console.log('ApiService', this.key, 'findOne', url);
+    const response = await apiGet(url);
     const items: T[] = Array.isArray(response.docs) ? response.docs : response;
-    // console.log('StoreApiService.findOne', url, items);
-    if (items.length) {
-      return this.decorator_(items[0], params);
+    const item = items.length ? items[0] : undefined;
+    // console.log('ApiService.findOne', url);
+    // console.log('ApiService.findOne', url, item);
+    if (item) {
+      return this.decorator_(item, params);
     }
     return;
   }
 
   async findMany(params: QueryParams = {}): Promise<T[]> {
     // const search = this.search_(params);
+    params.pagination = params.pagination || false;
+    params.richText = params.richText || false;
     const query = qsSerialize(params);
     const search = query ? `?${query}` : '';
     const url = `/${this.key}${search}`;
-    const response = await storeGet(url);
+    const response = await apiGet(url);
     const items: T[] = Array.isArray(response.docs) ? response.docs : response;
-    // console.log('StoreApiService.findMany', url, items);
+    // console.log('ApiService.findMany', url);
+    // console.log('ApiService.findMany', url, items);
     // items = this.where_(items, params);
     return items.map(x => this.decorator_(x, params));
   }
 
   async create(payload: any): Promise<T> {
     const url = `/${this.key}`;
-    // console.log('StoreApiService', this.key, 'create', url);
-    const item = await storePost(url, payload);
+    // console.log('ApiService', this.key, 'create', url);
+    const item = await apiPost(url, payload);
     return this.decorator_(item);
   }
 
   async update(payload: T): Promise<T> {
     const url = `/${this.key}`;
-    // console.log('StoreApiService', this.key, 'update', url);
-    const item = await storePut(url, payload);
+    // console.log('ApiService', this.key, 'update', url);
+    const item = await apiPut(url, payload);
     return this.decorator_(item);
   }
 
@@ -108,8 +115,8 @@ export class StoreApiService<T extends IEntity> implements IQuerable<IEntity> {
     // const search = this.search_(params);
     const url = `/${this.key}${search}`;
     // const url = `/${this.key}/${encodeURIComponent(id.toString())}`;
-    // console.log('StoreApiService', this.key, 'delete', url);
-    const item = await storeDelete(url);
+    // console.log('ApiService', this.key, 'delete', url);
+    const item = await apiDelete(url);
     return this.decorator_(item);
   }
 

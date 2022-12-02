@@ -1,4 +1,3 @@
-
 import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { ChevronLeft } from '@websolute/icons';
 import { ProductsDetailDefaults } from '@websolute/mock';
@@ -78,7 +77,8 @@ export async function getStaticProps(context: IStaticContext) {
   const layout = await getLayout(market, locale);
   let page = await getPage('product_detail', id, market, locale);
 
-  if (page && !page.related) {
+  // fake data
+  if (page && !page.related && process && process.env.STORE_STRATEGY === 'mock') {
     const item = ProductsDetailDefaults.item;
     page = {
       ...page,

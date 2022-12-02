@@ -264,11 +264,13 @@ export const Autocomplete: AutocompleteComponent = forwardRef(({
           <StyledAutocomplete ref={innerRef} as="input" type="text" onFocus={onFocus_} onBlur={onBlur_} onChange={onChange_} {...props} />
           {after}
         </StyledAutocompleteContainer>
-        <AutocompleteDropdown ref={dropdownRef} visible={items.length > 0}>
-          {items.map((item, i) => (
-            <StyledAutocompleteItem key={i} onClick={() => onAutocomplete_(item)} dangerouslySetInnerHTML={{ __html: autocompleteHighligth(item.name, innerRef.current?.value) }}></StyledAutocompleteItem>
-          ))}
-        </AutocompleteDropdown>
+        {items && (
+          <AutocompleteDropdown ref={dropdownRef} visible={items.length > 0}>
+            {items.map((item, i) => (
+              <StyledAutocompleteItem key={i} onClick={() => onAutocomplete_(item)} dangerouslySetInnerHTML={{ __html: autocompleteHighligth(item.name, innerRef.current?.value) }}></StyledAutocompleteItem>
+            ))}
+          </AutocompleteDropdown>
+        )}
       </AutocompleteContext.Provider>
     </>
   );

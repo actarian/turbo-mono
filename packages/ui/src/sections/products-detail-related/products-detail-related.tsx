@@ -17,12 +17,15 @@ export type ProductsDetailRelatedProps = ILazyComponentProps & {
 
 export const ProductsDetailRelated: React.FC<ProductsDetailRelatedProps> = ({ id, item }: ProductsDetailRelatedProps) => {
   const classNames = getClassNames(item.schema);
+  if (!item) {
+    return null;
+  }
   return (
     <Section id={id} className={classNames} padding="6rem 0">
       <Container>
         {item.title && <Text size="3" textAlign="center" marginBottom="4rem" dangerouslySetInnerHTML={{ __html: item.title }} />}
         <Grid.Row rowGap="3rem">
-          {item.items.map((related, r) => (
+          {item.items && item.items.map((related, r) => (
             <Grid key={r} sm={6} justifyContent="center">
               <ProductsDetailRelatedCard item={related} />
             </Grid>

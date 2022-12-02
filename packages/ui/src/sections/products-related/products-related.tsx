@@ -15,13 +15,15 @@ export const ProductsRelated: React.FC<ProductsRelatedProps> = ({ items }: Produ
         <Flex.Row justifyContent="space-between" marginBottom="1rem">
           <Text size="7" fontWeight="700">Customers also bought</Text>
         </Flex.Row>
-        <Grid.Row columnGap="1rem" rowGap="1rem">
-          {items.map((item, i) => (
-            <Grid sm={6} md={3} key={i}>
-              <ProductsRelatedCard item={item}></ProductsRelatedCard>
-            </Grid>
-          ))}
-        </Grid.Row>
+        {items && (
+          <Grid.Row columnGap="1rem" rowGap="1rem">
+            {items.map((item, i) => (
+              <Grid sm={6} md={3} key={i}>
+                <ProductsRelatedCard item={item}></ProductsRelatedCard>
+              </Grid>
+            ))}
+          </Grid.Row>
+        )}
       </Container>
     </Section>
   );

@@ -144,44 +144,52 @@ export async function getBreadcrumbFromSegments(segments: ICategory[], market: s
 
 export async function getRouteLinkTree(market: string = 'ww', locale: string = 'en'): Promise<IRouteLink | undefined> {
   const store = await getStore<IModelStore>();
-  const routes: IRoute[] = await store.route.findMany() as any[];
-  const categories: ICategory[] = await store.category.findMany() as any[];
-  // console.log(categories);
+  const routes = await store.route.findMany({
+    where: {
+      market: {
+        equals: market,
+      },
+      locale: {
+        equals: locale,
+      },
+    }, market, locale
+  });
+  const categories = await store.category.findMany();
   /*
   const routes: Route[] = await getRoutes();
   const categories = await getCategories();
   */
-  const homeCategory = categories.find(x => x.schema === 'homepage');
-  if (homeCategory) {
-    const root = categoryToRouteLink(routes, categories, homeCategory, market, locale);
+  const homepage = categories.find(x => x.id === 'homepage');
+  if (homepage) {
+    const root = categoryToRouteLink(routes, categories, homepage, locale);
     // console.log('getRouteLinkTree', root);
     return root;
   }
   return undefined;
 }
 
-export function getChildCategories(routes: IRoute[], categories: ICategory[], category: ICategory, market: string = 'ww', locale: string = 'en'): IRouteLink[] {
-  return categories.filter(x => x.category === category.id).map(x => categoryToRouteLink(routes, categories, x, market, locale));
-}
-
-export function categoryToRouteLink(routes: IRoute[], categories: ICategory[], category: ICategory, market: string = 'ww', locale: string = 'en'): IRouteLink {
-  const route = category.schema && category.page ? routes.find(r =>
-    r.schema === category.schema &&
-    r.page === category.page &&
-    r.market === market &&
-    r.locale === locale
-  ) : null;
+export function categoryToRouteLink(routes: IRoute[], categories: ICategory[], category: ICategory, locale: string = 'en'): IRouteLink {
+  const route = routes.find(r =>
+    r.category === category.id
+  );
   const href = route ? route.id.toString() : '/#';
   let title = category.title || 'untitled';
   if (isLocalizedString(title)) {
     title = localizedToString(title, locale);
   }
+  const childCategories = categories.filter(x => {
+    const parentId = x.category && typeof x.category === 'object' ? x.category['id'] : x.category;
+    return category.id === 'homepage' ?
+      (x.id !== 'homepage' && (parentId === category.id || !parentId)) :
+      parentId === category.id;
+  });
+  // console.log('childCategories', category.id, childCategories);
   return {
     id: category.id,
     title,
     href,
     media: category.media,
-    items: getChildCategories(routes, categories, category, market, locale),
+    items: childCategories.map(x => categoryToRouteLink(routes, categories, x, locale)),
   };
 }
 

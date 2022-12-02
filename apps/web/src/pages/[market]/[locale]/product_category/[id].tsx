@@ -1,4 +1,3 @@
-
 import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { ProductsSearchFeaturesDefaults } from '@websolute/mock';
 import { getLayout, getPage, getStaticPathsForSchema, IFeatureType, PageProps } from '@websolute/models';

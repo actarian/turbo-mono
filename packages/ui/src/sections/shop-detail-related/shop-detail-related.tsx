@@ -22,7 +22,7 @@ export const ShopDetailRelated: React.FC<ShopDetailRelatedProps> = ({ id, item }
       <Container.Fluid>
         {item.title && <Text size="3" textAlign="center" marginBottom="4rem" dangerouslySetInnerHTML={{ __html: item.title }} />}
         <Grid.Row rowGap="3rem">
-          {item.items.map((related, r) => (
+          {item.items && item.items.map((related, r) => (
             <Grid key={r} sm={6} md={3} justifyContent="center">
               <ShopDetailRelatedCard item={related} />
             </Grid>

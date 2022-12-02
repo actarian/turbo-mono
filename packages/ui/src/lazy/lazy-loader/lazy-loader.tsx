@@ -22,12 +22,15 @@ const lazyLoadComponent_ = (component: ILazyComponent): JSX.Element => {
 };
 
 const lazyLoadComponent = (component: ILazyComponent): JSX.Element => {
-  const key = component.schema as unknown as keyof typeof LAZY_MODULES;
+  const key = (component.schema || component.blockType) as unknown as keyof typeof LAZY_MODULES;
   const Component = (LAZY_MODULES[key] as unknown as React.FC<ILazyComponentProps>) || LAZY_MODULES['not-found'];
   return (<Component item={component} />);
 };
 
 export const LazyLoader = ({ components }: { components: ILazyComponent[] }) => {
+  if (!components) {
+    return null;
+  }
   return (
     <>
       {components.map((component, i: number) => (

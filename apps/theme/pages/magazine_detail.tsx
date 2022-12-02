@@ -106,7 +106,7 @@ export default withPageTransition(MagazineDetail);
 
 function ImageGallery({ children }: React.PropsWithChildren) {
   const mappedChildren = mapChildsByType(children, Media, (child: React.ReactNode) => {
-    console.log(child);
+    // console.log(child);
     return child;
   });
   // console.log(mappedChildren);

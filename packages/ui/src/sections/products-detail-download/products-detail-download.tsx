@@ -18,12 +18,15 @@ export type ProductsDetailDownloadProps = ILazyComponentProps & {
 
 export const ProductsDetailDownload: React.FC<ProductsDetailDownloadProps> = ({ id, item }: ProductsDetailDownloadProps) => {
   const classNames = getClassNames(item.schema);
+  if (!item) {
+    return null;
+  }
   return (
     <Section id={id} className={classNames} padding="6rem 0">
       <Container>
         <Flex.Col>
           {item.title && <Text size="3" marginBottom="3rem" textAlign="center">{item.title}</Text>}
-          {item.links.map((link, l) => (
+          {item.links && item.links.map((link, l) => (
             <NavLink href={link.href} key={l} passHref>
               <Button as="a" variant="secondary">
                 <Flex.Row width="100%">

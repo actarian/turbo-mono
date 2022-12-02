@@ -37,15 +37,17 @@ export const ShopHero: React.FC<ShopHeroProps> = ({ item }: ShopHeroProps) => {
           </Container.Fluid>
         </Card.Content>
       </Card>
-      <Container marginTop="-30vh">
-        <Grid.Row columnGap="1rem" rowGap="2rem">
-          {item.items && item.items.map((item, i) => (
-            <Grid sm={4} key={i}>
-              <ShopHeroCard aspectRatio={4 / 5} item={item} />
-            </Grid>
-          ))}
-        </Grid.Row>
-      </Container>
+      {item.items && (
+        <Container marginTop="-30vh">
+          <Grid.Row columnGap="1rem" rowGap="2rem">
+            {item.items.map((item, i) => (
+              <Grid sm={4} key={i}>
+                <ShopHeroCard aspectRatio={4 / 5} item={item} />
+              </Grid>
+            ))}
+          </Grid.Row>
+        </Container>
+      )}
     </Section>
   );
 };

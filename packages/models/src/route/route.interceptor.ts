@@ -18,7 +18,7 @@ export async function routeInterceptor(request: NextRequest, next: NextFetchEven
     console.log('routeInterceptor.error', url.pathname, error.url, error.status, error.statusText);
     return;
   }
-  console.log('routeInterceptor.route.found', url.pathname, '->', route);
+  // console.log('routeInterceptor.route.found', url.pathname, '->', route);
   url = request.nextUrl.clone();
   const resolvedPathname = resolveRoute(route);
   // console.log('resolvedPathname', resolvedPathname);

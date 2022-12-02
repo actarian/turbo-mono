@@ -9,6 +9,9 @@ type Props = {
 export type ShopItemsPropositionProps = UIComponentProps<Props>;
 
 export const ShopItemsProposition: React.FC<ShopItemsPropositionProps> = ({ items }: ShopItemsPropositionProps) => {
+  if (!items) {
+    return null;
+  }
   return (
     <Section padding="3rem 0">
       <Container>

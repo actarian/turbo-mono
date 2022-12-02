@@ -147,7 +147,16 @@ function getMediaItems(itemOrItems: IMediaItem | IMediaItem[], options: {
   galleryId?: string;
   open?: (media: IMediaItem) => void;
 } = {}) {
-  const items = Array.isArray(itemOrItems) ? itemOrItems : [itemOrItems];
+  // !!! todo remap payloadcms media
+  const items = (Array.isArray(itemOrItems) ? itemOrItems : [itemOrItems]).map(x => {
+    if (typeof x['media'] === 'object') {
+      x = x['media'];
+    }
+    if (typeof x.url === 'string') {
+      x.src = x.url;
+    }
+    return x;
+  });
   const hasGallery = options.galleryId != null && typeof options.open === 'function';
   const getMediaItemProps = (media: IMediaItem) => {
     const props: {

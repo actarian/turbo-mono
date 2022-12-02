@@ -1,4 +1,3 @@
-
 import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { CategoriesPropositionDefaults, CategoryPropositionDefaults, ProductsHeroDefaults, ProductsPropositionDefaults } from '@websolute/mock';
 import { getLayout, getPage, getStaticPathsForSchema, PageProps } from '@websolute/models';

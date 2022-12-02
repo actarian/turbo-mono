@@ -46,6 +46,9 @@ export type SwiperHeroProps = {
 
 export const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) => {
   const items = props.items;
+  if (!items) {
+    return null;
+  }
   return (
     <SwiperComponent {...props} navigation pagination={{ clickable: true }}>
       {items.map((item, i) => (

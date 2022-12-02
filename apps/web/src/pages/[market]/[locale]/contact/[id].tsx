@@ -7,9 +7,8 @@ import {
   Container, Divider, Flex, Footer, Grid, Header, Layout, Media, MediaImage, Meta, Page, Section, Split,
   Tabs, Text
 } from '@websolute/ui';
-import ContactForm, { IContactForm } from 'src/components/contact-form/contact-form';
-
 import { useState } from 'react';
+import ContactForm, { IContactForm } from 'src/components/contact-form/contact-form';
 
 export default function Contact({ layout, page, data, params }: ContactProps) {
 
@@ -29,17 +28,19 @@ export default function Contact({ layout, page, data, params }: ContactProps) {
 
         <ContactHero item={ContactHeroDefaults.item} />
 
-        <Section>
-          <Container>
-            <Grid.Row columnGap="1rem" rowGap="1rem">
-              {items.map((item, i) => (
-                <Grid key={i} sm={6} md={4} lg={3}>
-                  <ContactCard item={item} height="100%" />
-                </Grid>
-              ))}
-            </Grid.Row>
-          </Container>
-        </Section>
+        {items && (
+          <Section>
+            <Container>
+              <Grid.Row columnGap="1rem" rowGap="1rem">
+                {items.map((item, i) => (
+                  <Grid key={i} sm={6} md={4} lg={3}>
+                    <ContactCard item={item} height="100%" />
+                  </Grid>
+                ))}
+              </Grid.Row>
+            </Container>
+          </Section>
+        )}
 
         <Section id="contact-request">
           <Container>

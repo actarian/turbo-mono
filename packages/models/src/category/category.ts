@@ -8,7 +8,7 @@ export type ICategory = IEntity & {
   media?: IMedia;
   schema?: string;
   page?: IEquatable;
-  category?: IEquatable;
+  category?: IEquatable | ICategory;
 };
 
 export type ICategoryItem = ICategory & {
@@ -18,7 +18,7 @@ export type ICategoryItem = ICategory & {
 export type ICategorized = {
   id: IEquatable;
   schema: string;
-  category?: IEquatable;
+  category: IEquatable | ICategory;
   isDefault?: boolean;
   slug?: ILocalizedString | string;
   title?: ILocalizedString | string;

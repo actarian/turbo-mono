@@ -1,4 +1,3 @@
-
 import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { getLayout, getPage, getStaticPathsForSchema, IUser, PageProps } from '@websolute/models';
 import { Auth, Container, Footer, Header, Layout, Meta, Page, Section } from '@websolute/ui';

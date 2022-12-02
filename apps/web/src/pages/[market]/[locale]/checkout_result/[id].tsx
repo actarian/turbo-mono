@@ -5,7 +5,6 @@ import { Breadcrumb, CheckoutError, CheckoutSuccess, Container, Footer, Header, 
 import { withIronSessionSsr } from 'iron-session/next';
 import { sessionOptions } from 'src/config/session';
 
-
 export default function CheckoutResult({ layout, page, user, order, params }: CheckoutResultProps) {
 
   // const mounted = useMounted();
@@ -44,7 +43,6 @@ export type CheckoutResultProps = PageProps & {
 };
 
 export const getServerSideProps = withIronSessionSsr(async function (context) {
-
   const params = context.params as IContextParams;
   const query = context.query;
 

@@ -1,7 +1,7 @@
 import { getClassNames, IEquatable } from '@websolute/core';
 import { Filter, filtersToParams, IFilterOption, scrollToSelector, useDrawer, useFilters, useLabel, usePagination, useSearchParamsEncoded, useSorting } from '@websolute/hooks';
 import { ChevronDown, ChevronLeft, ChevronRight, Filter as FilterIcon, Grid as GridIcon, Square } from '@websolute/icons';
-import { IFeatureType } from '@websolute/models';
+import { ICategory, IFeatureType } from '@websolute/models';
 import { useCallback, useState } from 'react';
 import { Accordion, Box, Button, Container, Flex, Grid, Nav, Pagination, Popover, Section, Text } from '../../components';
 import { UIStyledComponentProps } from '../../components/types';
@@ -31,13 +31,13 @@ function filterShopItem(key: string, item: ShopSearchItem, value: IEquatable) {
   }
 }
 
-function getDefaultFilterParams(filter?: { [key: string]: IEquatable[] }, category?: IEquatable): { [key: string]: IEquatable[] } | undefined {
+function getDefaultFilterParams(filter?: { [key: string]: IEquatable[] }, category?: IEquatable | ICategory): { [key: string]: IEquatable[] } | undefined {
   if (filter) {
     return filter;
   }
   if (category) {
     return {
-      category: [category]
+      category: [typeof category === 'object' ? category.id : category]
     };
   }
   return undefined;
@@ -54,7 +54,7 @@ const SortMenu = ({ sort, onSort }: { sort: IEquatable | undefined, onSort: (sor
 type Props = {
   items: ShopSearchItem[];
   featureTypes: IFeatureType[];
-  category?: IEquatable;
+  category?: IEquatable | ICategory;
 };
 
 export type ShopSearchProps = UIStyledComponentProps<Props>;

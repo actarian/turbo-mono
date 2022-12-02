@@ -111,13 +111,11 @@ function debounce(callback: (...args: any[]) => void, timeout: number = 300) {
 
 function isLocalizedString(value: any): value is ILocalizedString {
   let isLocalizedString = false;
-  if (value) {
-    if (!Array.isArray(value) && typeof value === 'object') {
-      const matchKeys = Object.keys(value).reduce((p, c) => p && /^(\w{2})(-\w{2})?$/.test(c), true);
-      const matchValues = Object.values(value).reduce((p, c) => p && typeof c === 'string', true);
-      // console.log(matchKeys, matchValues);
-      isLocalizedString = Boolean(matchKeys && matchValues);
-    }
+  if (value && !Array.isArray(value) && typeof value === 'object') {
+    const matchKeys = Object.keys(value).reduce((p, c) => p && /^(\w{2})(-\w{2})?$/.test(c), true);
+    const matchValues = Object.values(value).reduce((p, c) => p && (typeof c === 'string' || !c), true);
+    // console.log(matchKeys, matchValues);
+    isLocalizedString = Boolean(matchKeys && matchValues);
   }
   return isLocalizedString;
 }
@@ -272,6 +270,7 @@ function createRouteService(store: SerializedStore, PAGES: { [key: string]: stri
               id: `${prefix}${href}`,
               market: m.id,
               locale: l,
+              category: item.category,
               page: item.id,
               schema: key,
               template: item.template,
@@ -287,6 +286,7 @@ function createRouteService(store: SerializedStore, PAGES: { [key: string]: stri
             id: `/`,
             market: defaultMarket.id,
             locale: defaultMarketLanguage,
+            category: item.category,
             page: item.id,
             schema: key,
             template: item.template,

@@ -1,4 +1,3 @@
-
 import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { SplitDefaults, StoreLocatorDefaults, StoreLocatorFeaturesDefaults, StoreLocatorSearchDefaults } from '@websolute/mock';
 import { getLayout, getPage, getStaticPathsForSchema, IFeatureType, PageProps } from '@websolute/models';
@@ -33,7 +32,7 @@ export async function getStaticProps(context: IStaticContext) {
   const market = context.params.market;
   const locale = context.params.locale;
   const layout = await getLayout(market, locale);
-  const page = await getPage('product_index', id, market, locale);
+  const page = await getPage('store_index', id, market, locale);
 
   const country = {
     id: 'it',
@@ -58,7 +57,7 @@ export async function getStaticProps(context: IStaticContext) {
 }
 
 export async function getStaticPaths() {
-  const paths = await getStaticPathsForSchema('product_index');
+  const paths = await getStaticPathsForSchema('store_index');
   return {
     paths,
     /*

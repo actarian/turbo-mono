@@ -1,4 +1,5 @@
 import { IEntity } from '@websolute/core';
+import { ICategory } from '../category/category';
 import { ILayout } from '../layout/layout';
 import { IMedia } from '../media/media';
 import { IRoute, IRouteLink, IRouteParams } from '../route/route';
@@ -21,7 +22,7 @@ export type IImage = {
 };
 
 export type IPage = IEntity & {
-  category?: string;
+  category: string | number | ICategory;
   slug?: string;
   href: string;
   alternates: IRoute[];

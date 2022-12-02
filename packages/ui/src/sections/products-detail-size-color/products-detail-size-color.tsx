@@ -21,6 +21,9 @@ export type ProductsDetailSizeColorProps = ILazyComponentProps & {
 
 export const ProductsDetailSizeColor: React.FC<ProductsDetailSizeColorProps> = ({ id, item }: ProductsDetailSizeColorProps) => {
   const classNames = getClassNames(item.schema);
+  if (!item) {
+    return null;
+  }
   return (
     <Section id={id} className={classNames} padding="6rem 0">
       <Container>
@@ -28,7 +31,7 @@ export const ProductsDetailSizeColor: React.FC<ProductsDetailSizeColorProps> = (
           <Grid sm={6} justifyContent="center">
             <Flex.Col>
               {item.title && <Text size="3" marginBottom="3rem">{item.title}</Text>}
-              {item.list.map((item, i) => (
+              {item.list && item.list.map((item, i) => (
                 <Flex.Row key={i} padding="2rem 0" borderBottom="2px solid var(--color-neutral-900)">
                   <Text flexBasis="20%" dangerouslySetInnerHTML={{ __html: item.title }} />
                   <Text dangerouslySetInnerHTML={{ __html: item.abstract }} />

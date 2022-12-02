@@ -34,6 +34,7 @@ module.exports = withBundleAnalyzer(transpiledModules({
   },
   images: {
     domains: [
+      'localhost',
       'unsplash.com',
       'picsum.photos',
       'i.pravatar.cc',

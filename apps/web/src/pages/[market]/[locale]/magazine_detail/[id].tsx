@@ -1,4 +1,3 @@
-
 import { asServerProps, deserializeValue, IStaticContext } from '@websolute/core';
 import { useDateTimeFormat } from '@websolute/hooks';
 import { ChevronLeft } from '@websolute/icons';
@@ -77,19 +76,21 @@ export async function getStaticProps(context: IStaticContext) {
     let relatedItems = await getMagazineDetails({
       where: {
         category: {
-          equals: page.category,
+          equals: typeof page.category === 'object' ? page.category.id : page.category,
         },
       }, market, locale
     });
     relatedItems = relatedItems.filter(x => x.id !== page.id).slice(0, Math.min(relatedItems.length, 10));
 
     // fake data
-    const item = MagazineDetailDefaults.item;
-    page.abstract = item.abstract;
-    page.photographer = item.photographer;
-    page.components = item.components;
-    page.related = item.related;
-    page.related.items = relatedItems;
+    if (page && process && process.env.STORE_STRATEGY === 'mock') {
+      const item = MagazineDetailDefaults.item;
+      page.abstract = item.abstract;
+      page.photographer = item.photographer;
+      page.components = item.components;
+      page.related = item.related;
+      page.related.items = relatedItems;
+    }
   }
 
   const props = asServerProps({ ...context, layout, page });

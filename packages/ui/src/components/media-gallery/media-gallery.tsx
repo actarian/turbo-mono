@@ -104,15 +104,17 @@ export const MediaGallery: MediaGalleryComponent = forwardRef(({ children, as = 
           <Modal.Content padding="0">
             {true && (
               <MediaGalleryWrapper>
-                <Swiper initialSlide={initialSlide} spaceBetween={0} slidesPerView={1} loop={false} navigation onSlideChange={onSlideChange}>
-                  {items.map((item, i) => (
-                    <SwiperSlide key={i} virtualIndex={i}>
-                      <StyledMedia item={item} />
-                    </SwiperSlide>
-                  ))}
-                  <MediaGalleryPrev />
-                  <MediaGalleryNext />
-                </Swiper>
+                {items && (
+                  <Swiper initialSlide={initialSlide} spaceBetween={0} slidesPerView={1} loop={false} navigation onSlideChange={onSlideChange}>
+                    {items.map((item, i) => (
+                      <SwiperSlide key={i} virtualIndex={i}>
+                        <StyledMedia item={item} />
+                      </SwiperSlide>
+                    ))}
+                    <MediaGalleryPrev />
+                    <MediaGalleryNext />
+                  </Swiper>
+                )}
                 <Flex.Row justifyContent="space-between" padding="0.5rem">
                   <Flex flexBasis="40px"></Flex>
                   <Flex flexGrow="1" textAlign="center">

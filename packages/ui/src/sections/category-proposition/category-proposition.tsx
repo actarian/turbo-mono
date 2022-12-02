@@ -17,6 +17,9 @@ export type CategoryPropositionItem = {
 export type CategoryPropositionProps = UIComponentProps<Props>;
 
 export const CategoryProposition: React.FC<CategoryPropositionProps> = ({ item }) => {
+  if (!item) {
+    return null;
+  }
   return (
     <Section>
       <Container>

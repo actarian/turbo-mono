@@ -59,6 +59,9 @@ const StyledCard = styled(Card)`
 `;
 
 export const MagazineRelated: React.FC<MagazineRelatedProps & SwiperProps> = ({ item, ...props }: MagazineRelatedProps & SwiperProps) => {
+  if (!item) {
+    return null;
+  }
   const items = item.items;
   const classNames = getClassNames(item.schema);
   return (
@@ -66,13 +69,15 @@ export const MagazineRelated: React.FC<MagazineRelatedProps & SwiperProps> = ({ 
       <Container textAlign="center">
         {item.title && <Text size="3" marginBottom="4rem">{item.title}</Text>}
       </Container>
-      <Swiper {...props} spaceBetween={60} slidesPerView={'auto'} centeredSlides style={{ width: '100%' }}>
-        {items.map((item, i) => (
-          <SwiperSlide key={i} virtualIndex={i}>
-            <MagazineSearchCard fixedRatio item={item} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {items && (
+        <Swiper {...props} spaceBetween={60} slidesPerView={'auto'} centeredSlides style={{ width: '100%' }}>
+          {items.map((item, i) => (
+            <SwiperSlide key={i} virtualIndex={i}>
+              <MagazineSearchCard fixedRatio item={item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
     </StyledSection>
   );
 };

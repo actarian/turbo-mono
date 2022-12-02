@@ -1,4 +1,3 @@
-
 import { asServerProps, deserializeValue, IContextParams } from '@websolute/core';
 import { getLayout, getOrders, getPage, IOrderDetail, IUser, PageProps } from '@websolute/models';
 import { Flex, Footer, Header, Layout, Meta, OrderItem, Page, ReservedArea, Text } from '@websolute/ui';

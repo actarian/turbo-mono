@@ -58,13 +58,15 @@ export const HeaderSubmenu: React.FC<HeaderSubmenuProps> = ({ item, visible, onS
   return (
     <StyledHeaderSubmenu className={classNames} ref={ref}>
       <Container.Fluid>
-        <Grid.Row className="header-submenu__items" columnGap="2rem" rowGap="2rem">
-          {item.items.map((item, i) => (
-            <Grid xs={6} sm={4} md={3} lg={2} key={i}>
-              <HeaderCard item={item} onSelect={onSelect_}></HeaderCard>
-            </Grid>
-          ))}
-        </Grid.Row>
+        {item.items && (
+          <Grid.Row className="header-submenu__items" columnGap="2rem" rowGap="2rem">
+            {item.items.map((item, i) => (
+              <Grid xs={6} sm={4} md={3} lg={2} key={i}>
+                <HeaderCard item={item} onSelect={onSelect_}></HeaderCard>
+              </Grid>
+            ))}
+          </Grid.Row>
+        )}
       </Container.Fluid>
     </StyledHeaderSubmenu>
   );

@@ -27,7 +27,7 @@ export const OrderSummary: React.FC<OrderSummaryProps> = ({ order }: OrderSummar
             <Text flexBasis="110px" textAlign="right">Price</Text>
           </Flex.Row>
           <Flex.Col flex="1" gap="1rem">
-            {order.items.map((item, i) =>
+            {order.items && order.items.map((item, i) =>
               <OrderSummaryItem key={i} item={item} />
             )}
             <Flex.Row gap="1rem">

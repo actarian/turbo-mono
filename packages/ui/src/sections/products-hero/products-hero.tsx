@@ -39,13 +39,15 @@ export const ProductsHero: React.FC<ProductsHeroProps> = ({ items }: ProductsHer
         </Card.Content>
       </Card>
       <Container marginTop="-30vh">
-        <Grid.Row columnGap="1rem" rowGap="2rem">
-          {items.map((item, i) => (
-            <Grid sm={4} key={i}>
-              <ProductsHeroCard aspectRatio={4 / 5} item={item} />
-            </Grid>
-          ))}
-        </Grid.Row>
+        {items && (
+          <Grid.Row columnGap="1rem" rowGap="2rem">
+            {items.map((item, i) => (
+              <Grid sm={4} key={i}>
+                <ProductsHeroCard aspectRatio={4 / 5} item={item} />
+              </Grid>
+            ))}
+          </Grid.Row>
+        )}
       </Container>
     </Section>
   );

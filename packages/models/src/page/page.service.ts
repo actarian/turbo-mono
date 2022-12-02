@@ -75,7 +75,7 @@ export async function getPageCategory<T extends IPage>(schema: string, page?: IP
   const category = await findPage(schema, {
     where: {
       category: {
-        equals: page.category,
+        equals: typeof page.category === 'object' ? page.category.id : page.category,
       }
     }, market, locale
   }) as T;
@@ -119,6 +119,7 @@ export async function getErrorPageLayout(): Promise<{ layout: ILayout, page: IPa
     breadcrumb: [],
     title,
     abstract,
+    category: 'homepage',
     meta: {
       title,
       description: abstract,

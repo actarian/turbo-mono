@@ -5,6 +5,7 @@ export type IRoute = {
   id: string;
   market: string;
   locale: string;
+  category: string;
   page: IEquatable;
   schema: string;
   template?: string;

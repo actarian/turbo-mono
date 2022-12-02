@@ -92,5 +92,7 @@ export type QueryParams = {
   limit?: number;
   depth?: number;
   draft?: boolean;
+  pagination?: boolean;
+  richText?: boolean;
   // 'fallback-locale'?: string;
 };

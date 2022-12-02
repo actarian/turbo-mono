@@ -6,7 +6,7 @@ import { UIStyledComponentProps } from '../../components/types';
 export type CategoriesPropositionItem = {
   href: string;
   title: string;
-  media: IMedia;
+  media?: IMedia;
 };
 
 type Props = {
@@ -19,9 +19,11 @@ export const CategoriesPropositionCard: React.FC<CategoriesPropositionCardProps>
   return (
     <Link href={item.href} passHref>
       <Card as="a" aspectRatio={2 / 1} {...props} hoverable borderRadius="0.4rem" justifyContent="flex-end">
-        <Card.Background>
-          <Media overlay item={item.media} />
-        </Card.Background>
+        {item.media && (
+          <Card.Background>
+            <Media overlay item={item.media} />
+          </Card.Background>
+        )}
         <Card.Content padding="1rem" justifyContent="flex-end">
           <Text size="8" fontWeight="700">{item.title}</Text>
           <Text size="10">{'Shop now'}</Text>

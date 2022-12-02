@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 export default apiHandler({
   post: async (request: NextApiRequest, response: NextApiResponse) => {
-    console.log(request.headers);
+    // console.log(request.headers);
     const authorization = request.headers.authorization;
     const bearer = authorization && authorization.replace('Bearer ', '');
     // Check for secret to confirm this is a valid request

@@ -15,6 +15,7 @@ module.exports = transpiledModules({
   reactStrictMode: true,
   images: {
     domains: [
+      'localhost',
       'unsplash.com',
       'picsum.photos',
       'i.pravatar.cc',

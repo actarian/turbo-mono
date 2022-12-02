@@ -1,7 +1,7 @@
 import { getClassNames, IEquatable } from '@websolute/core';
 import { Filter, filtersToParams, IFilterOption, useDrawer, useFilters, useInfiniteLoader, useSearchParamsEncoded } from '@websolute/hooks';
 import { Filter as FilterIcon } from '@websolute/icons';
-import { IFeatureType } from '@websolute/models';
+import { ICategory, IFeatureType } from '@websolute/models';
 import { useCallback } from 'react';
 import { Box, Button, Container, Flex, InfiniteLoader, Section, Text } from '../../components';
 import { UIStyledComponentProps } from '../../components/types';
@@ -21,13 +21,13 @@ function filterMagazineItem(key: string, item: MagazineSearchItem, value: IEquat
   }
 }
 
-function getDefaultFilterParams(filter?: { [key: string]: IEquatable[] }, category?: IEquatable): { [key: string]: IEquatable[] } | undefined {
+function getDefaultFilterParams(filter?: { [key: string]: IEquatable[] }, category?: IEquatable | ICategory): { [key: string]: IEquatable[] } | undefined {
   if (filter) {
     return filter;
   }
   if (category) {
     return {
-      category: [category]
+      category: [typeof category === 'object' ? category.id : category]
     };
   }
   return undefined;
@@ -36,7 +36,7 @@ function getDefaultFilterParams(filter?: { [key: string]: IEquatable[] }, catego
 type Props = {
   items: MagazineSearchItem[];
   featureTypes: IFeatureType[];
-  category?: IEquatable;
+  category?: IEquatable | ICategory;
 };
 
 export type MagazineSearchProps = UIStyledComponentProps<Props>;

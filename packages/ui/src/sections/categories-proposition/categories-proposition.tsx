@@ -20,17 +20,19 @@ export const CategoriesProposition: React.FC<CategoriesPropositionProps> = ({ it
             <Button as="a" variant="link"><span>Browse all categories</span> <ArrowRight /></Button>
           </Link>
         </Flex.Row>
-        <Grid.Row columnGap="1rem" rowGap="1rem">
-          <Grid sm={6}>
-            <CategoriesPropositionCard aspectRatio={1} aspectRatioSm="auto" heightSm="100%" item={items[0]}></CategoriesPropositionCard>
-          </Grid>
-          <Grid sm={6}>
-            <Flex.Col rowGap="1rem">
-              <CategoriesPropositionCard aspectRatio={4 / 3} aspectRatioMd={2 / 1} item={items[1]}></CategoriesPropositionCard>
-              <CategoriesPropositionCard aspectRatio={4 / 3} aspectRatioMd={2 / 1} item={items[2]}></CategoriesPropositionCard>
-            </Flex.Col>
-          </Grid>
-        </Grid.Row>
+        {items.length >= 3 && (
+          <Grid.Row columnGap="1rem" rowGap="1rem">
+            <Grid sm={6}>
+              <CategoriesPropositionCard aspectRatio={1} aspectRatioSm="auto" heightSm="100%" item={items[0]}></CategoriesPropositionCard>
+            </Grid>
+            <Grid sm={6}>
+              <Flex.Col rowGap="1rem">
+                <CategoriesPropositionCard aspectRatio={4 / 3} aspectRatioMd={2 / 1} item={items[1]}></CategoriesPropositionCard>
+                <CategoriesPropositionCard aspectRatio={4 / 3} aspectRatioMd={2 / 1} item={items[2]}></CategoriesPropositionCard>
+              </Flex.Col>
+            </Grid>
+          </Grid.Row>
+        )}
       </Container>
     </Section>
   );

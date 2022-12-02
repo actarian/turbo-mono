@@ -27,7 +27,7 @@ export const Related1: React.FC<Related1Props> = ({ item }: Related1Props) => {
       <Container>
         {item.title && <Text size="3" textAlign="center" marginBottom="4rem" dangerouslySetInnerHTML={{ __html: item.title }} />}
         <Grid.Row rowGap="3rem">
-          {item.items.map((related, r) => (
+          {item.items && item.items.map((related, r) => (
             <Grid key={r} sm={6} justifyContent="center">
               <Related1Card item={related} />
             </Grid>

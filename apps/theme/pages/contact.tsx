@@ -24,17 +24,19 @@ const Contact = () => {
 
           <ContactHero item={ContactHeroDefaults.item} />
 
-          <Section>
-            <Container>
-              <Grid.Row columnGap="1rem" rowGap="1rem">
-                {items.map((item, i) => (
-                  <Grid key={i} sm={6} md={4} lg={3}>
-                    <ContactCard item={item} height="100%" />
-                  </Grid>
-                ))}
-              </Grid.Row>
-            </Container>
-          </Section>
+          {items && (
+            <Section>
+              <Container>
+                <Grid.Row columnGap="1rem" rowGap="1rem">
+                  {items.map((item, i) => (
+                    <Grid key={i} sm={6} md={4} lg={3}>
+                      <ContactCard item={item} height="100%" />
+                    </Grid>
+                  ))}
+                </Grid.Row>
+              </Container>
+            </Section>
+          )}
 
           <Section id="contact-request">
             <Container>
